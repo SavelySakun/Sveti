@@ -15,6 +15,9 @@
 		FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */; };
 		FC6C56F3266000FD000188A6 /* MoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56F2266000FD000188A6 /* MoodTrackerTests.swift */; };
 		FC6C56FE266000FD000188A6 /* MoodTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56FD266000FD000188A6 /* MoodTrackerUITests.swift */; };
+		FC6C570D26600300000188A6 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C570C26600300000188A6 /* DiaryCell.swift */; };
+		FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C570E2660034E000188A6 /* DiaryVC.swift */; };
+		FC6C57112660038C000188A6 /* DiaryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C57102660038C000188A6 /* DiaryTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		FC6C56F9266000FD000188A6 /* MoodTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56FD266000FD000188A6 /* MoodTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerUITests.swift; sourceTree = "<group>"; };
 		FC6C56FF266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC6C570C26600300000188A6 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
+		FC6C570E2660034E000188A6 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
+		FC6C57102660038C000188A6 /* DiaryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		FC6C56DA266000FB000188A6 /* MoodTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FC6C570B266002E0000188A6 /* Diary */,
 				FC6C56DB266000FB000188A6 /* AppDelegate.swift */,
 				FC6C56DD266000FB000188A6 /* SceneDelegate.swift */,
 				FC6C56DF266000FB000188A6 /* ViewController.swift */,
@@ -126,6 +133,16 @@
 				FC6C56FF266000FD000188A6 /* Info.plist */,
 			);
 			path = MoodTrackerUITests;
+			sourceTree = "<group>";
+		};
+		FC6C570B266002E0000188A6 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C570C26600300000188A6 /* DiaryCell.swift */,
+				FC6C570E2660034E000188A6 /* DiaryVC.swift */,
+				FC6C57102660038C000188A6 /* DiaryTableView.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6C56E0266000FB000188A6 /* ViewController.swift in Sources */,
+				FC6C57112660038C000188A6 /* DiaryTableView.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
+				FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
+				FC6C570D26600300000188A6 /* DiaryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
