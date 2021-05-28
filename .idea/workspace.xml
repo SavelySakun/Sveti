@@ -2,41 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c18c857-7bf6-44ae-8d4d-0f7cdc0811e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MoodTracker.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/SwiftLint/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/SwiftLint/swiftlint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-acknowledgements.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-acknowledgements.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-dummy.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-umbrella.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.debug.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.modulemap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.release.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-acknowledgements.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-acknowledgements.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-dummy.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-umbrella.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker.modulemap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker.release.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-acknowledgements.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-acknowledgements.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-dummy.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-umbrella.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.debug.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.modulemap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.release.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftLint/SwiftLint.debug.xcconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftLint/SwiftLint.release.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/MoodCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteTableView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/RootNavigationController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoodTracker.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoodTracker.xcodeproj/xcuserdata/savelysakun.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker.xcodeproj/xcuserdata/savelysakun.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodTracker/SceneDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker/SceneDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteVC.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,7 +57,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="49955_add_mood_diary_cell" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

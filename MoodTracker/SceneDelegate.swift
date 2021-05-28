@@ -10,7 +10,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		
 		let window = UIWindow(windowScene: scene)
 		let startViewController = NewNoteVC()
-		window.rootViewController = startViewController
+		let rootNavigationController = RootNavigationController(rootViewController: startViewController)
+		window.rootViewController = rootNavigationController
 		self.window = window
 		window.makeKeyAndVisible()
 	}
