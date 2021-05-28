@@ -2,10 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c18c857-7bf6-44ae-8d4d-0f7cdc0811e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MoodTracker/Diary/DiaryCell.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoodTracker/Diary/DiaryTableView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoodTracker/Diary/DiaryVC.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/SwiftLint/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/SwiftLint/swiftlint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-acknowledgements.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-acknowledgements.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-dummy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.debug.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.release.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-acknowledgements.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-acknowledgements.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-dummy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker.release.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-acknowledgements.markdown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-acknowledgements.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-dummy.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-umbrella.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.debug.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.release.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftLint/SwiftLint.debug.xcconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftLint/SwiftLint.release.xcconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoodTracker.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodTracker.xcodeproj/xcuserdata/savelysakun.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker.xcodeproj/xcuserdata/savelysakun.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +44,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1t7vrEUKhoXb7A1cD8IGK4sN9v5" />
@@ -26,6 +62,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -42,5 +79,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
