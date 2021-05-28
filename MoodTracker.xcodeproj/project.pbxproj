@@ -21,6 +21,8 @@
 		FC6C570D26600300000188A6 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C570C26600300000188A6 /* DiaryCell.swift */; };
 		FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C570E2660034E000188A6 /* DiaryVC.swift */; };
 		FC6C57112660038C000188A6 /* DiaryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C57102660038C000188A6 /* DiaryTableView.swift */; };
+		FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */; };
+		FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A62661377A000188A6 /* NewNoteVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		FC6C570C26600300000188A6 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		FC6C570E2660034E000188A6 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
 		FC6C57102660038C000188A6 /* DiaryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableView.swift; sourceTree = "<group>"; };
+		FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
+		FC6C58A62661377A000188A6 /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
 		FE567E62EC97C22098BE6314 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +121,6 @@
 				00AC08954F05F8051533C779 /* Pods-MoodTrackerTests.debug.xcconfig */,
 				11717DD0989A8242719EAC3A /* Pods-MoodTrackerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,7 +149,8 @@
 		FC6C56DA266000FB000188A6 /* MoodTracker */ = {
 			isa = PBXGroup;
 			children = (
-				FC6C570B266002E0000188A6 /* Diary */,
+				FC6C58A426613746000188A6 /* Screens */,
+				FC6C58A1266136B5000188A6 /* Extensions */,
 				FC6C56DB266000FB000188A6 /* AppDelegate.swift */,
 				FC6C56DD266000FB000188A6 /* SceneDelegate.swift */,
 				FC6C56DF266000FB000188A6 /* ViewController.swift */,
@@ -184,6 +188,31 @@
 				FC6C57102660038C000188A6 /* DiaryTableView.swift */,
 			);
 			path = Diary;
+			sourceTree = "<group>";
+		};
+		FC6C58A1266136B5000188A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FC6C58A426613746000188A6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C58A526613753000188A6 /* New note */,
+				FC6C570B266002E0000188A6 /* Diary */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FC6C58A526613753000188A6 /* New note */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
+			);
+			path = "New note";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,8 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
 				FC6C56E0266000FB000188A6 /* ViewController.swift in Sources */,
 				FC6C57112660038C000188A6 /* DiaryTableView.swift in Sources */,
+				FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
