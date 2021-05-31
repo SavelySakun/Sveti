@@ -4,6 +4,7 @@
 
 ## User settings
 xcuserdata/
+*/.idea
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
@@ -24,3 +25,7 @@ DerivedData/
 
 ## Gcc Patch
 /*.gcno
+/.idea/modules.xml
+/.idea/MoodTracker.iml
+/.idea/vcs.xml
+/.idea/workspace.xml
