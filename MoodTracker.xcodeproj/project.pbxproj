@@ -34,6 +34,10 @@
 		FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58BF2663D640000188A6 /* HashtagCell.swift */; };
 		FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */; };
 		FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58E426653526000188A6 /* NewNoteVM.swift */; };
+		FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58EA26653AF6000188A6 /* CellVM.swift */; };
+		FC6C58EE26653B57000188A6 /* MoodCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58ED26653B57000188A6 /* MoodCellVM.swift */; };
+		FC6C58F026653C64000188A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58EF26653C64000188A6 /* TableViewCell.swift */; };
+		FC6C58F226653C8A000188A6 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58F126653C8A000188A6 /* CellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		FC6C58BF2663D640000188A6 /* HashtagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCell.swift; sourceTree = "<group>"; };
 		FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		FC6C58E426653526000188A6 /* NewNoteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVM.swift; sourceTree = "<group>"; };
+		FC6C58EA26653AF6000188A6 /* CellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVM.swift; sourceTree = "<group>"; };
+		FC6C58ED26653B57000188A6 /* MoodCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCellVM.swift; sourceTree = "<group>"; };
+		FC6C58EF26653C64000188A6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FC6C58F126653C8A000188A6 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		FE567E62EC97C22098BE6314 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,7 @@
 		FC6C56DA266000FB000188A6 /* MoodTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FC6C58E926653AE1000188A6 /* Logic */,
 				FC6C58B72663D1CD000188A6 /* Utils */,
 				FC6C58A426613746000188A6 /* Screens */,
 				FC6C58A1266136B5000188A6 /* Extensions */,
@@ -246,6 +255,7 @@
 		FC6C58B226614B4D000188A6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FC6C58EC26653B3B000188A6 /* CellVMs */,
 				FC6C58B026613D53000188A6 /* MoodCell.swift */,
 				FC6C58B326614B65000188A6 /* CommentCell.swift */,
 				FC6C58BF2663D640000188A6 /* HashtagCell.swift */,
@@ -269,6 +279,24 @@
 				FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */,
 			);
 			path = HashtagCollectionView;
+			sourceTree = "<group>";
+		};
+		FC6C58E926653AE1000188A6 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
+				FC6C58EF26653C64000188A6 /* TableViewCell.swift */,
+				FC6C58F126653C8A000188A6 /* CellData.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		FC6C58EC26653B3B000188A6 /* CellVMs */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C58ED26653B57000188A6 /* MoodCellVM.swift */,
+			);
+			path = CellVMs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
+				FC6C58EE26653B57000188A6 /* MoodCellVM.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC6C58B126613D53000188A6 /* MoodCell.swift in Sources */,
 				FC6C56E0266000FB000188A6 /* ViewController.swift in Sources */,
@@ -490,13 +519,16 @@
 				FC6C57112660038C000188A6 /* DiaryTableView.swift in Sources */,
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,
 				FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */,
+				FC6C58F026653C64000188A6 /* TableViewCell.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */,
 				FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
 				FC6C570D26600300000188A6 /* DiaryCell.swift in Sources */,
+				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
+				FC6C58F226653C8A000188A6 /* CellData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

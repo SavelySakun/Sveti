@@ -41,7 +41,13 @@ extension NewNoteTableView: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return items[indexPath.section].cells[indexPath.row]
+		return getConfiguredCell(indexPath)
+	}
+
+	internal func getConfiguredCell(_ indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = items[indexPath.section].cells[indexPath.row] as? TableViewCell else { return .init() }
+		cell.configureWithData(at: indexPath.row)
+		return cell
 	}
 	
 }

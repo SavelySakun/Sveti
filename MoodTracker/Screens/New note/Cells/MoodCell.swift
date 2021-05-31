@@ -1,9 +1,12 @@
 import UIKit
 import SnapKit
 
-class MoodCell: UITableViewCell {
+class MoodCell: TableViewCell {
 
 	static let reuseId = "MoodCell"
+
+	let viewModel: CellVM = MoodCellVM()
+
 	lazy var infoLabel = getInfoLabel()
 	lazy var moodSlider = getSlider()
 
@@ -12,13 +15,18 @@ class MoodCell: UITableViewCell {
 		setLayout()
 	}
 
-
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	override func configureWithData(at index: Int) {
+		guard let data = viewModel.data as? [String] else { return }
+		let text = data[index]
+		infoLabel.text = text
+	}
+
 	func setContent() {
-		infoLabel.text = "Укажи настроение"
+
 	}
 
 	fileprivate func setLayout() {

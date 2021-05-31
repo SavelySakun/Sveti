@@ -1,8 +1,9 @@
 import UIKit
 
-class HashtagCell: UITableViewCell {
+class HashtagCell: TableViewCell {
 
 	static let reuseId = "HashtagCell"
+	let viewModel: CellVM = MoodCellVM()
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)

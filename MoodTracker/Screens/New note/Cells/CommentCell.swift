@@ -1,9 +1,10 @@
 import UIKit
 
-class CommentCell: UITableViewCell {
+class CommentCell: TableViewCell {
 
 	static let reuseId = "CommentCell"
 	lazy var commentTextField = getTextField()
+	let viewModel: CellVM = MoodCellVM()
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
