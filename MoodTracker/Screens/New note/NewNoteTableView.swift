@@ -12,11 +12,13 @@ class NewNoteTableView: UITableView {
 	}
 
 	private func setLayout() {
-		configureDelegates()
+		configureTable()
 	}
 
-	private func configureDelegates() {
+	private func configureTable() {
+		register(CommentCell.self, forCellReuseIdentifier: CommentCell.reuseId)
 		register(MoodCell.self, forCellReuseIdentifier: MoodCell.reuseId)
+		register(HashtagCell.self, forCellReuseIdentifier: HashtagCell.reuseId)
 		dataSource = self
 		delegate = self
 	}
@@ -24,7 +26,7 @@ class NewNoteTableView: UITableView {
 
 extension NewNoteTableView: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		1
+		3
 	}
 
 	override func numberOfRows(inSection section: Int) -> Int {
@@ -32,8 +34,17 @@ extension NewNoteTableView: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = dequeueReusableCell(withIdentifier: MoodCell.reuseId, for: indexPath) as? MoodCell else { return .init() }
-		cell.setContent()
-		return cell
+		if indexPath.row == 0 {
+			guard let cell = dequeueReusableCell(withIdentifier: MoodCell.reuseId, for: indexPath) as? MoodCell else { return .init() }
+			cell.setContent()
+			return cell
+		} else if indexPath.row == 1 {
+			guard let cell = dequeueReusableCell(withIdentifier: CommentCell.reuseId, for: indexPath) as? CommentCell else { return .init() }
+			return cell
+		} else if indexPath.row == 2 {
+			guard let cell = dequeueReusableCell(withIdentifier: HashtagCell.reuseId, for: indexPath) as? HashtagCell else { return .init() }
+			return cell
+		}
+		return .init()
 	}
 }

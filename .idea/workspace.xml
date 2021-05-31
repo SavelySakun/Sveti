@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c18c857-7bf6-44ae-8d4d-0f7cdc0811e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/MoodCell.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteTableView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/RootNavigationController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/Cells/CommentCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/Cells/HashtagCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/Cells/HashtagCollectionCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/HashtagCollectionView/CollectionHeaderView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/HashtagCollectionView/HashtagCollectionView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MoodTracker/Utils/UIUtils.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MoodTracker.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoodTracker/SceneDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker/SceneDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteVC.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodTracker.xcodeproj/xcuserdata/savelysakun.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker.xcodeproj/xcuserdata/savelysakun.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodTracker/Screens/New note/MoodCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/Cells/MoodCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteTableView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MoodTracker/Screens/New note/NewNoteTableView.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +50,16 @@
       <option name="presentableId" value="Default" />
       <updated>1622133138252</updated>
       <workItem from="1622133139360" duration="467000" />
+      <workItem from="1622282817529" duration="164000" />
     </task>
+    <task id="LOCAL-00001" summary="49955 - Add mood diary cell">
+      <created>1622217579530</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622217579530</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -75,5 +88,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="49955 - Add mood diary cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="49955 - Add mood diary cell" />
   </component>
 </project>
