@@ -2,7 +2,8 @@ import UIKit
 
 class NewNoteVC: UIViewController {
 
-	let tableView = NewNoteTableView(frame: .zero, style: .insetGrouped)
+	let screenVM = NewNoteVM()
+	lazy var tableView = NewNoteTableView(items: screenVM.tableItems)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

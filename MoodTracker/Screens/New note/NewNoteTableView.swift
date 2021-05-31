@@ -2,8 +2,11 @@ import UIKit
 
 class NewNoteTableView: UITableView {
 
-	override init(frame: CGRect, style: UITableView.Style) {
-		super.init(frame: frame, style: style)
+	let items: [TableSection]
+
+	init(items: [TableSection]) {
+		self.items = items
+		super.init(frame: .zero, style: .insetGrouped)
 		setLayout()
 	}
 
@@ -26,25 +29,19 @@ class NewNoteTableView: UITableView {
 
 extension NewNoteTableView: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		3
+		items[section].cells.count
 	}
 
-	override func numberOfRows(inSection section: Int) -> Int {
-		10
+	func numberOfSections(in tableView: UITableView) -> Int {
+		items.count
+	}
+
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		items[section].title
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		if indexPath.row == 0 {
-			guard let cell = dequeueReusableCell(withIdentifier: MoodCell.reuseId, for: indexPath) as? MoodCell else { return .init() }
-			cell.setContent()
-			return cell
-		} else if indexPath.row == 1 {
-			guard let cell = dequeueReusableCell(withIdentifier: CommentCell.reuseId, for: indexPath) as? CommentCell else { return .init() }
-			return cell
-		} else if indexPath.row == 2 {
-			guard let cell = dequeueReusableCell(withIdentifier: HashtagCell.reuseId, for: indexPath) as? HashtagCell else { return .init() }
-			return cell
-		}
-		return .init()
+		return items[indexPath.section].cells[indexPath.row]
 	}
+	
 }

@@ -33,6 +33,7 @@
 		FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58BB2663D3B3000188A6 /* HashtagCollectionView.swift */; };
 		FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58BF2663D640000188A6 /* HashtagCell.swift */; };
 		FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */; };
+		FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58E426653526000188A6 /* NewNoteVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		FC6C58BB2663D3B3000188A6 /* HashtagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCollectionView.swift; sourceTree = "<group>"; };
 		FC6C58BF2663D640000188A6 /* HashtagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCell.swift; sourceTree = "<group>"; };
 		FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		FC6C58E426653526000188A6 /* NewNoteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVM.swift; sourceTree = "<group>"; };
 		FE567E62EC97C22098BE6314 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +238,7 @@
 				FC6C58B226614B4D000188A6 /* Cells */,
 				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
 				FC6C58AB26613C32000188A6 /* NewNoteTableView.swift */,
+				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
 			);
 			path = "New note";
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
+				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC6C58B126613D53000188A6 /* MoodCell.swift in Sources */,
 				FC6C56E0266000FB000188A6 /* ViewController.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
