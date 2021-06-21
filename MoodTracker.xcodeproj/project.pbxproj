@@ -38,6 +38,7 @@
 		FC6C58EE26653B57000188A6 /* MoodCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58ED26653B57000188A6 /* MoodCellVM.swift */; };
 		FC6C58F026653C64000188A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58EF26653C64000188A6 /* TableViewCell.swift */; };
 		FC6C58F226653C8A000188A6 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58F126653C8A000188A6 /* CellData.swift */; };
+		FC76B38A2680E26500AF209F /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B3892680E26500AF209F /* UIFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		FC6C58ED26653B57000188A6 /* MoodCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCellVM.swift; sourceTree = "<group>"; };
 		FC6C58EF26653C64000188A6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FC6C58F126653C8A000188A6 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
+		FC76B3892680E26500AF209F /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
 		FE567E62EC97C22098BE6314 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				FC6C58B82663D1DB000188A6 /* UIUtils.swift */,
+				FC76B3892680E26500AF209F /* UIFactory.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */,
+				FC76B38A2680E26500AF209F /* UIFactory.swift in Sources */,
 				FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
 				FC6C570D26600300000188A6 /* DiaryCell.swift in Sources */,

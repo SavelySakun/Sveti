@@ -14,12 +14,26 @@ class HashtagCollectionCell: UICollectionViewCell {
 	}
 
 	fileprivate func setLayout() {
-		let label = UILabel()
-		label.text = "#РАБота"
+    let tagContainer = UIView()
+    tagContainer.backgroundColor = .systemGray5
+    tagContainer.layer.cornerRadius = 9
 
-		contentView.addSubview(label)
+    let label = UILabel()
+    label.text = "Работа"
+
+    tagContainer.addSubview(label)
+		contentView.addSubview(tagContainer)
+
+    tagContainer.snp.makeConstraints { (make) in
+      make.top.equalToSuperview()
+      make.left.equalToSuperview()
+      make.bottom.right.equalToSuperview()
+    }
+
+    let offset = 8
 		label.snp.makeConstraints { (make) in
-			make.top.left.right.bottom.equalToSuperview()
+      make.top.left.equalToSuperview().offset(offset)
+      make.right.bottom.equalToSuperview().offset(-offset)
 		}
 	}
 
