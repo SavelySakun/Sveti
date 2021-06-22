@@ -2,18 +2,21 @@ import UIKit
 
 class NewNoteVC: UIViewController {
 
-	let screenVM = NewNoteVM()
-	lazy var tableView = NewNoteTableView(items: screenVM.tableItems)
+	let viewModel = ViewControllerVM(tableDataProvider: NewNoteTableDataProvider())
+
+  lazy var tableView = TableView(sections: (viewModel.tableDataProvider?.sections)!)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setLayout()
+
 	}
 
 	private func setLayout() {
 		view.backgroundColor = .yellow
 		addTitle()
 		addTableView()
+
 	}
 
 	private func addTitle() {

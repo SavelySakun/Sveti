@@ -1,10 +1,8 @@
 import UIKit
 
-class CommentCell: TableViewCell {
-
-	static let reuseId = "CommentCell"
+class CommentCell: Cell {
+  
   lazy var commentTextField = UIFactory.getTextField(with: "Введи комментарий")
-	let viewModel: CellVM = MoodCellVM()
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)

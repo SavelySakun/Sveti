@@ -1,17 +1,14 @@
 import UIKit
 import SnapKit
 
-class MoodCell: TableViewCell {
-
-	static let reuseId = "MoodCell"
-
-	let viewModel: CellVM = MoodCellVM()
-
-	lazy var infoLabel = getInfoLabel()
-	lazy var moodSlider = getSlider()
+class CellWithSlider: Cell {
+  
+	lazy var titleLabel = getInfoLabel()
+	lazy var slider = getSlider()
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
+
 		setLayout()
 	}
 
@@ -19,31 +16,20 @@ class MoodCell: TableViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	override func configureWithData(at index: Int) {
-		guard let data = viewModel.data as? [String] else { return }
-		let text = data[index]
-		infoLabel.text = text
-	}
-
-	func setContent() {
-
-	}
-
 	fileprivate func setLayout() {
 		let stackView = getStackView()
 		contentView.addSubview(stackView)
 		let topBottomOffset = 18
-		let leftRightOffset = 32
 		stackView.snp.makeConstraints { (make) in
 			make.top.equalToSuperview().offset(topBottomOffset)
 			make.bottom.equalToSuperview().offset(-topBottomOffset)
-			make.right.equalToSuperview().offset(-leftRightOffset)
-			make.left.equalToSuperview().offset(leftRightOffset)
+			make.right.equalToSuperview().offset(-topBottomOffset)
+			make.left.equalToSuperview().offset(topBottomOffset)
 		}
 	}
 
 	fileprivate func getStackView() -> UIStackView {
-		let stackView = UIStackView(arrangedSubviews: [infoLabel, moodSlider])
+		let stackView = UIStackView(arrangedSubviews: [titleLabel, slider])
 		stackView.axis = .vertical
 		stackView.spacing = 8
 		return stackView
@@ -58,13 +44,13 @@ class MoodCell: TableViewCell {
 	fileprivate func getSlider() -> UIStackView {
 		let slider = UISlider()
 		slider.minimumValue = 0
-		slider.maximumValue = 100
-		slider.value = 50.0
+		slider.maximumValue = 10
+		slider.value = 5.0
 
 		let minimumLabel = UILabel()
 		minimumLabel.text = "0"
 		let maximumLabel = UILabel()
-		maximumLabel.text = "100"
+		maximumLabel.text = "10"
 
 		let sliderStackView = UIStackView(arrangedSubviews: [minimumLabel, slider, maximumLabel])
 		sliderStackView.axis = .horizontal
@@ -72,5 +58,9 @@ class MoodCell: TableViewCell {
 
 		return sliderStackView
 	}
+
+  override func configureSelf(with viewModel: CellVM) {
+    titleLabel.text = viewModel.title
+  }
 
 }

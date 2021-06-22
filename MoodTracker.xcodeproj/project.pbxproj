@@ -12,21 +12,16 @@
 		F9B2CEA7664894B32BA20256 /* Pods_MoodTracker_MoodTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA9938DDD0EBA7BFD0D2EB6 /* Pods_MoodTracker_MoodTrackerUITests.framework */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
-		FC6C56E0266000FB000188A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DF266000FB000188A6 /* ViewController.swift */; };
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
 		FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E4266000FD000188A6 /* Assets.xcassets */; };
 		FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */; };
 		FC6C56F3266000FD000188A6 /* MoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56F2266000FD000188A6 /* MoodTrackerTests.swift */; };
 		FC6C56FE266000FD000188A6 /* MoodTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56FD266000FD000188A6 /* MoodTrackerUITests.swift */; };
-		FC6C570D26600300000188A6 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C570C26600300000188A6 /* DiaryCell.swift */; };
-		FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C570E2660034E000188A6 /* DiaryVC.swift */; };
-		FC6C57112660038C000188A6 /* DiaryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C57102660038C000188A6 /* DiaryTableView.swift */; };
 		FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */; };
 		FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A62661377A000188A6 /* NewNoteVC.swift */; };
-		FC6C58AA26613B94000188A6 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A926613B94000188A6 /* RootNavigationController.swift */; };
-		FC6C58AC26613C32000188A6 /* NewNoteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58AB26613C32000188A6 /* NewNoteTableView.swift */; };
+		FC6C58AC26613C32000188A6 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58AB26613C32000188A6 /* TableView.swift */; };
 		FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FC6C58AE26613D0C000188A6 /* SnapKit */; };
-		FC6C58B126613D53000188A6 /* MoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B026613D53000188A6 /* MoodCell.swift */; };
+		FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B026613D53000188A6 /* CellWithSlider.swift */; };
 		FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B326614B65000188A6 /* CommentCell.swift */; };
 		FC6C58B62663CFB9000188A6 /* HashtagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B52663CFB9000188A6 /* HashtagCollectionCell.swift */; };
 		FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B82663D1DB000188A6 /* UIUtils.swift */; };
@@ -35,10 +30,14 @@
 		FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */; };
 		FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58E426653526000188A6 /* NewNoteVM.swift */; };
 		FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58EA26653AF6000188A6 /* CellVM.swift */; };
-		FC6C58EE26653B57000188A6 /* MoodCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58ED26653B57000188A6 /* MoodCellVM.swift */; };
-		FC6C58F026653C64000188A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58EF26653C64000188A6 /* TableViewCell.swift */; };
-		FC6C58F226653C8A000188A6 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58F126653C8A000188A6 /* CellData.swift */; };
 		FC76B38A2680E26500AF209F /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B3892680E26500AF209F /* UIFactory.swift */; };
+		FC76B39326810F7700AF209F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B39226810F7700AF209F /* Cell.swift */; };
+		FCD9AB48268A319000817746 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB47268A319000817746 /* Observable.swift */; };
+		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
+		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
+		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
+		FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */; };
+		FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,6 @@
 		FC6C56D8266000FB000188A6 /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC6C56DF266000FB000188A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FC6C56E2266000FB000188A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC6C56E4266000FD000188A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6C56E7266000FD000188A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,26 +79,26 @@
 		FC6C56F9266000FD000188A6 /* MoodTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56FD266000FD000188A6 /* MoodTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerUITests.swift; sourceTree = "<group>"; };
 		FC6C56FF266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC6C570C26600300000188A6 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
-		FC6C570E2660034E000188A6 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
-		FC6C57102660038C000188A6 /* DiaryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableView.swift; sourceTree = "<group>"; };
 		FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
 		FC6C58A62661377A000188A6 /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
-		FC6C58A926613B94000188A6 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
-		FC6C58AB26613C32000188A6 /* NewNoteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteTableView.swift; sourceTree = "<group>"; };
-		FC6C58B026613D53000188A6 /* MoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCell.swift; sourceTree = "<group>"; };
+		FC6C58AB26613C32000188A6 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		FC6C58B026613D53000188A6 /* CellWithSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithSlider.swift; sourceTree = "<group>"; };
 		FC6C58B326614B65000188A6 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
-		FC6C58B52663CFB9000188A6 /* HashtagCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HashtagCollectionCell.swift; path = ../Cells/HashtagCollectionCell.swift; sourceTree = "<group>"; };
+		FC6C58B52663CFB9000188A6 /* HashtagCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCollectionCell.swift; sourceTree = "<group>"; };
 		FC6C58B82663D1DB000188A6 /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		FC6C58BB2663D3B3000188A6 /* HashtagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCollectionView.swift; sourceTree = "<group>"; };
 		FC6C58BF2663D640000188A6 /* HashtagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCell.swift; sourceTree = "<group>"; };
 		FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		FC6C58E426653526000188A6 /* NewNoteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVM.swift; sourceTree = "<group>"; };
 		FC6C58EA26653AF6000188A6 /* CellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVM.swift; sourceTree = "<group>"; };
-		FC6C58ED26653B57000188A6 /* MoodCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCellVM.swift; sourceTree = "<group>"; };
-		FC6C58EF26653C64000188A6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		FC6C58F126653C8A000188A6 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		FC76B3892680E26500AF209F /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
+		FC76B39226810F7700AF209F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		FCD9AB47268A319000817746 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
+		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
+		FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteTableDataProvider.swift; sourceTree = "<group>"; };
+		FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
 		FE567E62EC97C22098BE6314 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,13 +179,11 @@
 		FC6C56DA266000FB000188A6 /* MoodTracker */ = {
 			isa = PBXGroup;
 			children = (
-				FC6C58E926653AE1000188A6 /* Logic */,
+				FCD9AB46268A311400817746 /* CurrentlyWorking */,
 				FC6C58B72663D1CD000188A6 /* Utils */,
-				FC6C58A426613746000188A6 /* Screens */,
 				FC6C58A1266136B5000188A6 /* Extensions */,
 				FC6C56DB266000FB000188A6 /* AppDelegate.swift */,
 				FC6C56DD266000FB000188A6 /* SceneDelegate.swift */,
-				FC6C56DF266000FB000188A6 /* ViewController.swift */,
 				FC6C56E1266000FB000188A6 /* Main.storyboard */,
 				FC6C56E4266000FD000188A6 /* Assets.xcassets */,
 				FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */,
@@ -214,55 +210,12 @@
 			path = MoodTrackerUITests;
 			sourceTree = "<group>";
 		};
-		FC6C570B266002E0000188A6 /* Diary */ = {
-			isa = PBXGroup;
-			children = (
-				FC6C570C26600300000188A6 /* DiaryCell.swift */,
-				FC6C570E2660034E000188A6 /* DiaryVC.swift */,
-				FC6C57102660038C000188A6 /* DiaryTableView.swift */,
-			);
-			path = Diary;
-			sourceTree = "<group>";
-		};
 		FC6C58A1266136B5000188A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FC6C58A426613746000188A6 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				FC6C58A526613753000188A6 /* New note */,
-				FC6C570B266002E0000188A6 /* Diary */,
-				FC6C58A926613B94000188A6 /* RootNavigationController.swift */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		FC6C58A526613753000188A6 /* New note */ = {
-			isa = PBXGroup;
-			children = (
-				FC6C58BA2663D379000188A6 /* HashtagCollectionView */,
-				FC6C58B226614B4D000188A6 /* Cells */,
-				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
-				FC6C58AB26613C32000188A6 /* NewNoteTableView.swift */,
-				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
-			);
-			path = "New note";
-			sourceTree = "<group>";
-		};
-		FC6C58B226614B4D000188A6 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FC6C58EC26653B3B000188A6 /* CellVMs */,
-				FC6C58B026613D53000188A6 /* MoodCell.swift */,
-				FC6C58B326614B65000188A6 /* CommentCell.swift */,
-				FC6C58BF2663D640000188A6 /* HashtagCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		FC6C58B72663D1CD000188A6 /* Utils */ = {
@@ -274,32 +227,44 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		FC6C58BA2663D379000188A6 /* HashtagCollectionView */ = {
+		FCD9AB46268A311400817746 /* CurrentlyWorking */ = {
 			isa = PBXGroup;
 			children = (
+				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
+				FCD9AB51268A348B00817746 /* Observable */,
+				FCD9AB4E268A335100817746 /* TableData */,
+				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
+				FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */,
+				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
+				FC6C58AB26613C32000188A6 /* TableView.swift */,
+				FC6C58B326614B65000188A6 /* CommentCell.swift */,
+				FC6C58B026613D53000188A6 /* CellWithSlider.swift */,
+				FC6C58BF2663D640000188A6 /* HashtagCell.swift */,
+				FC76B39226810F7700AF209F /* Cell.swift */,
+				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
 				FC6C58BB2663D3B3000188A6 /* HashtagCollectionView.swift */,
 				FC6C58B52663CFB9000188A6 /* HashtagCollectionCell.swift */,
 				FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */,
 			);
-			path = HashtagCollectionView;
+			path = CurrentlyWorking;
 			sourceTree = "<group>";
 		};
-		FC6C58E926653AE1000188A6 /* Logic */ = {
+		FCD9AB4E268A335100817746 /* TableData */ = {
 			isa = PBXGroup;
 			children = (
-				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
-				FC6C58EF26653C64000188A6 /* TableViewCell.swift */,
-				FC6C58F126653C8A000188A6 /* CellData.swift */,
+				FCD9AB4A268A321200817746 /* TableDataProvider.swift */,
+				FCD9AB4C268A333900817746 /* TableSection.swift */,
+				FCD9AB4F268A336C00817746 /* CellData.swift */,
 			);
-			path = Logic;
+			path = TableData;
 			sourceTree = "<group>";
 		};
-		FC6C58EC26653B3B000188A6 /* CellVMs */ = {
+		FCD9AB51268A348B00817746 /* Observable */ = {
 			isa = PBXGroup;
 			children = (
-				FC6C58ED26653B57000188A6 /* MoodCellVM.swift */,
+				FCD9AB47268A319000817746 /* Observable.swift */,
 			);
-			path = CellVMs;
+			path = Observable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,28 +476,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
-				FC6C58EE26653B57000188A6 /* MoodCellVM.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
-				FC6C58B126613D53000188A6 /* MoodCell.swift in Sources */,
-				FC6C56E0266000FB000188A6 /* ViewController.swift in Sources */,
+				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
+				FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */,
+				FC76B39326810F7700AF209F /* Cell.swift in Sources */,
+				FCD9AB48268A319000817746 /* Observable.swift in Sources */,
+				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
-				FC6C58AC26613C32000188A6 /* NewNoteTableView.swift in Sources */,
+				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
+				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
 				FC6C58B62663CFB9000188A6 /* HashtagCollectionCell.swift in Sources */,
-				FC6C58AA26613B94000188A6 /* RootNavigationController.swift in Sources */,
-				FC6C57112660038C000188A6 /* DiaryTableView.swift in Sources */,
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,
 				FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */,
-				FC6C58F026653C64000188A6 /* TableViewCell.swift in Sources */,
+				FCD9AB50268A336C00817746 /* CellData.swift in Sources */,
+				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
-				FC6C570F2660034E000188A6 /* DiaryVC.swift in Sources */,
 				FC76B38A2680E26500AF209F /* UIFactory.swift in Sources */,
 				FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
-				FC6C570D26600300000188A6 /* DiaryCell.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
-				FC6C58F226653C8A000188A6 /* CellData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
