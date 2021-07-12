@@ -4,7 +4,8 @@ import SnapKit
 class CellWithSlider: Cell {
   
 	lazy var titleLabel = getInfoLabel()
-	lazy var slider = getSlider()
+  let slider = UISlider()
+	lazy var sliderStackView = getSliderStackView()
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,7 +30,7 @@ class CellWithSlider: Cell {
 	}
 
 	fileprivate func getStackView() -> UIStackView {
-		let stackView = UIStackView(arrangedSubviews: [titleLabel, slider])
+		let stackView = UIStackView(arrangedSubviews: [titleLabel, sliderStackView])
 		stackView.axis = .vertical
 		stackView.spacing = 8
 		return stackView
@@ -41,11 +42,12 @@ class CellWithSlider: Cell {
 		return label
 	}
 
-	fileprivate func getSlider() -> UIStackView {
-		let slider = UISlider()
+	fileprivate func getSliderStackView() -> UIStackView {
 		slider.minimumValue = 0
 		slider.maximumValue = 10
 		slider.value = 5.0
+
+    slider.addTarget(self, action: #selector(onValueChange), for: .touchUpInside)
 
 		let minimumLabel = UILabel()
 		minimumLabel.text = "0"
@@ -61,6 +63,10 @@ class CellWithSlider: Cell {
 
   override func configureSelf(with viewModel: CellVM) {
     titleLabel.text = viewModel.title
+  }
+
+  @objc func onValueChange() {
+    print("sd - Slider value changed")
   }
 
 }
