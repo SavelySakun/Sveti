@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 class CommentCell: Cell {
   
@@ -13,7 +14,7 @@ class CommentCell: Cell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	fileprivate func setLayout() {
+	private func setLayout() {
 		contentView.addSubview(commentTextField)
 		commentTextField.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(UIUtils.defaultOffset)
@@ -22,5 +23,10 @@ class CommentCell: Cell {
       make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
 		}
 	}
+
+  private func setTextField() {
+    //let textFieldPublisher = NotificationCenter.default.publisher(for: \tex.text, object: commentTextField)
+  }
+
 
 }

@@ -2,9 +2,9 @@ import UIKit
 
 class NewNoteVC: UIViewController {
 
-	let viewModel = ViewControllerVM(tableDataProvider: NewNoteTableDataProvider())
+	let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
 
-  lazy var tableView = TableView(sections: (viewModel.tableDataProvider?.sections)!)
+  lazy var tableView = TableView(sections: (viewModel.tableDataProvider?.sections)!, viewModel: viewModel)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

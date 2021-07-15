@@ -10,6 +10,10 @@
 		6206B33C0966D8C6F4BD67D0 /* Pods_MoodTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BC917164053E2B9669134F /* Pods_MoodTrackerTests.framework */; };
 		C4613007E58B533086856E44 /* Pods_MoodTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84C96CB88D4B5EC3098C21E /* Pods_MoodTracker.framework */; };
 		F9B2CEA7664894B32BA20256 /* Pods_MoodTracker_MoodTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA9938DDD0EBA7BFD0D2EB6 /* Pods_MoodTracker_MoodTrackerUITests.framework */; };
+		FC3A898826A054BF0048E4ED /* EditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* EditType.swift */; };
+		FC3A898C26A0584D0048E4ED /* MoodSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* MoodSliderCell.swift */; };
+		FC3A898E26A058D90048E4ED /* PhysSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898D26A058D90048E4ED /* PhysSliderCell.swift */; };
+		FC3A899126A05B330048E4ED /* ViewWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* ViewWithTextField.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
@@ -66,6 +70,10 @@
 		CA6C5EB3BF013189738B8CD1 /* Pods-MoodTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.release.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.release.xcconfig"; sourceTree = "<group>"; };
 		E84C96CB88D4B5EC3098C21E /* Pods_MoodTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA9938DDD0EBA7BFD0D2EB6 /* Pods_MoodTracker_MoodTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodTracker_MoodTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC3A898726A054BF0048E4ED /* EditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditType.swift; sourceTree = "<group>"; };
+		FC3A898B26A0584D0048E4ED /* MoodSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSliderCell.swift; sourceTree = "<group>"; };
+		FC3A898D26A058D90048E4ED /* PhysSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysSliderCell.swift; sourceTree = "<group>"; };
+		FC3A899026A05B330048E4ED /* ViewWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithTextField.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +162,66 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FC3A898426A053F60048E4ED /* NewNote */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A898A26A0583B0048E4ED /* Cells */,
+				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
+				FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */,
+				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
+			);
+			path = NewNote;
+			sourceTree = "<group>";
+		};
+		FC3A898526A0541E0048E4ED /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A898926A057EC0048E4ED /* Cells */,
+				FC6C58AB26613C32000188A6 /* TableView.swift */,
+				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FC3A898626A054B20048E4ED /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A898726A054BF0048E4ED /* EditType.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		FC3A898926A057EC0048E4ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C58BF2663D640000188A6 /* HashtagCell.swift */,
+				FC6C58B326614B65000188A6 /* CommentCell.swift */,
+				FC76B39226810F7700AF209F /* Cell.swift */,
+				FC6C58B52663CFB9000188A6 /* HashtagCollectionCell.swift */,
+				FC6C58B026613D53000188A6 /* CellWithSlider.swift */,
+				FC6C58BB2663D3B3000188A6 /* HashtagCollectionView.swift */,
+				FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FC3A898A26A0583B0048E4ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A898B26A0584D0048E4ED /* MoodSliderCell.swift */,
+				FC3A898D26A058D90048E4ED /* PhysSliderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FC3A898F26A05B220048E4ED /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A899026A05B330048E4ED /* ViewWithTextField.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		FC6C56CF266000FB000188A6 = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				FCD9AB46268A311400817746 /* CurrentlyWorking */,
-				FC6C58B72663D1CD000188A6 /* Utils */,
 				FC6C58A1266136B5000188A6 /* Extensions */,
 				FC6C56DB266000FB000188A6 /* AppDelegate.swift */,
 				FC6C56DD266000FB000188A6 /* SceneDelegate.swift */,
@@ -230,21 +297,14 @@
 		FCD9AB46268A311400817746 /* CurrentlyWorking */ = {
 			isa = PBXGroup;
 			children = (
-				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
+				FC3A898F26A05B220048E4ED /* UI */,
+				FC6C58B72663D1CD000188A6 /* Utils */,
+				FC3A898626A054B20048E4ED /* Combine */,
+				FC3A898526A0541E0048E4ED /* Table */,
 				FCD9AB51268A348B00817746 /* Observable */,
 				FCD9AB4E268A335100817746 /* TableData */,
-				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
-				FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */,
-				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
-				FC6C58AB26613C32000188A6 /* TableView.swift */,
-				FC6C58B326614B65000188A6 /* CommentCell.swift */,
-				FC6C58B026613D53000188A6 /* CellWithSlider.swift */,
-				FC6C58BF2663D640000188A6 /* HashtagCell.swift */,
-				FC76B39226810F7700AF209F /* Cell.swift */,
-				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
-				FC6C58BB2663D3B3000188A6 /* HashtagCollectionView.swift */,
-				FC6C58B52663CFB9000188A6 /* HashtagCollectionCell.swift */,
-				FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */,
+				FC3A898426A053F60048E4ED /* NewNote */,
+				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
 			);
 			path = CurrentlyWorking;
 			sourceTree = "<group>";
@@ -484,6 +544,7 @@
 				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
+				FC3A898C26A0584D0048E4ED /* MoodSliderCell.swift in Sources */,
 				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
 				FC6C58B62663CFB9000188A6 /* HashtagCollectionCell.swift in Sources */,
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,
@@ -491,12 +552,15 @@
 				FCD9AB50268A336C00817746 /* CellData.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */,
+				FC3A898E26A058D90048E4ED /* PhysSliderCell.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC76B38A2680E26500AF209F /* UIFactory.swift in Sources */,
 				FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
+				FC3A899126A05B330048E4ED /* ViewWithTextField.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
+				FC3A898826A054BF0048E4ED /* EditType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

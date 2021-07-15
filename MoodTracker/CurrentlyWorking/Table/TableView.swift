@@ -1,10 +1,13 @@
 import UIKit
+import Combine
 
 class TableView: UITableView {
 
 	let sections: [TableSection]
+  let viewModel: ViewControllerVM
 
-  init(sections: [TableSection]) {
+  init(sections: [TableSection], viewModel: ViewControllerVM) {
+    self.viewModel = viewModel
 		self.sections = sections
 		super.init(frame: .zero, style: .insetGrouped)
 		setLayout()
@@ -59,6 +62,12 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
     guard let cell = dequeueReusableCell(withIdentifier: cellType.identifier, for: indexPath) as? Cell
     else { return UITableViewCell() }
     cell.viewModel = cellVM
+
+    let subscriber = cell.publisher.sink { event in
+      self.viewModel.handle(event)
+    }
+
+    viewModel.subs.append(subscriber)
 
     return cell
 	}

@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import Combine
 
 class CellWithSlider: Cell {
   
@@ -62,11 +63,12 @@ class CellWithSlider: Cell {
 	}
 
   override func configureSelf(with viewModel: CellVM) {
-    titleLabel.text = viewModel.title
+    titleLabel.text = "\(viewModel.title ?? ""): \(slider.value)"
   }
 
   @objc func onValueChange() {
-    print("sd - Slider value changed")
+    let formattedValue = String(format: "%.1f", slider.value)
+    titleLabel.text = "\(viewModel?.title ?? ""): \(formattedValue)"
   }
 
 }

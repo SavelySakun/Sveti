@@ -1,6 +1,9 @@
 import UIKit
+import Combine
 
 class Cell: UITableViewCell {
+
+  var publisher = PassthroughSubject<EditEvent, Never>()
 
   var viewModel: CellVM? {
     didSet {
