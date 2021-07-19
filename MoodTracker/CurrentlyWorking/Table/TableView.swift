@@ -63,7 +63,9 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
     else { return UITableViewCell() }
     cell.viewModel = cellVM
 
-    let subscriber = cell.publisher.sink { event in
+    let subscriber = cell.publisher
+      .debounce(for: .seconds(0.4), scheduler: RunLoop.main)
+      .sink { event in
       self.viewModel.handle(event)
     }
 
