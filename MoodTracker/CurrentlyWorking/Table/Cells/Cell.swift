@@ -16,6 +16,8 @@ class Cell: UITableViewCell {
     return NSStringFromClass(self)
   }
 
-  func configureSelf(with viewModel: CellVM) { }
+  func configureSelf(with viewModel: CellVM) {
+    selectionStyle = .none
+  }
 
 }

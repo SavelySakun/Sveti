@@ -3,11 +3,12 @@ import Combine
 
 class CommentCell: Cell {
   
-  lazy var commentTextField = UIFactory.getTextField(with: "Введи комментарий")
+  lazy var commentTextField = ViewWithTextField(placeholder: "Идеи, мысли, замечания...")
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setLayout()
+    commentTextField.textField.delegate = self
 	}
 
 	required init?(coder: NSCoder) {
@@ -24,9 +25,13 @@ class CommentCell: Cell {
 		}
 	}
 
-  private func setTextField() {
-    //let textFieldPublisher = NotificationCenter.default.publisher(for: \tex.text, object: commentTextField)
-  }
+}
 
+extension CommentCell: UITextViewDelegate {
+
+  func textViewDidChange(_ textView: UITextView) {
+    let event = EditEvent(type: .commentChange, value: textView.text as Any)
+    publisher.send(event)
+  }
 
 }

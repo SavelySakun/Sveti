@@ -14,15 +14,16 @@ class NewNoteVC: UIViewController {
 
 	private func setLayout() {
 		view.backgroundColor = .yellow
-		addTitle()
+		setNavigationBar()
 		addTableView()
 
 	}
 
-	private func addTitle() {
+	private func setNavigationBar() {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = "Новая запись"
-	}
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(saveNewNote))
+  }
 
 	private func addTableView() {
 		view.addSubview(tableView)
@@ -31,17 +32,21 @@ class NewNoteVC: UIViewController {
 		}
 	}
 
+  @objc private func saveNewNote() {
+    print(viewModel.note)
+  }
+
 }
 
-#if DEBUG
-import SwiftUI
-
-@available(iOS 13, *)
-struct InfoVCPreview: PreviewProvider {
-
-		static var previews: some View {
-				// view controller using programmatic UI
-				NewNoteVC().toPreview()
-		}
-}
-#endif
+//#if DEBUG
+//import SwiftUI
+//
+//@available(iOS 13, *)
+//struct InfoVCPreview: PreviewProvider {
+//
+//		static var previews: some View {
+//				// view controller using programmatic UI
+//				NewNoteVC().toPreview()
+//		}
+//}
+//#endif

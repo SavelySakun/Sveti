@@ -11,6 +11,10 @@ class NewNoteTableDataProvider: TableDataProvider {
         CellData(type: PhysSliderCell.self, viewModel: CellVM(title: "Физическое самочувствие")),
       ]),
 
+      TableSection(title: "Комментарий", cellsData: [
+        CellData(type: CommentCell.self, viewModel: CellVM(title: "Комментарий"))
+      ]),
+
     ]
 
     return tableSections

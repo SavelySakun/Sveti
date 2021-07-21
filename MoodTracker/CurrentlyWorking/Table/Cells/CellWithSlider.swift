@@ -62,6 +62,7 @@ class CellWithSlider: Cell {
 	}
 
   override func configureSelf(with viewModel: CellVM) {
+    super.configureSelf(with: viewModel)
     titleLabel.text = getTitle()
     updateSliderColor()
   }
