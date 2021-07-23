@@ -37,6 +37,7 @@
 		FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58EA26653AF6000188A6 /* CellVM.swift */; };
 		FC76B38A2680E26500AF209F /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B3892680E26500AF209F /* UIFactory.swift */; };
 		FC76B39326810F7700AF209F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76B39226810F7700AF209F /* Cell.swift */; };
+		FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */; };
 		FCD9AB48268A319000817746 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB47268A319000817746 /* Observable.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
@@ -103,6 +104,7 @@
 		FC6C58EA26653AF6000188A6 /* CellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVM.swift; sourceTree = "<group>"; };
 		FC76B3892680E26500AF209F /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
 		FC76B39226810F7700AF209F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRepository.swift; sourceTree = "<group>"; };
 		FCD9AB47268A319000817746 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
@@ -297,9 +299,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		FC7E6D1526AB039200126B97 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		FCD9AB46268A311400817746 /* CurrentlyWorking */ = {
 			isa = PBXGroup;
 			children = (
+				FC7E6D1526AB039200126B97 /* Repository */,
 				FC3A898F26A05B220048E4ED /* UI */,
 				FC6C58B72663D1CD000188A6 /* Utils */,
 				FC3A898626A054B20048E4ED /* Combine */,
@@ -555,6 +566,7 @@
 				FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */,
 				FCD9AB50268A336C00817746 /* CellData.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
+				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */,
 				FC3A898E26A058D90048E4ED /* PhysSliderCell.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,

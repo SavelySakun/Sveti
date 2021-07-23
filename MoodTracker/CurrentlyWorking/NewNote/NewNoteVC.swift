@@ -33,7 +33,8 @@ class NewNoteVC: UIViewController {
 	}
 
   @objc private func saveNewNote() {
-    print(viewModel.note)
+    viewModel.saveCurrentNote()
+    print("saved")
   }
 
 }

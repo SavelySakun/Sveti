@@ -17,7 +17,10 @@ class NewNoteVM: ViewControllerVM {
       print("изменился коммент")
       note.comment = event.value as! String
     }
+  }
 
+  func saveCurrentNote() {
+    NotesRepository.shared.notes.append(note)
   }
 
 }
