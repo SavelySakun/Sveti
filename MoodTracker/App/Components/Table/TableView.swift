@@ -18,6 +18,7 @@ class TableView: UITableView {
 	}
 
 	private func setLayout() {
+    backgroundColor = .white
     registerCells()
     setDefaultDelegates()
     configureTable()

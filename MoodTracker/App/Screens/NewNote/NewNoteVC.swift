@@ -17,7 +17,6 @@ class NewNoteVC: BaseViewController {
 	}
 
 	private func setLayout() {
-		view.backgroundColor = .yellow
 		setNavigationBar()
 		addTableView()
     configureSaveAlert()
