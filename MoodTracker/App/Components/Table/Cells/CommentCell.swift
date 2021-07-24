@@ -37,6 +37,7 @@ extension CommentCell: UITextViewDelegate {
   func textViewDidChange(_ textView: UITextView) {
     let event = EditEvent(type: .commentChange, value: textView.text as Any)
     publisher.send(event)
+    delegate?.onUpdate()
   }
 
 }

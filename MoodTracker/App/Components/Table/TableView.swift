@@ -62,6 +62,7 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
     guard let cell = dequeueReusableCell(withIdentifier: cellType.identifier, for: indexPath) as? Cell
     else { return UITableViewCell() }
     cell.viewModel = cellVM
+    cell.delegate = self
 
     let subscriber = cell.publisher
       .debounce(for: .seconds(0.4), scheduler: RunLoop.main)
@@ -74,4 +75,12 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
     return cell
 	}
 
+}
+
+extension TableView: CellDelegate {
+  func onUpdate() {
+    // Использую для автовысоты UITextView
+    self.beginUpdates()
+    self.endUpdates()
+  }
 }

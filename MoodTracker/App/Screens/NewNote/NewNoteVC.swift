@@ -20,7 +20,6 @@ class NewNoteVC: BaseViewController {
 		view.backgroundColor = .yellow
 		setNavigationBar()
 		addTableView()
-    setSaveButton()
     configureSaveAlert()
     configureClearAlert()
 	}
@@ -28,23 +27,12 @@ class NewNoteVC: BaseViewController {
 	private func setNavigationBar() {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = "Новая запись"
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Очистить", style: .plain, target: self, action: #selector(onClearTap))
-  }
 
-  private func setSaveButton() {
-    let saveButton = UIButton()
-    saveButton.setTitle("Сохранить", for: .normal)
-    saveButton.layer.cornerRadius = 12
-    saveButton.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.8039215686, blue: 0.7058823529, alpha: 1)
-    saveButton.addTarget(self, action: #selector(saveNewNote), for: .touchUpInside)
+    let leftButton = UIBarButtonItem(title: "Сбросить", style: .plain, target: self, action: #selector(onClear))
+    leftButton.tintColor = .orange
 
-    view.addSubview(saveButton)
-    saveButton.snp.makeConstraints { (make) in
-      make.centerX.equalTo(view.snp.centerX)
-      make.bottom.equalTo(view.snp.bottom).offset(-100)
-      make.width.equalTo(view.frame.width / 2.5)
-      make.height.equalTo(50)
-    }
+    navigationItem.leftBarButtonItem = leftButton
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(onSave))
   }
 
   private func configureSaveAlert() {
@@ -52,7 +40,10 @@ class NewNoteVC: BaseViewController {
       self.navigationController?.tabBarController?.selectedIndex = 0
       self.viewModel.saveCurrentNote()
       self.clearAllInput()
-      if let diaryVC = self.navigationController?.tabBarController?.viewControllers?[0].children.first as? DiaryVC {
+      if let diaryVC = self.navigationController?
+          .tabBarController?
+          .viewControllers?[0]
+          .children.first as? DiaryVC {
         diaryVC.updateData()
       }
       SPIndicator.present(title: "Готово", message: nil, preset: .done, from: .center, completion: nil)
@@ -67,7 +58,7 @@ class NewNoteVC: BaseViewController {
   private func configureClearAlert() {
     let okAction = UIAlertAction(title: "Очистить", style: .default) { _ in
       self.clearAllInput()
-      SPIndicator.present(title: "Очищено", message: nil, preset: .done, from: .center, completion: nil)
+      SPIndicator.present(title: "Сброшено", message: nil, preset: .done, from: .center, completion: nil)
     }
     let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
 
@@ -83,11 +74,11 @@ class NewNoteVC: BaseViewController {
 		}
 	}
 
-  @objc private func saveNewNote() {
+  @objc private func onSave() {
     present(saveAlert, animated: true, completion: nil)
   }
 
-  @objc private func onClearTap() {
+  @objc private func onClear() {
     present(clearAlert, animated: true, completion: nil)
   }
 
