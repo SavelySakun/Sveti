@@ -69,7 +69,7 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
       self.viewModel.handle(event)
     }
 
-    viewModel.subs.append(subscriber)
+    viewModel.subscribers.append(subscriber)
 
     return cell
 	}

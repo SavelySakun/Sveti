@@ -13,7 +13,7 @@
 		FC3A898826A054BF0048E4ED /* EditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* EditType.swift */; };
 		FC3A898C26A0584D0048E4ED /* MoodSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* MoodSliderCell.swift */; };
 		FC3A898E26A058D90048E4ED /* PhysSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898D26A058D90048E4ED /* PhysSliderCell.swift */; };
-		FC3A899126A05B330048E4ED /* ViewWithTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* ViewWithTextField.swift */; };
+		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
 		FC3A8A0F26A5DFF00048E4ED /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A8A0E26A5DFF00048E4ED /* NoteModel.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
@@ -43,6 +43,8 @@
 		FC7E6D2526ABFA6F00126B97 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2426ABFA6F00126B97 /* TabBarController.swift */; };
 		FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2726AC019C00126B97 /* Constants.swift */; };
 		FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2926AC037900126B97 /* UIImage.swift */; };
+		FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = FC7E6D5D26AC31A500126B97 /* SPIndicator */; };
+		FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D5F26AC349400126B97 /* BaseViewController.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -79,7 +81,7 @@
 		FC3A898726A054BF0048E4ED /* EditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditType.swift; sourceTree = "<group>"; };
 		FC3A898B26A0584D0048E4ED /* MoodSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSliderCell.swift; sourceTree = "<group>"; };
 		FC3A898D26A058D90048E4ED /* PhysSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysSliderCell.swift; sourceTree = "<group>"; };
-		FC3A899026A05B330048E4ED /* ViewWithTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithTextField.swift; sourceTree = "<group>"; };
+		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		FC3A8A0E26A5DFF00048E4ED /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		FC7E6D2426ABFA6F00126B97 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FC7E6D2726AC019C00126B97 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FC7E6D2926AC037900126B97 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		FC7E6D5F26AC349400126B97 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 			files = (
 				C4613007E58B533086856E44 /* Pods_MoodTracker.framework in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
+				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +327,8 @@
 			children = (
 				FC7E6D2126AB1FD000126B97 /* ViewElements */,
 				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
-				FC3A899026A05B330048E4ED /* ViewWithTextField.swift */,
+				FC7E6D5F26AC349400126B97 /* BaseViewController.swift */,
+				FC3A899026A05B330048E4ED /* TextView.swift */,
 				FC3A898526A0541E0048E4ED /* Table */,
 			);
 			path = Components;
@@ -388,6 +393,7 @@
 			name = MoodTracker;
 			packageProductDependencies = (
 				FC6C58AE26613D0C000188A6 /* SnapKit */,
+				FC7E6D5D26AC31A500126B97 /* SPIndicator */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* MoodTracker.app */;
@@ -464,6 +470,7 @@
 			mainGroup = FC6C56CF266000FB000188A6;
 			packageReferences = (
 				FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -579,6 +586,7 @@
 			files = (
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
+				FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
 				FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */,
 				FC7E6D1E26AB1A2600126B97 /* DiaryVC.swift in Sources */,
@@ -605,7 +613,7 @@
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
-				FC3A899126A05B330048E4ED /* ViewWithTextField.swift in Sources */,
+				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* EditType.swift in Sources */,
@@ -957,6 +965,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -964,6 +980,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FC7E6D5D26AC31A500126B97 /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

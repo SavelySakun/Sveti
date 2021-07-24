@@ -3,18 +3,22 @@ import Combine
 
 class CommentCell: Cell {
   
-  lazy var commentTextField = ViewWithTextField(placeholder: "Идеи, мысли, замечания...")
+  lazy var commentTextField = TextView(placeholder: "Идеи, мысли, замечания...")
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setLayout()
-    commentTextField.textField.delegate = self
-    commentTextField.textField.text = viewModel?.cellValue as? String
+    commentTextField.textView.delegate = self
 	}
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+
+  override func configureSelf(with viewModel: CellVM) {
+    super.configureSelf(with: viewModel)
+    commentTextField.textView.text = viewModel.cellValue as? String
+  }
 
 	private func setLayout() {
 		contentView.addSubview(commentTextField)

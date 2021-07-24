@@ -1,7 +1,8 @@
 import UIKit
 import SnapKit
+import SPIndicator
 
-class NewNoteVC: UIViewController {
+class NewNoteVC: BaseViewController {
 
 	let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
   let saveAlert = UIAlertController(title: "Внимание", message: "Сохранить новую запись?", preferredStyle: .alert)
@@ -41,8 +42,8 @@ class NewNoteVC: UIViewController {
     saveButton.snp.makeConstraints { (make) in
       make.centerX.equalTo(view.snp.centerX)
       make.bottom.equalTo(view.snp.bottom).offset(-100)
-      make.width.equalTo(view.frame.width / 3)
-      make.height.equalTo(40)
+      make.width.equalTo(view.frame.width / 2.5)
+      make.height.equalTo(50)
     }
   }
 
@@ -50,6 +51,7 @@ class NewNoteVC: UIViewController {
     let okAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
       self.navigationController?.tabBarController?.selectedIndex = 0
       self.clearAllInput()
+      SPIndicator.present(title: "Готово", message: nil, preset: .done, from: .center, completion: nil)
     }
     let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
 
@@ -61,6 +63,7 @@ class NewNoteVC: UIViewController {
   private func configureClearAlert() {
     let okAction = UIAlertAction(title: "Очистить", style: .default) { _ in
       self.clearAllInput()
+      SPIndicator.present(title: "Очищено", message: nil, preset: .done, from: .center, completion: nil)
     }
     let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
 

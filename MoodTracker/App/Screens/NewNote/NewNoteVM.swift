@@ -24,6 +24,7 @@ class NewNoteVM: ViewControllerVM {
   }
 
   func clearInput() {
+    subscribers.removeAll()
     note = NoteModel()
   }
 
