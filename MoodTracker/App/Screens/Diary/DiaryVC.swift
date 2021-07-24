@@ -11,6 +11,7 @@ class DiaryVC: UIViewController {
   }
 
   private func setLayout() {
+    title = "Дневник"
     setTable()
   }
 
