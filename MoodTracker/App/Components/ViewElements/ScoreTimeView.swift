@@ -14,6 +14,23 @@ class ScoreTimeView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func configure(with note: Note) {
+    timeLabel.text = getTime(from: note)
+    scoreLabel.text = getAverageMood(from: note)
+  }
+
+  private func getTime(from note: Note) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    let hoursMinutesTime = dateFormatter.string(from: note.date)
+    return "в \(hoursMinutesTime)"
+  }
+
+  private func getAverageMood(from note: Note) -> String {
+    let average = (note.phys + note.mood) / 2
+    return String(format: "%.1f", average)
+  }
+
   private func setLayout() {
     setLabelsStyle()
     setLabelsLayout()

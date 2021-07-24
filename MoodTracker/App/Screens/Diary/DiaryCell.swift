@@ -18,7 +18,11 @@ class DiaryCell: Cell {
 
   func configure(with note: Note) {
     commentLabel.text = note.comment
+    scoreTimeView.configure(with: note)
+    
   }
+
+  
 
   private func setLayout() {
     self.selectionStyle = .none
@@ -50,7 +54,6 @@ class DiaryCell: Cell {
   private func setComment() {
     commentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     commentLabel.numberOfLines = 3
-    commentLabel.text = "Таким образом постоянный количественный рост и сфера нашей активности обеспечивает. Таким образом постоянный количественный рост и сфера нашей активности обеспечивает."
 
     containerView.addSubview(commentLabel)
     commentLabel.snp.makeConstraints { (make) in
