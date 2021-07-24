@@ -50,6 +50,7 @@ class NewNoteVC: BaseViewController {
   private func configureSaveAlert() {
     let okAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
       self.navigationController?.tabBarController?.selectedIndex = 0
+      self.viewModel.saveCurrentNote()
       self.clearAllInput()
       SPIndicator.present(title: "Готово", message: nil, preset: .done, from: .center, completion: nil)
     }
@@ -81,7 +82,6 @@ class NewNoteVC: BaseViewController {
 
   @objc private func saveNewNote() {
     present(saveAlert, animated: true, completion: nil)
-    print("saved")
   }
 
   @objc private func onClearTap() {
