@@ -52,6 +52,7 @@
 		FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FC7E6D9126AC542F00126B97 /* RealmSwift */; };
 		FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9326AC57EC00126B97 /* Result.swift */; };
 		FC7E6D9726AC625800126B97 /* DiaryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9626AC625800126B97 /* DiaryVM.swift */; };
+		FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9826AC8A2E00126B97 /* DiaryTableSectionHeader.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -130,6 +131,7 @@
 		FC7E6D8B26AC4AB600126B97 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		FC7E6D9326AC57EC00126B97 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FC7E6D9626AC625800126B97 /* DiaryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVM.swift; sourceTree = "<group>"; };
+		FC7E6D9826AC8A2E00126B97 /* DiaryTableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableSectionHeader.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */,
 				FC7E6D1F26AB1F6400126B97 /* DiaryCell.swift */,
 				FC7E6D9626AC625800126B97 /* DiaryVM.swift */,
+				FC7E6D9826AC8A2E00126B97 /* DiaryTableSectionHeader.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				FC7E6D8C26AC4AB600126B97 /* Day.swift in Sources */,
 				FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
+				FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */,
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
 				FC3A898C26A0584D0048E4ED /* MoodSliderCell.swift in Sources */,

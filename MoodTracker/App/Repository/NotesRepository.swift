@@ -28,7 +28,7 @@ class NotesRepository {
   }
 
   func getNotes(range: TimeRange = .all) -> [Note] {
-    let notes = realm.objects(Note.self).toArray()
+    let notes = realm.objects(Note.self).sorted(byKeyPath: "id", ascending: false).toArray()
     return notes
   }
 

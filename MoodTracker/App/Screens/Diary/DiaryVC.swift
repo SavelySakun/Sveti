@@ -53,5 +53,9 @@ extension DiaryVC: UITableViewDataSource {
     return cell
   }
 
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    return DiaryTableSectionHeader()
+  }
+
 
 }
