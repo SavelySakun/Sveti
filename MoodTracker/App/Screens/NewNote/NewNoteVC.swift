@@ -52,6 +52,9 @@ class NewNoteVC: BaseViewController {
       self.navigationController?.tabBarController?.selectedIndex = 0
       self.viewModel.saveCurrentNote()
       self.clearAllInput()
+      if let diaryVC = self.navigationController?.tabBarController?.viewControllers?[0].children.first as? DiaryVC {
+        diaryVC.updateData()
+      }
       SPIndicator.present(title: "Готово", message: nil, preset: .done, from: .center, completion: nil)
     }
     let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)

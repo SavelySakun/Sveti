@@ -16,6 +16,9 @@ class DiaryCell: Cell {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func configure(with note: Note) {
+    commentLabel.text = note.comment
+  }
 
   private func setLayout() {
     self.selectionStyle = .none

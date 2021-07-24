@@ -3,11 +3,19 @@ import UIKit
 class DiaryVC: UIViewController {
 
   private let tableView = UITableView()
+  private let viewModel = DiaryVM()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     setLayout()
+  }
+
+  func updateData() {
+    DispatchQueue.main.async { [self] in
+      viewModel.loadNotes()
+      tableView.reloadData()
+    }
   }
 
   private func setLayout() {
@@ -35,12 +43,13 @@ extension DiaryVC: UITableViewDelegate {
 
 extension DiaryVC: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    5
+    viewModel.notes.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as? DiaryCell else { return UITableViewCell() }
-
+    let note = viewModel.notes[indexPath.row]
+    cell.configure(with: note)
     return cell
   }
 

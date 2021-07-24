@@ -14,10 +14,17 @@ class NotesRepository {
   let realm = try! Realm()
 
   func save(_ note: Note) {
+
+//    try! realm.write {
+//      realm.deleteAll()
+//    }
+//    return
+
+
     let noteToSave = getPreparedToSave(note)
-    realm.beginWrite()
-    realm.add(noteToSave)
-    try! realm.commitWrite()
+    try! realm.write {
+      realm.add(noteToSave)
+    }
   }
 
   func getNotes(range: TimeRange = .all) -> [Note] {
