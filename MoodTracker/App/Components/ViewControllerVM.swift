@@ -3,7 +3,7 @@ import Combine
 
 class ViewControllerVM {
 
-  var subs = [AnyCancellable]()
+  var subscribers = [AnyCancellable]()
   var tableDataProvider: TableDataProvider?
 
   init(tableDataProvider: TableDataProvider? = nil) {

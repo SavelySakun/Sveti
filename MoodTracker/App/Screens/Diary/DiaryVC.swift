@@ -12,6 +12,7 @@ class DiaryVC: UIViewController {
 
   private func setLayout() {
     title = "Дневник"
+    navigationController?.navigationBar.prefersLargeTitles = true
     setTable()
   }
 

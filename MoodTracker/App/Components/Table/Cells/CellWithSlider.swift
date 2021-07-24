@@ -45,8 +45,6 @@ class CellWithSlider: Cell {
 	fileprivate func getSliderStackView() -> UIStackView {
 		slider.minimumValue = 0
 		slider.maximumValue = 10
-		slider.value = 6.0
-
     slider.addTarget(self, action: #selector(onValueChange), for: .allEvents)
 
 		let minimumLabel = UILabel()
@@ -63,6 +61,7 @@ class CellWithSlider: Cell {
 
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
+    slider.value = viewModel.cellValue as? Float ?? 6.0
     titleLabel.text = getTitle()
     updateSliderColor()
   }
