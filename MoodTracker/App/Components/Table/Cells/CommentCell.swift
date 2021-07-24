@@ -9,6 +9,7 @@ class CommentCell: Cell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setLayout()
     commentTextField.textField.delegate = self
+    commentTextField.textField.text = viewModel?.cellValue as? String
 	}
 
 	required init?(coder: NSCoder) {

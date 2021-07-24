@@ -1,8 +1,11 @@
 import UIKit
+import SnapKit
 
 class NewNoteVC: UIViewController {
 
 	let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
+  let saveAlert = UIAlertController(title: "Внимание", message: "Сохранить новую запись?", preferredStyle: .alert)
+  let clearAlert = UIAlertController(title: "Внимание", message: "Очистить форму?", preferredStyle: .alert)
 
   lazy var tableView = TableView(sections: (viewModel.tableDataProvider?.sections)!, viewModel: viewModel)
 
@@ -16,13 +19,54 @@ class NewNoteVC: UIViewController {
 		view.backgroundColor = .yellow
 		setNavigationBar()
 		addTableView()
-
+    setSaveButton()
+    configureSaveAlert()
+    configureClearAlert()
 	}
 
 	private func setNavigationBar() {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = "Новая запись"
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(saveNewNote))
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Очистить", style: .plain, target: self, action: #selector(onClearTap))
+  }
+
+  private func setSaveButton() {
+    let saveButton = UIButton()
+    saveButton.setTitle("Сохранить", for: .normal)
+    saveButton.layer.cornerRadius = 12
+    saveButton.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.8039215686, blue: 0.7058823529, alpha: 1)
+    saveButton.addTarget(self, action: #selector(saveNewNote), for: .touchUpInside)
+
+    view.addSubview(saveButton)
+    saveButton.snp.makeConstraints { (make) in
+      make.centerX.equalTo(view.snp.centerX)
+      make.bottom.equalTo(view.snp.bottom).offset(-100)
+      make.width.equalTo(view.frame.width / 3)
+      make.height.equalTo(40)
+    }
+  }
+
+  private func configureSaveAlert() {
+    let okAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
+      self.navigationController?.tabBarController?.selectedIndex = 0
+      self.clearAllInput()
+    }
+    let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
+
+    [okAction, noAction].forEach { action in
+      saveAlert.addAction(action)
+    }
+  }
+
+  private func configureClearAlert() {
+    let okAction = UIAlertAction(title: "Очистить", style: .default) { _ in
+      self.clearAllInput()
+    }
+    let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
+
+    [okAction, noAction].forEach { action in
+      clearAlert.addAction(action)
+    }
   }
 
 	private func addTableView() {
@@ -33,8 +77,19 @@ class NewNoteVC: UIViewController {
 	}
 
   @objc private func saveNewNote() {
-    viewModel.saveCurrentNote()
+    present(saveAlert, animated: true, completion: nil)
     print("saved")
+  }
+
+  @objc private func onClearTap() {
+    present(clearAlert, animated: true, completion: nil)
+  }
+
+  private func clearAllInput() {
+    viewModel.clearInput()
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
   }
 
 }

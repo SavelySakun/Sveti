@@ -23,5 +23,9 @@ class NewNoteVM: ViewControllerVM {
     NotesRepository.shared.notes.append(note)
   }
 
+  func clearInput() {
+    note = NoteModel()
+  }
+
 }
 

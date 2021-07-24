@@ -5,6 +5,8 @@ class TabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setTabbarItems()
+
+    selectedIndex = 1
   }
 
   func setTabbarItems() {

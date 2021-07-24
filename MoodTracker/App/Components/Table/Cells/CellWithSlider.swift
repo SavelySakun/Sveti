@@ -45,7 +45,7 @@ class CellWithSlider: Cell {
 	fileprivate func getSliderStackView() -> UIStackView {
 		slider.minimumValue = 0
 		slider.maximumValue = 10
-		slider.value = 6.0
+    slider.value = viewModel?.cellValue as? Float ?? 6.0
 
     slider.addTarget(self, action: #selector(onValueChange), for: .allEvents)
 
