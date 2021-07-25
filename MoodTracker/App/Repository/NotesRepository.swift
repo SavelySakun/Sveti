@@ -34,10 +34,9 @@ class NotesRepository {
 
   private func getPreparedToSave(_ note: Note) -> Note {
     let note = note
-    let currentDate = Date()
-    let splitDate = SplitDate(rawDate: currentDate)
-    note.splitDate = splitDate
-    note.id = Int(currentDate.timeIntervalSince1970)
+    let date = Date()
+    note.splitDate = SplitDate(rawDate: date)
+    note.id = Int(date.timeIntervalSince1970)
     return note
   }
   

@@ -42,19 +42,24 @@ extension DiaryVC: UITableViewDelegate {
 }
 
 extension DiaryVC: UITableViewDataSource {
+
+  func numberOfSections(in tableView: UITableView) -> Int {
+    viewModel.sections.count
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    viewModel.notes.count
+    viewModel.sections[section].notes.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as? DiaryCell else { return UITableViewCell() }
-    let note = viewModel.notes[indexPath.row]
+    let note = viewModel.sections[indexPath.section].notes[indexPath.row]
     cell.configure(with: note)
     return cell
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    return DiaryTableSectionHeader()
+    return DiaryTableSectionHeader(date: viewModel.sections[section].date)
   }
 
 

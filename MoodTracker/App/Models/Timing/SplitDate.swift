@@ -28,7 +28,8 @@ class SplitDate: Object {
   }
 
   private func setDDmmYYYY() {
-    dateFormatter.dateFormat = "dd.mm.yyyy"
+    dateFormatter.dateFormat = "dd.MM.yyyy"
+    
     ddMMyyyy = dateFormatter.string(from: rawDate)
   }
 }

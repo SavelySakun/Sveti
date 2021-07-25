@@ -5,17 +5,14 @@ class DiaryTableSectionHeader: UIView {
   let dateLabel = UILabel()
   let separator = UIView()
 
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  init(date: String) {
+    super.init(frame: .zero)
     setLayout()
+    dateLabel.text = date
   }
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
-  }
-
-  func configureWith(date: Date) {
-    
   }
 
   private func setLayout() {
