@@ -20,10 +20,7 @@ class ScoreTimeView: UIView {
   }
 
   private func getTime(from note: Note) -> String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "HH:mm"
-    let hoursMinutesTime = dateFormatter.string(from: note.date)
-    return "в \(hoursMinutesTime)"
+    return "в \(note.splitDate?.HHmm ?? "")"
   }
 
   private func getAverageMood(from note: Note) -> String {

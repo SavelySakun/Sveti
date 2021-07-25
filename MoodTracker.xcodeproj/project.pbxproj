@@ -14,7 +14,6 @@
 		FC3A898C26A0584D0048E4ED /* MoodSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* MoodSliderCell.swift */; };
 		FC3A898E26A058D90048E4ED /* PhysSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898D26A058D90048E4ED /* PhysSliderCell.swift */; };
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
-		FC3A8A0F26A5DFF00048E4ED /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A8A0E26A5DFF00048E4ED /* Note.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
@@ -53,6 +52,9 @@
 		FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9326AC57EC00126B97 /* Result.swift */; };
 		FC7E6D9726AC625800126B97 /* DiaryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9626AC625800126B97 /* DiaryVM.swift */; };
 		FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9826AC8A2E00126B97 /* DiaryTableSectionHeader.swift */; };
+		FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9A26AC927900126B97 /* SplitDate.swift */; };
+		FC7E6D9D26AC9A7500126B97 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9C26AC9A7500126B97 /* Note.swift */; };
+		FC7E6D9F26AD290E00126B97 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -90,7 +92,6 @@
 		FC3A898B26A0584D0048E4ED /* MoodSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSliderCell.swift; sourceTree = "<group>"; };
 		FC3A898D26A058D90048E4ED /* PhysSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysSliderCell.swift; sourceTree = "<group>"; };
 		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		FC3A8A0E26A5DFF00048E4ED /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +133,9 @@
 		FC7E6D9326AC57EC00126B97 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FC7E6D9626AC625800126B97 /* DiaryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVM.swift; sourceTree = "<group>"; };
 		FC7E6D9826AC8A2E00126B97 /* DiaryTableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableSectionHeader.swift; sourceTree = "<group>"; };
+		FC7E6D9A26AC927900126B97 /* SplitDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDate.swift; sourceTree = "<group>"; };
+		FC7E6D9C26AC9A7500126B97 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = MoodTracker/App/Models/Note.swift; sourceTree = SOURCE_ROOT; };
+		FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -323,7 +327,9 @@
 		FC7E6D1526AB039200126B97 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				FC7E6D9C26AC9A7500126B97 /* Note.swift */,
 				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
+				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -387,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				FC7E6D8326AC4A7100126B97 /* Timing */,
-				FC3A8A0E26A5DFF00048E4ED /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				FC7E6D8626AC4A8E00126B97 /* Year.swift */,
 				FC7E6D8926AC4AA200126B97 /* Month.swift */,
 				FC7E6D8B26AC4AB600126B97 /* Day.swift */,
+				FC7E6D9A26AC927900126B97 /* SplitDate.swift */,
 			);
 			path = Timing;
 			sourceTree = "<group>";
@@ -644,15 +650,17 @@
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
 				FC3A898C26A0584D0048E4ED /* MoodSliderCell.swift in Sources */,
-				FC3A8A0F26A5DFF00048E4ED /* Note.swift in Sources */,
 				FC7E6D9726AC625800126B97 /* DiaryVM.swift in Sources */,
 				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
 				FC6C58B62663CFB9000188A6 /* HashtagCollectionCell.swift in Sources */,
+				FC7E6D9D26AC9A7500126B97 /* Note.swift in Sources */,
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,
 				FC7E6D8A26AC4AA200126B97 /* Month.swift in Sources */,
+				FC7E6D9F26AD290E00126B97 /* RealmHelper.swift in Sources */,
 				FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */,
 				FCD9AB50268A336C00817746 /* CellData.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
+				FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */,
 				FC7E6D8526AC4A8200126B97 /* DateModel.swift in Sources */,
 				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */,
