@@ -21,25 +21,26 @@ class DiaryVM {
   }
 
   func configureSections(from notes: [Note]) {
-    let groupedByDate = Dictionary(grouping: notes) { $0.splitDate?.ddMMyyyy }
+    let groupedByDate = Dictionary(grouping: notes) { $0.splitDate?.dMMMMyyyy }
 
-    var dateForSection = notes.first?.splitDate?.ddMMyyyy
-    let notesForSection = groupedByDate[dateForSection]
+    var dateForSection = notes.first?.splitDate?.dMMMMyyyy
+    var notesForSection = groupedByDate[dateForSection]
+    var newSection = DiarySection(date: dateForSection ?? "", notes: notesForSection ?? [])
 
-
-    let newSection = DiarySection(date: dateForSection ?? "", notes: notesForSection ?? [])
-
-    notes.forEach { note in
-      let noteDate = note.splitDate?.ddMMyyyy
+    for note in notes {
+      let noteDate = note.splitDate?.dMMMMyyyy
+      guard sections.last?.date != noteDate else { continue }
 
       if noteDate == dateForSection {
-        guard sections.last?.date != dateForSection else { return }
         sections.append(newSection)
       } else {
         dateForSection = noteDate
+        notesForSection = groupedByDate[dateForSection]
+        newSection = DiarySection(date: dateForSection ?? "", notes: notesForSection ?? [])
+        sections.append(newSection)
       }
-
     }
+
   }
 
 

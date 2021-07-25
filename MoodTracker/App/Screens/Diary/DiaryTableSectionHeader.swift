@@ -22,7 +22,6 @@ class DiaryTableSectionHeader: UIView {
   }
 
   private func setDateLabel() {
-    dateLabel.text = "24 июля 2021"
     dateLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     dateLabel.tintColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
     addSubview(dateLabel)

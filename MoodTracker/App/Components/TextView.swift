@@ -26,8 +26,8 @@ class TextView: UIView {
     addNotificationToTextView()
     self.addSubview(textView)
     textView.snp.makeConstraints { (make) in
-      make.top.left.equalToSuperview().offset(UIUtils.defaultOffset)
-      make.right.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
+      make.top.left.equalToSuperview()
+      make.right.bottom.equalToSuperview()
     }
   }
 
@@ -39,7 +39,7 @@ class TextView: UIView {
     self.addSubview(placeholderLabel)
     placeholderLabel.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(UIUtils.defaultOffset)
-      make.left.equalToSuperview().offset(UIUtils.defaultOffset + 4)
+      make.left.equalToSuperview().offset(5)
       make.right.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
     }
   }
