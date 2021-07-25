@@ -2,6 +2,7 @@ import UIKit
 
 class DiaryVC: UIViewController {
 
+  private let emptyView = EmptyView()
   private let tableView = UITableView()
   private let viewModel = DiaryVM()
 
@@ -14,6 +15,7 @@ class DiaryVC: UIViewController {
   func updateData() {
     DispatchQueue.main.async { [self] in
       viewModel.loadNotes()
+      updateEmptyViewVisibility()
       tableView.reloadData()
     }
   }
@@ -22,6 +24,7 @@ class DiaryVC: UIViewController {
     title = "Дневник"
     navigationController?.navigationBar.prefersLargeTitles = true
     setTable()
+    setEmptyView()
   }
 
   private func setTable() {
@@ -34,6 +37,18 @@ class DiaryVC: UIViewController {
     tableView.snp.makeConstraints { (make) in
       make.top.left.bottom.right.equalToSuperview()
     }
+  }
+
+  private func setEmptyView() {
+    view.addSubview(emptyView)
+    updateEmptyViewVisibility()
+    emptyView.snp.makeConstraints { (make) in
+      make.centerX.centerY.equalToSuperview()
+    }
+  }
+
+  private func updateEmptyViewVisibility() {
+    emptyView.isHidden = !viewModel.sections.isEmpty
   }
 }
 
