@@ -21,6 +21,7 @@ class CommentCell: Cell {
   }
 
 	private func setLayout() {
+    contentView.backgroundColor = .systemGray6
 		contentView.addSubview(commentTextField)
 		commentTextField.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(UIUtils.defaultOffset)

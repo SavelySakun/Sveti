@@ -19,6 +19,7 @@ class CellWithSlider: Cell {
 	}
 
 	fileprivate func setLayout() {
+    contentView.backgroundColor = .systemGray6
 		let stackView = getStackView()
 		contentView.addSubview(stackView)
 		let topBottomOffset = 18

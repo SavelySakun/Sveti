@@ -36,7 +36,6 @@ class NotesRepository {
     let note = note
     let date = Date()
     //let futureDate = Calendar.current.date(byAdding: .day, value: 0, to: date)
-    note.splitDate = SplitDate(rawDate: date)
     note.id = Int(date.timeIntervalSince1970)
     return note
   }

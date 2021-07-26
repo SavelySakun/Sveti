@@ -6,6 +6,10 @@ class NewNoteTableDataProvider: TableDataProvider {
 
     let tableSections = [
 
+      TableSection(title: "Дата", cellsData: [
+        CellData(type: DatePickerCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: nil))
+      ]),
+
       TableSection(title: "Самочувствие", cellsData: [
         CellData(type: MoodSliderCell.self, viewModel: CellVM(title: "Желание жить, делать дела")),
         CellData(type: PhysSliderCell.self, viewModel: CellVM(title: "Физическое самочувствие")),

@@ -56,6 +56,7 @@
 		FC7E6D9D26AC9A7500126B97 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9C26AC9A7500126B97 /* Note.swift */; };
 		FC7E6D9F26AD290E00126B97 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */; };
 		FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DA026AD4CD200126B97 /* EmptyView.swift */; };
+		FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DC026AEFAE400126B97 /* DatePickerCell.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -138,6 +139,7 @@
 		FC7E6D9C26AC9A7500126B97 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = MoodTracker/App/Models/Note.swift; sourceTree = SOURCE_ROOT; };
 		FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		FC7E6DA026AD4CD200126B97 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		FC7E6DC026AEFAE400126B97 /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				FC6C58B026613D53000188A6 /* CellWithSlider.swift */,
 				FC6C58BB2663D3B3000188A6 /* HashtagCollectionView.swift */,
 				FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */,
+				FC7E6DC026AEFAE400126B97 /* DatePickerCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
+				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
 				FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
 				FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */,

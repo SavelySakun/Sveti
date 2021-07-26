@@ -5,6 +5,7 @@ enum EditType {
   case moodChange
   case physChange
   case commentChange
+  case dateChange
 }
 
 struct EditEvent {

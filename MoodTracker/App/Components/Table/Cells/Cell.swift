@@ -22,7 +22,6 @@ class Cell: UITableViewCell {
   }
 
   func configureSelf(with viewModel: CellVM) {
-    backgroundColor = .systemGray6
     selectionStyle = .none
   }
 

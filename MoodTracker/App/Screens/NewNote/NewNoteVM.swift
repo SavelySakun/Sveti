@@ -2,7 +2,7 @@ import UIKit
 
 class NewNoteVM: ViewControllerVM {
 
-  var note = Note()
+  private var note = Note()
 
   override func handle(_ event: EditEvent) {
     super.handle(event)
@@ -13,6 +13,8 @@ class NewNoteVM: ViewControllerVM {
       note.phys = event.value as! Float
     case .commentChange:
       note.comment = event.value as! String
+    case .dateChange:
+      note.splitDate = SplitDate(rawDate: (event.value as! Date))
     }
   }
 
