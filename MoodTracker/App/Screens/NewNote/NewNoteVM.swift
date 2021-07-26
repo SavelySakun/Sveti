@@ -21,7 +21,7 @@ class NewNoteVM: ViewControllerVM {
   func saveCurrentNote() {
     NotesRepository().save(note)
   }
-
+  
   func clearInput() {
     subscribers.removeAll()
     note = Note()

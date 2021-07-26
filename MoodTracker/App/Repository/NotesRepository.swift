@@ -32,6 +32,13 @@ class NotesRepository {
     return notes
   }
 
+  func deleteNote(noteId: Int) {
+    let object = realm.objects(Note.self).filter("id = %@", noteId)
+    try! realm.write {
+      realm.delete(object)
+    }
+  }
+
   private func getPreparedToSave(_ note: Note) -> Note {
     let note = note
     let date = Date()

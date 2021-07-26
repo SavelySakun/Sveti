@@ -77,5 +77,20 @@ extension DiaryVC: UITableViewDataSource {
     return DiaryTableSectionHeader(date: viewModel.sections[section].date)
   }
 
+  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+    let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
+
+      let noteToDeleteId = self.viewModel.sections[indexPath.section].notes[indexPath.row].id
+      self.viewModel.deleteNote(noteId: noteToDeleteId)
+      completion(true)
+      self.updateData()
+    }
+
+    let image = UIImage(named: "Delete")?.imageResized(to: .init(width: 22, height: 22))
+    deleteAction.image = image
+    deleteAction.backgroundColor = .white
+    return UISwipeActionsConfiguration(actions: [deleteAction])
+  }
 
 }

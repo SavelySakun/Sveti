@@ -20,6 +20,10 @@ class DiaryVM {
     configureSections(from: notes)
   }
 
+  func deleteNote(noteId: Int) {
+    NotesRepository().deleteNote(noteId: noteId)
+  }
+
   func configureSections(from notes: [Note]) {
     let groupedByDate = Dictionary(grouping: notes) { $0.splitDate?.dMMMMyyyy }
 
@@ -42,7 +46,6 @@ class DiaryVM {
     }
 
   }
-
 
 
 }
