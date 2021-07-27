@@ -23,7 +23,7 @@ class DiaryTableSectionHeader: UIView {
 
   private func setDateLabel() {
     dateLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-    dateLabel.tintColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
+    dateLabel.textColor = .black.withAlphaComponent(0.9)
     addSubview(dateLabel)
     dateLabel.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(10)
@@ -33,7 +33,7 @@ class DiaryTableSectionHeader: UIView {
   }
 
   private func setSeparator() {
-    separator.backgroundColor = .systemGray5
+    separator.backgroundColor = .systemGray6
     addSubview(separator)
     separator.snp.makeConstraints { (make) in
       make.centerY.equalTo(dateLabel.snp.centerY)

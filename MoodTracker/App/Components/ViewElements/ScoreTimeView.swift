@@ -16,16 +16,12 @@ class ScoreTimeView: UIView {
 
   func configure(with note: Note) {
     timeLabel.text = getTime(from: note)
-    scoreLabel.text = getAverageMood(from: note)
+    scoreLabel.text = MathHelper().getAverageMood(from: note)
+    scoreLabel.textColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 1.0)
   }
 
   private func getTime(from note: Note) -> String {
     return "в \(note.splitDate?.HHmm ?? "")"
-  }
-
-  private func getAverageMood(from note: Note) -> String {
-    let average = (note.phys + note.mood) / 2
-    return String(format: "%.1f", average)
   }
 
   private func setLayout() {

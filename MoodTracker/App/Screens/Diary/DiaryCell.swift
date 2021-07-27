@@ -19,10 +19,8 @@ class DiaryCell: Cell {
   func configure(with note: Note) {
     commentLabel.text = note.comment
     scoreTimeView.configure(with: note)
-    
+    containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 0.08)
   }
-
-  
 
   private func setLayout() {
     self.selectionStyle = .none
@@ -53,7 +51,7 @@ class DiaryCell: Cell {
 
   private func setComment() {
     commentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-    commentLabel.numberOfLines = 3
+    commentLabel.numberOfLines = 0
 
     containerView.addSubview(commentLabel)
     commentLabel.snp.makeConstraints { (make) in

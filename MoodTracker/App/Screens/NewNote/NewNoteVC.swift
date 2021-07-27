@@ -19,7 +19,6 @@ class NewNoteVC: BaseViewController {
 	private func setLayout() {
 		setNavigationBar()
 		addTableView()
-    configureSaveAlert()
     configureClearAlert()
 	}
 
@@ -32,26 +31,6 @@ class NewNoteVC: BaseViewController {
 
     navigationItem.leftBarButtonItem = leftButton
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(onSave))
-  }
-
-  private func configureSaveAlert() {
-    let okAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
-      self.navigationController?.tabBarController?.selectedIndex = 0
-      self.viewModel.saveCurrentNote()
-      self.clearAllInput()
-      if let diaryVC = self.navigationController?
-          .tabBarController?
-          .viewControllers?[0]
-          .children.first as? DiaryVC {
-        diaryVC.updateData()
-      }
-      SPIndicator.present(title: "Готово", message: nil, preset: .done, from: .center, completion: nil)
-    }
-    let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
-
-    [okAction, noAction].forEach { action in
-      saveAlert.addAction(action)
-    }
   }
 
   private func configureClearAlert() {
@@ -74,7 +53,16 @@ class NewNoteVC: BaseViewController {
 	}
 
   @objc private func onSave() {
-    present(saveAlert, animated: true, completion: nil)
+    self.navigationController?.tabBarController?.selectedIndex = 0
+    self.viewModel.saveCurrentNote()
+    self.clearAllInput()
+    if let diaryVC = self.navigationController?
+        .tabBarController?
+        .viewControllers?[0]
+        .children.first as? DiaryVC {
+      diaryVC.updateData()
+    }
+    SPIndicator.present(title: "Готово", message: nil, preset: .done, from: .center, completion: nil)
   }
 
   @objc private func onClear() {
