@@ -13,7 +13,6 @@ class NewNoteVC: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setLayout()
-
 	}
 
 	private func setLayout() {

@@ -2,8 +2,9 @@ import Foundation
 import Combine
 
 enum EditType {
-  case moodChange
-  case physChange
+  case emotionalStateChange
+  case physicalStateChange
+  case willToLiveChange
   case commentChange
   case dateChange
 }

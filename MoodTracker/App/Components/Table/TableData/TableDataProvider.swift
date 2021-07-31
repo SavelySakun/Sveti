@@ -4,11 +4,11 @@ class TableDataProvider {
 
   var sections: [TableSection]?
 
-  init() {
-    self.sections = configureSections()
+  init(with data: Any? = nil) {
+    self.sections = configureSections(with: data)
   }
 
-  func configureSections() -> [TableSection] {
+  func configureSections(with data: Any? = nil) -> [TableSection] {
     return [TableSection]()
   }
 

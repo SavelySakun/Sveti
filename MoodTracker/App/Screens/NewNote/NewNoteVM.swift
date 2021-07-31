@@ -7,14 +7,27 @@ class NewNoteVM: ViewControllerVM {
   override func handle(_ event: EditEvent) {
     super.handle(event)
     switch event.type {
-    case .moodChange:
-      note.mood = event.value as! Float
-    case .physChange:
-      note.phys = event.value as! Float
+
+    case .emotionalStateChange:
+      guard let value = event.value as? Float else { return }
+      note.mood?.emotionalState = value
+
+    case .physicalStateChange:
+      guard let value = event.value as? Float else { return }
+      note.mood?.physicalState = value
+
+    case .willToLiveChange:
+      guard let value = event.value as? Float else { return }
+      note.mood?.willToLive = value
+
     case .commentChange:
-      note.comment = event.value as! String
+      guard let value = event.value as? String else { return }
+      note.comment = value
+
     case .dateChange:
-      note.splitDate = SplitDate(rawDate: (event.value as! Date))
+      guard let value = event.value as? Date else { return }
+      let date = value
+      note.splitDate = SplitDate(rawDate: date)
     }
   }
 

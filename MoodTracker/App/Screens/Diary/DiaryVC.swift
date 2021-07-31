@@ -22,7 +22,6 @@ class DiaryVC: UIViewController {
 
   private func setLayout() {
     title = "Дневник"
-    navigationController?.navigationBar.prefersLargeTitles = true
     setTable()
     setEmptyView()
   }
@@ -91,6 +90,12 @@ extension DiaryVC: UITableViewDataSource {
     deleteAction.image = image
     deleteAction.backgroundColor = .white
     return UISwipeActionsConfiguration(actions: [deleteAction])
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let item = viewModel.sections[indexPath.section].notes[indexPath.row]
+    let detailNoteVC = DetailNoteVC(note: item)
+    self.navigationController?.pushViewController(detailNoteVC, animated: true)
   }
 
 }

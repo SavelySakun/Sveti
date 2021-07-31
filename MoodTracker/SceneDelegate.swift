@@ -9,7 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let scene = (scene as? UIWindowScene) else { return }
 		
 		let window = UIWindow(windowScene: scene)
-		let startViewController = TabBarController()
+    let startViewController = TabBarController()
 		//let rootNavigationController = UINavigationController(rootViewController: TabBarController)
 		window.rootViewController = startViewController
 		self.window = window

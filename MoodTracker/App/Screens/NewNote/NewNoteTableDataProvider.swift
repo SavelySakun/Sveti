@@ -2,8 +2,8 @@ import Foundation
 
 class NewNoteTableDataProvider: TableDataProvider {
 
-  override func configureSections() -> [TableSection] {
-
+  override func configureSections(with data: Any? = nil) -> [TableSection] {
+    
     let tableSections = [
 
       TableSection(title: "Дата", cellsData: [
@@ -11,8 +11,9 @@ class NewNoteTableDataProvider: TableDataProvider {
       ]),
 
       TableSection(title: "Самочувствие", cellsData: [
-        CellData(type: MoodSliderCell.self, viewModel: CellVM(title: "Желание жить, делать дела")),
-        CellData(type: PhysSliderCell.self, viewModel: CellVM(title: "Физическое самочувствие")),
+        CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Эмоциональное состояние")),
+        CellData(type: PhysicalStateSliderCell.self, viewModel: CellVM(title: "Физическое состояние")),
+        CellData(type: WillToLiveStateSliderCell.self, viewModel: CellVM(title: "Желание жить, делать дела"))
       ]),
 
       TableSection(title: "Комментарий", cellsData: [
@@ -23,5 +24,7 @@ class NewNoteTableDataProvider: TableDataProvider {
 
     return tableSections
   }
+
+
 
 }
