@@ -17,7 +17,17 @@ class CommentCell: Cell {
 
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
-    commentTextField.textView.text = viewModel.cellValue as? String
+    updateTextView()
+  }
+
+  private func updateTextView() {
+    let viewModelValue = viewModel?.cellValue as? String
+    if viewModelValue == nil {
+      commentTextField.textView.text = String()
+      commentTextField.placeholderLabel.isHidden = false
+    } else {
+      commentTextField.textView.text = viewModelValue
+    }
   }
 
 	private func setLayout() {

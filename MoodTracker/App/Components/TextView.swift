@@ -4,7 +4,7 @@ import Combine
 class TextView: UIView {
 
   var textView = UITextView()
-  private let placeholderLabel = UILabel()
+  let placeholderLabel = UILabel()
   private var cancellable: AnyCancellable?
 
   init(placeholder: String) {
