@@ -59,6 +59,7 @@
 		FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DC026AEFAE400126B97 /* DatePickerCell.swift */; };
 		FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DC226AF27B600126B97 /* ColorHelper.swift */; };
 		FC7E6DC526AF29B500126B97 /* MathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DC426AF29B500126B97 /* MathHelper.swift */; };
+		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -157,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
 				C4613007E58B533086856E44 /* Pods_MoodTracker.framework in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
@@ -452,6 +454,7 @@
 				FC6C58AE26613D0C000188A6 /* SnapKit */,
 				FC7E6D5D26AC31A500126B97 /* SPIndicator */,
 				FC7E6D9126AC542F00126B97 /* RealmSwift */,
+				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* MoodTracker.app */;
@@ -530,6 +533,7 @@
 				FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */,
 				FC7E6D9026AC542F00126B97 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -1053,6 +1057,14 @@
 				minimumVersion = 10.11.0;
 			};
 		};
+		FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1070,6 +1082,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC7E6D9026AC542F00126B97 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
