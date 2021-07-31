@@ -19,8 +19,16 @@ class MathHelper {
     return Int(averageMood)
   }
 
-  func getMoodScore(from rawFloat: Float) -> String {
-    return String(format: "%.0f", rawFloat)
+  func getMoodScore(from rawFloat: Float, digits: Int = 1) -> String {
+
+    let score = String(format: "%.\(digits)f", rawFloat)
+
+    if score.count > 1 && score.last == "0" {
+      let newScore = score.dropLast(2)
+      return String(newScore)
+    } else {
+      return score
+    }
   }
 
 }

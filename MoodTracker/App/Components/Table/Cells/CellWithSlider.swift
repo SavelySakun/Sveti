@@ -73,8 +73,8 @@ class CellWithSlider: Cell {
   }
 
   private func getTitle() -> String {
-    let formatedValue = String(format: "%.0f", slider.value)
-    return "\(viewModel?.title ?? ""): \(formatedValue)"
+    let value = MathHelper().getMoodScore(from: slider.value, digits: 1)
+    return "\(viewModel?.title ?? ""): \(value)"
   }
 
   private func updateSliderColor() {

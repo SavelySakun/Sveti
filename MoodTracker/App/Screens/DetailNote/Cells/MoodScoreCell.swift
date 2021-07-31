@@ -29,6 +29,8 @@ class MoodScoreCell: Cell {
     physicalStateScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.physicalState)
     willToLiveScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.willToLive)
     averageLabel.text = mathHelper.getAverageMood(from: note)
+    guard mood.average > 7.0 || mood.average < 5.0 else { return }
+    averageLabel.textColor = ColorHelper().getColor(value: Int(mood.average), alpha: 1)
   }
 
   private func setLayout() {
