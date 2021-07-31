@@ -62,6 +62,8 @@
 		FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643226B55E0A00A0494A /* DetailNoteTableDataProvider.swift */; };
 		FCB0643526B560A000A0494A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643426B560A000A0494A /* ScoreView.swift */; };
 		FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */; };
+		FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */; };
+		FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -149,6 +151,8 @@
 		FCB0643226B55E0A00A0494A /* DetailNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableDataProvider.swift; sourceTree = "<group>"; };
 		FCB0643426B560A000A0494A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteCommentCell.swift; sourceTree = "<group>"; };
+		FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteVC.swift; sourceTree = "<group>"; };
+		FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteTableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 				FC3A898426A053F60048E4ED /* NewNote */,
 				FC7E6D1C26AB1A1600126B97 /* Diary */,
 				FCB0642826B5430E00A0494A /* DetailNote */,
+				FCB0643C26B5C74600A0494A /* EditNote */,
 				FC7E6D2426ABFA6F00126B97 /* TabBarController.swift */,
 			);
 			path = Screens;
@@ -435,6 +440,15 @@
 				FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FCB0643C26B5C74600A0494A /* EditNote */ = {
+			isa = PBXGroup;
+			children = (
+				FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */,
+				FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */,
+			);
+			path = EditNote;
 			sourceTree = "<group>";
 		};
 		FCD9AB4E268A335100817746 /* TableData */ = {
@@ -678,6 +692,7 @@
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
 				FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */,
+				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
 				FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */,
 				FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */,
@@ -696,6 +711,7 @@
 				FCD9AB50268A336C00817746 /* CellData.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
 				FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */,
+				FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */,
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
 				FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */,
 				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,

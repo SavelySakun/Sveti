@@ -8,6 +8,12 @@ class DatePickerCell: Cell {
     configureLayout()
   }
 
+  override func configureSelf(with viewModel: CellVM) {
+    super.configureSelf(with: viewModel)
+    guard let note = viewModel.cellValue as? Note else { return }
+    datePicker.date = note.splitDate?.rawDate ?? Date()
+  }
+
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }

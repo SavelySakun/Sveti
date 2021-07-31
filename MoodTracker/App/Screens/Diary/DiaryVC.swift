@@ -93,8 +93,8 @@ extension DiaryVC: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let item = viewModel.sections[indexPath.section].notes[indexPath.row]
-    let detailNoteVC = DetailNoteVC(note: item)
+    let selectedNote = viewModel.sections[indexPath.section].notes[indexPath.row]
+    let detailNoteVC = DetailNoteVC(noteId: selectedNote.id)
     self.navigationController?.pushViewController(detailNoteVC, animated: true)
   }
 

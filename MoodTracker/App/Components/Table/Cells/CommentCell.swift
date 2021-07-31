@@ -21,12 +21,13 @@ class CommentCell: Cell {
   }
 
   private func updateTextView() {
-    let viewModelValue = viewModel?.cellValue as? String
-    if viewModelValue == nil {
+    let note = viewModel?.cellValue as? Note
+    if note?.comment == nil {
       commentTextField.textView.text = String()
       commentTextField.placeholderLabel.isHidden = false
     } else {
-      commentTextField.textView.text = viewModelValue
+      commentTextField.placeholderLabel.isHidden = true
+      commentTextField.textView.text = note?.comment
     }
   }
 

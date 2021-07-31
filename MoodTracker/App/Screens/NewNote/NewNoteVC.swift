@@ -51,7 +51,7 @@ class NewNoteVC: BaseViewController {
 		}
 	}
 
-  @objc private func onSave() {
+  @objc func onSave() {
     self.navigationController?.tabBarController?.selectedIndex = 0
     self.viewModel.saveCurrentNote()
     self.clearAllInput()
