@@ -1,6 +1,6 @@
 import UIKit
 
-class TabBarController: UITabBarController {
+class TabbarController: UITabBarController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -9,7 +9,6 @@ class TabBarController: UITabBarController {
   }
 
   func setTabbarItems() {
-
     let diaryController = createNavigationController(
       vc: DiaryVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.diaryIcon),

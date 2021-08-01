@@ -8,7 +8,7 @@ class NewNoteVC: BaseViewController {
   let saveAlert = UIAlertController(title: "Внимание", message: "Сохранить новую запись?", preferredStyle: .alert)
   let clearAlert = UIAlertController(title: "Внимание", message: "Очистить форму?", preferredStyle: .alert)
 
-  lazy var tableView = TableView(sections: (viewModel.tableDataProvider?.sections)!, viewModel: viewModel)
+  lazy var tableView = TableView(viewModel: viewModel)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,15 +21,24 @@ class NewNoteVC: BaseViewController {
     configureClearAlert()
 	}
 
-	private func setNavigationBar() {
-		navigationController?.navigationBar.prefersLargeTitles = true
-		title = "Новая запись"
-
+  func setLeftBarButton() {
     let leftButton = UIBarButtonItem(title: "Сбросить", style: .plain, target: self, action: #selector(onClear))
     leftButton.tintColor = .orange
-
     navigationItem.leftBarButtonItem = leftButton
+  }
+
+  func setRightBarButton() {
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(onSave))
+  }
+
+  func setTitle() {
+    title = "Новая запись"
+  }
+
+	private func setNavigationBar() {
+    setTitle()
+    setLeftBarButton()
+    setRightBarButton()
   }
 
   private func configureClearAlert() {
@@ -61,7 +70,7 @@ class NewNoteVC: BaseViewController {
         .children.first as? DiaryVC {
       diaryVC.updateData()
     }
-    SPIndicator.present(title: "Готово", message: nil, preset: .done, from: .center, completion: nil)
+    SPIndicator.present(title: "Запись сохранена", message: nil, preset: .done, from: .top, completion: nil)
   }
 
   @objc private func onClear() {

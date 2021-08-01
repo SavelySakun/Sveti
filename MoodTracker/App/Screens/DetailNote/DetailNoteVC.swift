@@ -1,18 +1,21 @@
 import UIKit
+import SPIndicator
 
-class DetailNoteVC: BaseViewController {
+class DetailNoteVC: VCwithTable {
 
-  private var viewModel: ViewControllerVM!
-  private lazy var tableView = TableView(sections: (viewModel.tableDataProvider?.sections)!, viewModel: viewModel)
   private var note: Note?
+  private let noteId: Int
   private let repository = NotesRepository()
 
-  init(noteId: Int) {
+  init(with tableStyle: UITableView.Style = .insetGrouped, noteId: Int) {
+    self.noteId = noteId
+    super.init(with: tableStyle)
+  }
+
+  override func getDataProvider() -> TableDataProvider? {
     self.note = repository.getNote(with: noteId)
-    super.init(nibName: nil, bundle: nil)
     let dataProvider = DetailNoteTableDataProvider(with: note)
-    viewModel = ViewControllerVM(tableDataProvider: dataProvider)
-    setTitle(date: note?.splitDate)
+    return dataProvider
   }
 
   private func setTitle(date: SplitDate?) {
@@ -27,13 +30,8 @@ class DetailNoteVC: BaseViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setLayout()
-  }
-
-  private func setLayout() {
-    addTableView()
+  override func setLayout() {
+    super.setLayout()
     addEditButton()
   }
 
@@ -45,17 +43,19 @@ class DetailNoteVC: BaseViewController {
   @objc private func onEdit() {
     let editVC = EditNoteVC(noteId: note?.id)
     editVC.onDismissal = { self.onEditingVCDismiss() }
-    present(editVC, animated: true)
+    self.navigationController?.pushViewController(editVC, animated: true)
   }
 
   private func onEditingVCDismiss() {
     guard let note = self.note else { return }
+
     self.note = self.repository.getNote(with: note.id)
     let dataProvider = DetailNoteTableDataProvider(with: note)
     self.viewModel = ViewControllerVM(tableDataProvider: dataProvider)
     DispatchQueue.main.async {
       self.tableView.reloadData()
     }
+    SPIndicator.present(title: "Запись обновлена", preset: .done, haptic: .success, from: .top)
   }
 
   private func addTableView() {

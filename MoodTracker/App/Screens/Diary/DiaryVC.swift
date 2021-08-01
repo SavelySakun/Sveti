@@ -6,6 +6,11 @@ class DiaryVC: UIViewController {
   private let tableView = UITableView()
   private let viewModel = DiaryVM()
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.updateData()
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 

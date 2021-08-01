@@ -38,7 +38,7 @@
 		FC7E6D1E26AB1A2600126B97 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */; };
 		FC7E6D2026AB1F6400126B97 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D1F26AB1F6400126B97 /* DiaryCell.swift */; };
 		FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2226AB1FF400126B97 /* ScoreTimeView.swift */; };
-		FC7E6D2526ABFA6F00126B97 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2426ABFA6F00126B97 /* TabBarController.swift */; };
+		FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2426ABFA6F00126B97 /* TabbarController.swift */; };
 		FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2726AC019C00126B97 /* Constants.swift */; };
 		FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2926AC037900126B97 /* UIImage.swift */; };
 		FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = FC7E6D5D26AC31A500126B97 /* SPIndicator */; };
@@ -64,6 +64,7 @@
 		FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */; };
 		FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */; };
 		FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FCB0644426B6817400A0494A /* .swiftlint.yml */; };
+		FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0644626B68E9500A0494A /* VCwithTable.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -130,7 +131,7 @@
 		FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
 		FC7E6D1F26AB1F6400126B97 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		FC7E6D2226AB1FF400126B97 /* ScoreTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTimeView.swift; sourceTree = "<group>"; };
-		FC7E6D2426ABFA6F00126B97 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FC7E6D2426ABFA6F00126B97 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		FC7E6D2726AC019C00126B97 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FC7E6D2926AC037900126B97 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		FC7E6D5F26AC349400126B97 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteVC.swift; sourceTree = "<group>"; };
 		FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteTableDataProvider.swift; sourceTree = "<group>"; };
 		FCB0644426B6817400A0494A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FCB0644626B68E9500A0494A /* VCwithTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithTable.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -361,7 +363,7 @@
 				FC7E6D1C26AB1A1600126B97 /* Diary */,
 				FCB0642826B5430E00A0494A /* DetailNote */,
 				FCB0643C26B5C74600A0494A /* EditNote */,
-				FC7E6D2426ABFA6F00126B97 /* TabBarController.swift */,
+				FC7E6D2426ABFA6F00126B97 /* TabbarController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -371,6 +373,7 @@
 			children = (
 				FC7E6D2126AB1FD000126B97 /* ViewElements */,
 				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
+				FCB0644626B68E9500A0494A /* VCwithTable.swift */,
 				FC7E6D5F26AC349400126B97 /* BaseViewController.swift */,
 				FC3A899026A05B330048E4ED /* TextView.swift */,
 				FC3A898526A0541E0048E4ED /* Table */,
@@ -686,7 +689,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -707,7 +710,7 @@
 				FC7E6D2026AB1F6400126B97 /* DiaryCell.swift in Sources */,
 				FC76B39326810F7700AF209F /* Cell.swift in Sources */,
 				FCB0642E26B5479D00A0494A /* Mood.swift in Sources */,
-				FC7E6D2526ABFA6F00126B97 /* TabBarController.swift in Sources */,
+				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
 				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
@@ -738,6 +741,7 @@
 				FC6C58BC2663D3B3000188A6 /* HashtagCollectionView.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC6C58C02663D640000188A6 /* HashtagCell.swift in Sources */,
+				FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,

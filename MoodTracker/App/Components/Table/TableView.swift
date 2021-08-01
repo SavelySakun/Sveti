@@ -3,13 +3,12 @@ import Combine
 
 class TableView: UITableView {
 
-	let sections: [TableSection]
-  let viewModel: ViewControllerVM
+  private let viewModel: ViewControllerVM
+  private lazy var sections = viewModel.tableDataProvider!.sections!
 
-  init(sections: [TableSection], viewModel: ViewControllerVM) {
+  init(viewModel: ViewControllerVM, style: UITableView.Style = .insetGrouped) {
     self.viewModel = viewModel
-		self.sections = sections
-		super.init(frame: .zero, style: .insetGrouped)
+		super.init(frame: .zero, style: style)
 		setLayout()
 	}
 
