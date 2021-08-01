@@ -11,13 +11,13 @@ class RealmHelper {
   func configureRealm() {
     let config = Realm.Configuration(
       schemaVersion: self.schemaVersion,
-      migrationBlock: { migration, oldSchemaVersion in
+      migrationBlock: { _, oldSchemaVersion in
         if (oldSchemaVersion < self.schemaVersion) {
           // Nothing to do!
         }
       })
 
     Realm.Configuration.defaultConfiguration = config
-    let _ = try! Realm()
+    _ = try! Realm()
   }
 }

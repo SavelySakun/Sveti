@@ -1,8 +1,6 @@
 import UIKit
 
 class HashtagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
-
-
 	override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
 		let collectionViewLayout = UICollectionViewFlowLayout()
 		collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -36,12 +34,10 @@ extension HashtagCollectionView: UICollectionViewDataSource {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = dequeueReusableCell(withReuseIdentifier: HashtagCollectionCell.reuseId, for: indexPath) as? HashtagCollectionCell else { return UICollectionViewCell()}
+		guard let cell = dequeueReusableCell(withReuseIdentifier: HashtagCollectionCell.reuseId, for: indexPath) as? HashtagCollectionCell else { return UICollectionViewCell() }
 		return cell
 	}
 
 }
 
-extension HashtagCollectionView: UICollectionViewDelegate {
-	
-}
+extension HashtagCollectionView: UICollectionViewDelegate { }

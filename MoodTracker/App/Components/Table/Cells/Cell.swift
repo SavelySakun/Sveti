@@ -16,7 +16,7 @@ class Cell: UITableViewCell {
       configureSelf(with: viewModel)
     }
   }
-  
+
   static var identifier: String {
     return NSStringFromClass(self)
   }

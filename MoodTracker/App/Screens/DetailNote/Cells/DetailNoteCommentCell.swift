@@ -34,8 +34,6 @@ class DetailNoteCommentCell: Cell {
   }
 
   private func addTextView() {
-    textView.text = "Задача организации, в особенности же социально-экономическое развитие выявляет срочную потребность направлений прогрессивного развития. Равным образом, внедрение современных методик способствует подготовке и реализации переосмысления внешнеэкономических политик."
-
     textView.isEditable = false
     textView.isScrollEnabled = false
     textView.font = UIFont.systemFont(ofSize: 15)
@@ -49,6 +47,4 @@ class DetailNoteCommentCell: Cell {
       make.right.equalToSuperview().offset(-15)
     }
   }
-
-
 }

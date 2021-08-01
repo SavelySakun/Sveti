@@ -15,12 +15,6 @@ class NotesRepository {
 
   func save(_ note: Note) {
 
-//    try! realm.write {
-//      realm.deleteAll()
-//    }
-//    return
-
-
     let noteToSave = getPreparedToSave(note)
     try! realm.write {
       realm.add(noteToSave)
@@ -49,10 +43,4 @@ class NotesRepository {
     note.id = Int(date.timeIntervalSince1970)
     return note
   }
-  
 }
-
-
-
-
-

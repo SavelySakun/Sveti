@@ -3,7 +3,7 @@ import SnapKit
 import Combine
 
 class CellWithSlider: Cell {
-  
+
 	lazy var titleLabel = getInfoLabel()
   let slider = UISlider()
 	lazy var sliderStackView = getSliderStackView()

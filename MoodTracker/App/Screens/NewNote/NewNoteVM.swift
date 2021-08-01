@@ -38,7 +38,7 @@ class NewNoteVM: ViewControllerVM {
   func saveCurrentNote() {
     NotesRepository().save(note)
   }
-  
+
   func clearInput() {
     subscribers.removeAll()
     note = Note()
@@ -48,6 +48,4 @@ class NewNoteVM: ViewControllerVM {
     guard let note = NotesRepository().getNote(with: id) else { return }
     self.note = note
   }
-
 }
-

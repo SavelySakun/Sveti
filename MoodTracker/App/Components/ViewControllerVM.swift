@@ -13,8 +13,3 @@ class ViewControllerVM {
   func handle(_ event: EditEvent) { }
 
 }
-
-
-
-
-

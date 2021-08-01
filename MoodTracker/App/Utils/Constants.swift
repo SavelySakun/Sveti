@@ -10,10 +10,6 @@ struct Constants {
       static let newNote = "Add"
       static let newNoteSelected = "AddBlack"
     }
-
-
   }
 
 }
-
-

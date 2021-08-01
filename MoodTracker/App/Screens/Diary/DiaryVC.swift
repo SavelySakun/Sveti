@@ -78,8 +78,7 @@ extension DiaryVC: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-    let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
-
+    let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (_, _, completion) in
       let noteToDeleteId = self.viewModel.sections[indexPath.section].notes[indexPath.row].id
       self.viewModel.deleteNote(noteId: noteToDeleteId)
       completion(true)

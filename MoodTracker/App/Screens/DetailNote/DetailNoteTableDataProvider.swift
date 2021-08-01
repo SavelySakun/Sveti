@@ -21,7 +21,6 @@ class DetailNoteTableDataProvider: TableDataProvider {
     }
 
     return tableSections
-
   }
 
 }

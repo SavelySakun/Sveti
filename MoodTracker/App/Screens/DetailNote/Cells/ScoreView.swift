@@ -59,7 +59,7 @@ class ScoreView: UIView {
       separator.snp.makeConstraints { (make) in
         make.width.equalTo(1)
       }
-     }
+    }
 
     scoreStackView = UIStackView(arrangedSubviews: [
       leftSeparatorView,

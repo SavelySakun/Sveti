@@ -56,7 +56,6 @@
 		FC7E6DC526AF29B500126B97 /* MathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DC426AF29B500126B97 /* MathHelper.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
-		FCB0642C26B546E600A0494A /* DetailNoteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642B26B546E600A0494A /* DetailNoteVM.swift */; };
 		FCB0642E26B5479D00A0494A /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642D26B5479D00A0494A /* Mood.swift */; };
 		FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643026B55D6A00A0494A /* MoodScoreCell.swift */; };
 		FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643226B55E0A00A0494A /* DetailNoteTableDataProvider.swift */; };
@@ -64,6 +63,7 @@
 		FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */; };
 		FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */; };
 		FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */; };
+		FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FCB0644426B6817400A0494A /* .swiftlint.yml */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -145,7 +145,6 @@
 		FC7E6DC226AF27B600126B97 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		FC7E6DC426AF29B500126B97 /* MathHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathHelper.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
-		FCB0642B26B546E600A0494A /* DetailNoteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVM.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		FCB0643026B55D6A00A0494A /* MoodScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodScoreCell.swift; sourceTree = "<group>"; };
 		FCB0643226B55E0A00A0494A /* DetailNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteTableDataProvider.swift; sourceTree = "<group>"; };
@@ -153,6 +152,7 @@
 		FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteCommentCell.swift; sourceTree = "<group>"; };
 		FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteVC.swift; sourceTree = "<group>"; };
 		FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteTableDataProvider.swift; sourceTree = "<group>"; };
+		FCB0644426B6817400A0494A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -301,6 +301,7 @@
 				FC6C56E4266000FD000188A6 /* Assets.xcassets */,
 				FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */,
 				FC6C56E9266000FD000188A6 /* Info.plist */,
+				FCB0644426B6817400A0494A /* .swiftlint.yml */,
 			);
 			path = MoodTracker;
 			sourceTree = "<group>";
@@ -426,7 +427,6 @@
 			children = (
 				FCB0642F26B55D5300A0494A /* Cells */,
 				FCB0642926B5436500A0494A /* DetailNoteVC.swift */,
-				FCB0642B26B546E600A0494A /* DetailNoteVM.swift */,
 				FCB0643226B55E0A00A0494A /* DetailNoteTableDataProvider.swift */,
 			);
 			path = DetailNote;
@@ -472,6 +472,7 @@
 				FC6C56D4266000FB000188A6 /* Sources */,
 				FC6C56D5266000FB000188A6 /* Frameworks */,
 				FC6C56D6266000FB000188A6 /* Resources */,
+				FCB0644326B6805300A0494A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -579,6 +580,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */,
 				FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */,
 				FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */,
 				FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */,
@@ -668,6 +670,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FCB0644326B6805300A0494A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -722,7 +742,6 @@
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
-				FCB0642C26B546E600A0494A /* DetailNoteVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* EditType.swift in Sources */,
 			);

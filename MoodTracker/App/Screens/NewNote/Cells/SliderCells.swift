@@ -35,7 +35,6 @@ class PhysicalStateSliderCell: CellWithSlider {
 
 }
 
-
 class WillToLiveStateSliderCell: CellWithSlider {
 
   override func onValueChange() {

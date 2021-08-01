@@ -44,16 +44,18 @@ class DetailNoteVC: BaseViewController {
 
   @objc private func onEdit() {
     let editVC = EditNoteVC(noteId: note?.id)
-    editVC.onDismissal = {
-      guard let note = self.note else { return }
-      self.note = self.repository.getNote(with: note.id)
-      let dataProvider = DetailNoteTableDataProvider(with: note)
-      self.viewModel = ViewControllerVM(tableDataProvider: dataProvider)
-      DispatchQueue.main.async {
-        self.tableView.reloadData()
-      }
-    }
+    editVC.onDismissal = { self.onEditingVCDismiss() }
     present(editVC, animated: true)
+  }
+
+  private func onEditingVCDismiss() {
+    guard let note = self.note else { return }
+    self.note = self.repository.getNote(with: note.id)
+    let dataProvider = DetailNoteTableDataProvider(with: note)
+    self.viewModel = ViewControllerVM(tableDataProvider: dataProvider)
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
   }
 
   private func addTableView() {

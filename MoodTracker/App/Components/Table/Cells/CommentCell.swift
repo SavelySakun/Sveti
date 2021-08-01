@@ -2,7 +2,6 @@ import UIKit
 import Combine
 
 class CommentCell: Cell {
-  
   lazy var commentTextField = TextView(placeholder: "Идеи, мысли, замечания...")
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
