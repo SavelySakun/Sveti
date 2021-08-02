@@ -1,19 +1,13 @@
-//
-//  AppDelegate.swift
-//  MoodTracker
-//
-//  Created by Savely Sakun on 27.05.2021.
-//
-
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+
+    RealmHelper.shared.configureRealm()
+    makeAdditionalSetup()
 		return true
 	}
 
@@ -31,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 	}
 
-
+  private func makeAdditionalSetup() {
+    IQKeyboardManager.shared.enable = true
+  }
 }
-
