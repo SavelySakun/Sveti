@@ -3,6 +3,7 @@ import RealmSwift
 
 struct DiarySection {
   var date = String()
+  var average: String?
   var notes = [Note]()
 }
 
@@ -29,7 +30,7 @@ class DiaryVM {
 
     var dateForSection = notes.first?.splitDate?.dMMMMyyyy
     var notesForSection = groupedByDate[dateForSection]
-    var newSection = DiarySection(date: dateForSection ?? "", notes: notesForSection ?? [])
+    var newSection = DiarySection(date: dateForSection ?? "", average: getAverageForSection(with: notesForSection), notes: notesForSection ?? [])
 
     for note in notes {
       let noteDate = note.splitDate?.dMMMMyyyy
@@ -41,9 +42,27 @@ class DiaryVM {
         dateForSection = noteDate
         notesForSection = groupedByDate[dateForSection]
         newSection = DiarySection(date: dateForSection ?? "", notes: notesForSection ?? [])
+        newSection.average = getAverageForSection(with: notesForSection)
         sections.append(newSection)
       }
     }
-
   }
+
+  private func getAverageForSection(with notes: [Note]?) -> String? {
+    guard let notes = notes else { return nil }
+    guard notes.count > 1 else { return nil }
+    let mathHelper = MathHelper()
+    var totalScore: Float = 0
+    var totalNotes: Float = 0
+
+    for note in notes {
+      guard let average = note.mood?.average else { continue }
+      totalScore += average
+      totalNotes += 1.0
+    }
+
+    let averageScore = totalScore / totalNotes
+    return mathHelper.getMoodScore(from: averageScore, digits: 1)
+  }
+
 }

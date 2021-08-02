@@ -78,7 +78,8 @@ extension DiaryVC: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    return DiaryTableSectionHeader(date: viewModel.sections[section].date)
+    let sectionItem = viewModel.sections[section]
+    return DiaryTableSectionHeader(date: sectionItem.date, averageScore: sectionItem.average)
   }
 
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
