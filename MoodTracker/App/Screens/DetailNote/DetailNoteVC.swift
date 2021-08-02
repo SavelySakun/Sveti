@@ -18,21 +18,23 @@ class DetailNoteVC: VCwithTable {
     return dataProvider
   }
 
-  private func setTitle(date: SplitDate?) {
-    guard let date = date else {
-      title = "Заметка"
-      return
-    }
-    title = "\(date.dMMMMyyyy) в \(date.HHmm)"
-  }
-
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
   override func setLayout() {
     super.setLayout()
+    navigationItem.largeTitleDisplayMode = .never
     addEditButton()
+    setTitle(date: note?.splitDate)
+  }
+
+  private func setTitle(date: SplitDate?) {
+    guard let date = date else {
+      title = "Заметка"
+      return
+    }
+    title = "\(date.dMMMMyyyy) в \(date.HHmm)"
   }
 
   private func addEditButton() {
