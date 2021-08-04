@@ -10,8 +10,11 @@ class DatePickerCell: Cell {
 
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
-    guard let note = viewModel.cellValue as? Note else { return }
-    datePicker.date = note.splitDate?.rawDate ?? Date()
+    if let note = viewModel.cellValue as? Note {
+      datePicker.date = note.splitDate?.rawDate ?? Date()
+    } else {
+      datePicker.date = Date()
+    }
   }
 
   required init?(coder: NSCoder) {

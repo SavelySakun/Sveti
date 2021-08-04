@@ -401,8 +401,8 @@
 			isa = PBXGroup;
 			children = (
 				FCAAD9F126B84FAB00607DC0 /* SectionHeader */,
-				FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */,
 				FC7E6D1F26AB1F6400126B97 /* DiaryCell.swift */,
+				FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */,
 				FC7E6D9626AC625800126B97 /* DiaryVM.swift */,
 				FC7E6DA026AD4CD200126B97 /* EmptyView.swift */,
 			);
