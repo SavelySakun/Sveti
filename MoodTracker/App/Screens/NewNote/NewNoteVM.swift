@@ -31,6 +31,10 @@ class NewNoteVM: ViewControllerVM {
         guard let value = event.value as? Date else { return }
         let date = value
         note.splitDate = SplitDate(rawDate: date)
+
+      case .tagChange:
+        guard let tagId = event.value as? String else { return }
+        handleTagEditing(with: tagId)
       }
     }
   }
@@ -47,5 +51,14 @@ class NewNoteVM: ViewControllerVM {
   func setNote(with id: Int) {
     guard let note = NotesRepository().getNote(with: id) else { return }
     self.note = note
+  }
+
+  func handleTagEditing(with tagId: String) {
+    if note.tags.contains(tagId) {
+      guard let existingTagId = note.tags.firstIndex(of: tagId) else { return }
+      note.tags.remove(at: existingTagId)
+    } else {
+      note.tags.append(tagId)
+    }
   }
 }

@@ -3,7 +3,6 @@ import Foundation
 struct Constants {
 
   struct ImageNames {
-
     struct Tabbar {
       static let diaryIcon = "Diary"
       static let diarySelected = "DiaryOpen"

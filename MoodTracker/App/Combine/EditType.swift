@@ -7,6 +7,7 @@ enum EditType {
   case willToLiveChange
   case commentChange
   case dateChange
+  case tagChange
 }
 
 struct EditEvent {

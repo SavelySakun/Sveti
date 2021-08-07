@@ -2,9 +2,10 @@ import UIKit
 
 class DiaryCell: Cell {
 
-  let scoreTimeView = ScoreTimeView()
-  let commentLabel = UILabel()
-  let containerView = UIView()
+  private let scoreTimeView = ScoreTimeView()
+  private let commentLabel = UILabel()
+  private let containerView = UIView()
+  private let tagCollectionView = DiaryTagCollectionView()
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,6 +21,14 @@ class DiaryCell: Cell {
     commentLabel.text = note.comment
     scoreTimeView.configure(with: note)
     containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), palette: .background)
+    setTagCollection(with: note)
+  }
+
+  private func setTagCollection(with note: Note) {
+    tagCollectionView.tagsIds = Array(note.tags)
+    DispatchQueue.main.async {
+      self.tagCollectionView.reloadData()
+    }
   }
 
   private func setLayout() {
@@ -27,6 +36,7 @@ class DiaryCell: Cell {
     setContainer()
     setScoreTime()
     setComment()
+    setTagCollectionView()
   }
 
   private func setContainer() {
@@ -58,7 +68,17 @@ class DiaryCell: Cell {
       make.top.equalTo(scoreTimeView.snp.bottom).offset(8)
       make.left.equalToSuperview().offset(UIUtils.middleOffset)
       make.right.equalToSuperview().offset(-UIUtils.middleOffset)
-      make.bottom.equalToSuperview().offset(-UIUtils.middleOffset)
+    }
+  }
+
+  private func setTagCollectionView() {
+    containerView.addSubview(tagCollectionView)
+    tagCollectionView.snp.makeConstraints { (make) in
+      make.height.equalTo(25) // todo: сделать автовысоту
+      make.top.equalTo(commentLabel.snp.bottom).offset(8)
+      make.left.equalToSuperview().offset(9)
+      make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
+      make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
     }
   }
 }

@@ -1,10 +1,3 @@
-//
-//  BaseViewController.swift
-//  MoodTracker
-//
-//  Created by Savely Sakun on 24.07.2021.
-//
-
 import UIKit
 
 class BaseViewController: UIViewController {
@@ -16,6 +9,7 @@ class BaseViewController: UIViewController {
 
   private func hideKeyboardWhenTappedAround() {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    tapGesture.cancelsTouchesInView = false
     view.addGestureRecognizer(tapGesture)
   }
 

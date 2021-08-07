@@ -38,7 +38,7 @@ class DiaryTableSectionHeader: UIView {
     addSubview(separator)
     separator.snp.makeConstraints { (make) in
       make.centerY.equalTo(timeWithScoreStack.snp.centerY)
-      make.left.equalTo(timeWithScoreStack.snp.right)
+      make.left.equalTo(timeWithScoreStack.snp.right).offset(UIUtils.defaultOffset)
       make.right.equalToSuperview()
       make.height.equalTo(1)
     }
