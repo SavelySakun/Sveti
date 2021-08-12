@@ -1,14 +1,21 @@
 import UIKit
 
+protocol TagSectionHeaderViewDelegate: AnyObject {
+  func onCollapseButtonTap(in section: Int)
+}
+
 class TagSectionHeaderView: UICollectionReusableView {
 
+  var section: Int = 0
   private let titleLabel = UILabel()
   static let identifier = "tagSectionHeader"
   private let offset = 16
-  private let editButton = RoundButtonView(icon: "edit")
-  private let collapseButton = RoundButtonView(icon: "arrow_down")
+  private let editButton = RoundButtonView(firstStateImage: "edit")
+  private let collapseButton = RoundButtonView(firstStateImage: "arrow_up", secondStateImage: "arrow_down")
   private let separatorView = UIView()
   lazy var buttonsStackView = UIStackView(arrangedSubviews: [editButton, collapseButton])
+
+  weak var delegate: TagSectionHeaderViewDelegate?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -19,8 +26,9 @@ class TagSectionHeaderView: UICollectionReusableView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func set(with title: String) {
+  func set(with title: String, isExpanded: Bool) {
     titleLabel.text = title
+    collapseButton.setStateImage(isExpanded: isExpanded)
   }
 
 
@@ -43,6 +51,8 @@ class TagSectionHeaderView: UICollectionReusableView {
   }
 
   private func setButtons() {
+    setCollapseButtonGesture()
+
     buttonsStackView.axis = .horizontal
     buttonsStackView.spacing = 8
 
@@ -54,6 +64,12 @@ class TagSectionHeaderView: UICollectionReusableView {
 
   }
 
+  private func setCollapseButtonGesture() {
+    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onCollapseTap))
+    collapseButton.addGestureRecognizer(gestureRecognizer)
+    collapseButton.isUserInteractionEnabled = true
+  }
+
   private func setSeparator() {
     separatorView.backgroundColor = .systemGray5
     addSubview(separatorView)
@@ -63,6 +79,11 @@ class TagSectionHeaderView: UICollectionReusableView {
       make.centerY.equalTo(buttonsStackView.snp.centerY)
       make.right.equalTo(buttonsStackView.snp.left).offset(-UIUtils.defaultOffset)
     }
+  }
+
+  @objc func onCollapseTap() {
+    collapseButton.toggle()
+    delegate?.onCollapseButtonTap(in: section)
   }
 
 }

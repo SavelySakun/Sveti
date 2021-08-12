@@ -2,12 +2,13 @@ import UIKit
 
 protocol TagCollectionViewDelegate: AnyObject {
   func onTagSelection(tagId: String)
+  func onSectionExpandCollapse()
 }
 
 class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
-  weak var tagSelectionDelegate: TagCollectionViewDelegate?
-  private let tagGroups = TagsRepository().tagGroups
+  weak var interactionDelegate: TagCollectionViewDelegate?
+  let tagGroups = TagsRepository().tagGroups
   var selectedTagsIds = [String]()
 
   override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -49,7 +50,8 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
 extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    tagGroups[section].tagIds.count
+    let isExpanded = tagGroups[section].isExpanded
+    return isExpanded ? tagGroups[section].tagIds.count : 0
   }
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -62,6 +64,7 @@ extension TagCollectionView: UICollectionViewDataSource {
     let tagId = tagGroups[indexPath.section].tagIds[indexPath.row]
     if let tag = TagsRepository().getTag(with: tagId) {
       cell.set(with: tag)
+      cell.isSelected = selectedTagsIds.contains(tagId)
     }
 
     if selectedTagsIds.contains(tagId) {
@@ -79,8 +82,14 @@ extension TagCollectionView: UICollectionViewDataSource {
 
     case UICollectionView.elementKindSectionHeader:
       guard let sectionHeader = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TagSectionHeaderView.identifier, for: indexPath) as? TagSectionHeaderView else { return .init(frame: .zero) }
-      let groupTitle = tagGroups[indexPath.section].title
-      sectionHeader.set(with: groupTitle)
+
+      sectionHeader.delegate = self
+      sectionHeader.section = indexPath.section
+
+      let group = tagGroups[indexPath.section]
+      let groupTitle = group.title
+      sectionHeader.set(with: groupTitle, isExpanded: group.isExpanded)
+      
       return sectionHeader
 
     case UICollectionView.elementKindSectionFooter:
@@ -92,20 +101,50 @@ extension TagCollectionView: UICollectionViewDataSource {
       return .init(frame: .zero)
     }
   }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    let isExpanded = tagGroups[section].isExpanded
+    if isExpanded {
+      return CGSize(width: frame.width, height: 25)
+    } else {
+      return CGSize(width: frame.width, height: 0)
+    }
+  }
 }
 
 extension TagCollectionView: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-    let tagId = tagGroups[indexPath.section].tagIds[indexPath.row]
-    tagSelectionDelegate?.onTagSelection(tagId: tagId)
+    onTagSelect(with: indexPath)
   }
 
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-
-    let tagId = tagGroups[indexPath.section].tagIds[indexPath.row]
-    tagSelectionDelegate?.onTagSelection(tagId: tagId)
+    onTagSelect(with: indexPath)
   }
 
+  func onTagSelect(with indexPath: IndexPath) {
+    let tagId = tagGroups[indexPath.section].tagIds[indexPath.row]
+    selectedTagsIds.append(tagId)
+    interactionDelegate?.onTagSelection(tagId: tagId)
+  }
+}
+
+
+extension TagCollectionView: TagSectionHeaderViewDelegate {
+
+  func onCollapseButtonTap(in section: Int) {
+    var indexPaths = [IndexPath]()
+    for row in tagGroups[section].tagIds.indices {
+      let indexPath = IndexPath(row: row, section: section)
+      indexPaths.append(indexPath)
+    }
+
+    let isExpanded = tagGroups[section].isExpanded
+    tagGroups[section].isExpanded = !isExpanded
+
+    DispatchQueue.main.async { [self] in
+      reloadData()
+      interactionDelegate?.onSectionExpandCollapse()
+    }
+  }
 }

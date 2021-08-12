@@ -17,12 +17,18 @@ class TagsRepository {
     Tag(name: "спорт", id: "12"),
     Tag(name: "медитация", id: "13"),
     Tag(name: "прогулка", id: "14"),
+    Tag(name: "рисование", id: "15"),
+    Tag(name: "пробежка", id: "16"),
+    Tag(name: "кризис", id: "17"),
+    Tag(name: "счастье", id: "18"),
+    Tag(name: "пупырка", id: "19"),
+    Tag(name: "пам пам", id: "20"),
   ]
 
   var tagGroups = [
-    TagGroup(title: "Дом", tagIds: ["1", "2", "3", "4", "5"]),
-    TagGroup(title: "Работа", tagIds: ["6", "7", "8"]),
-    TagGroup(title: "Прочее", tagIds: ["9", "10", "11", "12", "13", "14"])
+    ExpandableTagGroup(title: "Дом", tagIds: ["1", "2", "3", "4", "5"]),
+    ExpandableTagGroup(title: "Прочее", tagIds: ["6", "7", "8", "9", "10", "11", "12", "13", "14"]),
+    ExpandableTagGroup(title: "Прочее", tagIds: ["15", "16", "17", "18", "19", "20"])
   ]
 
   func getTag(with id: String) -> Tag? {
