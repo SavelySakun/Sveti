@@ -1,5 +1,5 @@
 import Foundation
 
 class ExpandableTagGroup: TagGroup {
-  var isExpanded: Bool = false
+  var isExpanded: Bool = true
 }

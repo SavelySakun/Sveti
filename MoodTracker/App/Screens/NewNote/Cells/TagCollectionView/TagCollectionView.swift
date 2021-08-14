@@ -8,17 +8,20 @@ protocol TagCollectionViewDelegate: AnyObject {
 class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
   weak var interactionDelegate: TagCollectionViewDelegate?
-  let tagGroups = TagsRepository().tagGroups
+  var tagGroups = TagsRepository().tagGroups
   var selectedTagsIds = [String]()
+  var isSearchMode = false
+
+  let nothingFoundLabel = UILabel()
 
   override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
 
     let collectionViewLayout = LeftAlignedCollectionViewFlowLayout()
-    collectionViewLayout.minimumLineSpacing = 8
-    collectionViewLayout.minimumInteritemSpacing = 8
+    collectionViewLayout.minimumLineSpacing = CollectionViewSizeConstants.itemSpacing
+    collectionViewLayout.minimumInteritemSpacing = CollectionViewSizeConstants.itemSpacing
     collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-    collectionViewLayout.headerReferenceSize = CGSize(width: frame.width, height: 46)
-    collectionViewLayout.footerReferenceSize = CGSize(width: frame.width, height: 25)
+    collectionViewLayout.headerReferenceSize = CGSize(width: frame.width, height: CollectionViewSizeConstants.sectionHeaderHeight)
+    collectionViewLayout.footerReferenceSize = CGSize(width: frame.width, height: CollectionViewSizeConstants.sectionFooterHeight)
 
     super.init(frame: frame, collectionViewLayout: collectionViewLayout)
     setLayout()
@@ -34,7 +37,19 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
     backgroundColor = .systemGray6
     allowsMultipleSelection = true
 
+    setNothingFoundLabel()
     registerViews()
+  }
+
+  private func setNothingFoundLabel() {
+    addSubview(nothingFoundLabel)
+    nothingFoundLabel.text = "Ничего не найдено"
+    nothingFoundLabel.isHidden = true
+    nothingFoundLabel.textColor = .systemGray
+    nothingFoundLabel.snp.makeConstraints { (make) in
+      make.left.equalToSuperview()
+      make.centerY.equalToSuperview().offset(15)
+    }
   }
 
   private func registerViews() {
@@ -88,7 +103,7 @@ extension TagCollectionView: UICollectionViewDataSource {
 
       let group = tagGroups[indexPath.section]
       let groupTitle = group.title
-      sectionHeader.set(with: groupTitle, isExpanded: group.isExpanded)
+      sectionHeader.set(with: groupTitle, isExpanded: group.isExpanded, isSearchMode: isSearchMode)
       
       return sectionHeader
 
@@ -105,7 +120,7 @@ extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
     let isExpanded = tagGroups[section].isExpanded
     if isExpanded {
-      return CGSize(width: frame.width, height: 25)
+      return CGSize(width: frame.width, height: CollectionViewSizeConstants.sectionFooterHeight)
     } else {
       return CGSize(width: frame.width, height: 0)
     }

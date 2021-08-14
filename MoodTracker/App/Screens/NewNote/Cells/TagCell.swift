@@ -1,25 +1,30 @@
 import UIKit
 
+private struct Section {
+  var numberOfSections = 0.0
+  var numberOfActiveFooters = 0.0
+  var numberOfRows = 0.0
+}
+
 class TagCell: Cell {
-
+  private let containerView = UIView()
   private let tagsCollection = TagCollectionView()
-  private let searchField = UISearchTextField()
+  private let searchBar = UISearchBar()
 
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		setLayout()
-	}
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+    setLayout()
+  }
 
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
-	private func setLayout() {
-    contentView.backgroundColor = .systemGray6
-    
+  private func setLayout() {
     addSearchField()
+    setContainerView()
     addTagCollectionView()
-	}
+  }
 
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
@@ -33,40 +38,60 @@ class TagCell: Cell {
     }
   }
 
+  private func addSearchField() {
+    searchBar.delegate = self
+    searchBar.searchBarStyle = .default
+    searchBar.placeholder = "Поиск"
+    searchBar.searchTextField.autocapitalizationType = .none
+    searchBar.searchTextField.backgroundColor = .systemGray6
+    searchBar.layer.borderWidth = 2
+    searchBar.layer.cornerRadius = 12
+    searchBar.layer.borderColor = UIColor.white.cgColor
+
+    contentView.addSubview(searchBar)
+    let offset = 8
+    searchBar.snp.makeConstraints { (make) in
+      make.height.equalTo(45)
+      make.top.equalToSuperview()
+      make.left.equalToSuperview().offset(-offset)
+      make.right.equalToSuperview().offset(offset)
+    }
+  }
+
+  private func setContainerView() {
+    containerView.backgroundColor = .systemGray6
+    containerView.layer.cornerRadius = 12
+
+    contentView.addSubview(containerView)
+    containerView.snp.makeConstraints { (make) in
+      make.top.equalTo(searchBar.snp.bottom).offset(UIUtils.defaultOffset)
+      make.left.equalToSuperview()
+      make.bottom.equalToSuperview()
+      make.right.equalToSuperview()
+    }
+  }
+
+
   private func addTagCollectionView() {
     tagsCollection.interactionDelegate = self
-    contentView.addSubview(tagsCollection)
+    containerView.addSubview(tagsCollection)
 
     tagsCollection.snp.makeConstraints { (make) in
       make.height.equalTo(getCollectionViewHeight())
-      make.top.equalTo(searchField.snp.bottom).offset(UIUtils.middleOffset)
-      make.left.equalTo(contentView.snp.left).offset(UIUtils.bigOffset)
-      make.right.equalTo(contentView.snp.right).offset(-UIUtils.bigOffset)
-      make.bottom.equalTo(contentView.snp.bottom).offset(-UIUtils.middleOffset)
+      make.top.equalTo(containerView.snp.top).offset(UIUtils.middleOffset)
+      make.left.equalTo(containerView.snp.left).offset(UIUtils.bigOffset)
+      make.right.equalTo(containerView.snp.right).offset(-UIUtils.bigOffset)
+      make.bottom.equalTo(containerView.snp.bottom).offset(-UIUtils.middleOffset)
     }
   }
 
-  private func addSearchField() {
-    searchField.placeholder = "Поиск тэгов"
-    contentView.addSubview(searchField)
-    searchField.snp.makeConstraints { (make) in
-      make.height.equalTo(40)
-      make.top.equalToSuperview().offset(UIUtils.defaultOffset)
-      make.left.equalToSuperview().offset(UIUtils.defaultOffset)
-      make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
-    }
-  }
-
-  func getCollectionViewHeight() -> Double {
-    struct Section {
-      var numberOfSections = 0.0
-      var numberOfActiveFooters = 0.0
-      var numberOfRows = 0.0
-    }
-
+  private func getCollectionViewHeight() -> Double {
     var section = Section()
+
+    // 1. Get number of sections
     section.numberOfSections = Double(tagsCollection.tagGroups.count)
 
+    // 2. Get total number of rows
     tagsCollection.tagGroups.forEach { group in
       if group.isExpanded {
         let numberOfRows: Double = (Double(group.tagIds.count) / 3.0).rounded(.up)
@@ -75,23 +100,43 @@ class TagCell: Cell {
       }
     }
 
-    let sectionHeight = 46.0
-    let footerHeight = 25.0
+    // 3. Calculate total height of CollectionView
+    let headerHeight = Double(CollectionViewSizeConstants.sectionHeaderHeight)
+    let footerHeight = Double(CollectionViewSizeConstants.sectionFooterHeight)
+    let cellHeight = CollectionViewSizeConstants.cellHeight + Double((CollectionViewSizeConstants.itemSpacing / 2.0))
 
-    let totalHeightOfSection = sectionHeight * section.numberOfSections
+    let totalHeightOfSections = headerHeight * section.numberOfSections
     let totalHeightOfFooters = footerHeight * section.numberOfActiveFooters
-
-    let cellHeight = 35.0 + 4.0
-    let totalCellHeight = cellHeight * section.numberOfRows
+    let totalCellsHeight = cellHeight * section.numberOfRows
     
-    let totalHeightOfCollectionView = totalHeightOfSection + totalHeightOfFooters + totalCellHeight
-    return totalHeightOfCollectionView
+    return totalHeightOfSections + totalHeightOfFooters + totalCellsHeight
   }
 
   override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
     let heightOffset = (UIUtils.middleOffset * 2) + UIUtils.defaultOffset + 40
     let size = CGSize(width: Double(self.frame.width), height: getCollectionViewHeight() + Double(heightOffset))
     return size
+  }
+}
+
+extension TagCell: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+    if searchText.isEmpty {
+      tagsCollection.isSearchMode = false
+      tagsCollection.nothingFoundLabel.isHidden = true
+      tagsCollection.tagGroups = TagsRepository().tagGroups
+    } else {
+      let findTagIds = TagsRepository().getTagIds(with: searchText)
+      tagsCollection.nothingFoundLabel.isHidden = !findTagIds.isEmpty
+      tagsCollection.isSearchMode = true
+      tagsCollection.tagGroups = [ExpandableTagGroup(title: "Результат поиска", tagIds: findTagIds)]
+    }
+
+    DispatchQueue.main.async {
+      self.tagsCollection.reloadData()
+      self.delegate?.onUpdate()
+    }
   }
 }
 

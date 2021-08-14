@@ -34,4 +34,17 @@ class TagsRepository {
   func getTag(with id: String) -> Tag? {
     return tags.first { $0.id == id }
   }
+
+  func getTagIds(with name: String) -> [String] {
+    var tagIds = [String]()
+    let filteredTags = tags.filter { tag in
+      return tag.name.lowercased().contains(name.lowercased())
+    }
+
+    filteredTags.forEach { tag in
+      tagIds.append(tag.id)
+    }
+
+    return tagIds
+  }
 }

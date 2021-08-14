@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 protocol TagSectionHeaderViewDelegate: AnyObject {
   func onCollapseButtonTap(in section: Int)
@@ -11,9 +12,12 @@ class TagSectionHeaderView: UICollectionReusableView {
   static let identifier = "tagSectionHeader"
   private let offset = 16
   private let editButton = RoundButtonView(firstStateImage: "edit")
-  private let collapseButton = RoundButtonView(firstStateImage: "arrow_up", secondStateImage: "arrow_down")
+  private let collapseButton = RoundButtonView(firstStateImage: "arrow_down", secondStateImage: "arrow_up")
   private let separatorView = UIView()
   lazy var buttonsStackView = UIStackView(arrangedSubviews: [editButton, collapseButton])
+
+  var searchModeConstraint: Constraint?
+  var defaultConstraint: Constraint?
 
   weak var delegate: TagSectionHeaderViewDelegate?
 
@@ -26,9 +30,13 @@ class TagSectionHeaderView: UICollectionReusableView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func set(with title: String, isExpanded: Bool) {
+  func set(with title: String, isExpanded: Bool, isSearchMode: Bool) {
     titleLabel.text = title
     collapseButton.setStateImage(isExpanded: isExpanded)
+
+    DispatchQueue.main.async { [self] in
+      isSearchMode ? setButtonsHiddenMode() : setDefaultButtons()
+    }
   }
 
 
@@ -53,6 +61,7 @@ class TagSectionHeaderView: UICollectionReusableView {
   private func setButtons() {
     setCollapseButtonGesture()
 
+    buttonsStackView.contentMode = .scaleAspectFit
     buttonsStackView.axis = .horizontal
     buttonsStackView.spacing = 8
 
@@ -61,7 +70,6 @@ class TagSectionHeaderView: UICollectionReusableView {
       make.top.equalToSuperview()
       make.right.equalToSuperview()
     }
-
   }
 
   private func setCollapseButtonGesture() {
@@ -77,8 +85,22 @@ class TagSectionHeaderView: UICollectionReusableView {
       make.height.equalTo(2)
       make.left.equalTo(titleLabel.snp.right).offset(UIUtils.defaultOffset)
       make.centerY.equalTo(buttonsStackView.snp.centerY)
-      make.right.equalTo(buttonsStackView.snp.left).offset(-UIUtils.defaultOffset)
+
+      defaultConstraint = make.right.equalTo(buttonsStackView.snp.left).offset(-UIUtils.defaultOffset).constraint
+      searchModeConstraint = make.right.right.equalToSuperview().constraint
     }
+  }
+
+  private func setButtonsHiddenMode() {
+    buttonsStackView.isHidden = true
+    defaultConstraint?.deactivate()
+    searchModeConstraint?.activate()
+  }
+
+  private func setDefaultButtons() {
+    buttonsStackView.isHidden = false
+    searchModeConstraint?.deactivate()
+    defaultConstraint?.activate()
   }
 
   @objc func onCollapseTap() {
