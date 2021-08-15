@@ -127,7 +127,7 @@ extension TagCell: UISearchBarDelegate {
     if searchText.isEmpty {
       tagsCollection.isSearchMode = false
       tagsCollection.nothingFoundLabel.isHidden = true
-      tagsCollection.tagGroups = tagsRepository.tagGroups
+      tagsCollection.tagGroups = tagsRepository.groups
     } else {
       let findTagIds = tagsRepository.getTagIds(with: searchText)
       tagsCollection.nothingFoundLabel.isHidden = !findTagIds.isEmpty

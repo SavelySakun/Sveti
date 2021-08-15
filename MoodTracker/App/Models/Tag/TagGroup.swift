@@ -1,14 +1,18 @@
 import Foundation
+import RealmSwift
 
-class TagGroup {
-  var id: String
-  var title: String
-  var tagIds: [String]
-  var isExpanded: Bool = true
+class TagGroup: Object {
+  @objc dynamic var id = String()
+  @objc dynamic var title = String()
+  @objc dynamic var isExpanded: Bool = true
+  var tagIds = List<String>()
 
-  init(title: String, tagIds: [String]) {
+  convenience init(title: String, tagIds: [String]) {
+    self.init()
     self.id = UUID().uuidString
     self.title = title
-    self.tagIds = tagIds
+    tagIds.forEach { tag in
+      self.tagIds.append(tag)
+    }
   }
 }

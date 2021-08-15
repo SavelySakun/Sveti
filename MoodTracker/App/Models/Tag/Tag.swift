@@ -1,13 +1,15 @@
-import UIKit
+import Foundation
+import RealmSwift
 
-class Tag {
-  var id: String
-  var name: String
-  var iconName: String
+class Tag: Object {
+  @objc dynamic var id = String()
+  @objc dynamic var name = String()
+  @objc dynamic var iconName = String()
 
-  init(name: String, iconName: String = "tag", id: String) {
+  convenience init(name: String, iconName: String = "tag", id: String? = nil) {
+    self.init()
     self.name = name
     self.iconName = iconName
-    self.id = id
+    self.id = id ?? UUID().uuidString
   }
 }

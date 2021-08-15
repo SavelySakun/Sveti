@@ -1,35 +1,43 @@
 import Foundation
+import RealmSwift
 
 class TagsRepository {
 
-  var tags = [
-    Tag(name: "отдых", id: "1"),
-    Tag(name: "безделье", id: "2"),
-    Tag(name: "кулинария", id: "3"),
-    Tag(name: "уборка", id: "4"),
-    Tag(name: "чтение", id: "5"),
-    Tag(name: "игра", id: "6"),
-    Tag(name: "кино", id: "7"),
-    Tag(name: "стресс", id: "8"),
-    Tag(name: "кодинг", id: "9"),
-    Tag(name: "созвон", id: "10"),
-    Tag(name: "сон", id: "11"),
-    Tag(name: "спорт", id: "12"),
-    Tag(name: "медитация", id: "13"),
-    Tag(name: "прогулка", id: "14"),
-    Tag(name: "рисование", id: "15"),
-    Tag(name: "пробежка", id: "16"),
-    Tag(name: "кризис", id: "17"),
-    Tag(name: "счастье", id: "18"),
-    Tag(name: "пупырка", id: "19"),
-    Tag(name: "пам пам", id: "20"),
-  ]
+  private let realm = try! Realm()
+  private let userDefaults = UserDefaults()
 
-  var tagGroups = [
-    TagGroup(title: "Дом", tagIds: ["1", "2", "3", "4", "5"]),
-    TagGroup(title: "Прочее", tagIds: ["6", "7", "8", "9", "10", "11", "12", "13", "14"]),
-    TagGroup(title: "Прочее", tagIds: ["15", "16", "17", "18", "19", "20"])
-  ]
+  private var tags: [Tag]
+  var groups: [TagGroup]
+
+  init() {
+    tags = realm.objects(Tag.self).toArray()
+    groups = realm.objects(TagGroup.self).toArray()
+    setupDefaults()
+  }
+
+  func setupDefaults() {
+    userDefaults.register(
+      defaults: [UDKeys.isDefaultTagsSaved: false]
+    )
+  }
+
+  func saveDefaultTags() {
+    let isSaved = userDefaults.bool(forKey: UDKeys.isDefaultTagsSaved)
+
+    guard !isSaved else { return }
+
+    let defaultTags = DefaultTags()
+    let tags = defaultTags.tags
+    let groups = defaultTags.groups
+
+    try! realm.write {
+      realm.add(tags)
+      realm.add(groups)
+    }
+
+    userDefaults.set(true, forKey: UDKeys.isDefaultTagsSaved)
+  }
+
 
   func getTag(with id: String) -> Tag? {
     return tags.first { $0.id == id }

@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 protocol TagCollectionViewDelegate: AnyObject {
   func onTagSelection(tagId: String)
@@ -7,8 +8,10 @@ protocol TagCollectionViewDelegate: AnyObject {
 
 class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
+  let realm = try! Realm()
+
   weak var interactionDelegate: TagCollectionViewDelegate?
-  var tagGroups = TagsRepository().tagGroups
+  var tagGroups = TagsRepository().groups
   var selectedTagsIds = [String]()
   var isSearchMode = false
 
@@ -155,7 +158,10 @@ extension TagCollectionView: TagSectionHeaderViewDelegate {
     }
 
     let isExpanded = tagGroups[section].isExpanded
-    tagGroups[section].isExpanded = !isExpanded
+
+    try! realm.write {
+      tagGroups[section].isExpanded = !isExpanded
+    }
 
     DispatchQueue.main.async { [self] in
       reloadData()

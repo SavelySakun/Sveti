@@ -64,6 +64,8 @@
 		FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DC226AF27B600126B97 /* ColorHelper.swift */; };
 		FC7E6DC526AF29B500126B97 /* MathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6DC426AF29B500126B97 /* MathHelper.swift */; };
 		FC84E81D26C7CE040081CBA2 /* CollectionViewSizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E81C26C7CE040081CBA2 /* CollectionViewSizeConstants.swift */; };
+		FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E82026C8FC350081CBA2 /* DefaultTags.swift */; };
+		FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E82326C902680081CBA2 /* UDKeys.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
@@ -166,6 +168,8 @@
 		FC7E6DC226AF27B600126B97 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		FC7E6DC426AF29B500126B97 /* MathHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathHelper.swift; sourceTree = "<group>"; };
 		FC84E81C26C7CE040081CBA2 /* CollectionViewSizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSizeConstants.swift; sourceTree = "<group>"; };
+		FC84E82026C8FC350081CBA2 /* DefaultTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTags.swift; sourceTree = "<group>"; };
+		FC84E82326C902680081CBA2 /* UDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDKeys.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -395,8 +399,9 @@
 		FC7E6D1526AB039200126B97 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
 				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
+				FC84E81E26C8FC210081CBA2 /* Tags */,
+				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
 				FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */,
 			);
 			path = Repository;
@@ -430,6 +435,7 @@
 		FC7E6D1B26AB1A0400126B97 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC7E6D1526AB039200126B97 /* Repository */,
 				FC7E6D8126AC484500126B97 /* Models */,
 				FC6C58A1266136B5000188A6 /* Extensions */,
@@ -471,6 +477,22 @@
 				FCB0642D26B5479D00A0494A /* Mood.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FC84E81E26C8FC210081CBA2 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				FC84E82026C8FC350081CBA2 /* DefaultTags.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		FC84E82226C902530081CBA2 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				FC84E82326C902680081CBA2 /* UDKeys.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		FCAAD9F126B84FAB00607DC0 /* SectionHeader */ = {
@@ -755,6 +777,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */,
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
@@ -771,6 +794,7 @@
 				FC76B39326810F7700AF209F /* Cell.swift in Sources */,
 				FCB0642E26B5479D00A0494A /* Mood.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
+				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
 				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
 				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,

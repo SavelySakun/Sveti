@@ -14,7 +14,6 @@ class NotesRepository {
   let realm = try! Realm()
 
   func save(_ note: Note) {
-
     let noteToSave = getPreparedToSave(note)
     try! realm.write {
       realm.add(noteToSave)
