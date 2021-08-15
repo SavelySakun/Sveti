@@ -122,15 +122,17 @@ class TagCell: Cell {
 extension TagCell: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
+    let tagsRepository = TagsRepository()
+
     if searchText.isEmpty {
       tagsCollection.isSearchMode = false
       tagsCollection.nothingFoundLabel.isHidden = true
-      tagsCollection.tagGroups = TagsRepository().tagGroups
+      tagsCollection.tagGroups = tagsRepository.tagGroups
     } else {
-      let findTagIds = TagsRepository().getTagIds(with: searchText)
+      let findTagIds = tagsRepository.getTagIds(with: searchText)
       tagsCollection.nothingFoundLabel.isHidden = !findTagIds.isEmpty
       tagsCollection.isSearchMode = true
-      tagsCollection.tagGroups = [ExpandableTagGroup(title: "Результат поиска", tagIds: findTagIds)]
+      tagsCollection.tagGroups = [TagGroup(title: "Результат поиска", tagIds: findTagIds)]
     }
 
     DispatchQueue.main.async {
