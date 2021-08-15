@@ -38,7 +38,6 @@ class TagsRepository {
     userDefaults.set(true, forKey: UDKeys.isDefaultTagsSaved)
   }
 
-
   func getTag(with id: String) -> Tag? {
     return tags.first { $0.id == id }
   }
@@ -54,5 +53,12 @@ class TagsRepository {
     }
 
     return tagIds
+  }
+
+  func updateExpandStatus(groupIndex: Int) {
+    let isExpanded = groups[groupIndex].isExpanded
+    try! realm.write {
+      groups[groupIndex].isExpanded = !isExpanded
+    }
   }
 }

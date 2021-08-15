@@ -11,7 +11,10 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
   let realm = try! Realm()
 
   weak var interactionDelegate: TagCollectionViewDelegate?
-  var tagGroups = TagsRepository().groups
+
+  let tagsRepository = TagsRepository()
+  lazy var tagGroups = tagsRepository.groups
+
   var selectedTagsIds = [String]()
   var isSearchMode = false
 
@@ -151,18 +154,7 @@ extension TagCollectionView: UICollectionViewDelegate {
 extension TagCollectionView: TagSectionHeaderViewDelegate {
 
   func onCollapseButtonTap(in section: Int) {
-    var indexPaths = [IndexPath]()
-    for row in tagGroups[section].tagIds.indices {
-      let indexPath = IndexPath(row: row, section: section)
-      indexPaths.append(indexPath)
-    }
-
-    let isExpanded = tagGroups[section].isExpanded
-
-    try! realm.write {
-      tagGroups[section].isExpanded = !isExpanded
-    }
-
+    tagsRepository.updateExpandStatus(groupIndex: section)
     DispatchQueue.main.async { [self] in
       reloadData()
       interactionDelegate?.onSectionExpandCollapse()

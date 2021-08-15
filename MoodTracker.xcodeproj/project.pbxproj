@@ -66,6 +66,8 @@
 		FC84E81D26C7CE040081CBA2 /* CollectionViewSizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E81C26C7CE040081CBA2 /* CollectionViewSizeConstants.swift */; };
 		FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E82026C8FC350081CBA2 /* DefaultTags.swift */; };
 		FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E82326C902680081CBA2 /* UDKeys.swift */; };
+		FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */; };
+		FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
@@ -170,6 +172,8 @@
 		FC84E81C26C7CE040081CBA2 /* CollectionViewSizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSizeConstants.swift; sourceTree = "<group>"; };
 		FC84E82026C8FC350081CBA2 /* DefaultTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTags.swift; sourceTree = "<group>"; };
 		FC84E82326C902680081CBA2 /* UDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDKeys.swift; sourceTree = "<group>"; };
+		FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVC.swift; sourceTree = "<group>"; };
+		FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -410,11 +414,12 @@
 		FC7E6D1826AB195B00126B97 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
 				FC3A898426A053F60048E4ED /* NewNote */,
 				FC7E6D1C26AB1A1600126B97 /* Diary */,
 				FCB0642826B5430E00A0494A /* DetailNote */,
 				FCB0643C26B5C74600A0494A /* EditNote */,
-				FC7E6D2426ABFA6F00126B97 /* TabbarController.swift */,
+				FC84E84326C912D50081CBA2 /* Navigation */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -493,6 +498,23 @@
 				FC84E82326C902680081CBA2 /* UDKeys.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		FC84E84326C912D50081CBA2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				FC7E6D2426ABFA6F00126B97 /* TabbarController.swift */,
+				FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		FC84E84426C912DE0081CBA2 /* EditTagGroup */ = {
+			isa = PBXGroup;
+			children = (
+				FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */,
+			);
+			path = EditTagGroup;
 			sourceTree = "<group>";
 		};
 		FCAAD9F126B84FAB00607DC0 /* SectionHeader */ = {
@@ -779,6 +801,7 @@
 			files = (
 				FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */,
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
+				FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
@@ -832,6 +855,7 @@
 				FC6C58BC2663D3B3000188A6 /* TagCollectionView.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC6C58C02663D640000188A6 /* TagCell.swift in Sources */,
+				FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */,
 				FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */,
 				FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
