@@ -86,6 +86,9 @@
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
 		FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */; };
 		FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */; };
+		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
+		FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */; };
+		FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +195,9 @@
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteTableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
+		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
+		FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVM.swift; sourceTree = "<group>"; };
+		FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupCell.swift; sourceTree = "<group>"; };
 		FE567E62EC97C22098BE6314 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -516,6 +522,8 @@
 			children = (
 				FC84E89F26CAD1470081CBA2 /* Cells */,
 				FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */,
+				FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */,
+				FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */,
 			);
 			path = EditTagGroup;
 			sourceTree = "<group>";
@@ -524,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */,
+				FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -815,6 +824,7 @@
 				FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
+				FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */,
 				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
@@ -864,7 +874,9 @@
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
 				FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */,
 				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,
+				FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* TagCollectionView.swift in Sources */,
+				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC6C58C02663D640000188A6 /* TagCell.swift in Sources */,
 				FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */,

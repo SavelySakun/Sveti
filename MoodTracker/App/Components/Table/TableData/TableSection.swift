@@ -2,7 +2,7 @@ import UIKit
 
 struct TableSection {
 
-  let title: String?
-  let cellsData: [CellData]
+  var title: String?
+  var cellsData: [CellData]
 
 }

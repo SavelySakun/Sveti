@@ -65,4 +65,8 @@ class TagsRepository {
   func findGroupId(with number: Int) -> String {
     groups[number].id
   }
+
+  func getGroup(with id: String) -> TagGroup? {
+    return groups.first { $0.id == id }
+  }
 }
