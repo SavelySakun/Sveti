@@ -5,22 +5,13 @@ class DetailNoteCommentCell: Cell {
   let textView = UITextView()
   let containerView = UIView()
 
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    setLayout()
-  }
-
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
     guard let note = viewModel.cellValue as? Note else { return }
     textView.text = note.comment
   }
 
-  private func setLayout() {
+  override func setLayout() {
     contentView.backgroundColor = .systemGray6
     addContainer()
     addTextView()

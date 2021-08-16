@@ -116,6 +116,7 @@ class TagSectionHeaderView: UICollectionReusableView {
   }
 
   @objc func onEditTap() {
-    NavigationHelper.push(vc: EditTagGroupVC())
+    let groupId = TagsRepository().findGroupId(with: section)
+    NavigationHelper.push(vc: EditTagGroupVC(groupId: groupId))
   }
 }

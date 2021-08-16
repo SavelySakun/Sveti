@@ -61,4 +61,8 @@ class TagsRepository {
       groups[groupIndex].isExpanded = !isExpanded
     }
   }
+
+  func findGroupId(with number: Int) -> String {
+    groups[number].id
+  }
 }

@@ -7,16 +7,6 @@ class DiaryCell: Cell {
   private let containerView = UIView()
   private let tagCollectionView = DiaryTagCollectionView()
 
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    setLayout()
-
-  }
-
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
   func configure(with note: Note) {
     commentLabel.text = note.comment
     scoreTimeView.configure(with: note)
@@ -31,7 +21,7 @@ class DiaryCell: Cell {
     }
   }
 
-  private func setLayout() {
+  override func setLayout() {
     self.selectionStyle = .none
     setContainer()
     setScoreTime()

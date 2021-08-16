@@ -9,15 +9,6 @@ class MoodScoreCell: Cell {
   let averageLabel = UILabel()
   var statesStackView: UIStackView!
 
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    setLayout()
-  }
-
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
 
@@ -33,7 +24,7 @@ class MoodScoreCell: Cell {
     averageLabel.textColor = ColorHelper().getColor(value: Int(mood.average), alpha: 1)
   }
 
-  private func setLayout() {
+  override func setLayout() {
     addContainer()
     setStateScoresStackView()
     setGlobalStackView()

@@ -68,6 +68,7 @@
 		FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E82326C902680081CBA2 /* UDKeys.swift */; };
 		FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */; };
 		FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */; };
+		FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
@@ -174,6 +175,7 @@
 		FC84E82326C902680081CBA2 /* UDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDKeys.swift; sourceTree = "<group>"; };
 		FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVC.swift; sourceTree = "<group>"; };
 		FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupNameCell.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -512,9 +514,18 @@
 		FC84E84426C912DE0081CBA2 /* EditTagGroup */ = {
 			isa = PBXGroup;
 			children = (
+				FC84E89F26CAD1470081CBA2 /* Cells */,
 				FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */,
 			);
 			path = EditTagGroup;
+			sourceTree = "<group>";
+		};
+		FC84E89F26CAD1470081CBA2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FCAAD9F126B84FAB00607DC0 /* SectionHeader */ = {
@@ -804,6 +815,7 @@
 				FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
+				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
