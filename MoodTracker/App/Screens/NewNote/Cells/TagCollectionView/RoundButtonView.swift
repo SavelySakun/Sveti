@@ -12,7 +12,7 @@ class RoundButtonView: UIView {
 
   private var state: RoundButtonState = .first
 
-  private let imageView = UIImageView()
+  let imageView = UIImageView()
   override func layoutSubviews() {
     super.layoutSubviews()
     layer.cornerRadius = frame.size.width / 2

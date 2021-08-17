@@ -24,6 +24,7 @@ class EditTagGroupVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
+    tableView.separatorColor = .clear
     title = "Изменить"
     navigationItem.largeTitleDisplayMode = .never
   }
