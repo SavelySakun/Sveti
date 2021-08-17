@@ -24,7 +24,7 @@ class ButtonIconView: UIView {
     iconImageView.contentMode = .scaleAspectFit
     addSubview(iconImageView)
     iconImageView.snp.makeConstraints { (make) in
-      make.height.width.equalTo(24)
+      make.height.width.equalTo(22)
       make.top.equalToSuperview().offset(UIUtils.defaultOffset)
       make.left.equalToSuperview().offset(UIUtils.defaultOffset)
       make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)

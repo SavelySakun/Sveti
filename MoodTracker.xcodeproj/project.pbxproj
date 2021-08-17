@@ -19,7 +19,7 @@
 		FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */; };
 		FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */; };
 		FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */; };
-		FC3A898826A054BF0048E4ED /* EditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* EditType.swift */; };
+		FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* NoteEditType.swift */; };
 		FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* SliderCells.swift */; };
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
@@ -90,6 +90,9 @@
 		FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */; };
 		FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */; };
 		FCEEB21926CBF2D000F7B00F /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB21826CBF2D000F7B00F /* IconButton.swift */; };
+		FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB21A26CC02A700F7B00F /* EditingTableView.swift */; };
+		FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB2DC26CD80EC00F7B00F /* Event.swift */; };
+		FCEEB2E026CD81F000F7B00F /* TagEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB2DF26CD81F000F7B00F /* TagEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +130,7 @@
 		FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCollectionView.swift; sourceTree = "<group>"; };
 		FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCell.swift; sourceTree = "<group>"; };
-		FC3A898726A054BF0048E4ED /* EditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditType.swift; sourceTree = "<group>"; };
+		FC3A898726A054BF0048E4ED /* NoteEditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditType.swift; sourceTree = "<group>"; };
 		FC3A898B26A0584D0048E4ED /* SliderCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCells.swift; sourceTree = "<group>"; };
 		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +203,9 @@
 		FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVM.swift; sourceTree = "<group>"; };
 		FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupCell.swift; sourceTree = "<group>"; };
 		FCEEB21826CBF2D000F7B00F /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		FCEEB21A26CC02A700F7B00F /* EditingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTableView.swift; sourceTree = "<group>"; };
+		FCEEB2DC26CD80EC00F7B00F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FCEEB2DF26CD81F000F7B00F /* TagEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagEvent.swift; sourceTree = "<group>"; };
 		FE567E62EC97C22098BE6314 /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +304,7 @@
 				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
 				FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */,
 				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
+				FC3A898726A054BF0048E4ED /* NoteEditType.swift */,
 			);
 			path = NewNote;
 			sourceTree = "<group>";
@@ -310,14 +317,6 @@
 				FCD9AB4E268A335100817746 /* TableData */,
 			);
 			path = Table;
-			sourceTree = "<group>";
-		};
-		FC3A898626A054B20048E4ED /* Combine */ = {
-			isa = PBXGroup;
-			children = (
-				FC3A898726A054BF0048E4ED /* EditType.swift */,
-			);
-			path = Combine;
 			sourceTree = "<group>";
 		};
 		FC3A898A26A0583B0048E4ED /* Cells */ = {
@@ -455,7 +454,6 @@
 				FC7E6D8126AC484500126B97 /* Models */,
 				FC6C58A1266136B5000188A6 /* Extensions */,
 				FC6C58B72663D1CD000188A6 /* Utils */,
-				FC3A898626A054B20048E4ED /* Combine */,
 				FC7E6D1A26AB199000126B97 /* Components */,
 				FC7E6D1826AB195B00126B97 /* Screens */,
 			);
@@ -490,6 +488,7 @@
 				FC7E6D9C26AC9A7500126B97 /* Note.swift */,
 				FC7E6D9A26AC927900126B97 /* SplitDate.swift */,
 				FCB0642D26B5479D00A0494A /* Mood.swift */,
+				FCEEB2DC26CD80EC00F7B00F /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -527,6 +526,8 @@
 				FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */,
 				FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */,
 				FCEEB21826CBF2D000F7B00F /* IconButton.swift */,
+				FCEEB21A26CC02A700F7B00F /* EditingTableView.swift */,
+				FCEEB2DF26CD81F000F7B00F /* TagEvent.swift */,
 			);
 			path = EditTagGroup;
 			sourceTree = "<group>";
@@ -827,12 +828,14 @@
 				FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
+				FCEEB2E026CD81F000F7B00F /* TagEvent.swift in Sources */,
 				FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */,
 				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
+				FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */,
 				FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
 				FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */,
@@ -891,7 +894,8 @@
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
-				FC3A898826A054BF0048E4ED /* EditType.swift in Sources */,
+				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
+				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

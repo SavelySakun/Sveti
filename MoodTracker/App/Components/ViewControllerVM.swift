@@ -10,6 +10,6 @@ class ViewControllerVM {
     self.tableDataProvider = tableDataProvider
   }
 
-  func handle(_ event: EditEvent) { }
+  func handle<T: Event>(_ event: T) { }
 
 }

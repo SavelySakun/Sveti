@@ -6,11 +6,13 @@ class NewNoteVM: ViewControllerVM {
   private var note = Note()
   private let realm = try! Realm()
 
-  override func handle(_ event: EditEvent) {
+  override func handle<T: Event>(_ event: T) {
     super.handle(event)
+    guard let event = event as? EditEvent else { return }
+    let eventType = NoteEditType(rawValue: event.type)
 
     try! realm.write {
-      switch event.type {
+      switch eventType {
       case .emotionalStateChange:
         guard let value = event.value as? Float else { return }
         note.mood?.emotionalState = value
@@ -35,6 +37,8 @@ class NewNoteVM: ViewControllerVM {
       case .tagChange:
         guard let tagId = event.value as? String else { return }
         handleTagEditing(with: tagId)
+      case .none:
+        return
       }
     }
   }

@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 enum RoundButtonState {
   case first
@@ -9,6 +10,11 @@ class RoundButtonView: UIView {
 
   private var firstStateImage: UIImage?
   private var secondStateImage: UIImage?
+
+  var sizeSetupHandler: (() -> Void) = { return }
+  var tapAction: (() -> Void) = { return }
+
+  var sizeConstraint: Constraint?
 
   private var state: RoundButtonState = .first
 
@@ -31,9 +37,15 @@ class RoundButtonView: UIView {
   private func setLayout() {
     backgroundColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1).withAlphaComponent(0.5)
     snp.makeConstraints { (make) in
-      make.height.width.equalTo(33)
+      sizeConstraint = make.height.width.equalTo(33).constraint
     }
     setImageView()
+    addTapAction()
+  }
+
+  func updateSize() {
+    sizeConstraint?.deactivate()
+    sizeSetupHandler()
   }
 
   private func setImageView() {
@@ -63,5 +75,15 @@ class RoundButtonView: UIView {
 
   func setStateImage(isExpanded: Bool) {
     imageView.image = isExpanded ? secondStateImage : firstStateImage
+  }
+
+  private func addTapAction() {
+    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTap))
+    self.addGestureRecognizer(gestureRecognizer)
+    self.isUserInteractionEnabled = true
+  }
+
+  @objc private func onTap() {
+    tapAction()
   }
 }

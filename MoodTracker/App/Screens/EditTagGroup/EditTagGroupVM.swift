@@ -22,4 +22,21 @@ class EditTagGroupVM: ViewControllerVM {
     tableDataProvider?.sections?[1].cellsData = cellsData // do SAFE
   }
 
+  override func handle<T>(_ event: T) where T: Event {
+    guard let event = event as? TagEvent else { return }
+    let eventType = TagEditType(rawValue: event.type)
+    switch eventType {
+    case .delete:
+      print("УДАЛИЛ")
+    case .hide:
+      print("СКРЫЛ")
+    case .show:
+      print("ПОКАЗАЛ")
+    default:
+      return
+    }
+  }
+
+
+
 }

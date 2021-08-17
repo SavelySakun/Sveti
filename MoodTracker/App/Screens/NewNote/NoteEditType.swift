@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-enum EditType {
+enum NoteEditType: String {
   case emotionalStateChange
   case physicalStateChange
   case willToLiveChange
@@ -10,7 +10,8 @@ enum EditType {
   case tagChange
 }
 
-struct EditEvent {
-  let type: EditType
-  let value: Any
+class EditEvent: Event {
+  init(type: NoteEditType, value: Any) {
+    super.init(type: type.rawValue, value: value)
+  }
 }

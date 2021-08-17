@@ -7,7 +7,7 @@ protocol CellDelegate: AnyObject {
 
 class Cell: UITableViewCell {
 
-  var publisher = PassthroughSubject<EditEvent, Never>()
+  var publisher = PassthroughSubject<Event, Never>()
   weak var delegate: CellDelegate?
 
   var viewModel: CellVM? {

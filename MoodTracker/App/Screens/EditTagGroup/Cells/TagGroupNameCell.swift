@@ -2,6 +2,7 @@ import UIKit
 
 class TagGroupNameCell: Cell {
 
+  private let containerView = UIView()
   private let groupNameTextField = UITextField()
 
   override func configureSelf(with viewModel: CellVM) {
@@ -12,18 +13,24 @@ class TagGroupNameCell: Cell {
   }
 
   override func setLayout() {
-    setContentView()
+    setContainerView()
     setTextField()
   }
 
-  private func setContentView() {
-    contentView.backgroundColor = .systemGray6
-    contentView.layer.cornerRadius = 12
+  private func setContainerView() {
+    containerView.backgroundColor = .systemGray6
+    containerView.layer.cornerRadius = 12
+    contentView.addSubview(containerView)
+    containerView.snp.makeConstraints { (make) in
+      make.top.equalToSuperview()
+      make.left.equalToSuperview().offset(UIUtils.middleOffset)
+      make.bottom.equalToSuperview()
+      make.right.equalToSuperview().offset(-UIUtils.middleOffset)
+    }
   }
 
   private func setTextField() {
-    groupNameTextField.font = UIFont.systemFont(ofSize: 18)
-    contentView.addSubview(groupNameTextField)
+    containerView.addSubview(groupNameTextField)
     groupNameTextField.snp.makeConstraints { (make) in
       make.top.left.equalToSuperview().offset(UIUtils.middleOffset)
       make.right.bottom.equalToSuperview().offset(-UIUtils.middleOffset)

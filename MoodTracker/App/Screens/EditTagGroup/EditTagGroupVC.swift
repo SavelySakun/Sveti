@@ -7,6 +7,7 @@ class EditTagGroupVC: VCwithTable {
   init(groupId: String) {
     self.groupId = groupId
     super.init(with: .insetGrouped)
+    tableView = EditingTableView(viewModel: viewModel, style: .grouped)
   }
   
   required init?(coder: NSCoder) {
@@ -25,6 +26,7 @@ class EditTagGroupVC: VCwithTable {
   override func setLayout() {
     super.setLayout()
     tableView.separatorColor = .clear
+    tableView.isEditing = true
     title = "Изменить"
     navigationItem.largeTitleDisplayMode = .never
   }
