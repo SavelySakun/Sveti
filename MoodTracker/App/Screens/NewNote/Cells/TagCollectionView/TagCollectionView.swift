@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 protocol TagCollectionViewDelegate: AnyObject {
-  func onTagSelection(tagId: String)
+  func onTagSelection(tag: Tag)
   func onSectionExpandCollapse()
 }
 
@@ -15,7 +15,7 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
   let tagsRepository = TagsRepository()
   lazy var tagGroups = tagsRepository.groups
 
-  var selectedTagsIds = [String]()
+  var selectedTags = [Tag]()
   var isSearchMode = false
 
   let nothingFoundLabel = UILabel()
@@ -72,7 +72,7 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     let isExpanded = tagGroups[section].isExpanded
-    return isExpanded ? tagGroups[section].tagIds.count : 0
+    return isExpanded ? tagGroups[section].tags.count : 0
   }
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -82,13 +82,11 @@ extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = dequeueReusableCell(withReuseIdentifier: TagCollectionCell.reuseId, for: indexPath) as? TagCollectionCell else { return UICollectionViewCell() }
 
-    let tagId = tagGroups[indexPath.section].tagIds[indexPath.row]
-    if let tag = TagsRepository().getTag(with: tagId) {
-      cell.set(with: tag)
-      cell.isSelected = selectedTagsIds.contains(tagId)
-    }
+    let tag = tagGroups[indexPath.section].tags[indexPath.row]
+    cell.set(with: tag)
+    cell.isSelected = selectedTags.contains(tag)
 
-    if selectedTagsIds.contains(tagId) {
+    if selectedTags.contains(tag) {
       DispatchQueue.main.async {
         self.selectItem(at: indexPath, animated: false, scrollPosition: .bottom)
       }
@@ -144,9 +142,9 @@ extension TagCollectionView: UICollectionViewDelegate {
   }
 
   func onTagSelect(with indexPath: IndexPath) {
-    let tagId = tagGroups[indexPath.section].tagIds[indexPath.row]
-    selectedTagsIds.append(tagId)
-    interactionDelegate?.onTagSelection(tagId: tagId)
+    let tag = tagGroups[indexPath.section].tags[indexPath.row]
+    selectedTags.append(tag)
+    interactionDelegate?.onTagSelection(tag: tag)
   }
 }
 

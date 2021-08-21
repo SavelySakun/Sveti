@@ -12,5 +12,5 @@ class Note: Object, Comparable {
   @objc dynamic var splitDate: SplitDate? = SplitDate(rawDate: Date())
   @objc dynamic var mood: Mood? = Mood()
   @objc dynamic var comment = String()
-  var tags = List<String>()
+  var tags = List<Tag>()
 }

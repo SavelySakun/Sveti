@@ -6,11 +6,9 @@ class TagsRepository {
   private let realm = try! Realm()
   private let userDefaults = UserDefaults()
 
-  private var tags: [Tag]
   var groups: [TagGroup]
 
   init() {
-    tags = realm.objects(Tag.self).toArray()
     groups = realm.objects(TagGroup.self).toArray()
     setupDefaults()
   }
@@ -25,34 +23,31 @@ class TagsRepository {
     let isSaved = userDefaults.bool(forKey: UDKeys.isDefaultTagsSaved)
 
     guard !isSaved else { return }
-
-    let defaultTags = DefaultTags()
-    let tags = defaultTags.tags
-    let groups = defaultTags.groups
+    let groups = DefaultTags().groups
 
     try! realm.write {
-      realm.add(tags)
       realm.add(groups)
     }
 
     userDefaults.set(true, forKey: UDKeys.isDefaultTagsSaved)
   }
 
-  func getTag(with id: String) -> Tag? {
-    return tags.first { $0.id == id }
-  }
+//  func getTag(with id: String) -> Tag? {
+//    return tags.first { $0.id == id }
+//  }
 
-  func getTagIds(with name: String) -> [String] {
-    var tagIds = [String]()
-    let filteredTags = tags.filter { tag in
-      return tag.name.lowercased().contains(name.lowercased())
+  func getTags(with name: String) -> [Tag] {
+    var tags = [Tag]()
+    let searchedGroups = groups
+
+    searchedGroups.forEach { group in
+      let filteredTags = group.tags.filter { tag in
+        return tag.name.lowercased().contains(name.lowercased())
+      }
+      tags += Array(filteredTags)
     }
 
-    filteredTags.forEach { tag in
-      tagIds.append(tag.id)
-    }
-
-    return tagIds
+    return tags
   }
 
   func updateExpandStatus(groupIndex: Int) {
@@ -71,10 +66,16 @@ class TagsRepository {
   }
 
   func updateHidden(with id: String) {
+
+    var tag: Tag?
+    groups.forEach { group in
+      guard tag == nil else { return }
+      tag = group.tags.first { $0.id == id }
+    }
+
+    guard let existingTag = tag else { return }
     try! realm.write {
-      guard let tag = tags.first(where: {$0.id == id }) else { return }
-      let isHidden = tag.isHidden
-      tag.isHidden = !isHidden
+      existingTag.isHidden = !existingTag.isHidden
     }
   }
 }

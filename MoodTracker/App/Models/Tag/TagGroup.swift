@@ -5,14 +5,14 @@ class TagGroup: Object {
   @objc dynamic var id = String()
   @objc dynamic var title = String()
   @objc dynamic var isExpanded: Bool = true
-  var tagIds = List<String>()
+  var tags = List<Tag>()
 
-  convenience init(title: String, tagIds: [String]) {
+  convenience init(title: String, tags: [Tag]) {
     self.init()
     self.id = UUID().uuidString
     self.title = title
-    tagIds.forEach { tag in
-      self.tagIds.append(tag)
+    tags.forEach { tag in
+      self.tags.append(tag)
     }
   }
 }

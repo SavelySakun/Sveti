@@ -15,7 +15,7 @@ class DiaryCell: Cell {
   }
 
   private func setTagCollection(with note: Note) {
-    tagCollectionView.tagsIds = Array(note.tags)
+    tagCollectionView.tags = Array(note.tags)
     DispatchQueue.main.async {
       self.tagCollectionView.reloadData()
     }

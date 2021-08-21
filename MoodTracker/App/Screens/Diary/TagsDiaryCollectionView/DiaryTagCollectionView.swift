@@ -2,7 +2,7 @@ import UIKit
 
 class DiaryTagCollectionView: UICollectionView {
 
-  var tagsIds = [String]()
+  var tags = [Tag]()
 
   override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
     let collectionViewLayout = LeftAlignedCollectionViewFlowLayout()
@@ -34,17 +34,15 @@ class DiaryTagCollectionView: UICollectionView {
 extension DiaryTagCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    tagsIds.count
+    tags.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
     guard let cell = dequeueReusableCell(withReuseIdentifier: DiaryTagCell.reuseId, for: indexPath) as? DiaryTagCell else { return UICollectionViewCell() }
 
-    let tagId = tagsIds[indexPath.row]
-    if let tag = TagsRepository().getTag(with: tagId) {
-      cell.set(with: tag)
-    }
+    let tag = tags[indexPath.row]
+    cell.set(with: tag)
 
     return cell
   }

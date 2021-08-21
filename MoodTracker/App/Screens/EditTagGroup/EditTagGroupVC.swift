@@ -37,9 +37,8 @@ class EditTagGroupVC: VCwithTable {
 extension EditTagGroupVC: ViewControllerVMDelegate {
   func onNeedToUpdateContent() {
     DispatchQueue.main.async {
-      guard let vm = self.viewModel as? EditTagGroupVM else { return }
-      vm.generateCellsDataForTags()
-
+      guard let editTagVM = self.viewModel as? EditTagGroupVM else { return }
+      editTagVM.generateCellsDataForTags()
       self.tableView.reloadData()
     }
   }

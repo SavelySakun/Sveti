@@ -11,11 +11,11 @@ class TagGroupCell: Cell {
   private var tagId = String()
 
   override func configureSelf(with viewModel: CellVM) {
-    guard let tagId = viewModel.cellValue as? String else { return }
-    self.tagId = tagId
-    let tag = TagsRepository().getTag(with: tagId)
-    tagNameTextField.text = tag?.name
-    if tag?.isHidden ?? false {
+    guard let tag = viewModel.cellValue as? Tag else { return }
+    self.tagId = tag.id
+    tagNameTextField.text = tag.name
+
+    if tag.isHidden {
       hideButtonView.imageView.image = UIImage(named: "show")?.withRenderingMode(.alwaysTemplate)
     } else {
       hideButtonView.imageView.image = UIImage(named: "hide")?.withRenderingMode(.alwaysTemplate)

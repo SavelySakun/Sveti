@@ -21,8 +21,7 @@ class TagCell: Cell {
     super.configureSelf(with: viewModel)
 
     if let note = viewModel.cellValue as? Note {
-      let selectedTagIds = note.tags
-      tagsCollection.selectedTagsIds = Array(selectedTagIds)
+      tagsCollection.selectedTags = Array(note.tags)
       tagsCollection.reloadData()
     } else {
       tagsCollection.deselectAllItems()
@@ -85,7 +84,7 @@ class TagCell: Cell {
     // 2. Get total number of rows
     tagsCollection.tagGroups.forEach { group in
       if group.isExpanded {
-        let numberOfRows: Double = (Double(group.tagIds.count) / 3.0).rounded(.up)
+        let numberOfRows: Double = (Double(group.tags.count) / 3.0).rounded(.up)
         section.numberOfRows += numberOfRows
         section.numberOfActiveFooters += 1.0
       }
@@ -120,10 +119,10 @@ extension TagCell: UISearchBarDelegate {
       tagsCollection.nothingFoundLabel.isHidden = true
       tagsCollection.tagGroups = tagsRepository.groups
     } else {
-      let findTagIds = tagsRepository.getTagIds(with: searchText)
+      let findTagIds = tagsRepository.getTags(with: searchText)
       tagsCollection.nothingFoundLabel.isHidden = !findTagIds.isEmpty
       tagsCollection.isSearchMode = true
-      tagsCollection.tagGroups = [TagGroup(title: "Результат поиска", tagIds: findTagIds)]
+      tagsCollection.tagGroups = [TagGroup(title: "Результат поиска", tags: findTagIds)]
     }
 
     DispatchQueue.main.async {
@@ -134,8 +133,8 @@ extension TagCell: UISearchBarDelegate {
 }
 
 extension TagCell: TagCollectionViewDelegate {
-  func onTagSelection(tagId: String) {
-    let event = EditEvent(type: .tagChange, value: tagId)
+  func onTagSelection(tag: Tag) {
+    let event = EditEvent(type: .tagChange, value: tag)
     publisher.send(event)
   }
 

@@ -16,12 +16,11 @@ class EditTagGroupVM: ViewControllerVM {
     var tagsData = [CellData]()
     var hiddenTagsData = [CellData]()
 
-    group.tagIds.forEach { tagId in
-      let tag = tagsRepository.getTag(with: tagId)
-      if tag?.isHidden ?? false {
-        hiddenTagsData.append(CellData(type: TagGroupCell.self, viewModel: CellVM(cellValue: tagId)))
+    group.tags.forEach { tag in
+      if tag.isHidden {
+        hiddenTagsData.append(CellData(type: TagGroupCell.self, viewModel: CellVM(cellValue: tag)))
       } else {
-        tagsData.append(CellData(type: TagGroupCell.self, viewModel: CellVM(cellValue: tagId)))
+        tagsData.append(CellData(type: TagGroupCell.self, viewModel: CellVM(cellValue: tag)))
       }
     }
 
