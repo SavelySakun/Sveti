@@ -69,4 +69,12 @@ class TagsRepository {
   func getGroup(with id: String) -> TagGroup? {
     return groups.first { $0.id == id }
   }
+
+  func updateHidden(with id: String) {
+    try! realm.write {
+      guard let tag = tags.first(where: {$0.id == id }) else { return }
+      let isHidden = tag.isHidden
+      tag.isHidden = !isHidden
+    }
+  }
 }

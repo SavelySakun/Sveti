@@ -20,6 +20,7 @@ class EditTagGroupVC: VCwithTable {
 
   override func setViewModel(with dataProvider: TableDataProvider) {
     viewModel = EditTagGroupVM(tableDataProvider: dataProvider, tagGroupId: groupId)
+    viewModel.delegate = self
   }
 
 
@@ -27,7 +28,19 @@ class EditTagGroupVC: VCwithTable {
     super.setLayout()
     tableView.separatorColor = .clear
     tableView.isEditing = true
+    tableView.eventDebounceValue = 0
     title = "Изменить"
     navigationItem.largeTitleDisplayMode = .never
+  }
+}
+
+extension EditTagGroupVC: ViewControllerVMDelegate {
+  func onNeedToUpdateContent() {
+    DispatchQueue.main.async {
+      guard let vm = self.viewModel as? EditTagGroupVM else { return }
+      vm.generateCellsDataForTags()
+
+      self.tableView.reloadData()
+    }
   }
 }

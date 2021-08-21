@@ -9,7 +9,9 @@ class EditTagGroupTableDataProvider: TableDataProvider {
          CellData(type: TagGroupNameCell.self, viewModel: CellVM(cellValue: data))
       ]),
 
-      TableSection(title: "Изменить теги", cellsData: [])
+      TableSection(title: "Изменить теги", cellsData: []),
+
+      TableSection(title: "Скрыто", cellsData: [])
     ]
     return tableSections
   }

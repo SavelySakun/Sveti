@@ -8,9 +8,11 @@ class TagGroupCell: Cell {
   private let buttonIconView = ButtonIconView()
   private let hideButtonView = RoundButtonView(firstStateImage: "hide")
   private let deleteButtonView = RoundButtonView(firstStateImage: "minus")
+  private var tagId = String()
 
   override func configureSelf(with viewModel: CellVM) {
     guard let tagId = viewModel.cellValue as? String else { return }
+    self.tagId = tagId
     let tag = TagsRepository().getTag(with: tagId)
     tagNameTextField.text = tag?.name
   }
@@ -77,8 +79,18 @@ class TagGroupCell: Cell {
 
   private func setButtonsAction() {
     hideButtonView.tapAction = {
-      //let event = TagEvent(type: TagEditType.hide, value: <#T##Any#>)
+      self.sendEvent(with: .hide)
     }
+
+    deleteButtonView.tapAction = {
+      self.sendEvent(with: .delete)
+    }
+  }
+
+  private func sendEvent(with type: TagEditType) {
+    let event = TagEvent(type: type, value: tagId)
+    publisher.send(event)
+    delegate?.onUpdate()
   }
 }
 
