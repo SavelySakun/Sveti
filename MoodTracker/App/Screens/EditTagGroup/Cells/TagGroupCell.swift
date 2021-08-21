@@ -15,6 +15,11 @@ class TagGroupCell: Cell {
     self.tagId = tagId
     let tag = TagsRepository().getTag(with: tagId)
     tagNameTextField.text = tag?.name
+    if tag?.isHidden ?? false {
+      hideButtonView.imageView.image = UIImage(named: "show")?.withRenderingMode(.alwaysTemplate)
+    } else {
+      hideButtonView.imageView.image = UIImage(named: "hide")?.withRenderingMode(.alwaysTemplate)
+    }
   }
 
   override func setLayout() {
