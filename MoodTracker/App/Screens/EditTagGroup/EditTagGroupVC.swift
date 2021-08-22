@@ -1,5 +1,5 @@
 import UIKit
-import SPIndicator
+import ALPopup
 
 class EditTagGroupVC: VCwithTable {
 
@@ -49,8 +49,11 @@ class EditTagGroupVC: VCwithTable {
       self.onNeedToUpdateContent()
     }
 
-    let changeGroupAction = UIAlertAction(title: "Изменить группу", style: .default) { _ in
-      // сделать экран пикера групп. Презентить его модально
+    let changeGroupAction = UIAlertAction(title: "Переместить", style: .default) { _ in
+      let selectGroupVC = SelectGroupVC()
+      selectGroupVC.markAsCurrentVC = false
+      let popupVC = ALPopup.card(controller: selectGroupVC)
+      popupVC.push(from: self)
     }
 
     let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in

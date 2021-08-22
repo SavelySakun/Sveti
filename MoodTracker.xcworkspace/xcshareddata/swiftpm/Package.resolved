@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ALPopup",
+        "repositoryURL": "https://github.com/alxrguz/ALPopup",
+        "state": {
+          "branch": null,
+          "revision": "862f322adad46cb64c95e39a313fd33aebbfe313",
+          "version": "1.0.6"
+        }
+      },
+      {
         "package": "IQKeyboardManagerSwift",
         "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
         "state": {

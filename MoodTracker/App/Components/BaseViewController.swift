@@ -2,10 +2,12 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+  var markAsCurrentVC = true
   var onClosingCompletion: (() -> Void) = { return }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    guard markAsCurrentVC else { return }
     NavigationHelper.currentVC = self
   }
 

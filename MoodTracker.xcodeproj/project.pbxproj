@@ -87,6 +87,10 @@
 		FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */; };
 		FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */; };
 		FCE3689626D2391000A05271 /* NoTagFoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689526D2391000A05271 /* NoTagFoundCell.swift */; };
+		FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689826D2656E00A05271 /* SelectGroupVC.swift */; };
+		FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */; };
+		FCE3689D26D268FB00A05271 /* SelectGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */; };
+		FCE368A026D26C9400A05271 /* ALPopup in Frameworks */ = {isa = PBXBuildFile; productRef = FCE3689F26D26C9400A05271 /* ALPopup */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
 		FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */; };
 		FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */; };
@@ -201,6 +205,9 @@
 		FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteTableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
 		FCE3689526D2391000A05271 /* NoTagFoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTagFoundCell.swift; sourceTree = "<group>"; };
+		FCE3689826D2656E00A05271 /* SelectGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupVC.swift; sourceTree = "<group>"; };
+		FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupCell.swift; sourceTree = "<group>"; };
+		FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVM.swift; sourceTree = "<group>"; };
 		FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupCell.swift; sourceTree = "<group>"; };
@@ -216,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE368A026D26C9400A05271 /* ALPopup in Frameworks */,
 				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
 				C4613007E58B533086856E44 /* Pods_MoodTracker.framework in Frameworks */,
@@ -425,6 +433,7 @@
 		FC7E6D1826AB195B00126B97 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FCE3689726D2651000A05271 /* SelectGroupVC */,
 				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
 				FC3A898426A053F60048E4ED /* NewNote */,
 				FC7E6D1C26AB1A1600126B97 /* Diary */,
@@ -592,6 +601,16 @@
 			path = TableData;
 			sourceTree = "<group>";
 		};
+		FCE3689726D2651000A05271 /* SelectGroupVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3689826D2656E00A05271 /* SelectGroupVC.swift */,
+				FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */,
+				FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */,
+			);
+			path = SelectGroupVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -615,6 +634,7 @@
 				FC7E6D5D26AC31A500126B97 /* SPIndicator */,
 				FC7E6D9126AC542F00126B97 /* RealmSwift */,
 				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
+				FCE3689F26D26C9400A05271 /* ALPopup */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* MoodTracker.app */;
@@ -694,6 +714,7 @@
 				FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */,
 				FC7E6D9026AC542F00126B97 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -852,6 +873,7 @@
 				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
 				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,
+				FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */,
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
 				FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */,
 				FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */,
@@ -862,6 +884,7 @@
 				FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */,
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
 				FC0CCC9426BE8BA8004CDE8A /* TagSectionHeaderView.swift in Sources */,
+				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
@@ -883,6 +906,7 @@
 				FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */,
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
 				FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */,
+				FCE3689D26D268FB00A05271 /* SelectGroupTableDataProvider.swift in Sources */,
 				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,
 				FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* TagCollectionView.swift in Sources */,
@@ -1274,6 +1298,14 @@
 				minimumVersion = 6.5.6;
 			};
 		};
+		FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alxrguz/ALPopup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1296,6 +1328,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		FCE3689F26D26C9400A05271 /* ALPopup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */;
+			productName = ALPopup;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
