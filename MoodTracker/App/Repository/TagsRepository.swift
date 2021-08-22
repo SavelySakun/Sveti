@@ -116,4 +116,12 @@ class TagsRepository {
       groups[section].tags.append(tagToMove)
     }
   }
+
+  func addNewTag(name: String, groupId: String) {
+    try! realm.write {
+      let newTag = Tag(name: name)
+      guard let index = groups.firstIndex(where: { $0.id == groupId }) else { return }
+      groups[index].tags.append(newTag)
+    }
+  }
 }

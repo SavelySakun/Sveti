@@ -35,7 +35,7 @@ class RoundButtonView: UIView {
   }
 
   private func setLayout() {
-    backgroundColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1).withAlphaComponent(0.5)
+    backgroundColor = .white
     snp.makeConstraints { (make) in
       sizeConstraint = make.height.width.equalTo(33).constraint
     }

@@ -56,7 +56,7 @@ class TagCollectionCell: UICollectionViewCell {
   }
 
 	func setLayout() {
-    contentView.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.862745098, alpha: 1).withAlphaComponent(0.4)
+    contentView.backgroundColor = .white
     contentView.layer.cornerRadius = 8
 
     setImageView()

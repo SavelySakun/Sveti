@@ -4,11 +4,15 @@ import SPAlert
 
 class EditTagGroupVC: VCwithTable {
 
-  private let alertController = UIAlertController()
+  private let actionsAlertController = UIAlertController()
+  private let newTagAlertController = UIAlertController(title: "Добавить тег", message: nil, preferredStyle: .alert)
+  private let deleteGroupAlertController = UIAlertController()
+
   let groupId: String
   private let tagsRepository = TagsRepository()
-  var changingTagId = String() // Use for update tags in actionSheet called from TagGroupCell
+  var editingTagId = String() // Use for update tags in actionSheet called from TagGroupCell
   private var hideAction = UIAlertAction(title: "", style: .default)
+
 
   init(groupId: String) {
     self.groupId = groupId
@@ -41,12 +45,37 @@ class EditTagGroupVC: VCwithTable {
     tableView.eventDebounceValue = 0
     title = "Изменить"
     navigationItem.largeTitleDisplayMode = .never
-    setAlertController()
+    setActionsAlertController()
+    setNewTagButton()
+    setNewTagAlert()
   }
 
-  private func setAlertController() {
+  private func setNewTagButton() {
+    let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onNewTagTap))
+    navigationItem.rightBarButtonItem = rightButton
+  }
+
+  private func setNewTagAlert() {
+    newTagAlertController.addTextField { textField in
+      textField.placeholder = "Название тега"
+    }
+
+    let addAction = UIAlertAction(title: "Добавить", style: .default) { _ in
+      self.saveNewTag()
+    }
+
+    let dismissAction = UIAlertAction(title: "Отмена", style: .destructive) { _ in
+      self.newTagAlertController.textFields?.last?.text?.removeAll()
+    }
+
+    [dismissAction, addAction].forEach { action in
+      newTagAlertController.addAction(action)
+    }
+  }
+
+  private func setActionsAlertController() {
     hideAction = UIAlertAction(title: "Скрыть", style: .default) { _ in
-      self.tagsRepository.updateHidden(with: self.changingTagId)
+      self.tagsRepository.updateHidden(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 
@@ -54,13 +83,13 @@ class EditTagGroupVC: VCwithTable {
       let selectGroupVC = SelectGroupVC()
       var popupVC = ALCardController()
 
-      selectGroupVC.moovingTagId = self.changingTagId
+      selectGroupVC.moovingTagId = self.editingTagId
       selectGroupVC.markAsCurrentVC = false
 
       selectGroupVC.onSelectionCompletion = { groupTitle in
         popupVC.dismiss(animated: true)
         self.onNeedToUpdateContent()
-        SPAlert.present(title: "Готово", message: "Таг перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
+        SPAlert.present(title: "Готово", message: "Тег перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
       }
 
       popupVC = ALPopup.card(controller: selectGroupVC)
@@ -68,22 +97,37 @@ class EditTagGroupVC: VCwithTable {
     }
 
     let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
-      self.tagsRepository.removeTag(with: self.changingTagId)
+      guard let tag = self.tagsRepository.findTag(with: self.editingTagId) else { return }
+      SPAlert.present(title: "Готово", message: "Тег «\(tag.name)» удалён", preset: .done, haptic: .success)
+      self.tagsRepository.removeTag(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 
     let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
 
     [hideAction, changeGroupAction, deleteAction, cancelAction].forEach { action in
-      alertController.addAction(action)
+      actionsAlertController.addAction(action)
     }
   }
 
   func showEditAlert(forTag id: String) {
-    changingTagId = id
+    editingTagId = id
     let isTagHidden = tagsRepository.findTag(with: id)?.isHidden ?? false
     hideAction.setValue((isTagHidden ? "Сделать активным" : "Скрыть"), forKey: "title")
-    present(alertController, animated: true, completion: nil)
+    present(actionsAlertController, animated: true, completion: nil)
+  }
+
+  @objc private func onNewTagTap() {
+    present(newTagAlertController, animated: true)
+  }
+
+  private func saveNewTag() {
+    let alertTextField = self.newTagAlertController.textFields?.last
+    guard let newTagName = alertTextField?.text,
+          !newTagName.isEmpty else { return }
+    tagsRepository.addNewTag(name: newTagName, groupId: groupId)
+    onNeedToUpdateContent()
+    alertTextField?.text?.removeAll()
   }
 }
 
