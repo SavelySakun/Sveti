@@ -84,7 +84,8 @@ class TagCell: Cell {
     // 2. Get total number of rows
     tagsCollection.tagGroups.forEach { group in
       if group.isExpanded {
-        let numberOfRows: Double = (Double(group.tags.count) / 3.0).rounded(.up)
+        let activeTags = group.tags.filter { !$0.isHidden }
+        let numberOfRows: Double = (Double(activeTags.count) / 3.0).rounded(.up)
         section.numberOfRows += numberOfRows
         section.numberOfActiveFooters += 1.0
       }

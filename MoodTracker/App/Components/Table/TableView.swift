@@ -4,7 +4,7 @@ import Combine
 class TableView: UITableView {
 
   private let viewModel: ViewControllerVM
-  private var sections: [TableSection] {
+  var sections: [TableSection] {
     viewModel.tableDataProvider!.sections!
   }
   var eventDebounceValue = 0.4
@@ -28,7 +28,7 @@ class TableView: UITableView {
 
 	private func configureTable() { }
 
-  private func registerCells() {
+  func registerCells() {
     sections.forEach { section in
       section.cellsData.forEach { cellData in
         register(cellData.type, forCellReuseIdentifier: cellData.type.identifier )
@@ -36,7 +36,7 @@ class TableView: UITableView {
     }
   }
 
-  private func setDefaultDelegates() {
+  func setDefaultDelegates() {
     dataSource = self
     delegate = self
   }

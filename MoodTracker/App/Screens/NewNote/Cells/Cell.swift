@@ -35,7 +35,7 @@ class Cell: UITableViewCell {
   }
 
   func setLayout() {
-
+    // Do any customization here.
   }
 
 }

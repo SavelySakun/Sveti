@@ -71,8 +71,9 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
 extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
     let isExpanded = tagGroups[section].isExpanded
-    return isExpanded ? tagGroups[section].tags.count : 0
+    return isExpanded ? tagsRepository.getActiveTagsCount(in: section) : 0
   }
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -82,7 +83,7 @@ extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = dequeueReusableCell(withReuseIdentifier: TagCollectionCell.reuseId, for: indexPath) as? TagCollectionCell else { return UICollectionViewCell() }
 
-    let tag = tagGroups[indexPath.section].tags[indexPath.row]
+    let tag = tagsRepository.getActiveTags(in: indexPath.section)[indexPath.row]
     cell.set(with: tag)
     cell.isSelected = selectedTags.contains(tag)
 
@@ -150,9 +151,16 @@ extension TagCollectionView: UICollectionViewDelegate {
 
 
 extension TagCollectionView: TagSectionHeaderViewDelegate {
-
   func onCollapseButtonTap(in section: Int) {
     tagsRepository.updateExpandStatus(groupIndex: section)
+    updateCollectionLayoutAndData()
+  }
+
+  func onDoneTagGroupEdit() {
+    updateCollectionLayoutAndData()
+  }
+
+  private func updateCollectionLayoutAndData() {
     DispatchQueue.main.async { [self] in
       reloadData()
       interactionDelegate?.onSectionExpandCollapse()

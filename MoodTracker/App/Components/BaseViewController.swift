@@ -2,6 +2,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+  var onClosingCompletion: (() -> Void) = { return }
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     NavigationHelper.currentVC = self

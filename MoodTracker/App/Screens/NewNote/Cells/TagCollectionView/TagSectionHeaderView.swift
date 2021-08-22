@@ -3,6 +3,7 @@ import SnapKit
 
 protocol TagSectionHeaderViewDelegate: AnyObject {
   func onCollapseButtonTap(in section: Int)
+  func onDoneTagGroupEdit()
 }
 
 class TagSectionHeaderView: UICollectionReusableView {
@@ -117,6 +118,10 @@ class TagSectionHeaderView: UICollectionReusableView {
 
   @objc func onEditTap() {
     let groupId = TagsRepository().findGroupId(with: section)
-    NavigationHelper.push(vc: EditTagGroupVC(groupId: groupId))
+    let editTagGroupVC = EditTagGroupVC(groupId: groupId)
+    editTagGroupVC.onClosingCompletion = {
+      self.delegate?.onDoneTagGroupEdit()
+    }
+    NavigationHelper.push(vc: editTagGroupVC)
   }
 }

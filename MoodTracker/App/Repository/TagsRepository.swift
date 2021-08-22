@@ -32,9 +32,14 @@ class TagsRepository {
     userDefaults.set(true, forKey: UDKeys.isDefaultTagsSaved)
   }
 
-//  func getTag(with id: String) -> Tag? {
-//    return tags.first { $0.id == id }
-//  }
+  private func findTag(with id: String) -> Tag? {
+    var tag: Tag?
+    groups.forEach { group in
+      guard tag == nil else { return }
+      tag = group.tags.first { $0.id == id }
+    }
+    return tag
+  }
 
   func getTags(with name: String) -> [Tag] {
     var tags = [Tag]()
@@ -66,16 +71,25 @@ class TagsRepository {
   }
 
   func updateHidden(with id: String) {
-
-    var tag: Tag?
-    groups.forEach { group in
-      guard tag == nil else { return }
-      tag = group.tags.first { $0.id == id }
-    }
-
-    guard let existingTag = tag else { return }
+    guard let tag = findTag(with: id) else { return }
     try! realm.write {
-      existingTag.isHidden = !existingTag.isHidden
+      tag.isHidden = !tag.isHidden
+    }
+  }
+
+  func getActiveTagsCount(in section: Int) -> Int {
+    let activeTags = getActiveTags(in: section)
+    return activeTags.count
+  }
+
+  func getActiveTags(in section: Int) -> [Tag]{
+    groups[section].tags.filter { $0.isHidden == false }
+  }
+
+  func renameTag(withId id: String, and newName: String) {
+    guard let tag = findTag(with: id) else { return }
+    try! realm.write {
+      tag.name = newName
     }
   }
 }

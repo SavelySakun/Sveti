@@ -14,6 +14,11 @@ class EditTagGroupVC: VCwithTable {
     fatalError("init(coder:) has not been implemented")
   }
 
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    onClosingCompletion()
+  }
+
   override func getDataProvider() -> TableDataProvider? {
     EditTagGroupTableDataProvider(with: groupId)
   }

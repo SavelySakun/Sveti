@@ -14,6 +14,8 @@ class TagGroupCell: Cell {
     guard let tag = viewModel.cellValue as? Tag else { return }
     self.tagId = tag.id
     tagNameTextField.text = tag.name
+    tagNameTextField.delegate = self
+    tagNameTextField.autocapitalizationType = .none
 
     if tag.isHidden {
       hideButtonView.imageView.image = UIImage(named: "show")?.withRenderingMode(.alwaysTemplate)
@@ -99,3 +101,9 @@ class TagGroupCell: Cell {
   }
 }
 
+extension TagGroupCell: UITextFieldDelegate {
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    guard let newName = textField.text else { return }
+    TagsRepository().renameTag(withId: tagId, and: newName)
+  }
+}
