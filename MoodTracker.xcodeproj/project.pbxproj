@@ -91,6 +91,8 @@
 		FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */; };
 		FCE3689D26D268FB00A05271 /* SelectGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */; };
 		FCE368A026D26C9400A05271 /* ALPopup in Frameworks */ = {isa = PBXBuildFile; productRef = FCE3689F26D26C9400A05271 /* ALPopup */; };
+		FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE368A126D2749400A05271 /* SelectGroupTableView.swift */; };
+		FCE368A526D27E6900A05271 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = FCE368A426D27E6900A05271 /* SPAlert */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
 		FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */; };
 		FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */; };
@@ -208,6 +210,7 @@
 		FCE3689826D2656E00A05271 /* SelectGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupVC.swift; sourceTree = "<group>"; };
 		FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupCell.swift; sourceTree = "<group>"; };
 		FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableDataProvider.swift; sourceTree = "<group>"; };
+		FCE368A126D2749400A05271 /* SelectGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableView.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVM.swift; sourceTree = "<group>"; };
 		FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupCell.swift; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE368A526D27E6900A05271 /* SPAlert in Frameworks */,
 				FCE368A026D26C9400A05271 /* ALPopup in Frameworks */,
 				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
@@ -607,6 +611,7 @@
 				FCE3689826D2656E00A05271 /* SelectGroupVC.swift */,
 				FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */,
 				FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */,
+				FCE368A126D2749400A05271 /* SelectGroupTableView.swift */,
 			);
 			path = SelectGroupVC;
 			sourceTree = "<group>";
@@ -635,6 +640,7 @@
 				FC7E6D9126AC542F00126B97 /* RealmSwift */,
 				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
 				FCE3689F26D26C9400A05271 /* ALPopup */,
+				FCE368A426D27E6900A05271 /* SPAlert */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* MoodTracker.app */;
@@ -715,6 +721,7 @@
 				FC7E6D9026AC542F00126B97 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */,
+				FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -879,6 +886,7 @@
 				FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */,
 				FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
+				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
 				FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */,
 				FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */,
@@ -1306,6 +1314,14 @@
 				minimumVersion = 1.0.6;
 			};
 		};
+		FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPAlert.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1333,6 +1349,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */;
 			productName = ALPopup;
+		};
+		FCE368A426D27E6900A05271 /* SPAlert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */;
+			productName = SPAlert;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

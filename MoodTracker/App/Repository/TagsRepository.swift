@@ -108,4 +108,12 @@ class TagsRepository {
       groups[indexOfGroup].tags.remove(at: existTagIndex)
     }
   }
+
+  func moveTagTo(section: Int, with id: String) {
+    guard let tagToMove = findTag(with: id) else { return }
+    removeTag(with: id)
+    try! realm.write {
+      groups[section].tags.append(tagToMove)
+    }
+  }
 }

@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "SPAlert",
+        "repositoryURL": "https://github.com/ivanvorobei/SPAlert.git",
+        "state": {
+          "branch": null,
+          "revision": "6ddb588018625ac7da49a578327bfdb1d8ce9b68",
+          "version": "3.3.1"
+        }
+      },
+      {
         "package": "SPIndicator",
         "repositoryURL": "https://github.com/ivanvorobei/SPIndicator.git",
         "state": {

@@ -1,5 +1,6 @@
 import UIKit
 import ALPopup
+import SPAlert
 
 class EditTagGroupVC: VCwithTable {
 
@@ -51,8 +52,18 @@ class EditTagGroupVC: VCwithTable {
 
     let changeGroupAction = UIAlertAction(title: "Переместить", style: .default) { _ in
       let selectGroupVC = SelectGroupVC()
+      var popupVC = ALCardController()
+
+      selectGroupVC.moovingTagId = self.changingTagId
       selectGroupVC.markAsCurrentVC = false
-      let popupVC = ALPopup.card(controller: selectGroupVC)
+
+      selectGroupVC.onSelectionCompletion = { groupTitle in
+        popupVC.dismiss(animated: true)
+        self.onNeedToUpdateContent()
+        SPAlert.present(title: "Готово", message: "Таг перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
+      }
+
+      popupVC = ALPopup.card(controller: selectGroupVC)
       popupVC.push(from: self)
     }
 
