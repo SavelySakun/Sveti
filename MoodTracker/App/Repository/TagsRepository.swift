@@ -32,7 +32,7 @@ class TagsRepository {
     userDefaults.set(true, forKey: UDKeys.isDefaultTagsSaved)
   }
 
-  private func findTag(with id: String) -> Tag? {
+  func findTag(with id: String) -> Tag? {
     var tag: Tag?
     groups.forEach { group in
       guard tag == nil else { return }
@@ -90,6 +90,22 @@ class TagsRepository {
     guard let tag = findTag(with: id) else { return }
     try! realm.write {
       tag.name = newName
+    }
+  }
+
+  func removeTag(with id: String) {
+    var indexOfDeletingTag: Int?
+    var indexOfGroup = 0
+
+    for (index, group) in groups.enumerated() {
+      guard indexOfDeletingTag == nil else { break }
+      indexOfDeletingTag = group.tags.firstIndex { $0.id == id }
+      indexOfGroup = index
+    }
+
+    guard let existTagIndex = indexOfDeletingTag else { return }
+    try! realm.write {
+      groups[indexOfGroup].tags.remove(at: existTagIndex)
     }
   }
 }

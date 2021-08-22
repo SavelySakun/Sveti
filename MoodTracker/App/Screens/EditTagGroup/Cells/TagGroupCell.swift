@@ -3,12 +3,11 @@ import Combine
 
 class TagGroupCell: Cell {
 
+  private var tagId = String()
   private let textFieldContainer = UIView()
   private let tagNameTextField = UITextField()
   private let buttonIconView = ButtonIconView()
-  private let hideButtonView = RoundButtonView(firstStateImage: "hide")
-  private let deleteButtonView = RoundButtonView(firstStateImage: "minus")
-  private var tagId = String()
+  private let editButtonView = RoundButtonView(firstStateImage: "more")
 
   override func configureSelf(with viewModel: CellVM) {
     guard let tag = viewModel.cellValue as? Tag else { return }
@@ -16,12 +15,6 @@ class TagGroupCell: Cell {
     tagNameTextField.text = tag.name
     tagNameTextField.delegate = self
     tagNameTextField.autocapitalizationType = .none
-
-    if tag.isHidden {
-      hideButtonView.imageView.image = UIImage(named: "show")?.withRenderingMode(.alwaysTemplate)
-    } else {
-      hideButtonView.imageView.image = UIImage(named: "hide")?.withRenderingMode(.alwaysTemplate)
-    }
   }
 
   override func setLayout() {
@@ -29,7 +22,7 @@ class TagGroupCell: Cell {
     setIconButton()
     setTextField()
     setRoundButtons()
-    setButtonsAction()
+    setEditButtonAction()
   }
 
   private func setTextField() {
@@ -59,38 +52,26 @@ class TagGroupCell: Cell {
   }
 
   private func setRoundButtons() {
-    [hideButtonView, deleteButtonView].forEach { button in
-      button.imageView.tintColor = .white
-      button.sizeSetupHandler = {
-        button.snp.makeConstraints { (make) in
-          make.height.width.equalTo(24)
-        }
+    editButtonView.imageView.tintColor = .white
+    editButtonView.sizeSetupHandler = {
+      self.editButtonView.snp.makeConstraints { (make) in
+        make.height.width.equalTo(24)
       }
-      button.updateSize()
     }
-
-    hideButtonView.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.6117647059, blue: 0.9882352941, alpha: 1).withAlphaComponent(0.8)
-    deleteButtonView.backgroundColor = .systemRed.withAlphaComponent(0.7)
-
-    let buttonsStackView = UIStackView(arrangedSubviews: [hideButtonView, deleteButtonView])
-    buttonsStackView.axis = .horizontal
-    buttonsStackView.spacing = 8
-
-    contentView.addSubview(buttonsStackView)
-    buttonsStackView.snp.makeConstraints { (make) in
+    editButtonView.updateSize()
+    editButtonView.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.6117647059, blue: 0.9882352941, alpha: 1).withAlphaComponent(0.7)
+    contentView.addSubview(editButtonView)
+    editButtonView.snp.makeConstraints { (make) in
       make.centerY.equalTo(textFieldContainer.snp.centerY)
       make.left.equalTo(textFieldContainer.snp.right).offset(UIUtils.defaultOffset)
       make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
     }
   }
 
-  private func setButtonsAction() {
-    hideButtonView.tapAction = {
-      self.sendEvent(with: .hide)
-    }
-
-    deleteButtonView.tapAction = {
-      self.sendEvent(with: .delete)
+  private func setEditButtonAction() {
+    editButtonView.tapAction = {
+      guard let editTagsGroupVC = NavigationHelper.currentVC as? EditTagGroupVC else { return }
+      editTagsGroupVC.showEditAlert(forTag: self.tagId)
     }
   }
 

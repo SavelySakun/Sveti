@@ -1,8 +1,13 @@
-import Foundation
+import UIKit
+import SPIndicator
 
 class EditTagGroupVC: VCwithTable {
 
+  private let alertController = UIAlertController()
   let groupId: String
+  private let tagsRepository = TagsRepository()
+  var changingTagId = String() // Use for update tags in actionSheet called from TagGroupCell
+  private var hideAction = UIAlertAction(title: "", style: .default)
 
   init(groupId: String) {
     self.groupId = groupId
@@ -28,7 +33,6 @@ class EditTagGroupVC: VCwithTable {
     viewModel.delegate = self
   }
 
-
   override func setLayout() {
     super.setLayout()
     tableView.separatorColor = .clear
@@ -36,6 +40,36 @@ class EditTagGroupVC: VCwithTable {
     tableView.eventDebounceValue = 0
     title = "Изменить"
     navigationItem.largeTitleDisplayMode = .never
+    setAlertController()
+  }
+
+  private func setAlertController() {
+    hideAction = UIAlertAction(title: "Скрыть", style: .default) { _ in
+      self.tagsRepository.updateHidden(with: self.changingTagId)
+      self.onNeedToUpdateContent()
+    }
+
+    let changeGroupAction = UIAlertAction(title: "Изменить группу", style: .default) { _ in
+      // сделать экран пикера групп. Презентить его модально
+    }
+
+    let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
+      self.tagsRepository.removeTag(with: self.changingTagId)
+      self.onNeedToUpdateContent()
+    }
+
+    let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+
+    [hideAction, changeGroupAction, deleteAction, cancelAction].forEach { action in
+      alertController.addAction(action)
+    }
+  }
+
+  func showEditAlert(forTag id: String) {
+    changingTagId = id
+    let isTagHidden = tagsRepository.findTag(with: id)?.isHidden ?? false
+    hideAction.setValue((isTagHidden ? "Сделать активным" : "Скрыть"), forKey: "title")
+    present(alertController, animated: true, completion: nil)
   }
 }
 
