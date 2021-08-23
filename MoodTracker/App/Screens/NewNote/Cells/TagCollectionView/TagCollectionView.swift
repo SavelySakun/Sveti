@@ -157,6 +157,7 @@ extension TagCollectionView: TagSectionHeaderViewDelegate {
   }
 
   func onDoneTagGroupEdit() {
+    tagGroups = TagsRepository().groups
     updateCollectionLayoutAndData()
   }
 

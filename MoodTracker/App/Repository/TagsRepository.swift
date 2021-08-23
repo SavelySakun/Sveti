@@ -6,10 +6,11 @@ class TagsRepository {
   private let realm = try! Realm()
   private let userDefaults = UserDefaults()
 
-  var groups: [TagGroup]
+  var groups: [TagGroup] {
+    realm.objects(TagGroup.self).toArray()
+  }
 
   init() {
-    groups = realm.objects(TagGroup.self).toArray()
     setupDefaults()
   }
 
@@ -122,6 +123,13 @@ class TagsRepository {
       let newTag = Tag(name: name)
       guard let index = groups.firstIndex(where: { $0.id == groupId }) else { return }
       groups[index].tags.append(newTag)
+    }
+  }
+
+  func deleteGroup(with id: String) {
+    guard let object = realm.objects(TagGroup.self).filter("id = %@", id).first else { return }
+    try! realm.write {
+      realm.delete(object)
     }
   }
 }

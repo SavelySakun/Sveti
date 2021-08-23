@@ -6,7 +6,7 @@ class EditTagGroupVC: VCwithTable {
 
   private let actionsAlertController = UIAlertController()
   private let newTagAlertController = UIAlertController(title: "Добавить тег", message: nil, preferredStyle: .alert)
-  private let deleteGroupAlertController = UIAlertController()
+  private let deleteGroupAlertController = UIAlertController(title: "Внимание", message: "Удалить группу?", preferredStyle: .alert)
 
   let groupId: String
   private let tagsRepository = TagsRepository()
@@ -43,11 +43,20 @@ class EditTagGroupVC: VCwithTable {
     tableView.separatorColor = .clear
     tableView.isEditing = true
     tableView.eventDebounceValue = 0
+
+    let footerView = EditTagGroupTableFooter(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
+    footerView.onDeleteTapHandler = {
+      self.present(self.deleteGroupAlertController, animated: true, completion: nil)
+    }
+    
+    tableView.tableFooterView = footerView
+
     title = "Изменить"
     navigationItem.largeTitleDisplayMode = .never
     setActionsAlertController()
     setNewTagButton()
     setNewTagAlert()
+    setActionsForDeleteAlertController()
   }
 
   private func setNewTagButton() {
@@ -128,6 +137,20 @@ class EditTagGroupVC: VCwithTable {
     tagsRepository.addNewTag(name: newTagName, groupId: groupId)
     onNeedToUpdateContent()
     alertTextField?.text?.removeAll()
+  }
+
+  private func setActionsForDeleteAlertController() {
+    let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
+      self.tagsRepository.deleteGroup(with: self.groupId)
+      self.navigationController?.popViewController(animated: true)
+      SPAlert.present(title: "Готово", message: "Группа удалена", preset: .done, haptic: .success)
+    }
+
+    let cancelAction = UIAlertAction(title: "Отмена", style: .default)
+
+    [deleteAction, cancelAction].forEach { action in
+      deleteGroupAlertController.addAction(action)
+    }
   }
 }
 

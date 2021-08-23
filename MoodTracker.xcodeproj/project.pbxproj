@@ -93,6 +93,7 @@
 		FCE368A026D26C9400A05271 /* ALPopup in Frameworks */ = {isa = PBXBuildFile; productRef = FCE3689F26D26C9400A05271 /* ALPopup */; };
 		FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE368A126D2749400A05271 /* SelectGroupTableView.swift */; };
 		FCE368A526D27E6900A05271 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = FCE368A426D27E6900A05271 /* SPAlert */; };
+		FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* EditTagGroupTableFooter.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
 		FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */; };
 		FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */; };
@@ -211,6 +212,7 @@
 		FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupCell.swift; sourceTree = "<group>"; };
 		FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCE368A126D2749400A05271 /* SelectGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableView.swift; sourceTree = "<group>"; };
+		FCEA30F726D3DD5E0062509A /* EditTagGroupTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableFooter.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVM.swift; sourceTree = "<group>"; };
 		FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupCell.swift; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 				FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */,
 				FCEEB08926CADBD100F7B00F /* TagGroupCell.swift */,
 				FCE3689526D2391000A05271 /* NoTagFoundCell.swift */,
+				FCEA30F726D3DD5E0062509A /* EditTagGroupTableFooter.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
 				FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */,
 				FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */,
+				FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */,
 				FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,
