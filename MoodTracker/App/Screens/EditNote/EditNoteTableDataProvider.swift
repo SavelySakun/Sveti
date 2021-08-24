@@ -11,9 +11,8 @@ class EditNoteTableDataProvider: TableDataProvider {
       ]),
 
       TableSection(title: "Самочувствие", cellsData: [
-        CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Эмоциональное состояние", cellValue: data)),
         CellData(type: PhysicalStateSliderCell.self, viewModel: CellVM(title: "Физическое состояние", cellValue: data)),
-        CellData(type: WillToLiveStateSliderCell.self, viewModel: CellVM(title: "Желание жить, делать дела", cellValue: data))
+        CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Эмоциональное состояние", cellValue: data))
       ]),
 
       TableSection(title: "Комментарий", cellsData: [

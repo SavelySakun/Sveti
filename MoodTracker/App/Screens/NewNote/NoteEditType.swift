@@ -4,7 +4,6 @@ import Combine
 enum NoteEditType: String {
   case emotionalStateChange
   case physicalStateChange
-  case willToLiveChange
   case commentChange
   case dateChange
   case tagChange

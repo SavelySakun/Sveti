@@ -34,20 +34,3 @@ class PhysicalStateSliderCell: CellWithSlider {
   }
 
 }
-
-class WillToLiveStateSliderCell: CellWithSlider {
-
-  override func onValueChange() {
-    super.onValueChange()
-    let event = EditEvent(type: .willToLiveChange, value: slider.value)
-    publisher.send(event)
-  }
-
-  override func configureSelf(with viewModel: CellVM) {
-    super.configureSelf(with: viewModel)
-    guard let note = viewModel.cellValue as? Note else { return }
-    slider.value = note.mood?.willToLive ?? 6.0
-    titleLabel.text = getTitle()
-  }
-
-}

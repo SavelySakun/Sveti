@@ -3,9 +3,8 @@ import UIKit
 class MoodScoreCell: Cell {
 
   let containerView = UIView()
-  let emotionalStateScoreView = ScoreView()
-  let physicalStateScoreView = ScoreView(isMiddle: true)
-  let willToLiveScoreView = ScoreView()
+  let emotionalStateScoreView = ScoreView(position: .first)
+  let physicalStateScoreView = ScoreView(position: .second)
   let averageLabel = UILabel()
   var statesStackView: UIStackView!
 
@@ -18,7 +17,6 @@ class MoodScoreCell: Cell {
     let mathHelper = MathHelper()
     emotionalStateScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.emotionalState)
     physicalStateScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.physicalState)
-    willToLiveScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.willToLive)
     averageLabel.text = mathHelper.getAverageMood(from: note)
     guard mood.average > 7.0 || mood.average < 5.0 else { return }
     averageLabel.textColor = ColorHelper().getColor(value: Int(mood.average), alpha: 1)
@@ -42,11 +40,9 @@ class MoodScoreCell: Cell {
     statesStackView = UIStackView(arrangedSubviews: [
       emotionalStateScoreView,
       physicalStateScoreView,
-      willToLiveScoreView
     ])
 
     physicalStateScoreView.stateLabel.text = "физическое состояние"
-    willToLiveScoreView.stateLabel.text = "желание жить, делать дела"
 
     statesStackView.axis = .vertical
     statesStackView.spacing = 0

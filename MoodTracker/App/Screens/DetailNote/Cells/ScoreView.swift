@@ -1,15 +1,20 @@
 import UIKit
 
+enum Position {
+  case first
+  case second
+}
+
 class ScoreView: UIView {
 
   let stateLabel = UILabel()
   let scoreLabel = UILabel()
   private let separatorColor: UIColor = .systemGray4
-  private let isMiddle: Bool
   private var scoreStackView: UIStackView!
+  private let position: Position
 
-  init(isMiddle: Bool = false) {
-    self.isMiddle = isMiddle
+  init(position: Position) {
+    self.position = position
     super.init(frame: .zero)
     setLayout()
   }
@@ -29,7 +34,6 @@ class ScoreView: UIView {
     let bottomSeparator = UIView()
     [topSeparator, bottomSeparator].forEach { separator in
       separator.backgroundColor = separatorColor
-      separator.isHidden = !isMiddle
 
       addSubview(separator)
       separator.snp.makeConstraints { (make) in
@@ -45,6 +49,13 @@ class ScoreView: UIView {
 
     bottomSeparator.snp.makeConstraints { (make) in
       make.bottom.equalToSuperview()
+    }
+
+    if position == .first {
+      topSeparator.isHidden = true
+      bottomSeparator.isHidden = true
+    } else {
+      bottomSeparator.isHidden = true
     }
   }
 

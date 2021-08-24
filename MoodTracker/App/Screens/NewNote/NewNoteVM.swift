@@ -21,10 +21,6 @@ class NewNoteVM: ViewControllerVM {
         guard let value = event.value as? Float else { return }
         note.mood?.physicalState = value
 
-      case .willToLiveChange:
-        guard let value = event.value as? Float else { return }
-        note.mood?.willToLive = value
-
       case .commentChange:
         guard let value = event.value as? String else { return }
         note.comment = value
