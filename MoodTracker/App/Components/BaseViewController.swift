@@ -1,13 +1,15 @@
-//
-//  BaseViewController.swift
-//  MoodTracker
-//
-//  Created by Savely Sakun on 24.07.2021.
-//
-
 import UIKit
 
 class BaseViewController: UIViewController {
+
+  var markAsCurrentVC = true
+  var onClosingCompletion: (() -> Void) = { return }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    guard markAsCurrentVC else { return }
+    NavigationHelper.currentVC = self
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,6 +18,7 @@ class BaseViewController: UIViewController {
 
   private func hideKeyboardWhenTappedAround() {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    tapGesture.cancelsTouchesInView = false
     view.addGestureRecognizer(tapGesture)
   }
 

@@ -6,7 +6,6 @@ class CommentCell: Cell {
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		setLayout()
     commentTextField.textView.delegate = self
 	}
 
@@ -30,7 +29,7 @@ class CommentCell: Cell {
     }
   }
 
-	private func setLayout() {
+	override func setLayout() {
     contentView.backgroundColor = .systemGray6
 		contentView.addSubview(commentTextField)
 		commentTextField.snp.makeConstraints { (make) in

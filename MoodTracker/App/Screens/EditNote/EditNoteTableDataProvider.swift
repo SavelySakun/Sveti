@@ -18,8 +18,11 @@ class EditNoteTableDataProvider: TableDataProvider {
 
       TableSection(title: "Комментарий", cellsData: [
         CellData(type: CommentCell.self, viewModel: CellVM(title: "Комментарий", cellValue: data))
-      ])
+      ]),
 
+      TableSection(title: "Тэги", cellsData: [
+        CellData(type: TagCell.self, viewModel: CellVM(title: nil, cellValue: data))
+      ])
     ]
 
     return tableSections

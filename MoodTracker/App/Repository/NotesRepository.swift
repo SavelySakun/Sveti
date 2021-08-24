@@ -14,7 +14,6 @@ class NotesRepository {
   let realm = try! Realm()
 
   func save(_ note: Note) {
-
     let noteToSave = getPreparedToSave(note)
     try! realm.write {
       realm.add(noteToSave)
@@ -22,7 +21,8 @@ class NotesRepository {
   }
 
   func getNotes(range: TimeRange = .all) -> [Note] {
-    let notes = realm.objects(Note.self).sorted(byKeyPath: "id", ascending: false).toArray()
+    var notes = realm.objects(Note.self).toArray()
+    notes.sort(by: >)
     return notes
   }
 
