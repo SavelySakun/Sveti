@@ -54,22 +54,16 @@ class CellWithSlider: Cell {
     super.configureSelf(with: viewModel)
     slider.value = viewModel.cellValue as? Float ?? 6.0
     titleLabel.text = getTitle()
-    updateSliderColor()
+    slider.tintColor = #colorLiteral(red: 0.1764705882, green: 0.6117647059, blue: 0.9882352941, alpha: 1).withAlphaComponent(0.7)
+    slider.maximumTrackTintColor = .white
   }
 
   @objc func onValueChange() {
     titleLabel.text = getTitle()
-    updateSliderColor()
   }
 
   func getTitle() -> String {
     let value = MathHelper().getMoodScore(from: slider.value, digits: 1)
     return "\(viewModel?.title ?? ""): \(value)"
   }
-
-  private func updateSliderColor() {
-    let sliderValue = Int(slider.value)
-    slider.tintColor = ColorHelper().getColor(value: sliderValue)
-  }
-
 }
