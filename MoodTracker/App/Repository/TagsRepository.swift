@@ -140,4 +140,11 @@ class TagsRepository {
       editingGroup?.tags.swapAt(sourceIndexPath.row, destinationIndexPath.row)
     }
   }
+
+  func renameGroup(with id: String, newName: String) {
+    guard let groupToRename = groups.first(where: { $0.id == id }) else { return }
+    try! realm.write {
+      groupToRename.title = newName
+    }
+  }
 }

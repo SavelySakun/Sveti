@@ -4,11 +4,13 @@ class TagGroupNameCell: Cell {
 
   private let containerView = UIView()
   private let groupNameTextField = UITextField()
+  private var groupId = String()
 
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
     guard let groupId = viewModel.cellValue as? String,
           let group = TagsRepository().getGroup(with: groupId) else { return }
+    self.groupId = groupId
     groupNameTextField.text = group.title
   }
 
@@ -30,13 +32,18 @@ class TagGroupNameCell: Cell {
   }
 
   private func setTextField() {
+    groupNameTextField.delegate = self
     containerView.addSubview(groupNameTextField)
     groupNameTextField.snp.makeConstraints { (make) in
       make.top.left.equalToSuperview().offset(UIUtils.middleOffset)
       make.right.bottom.equalToSuperview().offset(-UIUtils.middleOffset)
     }
   }
-  
 }
 
-
+extension TagGroupNameCell: UITextFieldDelegate {
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    guard let newName = textField.text else { return }
+    TagsRepository().renameGroup(with: groupId, newName: newName)
+  }
+}
