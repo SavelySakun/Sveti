@@ -1,6 +1,8 @@
 import UIKit
 
 class SelectGroupVC: VCwithTable {
+
+  var editingGroupId = String()
   var moovingTagId = String()
   var onSelectionCompletion: ((String) -> Void) = { _ in return }
 
@@ -11,7 +13,8 @@ class SelectGroupVC: VCwithTable {
     }
   }
 
-  init() {
+  init(with groupId: String) {
+    self.editingGroupId = groupId
     super.init(with: .insetGrouped)
     let selectGroupTableView = SelectGroupTableView(viewModel: viewModel, style: .insetGrouped)
     selectGroupTableView.groupSelectDelegate = self
@@ -19,7 +22,8 @@ class SelectGroupVC: VCwithTable {
   }
 
   override func getDataProvider() -> TableDataProvider? {
-    return SelectGroupTableDataProvider()
+    let dataProvider = SelectGroupTableDataProvider(with: editingGroupId)
+    return dataProvider
   }
 
   required init?(coder: NSCoder) {
@@ -28,9 +32,10 @@ class SelectGroupVC: VCwithTable {
 }
 
 extension SelectGroupVC: SelectGroupTableViewDelegate {
-  func onSelectGroup(in section: Int) {
+  func onSelectGroup(with id: String) {
     let tagsRepository = TagsRepository()
-    tagsRepository.moveTagTo(section: section, with: moovingTagId)
-    onSelectionCompletion(tagsRepository.groups[section].title)
+    tagsRepository.moveTagTo(newGroupId: id, tagId: moovingTagId)
+    onSelectionCompletion(tagsRepository.getGroup(with: id)?.title ?? "новая")
   }
+
 }

@@ -3,7 +3,7 @@ import Combine
 
 class TableView: UITableView {
 
-  private let viewModel: ViewControllerVM
+  let viewModel: ViewControllerVM
   var sections: [TableSection] {
     viewModel.tableDataProvider!.sections!
   }

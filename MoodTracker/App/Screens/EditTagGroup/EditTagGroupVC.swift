@@ -91,7 +91,7 @@ class EditTagGroupVC: VCwithTable {
     }
 
     let changeGroupAction = UIAlertAction(title: "Переместить", style: .default) { _ in
-      let selectGroupVC = SelectGroupVC()
+      let selectGroupVC = SelectGroupVC(with: self.groupId)
       var popupVC = ALCardController()
 
       selectGroupVC.moovingTagId = self.editingTagId

@@ -15,6 +15,7 @@ class SelectGroupCell: Cell {
   }
 
   override func configureSelf(with viewModel: CellVM) {
-    groupNameTitleLabel.text = viewModel.title
+    guard let cellData = viewModel.cellValue as? SelectGroupCellData else { return }
+    groupNameTitleLabel.text = cellData.title
   }
 }

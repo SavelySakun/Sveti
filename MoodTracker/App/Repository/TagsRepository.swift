@@ -110,11 +110,12 @@ class TagsRepository {
     }
   }
 
-  func moveTagTo(section: Int, with id: String) {
-    guard let tagToMove = findTag(with: id) else { return }
-    removeTag(with: id)
+  func moveTagTo(newGroupId: String, tagId: String) {
+    guard let indexOfNewGroup = groups.firstIndex(where: { $0.id == newGroupId }),
+          let tagToMove = findTag(with: tagId) else { return }
+    removeTag(with: tagId)
     try! realm.write {
-      groups[section].tags.append(tagToMove)
+      groups[indexOfNewGroup].tags.append(tagToMove)
     }
   }
 
