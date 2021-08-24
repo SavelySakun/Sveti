@@ -132,4 +132,11 @@ class TagsRepository {
       realm.delete(object)
     }
   }
+
+  func reorder(moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath, and groupId: String) {
+    let editingGroup = groups.first(where: { $0.id == groupId })
+    try! realm.write {
+      editingGroup?.tags.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+    }
+  }
 }

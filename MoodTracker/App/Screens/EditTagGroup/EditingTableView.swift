@@ -1,6 +1,7 @@
 import UIKit
 
 class EditingTableView: TableView {
+  var groupId = String()
 
   override func registerCells() {
     super.registerCells()
@@ -37,8 +38,18 @@ class EditingTableView: TableView {
     return indexPath.section == 1
   }
 
+  func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+    if sourceIndexPath.section < proposedDestinationIndexPath.section {
+      return IndexPath(row: (tableView.numberOfRows(inSection: sourceIndexPath.section) - 1), section: sourceIndexPath.section)
+    } else if sourceIndexPath.section > proposedDestinationIndexPath.section {
+      return IndexPath(row: 0, section: sourceIndexPath.section)
+    } else {
+      return proposedDestinationIndexPath
+    }
+  }
+
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-      //code
+    TagsRepository().reorder(moveRowAt: sourceIndexPath, to: destinationIndexPath, and: groupId)
   }
 
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

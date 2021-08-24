@@ -17,7 +17,9 @@ class EditTagGroupVC: VCwithTable {
   init(groupId: String) {
     self.groupId = groupId
     super.init(with: .insetGrouped)
-    tableView = EditingTableView(viewModel: viewModel, style: .grouped)
+    let editingTableView = EditingTableView(viewModel: viewModel, style: .grouped)
+    editingTableView.groupId = groupId
+    tableView = editingTableView
   }
   
   required init?(coder: NSCoder) {
