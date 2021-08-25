@@ -20,125 +20,135 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0B7A4F24B5D05BADA42008985E5A36BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		1331C47F835498509A7FD09F703C8F6D /* Pods-MoodTracker-MoodTrackerUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8518DDD31534E3C1553D6B79A1E1D26 /* Pods-MoodTracker-MoodTrackerUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13E85B1C96D08ED1DE31CB9882695022 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2AAEA846CDA9A83CD165AD124B114BEA /* Pods-MoodTrackerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C5CA663513B32C8090CD6AAD686481 /* Pods-MoodTrackerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3701C396AA6835E15B08AB4AA14CD581 /* Pods-MoodTracker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3114BEA5BE156AC605503CE16A547287 /* Pods-MoodTracker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		435C1EB7433AB021D989BAC3DB0BDDFE /* Pods-MoodTrackerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C27AD57F75F428D1BA87D0E69F9A12 /* Pods-MoodTrackerTests-dummy.m */; };
-		72DE69724C3DCD3AD790EC488E02501B /* Pods-MoodTracker-MoodTrackerUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3F6CB1547F1EBACE81E58C388C0CF7 /* Pods-MoodTracker-MoodTrackerUITests-dummy.m */; };
-		7DBD14F54CB97F944FD05E4407FDC219 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		DB36A51A3C8F628379A8CF0A0491CC86 /* Pods-MoodTracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B511FD98B0FE42BAF5E16D05B942197 /* Pods-MoodTracker-dummy.m */; };
+		424FB5544ACA6D85355B3B0EDB16E817 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		596389D4D562D392809D82BE3DE47EC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		6D27042A7A991C9371476AB442E85F41 /* Pods-Sveti-SvetiUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA5DBD9BB8F72FC12C541EA1F05F1D1 /* Pods-Sveti-SvetiUITests-dummy.m */; };
+		7875CAA331B8FDD2CAE3A806C5BD0688 /* Pods-Sveti-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 896B9231DD2965410102858FEF459983 /* Pods-Sveti-dummy.m */; };
+		819A15ECFA7AC272845E1DF03E3D1A58 /* Pods-SvetiTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08FFC69A9017B8677EC8329EAE4639CE /* Pods-SvetiTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0876C1D5BEC528F43769D951F7C55F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A72F88CB6852C56143B90FF9E8D2BD08 /* Pods-Sveti-SvetiUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BA2AA1E4E15FC677B17D972FAF3B9B99 /* Pods-Sveti-SvetiUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C44C9201EB634F4F893ED739AA8A3E8F /* Pods-SvetiTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5626282FEFEEFD702122877A0ECB146D /* Pods-SvetiTests-dummy.m */; };
+		F406CEE8E5F37C31E4E29A81C00FF2CD /* Pods-Sveti-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B1881EBBC290E45AD0AA7E26A01806 /* Pods-Sveti-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		81DCD2AA75B0DEE840F209CE15C4EA23 /* PBXContainerItemProxy */ = {
+		7290020A0B0D18207F22A843A05D0AC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
-		DB54F3E280F864E4B446D608FDDE0B26 /* PBXContainerItemProxy */ = {
+		BE63BCAD5584A8E400AB309FB4AA8BA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D20B03C2191027902964CF6FE7C279;
+			remoteInfo = "Pods-Sveti";
+		};
+		C006BBCBB3A397327D766CD046CFA994 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
-		};
-		E14EA705EB1D762D7F83FFBA13CD23DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 885AC0E313D8E2DB5D201401F1F8AA1C;
-			remoteInfo = "Pods-MoodTracker";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02C27AD57F75F428D1BA87D0E69F9A12 /* Pods-MoodTrackerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoodTrackerTests-dummy.m"; sourceTree = "<group>"; };
-		06E76F92CF611EDBE6B09D8F9829E065 /* Pods-MoodTracker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoodTracker-Info.plist"; sourceTree = "<group>"; };
-		21E5CFEF96BC3BB1A058B07F312DD55E /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		25D4F89D3A0FFAC0D7DBF9B0591A5316 /* Pods-MoodTracker-MoodTrackerUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoodTracker-MoodTrackerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		25EEA8769B0E4265E9B57614565E1D2C /* Pods-MoodTrackerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoodTrackerTests.modulemap"; sourceTree = "<group>"; };
-		3114BEA5BE156AC605503CE16A547287 /* Pods-MoodTracker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoodTracker-umbrella.h"; sourceTree = "<group>"; };
-		32CC627C7187AE6FFB40C7CE33303308 /* Pods_MoodTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08FFC69A9017B8677EC8329EAE4639CE /* Pods-SvetiTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SvetiTests-umbrella.h"; sourceTree = "<group>"; };
+		272AB0C3D0553249498CC652B5C9B912 /* Pods-Sveti-SvetiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sveti-SvetiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E28E936A12798A531B902282CDC7A1B /* Pods-Sveti-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sveti-Info.plist"; sourceTree = "<group>"; };
 		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
-		5D4FEB5CF7B4715BD454CD6261B6AD41 /* Pods-MoodTrackerTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoodTrackerTests-Info.plist"; sourceTree = "<group>"; };
-		5D5E492F8FB4DEE4D238F9E8A166F0A0 /* Pods-MoodTracker-MoodTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoodTracker-MoodTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		482F94FCCA86763ED2693B271FA407D8 /* Pods_Sveti_SvetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti_SvetiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5626282FEFEEFD702122877A0ECB146D /* Pods-SvetiTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SvetiTests-dummy.m"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7632B14AFA5CEC5306E9FB416A9C0A60 /* Pods-MoodTracker-MoodTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoodTracker-MoodTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		76FF32C72A95E61C86C445B40FDDF4E6 /* Pods-MoodTracker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoodTracker-acknowledgements.markdown"; sourceTree = "<group>"; };
-		777812845ECF1C15A95AC4F819EBEE05 /* Pods-MoodTracker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoodTracker.modulemap"; sourceTree = "<group>"; };
+		7AE31D0B009C6173AB38D54B219F7FA6 /* Pods_Sveti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
-		87500D448558433AFA27C43B17B8CD0A /* Pods-MoodTracker-MoodTrackerUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoodTracker-MoodTrackerUITests-Info.plist"; sourceTree = "<group>"; };
-		9B511FD98B0FE42BAF5E16D05B942197 /* Pods-MoodTracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoodTracker-dummy.m"; sourceTree = "<group>"; };
+		80F7DB969E21633FB456FB59FE13DFF9 /* Pods-Sveti-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sveti-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8882DD5E0C130776D4A907CC07158E28 /* Pods-Sveti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sveti.debug.xcconfig"; sourceTree = "<group>"; };
+		896B9231DD2965410102858FEF459983 /* Pods-Sveti-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sveti-dummy.m"; sourceTree = "<group>"; };
+		8D17FE546972FFA8D32C415413F24009 /* Pods-Sveti.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sveti.modulemap"; sourceTree = "<group>"; };
+		942F289849C8404BE972D5E6102651EE /* Pods-SvetiTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SvetiTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		948FE3CDA327A8F50324249E5F67A67E /* Pods-SvetiTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SvetiTests.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A4164D690A4A8AE4CE4553E39DCE2390 /* Pods-MoodTracker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoodTracker-acknowledgements.plist"; sourceTree = "<group>"; };
-		A54D2F763579B980CEF5DB86D8D53721 /* Pods-MoodTrackerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoodTrackerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A8518DDD31534E3C1553D6B79A1E1D26 /* Pods-MoodTracker-MoodTrackerUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoodTracker-MoodTrackerUITests-umbrella.h"; sourceTree = "<group>"; };
-		AA8338055F2A5FC6A4EFF1361D31B3AE /* Pods-MoodTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoodTracker.release.xcconfig"; sourceTree = "<group>"; };
-		B7926E981F2204B9DFF5A2757739730D /* Pods-MoodTrackerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MoodTrackerTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BB3F6CB1547F1EBACE81E58C388C0CF7 /* Pods-MoodTracker-MoodTrackerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MoodTracker-MoodTrackerUITests-dummy.m"; sourceTree = "<group>"; };
-		C9C5CA663513B32C8090CD6AAD686481 /* Pods-MoodTrackerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MoodTrackerTests-umbrella.h"; sourceTree = "<group>"; };
-		D0C996C42F15F4C4A59234FFA7667D03 /* Pods_MoodTracker_MoodTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodTracker_MoodTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D61C4014EFCE1B5AEEB4607482928A6F /* Pods-MoodTracker-MoodTrackerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoodTracker-MoodTrackerUITests.modulemap"; sourceTree = "<group>"; };
-		DA763FFC050F17459A4CDA6F51D7F1B3 /* Pods-MoodTracker-MoodTrackerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MoodTracker-MoodTrackerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E3ECF1C13C1F01AA5329DC9C585AD5B6 /* Pods-MoodTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoodTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F369D836D19B9E952D85F55017C01065 /* Pods-MoodTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MoodTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
-		F3F8B753CD7D119CACD2504F8C8E7B96 /* Pods_MoodTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoodTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D98D081E3E32D4A9C4B5474F51C1C5 /* Pods-Sveti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sveti.release.xcconfig"; sourceTree = "<group>"; };
+		B4D2097450DD2A24BFF7199755B1125D /* Pods_SvetiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SvetiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C5DC8A13E50FB6ABBDAEB592265C93 /* Pods-SvetiTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SvetiTests-Info.plist"; sourceTree = "<group>"; };
+		BA2AA1E4E15FC677B17D972FAF3B9B99 /* Pods-Sveti-SvetiUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sveti-SvetiUITests-umbrella.h"; sourceTree = "<group>"; };
+		C2FD6287C5D9F595217F2181DE7F86BF /* Pods-SvetiTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SvetiTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CFC4C05EAC4685D66EE9BB65C005B9A5 /* Pods-SvetiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SvetiTests.release.xcconfig"; sourceTree = "<group>"; };
+		CFCFC8EFBC85422B589A80BDF707614A /* Pods-Sveti-SvetiUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sveti-SvetiUITests-Info.plist"; sourceTree = "<group>"; };
+		D677C79466B5468B504D800042522887 /* Pods-Sveti-SvetiUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sveti-SvetiUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D70CC7664CF1A9CF2DADAD54BA686115 /* Pods-Sveti-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sveti-acknowledgements.plist"; sourceTree = "<group>"; };
+		DE5D894214D739355D0EA05A2135E7A0 /* Pods-SvetiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SvetiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2B1881EBBC290E45AD0AA7E26A01806 /* Pods-Sveti-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sveti-umbrella.h"; sourceTree = "<group>"; };
+		F5D2B33D08A67490AE6D5F15F8E168EE /* Pods-Sveti-SvetiUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sveti-SvetiUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F888C70F910F211D02A12BF057E9D040 /* Pods-Sveti-SvetiUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sveti-SvetiUITests.modulemap"; sourceTree = "<group>"; };
+		F8A7E72D15982EA60A04CB68DA768F62 /* Pods-Sveti-SvetiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sveti-SvetiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FCA5DBD9BB8F72FC12C541EA1F05F1D1 /* Pods-Sveti-SvetiUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sveti-SvetiUITests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8907DD584FFAB7958AB3BCA7C27D9C0B /* Frameworks */ = {
+		44B443DACA6259614F91F630A8A8F6CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7A4F24B5D05BADA42008985E5A36BD /* Foundation.framework in Frameworks */,
+				424FB5544ACA6D85355B3B0EDB16E817 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEA237E298F99032B4F6B61C1F9BD36B /* Frameworks */ = {
+		559CE0A6829B8CE90D43E00418A8A794 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DBD14F54CB97F944FD05E4407FDC219 /* Foundation.framework in Frameworks */,
+				596389D4D562D392809D82BE3DE47EC9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EE0AAC776B43AAFD9ACC7516643E9DF2 /* Frameworks */ = {
+		E882E62C651DD4796223AC355DF361D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E85B1C96D08ED1DE31CB9882695022 /* Foundation.framework in Frameworks */,
+				A0876C1D5BEC528F43769D951F7C55F8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33382694CE8425C6B6F93EC6C90E7FF5 /* Pods-SvetiTests */ = {
+			isa = PBXGroup;
+			children = (
+				948FE3CDA327A8F50324249E5F67A67E /* Pods-SvetiTests.modulemap */,
+				C2FD6287C5D9F595217F2181DE7F86BF /* Pods-SvetiTests-acknowledgements.markdown */,
+				942F289849C8404BE972D5E6102651EE /* Pods-SvetiTests-acknowledgements.plist */,
+				5626282FEFEEFD702122877A0ECB146D /* Pods-SvetiTests-dummy.m */,
+				B9C5DC8A13E50FB6ABBDAEB592265C93 /* Pods-SvetiTests-Info.plist */,
+				08FFC69A9017B8677EC8329EAE4639CE /* Pods-SvetiTests-umbrella.h */,
+				DE5D894214D739355D0EA05A2135E7A0 /* Pods-SvetiTests.debug.xcconfig */,
+				CFC4C05EAC4685D66EE9BB65C005B9A5 /* Pods-SvetiTests.release.xcconfig */,
+			);
+			name = "Pods-SvetiTests";
+			path = "Target Support Files/Pods-SvetiTests";
+			sourceTree = "<group>";
+		};
+		35ABF045F15DB6CBF12B54A34627A458 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F292A7730ED9AEBA54C83CC8FABC166F /* Pods-Sveti */,
+				9215EB662747AAEF8F1C98AA1D778455 /* Pods-Sveti-SvetiUITests */,
+				33382694CE8425C6B6F93EC6C90E7FF5 /* Pods-SvetiTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		7B2801AB6D3A66F47D04D3A7063A1E6C /* Pods-MoodTracker-MoodTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D61C4014EFCE1B5AEEB4607482928A6F /* Pods-MoodTracker-MoodTrackerUITests.modulemap */,
-				DA763FFC050F17459A4CDA6F51D7F1B3 /* Pods-MoodTracker-MoodTrackerUITests-acknowledgements.markdown */,
-				25D4F89D3A0FFAC0D7DBF9B0591A5316 /* Pods-MoodTracker-MoodTrackerUITests-acknowledgements.plist */,
-				BB3F6CB1547F1EBACE81E58C388C0CF7 /* Pods-MoodTracker-MoodTrackerUITests-dummy.m */,
-				87500D448558433AFA27C43B17B8CD0A /* Pods-MoodTracker-MoodTrackerUITests-Info.plist */,
-				A8518DDD31534E3C1553D6B79A1E1D26 /* Pods-MoodTracker-MoodTrackerUITests-umbrella.h */,
-				5D5E492F8FB4DEE4D238F9E8A166F0A0 /* Pods-MoodTracker-MoodTrackerUITests.debug.xcconfig */,
-				7632B14AFA5CEC5306E9FB416A9C0A60 /* Pods-MoodTracker-MoodTrackerUITests.release.xcconfig */,
-			);
-			name = "Pods-MoodTracker-MoodTrackerUITests";
-			path = "Target Support Files/Pods-MoodTracker-MoodTrackerUITests";
 			sourceTree = "<group>";
 		};
 		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
@@ -151,20 +161,20 @@
 			path = "../Target Support Files/SwiftLint";
 			sourceTree = "<group>";
 		};
-		8A0CE1E57D321F44C64ECF25F5D547DA /* Pods-MoodTracker */ = {
+		9215EB662747AAEF8F1C98AA1D778455 /* Pods-Sveti-SvetiUITests */ = {
 			isa = PBXGroup;
 			children = (
-				777812845ECF1C15A95AC4F819EBEE05 /* Pods-MoodTracker.modulemap */,
-				76FF32C72A95E61C86C445B40FDDF4E6 /* Pods-MoodTracker-acknowledgements.markdown */,
-				A4164D690A4A8AE4CE4553E39DCE2390 /* Pods-MoodTracker-acknowledgements.plist */,
-				9B511FD98B0FE42BAF5E16D05B942197 /* Pods-MoodTracker-dummy.m */,
-				06E76F92CF611EDBE6B09D8F9829E065 /* Pods-MoodTracker-Info.plist */,
-				3114BEA5BE156AC605503CE16A547287 /* Pods-MoodTracker-umbrella.h */,
-				21E5CFEF96BC3BB1A058B07F312DD55E /* Pods-MoodTracker.debug.xcconfig */,
-				AA8338055F2A5FC6A4EFF1361D31B3AE /* Pods-MoodTracker.release.xcconfig */,
+				F888C70F910F211D02A12BF057E9D040 /* Pods-Sveti-SvetiUITests.modulemap */,
+				F5D2B33D08A67490AE6D5F15F8E168EE /* Pods-Sveti-SvetiUITests-acknowledgements.markdown */,
+				D677C79466B5468B504D800042522887 /* Pods-Sveti-SvetiUITests-acknowledgements.plist */,
+				FCA5DBD9BB8F72FC12C541EA1F05F1D1 /* Pods-Sveti-SvetiUITests-dummy.m */,
+				CFCFC8EFBC85422B589A80BDF707614A /* Pods-Sveti-SvetiUITests-Info.plist */,
+				BA2AA1E4E15FC677B17D972FAF3B9B99 /* Pods-Sveti-SvetiUITests-umbrella.h */,
+				272AB0C3D0553249498CC652B5C9B912 /* Pods-Sveti-SvetiUITests.debug.xcconfig */,
+				F8A7E72D15982EA60A04CB68DA768F62 /* Pods-Sveti-SvetiUITests.release.xcconfig */,
 			);
-			name = "Pods-MoodTracker";
-			path = "Target Support Files/Pods-MoodTracker";
+			name = "Pods-Sveti-SvetiUITests";
+			path = "Target Support Files/Pods-Sveti-SvetiUITests";
 			sourceTree = "<group>";
 		};
 		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
@@ -175,12 +185,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C13E3AA4106C1C98C58FE29EE1DBAD5C /* Products */ = {
+		BE7BE7827602500305AB95BEFF1E8EDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32CC627C7187AE6FFB40C7CE33303308 /* Pods_MoodTracker.framework */,
-				D0C996C42F15F4C4A59234FFA7667D03 /* Pods_MoodTracker_MoodTrackerUITests.framework */,
-				F3F8B753CD7D119CACD2504F8C8E7B96 /* Pods_MoodTrackerTests.framework */,
+				7AE31D0B009C6173AB38D54B219F7FA6 /* Pods_Sveti.framework */,
+				482F94FCCA86763ED2693B271FA407D8 /* Pods_Sveti_SvetiUITests.framework */,
+				B4D2097450DD2A24BFF7199755B1125D /* Pods_SvetiTests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,8 +201,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				965877409E01FB3D85D85E90E6B30185 /* Pods */,
-				C13E3AA4106C1C98C58FE29EE1DBAD5C /* Products */,
-				D70E47E3097252DBAF4B16256C0FE264 /* Targets Support Files */,
+				BE7BE7827602500305AB95BEFF1E8EDF /* Products */,
+				35ABF045F15DB6CBF12B54A34627A458 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,16 +214,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D70E47E3097252DBAF4B16256C0FE264 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8A0CE1E57D321F44C64ECF25F5D547DA /* Pods-MoodTracker */,
-				7B2801AB6D3A66F47D04D3A7063A1E6C /* Pods-MoodTracker-MoodTrackerUITests */,
-				EE8BA8B434BBA28F86927FDF66F26C5F /* Pods-MoodTrackerTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,107 +222,107 @@
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
-		EE8BA8B434BBA28F86927FDF66F26C5F /* Pods-MoodTrackerTests */ = {
+		F292A7730ED9AEBA54C83CC8FABC166F /* Pods-Sveti */ = {
 			isa = PBXGroup;
 			children = (
-				25EEA8769B0E4265E9B57614565E1D2C /* Pods-MoodTrackerTests.modulemap */,
-				A54D2F763579B980CEF5DB86D8D53721 /* Pods-MoodTrackerTests-acknowledgements.markdown */,
-				B7926E981F2204B9DFF5A2757739730D /* Pods-MoodTrackerTests-acknowledgements.plist */,
-				02C27AD57F75F428D1BA87D0E69F9A12 /* Pods-MoodTrackerTests-dummy.m */,
-				5D4FEB5CF7B4715BD454CD6261B6AD41 /* Pods-MoodTrackerTests-Info.plist */,
-				C9C5CA663513B32C8090CD6AAD686481 /* Pods-MoodTrackerTests-umbrella.h */,
-				E3ECF1C13C1F01AA5329DC9C585AD5B6 /* Pods-MoodTrackerTests.debug.xcconfig */,
-				F369D836D19B9E952D85F55017C01065 /* Pods-MoodTrackerTests.release.xcconfig */,
+				8D17FE546972FFA8D32C415413F24009 /* Pods-Sveti.modulemap */,
+				80F7DB969E21633FB456FB59FE13DFF9 /* Pods-Sveti-acknowledgements.markdown */,
+				D70CC7664CF1A9CF2DADAD54BA686115 /* Pods-Sveti-acknowledgements.plist */,
+				896B9231DD2965410102858FEF459983 /* Pods-Sveti-dummy.m */,
+				3E28E936A12798A531B902282CDC7A1B /* Pods-Sveti-Info.plist */,
+				F2B1881EBBC290E45AD0AA7E26A01806 /* Pods-Sveti-umbrella.h */,
+				8882DD5E0C130776D4A907CC07158E28 /* Pods-Sveti.debug.xcconfig */,
+				B0D98D081E3E32D4A9C4B5474F51C1C5 /* Pods-Sveti.release.xcconfig */,
 			);
-			name = "Pods-MoodTrackerTests";
-			path = "Target Support Files/Pods-MoodTrackerTests";
+			name = "Pods-Sveti";
+			path = "Target Support Files/Pods-Sveti";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		102DFAAEDA022391431447B779DC5180 /* Headers */ = {
+		0812AC2DBB4C026B35A2F59F7C67C007 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AAEA846CDA9A83CD165AD124B114BEA /* Pods-MoodTrackerTests-umbrella.h in Headers */,
+				F406CEE8E5F37C31E4E29A81C00FF2CD /* Pods-Sveti-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		812E23DBE1ACF61FFD7C77EAE0D1D87A /* Headers */ = {
+		0DFB1E6CDB36553A6235F38DF4CE82F5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1331C47F835498509A7FD09F703C8F6D /* Pods-MoodTracker-MoodTrackerUITests-umbrella.h in Headers */,
+				819A15ECFA7AC272845E1DF03E3D1A58 /* Pods-SvetiTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98AF67788C9D013391C12A4E43343A97 /* Headers */ = {
+		283023246F28B17562A7707FB01BF78B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3701C396AA6835E15B08AB4AA14CD581 /* Pods-MoodTracker-umbrella.h in Headers */,
+				A72F88CB6852C56143B90FF9E8D2BD08 /* Pods-Sveti-SvetiUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		057B0A390EE5FE95E13BD9AD9ABFDD9F /* Pods-MoodTrackerTests */ = {
+		38FFD0A5E46F4332B921A5AB7C04D478 /* Pods-Sveti-SvetiUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24FF3F03825A4C25F4FA298CD842EF99 /* Build configuration list for PBXNativeTarget "Pods-MoodTrackerTests" */;
+			buildConfigurationList = 1041FB2FFAB894570056432E1B27A408 /* Build configuration list for PBXNativeTarget "Pods-Sveti-SvetiUITests" */;
 			buildPhases = (
-				102DFAAEDA022391431447B779DC5180 /* Headers */,
-				FDFB74257F156B41F73A122A5C3DC179 /* Sources */,
-				DEA237E298F99032B4F6B61C1F9BD36B /* Frameworks */,
-				0F66C2128A4EF4930948888E35848D41 /* Resources */,
+				283023246F28B17562A7707FB01BF78B /* Headers */,
+				D5A8E112A699B09DB1DD119CDEC1931D /* Sources */,
+				559CE0A6829B8CE90D43E00418A8A794 /* Frameworks */,
+				486904628C25C24DDD660DB0AC367CD5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CD1AEF510E8D2127C02D82682843BC74 /* PBXTargetDependency */,
+				DB565ED9955B225CB1E83D2CF9F16FCF /* PBXTargetDependency */,
 			);
-			name = "Pods-MoodTrackerTests";
-			productName = "Pods-MoodTrackerTests";
-			productReference = F3F8B753CD7D119CACD2504F8C8E7B96 /* Pods_MoodTrackerTests.framework */;
+			name = "Pods-Sveti-SvetiUITests";
+			productName = "Pods-Sveti-SvetiUITests";
+			productReference = 482F94FCCA86763ED2693B271FA407D8 /* Pods_Sveti_SvetiUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		885AC0E313D8E2DB5D201401F1F8AA1C /* Pods-MoodTracker */ = {
+		6B8762D2541190902A4869C0E059566B /* Pods-SvetiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1C3D1F7134479B3A08087F22CB2DD2B /* Build configuration list for PBXNativeTarget "Pods-MoodTracker" */;
+			buildConfigurationList = 1A066312660A701431DFCA4ABC12CFAB /* Build configuration list for PBXNativeTarget "Pods-SvetiTests" */;
 			buildPhases = (
-				98AF67788C9D013391C12A4E43343A97 /* Headers */,
-				98DF256B3AC7BE6C7DCB541062AD9DF7 /* Sources */,
-				EE0AAC776B43AAFD9ACC7516643E9DF2 /* Frameworks */,
-				BA1336B1185169C074C9D58EFC756650 /* Resources */,
+				0DFB1E6CDB36553A6235F38DF4CE82F5 /* Headers */,
+				C9AB5728541711B0CB106875FD940802 /* Sources */,
+				44B443DACA6259614F91F630A8A8F6CA /* Frameworks */,
+				3C994FBB4839DB88812C2B9B0A3FB167 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CBC7AAD4CEF6CE93C4110CEAEC6172D3 /* PBXTargetDependency */,
+				A0DD5CAC8C367BACC7E2925B066039E4 /* PBXTargetDependency */,
 			);
-			name = "Pods-MoodTracker";
-			productName = "Pods-MoodTracker";
-			productReference = 32CC627C7187AE6FFB40C7CE33303308 /* Pods_MoodTracker.framework */;
+			name = "Pods-SvetiTests";
+			productName = "Pods-SvetiTests";
+			productReference = B4D2097450DD2A24BFF7199755B1125D /* Pods_SvetiTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E1DB588B0E8A8E7B5EBE467AAE6BE951 /* Pods-MoodTracker-MoodTrackerUITests */ = {
+		89D20B03C2191027902964CF6FE7C279 /* Pods-Sveti */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D43F655C847823E5CFB1D9B1907B72F /* Build configuration list for PBXNativeTarget "Pods-MoodTracker-MoodTrackerUITests" */;
+			buildConfigurationList = 06A28DA80C59995A193F7FEC8224D3B2 /* Build configuration list for PBXNativeTarget "Pods-Sveti" */;
 			buildPhases = (
-				812E23DBE1ACF61FFD7C77EAE0D1D87A /* Headers */,
-				00018DE3E2EDD1174C492B86C396030E /* Sources */,
-				8907DD584FFAB7958AB3BCA7C27D9C0B /* Frameworks */,
-				8361B26D01FA21A538AE1860D0D6F632 /* Resources */,
+				0812AC2DBB4C026B35A2F59F7C67C007 /* Headers */,
+				6415D38BD41BFF2E7560179ED6E20816 /* Sources */,
+				E882E62C651DD4796223AC355DF361D5 /* Frameworks */,
+				30CBC4B4ABB88B63D196F53DB654748B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				14ADB79CF3952A07B2E384B18F2E4F8B /* PBXTargetDependency */,
+				DB74B94E550F5BFEB6A67ABA944E3FF8 /* PBXTargetDependency */,
 			);
-			name = "Pods-MoodTracker-MoodTrackerUITests";
-			productName = "Pods-MoodTracker-MoodTrackerUITests";
-			productReference = D0C996C42F15F4C4A59234FFA7667D03 /* Pods_MoodTracker_MoodTrackerUITests.framework */;
+			name = "Pods-Sveti";
+			productName = "Pods-Sveti";
+			productReference = 7AE31D0B009C6173AB38D54B219F7FA6 /* Pods_Sveti.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -343,34 +343,34 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C13E3AA4106C1C98C58FE29EE1DBAD5C /* Products */;
+			productRefGroup = BE7BE7827602500305AB95BEFF1E8EDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				885AC0E313D8E2DB5D201401F1F8AA1C /* Pods-MoodTracker */,
-				E1DB588B0E8A8E7B5EBE467AAE6BE951 /* Pods-MoodTracker-MoodTrackerUITests */,
-				057B0A390EE5FE95E13BD9AD9ABFDD9F /* Pods-MoodTrackerTests */,
+				89D20B03C2191027902964CF6FE7C279 /* Pods-Sveti */,
+				38FFD0A5E46F4332B921A5AB7C04D478 /* Pods-Sveti-SvetiUITests */,
+				6B8762D2541190902A4869C0E059566B /* Pods-SvetiTests */,
 				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0F66C2128A4EF4930948888E35848D41 /* Resources */ = {
+		30CBC4B4ABB88B63D196F53DB654748B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8361B26D01FA21A538AE1860D0D6F632 /* Resources */ = {
+		3C994FBB4839DB88812C2B9B0A3FB167 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA1336B1185169C074C9D58EFC756650 /* Resources */ = {
+		486904628C25C24DDD660DB0AC367CD5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,57 +380,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00018DE3E2EDD1174C492B86C396030E /* Sources */ = {
+		6415D38BD41BFF2E7560179ED6E20816 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72DE69724C3DCD3AD790EC488E02501B /* Pods-MoodTracker-MoodTrackerUITests-dummy.m in Sources */,
+				7875CAA331B8FDD2CAE3A806C5BD0688 /* Pods-Sveti-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98DF256B3AC7BE6C7DCB541062AD9DF7 /* Sources */ = {
+		C9AB5728541711B0CB106875FD940802 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB36A51A3C8F628379A8CF0A0491CC86 /* Pods-MoodTracker-dummy.m in Sources */,
+				C44C9201EB634F4F893ED739AA8A3E8F /* Pods-SvetiTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDFB74257F156B41F73A122A5C3DC179 /* Sources */ = {
+		D5A8E112A699B09DB1DD119CDEC1931D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				435C1EB7433AB021D989BAC3DB0BDDFE /* Pods-MoodTrackerTests-dummy.m in Sources */,
+				6D27042A7A991C9371476AB442E85F41 /* Pods-Sveti-SvetiUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		14ADB79CF3952A07B2E384B18F2E4F8B /* PBXTargetDependency */ = {
+		A0DD5CAC8C367BACC7E2925B066039E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Sveti";
+			target = 89D20B03C2191027902964CF6FE7C279 /* Pods-Sveti */;
+			targetProxy = BE63BCAD5584A8E400AB309FB4AA8BA4 /* PBXContainerItemProxy */;
+		};
+		DB565ED9955B225CB1E83D2CF9F16FCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 81DCD2AA75B0DEE840F209CE15C4EA23 /* PBXContainerItemProxy */;
+			targetProxy = C006BBCBB3A397327D766CD046CFA994 /* PBXContainerItemProxy */;
 		};
-		CBC7AAD4CEF6CE93C4110CEAEC6172D3 /* PBXTargetDependency */ = {
+		DB74B94E550F5BFEB6A67ABA944E3FF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = DB54F3E280F864E4B446D608FDDE0B26 /* PBXContainerItemProxy */;
-		};
-		CD1AEF510E8D2127C02D82682843BC74 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-MoodTracker";
-			target = 885AC0E313D8E2DB5D201401F1F8AA1C /* Pods-MoodTracker */;
-			targetProxy = E14EA705EB1D762D7F83FFBA13CD23DE /* PBXContainerItemProxy */;
+			targetProxy = 7290020A0B0D18207F22A843A05D0AC4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		394307911B5C9D1C2BBC085E72400764 /* Debug */ = {
+		0A4428442B7FFD2A9189BF587711341D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D5E492F8FB4DEE4D238F9E8A166F0A0 /* Pods-MoodTracker-MoodTrackerUITests.debug.xcconfig */;
+			baseConfigurationReference = 272AB0C3D0553249498CC652B5C9B912 /* Pods-Sveti-SvetiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -442,7 +442,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -451,7 +451,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -465,9 +465,9 @@
 			};
 			name = Debug;
 		};
-		5D8EE05FA21FD3ADDB55C561A4DB4636 /* Release */ = {
+		4BBE0A8BCC8FB44A5E8B339B82C5C8DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F369D836D19B9E952D85F55017C01065 /* Pods-MoodTrackerTests.release.xcconfig */;
+			baseConfigurationReference = 8882DD5E0C130776D4A907CC07158E28 /* Pods-Sveti.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -479,7 +479,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sveti/Pods-Sveti-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,45 +488,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A71AA8605542DEAC39AA91F3F0D80241 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21E5CFEF96BC3BB1A058B07F312DD55E /* Pods-MoodTracker.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Sveti/Pods-Sveti.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -554,44 +516,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B986751E8D496695B329520798AF1BFA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7632B14AFA5CEC5306E9FB416A9C0A60 /* Pods-MoodTracker-MoodTrackerUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MoodTracker-MoodTrackerUITests/Pods-MoodTracker-MoodTrackerUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -723,9 +647,9 @@
 			};
 			name = Release;
 		};
-		C99788FD89CACFAB93CF7747E40EA1BA /* Release */ = {
+		C669BD503DB266EF6609E4E6D13E559C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA8338055F2A5FC6A4EFF1361D31B3AE /* Pods-MoodTracker.release.xcconfig */;
+			baseConfigurationReference = F8A7E72D15982EA60A04CB68DA768F62 /* Pods-Sveti-SvetiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -737,7 +661,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -746,7 +670,45 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MoodTracker/Pods-MoodTracker.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DEA704BFF71A6F58F586B36A35FBD733 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0D98D081E3E32D4A9C4B5474F51C1C5 /* Pods-Sveti.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sveti/Pods-Sveti-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Sveti/Pods-Sveti.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -777,9 +739,9 @@
 			};
 			name = Debug;
 		};
-		F998B05E6F8A335D4E5588FABFDBB0A4 /* Debug */ = {
+		EB0E8301F27D83712F1661A002B5F913 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3ECF1C13C1F01AA5329DC9C585AD5B6 /* Pods-MoodTrackerTests.debug.xcconfig */;
+			baseConfigurationReference = CFC4C05EAC4685D66EE9BB65C005B9A5 /* Pods-SvetiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -791,7 +753,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -800,7 +762,45 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MoodTrackerTests/Pods-MoodTrackerTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F35BE4CD33668C2EC4985C3E242F3DB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE5D894214D739355D0EA05A2135E7A0 /* Pods-SvetiTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -817,11 +817,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24FF3F03825A4C25F4FA298CD842EF99 /* Build configuration list for PBXNativeTarget "Pods-MoodTrackerTests" */ = {
+		06A28DA80C59995A193F7FEC8224D3B2 /* Build configuration list for PBXNativeTarget "Pods-Sveti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F998B05E6F8A335D4E5588FABFDBB0A4 /* Debug */,
-				5D8EE05FA21FD3ADDB55C561A4DB4636 /* Release */,
+				4BBE0A8BCC8FB44A5E8B339B82C5C8DE /* Debug */,
+				DEA704BFF71A6F58F586B36A35FBD733 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1041FB2FFAB894570056432E1B27A408 /* Build configuration list for PBXNativeTarget "Pods-Sveti-SvetiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A4428442B7FFD2A9189BF587711341D /* Debug */,
+				C669BD503DB266EF6609E4E6D13E559C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A066312660A701431DFCA4ABC12CFAB /* Build configuration list for PBXNativeTarget "Pods-SvetiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35BE4CD33668C2EC4985C3E242F3DB9 /* Debug */,
+				EB0E8301F27D83712F1661A002B5F913 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -831,24 +849,6 @@
 			buildConfigurations = (
 				BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */,
 				C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8D43F655C847823E5CFB1D9B1907B72F /* Build configuration list for PBXNativeTarget "Pods-MoodTracker-MoodTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				394307911B5C9D1C2BBC085E72400764 /* Debug */,
-				B986751E8D496695B329520798AF1BFA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A1C3D1F7134479B3A08087F22CB2DD2B /* Build configuration list for PBXNativeTarget "Pods-MoodTracker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A71AA8605542DEAC39AA91F3F0D80241 /* Debug */,
-				C99788FD89CACFAB93CF7747E40EA1BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

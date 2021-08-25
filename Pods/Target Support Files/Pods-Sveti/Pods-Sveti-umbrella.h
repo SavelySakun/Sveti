@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MoodTrackerVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MoodTrackerVersionString[];
+FOUNDATION_EXPORT double Pods_SvetiVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SvetiVersionString[];
 
