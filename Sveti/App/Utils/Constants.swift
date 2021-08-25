@@ -8,6 +8,8 @@ struct Constants {
       static let diarySelected = "DiaryOpen"
       static let newNote = "Add"
       static let newNoteSelected = "AddBlack"
+      static let more = "more"
+      static let spreadsheet = "spreadsheet"
     }
   }
 

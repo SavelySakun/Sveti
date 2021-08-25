@@ -23,7 +23,14 @@ class TabbarController: UITabBarController {
       tabBarTitle: "Новая запись"
     )
 
-    viewControllers = [diaryController, newNoteController]
+    let moreController = createNavigationController(
+      vc: MoreVC(),
+      image: getIcon(named: Constants.ImageNames.Tabbar.more),
+      selectedImage: getIcon(named: Constants.ImageNames.Tabbar.more),
+      tabBarTitle: "Ещё"
+    )
+
+    viewControllers = [diaryController, newNoteController, moreController]
   }
 
   private func createNavigationController(vc: UIViewController, image: UIImage?, selectedImage: UIImage?, tabBarTitle: String) -> UINavigationController {

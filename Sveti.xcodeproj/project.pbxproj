@@ -10,6 +10,8 @@
 		0EE57BE65072015B4DCB25BA /* Pods_Sveti_SvetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EBB08995245592B518881E /* Pods_Sveti_SvetiUITests.framework */; };
 		955E43FEE6EC7F24D0F5BBFB /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5B92741A2BF30CCE849FBA /* Pods_SvetiTests.framework */; };
 		A2F16D90B04DBB9B9B5E889E /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5921DB640BF5B3DC55344D /* Pods_Sveti.framework */; };
+		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
+		FC01D42326D6AF0B00C984E7 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
 		FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */; };
 		FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */; };
@@ -129,6 +131,8 @@
 		9C5921DB640BF5B3DC55344D /* Pods_Sveti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7EBB08995245592B518881E /* Pods_Sveti_SvetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti_SvetiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EA7EF28837E13F6E9398E9 /* Pods-Sveti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti.release.xcconfig"; path = "Target Support Files/Pods-Sveti/Pods-Sveti.release.xcconfig"; sourceTree = "<group>"; };
+		FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		FC0CCC6C26BE6A52004CDE8A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepository.swift; sourceTree = "<group>"; };
 		FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroup.swift; sourceTree = "<group>"; };
@@ -278,6 +282,22 @@
 				00BD5AAFBAE27084F650A476 /* Pods-SvetiTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC01D41E26D6AAA400C984E7 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		FC01D42126D6AEFC00C984E7 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		FC0CCC6B26BE63BC004CDE8A /* TagCollectionView */ = {
@@ -439,6 +459,8 @@
 		FC7E6D1826AB195B00126B97 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FC01D42126D6AEFC00C984E7 /* Explore */,
+				FC01D41E26D6AAA400C984E7 /* More */,
 				FCE3689726D2651000A05271 /* SelectGroupVC */,
 				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
 				FC3A898426A053F60048E4ED /* NewNote */,
@@ -876,6 +898,7 @@
 				FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */,
 				FC7E6D1E26AB1A2600126B97 /* DiaryVC.swift in Sources */,
 				FC7E6D2026AB1F6400126B97 /* DiaryCell.swift in Sources */,
+				FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */,
 				FC76B39326810F7700AF209F /* Cell.swift in Sources */,
 				FCB0642E26B5479D00A0494A /* Mood.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
@@ -895,6 +918,7 @@
 				FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */,
 				FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */,
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
+				FC01D42326D6AF0B00C984E7 /* ExploreVC.swift in Sources */,
 				FC0CCC9426BE8BA8004CDE8A /* TagSectionHeaderView.swift in Sources */,
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,

@@ -15,16 +15,17 @@ class EmptyView: UIView {
   }
 
   private func setLayout() {
-    let iconImage = UIImage(systemName: "tray.fill")
+    let iconImage = UIImage(named: "gardening")
     emptyIconImageView.image = iconImage
     emptyIconImageView.tintColor = .systemBlue
+    emptyIconImageView.contentMode = .scaleAspectFit
 
     emptyIconImageView.snp.makeConstraints { (make) in
-      make.width.equalTo(120)
-      make.height.equalTo(90)
+      make.width.equalTo(400)
+      make.height.equalTo(300)
     }
 
-    emptyLabel.text = "Добавьте заметку в разделе «Новая запись»"
+    emptyLabel.text = "Добавьте первую заметку в разделе «Новая запись»"
     emptyLabel.textColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 1)
     emptyLabel.numberOfLines = 0
     emptyLabel.textAlignment = .center
