@@ -87,7 +87,7 @@ extension TagCollectionView: UICollectionViewDataSource {
     cell.set(with: tag)
     cell.isSelected = selectedTags.contains(tag)
 
-    if selectedTags.contains(tag) {
+    if selectedTags.contains(where: { $0.id == tag.id }) {
       DispatchQueue.main.async {
         self.selectItem(at: indexPath, animated: false, scrollPosition: .bottom)
       }

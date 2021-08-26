@@ -56,8 +56,10 @@ class TagCollectionCell: UICollectionViewCell {
   }
 
 	func setLayout() {
-    contentView.backgroundColor = .white
-    contentView.layer.cornerRadius = 8
+    let backView = UIView()
+    backView.backgroundColor = .white
+    backView.layer.cornerRadius = 8
+    backgroundView = backView
 
     setImageView()
     setLabel()
@@ -67,7 +69,7 @@ class TagCollectionCell: UICollectionViewCell {
   private func setSelectedView() {
     let selectedView = UIView()
     selectedView.layer.cornerRadius = 8
-    selectedView.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.5921568627, blue: 0.8039215686, alpha: 1).withAlphaComponent(0.25)
+    selectedView.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.5921568627, blue: 0.8039215686, alpha: 1).withAlphaComponent(0.3)
     selectedBackgroundView = selectedView
   }
 }
