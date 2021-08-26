@@ -60,8 +60,7 @@ class TagSectionHeaderView: UICollectionReusableView {
   }
 
   private func setButtons() {
-    setCollapseButtonGesture()
-    setEditButtonGesture()
+    setButtonsAction()
 
     buttonsStackView.contentMode = .scaleAspectFit
     buttonsStackView.axis = .horizontal
@@ -74,16 +73,14 @@ class TagSectionHeaderView: UICollectionReusableView {
     }
   }
 
-  private func setCollapseButtonGesture() {
-    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onCollapseTap))
-    collapseButton.addGestureRecognizer(gestureRecognizer)
-    collapseButton.isUserInteractionEnabled = true
-  }
+  private func setButtonsAction() {
+    editButton.tapAction = {
+      self.onEditTap()
+    }
 
-  private func setEditButtonGesture() {
-    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onEditTap))
-    editButton.addGestureRecognizer(gestureRecognizer)
-    editButton.isUserInteractionEnabled = true
+    collapseButton.tapAction = {
+      self.onCollapseTap()
+    }
   }
 
   private func setSeparator() {
@@ -112,7 +109,6 @@ class TagSectionHeaderView: UICollectionReusableView {
   }
 
   @objc func onCollapseTap() {
-    collapseButton.toggle()
     delegate?.onCollapseButtonTap(in: section)
   }
 

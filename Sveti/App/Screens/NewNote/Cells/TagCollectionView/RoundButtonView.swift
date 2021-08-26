@@ -6,19 +6,19 @@ enum RoundButtonState {
   case second
 }
 
-class RoundButtonView: UIView {
+class RoundButtonView: UIButton {
 
   private var firstStateImage: UIImage?
   private var secondStateImage: UIImage?
+  var backColor: UIColor? { didSet { backgroundColor = backColor } }
 
   var sizeSetupHandler: (() -> Void) = { return }
   var tapAction: (() -> Void) = { return }
 
   var sizeConstraint: Constraint?
 
-  private var state: RoundButtonState = .first
+  private var selectionState: RoundButtonState = .first
 
-  let imageView = UIImageView()
   override func layoutSubviews() {
     super.layoutSubviews()
     layer.cornerRadius = frame.size.width / 2
@@ -37,7 +37,7 @@ class RoundButtonView: UIView {
   private func setLayout() {
     backgroundColor = .white
     snp.makeConstraints { (make) in
-      sizeConstraint = make.height.width.equalTo(33).constraint
+      sizeConstraint = make.height.width.equalTo(35).constraint
     }
     setImageView()
     addTapAction()
@@ -49,11 +49,10 @@ class RoundButtonView: UIView {
   }
 
   private func setImageView() {
-    imageView.image = firstStateImage
-    imageView.contentMode = .scaleAspectFit
-    imageView.tintColor = .black.withAlphaComponent(0.4)
-    addSubview(imageView)
-    imageView.snp.makeConstraints { (make) in
+    setImage(firstStateImage, for: .normal)
+    imageView?.contentMode = .scaleAspectFit
+    imageView?.tintColor = .black.withAlphaComponent(0.4)
+    imageView?.snp.makeConstraints { (make) in
       make.height.width.equalTo(15)
       make.centerX.centerY.equalToSuperview()
     }
@@ -66,24 +65,34 @@ class RoundButtonView: UIView {
   }
 
   func toggle() {
+    guard secondStateImage != nil else { return }
     DispatchQueue.main.async { [self] in
-      let isFirstState = (state == .first)
-      imageView.image = isFirstState ? secondStateImage : firstStateImage
-      state = isFirstState ? .second : .first
+      let isFirstState = (selectionState == .first)
+      let image = isFirstState ? secondStateImage : firstStateImage
+      imageView?.image = image
+      selectionState = isFirstState ? .second : .first
     }
   }
 
   func setStateImage(isExpanded: Bool) {
-    imageView.image = isExpanded ? secondStateImage : firstStateImage
+    let image = isExpanded ? secondStateImage : firstStateImage
+    setImage(image, for: .normal)
   }
 
   private func addTapAction() {
-    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTap))
-    self.addGestureRecognizer(gestureRecognizer)
-    self.isUserInteractionEnabled = true
+    addTarget(self, action: #selector(onTap), for: .touchUpInside)
   }
 
   @objc private func onTap() {
+    var feedbackGenerator: UISelectionFeedbackGenerator? = UISelectionFeedbackGenerator()
+    feedbackGenerator?.prepare()
+    feedbackGenerator?.selectionChanged()
+    UIView.animate(withDuration: 0.3) {
+      self.toggle()
+      self.backgroundColor = .systemGray4
+      self.backgroundColor = self.backColor ?? .white
+    }
     tapAction()
+    feedbackGenerator = nil
   }
 }

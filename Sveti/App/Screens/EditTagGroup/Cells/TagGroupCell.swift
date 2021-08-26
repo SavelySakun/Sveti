@@ -52,14 +52,14 @@ class TagGroupCell: Cell {
   }
 
   private func setRoundButtons() {
-    editButtonView.imageView.tintColor = .white
+    editButtonView.imageView?.tintColor = .white
     editButtonView.sizeSetupHandler = {
       self.editButtonView.snp.makeConstraints { (make) in
-        make.height.width.equalTo(24)
+        make.height.width.equalTo(28)
       }
     }
     editButtonView.updateSize()
-    editButtonView.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.6117647059, blue: 0.9882352941, alpha: 1).withAlphaComponent(0.7)
+    editButtonView.backColor = #colorLiteral(red: 0.1764705882, green: 0.6117647059, blue: 0.9882352941, alpha: 1).withAlphaComponent(0.7)
     contentView.addSubview(editButtonView)
     editButtonView.snp.makeConstraints { (make) in
       make.centerY.equalTo(textFieldContainer.snp.centerY)
