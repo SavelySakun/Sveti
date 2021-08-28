@@ -10,6 +10,7 @@ class DiaryTagCell: TagCollectionCell {
     let colorForTag: UIColor = .black.withAlphaComponent(0.8)
     tagNameLabel.textColor = colorForTag
     tagNameLabel.font = UIFont.systemFont(ofSize: 14)
+    backgroundView?.backgroundColor = .clear
   }
 
   override func setImageViewWithHeight() {

@@ -33,10 +33,6 @@ class ScoreTimeView: UIView {
     scoreLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
     scoreLabel.textColor = .blue
     timeLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-
-    // test
-    scoreLabel.text = "8.1"
-    timeLabel.text = "в 17:00"
   }
 
   private func setLabelsLayout() {

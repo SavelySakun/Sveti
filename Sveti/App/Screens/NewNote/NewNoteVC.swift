@@ -10,6 +10,11 @@ class NewNoteVC: BaseViewController {
 
   lazy var tableView = TableView(viewModel: viewModel)
 
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    tableView.onUpdate() // need for updating height of tag cell
+  }
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setLayout()
@@ -83,5 +88,4 @@ class NewNoteVC: BaseViewController {
       self.tableView.reloadData()
     }
   }
-
 }

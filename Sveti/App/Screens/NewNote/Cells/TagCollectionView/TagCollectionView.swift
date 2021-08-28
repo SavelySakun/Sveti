@@ -8,6 +8,18 @@ protocol TagCollectionViewDelegate: AnyObject {
 
 class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
+  // Need to calculate height of collection view
+  override var contentSize: CGSize {
+    didSet {
+      invalidateIntrinsicContentSize()
+    }
+  }
+
+  override var intrinsicContentSize: CGSize {
+    layoutIfNeeded()
+    return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
+  }
+
   let realm = try! Realm()
 
   weak var interactionDelegate: TagCollectionViewDelegate?

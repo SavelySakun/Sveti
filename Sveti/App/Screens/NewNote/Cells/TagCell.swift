@@ -61,13 +61,11 @@ class TagCell: Cell {
     }
   }
 
-
   private func addTagCollectionView() {
     tagsCollection.interactionDelegate = self
     containerView.addSubview(tagsCollection)
 
     tagsCollection.snp.makeConstraints { (make) in
-      make.height.equalTo(getCollectionViewHeight())
       make.top.equalTo(containerView.snp.top).offset(UIUtils.middleOffset)
       make.left.equalTo(containerView.snp.left).offset(UIUtils.bigOffset)
       make.right.equalTo(containerView.snp.right).offset(-UIUtils.bigOffset)
@@ -75,37 +73,13 @@ class TagCell: Cell {
     }
   }
 
-  private func getCollectionViewHeight() -> Double {
-    var section = Section()
-
-    // 1. Get number of sections
-    section.numberOfSections = Double(tagsCollection.tagGroups.count)
-
-    // 2. Get total number of rows
-    tagsCollection.tagGroups.forEach { group in
-      if group.isExpanded {
-        let activeTags = group.tags.filter { !$0.isHidden }
-        let numberOfRows: Double = (Double(activeTags.count) / 3.0).rounded(.up)
-        section.numberOfRows += numberOfRows
-        section.numberOfActiveFooters += 1.0
-      }
-    }
-
-    // 3. Calculate total height of CollectionView
-    let headerHeight = Double(CollectionViewSizeConstants.sectionHeaderHeight)
-    let footerHeight = Double(CollectionViewSizeConstants.sectionFooterHeight)
-    let cellHeight = CollectionViewSizeConstants.cellHeight + Double((CollectionViewSizeConstants.itemSpacing / 2.0))
-
-    let totalHeightOfSections = headerHeight * section.numberOfSections
-    let totalHeightOfFooters = footerHeight * section.numberOfActiveFooters
-    let totalCellsHeight = cellHeight * section.numberOfRows
-    
-    return totalHeightOfSections + totalHeightOfFooters + totalCellsHeight
+  func getCollectionViewHeight() -> CGFloat {
+    return tagsCollection.intrinsicContentSize.height
   }
 
   override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
     let heightOffset = (UIUtils.middleOffset * 2) + UIUtils.defaultOffset + 40
-    let size = CGSize(width: Double(self.frame.width), height: getCollectionViewHeight() + Double(heightOffset))
+    let size = CGSize(width: Double(self.frame.width), height: Double(getCollectionViewHeight()) + Double(heightOffset))
     return size
   }
 }
