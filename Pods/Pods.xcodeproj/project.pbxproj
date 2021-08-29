@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = SwiftLint;
-			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -60,10 +59,10 @@
 		272AB0C3D0553249498CC652B5C9B912 /* Pods-Sveti-SvetiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sveti-SvetiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E28E936A12798A531B902282CDC7A1B /* Pods-Sveti-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sveti-Info.plist"; sourceTree = "<group>"; };
 		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
-		482F94FCCA86763ED2693B271FA407D8 /* Pods_Sveti_SvetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti_SvetiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		482F94FCCA86763ED2693B271FA407D8 /* Pods_Sveti_SvetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sveti_SvetiUITests.framework; path = "Pods-Sveti-SvetiUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5626282FEFEEFD702122877A0ECB146D /* Pods-SvetiTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SvetiTests-dummy.m"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7AE31D0B009C6173AB38D54B219F7FA6 /* Pods_Sveti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AE31D0B009C6173AB38D54B219F7FA6 /* Pods_Sveti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sveti.framework; path = "Pods-Sveti.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
 		80F7DB969E21633FB456FB59FE13DFF9 /* Pods-Sveti-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sveti-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8882DD5E0C130776D4A907CC07158E28 /* Pods-Sveti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sveti.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,9 +70,9 @@
 		8D17FE546972FFA8D32C415413F24009 /* Pods-Sveti.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sveti.modulemap"; sourceTree = "<group>"; };
 		942F289849C8404BE972D5E6102651EE /* Pods-SvetiTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SvetiTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		948FE3CDA327A8F50324249E5F67A67E /* Pods-SvetiTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SvetiTests.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B0D98D081E3E32D4A9C4B5474F51C1C5 /* Pods-Sveti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sveti.release.xcconfig"; sourceTree = "<group>"; };
-		B4D2097450DD2A24BFF7199755B1125D /* Pods_SvetiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SvetiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D2097450DD2A24BFF7199755B1125D /* Pods_SvetiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SvetiTests.framework; path = "Pods-SvetiTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C5DC8A13E50FB6ABBDAEB592265C93 /* Pods-SvetiTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SvetiTests-Info.plist"; sourceTree = "<group>"; };
 		BA2AA1E4E15FC677B17D972FAF3B9B99 /* Pods-Sveti-SvetiUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sveti-SvetiUITests-umbrella.h"; sourceTree = "<group>"; };
 		C2FD6287C5D9F595217F2181DE7F86BF /* Pods-SvetiTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SvetiTests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -219,6 +218,7 @@
 			children = (
 				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
 			);
+			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -332,7 +332,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -508,7 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -729,7 +729,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -75,7 +75,7 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
       self.viewModel.handle(event)
       }
 
-    viewModel.subscribers.append(subscriber)
+    viewModel.addSubscriber(newSub: subscriber, with: cellType.identifier)
 
     return cell
 	}

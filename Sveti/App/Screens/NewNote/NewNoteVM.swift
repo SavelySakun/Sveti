@@ -45,6 +45,7 @@ class NewNoteVM: ViewControllerVM {
 
   func clearInput() {
     subscribers.removeAll()
+    observingCellsWithIds.removeAll()
     note = Note()
   }
 
@@ -54,9 +55,9 @@ class NewNoteVM: ViewControllerVM {
   }
 
   func handleTagEditing(with tag: Tag) {
-    if note.tags.contains(tag) {
-      guard let existingTagId = note.tags.firstIndex(of: tag) else { return }
-      note.tags.remove(at: existingTagId)
+    if note.tags.contains(where: { $0.id == tag.id }) {
+      guard let existingTagIndex = note.tags.firstIndex(where: { $0.id == tag.id }) else { return }
+      note.tags.remove(at: existingTagIndex)
     } else {
       note.tags.append(tag)
     }
