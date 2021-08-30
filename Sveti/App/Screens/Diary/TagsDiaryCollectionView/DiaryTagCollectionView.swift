@@ -2,18 +2,6 @@ import UIKit
 
 class DiaryTagCollectionView: UICollectionView {
 
-  // Need to calculate height of collection view
-  override var contentSize: CGSize {
-    didSet {
-      invalidateIntrinsicContentSize()
-    }
-  }
-
-  override var intrinsicContentSize: CGSize {
-    layoutIfNeeded()
-    return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
-  }
-
   var tags = [Tag]()
 
   override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
