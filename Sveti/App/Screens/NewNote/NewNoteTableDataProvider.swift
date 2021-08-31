@@ -5,12 +5,12 @@ class NewNoteTableDataProvider: TableDataProvider {
   override func configureSections(with data: Any? = nil) -> [TableSection] {
     let tableSections = [
 
-      TableSection(title: "Теги", cellsData: [
-        CellData(type: TagCell.self, viewModel: CellVM())
-      ]),
-
       TableSection(title: "Дата", cellsData: [
         CellData(type: DatePickerCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: nil))
+      ]),
+
+      TableSection(title: "Теги", cellsData: [
+        CellData(type: TagCell.self, viewModel: CellVM())
       ]),
 
       TableSection(title: "Самочувствие", cellsData: [

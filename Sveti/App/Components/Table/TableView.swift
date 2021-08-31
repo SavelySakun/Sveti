@@ -7,7 +7,7 @@ class TableView: UITableView {
   var sections: [TableSection] {
     viewModel.tableDataProvider!.sections!
   }
-  var eventDebounceValue = 0.0
+  var eventDebounceValue = 0.1
 
   init(viewModel: ViewControllerVM, style: UITableView.Style = .insetGrouped) {
     self.viewModel = viewModel

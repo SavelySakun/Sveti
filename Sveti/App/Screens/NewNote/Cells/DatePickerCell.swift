@@ -22,9 +22,10 @@ class DatePickerCell: Cell {
   }
 
   private func configureLayout() {
-    datePicker.addTarget(self, action: #selector(onDateChange), for: .valueChanged)
+    datePicker.addTarget(self, action: #selector(onDateChange), for: .editingDidEnd)
     contentView.backgroundColor = .clear
     datePicker.preferredDatePickerStyle = .compact
+    datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: 2, to: Date())
 
     contentView.addSubview(datePicker)
     datePicker.snp.makeConstraints { (make) in
