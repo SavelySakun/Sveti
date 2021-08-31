@@ -94,10 +94,10 @@ extension TagCell: UISearchBarDelegate {
       tagsCollection.nothingFoundLabel.isHidden = true
       tagsCollection.tagGroups = tagsRepository.groups
     } else {
-      let findTagIds = tagsRepository.getTags(with: searchText)
-      tagsCollection.nothingFoundLabel.isHidden = !findTagIds.isEmpty
+      let findTags = tagsRepository.getTags(with: searchText)
+      tagsCollection.nothingFoundLabel.isHidden = !findTags.isEmpty
       tagsCollection.isSearchMode = true
-      tagsCollection.tagGroups = [TagGroup(title: "Результат поиска", tags: findTagIds)]
+      tagsCollection.tagGroups = [TagGroup(title: "Результат поиска", tags: findTags)]
     }
 
     DispatchQueue.main.async {

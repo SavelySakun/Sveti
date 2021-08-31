@@ -83,9 +83,12 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
 extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-    let isExpanded = tagGroups[section].isExpanded
-    return isExpanded ? tagsRepository.getActiveTagsCount(in: section) : 0
+    if isSearchMode {
+      return tagGroups[section].tags.count
+    } else {
+      let isExpanded = tagGroups[section].isExpanded
+      return isExpanded ? tagsRepository.getActiveTagsCount(in: section) : 0
+    }
   }
 
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -95,7 +98,14 @@ extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = dequeueReusableCell(withReuseIdentifier: TagCollectionCell.reuseId, for: indexPath) as? TagCollectionCell else { return UICollectionViewCell() }
 
-    let tag = tagsRepository.getActiveTags(in: indexPath.section)[indexPath.row]
+    let tag: Tag
+
+    if isSearchMode {
+      tag = tagGroups[indexPath.section].tags[indexPath.row]
+    } else {
+      tag = tagsRepository.getActiveTags(in: indexPath.section)[indexPath.row]
+    }
+
     cell.set(with: tag)
     cell.isSelected = selectedTags.contains(tag)
 
