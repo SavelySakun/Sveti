@@ -12,6 +12,7 @@ class TagCell: Cell {
   private let searchBar = UISearchBar()
 
   override func setLayout() {
+    accessibilityIdentifier = "tag-cell"
     addSearchField()
     setContainerView()
     addTagCollectionView()

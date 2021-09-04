@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EE57BE65072015B4DCB25BA /* Pods_Sveti_SvetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EBB08995245592B518881E /* Pods_Sveti_SvetiUITests.framework */; };
-		955E43FEE6EC7F24D0F5BBFB /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5B92741A2BF30CCE849FBA /* Pods_SvetiTests.framework */; };
 		A2F16D90B04DBB9B9B5E889E /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5921DB640BF5B3DC55344D /* Pods_Sveti.framework */; };
 		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
 		FC01D42326D6AF0B00C984E7 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */; };
+		FC01D87E26E35F5F00C984E7 /* SvetiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D87D26E35F5F00C984E7 /* SvetiUITests.swift */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
 		FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */; };
 		FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */; };
@@ -29,8 +28,6 @@
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
 		FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E4266000FD000188A6 /* Assets.xcassets */; };
 		FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */; };
-		FC6C56F3266000FD000188A6 /* MoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56F2266000FD000188A6 /* MoodTrackerTests.swift */; };
-		FC6C56FE266000FD000188A6 /* MoodTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56FD266000FD000188A6 /* MoodTrackerUITests.swift */; };
 		FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */; };
 		FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A62661377A000188A6 /* NewNoteVC.swift */; };
 		FC6C58AC26613C32000188A6 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58AB26613C32000188A6 /* TableView.swift */; };
@@ -70,6 +67,7 @@
 		FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */; };
 		FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */; };
 		FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */; };
+		FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE95226E3738500D12704 /* NewNoteUITests.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
@@ -106,19 +104,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FC6C56EF266000FD000188A6 /* PBXContainerItemProxy */ = {
+		FC01D88026E35F5F00C984E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC6C56D0266000FB000188A6 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FC6C56D7266000FB000188A6;
-			remoteInfo = MoodTracker;
-		};
-		FC6C56FA266000FD000188A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC6C56D0266000FB000188A6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC6C56D7266000FB000188A6;
-			remoteInfo = MoodTracker;
+			remoteInfo = Sveti;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -133,6 +124,9 @@
 		E8EA7EF28837E13F6E9398E9 /* Pods-Sveti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti.release.xcconfig"; path = "Target Support Files/Pods-Sveti/Pods-Sveti.release.xcconfig"; sourceTree = "<group>"; };
 		FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
+		FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC01D87D26E35F5F00C984E7 /* SvetiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiUITests.swift; sourceTree = "<group>"; };
+		FC01D87F26E35F5F00C984E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC0CCC6C26BE6A52004CDE8A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepository.swift; sourceTree = "<group>"; };
 		FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroup.swift; sourceTree = "<group>"; };
@@ -152,12 +146,6 @@
 		FC6C56E4266000FD000188A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6C56E7266000FD000188A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC6C56E9266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC6C56EE266000FD000188A6 /* SvetiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC6C56F2266000FD000188A6 /* MoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerTests.swift; sourceTree = "<group>"; };
-		FC6C56F4266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC6C56F9266000FD000188A6 /* SvetiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC6C56FD266000FD000188A6 /* MoodTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerUITests.swift; sourceTree = "<group>"; };
-		FC6C56FF266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
 		FC6C58A62661377A000188A6 /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
 		FC6C58AB26613C32000188A6 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -194,6 +182,7 @@
 		FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVC.swift; sourceTree = "<group>"; };
 		FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupNameCell.swift; sourceTree = "<group>"; };
+		FC8BE95226E3738500D12704 /* NewNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteUITests.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -228,6 +217,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FC01D87826E35F5F00C984E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC6C56D5266000FB000188A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,22 +235,6 @@
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
 				A2F16D90B04DBB9B9B5E889E /* Pods_Sveti.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6C56EB266000FD000188A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				955E43FEE6EC7F24D0F5BBFB /* Pods_SvetiTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6C56F6266000FD000188A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EE57BE65072015B4DCB25BA /* Pods_Sveti_SvetiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +278,16 @@
 				FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		FC01D87C26E35F5F00C984E7 /* SvetiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FC01D87D26E35F5F00C984E7 /* SvetiUITests.swift */,
+				FC01D87F26E35F5F00C984E7 /* Info.plist */,
+				FC8BE95226E3738500D12704 /* NewNoteUITests.swift */,
+			);
+			path = SvetiUITests;
 			sourceTree = "<group>";
 		};
 		FC0CCC6B26BE63BC004CDE8A /* TagCollectionView */ = {
@@ -373,8 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				FC6C56DA266000FB000188A6 /* Sveti */,
-				FC6C56F1266000FD000188A6 /* SvetiTests */,
-				FC6C56FC266000FD000188A6 /* SvetiUITests */,
+				FC01D87C26E35F5F00C984E7 /* SvetiUITests */,
 				FC6C56D9266000FB000188A6 /* Products */,
 				E25A0CBFFBF606B2D0AF3A14 /* Pods */,
 				9BF3A4D738F3B50EAAEDBDEA /* Frameworks */,
@@ -385,8 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				FC6C56D8266000FB000188A6 /* Sveti.app */,
-				FC6C56EE266000FD000188A6 /* SvetiTests.xctest */,
-				FC6C56F9266000FD000188A6 /* SvetiUITests.xctest */,
+				FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,24 +392,6 @@
 				FCB0644426B6817400A0494A /* .swiftlint.yml */,
 			);
 			path = Sveti;
-			sourceTree = "<group>";
-		};
-		FC6C56F1266000FD000188A6 /* SvetiTests */ = {
-			isa = PBXGroup;
-			children = (
-				FC6C56F2266000FD000188A6 /* MoodTrackerTests.swift */,
-				FC6C56F4266000FD000188A6 /* Info.plist */,
-			);
-			path = SvetiTests;
-			sourceTree = "<group>";
-		};
-		FC6C56FC266000FD000188A6 /* SvetiUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FC6C56FD266000FD000188A6 /* MoodTrackerUITests.swift */,
-				FC6C56FF266000FD000188A6 /* Info.plist */,
-			);
-			path = SvetiUITests;
 			sourceTree = "<group>";
 		};
 		FC6C58A1266136B5000188A6 /* Extensions */ = {
@@ -644,6 +614,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FC01D87A26E35F5F00C984E7 /* SvetiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC01D88226E35F5F00C984E7 /* Build configuration list for PBXNativeTarget "SvetiUITests" */;
+			buildPhases = (
+				FC01D87726E35F5F00C984E7 /* Sources */,
+				FC01D87826E35F5F00C984E7 /* Frameworks */,
+				FC01D87926E35F5F00C984E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC01D88126E35F5F00C984E7 /* PBXTargetDependency */,
+			);
+			name = SvetiUITests;
+			productName = SvetiUITests;
+			productReference = FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		FC6C56D7266000FB000188A6 /* Sveti */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC6C5702266000FD000188A6 /* Build configuration list for PBXNativeTarget "Sveti" */;
@@ -671,44 +659,6 @@
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FC6C56ED266000FD000188A6 /* SvetiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC6C5705266000FD000188A6 /* Build configuration list for PBXNativeTarget "SvetiTests" */;
-			buildPhases = (
-				A2CE2DC641F2648819FF8025 /* [CP] Check Pods Manifest.lock */,
-				FC6C56EA266000FD000188A6 /* Sources */,
-				FC6C56EB266000FD000188A6 /* Frameworks */,
-				FC6C56EC266000FD000188A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC6C56F0266000FD000188A6 /* PBXTargetDependency */,
-			);
-			name = SvetiTests;
-			productName = MoodTrackerTests;
-			productReference = FC6C56EE266000FD000188A6 /* SvetiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FC6C56F8266000FD000188A6 /* SvetiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC6C5708266000FD000188A6 /* Build configuration list for PBXNativeTarget "SvetiUITests" */;
-			buildPhases = (
-				D60035018F8B5CF7A0AE79D5 /* [CP] Check Pods Manifest.lock */,
-				FC6C56F5266000FD000188A6 /* Sources */,
-				FC6C56F6266000FD000188A6 /* Frameworks */,
-				FC6C56F7266000FD000188A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC6C56FB266000FD000188A6 /* PBXTargetDependency */,
-			);
-			name = SvetiUITests;
-			productName = MoodTrackerUITests;
-			productReference = FC6C56F9266000FD000188A6 /* SvetiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -718,16 +668,12 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					FC01D87A26E35F5F00C984E7 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = FC6C56D7266000FB000188A6;
+					};
 					FC6C56D7266000FB000188A6 = {
 						CreatedOnToolsVersion = 12.5;
-					};
-					FC6C56ED266000FD000188A6 = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = FC6C56D7266000FB000188A6;
-					};
-					FC6C56F8266000FD000188A6 = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = FC6C56D7266000FB000188A6;
 					};
 				};
 			};
@@ -753,13 +699,19 @@
 			projectRoot = "";
 			targets = (
 				FC6C56D7266000FB000188A6 /* Sveti */,
-				FC6C56ED266000FD000188A6 /* SvetiTests */,
-				FC6C56F8266000FD000188A6 /* SvetiUITests */,
+				FC01D87A26E35F5F00C984E7 /* SvetiUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FC01D87926E35F5F00C984E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC6C56D6266000FB000188A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -768,20 +720,6 @@
 				FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */,
 				FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */,
 				FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6C56EC266000FD000188A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6C56F7266000FD000188A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,50 +748,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A2CE2DC641F2648819FF8025 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SvetiTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D60035018F8B5CF7A0AE79D5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Sveti-SvetiUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FCB0644326B6805300A0494A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -875,6 +769,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FC01D87726E35F5F00C984E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */,
+				FC01D87E26E35F5F00C984E7 /* SvetiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC6C56D4266000FB000188A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -963,34 +866,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC6C56EA266000FD000188A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC6C56F3266000FD000188A6 /* MoodTrackerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC6C56F5266000FD000188A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC6C56FE266000FD000188A6 /* MoodTrackerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FC6C56F0266000FD000188A6 /* PBXTargetDependency */ = {
+		FC01D88126E35F5F00C984E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FC6C56D7266000FB000188A6 /* Sveti */;
-			targetProxy = FC6C56EF266000FD000188A6 /* PBXContainerItemProxy */;
-		};
-		FC6C56FB266000FD000188A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC6C56D7266000FB000188A6 /* Sveti */;
-			targetProxy = FC6C56FA266000FD000188A6 /* PBXContainerItemProxy */;
+			targetProxy = FC01D88026E35F5F00C984E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1014,6 +896,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FC01D88326E35F5F00C984E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6389Z2D8J8;
+				INFOPLIST_FILE = SvetiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sava.SvetiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sveti;
+			};
+			name = Debug;
+		};
+		FC01D88426E35F5F00C984E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6389Z2D8J8;
+				INFOPLIST_FILE = SvetiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sava.SvetiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sveti;
+			};
+			name = Release;
+		};
 		FC6C5700266000FD000188A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1172,97 +1092,18 @@
 			};
 			name = Release;
 		};
-		FC6C5706266000FD000188A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19B189FDBE31549FDAA0579B /* Pods-SvetiTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = SvetiTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sava.MoodTrackerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sveti.app/Sveti";
-			};
-			name = Debug;
-		};
-		FC6C5707266000FD000188A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00BD5AAFBAE27084F650A476 /* Pods-SvetiTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = SvetiTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sava.MoodTrackerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sveti.app/Sveti";
-			};
-			name = Release;
-		};
-		FC6C5709266000FD000188A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10F8BF1042875FC29C23C394 /* Pods-Sveti-SvetiUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = SvetiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sava.MoodTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoodTracker;
-			};
-			name = Debug;
-		};
-		FC6C570A266000FD000188A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80D3BB2C9C441E9BAFA9D9C9 /* Pods-Sveti-SvetiUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = SvetiUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sava.MoodTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MoodTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FC01D88226E35F5F00C984E7 /* Build configuration list for PBXNativeTarget "SvetiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC01D88326E35F5F00C984E7 /* Debug */,
+				FC01D88426E35F5F00C984E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FC6C56D3266000FB000188A6 /* Build configuration list for PBXProject "Sveti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1277,24 +1118,6 @@
 			buildConfigurations = (
 				FC6C5703266000FD000188A6 /* Debug */,
 				FC6C5704266000FD000188A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC6C5705266000FD000188A6 /* Build configuration list for PBXNativeTarget "SvetiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC6C5706266000FD000188A6 /* Debug */,
-				FC6C5707266000FD000188A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC6C5708266000FD000188A6 /* Build configuration list for PBXNativeTarget "SvetiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC6C5709266000FD000188A6 /* Debug */,
-				FC6C570A266000FD000188A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
