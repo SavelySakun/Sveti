@@ -53,7 +53,7 @@ class EditTagGroupVC: VCwithTable {
     
     tableView.tableFooterView = footerView
 
-    title = "Изменить"
+    title = "Edit"
     navigationItem.largeTitleDisplayMode = .never
     setActionsAlertController()
     setNewTagButton()

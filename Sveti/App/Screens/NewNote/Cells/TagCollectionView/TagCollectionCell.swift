@@ -10,6 +10,7 @@ class TagCollectionCell: UICollectionViewCell {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+    accessibilityIdentifier = "tag-cell-in-collection"
 		setLayout()
 	}
 

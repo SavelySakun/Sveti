@@ -13,21 +13,21 @@ class TabbarController: UITabBarController {
       vc: DiaryVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.diaryIcon),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.diarySelected),
-      tabBarTitle: "Дневник"
+      tabBarTitle: "Diary"
     )
 
     let newNoteController = createNavigationController(
       vc: NewNoteVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.newNote),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.newNoteSelected),
-      tabBarTitle: "Новая запись"
+      tabBarTitle: "New note"
     )
 
     let moreController = createNavigationController(
       vc: MoreVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.more),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.more),
-      tabBarTitle: "Ещё"
+      tabBarTitle: "More"
     )
 
     viewControllers = [diaryController, newNoteController, moreController]

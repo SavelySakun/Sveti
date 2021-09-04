@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		A2F16D90B04DBB9B9B5E889E /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5921DB640BF5B3DC55344D /* Pods_Sveti.framework */; };
 		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
-		FC01D42326D6AF0B00C984E7 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */; };
-		FC01D87E26E35F5F00C984E7 /* SvetiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D87D26E35F5F00C984E7 /* SvetiUITests.swift */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
 		FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */; };
 		FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */; };
@@ -123,9 +121,7 @@
 		D7EBB08995245592B518881E /* Pods_Sveti_SvetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti_SvetiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EA7EF28837E13F6E9398E9 /* Pods-Sveti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti.release.xcconfig"; path = "Target Support Files/Pods-Sveti/Pods-Sveti.release.xcconfig"; sourceTree = "<group>"; };
 		FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
-		FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC01D87D26E35F5F00C984E7 /* SvetiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiUITests.swift; sourceTree = "<group>"; };
 		FC01D87F26E35F5F00C984E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC0CCC6C26BE6A52004CDE8A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepository.swift; sourceTree = "<group>"; };
@@ -272,18 +268,9 @@
 			path = More;
 			sourceTree = "<group>";
 		};
-		FC01D42126D6AEFC00C984E7 /* Explore */ = {
-			isa = PBXGroup;
-			children = (
-				FC01D42226D6AF0B00C984E7 /* ExploreVC.swift */,
-			);
-			path = Explore;
-			sourceTree = "<group>";
-		};
 		FC01D87C26E35F5F00C984E7 /* SvetiUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FC01D87D26E35F5F00C984E7 /* SvetiUITests.swift */,
 				FC01D87F26E35F5F00C984E7 /* Info.plist */,
 				FC8BE95226E3738500D12704 /* NewNoteUITests.swift */,
 			);
@@ -429,7 +416,6 @@
 		FC7E6D1826AB195B00126B97 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FC01D42126D6AEFC00C984E7 /* Explore */,
 				FC01D41E26D6AAA400C984E7 /* More */,
 				FCE3689726D2651000A05271 /* SelectGroupVC */,
 				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
@@ -774,7 +760,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */,
-				FC01D87E26E35F5F00C984E7 /* SvetiUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,7 +806,6 @@
 				FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */,
 				FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */,
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
-				FC01D42326D6AF0B00C984E7 /* ExploreVC.swift in Sources */,
 				FC0CCC9426BE8BA8004CDE8A /* TagSectionHeaderView.swift in Sources */,
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,

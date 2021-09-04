@@ -2,10 +2,11 @@ import UIKit
 import Combine
 
 class CommentCell: Cell {
-  lazy var commentTextField = TextView(placeholder: "Идеи, мысли, замечания...")
+  lazy var commentTextField = TextView(placeholder: "Ideas, thoughts, comments...")
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
+    self.accessibilityIdentifier = "comment-cell"
     commentTextField.textView.delegate = self
 	}
 

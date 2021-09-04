@@ -26,7 +26,7 @@ class DiaryVC: UIViewController {
   }
 
   private func setLayout() {
-    title = "Дневник"
+    title = "Diary"
     setTable()
     setEmptyView()
   }

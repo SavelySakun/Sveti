@@ -5,8 +5,8 @@ import SPIndicator
 class NewNoteVC: BaseViewController {
 
 	let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
-  let saveAlert = UIAlertController(title: "Внимание", message: "Сохранить новую запись?", preferredStyle: .alert)
-  let clearAlert = UIAlertController(title: "Внимание", message: "Очистить форму?", preferredStyle: .alert)
+  let saveAlert = UIAlertController(title: "Attention", message: "Save new note?", preferredStyle: .alert)
+  let clearAlert = UIAlertController(title: "Attention", message: "Clear all fields?", preferredStyle: .alert)
 
   lazy var tableView = TableView(viewModel: viewModel)
 
@@ -27,17 +27,17 @@ class NewNoteVC: BaseViewController {
 	}
 
   func setLeftBarButton() {
-    let leftButton = UIBarButtonItem(title: "Сбросить", style: .plain, target: self, action: #selector(onClear))
+    let leftButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(onClear))
     leftButton.tintColor = .orange
     navigationItem.leftBarButtonItem = leftButton
   }
 
   func setRightBarButton() {
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(onSave))
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(onSave))
   }
 
   func setTitle() {
-    title = "Новая запись"
+    title = "New note"
   }
 
 	private func setNavigationBar() {
@@ -47,11 +47,11 @@ class NewNoteVC: BaseViewController {
   }
 
   private func configureClearAlert() {
-    let okAction = UIAlertAction(title: "Очистить", style: .default) { _ in
+    let okAction = UIAlertAction(title: "Clear", style: .default) { _ in
       self.clearAllInput()
-      SPIndicator.present(title: "Сброшено", message: nil, preset: .done, from: .center, completion: nil)
+      SPIndicator.present(title: "Cleared", message: nil, preset: .done, from: .center, completion: nil)
     }
-    let noAction = UIAlertAction(title: "Отменить", style: .destructive, handler: nil)
+    let noAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
 
     [okAction, noAction].forEach { action in
       clearAlert.addAction(action)
@@ -75,7 +75,7 @@ class NewNoteVC: BaseViewController {
         .children.first as? DiaryVC {
       diaryVC.updateData()
     }
-    SPIndicator.present(title: "Запись сохранена", message: nil, preset: .done, from: .top, completion: nil)
+    SPIndicator.present(title: "Note saved", message: nil, preset: .done, from: .top, completion: nil)
   }
 
   @objc private func onClear() {
