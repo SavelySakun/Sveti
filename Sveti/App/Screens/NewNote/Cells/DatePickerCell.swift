@@ -25,7 +25,7 @@ class DatePickerCell: Cell {
     datePicker.addTarget(self, action: #selector(onDateChange), for: .editingDidEnd)
     contentView.backgroundColor = .clear
     datePicker.preferredDatePickerStyle = .compact
-    datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: 2, to: Date())
+    datePicker.maximumDate = Calendar.current.date(byAdding: .hour, value: 1, to: Date())
 
     contentView.addSubview(datePicker)
     datePicker.snp.makeConstraints { (make) in

@@ -33,13 +33,11 @@ class TagSectionHeaderView: UICollectionReusableView {
 
   func set(with title: String, isExpanded: Bool, isSearchMode: Bool) {
     titleLabel.text = title
-    collapseButton.setStateImage(isExpanded: isExpanded)
-
+    collapseButton.setStateImage(condition: isExpanded)
     DispatchQueue.main.async { [self] in
       isSearchMode ? setButtonsHiddenMode() : setDefaultButtons()
     }
   }
-
 
   private func setLayout() {
     setLabel()
@@ -60,6 +58,7 @@ class TagSectionHeaderView: UICollectionReusableView {
   }
 
   private func setButtons() {
+    collapseButton.needAnimationOnTap = false
     setButtonsAction()
 
     buttonsStackView.contentMode = .scaleAspectFit

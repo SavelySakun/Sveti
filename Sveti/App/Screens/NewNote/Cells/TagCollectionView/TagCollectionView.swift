@@ -50,6 +50,7 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
   }
 
   private func setLayout() {
+    isScrollEnabled = false
     delegate = self
     dataSource = self
     backgroundColor = .systemGray6

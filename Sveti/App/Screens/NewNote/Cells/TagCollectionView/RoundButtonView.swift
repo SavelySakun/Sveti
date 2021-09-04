@@ -17,7 +17,9 @@ class RoundButtonView: UIButton {
 
   var sizeConstraint: Constraint?
 
-  private var selectionState: RoundButtonState = .first
+  var selectionState: RoundButtonState = .first
+
+  var needAnimationOnTap: Bool = true
 
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -64,18 +66,8 @@ class RoundButtonView: UIButton {
     self.secondStateImage = UIImage(named: secondName)?.withRenderingMode(.alwaysTemplate)
   }
 
-  func toggle() {
-    guard secondStateImage != nil else { return }
-    DispatchQueue.main.async { [self] in
-      let isFirstState = (selectionState == .first)
-      let image = isFirstState ? secondStateImage : firstStateImage
-      imageView?.image = image
-      selectionState = isFirstState ? .second : .first
-    }
-  }
-
-  func setStateImage(isExpanded: Bool) {
-    let image = isExpanded ? secondStateImage : firstStateImage
+  func setStateImage(condition: Bool) {
+    let image = condition ? secondStateImage : firstStateImage
     setImage(image, for: .normal)
   }
 
@@ -87,10 +79,11 @@ class RoundButtonView: UIButton {
     var feedbackGenerator: UISelectionFeedbackGenerator? = UISelectionFeedbackGenerator()
     feedbackGenerator?.prepare()
     feedbackGenerator?.selectionChanged()
-    UIView.animate(withDuration: 0.3) {
-      self.toggle()
-      self.backgroundColor = .systemGray4
-      self.backgroundColor = self.backColor ?? .white
+    if needAnimationOnTap {
+      UIView.animate(withDuration: 0.3) {
+        self.backgroundColor = .systemGray4
+        self.backgroundColor = self.backColor ?? .white
+      }
     }
     tapAction()
     feedbackGenerator = nil
