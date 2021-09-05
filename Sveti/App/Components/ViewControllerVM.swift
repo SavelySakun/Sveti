@@ -11,6 +11,7 @@ class ViewControllerVM {
   var subscribers = [AnyCancellable]()
   var tableDataProvider: TableDataProvider?
   weak var delegate: ViewControllerVMDelegate?
+  var hasChanges = false
 
   init(tableDataProvider: TableDataProvider? = nil) {
     self.tableDataProvider = tableDataProvider

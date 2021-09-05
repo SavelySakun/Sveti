@@ -10,6 +10,7 @@ class NewNoteVM: ViewControllerVM {
     super.handle(event)
     guard let event = event as? EditEvent else { return }
     let eventType = NoteEditType(rawValue: event.type)
+    self.hasChanges = true
 
     try! realm.write {
       switch eventType {

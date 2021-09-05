@@ -1,6 +1,6 @@
 import UIKit
 
-class DiaryVC: UIViewController {
+class DiaryVC: BaseViewController {
 
   private let emptyView = EmptyView()
   private let tableView = UITableView()
@@ -8,7 +8,7 @@ class DiaryVC: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    //self.updateData()
+    self.updateData()
   }
 
   override func viewDidLoad() {

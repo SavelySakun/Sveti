@@ -63,7 +63,7 @@
 		FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E82026C8FC350081CBA2 /* DefaultTags.swift */; };
 		FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E82326C902680081CBA2 /* UDKeys.swift */; };
 		FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */; };
-		FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */; };
+		FC84E89E26CAC9B70081CBA2 /* CurrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E89D26CAC9B70081CBA2 /* CurrentVC.swift */; };
 		FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */; };
 		FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE95226E3738500D12704 /* NewNoteUITests.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
@@ -176,7 +176,7 @@
 		FC84E82026C8FC350081CBA2 /* DefaultTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTags.swift; sourceTree = "<group>"; };
 		FC84E82326C902680081CBA2 /* UDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDKeys.swift; sourceTree = "<group>"; };
 		FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupVC.swift; sourceTree = "<group>"; };
-		FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		FC84E89D26CAC9B70081CBA2 /* CurrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentVC.swift; sourceTree = "<group>"; };
 		FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupNameCell.swift; sourceTree = "<group>"; };
 		FC8BE95226E3738500D12704 /* NewNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteUITests.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
@@ -508,7 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7E6D2426ABFA6F00126B97 /* TabbarController.swift */,
-				FC84E89D26CAC9B70081CBA2 /* NavigationHelper.swift */,
+				FC84E89D26CAC9B70081CBA2 /* CurrentVC.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -769,7 +769,7 @@
 			files = (
 				FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */,
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
-				FC84E89E26CAC9B70081CBA2 /* NavigationHelper.swift in Sources */,
+				FC84E89E26CAC9B70081CBA2 /* CurrentVC.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
 				FCEEB2E026CD81F000F7B00F /* TagEvent.swift in Sources */,

@@ -4,9 +4,9 @@ import SPIndicator
 
 class NewNoteVC: BaseViewController {
 
-	let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
+    let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
   let saveAlert = UIAlertController(title: "Attention", message: "Save new note?", preferredStyle: .alert)
-  let clearAlert = UIAlertController(title: "Attention", message: "Clear all fields?", preferredStyle: .alert)
+  let cancelAlert = UIAlertController(title: "Attention", message: "You will lose all changes.", preferredStyle: .alert)
 
   lazy var tableView = TableView(viewModel: viewModel)
 
@@ -27,8 +27,8 @@ class NewNoteVC: BaseViewController {
 	}
 
   func setLeftBarButton() {
-    let leftButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(onClear))
-    leftButton.tintColor = .orange
+    let leftButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(onCancel))
+    leftButton.tintColor = .systemRed
     navigationItem.leftBarButtonItem = leftButton
   }
 
@@ -47,14 +47,13 @@ class NewNoteVC: BaseViewController {
   }
 
   private func configureClearAlert() {
-    let okAction = UIAlertAction(title: "Clear", style: .default) { _ in
-      self.clearAllInput()
-      SPIndicator.present(title: "Cleared", message: nil, preset: .done, from: .center, completion: nil)
+    let okAction = UIAlertAction(title: "Clear", style: .destructive) { _ in
+      self.dismiss(animated: true)
     }
-    let noAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+    let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
 
     [okAction, noAction].forEach { action in
-      clearAlert.addAction(action)
+      cancelAlert.addAction(action)
     }
   }
 
@@ -66,20 +65,31 @@ class NewNoteVC: BaseViewController {
 	}
 
   @objc func onSave() {
-    self.navigationController?.tabBarController?.selectedIndex = 0
     self.viewModel.saveCurrentNote()
-    self.clearAllInput()
-    if let diaryVC = self.navigationController?
-        .tabBarController?
-        .viewControllers?[0]
-        .children.first as? DiaryVC {
+    if let diaryVC = CurrentVC.current as? DiaryVC {
       diaryVC.updateData()
     }
-    SPIndicator.present(title: "Note saved", message: nil, preset: .done, from: .top, completion: nil)
+    self.dismiss(animated: true) {
+      SPIndicator.present(title: "Note saved", message: nil, preset: .done, from: .top, completion: nil)
+    }
+//    self.navigationController?.tabBarController?.selectedIndex = 0
+//    self.viewModel.saveCurrentNote()
+//    self.clearAllInput()
+//    if let diaryVC = self.navigationController?
+//        .tabBarController?
+//        .viewControllers?[0]
+//        .children.first as? DiaryVC {
+//      diaryVC.updateData()
+//    }
+
   }
 
-  @objc private func onClear() {
-    present(clearAlert, animated: true, completion: nil)
+  @objc private func onCancel() {
+    if viewModel.hasChanges {
+      present(cancelAlert, animated: true, completion: nil)
+    } else {
+      self.dismiss(animated: true, completion: nil)
+    }
   }
 
   private func clearAllInput() {

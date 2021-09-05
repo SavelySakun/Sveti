@@ -70,7 +70,7 @@ class TagGroupCell: Cell {
 
   private func setEditButtonAction() {
     editButtonView.tapAction = {
-      guard let editTagsGroupVC = NavigationHelper.currentVC as? EditTagGroupVC else { return }
+      guard let editTagsGroupVC = CurrentVC.current as? EditTagGroupVC else { return }
       editTagsGroupVC.showEditAlert(forTag: self.tagId)
     }
   }

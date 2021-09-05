@@ -6,6 +6,7 @@ class TabbarController: UITabBarController {
     super.viewDidLoad()
     setTabbarItems()
     selectedIndex = 0
+    delegate = self
   }
 
   func setTabbarItems() {
@@ -16,12 +17,13 @@ class TabbarController: UITabBarController {
       tabBarTitle: "Diary"
     )
 
-    let newNoteController = createNavigationController(
-      vc: NewNoteVC(),
+    let newNoteVC = UIViewController()
+    let newNoteItem = UITabBarItem(
+      title: "New note",
       image: getIcon(named: Constants.ImageNames.Tabbar.newNote),
-      selectedImage: getIcon(named: Constants.ImageNames.Tabbar.newNoteSelected),
-      tabBarTitle: "New note"
+      selectedImage: getIcon(named: Constants.ImageNames.Tabbar.newNoteSelected)
     )
+    newNoteVC.tabBarItem = newNoteItem
 
     let moreController = createNavigationController(
       vc: MoreVC(),
@@ -30,10 +32,10 @@ class TabbarController: UITabBarController {
       tabBarTitle: "More"
     )
 
-    viewControllers = [diaryController, newNoteController, moreController]
+    viewControllers = [diaryController, newNoteVC, moreController]
   }
 
-  private func createNavigationController(vc: UIViewController, image: UIImage?, selectedImage: UIImage?, tabBarTitle: String) -> UINavigationController {
+  private func createNavigationController(vc: UIViewController, image: UIImage?, selectedImage: UIImage?, tabBarTitle: String, largeTitle: Bool = true) -> UINavigationController {
     let viewController = vc
     let navigationController = UINavigationController(rootViewController: viewController)
 
@@ -42,7 +44,7 @@ class TabbarController: UITabBarController {
       navigationController.tabBarItem.selectedImage = selectedImage
     }
 
-    navigationController.navigationBar.prefersLargeTitles = true
+    navigationController.navigationBar.prefersLargeTitles = largeTitle
     navigationController.title = tabBarTitle
     return navigationController
   }
@@ -51,4 +53,24 @@ class TabbarController: UITabBarController {
     return UIImage(named: named)?.imageResized(to: .init(width: 24, height: 24))
   }
 
+}
+
+extension TabbarController: UITabBarControllerDelegate {
+
+  func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
+    guard let selectedTabItemIndex = viewControllers?.firstIndex(of: viewController) else {
+      return true
+    }
+
+    if selectedTabItemIndex == 1 {
+      let newNoteVC = NewNoteVC()
+      newNoteVC.markAsCurrentVC = false
+      let newNoteController = UINavigationController(rootViewController: newNoteVC)
+      present(newNoteController, animated: true, completion: nil)
+      return false
+    }
+
+    return true
+  }
 }

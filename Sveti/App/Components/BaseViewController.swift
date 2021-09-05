@@ -8,7 +8,7 @@ class BaseViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     guard markAsCurrentVC else { return }
-    NavigationHelper.currentVC = self
+    CurrentVC.current = self
   }
 
   override func viewDidLoad() {

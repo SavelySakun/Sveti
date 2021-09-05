@@ -117,6 +117,6 @@ class TagSectionHeaderView: UICollectionReusableView {
     editTagGroupVC.onClosingCompletion = {
       self.delegate?.onDoneTagGroupEdit()
     }
-    NavigationHelper.push(vc: editTagGroupVC)
+    CurrentVC.push(vc: editTagGroupVC)
   }
 }
