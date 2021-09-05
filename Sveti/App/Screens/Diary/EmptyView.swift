@@ -25,7 +25,7 @@ class EmptyView: UIView {
       make.height.equalTo(300)
     }
 
-    emptyLabel.text = "Добавьте первую заметку в разделе «Новая запись»"
+    emptyLabel.text = "Add the first note in the \"New Entry\" section"
     emptyLabel.textColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 1)
     emptyLabel.numberOfLines = 0
     emptyLabel.textAlignment = .center

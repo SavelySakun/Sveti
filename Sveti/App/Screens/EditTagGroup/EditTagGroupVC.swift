@@ -5,7 +5,7 @@ import SPAlert
 class EditTagGroupVC: VCwithTable {
 
   private let actionsAlertController = UIAlertController()
-  private let newTagAlertController = UIAlertController(title: "Добавить тег", message: nil, preferredStyle: .alert)
+  private let newTagAlertController = UIAlertController(title: "Add a tag", message: nil, preferredStyle: .alert)
   private let deleteGroupAlertController = UIAlertController(title: "Внимание", message: "Удалить группу?", preferredStyle: .alert)
 
   let groupId: String
@@ -68,10 +68,10 @@ class EditTagGroupVC: VCwithTable {
 
   private func setNewTagAlert() {
     newTagAlertController.addTextField { textField in
-      textField.placeholder = "Название тега"
+      textField.placeholder = "Tag name"
     }
 
-    let addAction = UIAlertAction(title: "Добавить", style: .default) { _ in
+    let addAction = UIAlertAction(title: "Add", style: .default) { _ in
       self.saveNewTag()
     }
 
