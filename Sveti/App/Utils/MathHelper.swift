@@ -31,4 +31,12 @@ class MathHelper {
     }
   }
 
+  func calculateAverage(_ values: [Float]) -> Float {
+    var total: Float = 0.0
+    values.forEach { value in
+      total += value
+    }
+    return total / Float(values.count)
+  }
+
 }

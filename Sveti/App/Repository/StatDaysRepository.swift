@@ -1,8 +1,42 @@
-//
-//  StatDaysRepository.swift
-//  Sveti
-//
-//  Created by Savely Sakun on 07.09.2021.
-//
-
 import Foundation
+import RealmSwift
+
+class StatDaysRepository {
+
+  let realm = try! Realm()
+
+  func getStatDay(with date: String) -> StatDay? {
+    return realm.objects(StatDay.self).filter("date = %@", date).first
+  }
+
+  func addDataToExistingStatDay(with statDay: StatDay, note: Note) {
+    let object = realm.objects(StatDay.self).filter("date = %@", statDay.date).first
+
+    guard let existingStatDay = object,
+          let mood = note.mood else { return }
+
+    try! realm.write {
+      existingStatDay.emotionalStates.append(mood.emotionalState)
+      existingStatDay.phyzicalStates.append(mood.physicalState)
+    }
+  }
+
+  func removeDataToExistingStatDay(with statDay: StatDay, note: Note) {
+    let object = realm.objects(StatDay.self).filter("date = %@", statDay.date).first
+
+    guard let existingStatDay = object,
+          let mood = note.mood else { return }
+
+    try! realm.write {
+      existingStatDay.emotionalStates.append(mood.emotionalState)
+      existingStatDay.phyzicalStates.append(mood.physicalState)
+    }
+  }
+
+  func saveNewStatDay(statDay: StatDay) {
+    try! realm.write {
+      realm.add(statDay)
+    }
+  }
+
+}

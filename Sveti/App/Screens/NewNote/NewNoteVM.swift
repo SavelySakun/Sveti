@@ -42,7 +42,9 @@ class NewNoteVM: ViewControllerVM {
 
   func saveCurrentNote() {
     NotesRepository().save(note)
+    StatMoodManager().updateStat(with: note)
   }
+
 
   func clearInput() {
     subscribers.removeAll()

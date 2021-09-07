@@ -4,7 +4,7 @@ import SPIndicator
 
 class NewNoteVC: BaseViewController {
 
-    let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
+  let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
   let saveAlert = UIAlertController(title: "Attention", message: "Save new note?", preferredStyle: .alert)
   let cancelAlert = UIAlertController(title: "Attention", message: "You will lose all changes.", preferredStyle: .alert)
 
@@ -47,7 +47,7 @@ class NewNoteVC: BaseViewController {
   }
 
   private func configureClearAlert() {
-    let okAction = UIAlertAction(title: "Clear", style: .destructive) { _ in
+    let okAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
       self.dismiss(animated: true)
     }
     let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
@@ -72,16 +72,6 @@ class NewNoteVC: BaseViewController {
     self.dismiss(animated: true) {
       SPIndicator.present(title: "Note saved", message: nil, preset: .done, from: .top, completion: nil)
     }
-//    self.navigationController?.tabBarController?.selectedIndex = 0
-//    self.viewModel.saveCurrentNote()
-//    self.clearAllInput()
-//    if let diaryVC = self.navigationController?
-//        .tabBarController?
-//        .viewControllers?[0]
-//        .children.first as? DiaryVC {
-//      diaryVC.updateData()
-//    }
-
   }
 
   @objc private func onCancel() {
