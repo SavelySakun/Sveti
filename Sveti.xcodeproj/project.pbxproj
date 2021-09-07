@@ -66,6 +66,9 @@
 		FC84E89E26CAC9B70081CBA2 /* CurrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E89D26CAC9B70081CBA2 /* CurrentVC.swift */; };
 		FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */; };
 		FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE95226E3738500D12704 /* NewNoteUITests.swift */; };
+		FC8BE9B226E65F3200D12704 /* StatSingleDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9B126E65F3200D12704 /* StatSingleDay.swift */; };
+		FC8BE9D526E7AD4100D12704 /* StatMoodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D426E7AD4100D12704 /* StatMoodManager.swift */; };
+		FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
@@ -179,6 +182,9 @@
 		FC84E89D26CAC9B70081CBA2 /* CurrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentVC.swift; sourceTree = "<group>"; };
 		FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupNameCell.swift; sourceTree = "<group>"; };
 		FC8BE95226E3738500D12704 /* NewNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteUITests.swift; sourceTree = "<group>"; };
+		FC8BE9B126E65F3200D12704 /* StatSingleDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSingleDay.swift; sourceTree = "<group>"; };
+		FC8BE9D426E7AD4100D12704 /* StatMoodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatMoodManager.swift; sourceTree = "<group>"; };
+		FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepository.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -409,6 +415,7 @@
 				FC84E81E26C8FC210081CBA2 /* Tags */,
 				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
 				FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */,
+				FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -444,6 +451,7 @@
 		FC7E6D1B26AB1A0400126B97 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FC8BE9D326E7AD2900D12704 /* Statistics */,
 				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC7E6D1526AB039200126B97 /* Repository */,
 				FC7E6D8126AC484500126B97 /* Models */,
@@ -479,6 +487,7 @@
 		FC7E6D8126AC484500126B97 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC8BE9B326E65F3600D12704 /* Statistics */,
 				FC0CCC7026BE6CFB004CDE8A /* Tag */,
 				FCEA31B726D67B940062509A /* Note.swift */,
 				FC7E6D9A26AC927900126B97 /* SplitDate.swift */,
@@ -536,6 +545,22 @@
 				FCEA30F726D3DD5E0062509A /* EditTagGroupTableFooter.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FC8BE9B326E65F3600D12704 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				FC8BE9B126E65F3200D12704 /* StatSingleDay.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		FC8BE9D326E7AD2900D12704 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				FC8BE9D426E7AD4100D12704 /* StatMoodManager.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		FCAAD9F126B84FAB00607DC0 /* SectionHeader */ = {
@@ -771,6 +796,7 @@
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
 				FC84E89E26CAC9B70081CBA2 /* CurrentVC.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
+				FC8BE9D526E7AD4100D12704 /* StatMoodManager.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
 				FCEEB2E026CD81F000F7B00F /* TagEvent.swift in Sources */,
 				FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */,
@@ -843,8 +869,10 @@
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,
 				FCEA31B826D67B940062509A /* Note.swift in Sources */,
+				FC8BE9B226E65F3200D12704 /* StatSingleDay.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
+				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
 			);
