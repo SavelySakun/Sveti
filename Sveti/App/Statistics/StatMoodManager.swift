@@ -5,12 +5,17 @@ class StatMoodManager {
   let statDaysRepository = StatDaysRepository()
 
   func updateStat(with note: Note) {
-    guard let date = note.splitDate?.ddMMyyyy else { return }
-
-    if let existingStatDay = statDaysRepository.getStatDay(with: date) {
+    if let existingStatDay = findStatDay(from: note) {
       statDaysRepository.addDataToExistingStatDay(with: existingStatDay, note: note)
     } else {
       saveStat(with: note)
+    }
+  }
+
+  func removeStat(with noteId: Int) {
+    guard let note = NotesRepository().getNote(with: noteId) else { return }
+    if let existingStatDay = findStatDay(from: note) {
+      statDaysRepository.removeDataFromExistingStatDay(with: existingStatDay, note: note)
     }
   }
 
@@ -31,6 +36,11 @@ class StatMoodManager {
     statDay.emotionalStates.append(mood.emotionalState)
     statDay.phyzicalStates.append(mood.physicalState)
     return statDay
+  }
+
+  func findStatDay(from note: Note) -> StatDay? {
+    guard let date = note.splitDate?.ddMMyyyy else { return nil }
+    return statDaysRepository.getStatDay(with: date)
   }
 }
 

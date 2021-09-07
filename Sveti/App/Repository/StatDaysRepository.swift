@@ -21,15 +21,26 @@ class StatDaysRepository {
     }
   }
 
-  func removeDataToExistingStatDay(with statDay: StatDay, note: Note) {
+  func removeDataFromExistingStatDay(with statDay: StatDay, note: Note) {
     let object = realm.objects(StatDay.self).filter("date = %@", statDay.date).first
 
     guard let existingStatDay = object,
-          let mood = note.mood else { return }
+          let mood = note.mood,
+          let emotionalStateIndex = existingStatDay.emotionalStates.firstIndex(of: mood.emotionalState),
+          let phizicalStateIndex = existingStatDay.emotionalStates.firstIndex(of: mood.physicalState)
+          else { return }
 
     try! realm.write {
-      existingStatDay.emotionalStates.append(mood.emotionalState)
-      existingStatDay.phyzicalStates.append(mood.physicalState)
+      existingStatDay.emotionalStates.remove(at: emotionalStateIndex)
+      existingStatDay.phyzicalStates.remove(at: phizicalStateIndex)
+    }
+    removeIfNoData(statDay: existingStatDay)
+  }
+
+  func removeIfNoData(statDay: StatDay) {
+    guard statDay.emotionalStates.isEmpty else { return }
+    try! realm.write {
+      realm.delete(statDay)
     }
   }
 

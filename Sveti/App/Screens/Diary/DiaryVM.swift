@@ -10,6 +10,7 @@ struct DiarySection {
 class DiaryVM {
 
   var sections = [DiarySection]()
+  private let noteRepository = NotesRepository()
 
   init() {
     loadNotes()
@@ -17,12 +18,13 @@ class DiaryVM {
 
   func loadNotes() {
     sections.removeAll()
-    let notes = NotesRepository().getNotes()
+    let notes = noteRepository.getNotes()
     configureSections(from: notes)
   }
 
   func deleteNote(noteId: Int) {
-    NotesRepository().deleteNote(noteId: noteId)
+    StatMoodManager().removeStat(with: noteId)
+    noteRepository.deleteNote(noteId: noteId)
   }
 
   func configureSections(from notes: [Note]) {
