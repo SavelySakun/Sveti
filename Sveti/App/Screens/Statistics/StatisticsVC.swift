@@ -1,8 +1,10 @@
-//
-//  StatisticsVC.swift
-//  Sveti
-//
-//  Created by Savely Sakun on 11.09.2021.
-//
+import UIKit
 
-import Foundation
+class StatisticsVC: UIViewController {
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = .red
+  }
+
+}

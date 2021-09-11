@@ -17,6 +17,12 @@ class TabbarController: UITabBarController {
       tabBarTitle: "Diary"
     )
 
+    let statisticsController = createNavigationController(
+      vc: StatisticsVC(),
+      image: getIcon(named: Constants.ImageNames.Tabbar.statistics),
+      selectedImage: getIcon(named: Constants.ImageNames.Tabbar.statisticsFilled),
+      tabBarTitle: "Statistics")
+
     let newNoteVC = UIViewController()
     let newNoteItem = UITabBarItem(
       title: "New note",
@@ -32,7 +38,7 @@ class TabbarController: UITabBarController {
       tabBarTitle: "More"
     )
 
-    viewControllers = [diaryController, newNoteVC, moreController]
+    viewControllers = [diaryController, newNoteVC, statisticsController, moreController]
   }
 
   private func createNavigationController(vc: UIViewController, image: UIImage?, selectedImage: UIImage?, tabBarTitle: String, largeTitle: Bool = true) -> UINavigationController {

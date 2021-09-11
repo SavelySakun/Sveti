@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D624043FBBE5739F74B3FC9 /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5B92741A2BF30CCE849FBA /* Pods_SvetiTests.framework */; };
 		A2F16D90B04DBB9B9B5E889E /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5921DB640BF5B3DC55344D /* Pods_Sveti.framework */; };
+		DB2D1987C4109966320C1379 /* Pods_Sveti_SvetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EBB08995245592B518881E /* Pods_Sveti_SvetiUITests.framework */; };
 		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
 		FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */; };
@@ -33,7 +35,7 @@
 		FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */; };
 		FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A62661377A000188A6 /* NewNoteVC.swift */; };
 		FC6C58AC26613C32000188A6 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58AB26613C32000188A6 /* TableView.swift */; };
-		FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FC6C58AE26613D0C000188A6 /* SnapKit */; };
+		FC6C58AF26613D0C000188A6 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC6C58AE26613D0C000188A6 /* SwiftPackageProductDependency */; };
 		FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B026613D53000188A6 /* CellWithSlider.swift */; };
 		FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B326614B65000188A6 /* CommentCell.swift */; };
 		FC6C58B62663CFB9000188A6 /* TagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58B52663CFB9000188A6 /* TagCollectionCell.swift */; };
@@ -51,9 +53,9 @@
 		FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2426ABFA6F00126B97 /* TabbarController.swift */; };
 		FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2726AC019C00126B97 /* Constants.swift */; };
 		FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D2926AC037900126B97 /* UIImage.swift */; };
-		FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = FC7E6D5D26AC31A500126B97 /* SPIndicator */; };
+		FC7E6D5E26AC31A500126B97 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC7E6D5D26AC31A500126B97 /* SwiftPackageProductDependency */; };
 		FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D5F26AC349400126B97 /* BaseViewController.swift */; };
-		FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FC7E6D9126AC542F00126B97 /* RealmSwift */; };
+		FC7E6D9226AC542F00126B97 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC7E6D9126AC542F00126B97 /* SwiftPackageProductDependency */; };
 		FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9326AC57EC00126B97 /* Result.swift */; };
 		FC7E6D9726AC625800126B97 /* DiaryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9626AC625800126B97 /* DiaryVM.swift */; };
 		FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E6D9826AC8A2E00126B97 /* DiaryTableSectionHeader.swift */; };
@@ -74,7 +76,7 @@
 		FC8BE9D526E7AD4100D12704 /* StatStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D426E7AD4100D12704 /* StatStateManager.swift */; };
 		FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
-		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
+		FCB0642726B52DDA00A0494A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* SwiftPackageProductDependency */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
 		FCB0642E26B5479D00A0494A /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642D26B5479D00A0494A /* Mood.swift */; };
 		FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643026B55D6A00A0494A /* MoodScoreCell.swift */; };
@@ -94,9 +96,9 @@
 		FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689826D2656E00A05271 /* SelectGroupVC.swift */; };
 		FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */; };
 		FCE3689D26D268FB00A05271 /* SelectGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */; };
-		FCE368A026D26C9400A05271 /* ALPopup in Frameworks */ = {isa = PBXBuildFile; productRef = FCE3689F26D26C9400A05271 /* ALPopup */; };
+		FCE368A026D26C9400A05271 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FCE3689F26D26C9400A05271 /* SwiftPackageProductDependency */; };
 		FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE368A126D2749400A05271 /* SelectGroupTableView.swift */; };
-		FCE368A526D27E6900A05271 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = FCE368A426D27E6900A05271 /* SPAlert */; };
+		FCE368A526D27E6900A05271 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FCE368A426D27E6900A05271 /* SwiftPackageProductDependency */; };
 		FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* EditTagGroupTableFooter.swift */; };
 		FCEA31B826D67B940062509A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA31B726D67B940062509A /* Note.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
@@ -240,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2D1987C4109966320C1379 /* Pods_Sveti_SvetiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D624043FBBE5739F74B3FC9 /* Pods_SvetiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,12 +258,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCE368A526D27E6900A05271 /* SPAlert in Frameworks */,
-				FCE368A026D26C9400A05271 /* ALPopup in Frameworks */,
-				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
-				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
-				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
-				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
+				FCE368A526D27E6900A05271 /* BuildFile in Frameworks */,
+				FCE368A026D26C9400A05271 /* BuildFile in Frameworks */,
+				FCB0642726B52DDA00A0494A /* BuildFile in Frameworks */,
+				FC7E6D9226AC542F00126B97 /* BuildFile in Frameworks */,
+				FC6C58AF26613D0C000188A6 /* BuildFile in Frameworks */,
+				FC7E6D5E26AC31A500126B97 /* BuildFile in Frameworks */,
 				A2F16D90B04DBB9B9B5E889E /* Pods_Sveti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,9 +687,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC01D88226E35F5F00C984E7 /* Build configuration list for PBXNativeTarget "SvetiUITests" */;
 			buildPhases = (
+				277DAA65FA9CF12B9781B6FF /* [CP] Check Pods Manifest.lock */,
 				FC01D87726E35F5F00C984E7 /* Sources */,
 				FC01D87826E35F5F00C984E7 /* Frameworks */,
 				FC01D87926E35F5F00C984E7 /* Resources */,
+				122A92CCC53FFB3872802A05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -701,6 +707,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC29A66B26EC979B00DC87DA /* Build configuration list for PBXNativeTarget "SvetiTests" */;
 			buildPhases = (
+				C7615ECA37D479143AED9701 /* [CP] Check Pods Manifest.lock */,
 				FC29A65E26EC979A00DC87DA /* Sources */,
 				FC29A65F26EC979A00DC87DA /* Frameworks */,
 				FC29A66026EC979A00DC87DA /* Resources */,
@@ -724,6 +731,7 @@
 				FC6C56D5266000FB000188A6 /* Frameworks */,
 				FC6C56D6266000FB000188A6 /* Resources */,
 				FCB0644326B6805300A0494A /* SwiftLint */,
+				E1C22C08560183E2A3DD8159 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -731,12 +739,12 @@
 			);
 			name = Sveti;
 			packageProductDependencies = (
-				FC6C58AE26613D0C000188A6 /* SnapKit */,
-				FC7E6D5D26AC31A500126B97 /* SPIndicator */,
-				FC7E6D9126AC542F00126B97 /* RealmSwift */,
-				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
-				FCE3689F26D26C9400A05271 /* ALPopup */,
-				FCE368A426D27E6900A05271 /* SPAlert */,
+				FC6C58AE26613D0C000188A6 /* SwiftPackageProductDependency */,
+				FC7E6D5D26AC31A500126B97 /* SwiftPackageProductDependency */,
+				FC7E6D9126AC542F00126B97 /* SwiftPackageProductDependency */,
+				FCB0642626B52DDA00A0494A /* SwiftPackageProductDependency */,
+				FCE3689F26D26C9400A05271 /* SwiftPackageProductDependency */,
+				FCE368A426D27E6900A05271 /* SwiftPackageProductDependency */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -775,12 +783,12 @@
 			);
 			mainGroup = FC6C56CF266000FB000188A6;
 			packageReferences = (
-				FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */,
-				FC7E6D9026AC542F00126B97 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */,
-				FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */,
+				FC6C58AD26613D0C000188A6 /* RemoteSwiftPackageReference */,
+				FC7E6D5C26AC31A500126B97 /* RemoteSwiftPackageReference */,
+				FC7E6D9026AC542F00126B97 /* RemoteSwiftPackageReference */,
+				FCB0642526B52DDA00A0494A /* RemoteSwiftPackageReference */,
+				FCE3689E26D26C9400A05271 /* RemoteSwiftPackageReference */,
+				FCE368A326D27E6900A05271 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -822,6 +830,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		122A92CCC53FFB3872802A05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1E2FC2DEC3B50C82D3C6F30D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -842,6 +867,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		277DAA65FA9CF12B9781B6FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sveti-SvetiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7615ECA37D479143AED9701 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SvetiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1C22C08560183E2A3DD8159 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCB0644326B6805300A0494A /* SwiftLint */ = {
@@ -1011,6 +1097,7 @@
 /* Begin XCBuildConfiguration section */
 		FC01D88326E35F5F00C984E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10F8BF1042875FC29C23C394 /* Pods-Sveti-SvetiUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
@@ -1030,6 +1117,7 @@
 		};
 		FC01D88426E35F5F00C984E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80D3BB2C9C441E9BAFA9D9C9 /* Pods-Sveti-SvetiUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
@@ -1049,6 +1137,7 @@
 		};
 		FC29A66926EC979B00DC87DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19B189FDBE31549FDAA0579B /* Pods-SvetiTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1071,6 +1160,7 @@
 		};
 		FC29A66A26EC979B00DC87DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00BD5AAFBAE27084F650A476 /* Pods-SvetiTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1290,7 +1380,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		FC6C58AD26613D0C000188A6 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -1298,7 +1388,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+		FC7E6D5C26AC31A500126B97 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPIndicator.git";
 			requirement = {
@@ -1306,7 +1396,7 @@
 				minimumVersion = 1.3.0;
 			};
 		};
-		FC7E6D9026AC542F00126B97 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+		FC7E6D9026AC542F00126B97 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
@@ -1314,7 +1404,7 @@
 				minimumVersion = 10.11.0;
 			};
 		};
-		FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		FCB0642526B52DDA00A0494A /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -1322,7 +1412,7 @@
 				minimumVersion = 6.5.6;
 			};
 		};
-		FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */ = {
+		FCE3689E26D26C9400A05271 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alxrguz/ALPopup";
 			requirement = {
@@ -1330,7 +1420,7 @@
 				minimumVersion = 1.0.6;
 			};
 		};
-		FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */ = {
+		FCE368A326D27E6900A05271 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPAlert.git";
 			requirement = {
@@ -1341,34 +1431,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC6C58AE26613D0C000188A6 /* SnapKit */ = {
+		FC6C58AE26613D0C000188A6 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = FC6C58AD26613D0C000188A6 /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
-		FC7E6D5D26AC31A500126B97 /* SPIndicator */ = {
+		FC7E6D5D26AC31A500126B97 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC7E6D5C26AC31A500126B97 /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			package = FC7E6D5C26AC31A500126B97 /* RemoteSwiftPackageReference */;
 			productName = SPIndicator;
 		};
-		FC7E6D9126AC542F00126B97 /* RealmSwift */ = {
+		FC7E6D9126AC542F00126B97 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC7E6D9026AC542F00126B97 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = FC7E6D9026AC542F00126B97 /* RemoteSwiftPackageReference */;
 			productName = RealmSwift;
 		};
-		FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */ = {
+		FCB0642626B52DDA00A0494A /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = FCB0642526B52DDA00A0494A /* RemoteSwiftPackageReference */;
 			productName = IQKeyboardManagerSwift;
 		};
-		FCE3689F26D26C9400A05271 /* ALPopup */ = {
+		FCE3689F26D26C9400A05271 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */;
+			package = FCE3689E26D26C9400A05271 /* RemoteSwiftPackageReference */;
 			productName = ALPopup;
 		};
-		FCE368A426D27E6900A05271 /* SPAlert */ = {
+		FCE368A426D27E6900A05271 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */;
+			package = FCE368A326D27E6900A05271 /* RemoteSwiftPackageReference */;
 			productName = SPAlert;
 		};
 /* End XCSwiftPackageProductDependency section */
