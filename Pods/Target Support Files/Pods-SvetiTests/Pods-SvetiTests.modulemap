@@ -1,0 +1,6 @@
+framework module Pods_SvetiTests {
+  umbrella header "Pods-SvetiTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
