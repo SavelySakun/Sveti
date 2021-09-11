@@ -5,26 +5,12 @@ import RealmSwift
 class StatDaysRepositoryTests: XCTestCase {
 
   private let sut = StatDaysRepository()
+  private lazy var statTestHelper = StatTestHelper()
 
-  private let defaultDate = "01.01.2021"
-  private let testDate = "10.02.2021"
-  private lazy var defaultStatDay: StatDay = {
-    let statDay = StatDay()
-    statDay.date = defaultDate
-    statDay.phyzicalStates.append(objectsIn: [1.0, 2.0])
-    statDay.emotionalStates.append(objectsIn: [1.0, 2.0])
-    statDay.totalNotes = 2.0
-    return statDay
-  }()
-
-  private let defaultNote: Note = {
-    let note = Note()
-    let date = Date(timeIntervalSince1970: 1609459200) // "01.01.2021"
-    note.splitDate?.rawDate = date
-    note.mood?.physicalState = 2.0
-    note.mood?.emotionalState = 2.0
-    return note
-  }()
+  private lazy var defaultDate = statTestHelper.defaultDate
+  private lazy var testDate = statTestHelper.testDate
+  private lazy var defaultStatDay: StatDay = statTestHelper.defaultStatDay
+  private lazy var defaultNote: Note = statTestHelper.defaultNote
 
   override func setUpWithError() throws {
     sut.saveNewStatDay(statDay: defaultStatDay)
