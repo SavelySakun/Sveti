@@ -18,6 +18,7 @@
 		FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */; };
 		FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */; };
 		FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */; };
+		FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */; };
 		FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* NoteEditType.swift */; };
 		FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* SliderCells.swift */; };
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
@@ -112,6 +113,13 @@
 			remoteGlobalIDString = FC6C56D7266000FB000188A6;
 			remoteInfo = Sveti;
 		};
+		FC29A66726EC979B00DC87DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC6C56D0266000FB000188A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC6C56D7266000FB000188A6;
+			remoteInfo = Sveti;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +143,9 @@
 		FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCollectionView.swift; sourceTree = "<group>"; };
 		FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCell.swift; sourceTree = "<group>"; };
+		FC29A66226EC979A00DC87DA /* SvetiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC29A66626EC979A00DC87DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepositoryTests.swift; sourceTree = "<group>"; };
 		FC3A898726A054BF0048E4ED /* NoteEditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditType.swift; sourceTree = "<group>"; };
 		FC3A898B26A0584D0048E4ED /* SliderCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCells.swift; sourceTree = "<group>"; };
 		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -220,6 +231,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		FC01D87826E35F5F00C984E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC29A65F26EC979A00DC87DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,6 +334,15 @@
 			path = TagsDiaryCollectionView;
 			sourceTree = "<group>";
 		};
+		FC29A66326EC979A00DC87DA /* SvetiTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */,
+				FC29A66626EC979A00DC87DA /* Info.plist */,
+			);
+			path = SvetiTests;
+			sourceTree = "<group>";
+		};
 		FC3A898426A053F60048E4ED /* NewNote */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +384,7 @@
 			children = (
 				FC6C56DA266000FB000188A6 /* Sveti */,
 				FC01D87C26E35F5F00C984E7 /* SvetiUITests */,
+				FC29A66326EC979A00DC87DA /* SvetiTests */,
 				FC6C56D9266000FB000188A6 /* Products */,
 				E25A0CBFFBF606B2D0AF3A14 /* Pods */,
 				9BF3A4D738F3B50EAAEDBDEA /* Frameworks */,
@@ -368,6 +396,7 @@
 			children = (
 				FC6C56D8266000FB000188A6 /* Sveti.app */,
 				FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */,
+				FC29A66226EC979A00DC87DA /* SvetiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -643,6 +672,24 @@
 			productReference = FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		FC29A66126EC979A00DC87DA /* SvetiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC29A66B26EC979B00DC87DA /* Build configuration list for PBXNativeTarget "SvetiTests" */;
+			buildPhases = (
+				FC29A65E26EC979A00DC87DA /* Sources */,
+				FC29A65F26EC979A00DC87DA /* Frameworks */,
+				FC29A66026EC979A00DC87DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC29A66826EC979B00DC87DA /* PBXTargetDependency */,
+			);
+			name = SvetiTests;
+			productName = SvetiTests;
+			productReference = FC29A66226EC979A00DC87DA /* SvetiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FC6C56D7266000FB000188A6 /* Sveti */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC6C5702266000FD000188A6 /* Build configuration list for PBXNativeTarget "Sveti" */;
@@ -683,6 +730,11 @@
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = FC6C56D7266000FB000188A6;
 					};
+					FC29A66126EC979A00DC87DA = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+						TestTargetID = FC6C56D7266000FB000188A6;
+					};
 					FC6C56D7266000FB000188A6 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -711,12 +763,20 @@
 			targets = (
 				FC6C56D7266000FB000188A6 /* Sveti */,
 				FC01D87A26E35F5F00C984E7 /* SvetiUITests */,
+				FC29A66126EC979A00DC87DA /* SvetiTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FC01D87926E35F5F00C984E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC29A66026EC979A00DC87DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -785,6 +845,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC29A65E26EC979A00DC87DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,6 +954,11 @@
 			target = FC6C56D7266000FB000188A6 /* Sveti */;
 			targetProxy = FC01D88026E35F5F00C984E7 /* PBXContainerItemProxy */;
 		};
+		FC29A66826EC979B00DC87DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC6C56D7266000FB000188A6 /* Sveti */;
+			targetProxy = FC29A66726EC979B00DC87DA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -943,6 +1016,49 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Sveti;
+			};
+			name = Release;
+		};
+		FC29A66926EC979B00DC87DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6389Z2D8J8;
+				INFOPLIST_FILE = SvetiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sava.SvetiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sveti.app/Sveti";
+			};
+			name = Debug;
+		};
+		FC29A66A26EC979B00DC87DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6389Z2D8J8;
+				INFOPLIST_FILE = SvetiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sava.SvetiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sveti.app/Sveti";
 			};
 			name = Release;
 		};
@@ -1112,6 +1228,15 @@
 			buildConfigurations = (
 				FC01D88326E35F5F00C984E7 /* Debug */,
 				FC01D88426E35F5F00C984E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC29A66B26EC979B00DC87DA /* Build configuration list for PBXNativeTarget "SvetiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC29A66926EC979B00DC87DA /* Debug */,
+				FC29A66A26EC979B00DC87DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -50,4 +50,18 @@ class StatDaysRepository {
     }
   }
 
+  func removeAll() {
+    let allStatDaysObjects = realm.objects(StatDay.self)
+    try! realm.write {
+      realm.delete(allStatDaysObjects)
+    }
+  }
+
+  func isHaveSavedObjects() -> Bool {
+    return !realm.objects(StatDay.self).isEmpty
+  }
+
+  func getSavedObjectsCount() -> Int {
+    return realm.objects(StatDay.self).count
+  }
 }
