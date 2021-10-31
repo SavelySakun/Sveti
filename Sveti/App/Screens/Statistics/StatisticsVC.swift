@@ -1,10 +1,17 @@
 import UIKit
+import Charts
 
-class StatisticsVC: UIViewController {
-
+class StatisticsVC: VCwithTable {
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .red
   }
 
+  override func getDataProvider() -> TableDataProvider? {
+    return StatisticsTableDataProvider()
+  }
+
+  override func setLayout() {
+    super.setLayout()
+    title = "Statistics"
+  }
 }

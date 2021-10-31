@@ -24,6 +24,9 @@
 		FC29A67026ECE11200DC87DA /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66F26ECE11200DC87DA /* StatisticsVC.swift */; };
 		FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */; };
 		FC29A67526ECEB3800DC87DA /* StatTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */; };
+		FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67726EDDDB600DC87DA /* BarChartCell.swift */; };
+		FC29A67A26EDDFB900DC87DA /* StatisticsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67926EDDFB900DC87DA /* StatisticsTableDataProvider.swift */; };
+		FC29A67D26EDE1D400DC87DA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC29A67C26EDE1D400DC87DA /* SwiftPackageProductDependency */; };
 		FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* NoteEditType.swift */; };
 		FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* SliderCells.swift */; };
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
@@ -154,6 +157,8 @@
 		FC29A66F26ECE11200DC87DA /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
 		FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatStateManagerTest.swift; sourceTree = "<group>"; };
 		FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTestHelper.swift; sourceTree = "<group>"; };
+		FC29A67726EDDDB600DC87DA /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		FC29A67926EDDFB900DC87DA /* StatisticsTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTableDataProvider.swift; sourceTree = "<group>"; };
 		FC3A898726A054BF0048E4ED /* NoteEditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditType.swift; sourceTree = "<group>"; };
 		FC3A898B26A0584D0048E4ED /* SliderCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCells.swift; sourceTree = "<group>"; };
 		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -261,6 +266,7 @@
 				FCE368A526D27E6900A05271 /* BuildFile in Frameworks */,
 				FCE368A026D26C9400A05271 /* BuildFile in Frameworks */,
 				FCB0642726B52DDA00A0494A /* BuildFile in Frameworks */,
+				FC29A67D26EDE1D400DC87DA /* BuildFile in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* BuildFile in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* BuildFile in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* BuildFile in Frameworks */,
@@ -357,7 +363,9 @@
 		FC29A66E26ECE0DE00DC87DA /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				FC29A67626EDDDA800DC87DA /* Cells */,
 				FC29A66F26ECE11200DC87DA /* StatisticsVC.swift */,
+				FC29A67926EDDFB900DC87DA /* StatisticsTableDataProvider.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -368,6 +376,14 @@
 				FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */,
 			);
 			path = TestHelper;
+			sourceTree = "<group>";
+		};
+		FC29A67626EDDDA800DC87DA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC29A67726EDDDB600DC87DA /* BarChartCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FC3A898426A053F60048E4ED /* NewNote */ = {
@@ -509,7 +525,7 @@
 		FC7E6D1B26AB1A0400126B97 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FC8BE9D326E7AD2900D12704 /* Statistics */,
+				FC8BE9D326E7AD2900D12704 /* StatisticsManager */,
 				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC7E6D1526AB039200126B97 /* Repository */,
 				FC7E6D8126AC484500126B97 /* Models */,
@@ -613,12 +629,12 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
-		FC8BE9D326E7AD2900D12704 /* Statistics */ = {
+		FC8BE9D326E7AD2900D12704 /* StatisticsManager */ = {
 			isa = PBXGroup;
 			children = (
 				FC8BE9D426E7AD4100D12704 /* StatStateManager.swift */,
 			);
-			path = Statistics;
+			path = StatisticsManager;
 			sourceTree = "<group>";
 		};
 		FCAAD9F126B84FAB00607DC0 /* SectionHeader */ = {
@@ -691,7 +707,6 @@
 				FC01D87726E35F5F00C984E7 /* Sources */,
 				FC01D87826E35F5F00C984E7 /* Frameworks */,
 				FC01D87926E35F5F00C984E7 /* Resources */,
-				122A92CCC53FFB3872802A05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -731,7 +746,6 @@
 				FC6C56D5266000FB000188A6 /* Frameworks */,
 				FC6C56D6266000FB000188A6 /* Resources */,
 				FCB0644326B6805300A0494A /* SwiftLint */,
-				E1C22C08560183E2A3DD8159 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -745,6 +759,7 @@
 				FCB0642626B52DDA00A0494A /* SwiftPackageProductDependency */,
 				FCE3689F26D26C9400A05271 /* SwiftPackageProductDependency */,
 				FCE368A426D27E6900A05271 /* SwiftPackageProductDependency */,
+				FC29A67C26EDE1D400DC87DA /* SwiftPackageProductDependency */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -789,6 +804,7 @@
 				FCB0642526B52DDA00A0494A /* RemoteSwiftPackageReference */,
 				FCE3689E26D26C9400A05271 /* RemoteSwiftPackageReference */,
 				FCE368A326D27E6900A05271 /* RemoteSwiftPackageReference */,
+				FC29A67B26EDE1D400DC87DA /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -830,23 +846,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		122A92CCC53FFB3872802A05 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1E2FC2DEC3B50C82D3C6F30D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -911,23 +910,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E1C22C08560183E2A3DD8159 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCB0644326B6805300A0494A /* SwiftLint */ = {
@@ -996,6 +978,7 @@
 				FC76B39326810F7700AF209F /* Cell.swift in Sources */,
 				FCB0642E26B5479D00A0494A /* Mood.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
+				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
 				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
 				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
@@ -1014,6 +997,7 @@
 				FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */,
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
 				FC0CCC9426BE8BA8004CDE8A /* TagSectionHeaderView.swift in Sources */,
+				FC29A67A26EDDFB900DC87DA /* StatisticsTableDataProvider.swift in Sources */,
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
@@ -1380,6 +1364,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FC29A67B26EDE1D400DC87DA /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		FC6C58AD26613D0C000188A6 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1431,6 +1423,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FC29A67C26EDE1D400DC87DA /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC29A67B26EDE1D400DC87DA /* RemoteSwiftPackageReference */;
+			productName = Charts;
+		};
 		FC6C58AE26613D0C000188A6 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FC6C58AD26613D0C000188A6 /* RemoteSwiftPackageReference */;

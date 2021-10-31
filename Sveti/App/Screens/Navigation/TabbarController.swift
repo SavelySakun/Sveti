@@ -5,7 +5,7 @@ class TabbarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setTabbarItems()
-    selectedIndex = 0
+    selectedIndex = 2
     delegate = self
   }
 
@@ -21,7 +21,8 @@ class TabbarController: UITabBarController {
       vc: StatisticsVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.statistics),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.statisticsFilled),
-      tabBarTitle: "Statistics")
+      tabBarTitle: "Statistics",
+      largeTitle: false)
 
     let newNoteVC = UIViewController()
     let newNoteItem = UITabBarItem(
