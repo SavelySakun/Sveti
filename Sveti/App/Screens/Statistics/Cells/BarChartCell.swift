@@ -20,15 +20,14 @@ class BarChartCell: Cell {
     setChartStyle()
 
     // data
-    let dataEntry = [
-      BarChartDataEntry(x: 0.0, y: 2),
-      BarChartDataEntry(x: 1.0, y: 5),
-    ]
+    let statDaysDataSetManager = StatDaysDataSetManager()
 
-    let chartDataSet = BarChartDataSet(entries: dataEntry)
+    guard let chartDataSet = statDaysDataSetManager.getAllOrderedByDay() else { return }
     chartDataSet.colors = [.systemTeal]
     chartDataSet.highlightColor = .systemBlue
     chartDataSet.valueFont = .systemFont(ofSize: 12)
+
+    // https://github.com/danielgindi/Charts/issues/1340 по хaxis инфа как делать кастомный текст
 
     let barChartData = BarChartData(dataSet: chartDataSet)
     barChartView.data = barChartData

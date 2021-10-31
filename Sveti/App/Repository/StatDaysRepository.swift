@@ -5,12 +5,16 @@ class StatDaysRepository {
 
   let realm = try! Realm()
 
-  func getStatDay(with date: String) -> StatDay? {
-    return realm.objects(StatDay.self).filter("date = %@", date).first
+  func getAll() -> [StatDay]? {
+    return realm.objects(StatDay.self).toArray()
+  }
+
+  func getStatDay(with date: SplitDate) -> StatDay? {
+    return realm.objects(StatDay.self).filter("splitDate = %@", date).first
   }
 
   func addDataToExistingStatDay(with statDay: StatDay, note: Note) {
-    let object = realm.objects(StatDay.self).filter("date = %@", statDay.date).first
+    let object = realm.objects(StatDay.self).filter("splitDate = %@", statDay.splitDate).first
 
     guard let existingStatDay = object,
           let mood = note.mood else { return }
@@ -22,7 +26,7 @@ class StatDaysRepository {
   }
 
   func removeDataFromExistingStatDay(with statDay: StatDay, note: Note) {
-    let object = realm.objects(StatDay.self).filter("date = %@", statDay.date).first
+    let object = realm.objects(StatDay.self).filter("splitDate = %@", statDay.splitDate).first
 
     guard let existingStatDay = object,
           let mood = note.mood,

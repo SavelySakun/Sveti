@@ -13,6 +13,18 @@ class SplitDate: Object {
   convenience init(rawDate: Date) {
     self.init()
     self.rawDate = rawDate
+    defaultSetup()
+  }
+
+  convenience init(ddMMyyyy: String) {
+    self.init()
+    dateFormatter.dateFormat = "ddMMyyyy"
+    let rawDate = dateFormatter.date(from: ddMMyyyy)
+    self.rawDate = rawDate ?? Date()
+    defaultSetup()
+  }
+
+  private func defaultSetup() {
     setYYYY()
     setHHmm()
     setDDmmYYYY()

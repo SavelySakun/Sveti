@@ -42,7 +42,7 @@ class NewNoteVM: ViewControllerVM {
 
   func saveCurrentNote() {
     NotesRepository().save(note)
-    StatStateManager().updateStat(with: note)
+    StatDaysManager().updateStat(with: note)
   }
 
 

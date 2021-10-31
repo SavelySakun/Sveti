@@ -4,9 +4,10 @@ class StatTestHelper {
 
   let defaultDate = "01.01.2021"
   let testDate = "10.02.2021"
+
   lazy var defaultStatDay: StatDay = {
     let statDay = StatDay()
-    statDay.date = defaultDate
+    statDay.splitDate = SplitDate(ddMMyyyy: defaultDate)
     statDay.phyzicalStates.append(objectsIn: [1.0, 2.0])
     statDay.emotionalStates.append(objectsIn: [1.0, 2.0])
     statDay.totalNotes = 2.0

@@ -1,11 +1,12 @@
 import Foundation
 
-class StatStateManager {
+class StatDaysManager {
 
-  let statDaysRepository = StatDaysRepository()
+  private let statDaysRepository = StatDaysRepository()
 
+  /// Use for getting statDay using note information.
   func findStatDay(from note: Note) -> StatDay? {
-    guard let date = note.splitDate?.ddMMyyyy else { return nil }
+    guard let date = note.splitDate else { return nil }
     return statDaysRepository.getStatDay(with: date)
   }
 
@@ -24,7 +25,7 @@ class StatStateManager {
     }
   }
 
-  // If statDay doesn't exist for specific date
+  /// If statDay doesn't exist for specific date
   func saveStat(with note: Note) {
     let statDayToSave = getNewStatDay(from: note)
     StatDaysRepository().saveNewStatDay(statDay: statDayToSave)
@@ -34,9 +35,9 @@ class StatStateManager {
     let statDay = StatDay()
 
     guard let mood = note.mood,
-          let date = note.splitDate?.ddMMyyyy else { return StatDay() }
+          let date = note.splitDate else { return StatDay() }
 
-    statDay.date = date
+    statDay.splitDate = date
     statDay.totalNotes = 1
     statDay.emotionalStates.append(mood.emotionalState)
     statDay.phyzicalStates.append(mood.physicalState)
