@@ -5,7 +5,7 @@ class TabbarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setTabbarItems()
-    selectedIndex = 0
+    selectedIndex = 2
     delegate = self
   }
 
@@ -16,6 +16,13 @@ class TabbarController: UITabBarController {
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.diarySelected),
       tabBarTitle: "Diary"
     )
+
+    let statisticsController = createNavigationController(
+      vc: StatisticsVC(),
+      image: getIcon(named: Constants.ImageNames.Tabbar.statistics),
+      selectedImage: getIcon(named: Constants.ImageNames.Tabbar.statisticsFilled),
+      tabBarTitle: "Statistics",
+      largeTitle: false)
 
     let newNoteVC = UIViewController()
     let newNoteItem = UITabBarItem(
@@ -32,7 +39,7 @@ class TabbarController: UITabBarController {
       tabBarTitle: "More"
     )
 
-    viewControllers = [diaryController, newNoteVC, moreController]
+    viewControllers = [diaryController, newNoteVC, statisticsController, moreController]
   }
 
   private func createNavigationController(vc: UIViewController, image: UIImage?, selectedImage: UIImage?, tabBarTitle: String, largeTitle: Bool = true) -> UINavigationController {

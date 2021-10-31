@@ -73,7 +73,7 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
       .debounce(for: .seconds(eventDebounceValue), scheduler: RunLoop.main)
       .sink { event in
       self.viewModel.handle(event)
-      }
+    }
 
     viewModel.addSubscriber(newSub: subscriber, with: cellType.identifier)
 

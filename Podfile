@@ -6,7 +6,7 @@ target 'Sveti' do
   use_frameworks!
 
   # Pods for Sveti
-pod 'SwiftLint'
+  pod 'SwiftLint'
 
   target 'SvetiTests' do
     inherit! :search_paths
