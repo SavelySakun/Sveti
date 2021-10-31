@@ -7,6 +7,7 @@ target 'Sveti' do
 
   # Pods for Sveti
   pod 'SwiftLint'
+  pod 'Charts'
 
   target 'SvetiTests' do
     inherit! :search_paths

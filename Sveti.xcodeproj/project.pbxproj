@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09B6F7DEBBC8DCED0D1C5238 /* Pods_Sveti_SvetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3913FBF81BAF6DF946FECB26 /* Pods_Sveti_SvetiUITests.framework */; };
+		C9CDFC695A5DE5C1F7CF2F56 /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */; };
+		DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */; };
 		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
 		FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */; };
@@ -23,7 +26,6 @@
 		FC29A67526ECEB3800DC87DA /* StatTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */; };
 		FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67726EDDDB600DC87DA /* BarChartCell.swift */; };
 		FC29A67A26EDDFB900DC87DA /* StatisticsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67926EDDFB900DC87DA /* StatisticsTableDataProvider.swift */; };
-		FC29A67D26EDE1D400DC87DA /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = FC29A67C26EDE1D400DC87DA /* Charts */; };
 		FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* NoteEditType.swift */; };
 		FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* SliderCells.swift */; };
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
@@ -128,6 +130,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3913FBF81BAF6DF946FECB26 /* Pods_Sveti_SvetiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti_SvetiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sveti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54DB4BA172E2CF5A3F23E564 /* Pods-Sveti-SvetiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti-SvetiUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9EB3867CD72A4B2C262B7AC9 /* Pods-Sveti-SvetiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti-SvetiUITests.release.xcconfig"; path = "Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A601ECB32E9412DD7194D635 /* Pods-Sveti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti.debug.xcconfig"; path = "Target Support Files/Pods-Sveti/Pods-Sveti.debug.xcconfig"; sourceTree = "<group>"; };
+		B0C41B076C393D749E203C23 /* Pods-Sveti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti.release.xcconfig"; path = "Target Support Files/Pods-Sveti/Pods-Sveti.release.xcconfig"; sourceTree = "<group>"; };
+		D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SvetiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E324E23D733ACF35B25A81 /* Pods-SvetiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SvetiTests.debug.xcconfig"; path = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F839ACDAEBABEFA6A28990E7 /* Pods-SvetiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SvetiTests.release.xcconfig"; path = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC01D87F26E35F5F00C984E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -235,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B6F7DEBBC8DCED0D1C5238 /* Pods_Sveti_SvetiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CDFC695A5DE5C1F7CF2F56 /* Pods_SvetiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,19 +265,35 @@
 				FCE368A526D27E6900A05271 /* SPAlert in Frameworks */,
 				FCE368A026D26C9400A05271 /* ALPopup in Frameworks */,
 				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
-				FC29A67D26EDE1D400DC87DA /* Charts in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
+				DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24F49D303F3C42ED2E832889 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */,
+				3913FBF81BAF6DF946FECB26 /* Pods_Sveti_SvetiUITests.framework */,
+				D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E25A0CBFFBF606B2D0AF3A14 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				A601ECB32E9412DD7194D635 /* Pods-Sveti.debug.xcconfig */,
+				B0C41B076C393D749E203C23 /* Pods-Sveti.release.xcconfig */,
+				54DB4BA172E2CF5A3F23E564 /* Pods-Sveti-SvetiUITests.debug.xcconfig */,
+				9EB3867CD72A4B2C262B7AC9 /* Pods-Sveti-SvetiUITests.release.xcconfig */,
+				E1E324E23D733ACF35B25A81 /* Pods-SvetiTests.debug.xcconfig */,
+				F839ACDAEBABEFA6A28990E7 /* Pods-SvetiTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -399,6 +428,7 @@
 				FC29A66326EC979A00DC87DA /* SvetiTests */,
 				FC6C56D9266000FB000188A6 /* Products */,
 				E25A0CBFFBF606B2D0AF3A14 /* Pods */,
+				24F49D303F3C42ED2E832889 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -671,9 +701,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC01D88226E35F5F00C984E7 /* Build configuration list for PBXNativeTarget "SvetiUITests" */;
 			buildPhases = (
+				E0FE039CE4897161A9E2353B /* [CP] Check Pods Manifest.lock */,
 				FC01D87726E35F5F00C984E7 /* Sources */,
 				FC01D87826E35F5F00C984E7 /* Frameworks */,
 				FC01D87926E35F5F00C984E7 /* Resources */,
+				AAF233A18B11ABBAEF88FFA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -689,6 +721,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC29A66B26EC979B00DC87DA /* Build configuration list for PBXNativeTarget "SvetiTests" */;
 			buildPhases = (
+				52481A966E8072A7BA5C63AC /* [CP] Check Pods Manifest.lock */,
 				FC29A65E26EC979A00DC87DA /* Sources */,
 				FC29A65F26EC979A00DC87DA /* Frameworks */,
 				FC29A66026EC979A00DC87DA /* Resources */,
@@ -707,10 +740,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC6C5702266000FD000188A6 /* Build configuration list for PBXNativeTarget "Sveti" */;
 			buildPhases = (
+				C223BDD88BD2BDBF4375BA82 /* [CP] Check Pods Manifest.lock */,
 				FC6C56D4266000FB000188A6 /* Sources */,
 				FC6C56D5266000FB000188A6 /* Frameworks */,
 				FC6C56D6266000FB000188A6 /* Resources */,
 				FCB0644326B6805300A0494A /* SwiftLint */,
+				3B160C6F182F3E73D359C878 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -724,7 +759,6 @@
 				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
 				FCE3689F26D26C9400A05271 /* ALPopup */,
 				FCE368A426D27E6900A05271 /* SPAlert */,
-				FC29A67C26EDE1D400DC87DA /* Charts */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -769,7 +803,6 @@
 				FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */,
 				FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */,
 				FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert.git" */,
-				FC29A67B26EDE1D400DC87DA /* XCRemoteSwiftPackageReference "Charts.git" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -811,6 +844,106 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3B160C6F182F3E73D359C878 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sveti/Pods-Sveti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52481A966E8072A7BA5C63AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SvetiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAF233A18B11ABBAEF88FFA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C223BDD88BD2BDBF4375BA82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sveti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0FE039CE4897161A9E2353B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sveti-SvetiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FCB0644326B6805300A0494A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -980,6 +1113,7 @@
 /* Begin XCBuildConfiguration section */
 		FC01D88326E35F5F00C984E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54DB4BA172E2CF5A3F23E564 /* Pods-Sveti-SvetiUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
@@ -999,6 +1133,7 @@
 		};
 		FC01D88426E35F5F00C984E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB3867CD72A4B2C262B7AC9 /* Pods-Sveti-SvetiUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
@@ -1018,6 +1153,7 @@
 		};
 		FC29A66926EC979B00DC87DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1E324E23D733ACF35B25A81 /* Pods-SvetiTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1040,6 +1176,7 @@
 		};
 		FC29A66A26EC979B00DC87DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F839ACDAEBABEFA6A28990E7 /* Pods-SvetiTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1177,6 +1314,7 @@
 		};
 		FC6C5703266000FD000188A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A601ECB32E9412DD7194D635 /* Pods-Sveti.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1197,6 +1335,7 @@
 		};
 		FC6C5704266000FD000188A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0C41B076C393D749E203C23 /* Pods-Sveti.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1257,14 +1396,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC29A67B26EDE1D400DC87DA /* XCRemoteSwiftPackageReference "Charts.git" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.1;
-			};
-		};
 		FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1316,11 +1447,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC29A67C26EDE1D400DC87DA /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FC29A67B26EDE1D400DC87DA /* XCRemoteSwiftPackageReference "Charts.git" */;
-			productName = Charts;
-		};
 		FC6C58AE26613D0C000188A6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
