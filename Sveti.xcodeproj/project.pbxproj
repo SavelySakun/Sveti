@@ -31,6 +31,7 @@
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
 		FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */; };
 		FC42A6C627350F8E004A56F9 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C527350F8E004A56F9 /* Array.swift */; };
+		FC42A6C827353DE5004A56F9 /* StatDayValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C727353DE5004A56F9 /* StatDayValueFormatter.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
@@ -169,6 +170,7 @@
 		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDayChartFormatter.swift; sourceTree = "<group>"; };
 		FC42A6C527350F8E004A56F9 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		FC42A6C727353DE5004A56F9 /* StatDayValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDayValueFormatter.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */,
+				FC42A6C727353DE5004A56F9 /* StatDayValueFormatter.swift */,
 			);
 			path = ChartsHelpers;
 			sourceTree = "<group>";
@@ -1032,6 +1035,7 @@
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
 				FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */,
 				FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */,
+				FC42A6C827353DE5004A56F9 /* StatDayValueFormatter.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
 				FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */,
 				FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */,

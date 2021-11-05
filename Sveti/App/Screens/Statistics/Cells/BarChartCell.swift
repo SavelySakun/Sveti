@@ -32,6 +32,7 @@ class BarChartCell: Cell {
     chartDataSet.colors = [.systemTeal]
     chartDataSet.highlightColor = .systemBlue
     chartDataSet.valueFont = .systemFont(ofSize: 12)
+    chartDataSet.valueFormatter = StatDayValueFormatter()
 
     // https://github.com/danielgindi/Charts/issues/1340 по хaxis инфа как делать кастомный текст
 
