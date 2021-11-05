@@ -3,12 +3,16 @@ import Charts
 
 class StatDaysDataSetManager {
 
+  static let shared = StatDaysDataSetManager()
+  var availableStatDays: [StatDay]? = [StatDay]()
+
   private let statDaysRepository = StatDaysRepository()
 
   /// Get all available data.
   func getAllOrderedByDay() -> BarChartDataSet? {
 
     guard let allStatDays = statDaysRepository.getAll() else { return nil }
+    availableStatDays = allStatDays
 
     let dataEntry = prepateDataEntry(from: allStatDays)
 

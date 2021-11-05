@@ -29,6 +29,8 @@
 		FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* NoteEditType.swift */; };
 		FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* SliderCells.swift */; };
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
+		FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */; };
+		FC42A6C627350F8E004A56F9 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C527350F8E004A56F9 /* Array.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
@@ -165,6 +167,8 @@
 		FC3A898726A054BF0048E4ED /* NoteEditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditType.swift; sourceTree = "<group>"; };
 		FC3A898B26A0584D0048E4ED /* SliderCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCells.swift; sourceTree = "<group>"; };
 		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDayChartFormatter.swift; sourceTree = "<group>"; };
+		FC42A6C527350F8E004A56F9 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -427,6 +431,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		FC42A6C127350AF5004A56F9 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				FC42A6C227350B08004A56F9 /* ChartsHelpers */,
+				FC8BE9D326E7AD2900D12704 /* StatisticsManager */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		FC42A6C227350B08004A56F9 /* ChartsHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */,
+			);
+			path = ChartsHelpers;
+			sourceTree = "<group>";
+		};
 		FC6C56CF266000FB000188A6 = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +491,7 @@
 				FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */,
 				FC7E6D2926AC037900126B97 /* UIImage.swift */,
 				FC7E6D9326AC57EC00126B97 /* Result.swift */,
+				FC42A6C527350F8E004A56F9 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,6 +499,7 @@
 		FC6C58B72663D1CD000188A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC29A67326ECEAB300DC87DA /* TestHelper */,
 				FC6C58B82663D1DB000188A6 /* UIUtils.swift */,
 				FC7E6D2726AC019C00126B97 /* Constants.swift */,
@@ -489,8 +512,8 @@
 		FC7E6D1526AB039200126B97 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 				FC84E81E26C8FC210081CBA2 /* Tags */,
+				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 				FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */,
 				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
 				FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */,
@@ -514,7 +537,7 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		FC7E6D1A26AB199000126B97 /* Components */ = {
+		FC7E6D1A26AB199000126B97 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				FC7E6D2126AB1FD000126B97 /* ViewElements */,
@@ -524,19 +547,18 @@
 				FC3A899026A05B330048E4ED /* TextView.swift */,
 				FC3A898526A0541E0048E4ED /* Table */,
 			);
-			path = Components;
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		FC7E6D1B26AB1A0400126B97 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FC8BE9D326E7AD2900D12704 /* StatisticsManager */,
-				FC84E82226C902530081CBA2 /* UserDefaults */,
+				FC42A6C127350AF5004A56F9 /* Statistics */,
 				FC7E6D1526AB039200126B97 /* Repository */,
 				FC7E6D8126AC484500126B97 /* Models */,
 				FC6C58A1266136B5000188A6 /* Extensions */,
 				FC6C58B72663D1CD000188A6 /* Utils */,
-				FC7E6D1A26AB199000126B97 /* Components */,
+				FC7E6D1A26AB199000126B97 /* UIComponents */,
 				FC7E6D1826AB195B00126B97 /* Screens */,
 			);
 			path = App;
@@ -1024,6 +1046,7 @@
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
 				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
 				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
+				FC42A6C627350F8E004A56F9 /* Array.swift in Sources */,
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,
 				FC29A67526ECEB3800DC87DA /* StatTestHelper.swift in Sources */,
 				FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */,
@@ -1077,6 +1100,7 @@
 				FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
+				FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */,
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,
 				FCEA31B826D67B940062509A /* Note.swift in Sources */,
 				FC8BE9B226E65F3200D12704 /* StatDay.swift in Sources */,

@@ -22,10 +22,11 @@ class BarChartCell: Cell {
     barChartView.delegate = self
     setChartStyle()
     setDataForChart()
+    setVisibleXRange()
   }
 
   private func setDataForChart() {
-    let statDaysDataSetManager = StatDaysDataSetManager()
+    let statDaysDataSetManager = StatDaysDataSetManager.shared
 
     guard let chartDataSet = statDaysDataSetManager.getAllOrderedByDay() else { return }
     chartDataSet.colors = [.systemTeal]
@@ -41,14 +42,15 @@ class BarChartCell: Cell {
   private func setChartStyle() {
     // General
     barChartView.backgroundColor = .white
-    barChartView.fitBars = true
     barChartView.legend.enabled = false
+
 
     let leftAxis = barChartView.leftAxis
     let xAxis = barChartView.xAxis
 
     // Left axis
     leftAxis.axisMaximum = 10.0
+    leftAxis.axisMinimum = 0.0
     leftAxis.labelFont = .systemFont(ofSize: 12.0)
     leftAxis.axisLineColor = .systemGray2
     leftAxis.gridColor = .systemGray2
@@ -57,10 +59,17 @@ class BarChartCell: Cell {
     barChartView.rightAxis.enabled = false
 
     // xAxis
+    xAxis.valueFormatter = StatDayChartFormatter()
     xAxis.drawGridLinesEnabled = false
     xAxis.axisLineColor = .systemGray2
     xAxis.labelPosition = .bottom
     xAxis.labelFont = .systemFont(ofSize: 12.0)
+  }
+
+  private func setVisibleXRange() {
+    guard let statDays = StatDaysDataSetManager.shared.availableStatDays, !statDays.isEmpty else { return }
+    barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
+    barChartView.setVisibleXRange(minXRange: 8, maxXRange: 25)
   }
 }
 
