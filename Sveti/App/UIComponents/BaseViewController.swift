@@ -25,4 +25,7 @@ class BaseViewController: UIViewController {
   @objc private func hideKeyboard() {
     view.endEditing(true)
   }
+
+  /// Use for any data reload.
+  func updateContent() {}
 }
