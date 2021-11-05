@@ -5,6 +5,10 @@ class StatisticsVC: VCwithTable {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    updateContent()
+  }
+
+  override func updateContent() {
     DispatchQueue.main.async {
       self.tableView.reloadData()
     }

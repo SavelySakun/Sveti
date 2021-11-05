@@ -5,8 +5,11 @@ class BarChartCell: Cell {
 
   private let barChartView = BarChartView()
 
-  override func setLayout() {
+  override func configureSelf(with viewModel: CellVM) {
     configureChart()
+  }
+
+  override func setLayout() {
     contentView.addSubview(barChartView)
     barChartView.snp.makeConstraints { (make) in
       make.top.left.equalToSuperview().offset(UIUtils.defaultOffset)
@@ -18,8 +21,10 @@ class BarChartCell: Cell {
   private func configureChart() {
     barChartView.delegate = self
     setChartStyle()
+    setDataForChart()
+  }
 
-    // data
+  private func setDataForChart() {
     let statDaysDataSetManager = StatDaysDataSetManager()
 
     guard let chartDataSet = statDaysDataSetManager.getAllOrderedByDay() else { return }

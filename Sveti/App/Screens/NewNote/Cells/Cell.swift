@@ -30,10 +30,12 @@ class Cell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
+  /// Calls on every cell reuse cycle. Its useful to update content here when reloading tableView.
   func configureSelf(with viewModel: CellVM) {
     selectionStyle = .none
   }
 
+  /// Calls once when cell initialized.
   func setLayout() {
     // Do any customization here.
   }

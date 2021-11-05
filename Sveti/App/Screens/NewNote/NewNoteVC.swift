@@ -66,8 +66,8 @@ class NewNoteVC: BaseViewController {
 
   @objc func onSave() {
     self.viewModel.saveCurrentNote()
-    if let diaryVC = CurrentVC.current as? DiaryVC {
-      diaryVC.updateData()
+    if let currentVC = CurrentVC.current as? BaseViewController {
+      currentVC.updateContent()
     }
     self.dismiss(animated: true) {
       SPIndicator.present(title: "Note saved", message: nil, preset: .done, from: .top, completion: nil)
