@@ -23,7 +23,8 @@ class DiaryVM {
   }
 
   func deleteNote(noteId: Int) {
-    StatDaysManager().removeStat(with: noteId)
+    guard let note = noteRepository.getNote(with: noteId) else { return }
+    StatDaysManager().removeStat(with: note)
     noteRepository.deleteNote(noteId: noteId)
   }
 

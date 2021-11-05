@@ -33,7 +33,7 @@ class StatDaysRepository {
     guard let existingStatDay = specificStatDay,
           let mood = note.mood,
           let emotionalStateIndex = existingStatDay.emotionalStates.firstIndex(of: mood.emotionalState),
-          let phizicalStateIndex = existingStatDay.emotionalStates.firstIndex(of: mood.physicalState)
+          let phizicalStateIndex = existingStatDay.phyzicalStates.firstIndex(of: mood.physicalState)
           else { return }
 
     try! realm.write {

@@ -18,8 +18,7 @@ class StatDaysManager {
     }
   }
 
-  func removeStat(with noteId: Int) {
-    guard let note = NotesRepository().getNote(with: noteId) else { return }
+  func removeStat(with note: Note) {
     if let existingStatDay = findStatDay(from: note) {
       statDaysRepository.removeDataFromExistingStatDay(with: existingStatDay, note: note)
     }
