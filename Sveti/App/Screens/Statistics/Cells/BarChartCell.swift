@@ -20,8 +20,8 @@ class BarChartCell: Cell {
 
   private func configureChart() {
     barChartView.delegate = self
-    setChartStyle()
     setDataForChart()
+    setChartStyle()
     setVisibleXRange()
   }
 
@@ -44,7 +44,6 @@ class BarChartCell: Cell {
     barChartView.backgroundColor = .white
     barChartView.legend.enabled = false
 
-
     let leftAxis = barChartView.leftAxis
     let xAxis = barChartView.xAxis
 
@@ -64,12 +63,13 @@ class BarChartCell: Cell {
     xAxis.axisLineColor = .systemGray2
     xAxis.labelPosition = .bottom
     xAxis.labelFont = .systemFont(ofSize: 12.0)
+    xAxis.granularity = 1.0
   }
 
   private func setVisibleXRange() {
-    guard let statDays = StatDaysDataSetManager.shared.availableStatDays, !statDays.isEmpty else { return }
+    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStatDays, !statDays.isEmpty else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
-    barChartView.setVisibleXRange(minXRange: 8, maxXRange: 25)
+    barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
   }
 }
 

@@ -4,7 +4,7 @@ import Charts
 class StatDaysDataSetManager {
 
   static let shared = StatDaysDataSetManager()
-  var availableStatDays: [StatDay]? = [StatDay]()
+  var currentlyDrawedStatDays: [StatDay]? = [StatDay]()
 
   private let statDaysRepository = StatDaysRepository()
 
@@ -12,7 +12,6 @@ class StatDaysDataSetManager {
   func getAllOrderedByDay() -> BarChartDataSet? {
 
     guard let allStatDays = statDaysRepository.getAll() else { return nil }
-    availableStatDays = allStatDays
 
     let dataEntry = prepateDataEntry(from: allStatDays)
 
@@ -24,7 +23,7 @@ class StatDaysDataSetManager {
       guard let date0 = $0.splitDate, let date1 = $1.splitDate else { return false }
       return date0.rawDate.timeIntervalSince1970 < date1.rawDate.timeIntervalSince1970
     }
-
+    currentlyDrawedStatDays = sortedData
     var dataEntry = [BarChartDataEntry]()
 
     for (index, statDay) in sortedData.enumerated() {

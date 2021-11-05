@@ -10,7 +10,7 @@ class StatDayChartFormatter: IAxisValueFormatter {
   }
 
   private func configureLabels() {
-    guard let statDays = StatDaysDataSetManager.shared.availableStatDays else { return }
+    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStatDays else { return }
     statDays.forEach { statDay in
       guard let splitDate = statDay.splitDate else { return }
       xAxisLabels.append(splitDate.dMM)
