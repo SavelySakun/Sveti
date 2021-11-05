@@ -8,7 +8,7 @@ class DiaryVC: BaseViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    self.updateData()
+    self.updateContent()
   }
 
   override func viewDidLoad() {
@@ -17,7 +17,7 @@ class DiaryVC: BaseViewController {
     setLayout()
   }
 
-  func updateData() {
+  override func updateContent() {
     DispatchQueue.main.async { [self] in
       viewModel.loadNotes()
       updateEmptyViewVisibility()
@@ -88,7 +88,7 @@ extension DiaryVC: UITableViewDataSource {
       let noteToDeleteId = self.viewModel.sections[indexPath.section].notes[indexPath.row].id
       self.viewModel.deleteNote(noteId: noteToDeleteId)
       completion(true)
-      self.updateData()
+      self.updateContent()
     }
 
     let image = UIImage(named: "Delete")?.imageResized(to: .init(width: 22, height: 22))
