@@ -1,8 +1,8 @@
 import Foundation
 
 enum StatsFilterEventType: String {
-  case selectStartDate
-  case selectEndDate
+  case selectMinumumDate
+  case selectMaximumDate
   case changeGrouping
 }
 

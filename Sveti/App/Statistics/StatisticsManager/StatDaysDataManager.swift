@@ -1,6 +1,6 @@
 import Foundation
 
-class StatDaysManager {
+class StatDaysDataManager {
 
   private let statDaysRepository = StatDaysRepository()
 

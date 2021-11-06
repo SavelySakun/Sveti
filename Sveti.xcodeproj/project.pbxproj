@@ -82,7 +82,7 @@
 		FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */; };
 		FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE95226E3738500D12704 /* NewNoteUITests.swift */; };
 		FC8BE9B226E65F3200D12704 /* StatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9B126E65F3200D12704 /* StatDay.swift */; };
-		FC8BE9D526E7AD4100D12704 /* StatDaysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D426E7AD4100D12704 /* StatDaysManager.swift */; };
+		FC8BE9D526E7AD4100D12704 /* StatDaysDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D426E7AD4100D12704 /* StatDaysDataManager.swift */; };
 		FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */; };
 		FC9F93A8272ED30300582765 /* StatDaysDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */; };
 		FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A9272ED3A700582765 /* StatsVM.swift */; };
@@ -224,7 +224,7 @@
 		FC84E8A026CAD1660081CBA2 /* TagGroupNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupNameCell.swift; sourceTree = "<group>"; };
 		FC8BE95226E3738500D12704 /* NewNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteUITests.swift; sourceTree = "<group>"; };
 		FC8BE9B126E65F3200D12704 /* StatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDay.swift; sourceTree = "<group>"; };
-		FC8BE9D426E7AD4100D12704 /* StatDaysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysManager.swift; sourceTree = "<group>"; };
+		FC8BE9D426E7AD4100D12704 /* StatDaysDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataManager.swift; sourceTree = "<group>"; };
 		FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepository.swift; sourceTree = "<group>"; };
 		FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataSetManager.swift; sourceTree = "<group>"; };
 		FC9F93A9272ED3A700582765 /* StatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVM.swift; sourceTree = "<group>"; };
@@ -683,7 +683,7 @@
 		FC8BE9D326E7AD2900D12704 /* StatisticsManager */ = {
 			isa = PBXGroup;
 			children = (
-				FC8BE9D426E7AD4100D12704 /* StatDaysManager.swift */,
+				FC8BE9D426E7AD4100D12704 /* StatDaysDataManager.swift */,
 				FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */,
 			);
 			path = StatisticsManager;
@@ -1044,7 +1044,7 @@
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
 				FC84E89E26CAC9B70081CBA2 /* CurrentVC.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
-				FC8BE9D526E7AD4100D12704 /* StatDaysManager.swift in Sources */,
+				FC8BE9D526E7AD4100D12704 /* StatDaysDataManager.swift in Sources */,
 				FC7E6D9426AC57EC00126B97 /* Result.swift in Sources */,
 				FCEEB2E026CD81F000F7B00F /* TagEvent.swift in Sources */,
 				FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */,

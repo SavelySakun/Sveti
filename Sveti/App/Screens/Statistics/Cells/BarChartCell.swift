@@ -29,7 +29,7 @@ class BarChartCell: Cell {
   private func setDataForChart() {
     let statDaysDataSetManager = StatDaysDataSetManager.shared
 
-    guard let chartDataSet = statDaysDataSetManager.getAllOrderedByDay() else { return }
+    guard let chartDataSet = statDaysDataSetManager.getBarChartDataSet() else { return }
     chartDataSet.colors = [.systemTeal]
     chartDataSet.highlightColor = .systemBlue
     chartDataSet.valueFont = .systemFont(ofSize: 12)

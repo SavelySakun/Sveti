@@ -5,8 +5,8 @@ class StatsTableHeaderView: UIView {
 
   var publisher = PassthroughSubject<Event, Never>()
   let identifier = "StatsTableHeaderView"
-  let startDatePicker = UIDatePicker()
-  let endDatePicker = UIDatePicker()
+  let minimumDatePicker = UIDatePicker()
+  let maximumDatePicker = UIDatePicker()
   let segmentedControl = UISegmentedControl(items: ["Day", "Week", "Month", "Year"])
   let pickersStackView = UIStackView()
 
@@ -26,8 +26,9 @@ class StatsTableHeaderView: UIView {
   }
 
   private func setDatePickers() {
-    [endDatePicker, startDatePicker].forEach { picker in
+    [maximumDatePicker, minimumDatePicker].forEach { picker in
       picker.datePickerMode = .date
+      picker.maximumDate = Date()
     }
     setDatePickersLayout()
   }
@@ -42,7 +43,7 @@ class StatsTableHeaderView: UIView {
     }
 
     pickersStackView.spacing = 12
-    [startDatePicker, calendarImageView, endDatePicker].forEach { view in
+    [minimumDatePicker, calendarImageView, maximumDatePicker].forEach { view in
       pickersStackView.addArrangedSubview(view)
     }
 
@@ -64,18 +65,18 @@ class StatsTableHeaderView: UIView {
   }
 
   private func addTargets() {
-    startDatePicker.addTarget(self, action: #selector(onStartDateSelect), for: .editingDidEnd)
-    endDatePicker.addTarget(self, action: #selector(onEndDateSelect), for: .editingDidEnd)
+    minimumDatePicker.addTarget(self, action: #selector(onMinimumDateSelect), for: .editingDidEnd)
+    maximumDatePicker.addTarget(self, action: #selector(onMaximumDateSelect), for: .editingDidEnd)
     segmentedControl.addTarget(self, action: #selector(onSegmentedControlValueChanged), for: .valueChanged)
   }
 
-  @objc private func onStartDateSelect() {
-    let event = StatsFilterEvent(type: .selectStartDate, value: "")
+  @objc private func onMinimumDateSelect() {
+    let event = StatsFilterEvent(type: .selectMinumumDate, value: minimumDatePicker.date)
     publisher.send(event)
   }
 
-  @objc private func onEndDateSelect() {
-    let event = StatsFilterEvent(type: .selectEndDate, value: "")
+  @objc private func onMaximumDateSelect() {
+    let event = StatsFilterEvent(type: .selectMaximumDate, value: maximumDatePicker.date)
     publisher.send(event)
   }
 
