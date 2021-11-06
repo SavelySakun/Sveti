@@ -14,7 +14,8 @@ class StatsVM: ViewControllerVM {
       guard let maximumDate = event.value as? Date else { return }
       StatDaysDataSetManager.shared.maximumDate = maximumDate
     case .changeGrouping:
-      return
+      guard let groupingType = event.value as? GroupingType else { return }
+      StatDaysDataSetManager.shared.groupingType = groupingType
     case .none:
       return
     }

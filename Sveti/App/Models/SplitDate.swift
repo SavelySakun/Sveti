@@ -8,7 +8,9 @@ class SplitDate: Object {
   @objc dynamic var ddMMyyyy = String()
   @objc dynamic var dMMMMyyyy = String()
   @objc dynamic var dMM = String()
+  @objc dynamic var MM = String()
   @objc dynamic var rawDate = Date()
+
   private var dateFormatter = DateFormatter()
 
   convenience init(rawDate: Date) {
@@ -31,6 +33,7 @@ class SplitDate: Object {
     setDDmmYYYY()
     setDmmmmYYYY()
     setDmm()
+    setMM()
   }
 
   private func setYYYY() {
@@ -56,5 +59,10 @@ class SplitDate: Object {
   private func setDmm() {
     dateFormatter.dateFormat = "d.MM"
     dMM = dateFormatter.string(from: rawDate)
+  }
+
+  private func setMM() {
+    dateFormatter.dateFormat = "MM"
+    MM = dateFormatter.string(from: rawDate)
   }
 }

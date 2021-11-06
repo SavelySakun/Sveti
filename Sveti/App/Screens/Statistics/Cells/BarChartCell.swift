@@ -69,7 +69,7 @@ class BarChartCell: Cell {
   }
 
   private func setVisibleXRange() {
-    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStatDays, !statDays.isEmpty else { return }
+    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStat, !statDays.isEmpty else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
     barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
   }

@@ -86,7 +86,7 @@
 		FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */; };
 		FC9F93A8272ED30300582765 /* StatDaysDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */; };
 		FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A9272ED3A700582765 /* StatsVM.swift */; };
-		FC9F93AC272ED9F800582765 /* DrawableStatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93AB272ED9F800582765 /* DrawableStatDay.swift */; };
+		FC9F93AC272ED9F800582765 /* DrawableStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93AB272ED9F800582765 /* DrawableStat.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
@@ -228,7 +228,7 @@
 		FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepository.swift; sourceTree = "<group>"; };
 		FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataSetManager.swift; sourceTree = "<group>"; };
 		FC9F93A9272ED3A700582765 /* StatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVM.swift; sourceTree = "<group>"; };
-		FC9F93AB272ED9F800582765 /* DrawableStatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableStatDay.swift; sourceTree = "<group>"; };
+		FC9F93AB272ED9F800582765 /* DrawableStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableStat.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -471,6 +471,13 @@
 			path = StatTableHeader;
 			sourceTree = "<group>";
 		};
+		FC42A6F227367D89004A56F9 /* ExtensionsProtocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExtensionsProtocols;
+			sourceTree = "<group>";
+		};
 		FC6C56CF266000FB000188A6 = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +518,7 @@
 		FC6C58A1266136B5000188A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FC42A6F227367D89004A56F9 /* ExtensionsProtocols */,
 				FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */,
 				FC7E6D2926AC037900126B97 /* UIImage.swift */,
 				FC7E6D9326AC57EC00126B97 /* Result.swift */,
@@ -675,7 +683,7 @@
 			isa = PBXGroup;
 			children = (
 				FC8BE9B126E65F3200D12704 /* StatDay.swift */,
-				FC9F93AB272ED9F800582765 /* DrawableStatDay.swift */,
+				FC9F93AB272ED9F800582765 /* DrawableStat.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1061,7 +1069,7 @@
 				FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */,
 				FC7E6D1E26AB1A2600126B97 /* DiaryVC.swift in Sources */,
 				FC7E6D2026AB1F6400126B97 /* DiaryCell.swift in Sources */,
-				FC9F93AC272ED9F800582765 /* DrawableStatDay.swift in Sources */,
+				FC9F93AC272ED9F800582765 /* DrawableStat.swift in Sources */,
 				FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */,
 				FC76B39326810F7700AF209F /* Cell.swift in Sources */,
 				FCB0642E26B5479D00A0494A /* Mood.swift in Sources */,
