@@ -37,4 +37,8 @@ class StatsVC: VCwithTable {
     super.setLayout()
     title = "Statistics"
   }
+
+  override func setViewModel(with dataProvider: TableDataProvider) {
+    viewModel = StatsVM(tableDataProvider: dataProvider)
+  }
 }
