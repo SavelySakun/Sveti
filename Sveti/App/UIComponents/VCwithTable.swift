@@ -21,6 +21,7 @@ class VCwithTable: BaseViewController {
     setLayout()
   }
 
+  /// Provides content for tableView.
   func getDataProvider() -> TableDataProvider? {
     return TableDataProvider(with: nil)
   }

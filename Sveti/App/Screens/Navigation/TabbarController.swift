@@ -18,7 +18,7 @@ class TabbarController: UITabBarController {
     )
 
     let statisticsController = createNavigationController(
-      vc: StatisticsVC(),
+      vc: StatsVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.statistics),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.statisticsFilled),
       tabBarTitle: "Statistics",

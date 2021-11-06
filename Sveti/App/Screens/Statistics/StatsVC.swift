@@ -1,7 +1,18 @@
 import UIKit
 import Charts
 
-class StatisticsVC: VCwithTable {
+class StatsVC: VCwithTable {
+
+  override init(with tableStyle: UITableView.Style = .insetGrouped) {
+    super.init(with: tableStyle)
+    guard let dataProvider = getDataProvider() else { return }
+    setViewModel(with: dataProvider)
+    tableView = StatsTableView(viewModel: viewModel, style: .insetGrouped)
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -19,7 +30,7 @@ class StatisticsVC: VCwithTable {
   }
 
   override func getDataProvider() -> TableDataProvider? {
-    return StatisticsTableDataProvider()
+    return StatsTableDataProvider()
   }
 
   override func setLayout() {

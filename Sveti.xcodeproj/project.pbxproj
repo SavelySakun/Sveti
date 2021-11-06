@@ -21,17 +21,20 @@
 		FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */; };
 		FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */; };
 		FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */; };
-		FC29A67026ECE11200DC87DA /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66F26ECE11200DC87DA /* StatisticsVC.swift */; };
+		FC29A67026ECE11200DC87DA /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66F26ECE11200DC87DA /* StatsVC.swift */; };
 		FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */; };
 		FC29A67526ECEB3800DC87DA /* StatTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */; };
 		FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67726EDDDB600DC87DA /* BarChartCell.swift */; };
-		FC29A67A26EDDFB900DC87DA /* StatisticsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67926EDDFB900DC87DA /* StatisticsTableDataProvider.swift */; };
+		FC29A67A26EDDFB900DC87DA /* StatsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67926EDDFB900DC87DA /* StatsTableDataProvider.swift */; };
 		FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898726A054BF0048E4ED /* NoteEditType.swift */; };
 		FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A898B26A0584D0048E4ED /* SliderCells.swift */; };
 		FC3A899126A05B330048E4ED /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3A899026A05B330048E4ED /* TextView.swift */; };
 		FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */; };
 		FC42A6C627350F8E004A56F9 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C527350F8E004A56F9 /* Array.swift */; };
 		FC42A6C827353DE5004A56F9 /* StatDayValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6C727353DE5004A56F9 /* StatDayValueFormatter.swift */; };
+		FC42A6E8273641D2004A56F9 /* StatsTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6E7273641D2004A56F9 /* StatsTableHeaderView.swift */; };
+		FC42A6EB273642A7004A56F9 /* StatsTableHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6EA273642A7004A56F9 /* StatsTableHeaderVM.swift */; };
+		FC42A6ED2736431F004A56F9 /* StatsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6EC2736431F004A56F9 /* StatsTableView.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
@@ -81,7 +84,7 @@
 		FC8BE9D526E7AD4100D12704 /* StatDaysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D426E7AD4100D12704 /* StatDaysManager.swift */; };
 		FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */; };
 		FC9F93A8272ED30300582765 /* StatDaysDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */; };
-		FC9F93AA272ED3A700582765 /* StatisticsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A9272ED3A700582765 /* StatisticsVM.swift */; };
+		FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A9272ED3A700582765 /* StatsVM.swift */; };
 		FC9F93AC272ED9F800582765 /* DrawableStatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93AB272ED9F800582765 /* DrawableStatDay.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
@@ -160,17 +163,20 @@
 		FC29A66226EC979A00DC87DA /* SvetiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC29A66626EC979A00DC87DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepositoryTests.swift; sourceTree = "<group>"; };
-		FC29A66F26ECE11200DC87DA /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
+		FC29A66F26ECE11200DC87DA /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatStateManagerTest.swift; sourceTree = "<group>"; };
 		FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTestHelper.swift; sourceTree = "<group>"; };
 		FC29A67726EDDDB600DC87DA /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
-		FC29A67926EDDFB900DC87DA /* StatisticsTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTableDataProvider.swift; sourceTree = "<group>"; };
+		FC29A67926EDDFB900DC87DA /* StatsTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableDataProvider.swift; sourceTree = "<group>"; };
 		FC3A898726A054BF0048E4ED /* NoteEditType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditType.swift; sourceTree = "<group>"; };
 		FC3A898B26A0584D0048E4ED /* SliderCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCells.swift; sourceTree = "<group>"; };
 		FC3A899026A05B330048E4ED /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		FC42A6C327350B7E004A56F9 /* StatDayChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDayChartFormatter.swift; sourceTree = "<group>"; };
 		FC42A6C527350F8E004A56F9 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FC42A6C727353DE5004A56F9 /* StatDayValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDayValueFormatter.swift; sourceTree = "<group>"; };
+		FC42A6E7273641D2004A56F9 /* StatsTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableHeaderView.swift; sourceTree = "<group>"; };
+		FC42A6EA273642A7004A56F9 /* StatsTableHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableHeaderVM.swift; sourceTree = "<group>"; };
+		FC42A6EC2736431F004A56F9 /* StatsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableView.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,7 +225,7 @@
 		FC8BE9D426E7AD4100D12704 /* StatDaysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysManager.swift; sourceTree = "<group>"; };
 		FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepository.swift; sourceTree = "<group>"; };
 		FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataSetManager.swift; sourceTree = "<group>"; };
-		FC9F93A9272ED3A700582765 /* StatisticsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVM.swift; sourceTree = "<group>"; };
+		FC9F93A9272ED3A700582765 /* StatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVM.swift; sourceTree = "<group>"; };
 		FC9F93AB272ED9F800582765 /* DrawableStatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableStatDay.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
@@ -373,10 +379,12 @@
 		FC29A66E26ECE0DE00DC87DA /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				FC42A6E92736428F004A56F9 /* StatTableHeader */,
 				FC29A67626EDDDA800DC87DA /* Cells */,
-				FC29A66F26ECE11200DC87DA /* StatisticsVC.swift */,
-				FC9F93A9272ED3A700582765 /* StatisticsVM.swift */,
-				FC29A67926EDDFB900DC87DA /* StatisticsTableDataProvider.swift */,
+				FC29A66F26ECE11200DC87DA /* StatsVC.swift */,
+				FC9F93A9272ED3A700582765 /* StatsVM.swift */,
+				FC29A67926EDDFB900DC87DA /* StatsTableDataProvider.swift */,
+				FC42A6EC2736431F004A56F9 /* StatsTableView.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -449,6 +457,15 @@
 				FC42A6C727353DE5004A56F9 /* StatDayValueFormatter.swift */,
 			);
 			path = ChartsHelpers;
+			sourceTree = "<group>";
+		};
+		FC42A6E92736428F004A56F9 /* StatTableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				FC42A6E7273641D2004A56F9 /* StatsTableHeaderView.swift */,
+				FC42A6EA273642A7004A56F9 /* StatsTableHeaderVM.swift */,
+			);
+			path = StatTableHeader;
 			sourceTree = "<group>";
 		};
 		FC6C56CF266000FB000188A6 = {
@@ -1057,7 +1074,7 @@
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
 				FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */,
 				FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */,
-				FC9F93AA272ED3A700582765 /* StatisticsVM.swift in Sources */,
+				FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */,
 				FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
@@ -1067,8 +1084,9 @@
 				FC7E6DA126AD4CD200126B97 /* EmptyView.swift in Sources */,
 				FCD9AB4D268A333900817746 /* TableSection.swift in Sources */,
 				FC0CCC9426BE8BA8004CDE8A /* TagSectionHeaderView.swift in Sources */,
-				FC29A67A26EDDFB900DC87DA /* StatisticsTableDataProvider.swift in Sources */,
+				FC29A67A26EDDFB900DC87DA /* StatsTableDataProvider.swift in Sources */,
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
+				FC42A6E8273641D2004A56F9 /* StatsTableHeaderView.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
@@ -1081,14 +1099,16 @@
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,
 				FC7E6D9F26AD290E00126B97 /* RealmHelper.swift in Sources */,
 				FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */,
-				FC29A67026ECE11200DC87DA /* StatisticsVC.swift in Sources */,
+				FC29A67026ECE11200DC87DA /* StatsVC.swift in Sources */,
 				FC7E6DC526AF29B500126B97 /* MathHelper.swift in Sources */,
 				FCD9AB50268A336C00817746 /* CellData.swift in Sources */,
+				FC42A6ED2736431F004A56F9 /* StatsTableView.swift in Sources */,
 				FCE3689626D2391000A05271 /* NoTagFoundCell.swift in Sources */,
 				FC84E81D26C7CE040081CBA2 /* CollectionViewSizeConstants.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
 				FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */,
 				FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */,
+				FC42A6EB273642A7004A56F9 /* StatsTableHeaderVM.swift in Sources */,
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
 				FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */,
 				FCE3689D26D268FB00A05271 /* SelectGroupTableDataProvider.swift in Sources */,

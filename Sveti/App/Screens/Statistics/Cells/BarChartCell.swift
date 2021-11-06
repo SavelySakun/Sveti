@@ -10,6 +10,7 @@ class BarChartCell: Cell {
   }
 
   override func setLayout() {
+    selectionStyle = .none
     contentView.addSubview(barChartView)
     barChartView.snp.makeConstraints { (make) in
       make.top.left.equalToSuperview().offset(UIUtils.defaultOffset)
