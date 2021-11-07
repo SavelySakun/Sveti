@@ -19,7 +19,7 @@ class MathHelper {
     return Int(averageMood)
   }
 
-  func getMoodScore(from rawFloat: Float, digits: Int = 1) -> String {
+  func getMoodScore(from rawFloat: Double, digits: Int = 1) -> String {
 
     let score = String(format: "%.\(digits)f", rawFloat)
 
@@ -31,12 +31,14 @@ class MathHelper {
     }
   }
 
-  func calculateAverage(_ values: [Float]) -> Float {
-    var total: Float = 0.0
+  func average<T: Numeric & Comparable & FloatingPoint>(_ values: [T]) -> T {
+    var total: T = T(0)
+
     values.forEach { value in
       total += value
     }
-    return total / Float(values.count)
+
+    return total / T(values.count)
   }
 
 }

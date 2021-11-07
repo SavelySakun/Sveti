@@ -15,11 +15,11 @@ class NewNoteVM: ViewControllerVM {
     try! realm.write {
       switch eventType {
       case .emotionalStateChange:
-        guard let value = event.value as? Float else { return }
+        guard let value = event.value as? Double else { return }
         note.mood?.emotionalState = value
 
       case .physicalStateChange:
-        guard let value = event.value as? Float else { return }
+        guard let value = event.value as? Double else { return }
         note.mood?.physicalState = value
 
       case .commentChange:
@@ -42,7 +42,7 @@ class NewNoteVM: ViewControllerVM {
 
   func saveCurrentNote() {
     NotesRepository().save(note)
-    StatDaysManager().updateStat(with: note)
+    StatDaysDataManager().updateStat(with: note)
   }
 
 

@@ -1,6 +1,6 @@
 import Foundation
 
-class StatisticsTableDataProvider: TableDataProvider {
+class StatsTableDataProvider: TableDataProvider {
 
   override func configureSections(with data: Any? = nil) -> [TableSection] {
     let tableSections = [

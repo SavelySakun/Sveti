@@ -6,7 +6,7 @@ import RealmSwift
 class RealmHelper {
 
   static let shared = RealmHelper()
-  private let schemaVersion: UInt64 = 0
+  private let schemaVersion: UInt64 = 1
 
   func configureRealm() {
     let config = Realm.Configuration(

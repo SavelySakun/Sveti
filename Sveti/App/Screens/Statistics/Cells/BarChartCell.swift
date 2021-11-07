@@ -10,6 +10,7 @@ class BarChartCell: Cell {
   }
 
   override func setLayout() {
+    selectionStyle = .none
     contentView.addSubview(barChartView)
     barChartView.snp.makeConstraints { (make) in
       make.top.left.equalToSuperview().offset(UIUtils.defaultOffset)
@@ -28,7 +29,7 @@ class BarChartCell: Cell {
   private func setDataForChart() {
     let statDaysDataSetManager = StatDaysDataSetManager.shared
 
-    guard let chartDataSet = statDaysDataSetManager.getAllOrderedByDay() else { return }
+    guard let chartDataSet = statDaysDataSetManager.getBarChartDataSet() else { return }
     chartDataSet.colors = [.systemTeal]
     chartDataSet.highlightColor = .systemBlue
     chartDataSet.valueFont = .systemFont(ofSize: 12)
@@ -44,6 +45,7 @@ class BarChartCell: Cell {
     // General
     barChartView.backgroundColor = .white
     barChartView.legend.enabled = false
+    barChartView.extraTopOffset = 20.0
 
     let leftAxis = barChartView.leftAxis
     let xAxis = barChartView.xAxis
@@ -68,7 +70,7 @@ class BarChartCell: Cell {
   }
 
   private func setVisibleXRange() {
-    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStatDays, !statDays.isEmpty else { return }
+    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStat, !statDays.isEmpty else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
     barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
   }

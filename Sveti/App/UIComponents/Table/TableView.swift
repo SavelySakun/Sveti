@@ -26,7 +26,7 @@ class TableView: UITableView {
     configureTable()
 	}
 
-	private func configureTable() { }
+	func configureTable() { }
 
   func registerCells() {
     sections.forEach { section in

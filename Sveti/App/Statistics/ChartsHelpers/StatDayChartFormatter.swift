@@ -10,10 +10,21 @@ class StatDayChartFormatter: IAxisValueFormatter {
   }
 
   private func configureLabels() {
-    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStatDays else { return }
-    statDays.forEach { statDay in
-      guard let splitDate = statDay.splitDate else { return }
-      xAxisLabels.append(splitDate.dMM)
+    guard let currentlyDrawedStat = StatDaysDataSetManager.shared.currentlyDrawedStat else { return }
+    let groupingType = StatDaysDataSetManager.shared.groupingType
+
+    currentlyDrawedStat.forEach { drawableStat in
+      let splitDate = drawableStat.splitDate
+      switch groupingType {
+      case .day:
+        xAxisLabels.append(splitDate.dMM)
+      case .week:
+        xAxisLabels.append(splitDate.ddMMyy)
+      case .month:
+        xAxisLabels.append(splitDate.MMYY)
+      case .year:
+        xAxisLabels.append(splitDate.yyyy)
+      }
     }
   }
 
