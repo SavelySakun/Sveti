@@ -2,8 +2,9 @@ import UIKit
 import Charts
 
 class BarChartCell: Cell {
-
   private let barChartView = BarChartView()
+  private let noDataTextImage = ImageTextView()
+  private let dataSetManager = StatDaysDataSetManager.shared
 
   override func configureSelf(with viewModel: CellVM) {
     configureChart()
@@ -17,26 +18,28 @@ class BarChartCell: Cell {
       make.right.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
       make.height.equalTo(250)
     }
+    setNoDataTextImage()
   }
 
   private func configureChart() {
     barChartView.delegate = self
     setDataForChart()
+    guard dataSetManager.filterResult == .success else {
+      handleIfNoData()
+      return
+    }
+    barChartView.isHidden = false
+    noDataTextImage.isHidden = true
     setChartStyle()
     setVisibleXRange()
   }
 
   private func setDataForChart() {
-    let statDaysDataSetManager = StatDaysDataSetManager.shared
-
-    guard let chartDataSet = statDaysDataSetManager.getBarChartDataSet() else { return }
+    guard let chartDataSet = dataSetManager.getBarChartDataSet() else { return }
     chartDataSet.colors = [.systemTeal]
     chartDataSet.highlightColor = .systemBlue
     chartDataSet.valueFont = .systemFont(ofSize: 12)
     chartDataSet.valueFormatter = StatDayValueFormatter()
-
-    // https://github.com/danielgindi/Charts/issues/1340 по хaxis инфа как делать кастомный текст
-
     let barChartData = BarChartData(dataSet: chartDataSet)
     barChartView.data = barChartData
   }
@@ -73,6 +76,30 @@ class BarChartCell: Cell {
     guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStat, !statDays.isEmpty else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
     barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
+  }
+
+  private func setNoDataTextImage() {
+    contentView.addSubview(noDataTextImage)
+    noDataTextImage.snp.makeConstraints { (make) in
+      make.centerX.centerY.equalToSuperview()
+      make.width.equalToSuperview().multipliedBy(0.8)
+      make.height.equalToSuperview().multipliedBy(0.7)
+    }
+  }
+
+  private func handleIfNoData() {
+    barChartView.isHidden = true
+    noDataTextImage.isHidden = false
+    switch StatDaysDataSetManager.shared.filterResult {
+    case .noDataAtAll:
+      noDataTextImage.textLabel.text = "There is nothing to analyze yet. Add the first note about how you feel."
+      noDataTextImage.imageView.image = UIImage(named: "noDataAtAll")
+    case .success:
+      return
+    case .noDataInTimeRange:
+      noDataTextImage.textLabel.text = "There are no notes in the specified time range. Only the cat was found."
+      noDataTextImage.imageView.image = UIImage(named: "noDataFilter")
+    }
   }
 }
 
