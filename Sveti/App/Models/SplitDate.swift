@@ -21,7 +21,7 @@ class SplitDate: Object {
 
   convenience init(ddMMyyyy: String) {
     self.init()
-    dateFormatter.dateFormat = "ddMMyyyy"
+    dateFormatter.dateFormat = "dd.MM.yyyy"
     let rawDate = dateFormatter.date(from: ddMMyyyy)
     self.rawDate = rawDate ?? Date()
     defaultSetup()

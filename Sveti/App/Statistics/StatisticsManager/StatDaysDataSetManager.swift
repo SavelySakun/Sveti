@@ -5,7 +5,7 @@ class StatDaysDataSetManager {
 
   static let shared = StatDaysDataSetManager()
   var currentlyDrawedStat: [DrawableStat]? = [DrawableStat]()
-  var minimumDate = Date()
+  var minimumDate = SplitDate(ddMMyyyy: "01.01.2015").rawDate
   var maximumDate = Date()
   var groupingType: GroupingType = .day
 
