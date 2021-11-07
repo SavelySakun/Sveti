@@ -2,7 +2,7 @@ import UIKit
 
 class DiaryVC: BaseViewController {
 
-  private let emptyView = EmptyView()
+  private let emptyView = ImageTextView(imageName: "2cats", text: "Add the first note in the \"New note\" section")
   private let tableView = UITableView()
   private let viewModel = DiaryVM()
 
@@ -47,6 +47,8 @@ class DiaryVC: BaseViewController {
     view.addSubview(emptyView)
     updateEmptyViewVisibility()
     emptyView.snp.makeConstraints { (make) in
+      make.height.equalToSuperview().multipliedBy(0.3)
+      make.width.equalToSuperview().multipliedBy(0.6)
       make.centerX.centerY.equalToSuperview()
     }
   }
