@@ -12,21 +12,21 @@ class DrawableStat {
     var totalAverageEmotional: Double = 0.0
     var totalAveragePhysical: Double = 0.0
     var totalAverageState: Double = 0.0
+    let math = MathHelper()
 
     statDays.forEach { statDay in
-      totalAverageEmotional += getAverage(data: statDay.emotionalStates.sorted())
-      totalAveragePhysical += getAverage(data: statDay.phyzicalStates.sorted())
-      let averageStateFloat = MathHelper().calculateAverage([Float(totalAverageEmotional), Float(totalAveragePhysical)])
-      totalAverageState += Double(averageStateFloat)
+      totalAverageEmotional += math.average(statDay.emotionalStates.sorted())
+      totalAveragePhysical += math.average(statDay.phyzicalStates.sorted())
+
+      let totalStat = [statDay.emotionalStates.sorted(),
+                       statDay.phyzicalStates.sorted()].flatMap { $0 }
+
+      totalAverageState += math.average(totalStat)
     }
 
-    self.averageEmotional = totalAverageEmotional / Double(statDays.count)
-    self.averagePhysical = totalAveragePhysical / Double(statDays.count)
-    self.averageState = totalAverageState / Double(statDays.count)
-  }
-
-  private func getAverage(data: [Float]) -> Double {
-    let averageFloat = MathHelper().calculateAverage(data)
-    return Double(averageFloat)
+    let totalStatDays = Double(statDays.count)
+    self.averageEmotional = totalAverageEmotional / totalStatDays
+    self.averagePhysical = totalAveragePhysical / totalStatDays
+    self.averageState = totalAverageState / totalStatDays
   }
 }

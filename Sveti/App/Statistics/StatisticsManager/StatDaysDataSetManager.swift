@@ -5,8 +5,8 @@ class StatDaysDataSetManager {
 
   static let shared = StatDaysDataSetManager()
   var currentlyDrawedStat: [DrawableStat]? = [DrawableStat]()
-  var minimumDate = SplitDate(ddMMyyyy: "01.01.2015").rawDate
-  var maximumDate = Date()
+  var minimumDate = SplitDate(ddMMyyyy: "01.01.2015").endOfDay
+  var maximumDate = SplitDate(rawDate: Date()).endOfDay
   var groupingType: GroupingType = .day
 
   private let statDaysRepository = StatDaysRepository()
@@ -59,7 +59,7 @@ class StatDaysDataSetManager {
     case .day:
       return data.groupedBy(dateComponents: [.year, .month, .day])
     case .week:
-      return data.groupedBy(dateComponents: [.year, .month, .weekOfMonth])
+      return data.groupedBy(dateComponents: [.yearForWeekOfYear, .weekOfMonth, .weekOfYear])
     case .month:
       return data.groupedBy(dateComponents: [.year, .month])
     case .year:

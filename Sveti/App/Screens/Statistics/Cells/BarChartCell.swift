@@ -45,6 +45,7 @@ class BarChartCell: Cell {
     // General
     barChartView.backgroundColor = .white
     barChartView.legend.enabled = false
+    barChartView.extraTopOffset = 20.0
 
     let leftAxis = barChartView.leftAxis
     let xAxis = barChartView.xAxis

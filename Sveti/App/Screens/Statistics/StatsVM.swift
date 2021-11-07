@@ -9,10 +9,10 @@ class StatsVM: ViewControllerVM {
     switch eventType {
     case .selectMinumumDate:
       guard let minimumDate = event.value as? Date else { return }
-      StatDaysDataSetManager.shared.minimumDate = minimumDate
+      StatDaysDataSetManager.shared.minimumDate = SplitDate(rawDate: minimumDate).startOfDay
     case .selectMaximumDate:
       guard let maximumDate = event.value as? Date else { return }
-      StatDaysDataSetManager.shared.maximumDate = maximumDate
+      StatDaysDataSetManager.shared.maximumDate = SplitDate(rawDate: maximumDate).endOfDay
     case .changeGrouping:
       guard let groupingType = event.value as? GroupingType else { return }
       StatDaysDataSetManager.shared.groupingType = groupingType

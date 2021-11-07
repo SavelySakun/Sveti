@@ -17,11 +17,11 @@ class StatDayChartFormatter: IAxisValueFormatter {
       let splitDate = drawableStat.splitDate
       switch groupingType {
       case .day:
-        xAxisLabels.append(splitDate.ddMMyyyy)
+        xAxisLabels.append(splitDate.dMM)
       case .week:
-        xAxisLabels.append(splitDate.ddMMyyyy)
+        xAxisLabels.append(splitDate.ddMMyy)
       case .month:
-        xAxisLabels.append(splitDate.MM)
+        xAxisLabels.append(splitDate.MMYY)
       case .year:
         xAxisLabels.append(splitDate.yyyy)
       }
