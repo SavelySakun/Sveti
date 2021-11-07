@@ -8,11 +8,15 @@ class StatDaysDataSetManager {
   var minimumDate = SplitDate(ddMMyyyy: "01.01.2015").endOfDay
   var maximumDate = SplitDate(rawDate: Date()).endOfDay
   var groupingType: GroupingType = .day
+  var filterResult: StatFilterResult = .success
 
   private let statDaysRepository = StatDaysRepository()
 
   func getBarChartDataSet() -> BarChartDataSet? {
-    guard let allStatDays = statDaysRepository.getAll() else { return nil }
+    guard let allStatDays = statDaysRepository.getAll(), !allStatDays.isEmpty else {
+      filterResult = .noDataAtAll
+      return nil
+    }
     let dataEntry = prepateDataEntry(from: allStatDays)
     return BarChartDataSet(entries: dataEntry)
   }
@@ -31,6 +35,7 @@ class StatDaysDataSetManager {
       dataEntry.append(BarChartDataEntry(x: index, y: drawableStat.averageState))
     }
 
+    filterResult = dataEntry.isEmpty ? .noDataInTimeRange : .success
     return dataEntry
   }
 

@@ -1,8 +1,14 @@
 import UIKit
 
 class ImageTextView: UIView {
-  private let imageView = UIImageView()
-  private let textLabel = UILabel()
+  let imageView = UIImageView()
+  let textLabel = UILabel()
+  let contentStackView = UIStackView()
+
+  init() {
+    super.init(frame: .zero)
+    setLayout()
+  }
 
   init(imageName: String, text: String) {
     super.init(frame: .zero)
@@ -24,13 +30,18 @@ class ImageTextView: UIView {
     textLabel.textAlignment = .center
     addSubview(imageView)
     addSubview(textLabel)
-    imageView.snp.makeConstraints { (make) in
-      make.top.left.right.equalToSuperview()
+
+    contentStackView.addArrangedSubview(imageView)
+    contentStackView.addArrangedSubview(textLabel)
+    contentStackView.axis = .vertical
+    contentStackView.alignment = .center
+
+    addSubview(contentStackView)
+    contentStackView.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
     }
     textLabel.snp.makeConstraints { (make) in
-      make.top.equalTo(imageView.snp.bottom).offset(10)
-      make.right.bottom.left.equalToSuperview()
-      make.height.lessThanOrEqualTo(80)
+      make.height.equalTo(60)
     }
   }
 

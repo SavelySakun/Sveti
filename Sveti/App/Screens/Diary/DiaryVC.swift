@@ -13,7 +13,6 @@ class DiaryVC: BaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     setLayout()
   }
 
@@ -47,8 +46,8 @@ class DiaryVC: BaseViewController {
     view.addSubview(emptyView)
     updateEmptyViewVisibility()
     emptyView.snp.makeConstraints { (make) in
-      make.height.equalToSuperview().multipliedBy(0.3)
-      make.width.equalToSuperview().multipliedBy(0.6)
+      make.height.equalToSuperview().multipliedBy(0.4)
+      make.width.equalToSuperview().multipliedBy(0.7)
       make.centerX.centerY.equalToSuperview()
     }
   }
