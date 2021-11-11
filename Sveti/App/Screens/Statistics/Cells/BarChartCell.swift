@@ -4,6 +4,7 @@ import Charts
 class BarChartCell: Cell {
   private let barChartView = BarChartView()
   private let noDataTextImage = ImageTextView()
+  private let currentStatLabel = UILabel()
   private var contentGenerationResult: StatGenerationResult {
     StatDayContentManager.shared.contentGenerationResult
   }
@@ -16,9 +17,17 @@ class BarChartCell: Cell {
     selectionStyle = .none
     contentView.addSubview(barChartView)
     barChartView.snp.makeConstraints { (make) in
-      make.top.left.equalToSuperview().offset(UIUtils.defaultOffset)
-      make.right.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
+      make.left.top.equalToSuperview().offset(UIUtils.defaultOffset)
+      make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
       make.height.equalTo(250)
+    }
+    currentStatLabel.text = "Average emotional & physical state"
+    currentStatLabel.textColor = .systemGray
+    contentView.addSubview(currentStatLabel)
+    currentStatLabel.snp.makeConstraints { (make) in
+      make.centerX.equalTo(barChartView)
+      make.top.equalTo(barChartView.snp.bottom).offset(UIUtils.defaultOffset)
+      make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
     }
     setNoDataTextImage()
   }
