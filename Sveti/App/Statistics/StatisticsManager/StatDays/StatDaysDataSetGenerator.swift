@@ -1,24 +1,25 @@
 import Foundation
 import Charts
 
-class StatDaysDataSetManager {
+class StatDaysDataSetGenerator {
+  private let settings: StatSettings
+  private let contentManager: StatDayContentManager
 
-  static let shared = StatDaysDataSetManager()
-  var currentlyDrawedStat: [DrawableStat]? = [DrawableStat]()
-  var minimumDate = SplitDate(ddMMyyyy: "01.01.2015").endOfDay
-  var maximumDate = SplitDate(rawDate: Date()).endOfDay
-  var groupingType: GroupingType = .day
-  var filterResult: StatFilterResult = .success
+  init(settingsManager: StatSettingsManager, contentManager: StatDayContentManager) {
+    self.settings = settingsManager.settings
+    self.contentManager = contentManager
+  }
 
   private let statDaysRepository = StatDaysRepository()
 
-  func getBarChartDataSet() -> BarChartDataSet? {
+  /// Generate content for days average mood bar chart.
+  func generateDataForManager() {
     guard let allStatDays = statDaysRepository.getAll(), !allStatDays.isEmpty else {
-      filterResult = .noDataAtAll
-      return nil
+      contentManager.contentGenerationResult = .noDataAtAll
+      return
     }
     let dataEntry = prepateDataEntry(from: allStatDays)
-    return BarChartDataSet(entries: dataEntry)
+    contentManager.dataSet = BarChartDataSet(entries: dataEntry)
   }
 
   private func prepateDataEntry(from data: [StatDay]) -> [BarChartDataEntry] {
@@ -27,7 +28,7 @@ class StatDaysDataSetManager {
     let drawableStats = generateDrawableStat(groupedData: grouped)
     let orderedByDateStats = orderByDate(data: drawableStats)
 
-    currentlyDrawedStat = orderedByDateStats
+    contentManager.currentlyDrawedStat = orderedByDateStats
     var dataEntry = [BarChartDataEntry]()
 
     for (index, drawableStat) in orderedByDateStats.enumerated() {
@@ -35,7 +36,7 @@ class StatDaysDataSetManager {
       dataEntry.append(BarChartDataEntry(x: index, y: drawableStat.averageState))
     }
 
-    filterResult = dataEntry.isEmpty ? .noDataInTimeRange : .success
+    contentManager.contentGenerationResult = dataEntry.isEmpty ? .noDataInTimeRange : .success
     return dataEntry
   }
 
@@ -51,8 +52,8 @@ class StatDaysDataSetManager {
   private func filterByTimeRange(data: [StatDay]) -> [StatDay] {
     let timeRangeFilteredData = data.filter { statDay in
       guard let splitDate = statDay.splitDate else { return false }
-      let minimumDateInterval = minimumDate.timeIntervalSince1970
-      let maximumDateInterval = maximumDate.timeIntervalSince1970
+      let minimumDateInterval = settings.minimumDate.timeIntervalSince1970
+      let maximumDateInterval = settings.maximumDate.timeIntervalSince1970
       let statDayInterval = splitDate.rawDate.timeIntervalSince1970
       return statDayInterval >= minimumDateInterval && statDayInterval <= maximumDateInterval
     }
@@ -60,7 +61,7 @@ class StatDaysDataSetManager {
   }
 
   private func group(data: [StatDay]) -> [Date: [StatDay]] {
-    switch groupingType {
+    switch settings.groupingType {
     case .day:
       return data.groupedBy(dateComponents: [.year, .month, .day])
     case .week:

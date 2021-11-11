@@ -36,7 +36,16 @@
 		FC42A6ED2736431F004A56F9 /* StatsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6EC2736431F004A56F9 /* StatsTableView.swift */; };
 		FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6EE27366396004A56F9 /* StatsFilterEvent.swift */; };
 		FC42A6F127366615004A56F9 /* GroupingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6F027366615004A56F9 /* GroupingType.swift */; };
-		FC42A6F42737FE78004A56F9 /* StatFilterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6F32737FE78004A56F9 /* StatFilterResult.swift */; };
+		FC42A6F42737FE78004A56F9 /* StatGenerationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6F32737FE78004A56F9 /* StatGenerationResult.swift */; };
+		FC42A74E27397E17004A56F9 /* StatSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A74D27397E17004A56F9 /* StatSettingsManager.swift */; };
+		FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A74F27397E21004A56F9 /* StatSettings.swift */; };
+		FC42A75227397EB1004A56F9 /* StatsContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */; };
+		FC42A75427397F86004A56F9 /* StatsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A75327397F86004A56F9 /* StatsDataSource.swift */; };
+		FC42A792273ABD00004A56F9 /* StatDayContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A791273ABD00004A56F9 /* StatDayContentManager.swift */; };
+		FC42A796273ABDE8004A56F9 /* IStatSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A795273ABDE8004A56F9 /* IStatSettingsManager.swift */; };
+		FC42A798273ABE92004A56F9 /* IStatContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A797273ABE92004A56F9 /* IStatContentManager.swift */; };
+		FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */; };
+		FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A79C273AC031004A56F9 /* IRepository.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
@@ -85,7 +94,7 @@
 		FC8BE9B226E65F3200D12704 /* StatDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9B126E65F3200D12704 /* StatDay.swift */; };
 		FC8BE9D526E7AD4100D12704 /* StatDaysDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D426E7AD4100D12704 /* StatDaysDataManager.swift */; };
 		FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */; };
-		FC9F93A8272ED30300582765 /* StatDaysDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */; };
+		FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A7272ED30300582765 /* StatDaysDataSetGenerator.swift */; };
 		FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A9272ED3A700582765 /* StatsVM.swift */; };
 		FC9F93AC272ED9F800582765 /* DrawableStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93AB272ED9F800582765 /* DrawableStat.swift */; };
 		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
@@ -180,7 +189,16 @@
 		FC42A6EC2736431F004A56F9 /* StatsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableView.swift; sourceTree = "<group>"; };
 		FC42A6EE27366396004A56F9 /* StatsFilterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsFilterEvent.swift; sourceTree = "<group>"; };
 		FC42A6F027366615004A56F9 /* GroupingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingType.swift; sourceTree = "<group>"; };
-		FC42A6F32737FE78004A56F9 /* StatFilterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatFilterResult.swift; sourceTree = "<group>"; };
+		FC42A6F32737FE78004A56F9 /* StatGenerationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatGenerationResult.swift; sourceTree = "<group>"; };
+		FC42A74D27397E17004A56F9 /* StatSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSettingsManager.swift; sourceTree = "<group>"; };
+		FC42A74F27397E21004A56F9 /* StatSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSettings.swift; sourceTree = "<group>"; };
+		FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContentRepository.swift; sourceTree = "<group>"; };
+		FC42A75327397F86004A56F9 /* StatsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDataSource.swift; sourceTree = "<group>"; };
+		FC42A791273ABD00004A56F9 /* StatDayContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDayContentManager.swift; sourceTree = "<group>"; };
+		FC42A795273ABDE8004A56F9 /* IStatSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStatSettingsManager.swift; sourceTree = "<group>"; };
+		FC42A797273ABE92004A56F9 /* IStatContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStatContentManager.swift; sourceTree = "<group>"; };
+		FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSettingsRepository.swift; sourceTree = "<group>"; };
+		FC42A79C273AC031004A56F9 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,7 +246,7 @@
 		FC8BE9B126E65F3200D12704 /* StatDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDay.swift; sourceTree = "<group>"; };
 		FC8BE9D426E7AD4100D12704 /* StatDaysDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataManager.swift; sourceTree = "<group>"; };
 		FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepository.swift; sourceTree = "<group>"; };
-		FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataSetManager.swift; sourceTree = "<group>"; };
+		FC9F93A7272ED30300582765 /* StatDaysDataSetGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataSetGenerator.swift; sourceTree = "<group>"; };
 		FC9F93A9272ED3A700582765 /* StatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVM.swift; sourceTree = "<group>"; };
 		FC9F93AB272ED9F800582765 /* DrawableStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableStat.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
@@ -389,7 +407,7 @@
 				FC9F93A9272ED3A700582765 /* StatsVM.swift */,
 				FC29A67926EDDFB900DC87DA /* StatsTableDataProvider.swift */,
 				FC42A6EC2736431F004A56F9 /* StatsTableView.swift */,
-				FC42A6F32737FE78004A56F9 /* StatFilterResult.swift */,
+				FC42A6F32737FE78004A56F9 /* StatGenerationResult.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -481,6 +499,32 @@
 			path = ExtensionsProtocols;
 			sourceTree = "<group>";
 		};
+		FC42A793273ABD4A004A56F9 /* StatDays */ = {
+			isa = PBXGroup;
+			children = (
+				FC8BE9D426E7AD4100D12704 /* StatDaysDataManager.swift */,
+				FC9F93A7272ED30300582765 /* StatDaysDataSetGenerator.swift */,
+			);
+			path = StatDays;
+			sourceTree = "<group>";
+		};
+		FC42A794273ABDD1004A56F9 /* StatProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				FC42A795273ABDE8004A56F9 /* IStatSettingsManager.swift */,
+				FC42A797273ABE92004A56F9 /* IStatContentManager.swift */,
+			);
+			path = StatProtocols;
+			sourceTree = "<group>";
+		};
+		FC42A79B273AC022004A56F9 /* RepoProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				FC42A79C273AC031004A56F9 /* IRepository.swift */,
+			);
+			path = RepoProtocols;
+			sourceTree = "<group>";
+		};
 		FC6C56CF266000FB000188A6 = {
 			isa = PBXGroup;
 			children = (
@@ -546,11 +590,14 @@
 		FC7E6D1526AB039200126B97 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				FC42A79B273AC022004A56F9 /* RepoProtocols */,
 				FC84E81E26C8FC210081CBA2 /* Tags */,
 				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 				FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */,
 				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
 				FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */,
+				FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */,
+				FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -685,8 +732,10 @@
 		FC8BE9B326E65F3600D12704 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				FC42A74F27397E21004A56F9 /* StatSettings.swift */,
 				FC8BE9B126E65F3200D12704 /* StatDay.swift */,
 				FC9F93AB272ED9F800582765 /* DrawableStat.swift */,
+				FC42A75327397F86004A56F9 /* StatsDataSource.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -694,8 +743,10 @@
 		FC8BE9D326E7AD2900D12704 /* StatisticsManager */ = {
 			isa = PBXGroup;
 			children = (
-				FC8BE9D426E7AD4100D12704 /* StatDaysDataManager.swift */,
-				FC9F93A7272ED30300582765 /* StatDaysDataSetManager.swift */,
+				FC42A74D27397E17004A56F9 /* StatSettingsManager.swift */,
+				FC42A791273ABD00004A56F9 /* StatDayContentManager.swift */,
+				FC42A793273ABD4A004A56F9 /* StatDays */,
+				FC42A794273ABDD1004A56F9 /* StatProtocols */,
 			);
 			path = StatisticsManager;
 			sourceTree = "<group>";
@@ -1052,6 +1103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */,
+				FC42A792273ABD00004A56F9 /* StatDayContentManager.swift in Sources */,
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
 				FC84E89E26CAC9B70081CBA2 /* CurrentVC.swift in Sources */,
 				FC6C58E526653526000188A6 /* NewNoteVM.swift in Sources */,
@@ -1068,6 +1120,7 @@
 				FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */,
 				FC42A6C827353DE5004A56F9 /* StatDayValueFormatter.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
+				FC42A75427397F86004A56F9 /* StatsDataSource.swift in Sources */,
 				FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */,
 				FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */,
 				FC7E6D1E26AB1A2600126B97 /* DiaryVC.swift in Sources */,
@@ -1088,7 +1141,9 @@
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
 				FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */,
 				FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */,
+				FC42A798273ABE92004A56F9 /* IStatContentManager.swift in Sources */,
 				FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */,
+				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */,
 				FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
@@ -1101,10 +1156,11 @@
 				FC29A67A26EDDFB900DC87DA /* StatsTableDataProvider.swift in Sources */,
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FC42A6E8273641D2004A56F9 /* StatsTableHeaderView.swift in Sources */,
+				FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
-				FC9F93A8272ED30300582765 /* StatDaysDataSetManager.swift in Sources */,
+				FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */,
 				FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */,
 				FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */,
 				FC7E6D9726AC625800126B97 /* DiaryVM.swift in Sources */,
@@ -1117,7 +1173,7 @@
 				FC7E6DC526AF29B500126B97 /* MathHelper.swift in Sources */,
 				FCD9AB50268A336C00817746 /* CellData.swift in Sources */,
 				FC42A6ED2736431F004A56F9 /* StatsTableView.swift in Sources */,
-				FC42A6F42737FE78004A56F9 /* StatFilterResult.swift in Sources */,
+				FC42A6F42737FE78004A56F9 /* StatGenerationResult.swift in Sources */,
 				FCE3689626D2391000A05271 /* NoTagFoundCell.swift in Sources */,
 				FC84E81D26C7CE040081CBA2 /* CollectionViewSizeConstants.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
@@ -1129,9 +1185,12 @@
 				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,
 				FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* TagCollectionView.swift in Sources */,
+				FC42A74E27397E17004A56F9 /* StatSettingsManager.swift in Sources */,
+				FC42A75227397EB1004A56F9 /* StatsContentRepository.swift in Sources */,
 				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
 				FCEEB21926CBF2D000F7B00F /* IconButton.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
+				FC42A796273ABDE8004A56F9 /* IStatSettingsManager.swift in Sources */,
 				FC6C58C02663D640000188A6 /* TagCell.swift in Sources */,
 				FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */,
 				FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */,
@@ -1148,6 +1207,7 @@
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
 				FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
+				FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

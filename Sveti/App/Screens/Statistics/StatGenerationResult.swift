@@ -1,6 +1,6 @@
 import Foundation
 
-enum StatFilterResult {
+enum StatGenerationResult {
   case success
   case noDataInTimeRange
   case noDataAtAll

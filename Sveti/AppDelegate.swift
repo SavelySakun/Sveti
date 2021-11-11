@@ -26,5 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   private func dataSetup() {
     TagsRepository().saveDefaultTags()
+    StatSettingsRepository().saveDefaultSettings()
   }
 }

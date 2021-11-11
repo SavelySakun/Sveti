@@ -10,8 +10,8 @@ class StatDayChartFormatter: IAxisValueFormatter {
   }
 
   private func configureLabels() {
-    guard let currentlyDrawedStat = StatDaysDataSetManager.shared.currentlyDrawedStat else { return }
-    let groupingType = StatDaysDataSetManager.shared.groupingType
+    guard let currentlyDrawedStat = StatDayContentManager.shared.currentlyDrawedStat else { return }
+    let groupingType = StatSettingsManager.shared.settings.groupingType
 
     currentlyDrawedStat.forEach { drawableStat in
       let splitDate = drawableStat.splitDate
