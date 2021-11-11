@@ -36,9 +36,26 @@ class StatsVC: VCwithTable {
   override func setLayout() {
     super.setLayout()
     title = "Statistics"
+    setNavigationBar()
   }
 
   override func setViewModel(with dataProvider: TableDataProvider) {
     viewModel = StatsVM(tableDataProvider: dataProvider)
+  }
+
+  private func setNavigationBar() {
+    let button = UIButton()
+    button.snp.makeConstraints { (make) in
+      make.height.width.equalTo(25)
+    }
+    let image = UIImage(named: "filterSettings")?.withRenderingMode(.alwaysTemplate)
+    button.setTitleColor(.red, for: .selected)
+    button.setImage(image, for: .normal)
+    button.addTarget(self, action: #selector(showStatAverageSettings), for: .touchUpInside)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+  }
+
+  @objc func showStatAverageSettings() {
+
   }
 }
