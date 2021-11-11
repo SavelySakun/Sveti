@@ -14,6 +14,7 @@ class StatsTableHeaderView: UIView {
     super.init(frame: frame)
     setLayout()
     addTargets()
+    setDefaultValues()
   }
 
   required init?(coder: NSCoder) {
@@ -69,6 +70,13 @@ class StatsTableHeaderView: UIView {
     minimumDatePicker.addTarget(self, action: #selector(onMinimumDateSelect), for: .editingDidEnd)
     maximumDatePicker.addTarget(self, action: #selector(onMaximumDateSelect), for: .editingDidEnd)
     segmentedControl.addTarget(self, action: #selector(onSegmentedControlValueChanged), for: .valueChanged)
+  }
+
+  private func setDefaultValues() {
+    let settings = StatSettingsManager.shared.settings
+    minimumDatePicker.date = settings.minimumDate
+    maximumDatePicker.date = settings.maximumDate
+    segmentedControl.selectedSegmentIndex = settings.groupingType.rawValue
   }
 
   @objc private func onMinimumDateSelect() {

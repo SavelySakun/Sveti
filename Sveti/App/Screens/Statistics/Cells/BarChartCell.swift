@@ -4,7 +4,9 @@ import Charts
 class BarChartCell: Cell {
   private let barChartView = BarChartView()
   private let noDataTextImage = ImageTextView()
-  private let dataSetManager = StatDaysDataSetManager.shared
+  private var contentGenerationResult: StatGenerationResult {
+    StatDayContentManager.shared.contentGenerationResult
+  }
 
   override func configureSelf(with viewModel: CellVM) {
     configureChart()
@@ -24,7 +26,7 @@ class BarChartCell: Cell {
   private func configureChart() {
     barChartView.delegate = self
     setDataForChart()
-    guard dataSetManager.filterResult == .success else {
+    guard contentGenerationResult == .success else {
       handleIfNoData()
       return
     }
@@ -35,12 +37,12 @@ class BarChartCell: Cell {
   }
 
   private func setDataForChart() {
-    guard let chartDataSet = dataSetManager.getBarChartDataSet() else { return }
-    chartDataSet.colors = [.systemTeal]
-    chartDataSet.highlightColor = .systemBlue
-    chartDataSet.valueFont = .systemFont(ofSize: 12)
-    chartDataSet.valueFormatter = StatDayValueFormatter()
-    let barChartData = BarChartData(dataSet: chartDataSet)
+    guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
+    dataSet.colors = [.systemTeal]
+    dataSet.highlightColor = .systemBlue
+    dataSet.valueFont = .systemFont(ofSize: 12)
+    dataSet.valueFormatter = StatDayValueFormatter()
+    let barChartData = BarChartData(dataSet: dataSet)
     barChartView.data = barChartData
   }
 
@@ -73,7 +75,7 @@ class BarChartCell: Cell {
   }
 
   private func setVisibleXRange() {
-    guard let statDays = StatDaysDataSetManager.shared.currentlyDrawedStat, !statDays.isEmpty else { return }
+    //guard let statDays = StatDaysDataSetGenerator.shared.currentlyDrawedStat, !statDays.isEmpty else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
     barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
   }
@@ -90,7 +92,7 @@ class BarChartCell: Cell {
   private func handleIfNoData() {
     barChartView.isHidden = true
     noDataTextImage.isHidden = false
-    switch StatDaysDataSetManager.shared.filterResult {
+    switch contentGenerationResult {
     case .noDataAtAll:
       noDataTextImage.textLabel.text = "There is nothing to analyze yet. Add the first note about how you feel."
       noDataTextImage.imageView.image = UIImage(named: "noDataAtAll")
