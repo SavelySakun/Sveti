@@ -40,6 +40,16 @@
                ReferencedContainer = "container:Sveti.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FC29A66126EC979A00DC87DA"
+               BuildableName = "SvetiTests.xctest"
+               BlueprintName = "SvetiTests"
+               ReferencedContainer = "container:Sveti.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

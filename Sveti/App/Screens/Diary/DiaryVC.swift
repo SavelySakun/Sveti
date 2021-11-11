@@ -2,22 +2,21 @@ import UIKit
 
 class DiaryVC: BaseViewController {
 
-  private let emptyView = EmptyView()
+  private let emptyView = ImageTextView(imageName: "2cats", text: "Add the first note in the \"New note\" section")
   private let tableView = UITableView()
   private let viewModel = DiaryVM()
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    self.updateData()
+    self.updateContent()
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     setLayout()
   }
 
-  func updateData() {
+  override func updateContent() {
     DispatchQueue.main.async { [self] in
       viewModel.loadNotes()
       updateEmptyViewVisibility()
@@ -47,6 +46,8 @@ class DiaryVC: BaseViewController {
     view.addSubview(emptyView)
     updateEmptyViewVisibility()
     emptyView.snp.makeConstraints { (make) in
+      make.height.equalToSuperview().multipliedBy(0.4)
+      make.width.equalToSuperview().multipliedBy(0.7)
       make.centerX.centerY.equalToSuperview()
     }
   }
@@ -88,7 +89,7 @@ extension DiaryVC: UITableViewDataSource {
       let noteToDeleteId = self.viewModel.sections[indexPath.section].notes[indexPath.row].id
       self.viewModel.deleteNote(noteId: noteToDeleteId)
       completion(true)
-      self.updateData()
+      self.updateContent()
     }
 
     let image = UIImage(named: "Delete")?.imageResized(to: .init(width: 22, height: 22))

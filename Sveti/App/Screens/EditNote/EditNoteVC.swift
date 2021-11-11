@@ -30,8 +30,9 @@ class EditNoteVC: NewNoteVC {
   }
 
   @objc func onDelete() {
-    guard let noteId = self.noteId else { return }
-    StatMoodManager().removeStat(with: noteId)
+    guard let noteId = self.noteId,
+          let note = NotesRepository().getNote(with: noteId) else { return }
+    StatDaysDataManager().removeStat(with: note)
     NotesRepository().deleteNote(noteId: noteId)
     SPIndicator.present(title: "Запись удалена", preset: .done, haptic: .success, from: .top)
     self.navigationController?.popToRootViewController(animated: true)

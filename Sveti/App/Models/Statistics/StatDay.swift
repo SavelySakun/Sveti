@@ -1,16 +1,13 @@
 import Foundation
 import RealmSwift
 
-class StatDay: Object  {
-  @objc dynamic var date = String() // saving "dd.MM.yyyy"
-  @objc dynamic var totalNotes: Float = 0.0
-  var phyzicalStates = List<Float>()
-  var emotionalStates = List<Float>()
-}
+class StatDay: Object, Dated  {
+  var date: Date {
+    return splitDate?.rawDate ?? Date()
+  }
 
-class DrawableStatDay {
-  var date = Date()
-  var averageEmotional: Float = 0.0
-  var averagePhysical: Float = 0.0
-  var averageState: Float = 0.0
+  @objc dynamic var splitDate: SplitDate? = SplitDate(rawDate: Date())
+  @objc dynamic var totalNotes: Double = 0.0
+  var phyzicalStates = List<Double>()
+  var emotionalStates = List<Double>()
 }

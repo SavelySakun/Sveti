@@ -23,7 +23,8 @@ class DiaryVM {
   }
 
   func deleteNote(noteId: Int) {
-    StatMoodManager().removeStat(with: noteId)
+    guard let note = noteRepository.getNote(with: noteId) else { return }
+    StatDaysDataManager().removeStat(with: note)
     noteRepository.deleteNote(noteId: noteId)
   }
 
@@ -54,8 +55,8 @@ class DiaryVM {
     guard let notes = notes else { return nil }
     guard notes.count > 1 else { return nil }
     let mathHelper = MathHelper()
-    var totalScore: Float = 0
-    var totalNotes: Float = 0
+    var totalScore: Double = 0
+    var totalNotes: Double = 0
 
     for note in notes {
       guard let average = note.mood?.average else { continue }
