@@ -21,8 +21,8 @@ class BarChartCell: Cell {
       make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
       make.height.equalTo(250)
     }
-    currentStatLabel.text = "Average emotional & physical state"
     currentStatLabel.textColor = .systemGray
+    currentStatLabel.font = UIFont.systemFont(ofSize: 13)
     contentView.addSubview(currentStatLabel)
     currentStatLabel.snp.makeConstraints { (make) in
       make.centerX.equalTo(barChartView)
@@ -46,6 +46,7 @@ class BarChartCell: Cell {
   }
 
   private func setDataForChart() {
+    currentStatLabel.text = "Average " + StatSettingsManager.shared.settings.statType.getStatTypeDescription().lowercased()
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
     dataSet.colors = [.systemTeal]
     dataSet.highlightColor = .systemBlue
@@ -84,7 +85,7 @@ class BarChartCell: Cell {
   }
 
   private func setVisibleXRange() {
-    //guard let statDays = StatDaysDataSetGenerator.shared.currentlyDrawedStat, !statDays.isEmpty else { return }
+    guard StatDayContentManager.shared.isHaveContentToDraw() else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
     barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
   }

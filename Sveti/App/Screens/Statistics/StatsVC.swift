@@ -1,7 +1,10 @@
 import UIKit
 import Charts
+import ALPopup
 
 class StatsVC: VCwithTable {
+
+  var popupVC: ALCardController?
 
   override init(with tableStyle: UITableView.Style = .insetGrouped) {
     super.init(with: tableStyle)
@@ -56,6 +59,9 @@ class StatsVC: VCwithTable {
   }
 
   @objc func showStatAverageSettings() {
-
+    let selectStatVC = SelectStatVC()
+    selectStatVC.markAsCurrentVC = false
+    popupVC = ALPopup.card(controller: selectStatVC)
+    popupVC?.push(from: self)
   }
 }

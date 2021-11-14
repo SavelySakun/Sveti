@@ -33,7 +33,7 @@ class StatDaysDataSetGenerator {
 
     for (index, drawableStat) in orderedByDateStats.enumerated() {
       let index = Double(index)
-      dataEntry.append(BarChartDataEntry(x: index, y: drawableStat.averageState))
+      dataEntry.append(BarChartDataEntry(x: index, y: drawableStat.getAverage(with: settings.statType)))
     }
 
     contentManager.contentGenerationResult = dataEntry.isEmpty ? .noDataInTimeRange : .success
