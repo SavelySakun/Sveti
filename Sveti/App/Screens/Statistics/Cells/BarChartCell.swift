@@ -15,6 +15,12 @@ class BarChartCell: Cell {
 
   override func setLayout() {
     selectionStyle = .none
+    addSubviews()
+    setNoDataTextImage()
+    setChartStyle()
+  }
+
+  private func addSubviews() {
     contentView.addSubview(barChartView)
     barChartView.snp.makeConstraints { (make) in
       make.left.top.equalToSuperview().offset(UIUtils.defaultOffset)
@@ -27,22 +33,27 @@ class BarChartCell: Cell {
     currentStatLabel.snp.makeConstraints { (make) in
       make.centerX.equalTo(barChartView)
       make.top.equalTo(barChartView.snp.bottom).offset(UIUtils.defaultOffset)
-      make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
+      make.bottom.equalToSuperview().offset(-UIUtils.bigOffset)
+      make.height.equalTo(15)
     }
-    setNoDataTextImage()
   }
 
   private func configureChart() {
     barChartView.delegate = self
     setDataForChart()
-    guard contentGenerationResult == .success else {
-      handleIfNoData()
-      return
-    }
-    barChartView.isHidden = false
-    noDataTextImage.isHidden = true
-    setChartStyle()
+    let isHasContent = (contentGenerationResult == .success)
+    updateContentVisibility(isHasContent: isHasContent)
+    guard isHasContent else { return }
+    animateBar()
     setVisibleXRange()
+    barChartView.xAxis.valueFormatter = StatDayChartFormatter()
+  }
+
+  private func animateBar() {
+    let animationDuration = 0.6
+    DispatchQueue.main.async {
+      self.barChartView.animate(yAxisDuration: animationDuration)
+    }
   }
 
   private func setDataForChart() {
@@ -76,7 +87,6 @@ class BarChartCell: Cell {
     barChartView.rightAxis.enabled = false
 
     // xAxis
-    xAxis.valueFormatter = StatDayChartFormatter()
     xAxis.drawGridLinesEnabled = false
     xAxis.axisLineColor = .systemGray2
     xAxis.labelPosition = .bottom
@@ -93,15 +103,18 @@ class BarChartCell: Cell {
   private func setNoDataTextImage() {
     contentView.addSubview(noDataTextImage)
     noDataTextImage.snp.makeConstraints { (make) in
-      make.centerX.centerY.equalToSuperview()
+      make.top.bottom.equalToSuperview().inset(UIUtils.bigOffset)
+      make.centerX.equalToSuperview()
       make.width.equalToSuperview().multipliedBy(0.8)
       make.height.equalToSuperview().multipliedBy(0.7)
     }
   }
 
-  private func handleIfNoData() {
-    barChartView.isHidden = true
-    noDataTextImage.isHidden = false
+  private func updateContentVisibility(isHasContent: Bool) {
+    barChartView.isHidden = !isHasContent
+    noDataTextImage.isHidden = isHasContent
+    currentStatLabel.isHidden = !isHasContent
+    guard !isHasContent else { return }
     switch contentGenerationResult {
     case .noDataAtAll:
       noDataTextImage.textLabel.text = "There is nothing to analyze yet. Add the first note about how you feel."

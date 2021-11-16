@@ -23,8 +23,10 @@ class StatsVC: VCwithTable {
   }
 
   override func updateContent() {
-    DispatchQueue.main.async {
-      self.tableView.reloadData()
+    DispatchQueue.main.async { [self] in
+      UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
+        tableView.reloadData()
+      }
     }
   }
 
