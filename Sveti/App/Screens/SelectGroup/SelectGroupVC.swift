@@ -37,5 +37,4 @@ extension SelectGroupVC: SelectGroupTableViewDelegate {
     tagsRepository.moveTagTo(newGroupId: id, tagId: moovingTagId)
     onSelectionCompletion(tagsRepository.getGroup(with: id)?.title ?? "новая")
   }
-
 }

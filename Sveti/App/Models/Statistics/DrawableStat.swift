@@ -29,4 +29,15 @@ class DrawableStat {
     self.averagePhysical = totalAveragePhysical / totalStatDays
     self.averageState = totalAverageState / totalStatDays
   }
+
+  func getAverage(with type: StatTypes) -> Double {
+    switch type {
+    case .averageEmotional:
+      return averageEmotional
+    case .averagePhysical:
+      return averagePhysical
+    case .averageEmotionalAndPhysical:
+      return averageState
+    }
+  }
 }

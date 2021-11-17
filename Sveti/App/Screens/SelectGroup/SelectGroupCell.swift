@@ -1,21 +1,19 @@
 import UIKit
 
 class SelectGroupCell: Cell {
-  private let groupNameTitleLabel = UILabel()
+  internal let titleLabel = UILabel()
 
   override func setLayout() {
     accessoryType = .disclosureIndicator
-    contentView.addSubview(groupNameTitleLabel)
-    groupNameTitleLabel.snp.makeConstraints { (make) in
-      make.top.equalToSuperview().offset(UIUtils.middleOffset)
-      make.left.equalToSuperview().offset(UIUtils.bigOffset)
-      make.right.equalToSuperview().offset(-UIUtils.bigOffset)
-      make.bottom.right.equalToSuperview().offset(-UIUtils.middleOffset)
+    contentView.addSubview(titleLabel)
+    titleLabel.snp.makeConstraints { (make) in
+      make.top.bottom.equalToSuperview().inset(UIUtils.middleOffset)
+      make.left.right.equalToSuperview().inset(UIUtils.bigOffset)
     }
   }
 
   override func configureSelf(with viewModel: CellVM) {
     guard let cellData = viewModel.cellValue as? SelectGroupCellData else { return }
-    groupNameTitleLabel.text = cellData.title
+    titleLabel.text = cellData.title
   }
 }

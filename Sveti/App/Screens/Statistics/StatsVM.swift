@@ -5,6 +5,17 @@ class StatsVM: ViewControllerVM {
 
   private let realm = try! Realm()
 
+  init(tableDataProvider: TableDataProvider) {
+    super.init(tableDataProvider: tableDataProvider)
+    setMaximumDateAsCurrentDay()
+  }
+
+  private func setMaximumDateAsCurrentDay() {
+    try! realm.write {
+      StatSettingsManager.shared.settings.maximumDate = SplitDate(rawDate: Date()).endOfDay
+    }
+  }
+
   override func handle<T>(_ event: T) where T : Event {
     guard let event = event as? StatsFilterEvent else { return }
     let eventType = StatsFilterEventType(rawValue: event.type)

@@ -15,4 +15,9 @@ class StatDayContentManager: IStatContentManager {
     dataGenerator.generateDataForManager()
     return self.dataSet
   }
+
+  func isHaveContentToDraw() -> Bool {
+    guard let currentlyDrawedStat = currentlyDrawedStat else { return false }
+    return currentlyDrawedStat.isEmpty
+  }
 }
