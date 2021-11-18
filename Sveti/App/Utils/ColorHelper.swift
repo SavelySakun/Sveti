@@ -2,27 +2,10 @@ import UIKit
 
 class ColorHelper {
 
-  enum Palette {
-    case general
-    case background
-  }
+  private let chartColors: [UIColor] = [#colorLiteral(red: 0.3882352941, green: 0.2784313725, blue: 0.3019607843, alpha: 1), #colorLiteral(red: 0.6666666667, green: 0.5607843137, blue: 0.4, alpha: 1), #colorLiteral(red: 0.9764705882, green: 0.2549019608, blue: 0.2666666667, alpha: 1), #colorLiteral(red: 0.9882352941, green: 0.4823529412, blue: 0.1333333333, alpha: 1), #colorLiteral(red: 1, green: 0.7058823529, blue: 0, alpha: 1), #colorLiteral(red: 0.7215686275, green: 0.768627451, blue: 0.9019607843, alpha: 1), #colorLiteral(red: 0.4588235294, green: 0.5568627451, blue: 0.8039215686, alpha: 1), #colorLiteral(red: 0.7058823529, green: 0.4784313725, blue: 0.9176470588, alpha: 1), #colorLiteral(red: 0.4705882353, green: 0.737254902, blue: 0.3803921569, alpha: 1), #colorLiteral(red: 0.1882352941, green: 0.7725490196, blue: 1, alpha: 1)]
 
-  private let backgroundColors: [UIColor] = [#colorLiteral(red: 0.9882352941, green: 0.8901960784, blue: 0.968627451, alpha: 1), .systemGray5, #colorLiteral(red: 0.8901960784, green: 0.9882352941, blue: 0.9215686275, alpha: 1)]
-  private let generalColors: [UIColor] = [#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1), #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1), #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1)]
-
-  func getColor(value: Int, alpha: CGFloat = 0.5, palette: Palette = .general ) -> UIColor {
-    var color: UIColor = .white
-    let palette = (palette == .general) ? generalColors : backgroundColors
-    switch value {
-    case 0...4:
-      color = palette[0]
-    case 5...7:
-      color = palette[1]
-    case 8...10:
-      color = palette[2]
-    default:
-      color = palette[1]
-    }
-    return color.withAlphaComponent(alpha)
+  func getColor(value: Int, alpha: CGFloat = 0.5) -> UIColor {
+    guard value >= 0 && value <= 10 else { return .systemGray3 }
+    return chartColors[value].withAlphaComponent(alpha)
   }
 }

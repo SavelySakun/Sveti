@@ -59,7 +59,7 @@ class BarChartCell: Cell {
   private func setDataForChart() {
     currentStatLabel.text = "Average " + StatSettingsManager.shared.settings.statType.getStatTypeDescription().lowercased()
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
-    dataSet.colors = [.systemTeal]
+    dataSet.colors = StatDayChartFormatter().generateColorsForBars()
     dataSet.highlightColor = .systemBlue
     dataSet.valueFont = .systemFont(ofSize: 12)
     dataSet.valueFormatter = StatDayValueFormatter()

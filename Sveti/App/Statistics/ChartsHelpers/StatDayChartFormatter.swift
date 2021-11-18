@@ -33,5 +33,30 @@ class StatDayChartFormatter: IAxisValueFormatter {
     guard let label = xAxisLabels[safe: index] else { return "error" }
     return label
   }
+
+  func generateColorsForBars() -> [UIColor] {
+    let statType = StatSettingsManager.shared.settings.statType
+    guard let currentlyDrawedStat = StatDayContentManager.shared.currentlyDrawedStat else { return [UIColor]() }
+    var colorsForBars = [UIColor]()
+
+    currentlyDrawedStat.forEach { drawableStat in
+      let colorHelper = ColorHelper()
+      var moodValue: Int
+
+      switch statType {
+      case .averageEmotional:
+        moodValue = drawableStat.averageEmotional.toInt()
+      case .averagePhysical:
+        moodValue = drawableStat.averagePhysical.toInt()
+      case .averageEmotionalAndPhysical:
+        moodValue = drawableStat.averageState.toInt()
+      }
+
+      let color = colorHelper.getColor(value: moodValue, alpha: 0.95)
+      colorsForBars.append(color)
+    }
+
+    return colorsForBars
+  }
 }
 

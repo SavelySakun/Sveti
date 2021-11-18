@@ -51,7 +51,7 @@ class StatsVC: VCwithTable {
   private func setNavigationBar() {
     let button = UIButton()
     button.snp.makeConstraints { (make) in
-      make.height.width.equalTo(25)
+      make.height.width.equalTo(22)
     }
     let image = UIImage(named: "filterSettings")?.withRenderingMode(.alwaysTemplate)
     button.setTitleColor(.red, for: .selected)

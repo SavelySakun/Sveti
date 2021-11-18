@@ -20,6 +20,7 @@
 		FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */; };
 		FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */; };
 		FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */; };
+		FC1563A5274692F800AAD925 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563A4274692F800AAD925 /* Double.swift */; };
 		FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC22740F50A000DE791 /* SelectStatVC.swift */; };
 		FC25ADC52740F548000DE791 /* SelectStatTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */; };
 		FC25ADC72740FA28000DE791 /* SelectsStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */; };
@@ -177,6 +178,7 @@
 		FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCollectionView.swift; sourceTree = "<group>"; };
 		FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCell.swift; sourceTree = "<group>"; };
+		FC1563A4274692F800AAD925 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		FC25ADC22740F50A000DE791 /* SelectStatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatVC.swift; sourceTree = "<group>"; };
 		FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableDataProvider.swift; sourceTree = "<group>"; };
 		FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectsStatCell.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				FC7E6D2926AC037900126B97 /* UIImage.swift */,
 				FC7E6D9326AC57EC00126B97 /* Result.swift */,
 				FC42A6C527350F8E004A56F9 /* Array.swift */,
+				FC1563A4274692F800AAD925 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1156,6 +1159,7 @@
 				FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */,
 				FC76B39326810F7700AF209F /* Cell.swift in Sources */,
 				FCB0642E26B5479D00A0494A /* Mood.swift in Sources */,
+				FC1563A5274692F800AAD925 /* Double.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
 				FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */,
 				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
