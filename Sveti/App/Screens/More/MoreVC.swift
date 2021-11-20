@@ -1,6 +1,16 @@
 import UIKit
+import MessageUI
 
-class MoreVC: VCwithTable {
+class MoreVC: VCwithTable, MFMailComposeViewControllerDelegate {
+
+  override init(with tableStyle: UITableView.Style = .insetGrouped) {
+    super.init(with: tableStyle)
+    tableView = MoreTableView(viewModel: viewModel)
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
   override func setLayout() {
     super.setLayout()

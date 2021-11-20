@@ -4,8 +4,10 @@ class MoreCell: Cell {
 
   private let iconView = IconView()
   private let titleLabel = UILabel()
+  var onTapAction: (() -> Void)?
 
   override func setLayout() {
+    backgroundColor = .systemGray6
     accessoryType = .disclosureIndicator
 
     contentView.addSubview(iconView)
@@ -25,10 +27,12 @@ class MoreCell: Cell {
   }
 
   override func configureSelf(with viewModel: CellVM) {
-    backgroundColor = .systemGray6
-    iconView.backgroundColor = .systemPink
-    iconView.image = UIImage(systemName: "quote.bubble.fill")?.withRenderingMode(.alwaysTemplate)
-    titleLabel.text = "Contact the developer"
+    guard let moreItem = viewModel.cellValue as? IMoreItem else { return }
+    iconView.backgroundColor = moreItem.iconBackgroundColor
+    iconView.iconTintColor = moreItem.iconTintColor
+    iconView.image = moreItem.iconImage
+    titleLabel.text = moreItem.title
+    onTapAction = moreItem.onTapAction
   }
 
 }

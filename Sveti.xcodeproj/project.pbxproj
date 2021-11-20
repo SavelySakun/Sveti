@@ -24,6 +24,10 @@
 		FC1563F32748E8B700AAD925 /* MoreTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */; };
 		FC1563F52748E9AA00AAD925 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F42748E9AA00AAD925 /* MoreCell.swift */; };
 		FC1563F72748ED8E00AAD925 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F62748ED8E00AAD925 /* IconView.swift */; };
+		FC1563FA2748FA0F00AAD925 /* IMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F92748FA0F00AAD925 /* IMoreItem.swift */; };
+		FC1563FC2748FBC900AAD925 /* ContactDeveloperMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */; };
+		FC1564002748FF3300AAD925 /* MessageDeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FF2748FF3300AAD925 /* MessageDeveloperVC.swift */; };
+		FC1564022749007700AAD925 /* MoreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1564012749007700AAD925 /* MoreTableView.swift */; };
 		FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC22740F50A000DE791 /* SelectStatVC.swift */; };
 		FC25ADC52740F548000DE791 /* SelectStatTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */; };
 		FC25ADC72740FA28000DE791 /* SelectsStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */; };
@@ -184,6 +188,10 @@
 		FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableDataProvider.swift; sourceTree = "<group>"; };
 		FC1563F42748E9AA00AAD925 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		FC1563F62748ED8E00AAD925 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		FC1563F92748FA0F00AAD925 /* IMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMoreItem.swift; sourceTree = "<group>"; };
+		FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperMoreItem.swift; sourceTree = "<group>"; };
+		FC1563FF2748FF3300AAD925 /* MessageDeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDeveloperVC.swift; sourceTree = "<group>"; };
+		FC1564012749007700AAD925 /* MoreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableView.swift; sourceTree = "<group>"; };
 		FC25ADC22740F50A000DE791 /* SelectStatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatVC.swift; sourceTree = "<group>"; };
 		FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableDataProvider.swift; sourceTree = "<group>"; };
 		FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectsStatCell.swift; sourceTree = "<group>"; };
@@ -359,9 +367,12 @@
 		FC01D41E26D6AAA400C984E7 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				FC1563FD2748FF0E00AAD925 /* Detail Screens */,
+				FC1563F82748FA0200AAD925 /* More Models */,
 				FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */,
 				FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */,
 				FC1563F42748E9AA00AAD925 /* MoreCell.swift */,
+				FC1564012749007700AAD925 /* MoreTableView.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -519,6 +530,31 @@
 				FC6C56DD266000FB000188A6 /* SceneDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		FC1563F82748FA0200AAD925 /* More Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC1563F92748FA0F00AAD925 /* IMoreItem.swift */,
+				FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */,
+			);
+			path = "More Models";
+			sourceTree = "<group>";
+		};
+		FC1563FD2748FF0E00AAD925 /* Detail Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FC1563FE2748FF1A00AAD925 /* MessageDeveloper */,
+			);
+			path = "Detail Screens";
+			sourceTree = "<group>";
+		};
+		FC1563FE2748FF1A00AAD925 /* MessageDeveloper */ = {
+			isa = PBXGroup;
+			children = (
+				FC1563FF2748FF3300AAD925 /* MessageDeveloperVC.swift */,
+			);
+			path = MessageDeveloper;
 			sourceTree = "<group>";
 		};
 		FC25ADC12740F4EB000DE791 /* SelectStatVC */ = {
@@ -1200,6 +1236,7 @@
 				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
+				FC1563FA2748FA0F00AAD925 /* IMoreItem.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
 				FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */,
@@ -1225,6 +1262,7 @@
 				FC42A6C627350F8E004A56F9 /* Array.swift in Sources */,
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,
 				FC25ADCB2740FCE4000DE791 /* SelectStatTableView.swift in Sources */,
+				FC1563FC2748FBC900AAD925 /* ContactDeveloperMoreItem.swift in Sources */,
 				FC29A67526ECEB3800DC87DA /* StatTestHelper.swift in Sources */,
 				FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */,
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
@@ -1246,6 +1284,7 @@
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FC42A6E8273641D2004A56F9 /* StatsTableHeaderView.swift in Sources */,
 				FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */,
+				FC1564002748FF3300AAD925 /* MessageDeveloperVC.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
@@ -1299,6 +1338,7 @@
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
 				FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */,
+				FC1564022749007700AAD925 /* MoreTableView.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
 				FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
