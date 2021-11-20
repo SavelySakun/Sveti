@@ -2,7 +2,7 @@ import UIKit
 import MessageUI
 
 class ContactDeveloperMoreItem: IMoreItem {
-  var title: String = "Contact the developer"
+  var title: String = "Contact us"
   var iconBackgroundColor: UIColor = .systemPink
   var iconImage: UIImage? = UIImage(systemName: "quote.bubble.fill")
   var iconTintColor: UIColor = .white
@@ -15,8 +15,8 @@ class ContactDeveloperMoreItem: IMoreItem {
   private func setOnTapAction() {
     onTapAction = {
       guard let currentVC = CurrentVC.current else { return }
-      let messageDeveloperVC = MessageDeveloperVC()
-      currentVC.navigationController?.pushViewController(messageDeveloperVC, animated: true)
+      let contactDeveloperVC = ContactDeveloperVC()
+      currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
     }
   }
 }
