@@ -124,6 +124,9 @@
 		FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FCB0644426B6817400A0494A /* .swiftlint.yml */; };
 		FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0644626B68E9500A0494A /* VCwithTable.swift */; };
 		FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */; };
+		FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */; };
+		FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */; };
+		FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -290,6 +293,9 @@
 		FCB0644426B6817400A0494A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FCB0644626B68E9500A0494A /* VCwithTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithTable.swift; sourceTree = "<group>"; };
 		FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
+		FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsMoreItem.swift; sourceTree = "<group>"; };
+		FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMoreItem.swift; sourceTree = "<group>"; };
+		FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDataMoreItem.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -541,6 +547,9 @@
 			children = (
 				FC1563F92748FA0F00AAD925 /* IMoreItem.swift */,
 				FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */,
+				FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */,
+				FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */,
+				FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */,
 			);
 			path = "More Models";
 			sourceTree = "<group>";
@@ -1278,6 +1287,7 @@
 				FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */,
 				FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */,
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
+				FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */,
 				FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
@@ -1345,8 +1355,10 @@
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
+				FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */,
 				FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */,
 				FC1564022749007700AAD925 /* MoreTableView.swift in Sources */,
+				FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
 				FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
