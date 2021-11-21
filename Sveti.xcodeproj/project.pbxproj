@@ -28,6 +28,7 @@
 		FC1563FC2748FBC900AAD925 /* ContactDeveloperMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */; };
 		FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */; };
 		FC1564022749007700AAD925 /* MoreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1564012749007700AAD925 /* MoreTableView.swift */; };
+		FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC156403274A21C400AAD925 /* VCwithScrollView.swift */; };
 		FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC22740F50A000DE791 /* SelectStatVC.swift */; };
 		FC25ADC52740F548000DE791 /* SelectStatTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */; };
 		FC25ADC72740FA28000DE791 /* SelectsStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */; };
@@ -192,6 +193,7 @@
 		FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperMoreItem.swift; sourceTree = "<group>"; };
 		FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperVC.swift; sourceTree = "<group>"; };
 		FC1564012749007700AAD925 /* MoreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableView.swift; sourceTree = "<group>"; };
+		FC156403274A21C400AAD925 /* VCwithScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithScrollView.swift; sourceTree = "<group>"; };
 		FC25ADC22740F50A000DE791 /* SelectStatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatVC.swift; sourceTree = "<group>"; };
 		FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableDataProvider.swift; sourceTree = "<group>"; };
 		FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectsStatCell.swift; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 				FC7E6D2126AB1FD000126B97 /* ViewElements */,
 				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
 				FCB0644626B68E9500A0494A /* VCwithTable.swift */,
+				FC156403274A21C400AAD925 /* VCwithScrollView.swift */,
 				FC7E6D5F26AC349400126B97 /* BaseViewController.swift */,
 				FC3A899026A05B330048E4ED /* TextView.swift */,
 				FC3A898526A0541E0048E4ED /* Table */,
@@ -1287,6 +1290,7 @@
 				FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
+				FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
 				FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */,
 				FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */,

@@ -12,14 +12,18 @@ class ImageTextView: UIView {
 
   init(imageName: String, text: String) {
     super.init(frame: .zero)
-    let iconImage = UIImage(named: imageName)
-    imageView.image = iconImage
-    textLabel.text = text
+    setContent(imageName: imageName, text: text)
     setLayout()
   }
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+  func setContent(imageName: String, text: String) {
+    let iconImage = UIImage(named: imageName)
+    imageView.image = iconImage
+    textLabel.text = text
   }
 
   private func setLayout() {
