@@ -21,6 +21,14 @@
 		FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */; };
 		FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */; };
 		FC1563A5274692F800AAD925 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563A4274692F800AAD925 /* Double.swift */; };
+		FC1563F32748E8B700AAD925 /* MoreTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */; };
+		FC1563F52748E9AA00AAD925 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F42748E9AA00AAD925 /* MoreCell.swift */; };
+		FC1563F72748ED8E00AAD925 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F62748ED8E00AAD925 /* IconView.swift */; };
+		FC1563FA2748FA0F00AAD925 /* IMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F92748FA0F00AAD925 /* IMoreItem.swift */; };
+		FC1563FC2748FBC900AAD925 /* ContactDeveloperMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */; };
+		FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */; };
+		FC1564022749007700AAD925 /* MoreTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1564012749007700AAD925 /* MoreTableView.swift */; };
+		FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC156403274A21C400AAD925 /* VCwithScrollView.swift */; };
 		FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC22740F50A000DE791 /* SelectStatVC.swift */; };
 		FC25ADC52740F548000DE791 /* SelectStatTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */; };
 		FC25ADC72740FA28000DE791 /* SelectsStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */; };
@@ -55,7 +63,6 @@
 		FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A79C273AC031004A56F9 /* IRepository.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
-		FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E1266000FB000188A6 /* Main.storyboard */; };
 		FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E4266000FD000188A6 /* Assets.xcassets */; };
 		FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */; };
 		FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */; };
@@ -116,6 +123,7 @@
 		FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */; };
 		FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FCB0644426B6817400A0494A /* .swiftlint.yml */; };
 		FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0644626B68E9500A0494A /* VCwithTable.swift */; };
+		FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -179,6 +187,14 @@
 		FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCollectionView.swift; sourceTree = "<group>"; };
 		FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCell.swift; sourceTree = "<group>"; };
 		FC1563A4274692F800AAD925 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableDataProvider.swift; sourceTree = "<group>"; };
+		FC1563F42748E9AA00AAD925 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
+		FC1563F62748ED8E00AAD925 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		FC1563F92748FA0F00AAD925 /* IMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMoreItem.swift; sourceTree = "<group>"; };
+		FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperMoreItem.swift; sourceTree = "<group>"; };
+		FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperVC.swift; sourceTree = "<group>"; };
+		FC1564012749007700AAD925 /* MoreTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableView.swift; sourceTree = "<group>"; };
+		FC156403274A21C400AAD925 /* VCwithScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithScrollView.swift; sourceTree = "<group>"; };
 		FC25ADC22740F50A000DE791 /* SelectStatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatVC.swift; sourceTree = "<group>"; };
 		FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableDataProvider.swift; sourceTree = "<group>"; };
 		FC25ADC62740FA28000DE791 /* SelectsStatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectsStatCell.swift; sourceTree = "<group>"; };
@@ -216,10 +232,9 @@
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC6C56E2266000FB000188A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC6C56E4266000FD000188A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6C56E7266000FD000188A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FC6C56E9266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC6C56E9266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sveti/Utility/Info.plist; sourceTree = SOURCE_ROOT; };
 		FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
 		FC6C58A62661377A000188A6 /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
 		FC6C58AB26613C32000188A6 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -274,6 +289,7 @@
 		FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteTableDataProvider.swift; sourceTree = "<group>"; };
 		FCB0644426B6817400A0494A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FCB0644626B68E9500A0494A /* VCwithTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithTable.swift; sourceTree = "<group>"; };
+		FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -355,7 +371,12 @@
 		FC01D41E26D6AAA400C984E7 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				FC1563FD2748FF0E00AAD925 /* Detail Screens */,
+				FC1563F82748FA0200AAD925 /* More Models */,
 				FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */,
+				FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */,
+				FC1563F42748E9AA00AAD925 /* MoreCell.swift */,
+				FC1564012749007700AAD925 /* MoreTableView.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -384,15 +405,6 @@
 			path = TagCollectionView;
 			sourceTree = "<group>";
 		};
-		FC0CCC7026BE6CFB004CDE8A /* Tag */ = {
-			isa = PBXGroup;
-			children = (
-				FC0CCC6C26BE6A52004CDE8A /* Tag.swift */,
-				FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */,
-			);
-			path = Tag;
-			sourceTree = "<group>";
-		};
 		FC0CCCB726BFF1CD004CDE8A /* TagsDiaryCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,7 +414,154 @@
 			path = TagsDiaryCollectionView;
 			sourceTree = "<group>";
 		};
-		FC25ADC12740F4EB000DE791 /* SelectStat */ = {
+		FC1563E32748D91A00AAD925 /* Stat Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC42A6F32737FE78004A56F9 /* StatGenerationResult.swift */,
+				FC42A74F27397E21004A56F9 /* StatSettings.swift */,
+				FC8BE9B126E65F3200D12704 /* StatDay.swift */,
+				FC9F93AB272ED9F800582765 /* DrawableStat.swift */,
+				FC42A75327397F86004A56F9 /* StatsDataSource.swift */,
+			);
+			path = "Stat Models";
+			sourceTree = "<group>";
+		};
+		FC1563E42748D94500AAD925 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC29A66F26ECE11200DC87DA /* StatsVC.swift */,
+				FC9F93A9272ED3A700582765 /* StatsVM.swift */,
+				FC42A6EC2736431F004A56F9 /* StatsTableView.swift */,
+				FC29A67926EDDFB900DC87DA /* StatsTableDataProvider.swift */,
+				FC42A6E92736428F004A56F9 /* StatTableHeader */,
+				FC25ADC12740F4EB000DE791 /* SelectStatVC */,
+				FC29A67626EDDDA800DC87DA /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC1563E72748D9AF00AAD925 /* Tag Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC0CCC6C26BE6A52004CDE8A /* Tag.swift */,
+				FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */,
+			);
+			path = "Tag Models";
+			sourceTree = "<group>";
+		};
+		FC1563E82748D9CD00AAD925 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC84E89F26CAD1470081CBA2 /* Cells */,
+				FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */,
+				FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */,
+				FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */,
+				FCEEB21826CBF2D000F7B00F /* IconButton.swift */,
+				FCEEB21A26CC02A700F7B00F /* EditingTableView.swift */,
+				FCEEB2DF26CD81F000F7B00F /* TagEvent.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC1563E92748D9FB00AAD925 /* NewNote Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCEEB2DC26CD80EC00F7B00F /* Event.swift */,
+				FC3A898726A054BF0048E4ED /* NoteEditType.swift */,
+				FCEA31B726D67B940062509A /* Note.swift */,
+				FC7E6D9A26AC927900126B97 /* SplitDate.swift */,
+				FCB0642D26B5479D00A0494A /* Mood.swift */,
+			);
+			path = "NewNote Models";
+			sourceTree = "<group>";
+		};
+		FC1563EA2748DA1D00AAD925 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A898A26A0583B0048E4ED /* Cells */,
+				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
+				FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */,
+				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC1563EB2748DA5F00AAD925 /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */,
+				FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */,
+				FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */,
+			);
+			path = Repos;
+			sourceTree = "<group>";
+		};
+		FC1563EC2748DAAD00AAD925 /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				FC84E82026C8FC350081CBA2 /* DefaultTags.swift */,
+				FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */,
+				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
+			);
+			path = Repos;
+			sourceTree = "<group>";
+		};
+		FC1563EE2748DB8500AAD925 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FC7E6D1526AB039200126B97 /* Global Models & Protocols */,
+				FC7E6D1A26AB199000126B97 /* Reusable UIComponents */,
+				FC6C58B72663D1CD000188A6 /* Utils */,
+				FC6C58A1266136B5000188A6 /* Extensions */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		FC1563F02748DD4D00AAD925 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C56E9266000FD000188A6 /* Info.plist */,
+				FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */,
+				FCB0644426B6817400A0494A /* .swiftlint.yml */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		FC1563F12748DDA900AAD925 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C56DB266000FB000188A6 /* AppDelegate.swift */,
+				FC6C56DD266000FB000188A6 /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FC1563F82748FA0200AAD925 /* More Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC1563F92748FA0F00AAD925 /* IMoreItem.swift */,
+				FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */,
+			);
+			path = "More Models";
+			sourceTree = "<group>";
+		};
+		FC1563FD2748FF0E00AAD925 /* Detail Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FC1563FE2748FF1A00AAD925 /* ContactDeveloper */,
+			);
+			path = "Detail Screens";
+			sourceTree = "<group>";
+		};
+		FC1563FE2748FF1A00AAD925 /* ContactDeveloper */ = {
+			isa = PBXGroup;
+			children = (
+				FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */,
+			);
+			path = ContactDeveloper;
+			sourceTree = "<group>";
+		};
+		FC25ADC12740F4EB000DE791 /* SelectStatVC */ = {
 			isa = PBXGroup;
 			children = (
 				FC25ADC22740F50A000DE791 /* SelectStatVC.swift */,
@@ -412,7 +571,7 @@
 				FC25ADCA2740FCE4000DE791 /* SelectStatTableView.swift */,
 				FC25ADCC2741025B000DE791 /* StatTypes.swift */,
 			);
-			path = SelectStat;
+			path = SelectStatVC;
 			sourceTree = "<group>";
 		};
 		FC29A66326EC979A00DC87DA /* SvetiTests */ = {
@@ -428,14 +587,10 @@
 		FC29A66E26ECE0DE00DC87DA /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				FC25ADC12740F4EB000DE791 /* SelectStat */,
-				FC42A6E92736428F004A56F9 /* StatTableHeader */,
-				FC29A67626EDDDA800DC87DA /* Cells */,
-				FC29A66F26ECE11200DC87DA /* StatsVC.swift */,
-				FC9F93A9272ED3A700582765 /* StatsVM.swift */,
-				FC29A67926EDDFB900DC87DA /* StatsTableDataProvider.swift */,
-				FC42A6EC2736431F004A56F9 /* StatsTableView.swift */,
-				FC42A6F32737FE78004A56F9 /* StatGenerationResult.swift */,
+				FC1563E32748D91A00AAD925 /* Stat Models */,
+				FC1563EB2748DA5F00AAD925 /* Repos */,
+				FC1563E42748D94500AAD925 /* Views */,
+				FC42A6C127350AF5004A56F9 /* Stat Logic */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -459,11 +614,9 @@
 		FC3A898426A053F60048E4ED /* NewNote */ = {
 			isa = PBXGroup;
 			children = (
-				FC3A898A26A0583B0048E4ED /* Cells */,
-				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
-				FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */,
-				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
-				FC3A898726A054BF0048E4ED /* NoteEditType.swift */,
+				FC1563EC2748DAAD00AAD925 /* Repos */,
+				FC1563EA2748DA1D00AAD925 /* Views */,
+				FC1563E92748D9FB00AAD925 /* NewNote Models */,
 			);
 			path = NewNote;
 			sourceTree = "<group>";
@@ -492,13 +645,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		FC42A6C127350AF5004A56F9 /* Statistics */ = {
+		FC42A6C127350AF5004A56F9 /* Stat Logic */ = {
 			isa = PBXGroup;
 			children = (
 				FC42A6C227350B08004A56F9 /* ChartsHelpers */,
 				FC8BE9D326E7AD2900D12704 /* StatisticsManager */,
 			);
-			path = Statistics;
+			path = "Stat Logic";
 			sourceTree = "<group>";
 		};
 		FC42A6C227350B08004A56F9 /* ChartsHelpers */ = {
@@ -578,14 +731,11 @@
 		FC6C56DA266000FB000188A6 /* Sveti */ = {
 			isa = PBXGroup;
 			children = (
-				FC6C56DB266000FB000188A6 /* AppDelegate.swift */,
-				FC6C56DD266000FB000188A6 /* SceneDelegate.swift */,
-				FC6C56E1266000FB000188A6 /* Main.storyboard */,
-				FC7E6D1B26AB1A0400126B97 /* App */,
+				FC1563F12748DDA900AAD925 /* Main */,
+				FC1563EE2748DB8500AAD925 /* Support */,
+				FC7E6D1826AB195B00126B97 /* Screens */,
+				FC1563F02748DD4D00AAD925 /* Utility */,
 				FC6C56E4266000FD000188A6 /* Assets.xcassets */,
-				FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */,
-				FC6C56E9266000FD000188A6 /* Info.plist */,
-				FCB0644426B6817400A0494A /* .swiftlint.yml */,
 			);
 			path = Sveti;
 			sourceTree = "<group>";
@@ -616,62 +766,44 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		FC7E6D1526AB039200126B97 /* Repository */ = {
+		FC7E6D1526AB039200126B97 /* Global Models & Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				FC42A79B273AC022004A56F9 /* RepoProtocols */,
-				FC84E81E26C8FC210081CBA2 /* Tags */,
 				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
-				FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */,
-				FC7E6D1626AB03AC00126B97 /* NotesRepository.swift */,
-				FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */,
-				FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */,
-				FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */,
 			);
-			path = Repository;
+			path = "Global Models & Protocols";
 			sourceTree = "<group>";
 		};
 		FC7E6D1826AB195B00126B97 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FC29A66E26ECE0DE00DC87DA /* Statistics */,
 				FC01D41E26D6AAA400C984E7 /* More */,
-				FCE3689726D2651000A05271 /* SelectGroup */,
-				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
-				FC3A898426A053F60048E4ED /* NewNote */,
 				FC7E6D1C26AB1A1600126B97 /* Diary */,
 				FCB0642826B5430E00A0494A /* DetailNote */,
+				FC3A898426A053F60048E4ED /* NewNote */,
+				FC29A66E26ECE0DE00DC87DA /* Statistics */,
+				FCE3689726D2651000A05271 /* SelectGroup */,
+				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
 				FCB0643C26B5C74600A0494A /* EditNote */,
 				FC84E84326C912D50081CBA2 /* Navigation */,
 			);
-			path = Screens;
+			name = Screens;
+			path = App/Screens;
 			sourceTree = "<group>";
 		};
-		FC7E6D1A26AB199000126B97 /* UIComponents */ = {
+		FC7E6D1A26AB199000126B97 /* Reusable UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				FC7E6D2126AB1FD000126B97 /* ViewElements */,
 				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
 				FCB0644626B68E9500A0494A /* VCwithTable.swift */,
+				FC156403274A21C400AAD925 /* VCwithScrollView.swift */,
 				FC7E6D5F26AC349400126B97 /* BaseViewController.swift */,
 				FC3A899026A05B330048E4ED /* TextView.swift */,
 				FC3A898526A0541E0048E4ED /* Table */,
 			);
-			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		FC7E6D1B26AB1A0400126B97 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				FC42A6C127350AF5004A56F9 /* Statistics */,
-				FC7E6D1526AB039200126B97 /* Repository */,
-				FC7E6D8126AC484500126B97 /* Models */,
-				FC6C58A1266136B5000188A6 /* Extensions */,
-				FC6C58B72663D1CD000188A6 /* Utils */,
-				FC7E6D1A26AB199000126B97 /* UIComponents */,
-				FC7E6D1826AB195B00126B97 /* Screens */,
-			);
-			path = App;
+			path = "Reusable UIComponents";
 			sourceTree = "<group>";
 		};
 		FC7E6D1C26AB1A1600126B97 /* Diary */ = {
@@ -691,29 +823,10 @@
 			isa = PBXGroup;
 			children = (
 				FC7E6D2226AB1FF400126B97 /* ScoreTimeView.swift */,
+				FC1563F62748ED8E00AAD925 /* IconView.swift */,
+				FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */,
 			);
 			path = ViewElements;
-			sourceTree = "<group>";
-		};
-		FC7E6D8126AC484500126B97 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FC8BE9B326E65F3600D12704 /* Statistics */,
-				FC0CCC7026BE6CFB004CDE8A /* Tag */,
-				FCEA31B726D67B940062509A /* Note.swift */,
-				FC7E6D9A26AC927900126B97 /* SplitDate.swift */,
-				FCB0642D26B5479D00A0494A /* Mood.swift */,
-				FCEEB2DC26CD80EC00F7B00F /* Event.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		FC84E81E26C8FC210081CBA2 /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				FC84E82026C8FC350081CBA2 /* DefaultTags.swift */,
-			);
-			path = Tags;
 			sourceTree = "<group>";
 		};
 		FC84E82226C902530081CBA2 /* UserDefaults */ = {
@@ -736,13 +849,8 @@
 		FC84E84426C912DE0081CBA2 /* EditTagGroup */ = {
 			isa = PBXGroup;
 			children = (
-				FC84E89F26CAD1470081CBA2 /* Cells */,
-				FC84E84526C913370081CBA2 /* EditTagGroupVC.swift */,
-				FCEEB08726CAD88F00F7B00F /* EditTagGroupVM.swift */,
-				FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */,
-				FCEEB21826CBF2D000F7B00F /* IconButton.swift */,
-				FCEEB21A26CC02A700F7B00F /* EditingTableView.swift */,
-				FCEEB2DF26CD81F000F7B00F /* TagEvent.swift */,
+				FC1563E82748D9CD00AAD925 /* Views */,
+				FC1563E72748D9AF00AAD925 /* Tag Models */,
 			);
 			path = EditTagGroup;
 			sourceTree = "<group>";
@@ -756,17 +864,6 @@
 				FCEA30F726D3DD5E0062509A /* EditTagGroupTableFooter.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		FC8BE9B326E65F3600D12704 /* Statistics */ = {
-			isa = PBXGroup;
-			children = (
-				FC42A74F27397E21004A56F9 /* StatSettings.swift */,
-				FC8BE9B126E65F3200D12704 /* StatDay.swift */,
-				FC9F93AB272ED9F800582765 /* DrawableStat.swift */,
-				FC42A75327397F86004A56F9 /* StatsDataSource.swift */,
-			);
-			path = Statistics;
 			sourceTree = "<group>";
 		};
 		FC8BE9D326E7AD2900D12704 /* StatisticsManager */ = {
@@ -982,7 +1079,6 @@
 				FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */,
 				FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */,
 				FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */,
-				FC6C56E3266000FB000188A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,7 +1227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1563F52748E9AA00AAD925 /* MoreCell.swift in Sources */,
 				FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */,
+				FC1563F32748E8B700AAD925 /* MoreTableDataProvider.swift in Sources */,
 				FC42A792273ABD00004A56F9 /* StatDayContentManager.swift in Sources */,
 				FC25ADC52740F548000DE791 /* SelectStatTableDataProvider.swift in Sources */,
 				FC6C58A3266136E5000188A6 /* SwiftUIPreview.swift in Sources */,
@@ -1144,6 +1242,7 @@
 				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
+				FC1563FA2748FA0F00AAD925 /* IMoreItem.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
 				FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */,
@@ -1169,6 +1268,7 @@
 				FC42A6C627350F8E004A56F9 /* Array.swift in Sources */,
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,
 				FC25ADCB2740FCE4000DE791 /* SelectStatTableView.swift in Sources */,
+				FC1563FC2748FBC900AAD925 /* ContactDeveloperMoreItem.swift in Sources */,
 				FC29A67526ECEB3800DC87DA /* StatTestHelper.swift in Sources */,
 				FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */,
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
@@ -1176,6 +1276,7 @@
 				FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */,
 				FC42A798273ABE92004A56F9 /* IStatContentManager.swift in Sources */,
 				FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */,
+				FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */,
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */,
 				FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */,
@@ -1190,8 +1291,10 @@
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FC42A6E8273641D2004A56F9 /* StatsTableHeaderView.swift in Sources */,
 				FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */,
+				FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
+				FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
 				FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */,
 				FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */,
@@ -1223,6 +1326,7 @@
 				FC42A75227397EB1004A56F9 /* StatsContentRepository.swift in Sources */,
 				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
 				FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */,
+				FC1563F72748ED8E00AAD925 /* IconView.swift in Sources */,
 				FCEEB21926CBF2D000F7B00F /* IconButton.swift in Sources */,
 				FC25ADC72740FA28000DE791 /* SelectsStatCell.swift in Sources */,
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
@@ -1242,6 +1346,7 @@
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
 				FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */,
+				FC1564022749007700AAD925 /* MoreTableView.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
 				FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
@@ -1264,14 +1369,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FC6C56E1266000FB000188A6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC6C56E2266000FB000188A6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1419,6 +1516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sveti/Utility/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1474,6 +1572,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sveti/Utility/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1492,7 +1591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = Sveti/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Utility/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1513,7 +1612,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = Sveti/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Utility/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
