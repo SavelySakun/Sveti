@@ -87,6 +87,7 @@ class ContactDeveloperVC: VCwithScrollView {
 extension ContactDeveloperVC: MFMailComposeViewControllerDelegate {
   func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
     controller.dismiss(animated: true)
+    guard result == .sent else { return }
     SPAlert.present(message: "The email has been sent!", haptic: .success)
   }
 }

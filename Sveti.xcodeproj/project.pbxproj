@@ -127,6 +127,10 @@
 		FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */; };
 		FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */; };
 		FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */; };
+		FCB9ECB9274BE66600E3E864 /* EditTagGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECB8274BE66600E3E864 /* EditTagGroupsVC.swift */; };
+		FCB9ECBB274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBA274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift */; };
+		FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBC274BE8D900E3E864 /* EditTagGroupsCell.swift */; };
+		FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ED03274FF49100E3E864 /* EditTagGroupsTable.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -296,6 +300,10 @@
 		FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsMoreItem.swift; sourceTree = "<group>"; };
 		FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMoreItem.swift; sourceTree = "<group>"; };
 		FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDataMoreItem.swift; sourceTree = "<group>"; };
+		FCB9ECB8274BE66600E3E864 /* EditTagGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsVC.swift; sourceTree = "<group>"; };
+		FCB9ECBA274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsTableDataProvider.swift; sourceTree = "<group>"; };
+		FCB9ECBC274BE8D900E3E864 /* EditTagGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsCell.swift; sourceTree = "<group>"; };
+		FCB9ED03274FF49100E3E864 /* EditTagGroupsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsTable.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -557,6 +565,7 @@
 		FC1563FD2748FF0E00AAD925 /* Detail Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FCB9ECB6274BE33300E3E864 /* EditTagGroups */,
 				FC1563FE2748FF1A00AAD925 /* ContactDeveloper */,
 			);
 			path = "Detail Screens";
@@ -924,6 +933,17 @@
 			path = EditNote;
 			sourceTree = "<group>";
 		};
+		FCB9ECB6274BE33300E3E864 /* EditTagGroups */ = {
+			isa = PBXGroup;
+			children = (
+				FCB9ECB8274BE66600E3E864 /* EditTagGroupsVC.swift */,
+				FCB9ECBA274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift */,
+				FCB9ECBC274BE8D900E3E864 /* EditTagGroupsCell.swift */,
+				FCB9ED03274FF49100E3E864 /* EditTagGroupsTable.swift */,
+			);
+			path = EditTagGroups;
+			sourceTree = "<group>";
+		};
 		FCD9AB4E268A335100817746 /* TableData */ = {
 			isa = PBXGroup;
 			children = (
@@ -1254,8 +1274,10 @@
 				FC1563FA2748FA0F00AAD925 /* IMoreItem.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
+				FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */,
 				FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */,
 				FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */,
+				FCB9ECB9274BE66600E3E864 /* EditTagGroupsVC.swift in Sources */,
 				FC42A6C827353DE5004A56F9 /* StatDayValueFormatter.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
 				FC42A75427397F86004A56F9 /* StatsDataSource.swift in Sources */,
@@ -1281,11 +1303,13 @@
 				FC29A67526ECEB3800DC87DA /* StatTestHelper.swift in Sources */,
 				FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */,
 				FC7E6D2A26AC037900126B97 /* UIImage.swift in Sources */,
+				FCB9ECBB274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift in Sources */,
 				FC7E6D2826AC019C00126B97 /* Constants.swift in Sources */,
 				FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */,
 				FC42A798273ABE92004A56F9 /* IStatContentManager.swift in Sources */,
 				FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */,
 				FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */,
+				FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */,
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
 				FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */,

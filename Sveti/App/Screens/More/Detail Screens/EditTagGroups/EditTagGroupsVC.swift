@@ -1,11 +1,10 @@
 import UIKit
-import MessageUI
 
-class MoreVC: VCwithTable, MFMailComposeViewControllerDelegate {
+class EditTagGroupsVC: VCwithTable {
 
   override init(with tableStyle: UITableView.Style = .insetGrouped) {
     super.init(with: tableStyle)
-    tableView = MoreTableView(viewModel: viewModel)
+    tableView = EditTagGroupsTable(viewModel: viewModel)
   }
 
   required init?(coder: NSCoder) {
@@ -14,13 +13,13 @@ class MoreVC: VCwithTable, MFMailComposeViewControllerDelegate {
 
   override func setLayout() {
     super.setLayout()
-    title = "More"
+    title = "Edit tag groups"
     tableView.backgroundColor = .systemGray6
+    tableView.isEditing = true
   }
 
   override func getDataProvider() -> TableDataProvider? {
-    return MoreTableDataProvider()
+    return EditTagGroupsTableDataProvider()
   }
 
 }
-

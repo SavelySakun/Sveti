@@ -14,8 +14,7 @@ class EditTagGroupsMoreItem: IMoreItem {
   private func setOnTapAction() {
     onTapAction = {
       guard let currentVC = CurrentVC.current else { return }
-      let contactDeveloperVC = ContactDeveloperVC()
-      currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
+      currentVC.navigationController?.pushViewController(EditTagGroupsVC(), animated: true)
     }
   }
 }

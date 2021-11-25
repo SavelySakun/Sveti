@@ -25,6 +25,7 @@ class SelectStatVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
+    tableView.backgroundColor = .systemGray6
     tableView.tableHeaderView = SelectStatTableHeaderView(frame: .init(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 0.25))
   }
 }
