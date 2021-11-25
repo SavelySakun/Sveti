@@ -28,6 +28,7 @@ class DiaryVC: BaseViewController {
     title = "Diary"
     setTable()
     setEmptyView()
+    view.backgroundColor = .systemGray6
   }
 
   private func setTable() {
@@ -35,6 +36,7 @@ class DiaryVC: BaseViewController {
     tableView.dataSource = self
     tableView.register(DiaryCell.self, forCellReuseIdentifier: "DiaryCell")
     tableView.separatorStyle = .none
+    tableView.backgroundColor = .systemGray6
 
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in

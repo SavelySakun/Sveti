@@ -10,7 +10,7 @@ class ContactDeveloperVC: VCwithScrollView {
   override func setLayout() {
     super.setLayout()
     title = "Contact us"
-    view.backgroundColor = .white
+    view.backgroundColor = .systemGray6
     setButtons()
     setTextImageView()
     setButtonsStackView()

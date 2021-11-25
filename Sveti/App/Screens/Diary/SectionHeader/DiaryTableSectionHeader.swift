@@ -22,7 +22,7 @@ class DiaryTableSectionHeader: UIView {
   }
 
   private func setLayout() {
-    backgroundColor = .white
+    backgroundColor = .systemGray6
     setDateLabel()
     setDateAndAverageScore()
     setSeparator()
@@ -34,7 +34,7 @@ class DiaryTableSectionHeader: UIView {
   }
 
   private func setSeparator() {
-    separator.backgroundColor = .systemGray6
+    separator.backgroundColor = .systemGray4
     addSubview(separator)
     separator.snp.makeConstraints { (make) in
       make.centerY.equalTo(timeWithScoreStack.snp.centerY)

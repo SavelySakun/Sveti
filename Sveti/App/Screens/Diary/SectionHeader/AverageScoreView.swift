@@ -20,7 +20,7 @@ class AverageScoreView: UIView {
   }
 
   private func setBackground() {
-    self.backgroundColor = .systemGray6
+    self.backgroundColor = .systemGray5
     self.layer.cornerRadius = 6.5
   }
 

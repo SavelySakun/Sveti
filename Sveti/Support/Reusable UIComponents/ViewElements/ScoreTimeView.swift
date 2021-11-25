@@ -17,7 +17,7 @@ class ScoreTimeView: UIView {
   func configure(with note: Note) {
     timeLabel.text = getTime(from: note)
     scoreLabel.text = MathHelper().getAverageMood(from: note)
-    scoreLabel.textColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 1.0)
+    //scoreLabel.textColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 1.0)
   }
 
   private func getTime(from note: Note) -> String {
@@ -30,7 +30,7 @@ class ScoreTimeView: UIView {
   }
 
   private func setLabelsStyle() {
-    scoreLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+    scoreLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     scoreLabel.textColor = .blue
     timeLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
   }

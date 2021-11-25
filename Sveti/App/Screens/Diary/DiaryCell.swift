@@ -10,7 +10,8 @@ class DiaryCell: Cell {
   func configure(with note: Note) {
     commentLabel.text = note.comment
     scoreTimeView.configure(with: note)
-    containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 0.1)
+    containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 0.6)
+    contentView.backgroundColor = .systemGray6
     setTagCollection(with: note)
   }
 
@@ -31,8 +32,8 @@ class DiaryCell: Cell {
 
   private func setContainer() {
     contentView.addSubview(containerView)
-    containerView.layer.cornerRadius = 22
-    containerView.backgroundColor = .systemGray6
+    containerView.layer.cornerRadius = 14
+    containerView.backgroundColor = .clear
     containerView.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(6)
       make.left.equalToSuperview().offset(15)
@@ -43,6 +44,8 @@ class DiaryCell: Cell {
 
   private func setScoreTime() {
     containerView.addSubview(scoreTimeView)
+    scoreTimeView.timeLabel.textColor = .white
+    scoreTimeView.scoreLabel.textColor = .white
     scoreTimeView.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(UIUtils.middleOffset)
       make.left.equalToSuperview().offset(UIUtils.middleOffset)
@@ -50,8 +53,9 @@ class DiaryCell: Cell {
   }
 
   private func setComment() {
-    commentLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    commentLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
     commentLabel.numberOfLines = 0
+    commentLabel.textColor = .white
 
     containerView.addSubview(commentLabel)
     commentLabel.snp.makeConstraints { (make) in
