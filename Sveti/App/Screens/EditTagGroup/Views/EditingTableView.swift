@@ -5,6 +5,7 @@ class EditingTableView: TableView {
 
   override func registerCells() {
     super.registerCells()
+    register(TagGroupCell.self, forCellReuseIdentifier: TagGroupCell.identifier)
     register(NoTagFound.self, forCellReuseIdentifier: NoTagFound.identifier)
   }
 

@@ -5,13 +5,13 @@ class EditTagGroupTableDataProvider: TableDataProvider {
   override func configureSections(with data: Any? = nil) -> [TableSection] {
 
     let tableSections = [
-      TableSection(title: "Название группы", cellsData: [
+      TableSection(title: "Group name", cellsData: [
          CellData(type: TagGroupNameCell.self, viewModel: CellVM(cellValue: data))
       ]),
 
-      TableSection(title: "Активно", cellsData: []),
+      TableSection(title: "Active", cellsData: []),
 
-      TableSection(title: "Скрыто", cellsData: [])
+      TableSection(title: "Hidden", cellsData: [])
     ]
     return tableSections
   }
