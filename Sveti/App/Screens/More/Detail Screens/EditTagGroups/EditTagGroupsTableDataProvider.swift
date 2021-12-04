@@ -3,11 +3,7 @@ import Foundation
 class EditTagGroupsTableDataProvider: TableDataProvider {
 
   override func configureSections(with data: Any? = nil) -> [TableSection] {
-
-    let tableSections = [
-      TableSection(title: "Groups", cellsData: getCellsData())
-    ]
-    return tableSections
+    return [TableSection(title: "Groups", cellsData: getCellsData())]
   }
 
   private func getCellsData() -> [CellData] {

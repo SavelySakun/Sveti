@@ -15,6 +15,9 @@ class EditTagGroupsTable: TableView {
       .cellValue as? TagGroup else { return }
 
     let editTagGroupVC = EditTagGroupVC(groupId: cellValue.id)
+    editTagGroupVC.onClosingCompletion = {
+      currentVC.updateContent()
+    }
 
     currentVC.navigationController?.pushViewController(editTagGroupVC, animated: true)
   }

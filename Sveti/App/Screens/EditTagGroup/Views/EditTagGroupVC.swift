@@ -13,7 +13,6 @@ class EditTagGroupVC: VCwithTable {
   var editingTagId = String() // Use for update tags in actionSheet called from TagGroupCell
   private var hideAction = UIAlertAction(title: "", style: .default)
 
-
   init(groupId: String) {
     self.groupId = groupId
     super.init(with: .insetGrouped)
@@ -50,7 +49,7 @@ class EditTagGroupVC: VCwithTable {
     footerView.onDeleteTapHandler = {
       self.present(self.deleteGroupAlertController, animated: true, completion: nil)
     }
-    
+
     tableView.tableFooterView = footerView
 
     title = "Edit"
@@ -62,8 +61,15 @@ class EditTagGroupVC: VCwithTable {
   }
 
   private func setNewTagButton() {
-    let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onNewTagTap))
-    navigationItem.rightBarButtonItem = rightButton
+    let button = UIButton()
+    button.snp.makeConstraints { (make) in
+      make.height.width.equalTo(28)
+    }
+    let image = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
+    button.setImage(image, for: .normal)
+    button.tintColor = .systemGreen
+    button.addTarget(self, action: #selector(onNewTagTap), for: .touchUpInside)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
   }
 
   private func setNewTagAlert() {
@@ -156,10 +162,12 @@ class EditTagGroupVC: VCwithTable {
 
 extension EditTagGroupVC: ViewControllerVMDelegate {
   func onNeedToUpdateContent() {
-    DispatchQueue.main.async {
-      guard let editTagVM = self.viewModel as? EditTagGroupVM else { return }
-      editTagVM.generateCellsDataForTags()
-      self.tableView.reloadData()
+    DispatchQueue.main.async { [self] in
+      UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
+        guard let editTagVM = self.viewModel as? EditTagGroupVM else { return }
+        editTagVM.generateCellsDataForTags()
+        self.tableView.reloadData()
+      }
     }
   }
 }
