@@ -147,4 +147,11 @@ class TagsRepository {
       groupToRename.title = newName
     }
   }
+
+  func addNewGroup(with name: String, id: String) {
+    let tagGroup = TagGroup(title: name, tags: [Tag](), id: id)
+    try! realm.write {
+      realm.add(tagGroup)
+    }
+  }
 }
