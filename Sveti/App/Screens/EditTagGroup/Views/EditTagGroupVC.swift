@@ -108,8 +108,6 @@ class EditTagGroupVC: VCwithTable {
     }
 
     let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
-      guard let tag = self.tagsRepository.findTag(with: self.editingTagId) else { return }
-      SPAlert.present(title: "Готово", message: "Тег «\(tag.name)» удалён", preset: .done, haptic: .success)
       self.tagsRepository.removeTag(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }

@@ -7,15 +7,28 @@ class EditTagGroupsCell: Cell {
   private let totalTagsCountView = TextOnRoundView()
 
   override func setLayout() {
+    selectionStyle = .default
+    setTotalTagsCountView()
     setTitleLabel()
     setEditButton()
-    setTotalTagsCountView()
+  }
+
+  private func setTotalTagsCountView() {
+    contentView.addSubview(totalTagsCountView)
+    totalTagsCountView.backgroundColor = #colorLiteral(red: 0.1764705882, green: 0.6117647059, blue: 0.9882352941, alpha: 1).withAlphaComponent(0.7)
+    totalTagsCountView.textLabel.textColor = .white
+    totalTagsCountView.textLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+    totalTagsCountView.snp.makeConstraints { (make) in
+      make.left.equalToSuperview().offset(UIUtils.defaultOffset)
+      make.centerY.equalTo(contentView.snp.centerY)
+    }
   }
 
   private func setTitleLabel() {
     contentView.addSubview(titleLabel)
     titleLabel.snp.makeConstraints { (make) in
-      make.top.left.bottom.equalToSuperview().inset(UIUtils.middleOffset)
+      make.top.bottom.equalToSuperview().inset(UIUtils.middleOffset)
+      make.left.equalTo(totalTagsCountView.snp.right).offset(UIUtils.defaultOffset)
     }
   }
 
@@ -28,15 +41,7 @@ class EditTagGroupsCell: Cell {
       make.centerY.equalTo(titleLabel.snp.centerY)
       make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
     }
-  }
-
-  private func setTotalTagsCountView() {
-    contentView.addSubview(totalTagsCountView)
-    totalTagsCountView.backgroundColor = .systemGray5
-    totalTagsCountView.snp.makeConstraints { (make) in
-      make.left.equalTo(titleLabel.snp.right).offset(UIUtils.defaultOffset)
-      make.centerY.equalTo(titleLabel.snp.centerY)
-    }
+    editButton.isHidden = true
   }
 
   override func configureSelf(with viewModel: CellVM) {

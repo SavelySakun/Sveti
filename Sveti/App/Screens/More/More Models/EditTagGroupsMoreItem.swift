@@ -1,7 +1,7 @@
 import UIKit
 
 class EditTagGroupsMoreItem: IMoreItem {
-  var title: String = "Edit tag groups"
+  var title: String = "Tag groups"
   var iconBackgroundColor: UIColor = .systemBlue
   var iconImage: UIImage? = UIImage(named: "folder")?.withRenderingMode(.alwaysTemplate)
   var iconTintColor: UIColor = .white

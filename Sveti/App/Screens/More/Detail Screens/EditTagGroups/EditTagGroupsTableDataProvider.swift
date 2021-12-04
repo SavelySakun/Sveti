@@ -2,7 +2,6 @@ import Foundation
 
 class EditTagGroupsTableDataProvider: TableDataProvider {
 
-
   override func configureSections(with data: Any? = nil) -> [TableSection] {
 
     let tableSections = [
