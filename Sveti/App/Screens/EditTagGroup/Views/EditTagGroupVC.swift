@@ -6,7 +6,7 @@ class EditTagGroupVC: VCwithTable {
 
   private let actionsAlertController = UIAlertController()
   private let newTagAlertController = UIAlertController(title: "Add a tag", message: nil, preferredStyle: .alert)
-  private let deleteGroupAlertController = UIAlertController(title: "Внимание", message: "Удалить группу?", preferredStyle: .alert)
+  private let deleteGroupAlertController = UIAlertController(title: "Attention", message: "Delete group?", preferredStyle: .alert)
 
   let groupId: String
   private let tagsRepository = TagsRepository()
@@ -75,7 +75,7 @@ class EditTagGroupVC: VCwithTable {
       self.saveNewTag()
     }
 
-    let dismissAction = UIAlertAction(title: "Отмена", style: .destructive) { _ in
+    let dismissAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
       self.newTagAlertController.textFields?.last?.text?.removeAll()
     }
 
@@ -85,12 +85,12 @@ class EditTagGroupVC: VCwithTable {
   }
 
   private func setActionsAlertController() {
-    hideAction = UIAlertAction(title: "Скрыть", style: .default) { _ in
+    hideAction = UIAlertAction(title: "Hide", style: .default) { _ in
       self.tagsRepository.updateHidden(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 
-    let changeGroupAction = UIAlertAction(title: "Переместить", style: .default) { _ in
+    let changeGroupAction = UIAlertAction(title: "Reorder", style: .default) { _ in
       let selectGroupVC = SelectGroupVC(with: self.groupId)
       var popupVC = ALCardController()
 
@@ -100,7 +100,7 @@ class EditTagGroupVC: VCwithTable {
       selectGroupVC.onSelectionCompletion = { groupTitle in
         popupVC.dismiss(animated: true)
         self.onNeedToUpdateContent()
-        SPAlert.present(title: "Готово", message: "Тег перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
+        SPAlert.present(title: "Done", message: "Тег перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
       }
 
       popupVC = ALPopup.card(controller: selectGroupVC)

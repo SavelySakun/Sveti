@@ -111,7 +111,7 @@
 		FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A7272ED30300582765 /* StatDaysDataSetGenerator.swift */; };
 		FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A9272ED3A700582765 /* StatsVM.swift */; };
 		FC9F93AC272ED9F800582765 /* DrawableStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93AB272ED9F800582765 /* DrawableStat.swift */; };
-		FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */; };
+		FCAAD9F326B84FC700607DC0 /* TextOnRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* TextOnRoundView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
 		FCB0642E26B5479D00A0494A /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642D26B5479D00A0494A /* Mood.swift */; };
@@ -285,7 +285,7 @@
 		FC9F93A7272ED30300582765 /* StatDaysDataSetGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysDataSetGenerator.swift; sourceTree = "<group>"; };
 		FC9F93A9272ED3A700582765 /* StatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVM.swift; sourceTree = "<group>"; };
 		FC9F93AB272ED9F800582765 /* DrawableStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableStat.swift; sourceTree = "<group>"; };
-		FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageScoreView.swift; sourceTree = "<group>"; };
+		FCAAD9F226B84FC700607DC0 /* TextOnRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOnRoundView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		FCB0643026B55D6A00A0494A /* MoodScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodScoreCell.swift; sourceTree = "<group>"; };
@@ -899,7 +899,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7E6D9826AC8A2E00126B97 /* DiaryTableSectionHeader.swift */,
-				FCAAD9F226B84FC700607DC0 /* AverageScoreView.swift */,
+				FCAAD9F226B84FC700607DC0 /* TextOnRoundView.swift */,
 			);
 			path = SectionHeader;
 			sourceTree = "<group>";
@@ -1326,7 +1326,7 @@
 				FC42A6E8273641D2004A56F9 /* StatsTableHeaderView.swift in Sources */,
 				FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */,
 				FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */,
-				FCAAD9F326B84FC700607DC0 /* AverageScoreView.swift in Sources */,
+				FCAAD9F326B84FC700607DC0 /* TextOnRoundView.swift in Sources */,
 				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
 				FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
