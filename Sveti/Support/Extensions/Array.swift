@@ -1,11 +1,9 @@
 import Foundation
 
 extension Array {
-  /** Возвращает из массива опциональное значение */
+  /** Returns optional value from array */
   subscript(safe index: Int) -> Element? {
-    guard startIndex <= index && index < endIndex else {
-      return nil
-    }
+    guard startIndex <= index && index < endIndex else { return nil }
     return self[index]
   }
 }

@@ -2,14 +2,14 @@ import UIKit
 import RealmSwift
 
 struct DiarySection {
-  var date = String()
+  var date = SplitDate()
   var average: String?
   var notes = [Note]()
 }
 
 class DiaryVM {
 
-  var sections = [DiarySection]()
+  var sectionsWithNotes = [DiarySection]()
   private let noteRepository = NotesRepository()
 
   init() {
@@ -17,7 +17,7 @@ class DiaryVM {
   }
 
   func loadNotes() {
-    sections.removeAll()
+    sectionsWithNotes.removeAll()
     let notes = noteRepository.getNotes()
     configureSections(from: notes)
   }
@@ -29,24 +29,29 @@ class DiaryVM {
   }
 
   func configureSections(from notes: [Note]) {
-    let groupedByDate = Dictionary(grouping: notes) { $0.splitDate?.dMMMMyyyy }
+    let notesGroupedByDate = Dictionary(grouping: notes) { $0.splitDate?.ddMMyy }
+    guard let firstNoteSplitDate = notes.first?.splitDate else { return }
 
-    var dateForSection = notes.first?.splitDate?.dMMMMyyyy
-    var notesForSection = groupedByDate[dateForSection]
-    var newSection = DiarySection(date: dateForSection ?? "", average: getAverageForSection(with: notesForSection), notes: notesForSection ?? [])
+    var dateForSection = firstNoteSplitDate.ddMMyy
+    var notesForSection = notesGroupedByDate[dateForSection]
+    var currentlyEditingSection = DiarySection(date: firstNoteSplitDate, average: getAverageForSection(with: notesForSection), notes: notesForSection ?? [])
 
     for note in notes {
-      let noteDate = note.splitDate?.dMMMMyyyy
-      guard sections.last?.date != noteDate else { continue }
+      guard let noteDate = note.splitDate,
+            // Check is section with this note date already exist. If exist -> check next note.
+            sectionsWithNotes.last?.date.ddMMyy != noteDate.ddMMyy else { continue }
 
-      if noteDate == dateForSection {
-        sections.append(newSection)
+      // If note date equal to the date of current editing section -> section is already configured, put it in the sections array.
+      if noteDate.ddMMyy == dateForSection {
+        sectionsWithNotes.append(currentlyEditingSection)
       } else {
-        dateForSection = noteDate
-        notesForSection = groupedByDate[dateForSection]
-        newSection = DiarySection(date: dateForSection ?? "", notes: notesForSection ?? [])
-        newSection.average = getAverageForSection(with: notesForSection)
-        sections.append(newSection)
+        // If note date differ from currently editing section date -> we need to configure new section with new date and put this new section in the sections array.
+        dateForSection = noteDate.ddMMyy
+        notesForSection = notesGroupedByDate[dateForSection]
+
+        currentlyEditingSection = DiarySection(date: noteDate, notes: notesForSection ?? [])
+        currentlyEditingSection.average = getAverageForSection(with: notesForSection)
+        sectionsWithNotes.append(currentlyEditingSection)
       }
     }
   }
