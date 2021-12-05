@@ -10,15 +10,16 @@ class DiaryCell: Cell {
   func configure(with note: Note) {
     commentLabel.text = note.comment
     scoreTimeView.configure(with: note)
-    containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 0.6)
+    containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 0.65)
     contentView.backgroundColor = .systemGray6
     setTagCollection(with: note)
   }
 
   private func setTagCollection(with note: Note) {
-    DispatchQueue.main.async {
-      self.tagCollectionView.tags = Array(note.tags)
-      self.tagCollectionView.reloadData()
+    DispatchQueue.main.async { [self] in
+      tagCollectionView.tagsBackColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), palette: .tag)
+      tagCollectionView.tags = Array(note.tags)
+      tagCollectionView.reloadData()
     }
   }
 
@@ -68,9 +69,9 @@ class DiaryCell: Cell {
   private func setTagCollectionView() {
     containerView.addSubview(tagCollectionView)
     tagCollectionView.snp.makeConstraints { (make) in
-      make.height.equalTo(25) // todo: сделать автовысоту
-      make.top.equalTo(commentLabel.snp.bottom).offset(8)
-      make.left.equalToSuperview().offset(9)
+      make.height.equalTo(30) // todo: сделать автовысоту
+      make.top.equalTo(commentLabel.snp.bottom).offset(UIUtils.defaultOffset)
+      make.left.equalToSuperview().offset(UIUtils.middleOffset)
       make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
       make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
     }
