@@ -13,12 +13,12 @@ class SelectGroupTableDataProvider: TableDataProvider {
     editingGroupId = groupId
     
     let tableSections = [
-      TableSection(title: "Выберите группу", cellsData: getDataForCells()),
+      TableSection(title: "Выберите группу", cellsData: getCellsData()),
     ]
     return tableSections
   }
 
-  private func getDataForCells() -> [CellData] {
+  private func getCellsData() -> [CellData] {
     var cellsData = [CellData]()
     let groups = TagsRepository().groups
 

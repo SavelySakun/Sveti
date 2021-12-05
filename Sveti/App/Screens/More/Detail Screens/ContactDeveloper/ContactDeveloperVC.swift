@@ -10,7 +10,7 @@ class ContactDeveloperVC: VCwithScrollView {
   override func setLayout() {
     super.setLayout()
     title = "Contact us"
-    view.backgroundColor = .white
+    view.backgroundColor = .systemGray6
     setButtons()
     setTextImageView()
     setButtonsStackView()
@@ -35,9 +35,9 @@ class ContactDeveloperVC: VCwithScrollView {
 
   private func setTextImageView() {
     contentView.addSubview(textImageView)
-    textImageView.setContent(imageName: "purrDate", text: "Write information about bugs or words of support.")
+    textImageView.setContent(imageName: "purrDate", text: "Share information about bugs or words of support")
     textImageView.snp.makeConstraints { (make) in
-      make.width.equalTo(view.snp.width).multipliedBy(0.8)
+      make.width.equalTo(view.snp.width).multipliedBy(0.6)
       make.height.equalTo(view.snp.height).multipliedBy(0.3)
       make.top.equalToSuperview().offset(UIUtils.kongOffset)
       make.centerX.equalToSuperview()
@@ -87,6 +87,7 @@ class ContactDeveloperVC: VCwithScrollView {
 extension ContactDeveloperVC: MFMailComposeViewControllerDelegate {
   func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
     controller.dismiss(animated: true)
+    guard result == .sent else { return }
     SPAlert.present(message: "The email has been sent!", haptic: .success)
   }
 }

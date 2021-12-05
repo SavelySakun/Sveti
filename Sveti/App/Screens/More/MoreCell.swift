@@ -7,7 +7,6 @@ class MoreCell: Cell {
   var onTapAction: (() -> Void)?
 
   override func setLayout() {
-    backgroundColor = .systemGray6
     accessoryType = .disclosureIndicator
 
     contentView.addSubview(iconView)

@@ -23,7 +23,7 @@ class IconView: UIView {
   private func setLayout() {
     addSubview(imageView)
     imageView.snp.makeConstraints { (make) in
-      make.height.width.equalToSuperview().multipliedBy(0.75)
+      make.height.width.equalToSuperview().multipliedBy(0.65)
       make.centerX.centerY.equalToSuperview()
     }
   }

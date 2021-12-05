@@ -1,6 +1,6 @@
-import UIKit
+import Foundation
 
-class UIUtils {
+enum UIUtils {
   static let smallOffset = 8
 	static let defaultOffset = 12
   static let middleOffset = 16

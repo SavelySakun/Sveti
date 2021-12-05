@@ -15,6 +15,7 @@ class MoreVC: VCwithTable, MFMailComposeViewControllerDelegate {
   override func setLayout() {
     super.setLayout()
     title = "More"
+    tableView.backgroundColor = .systemGray6
   }
 
   override func getDataProvider() -> TableDataProvider? {

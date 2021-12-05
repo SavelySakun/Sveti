@@ -1,8 +1,8 @@
 import UIKit
 
-class AverageScoreView: UIView {
+class TextOnRoundView: UIView {
 
-  let scoreLabel = UILabel()
+  let textLabel = UILabel()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -20,13 +20,13 @@ class AverageScoreView: UIView {
   }
 
   private func setBackground() {
-    self.backgroundColor = .systemGray6
+    self.backgroundColor = .systemGray5
     self.layer.cornerRadius = 6.5
   }
 
   private func addScore() {
-    addSubview(scoreLabel)
-    scoreLabel.snp.makeConstraints { (make) in
+    addSubview(textLabel)
+    textLabel.snp.makeConstraints { (make) in
       make.top.equalToSuperview().offset(5)
       make.left.equalToSuperview().offset(10)
       make.bottom.equalToSuperview().offset(-5)

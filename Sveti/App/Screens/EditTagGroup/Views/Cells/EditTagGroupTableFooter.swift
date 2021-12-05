@@ -15,9 +15,12 @@ class EditTagGroupTableFooter: UIView {
 
   private func setLayout() {
     let deleteButton = UIButton()
-    deleteButton.setTitle("Удалить группу", for: .normal)
+    deleteButton.setTitle("Delete group", for: .normal)
+    deleteButton.setTitleColor(.systemRed, for: .normal)
     deleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-    deleteButton.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1).withAlphaComponent(0.7)
+
+    deleteButton.layer.borderWidth = 1
+    deleteButton.layer.borderColor = UIColor.systemRed.cgColor
     deleteButton.layer.cornerRadius = 12
     deleteButton.addTarget(self, action: #selector(onDeleteTap), for: .touchUpInside)
 

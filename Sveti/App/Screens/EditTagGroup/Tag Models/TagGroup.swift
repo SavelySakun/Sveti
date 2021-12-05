@@ -7,9 +7,9 @@ class TagGroup: Object {
   @objc dynamic var isExpanded: Bool = true
   var tags = List<Tag>()
 
-  convenience init(title: String, tags: [Tag]) {
+  convenience init(title: String, tags: [Tag], id: String = UUID().uuidString) {
     self.init()
-    self.id = UUID().uuidString
+    self.id = id
     self.title = title
     tags.forEach { tag in
       self.tags.append(tag)

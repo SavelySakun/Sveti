@@ -6,13 +6,12 @@ class EditTagGroupVC: VCwithTable {
 
   private let actionsAlertController = UIAlertController()
   private let newTagAlertController = UIAlertController(title: "Add a tag", message: nil, preferredStyle: .alert)
-  private let deleteGroupAlertController = UIAlertController(title: "Внимание", message: "Удалить группу?", preferredStyle: .alert)
+  private let deleteGroupAlertController = UIAlertController(title: "Attention", message: "Delete group?", preferredStyle: .alert)
 
   let groupId: String
   private let tagsRepository = TagsRepository()
   var editingTagId = String() // Use for update tags in actionSheet called from TagGroupCell
   private var hideAction = UIAlertAction(title: "", style: .default)
-
 
   init(groupId: String) {
     self.groupId = groupId
@@ -50,7 +49,7 @@ class EditTagGroupVC: VCwithTable {
     footerView.onDeleteTapHandler = {
       self.present(self.deleteGroupAlertController, animated: true, completion: nil)
     }
-    
+
     tableView.tableFooterView = footerView
 
     title = "Edit"
@@ -62,8 +61,15 @@ class EditTagGroupVC: VCwithTable {
   }
 
   private func setNewTagButton() {
-    let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onNewTagTap))
-    navigationItem.rightBarButtonItem = rightButton
+    let button = UIButton()
+    button.snp.makeConstraints { (make) in
+      make.height.width.equalTo(28)
+    }
+    let image = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
+    button.setImage(image, for: .normal)
+    button.tintColor = .systemGreen
+    button.addTarget(self, action: #selector(onNewTagTap), for: .touchUpInside)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
   }
 
   private func setNewTagAlert() {
@@ -75,7 +81,7 @@ class EditTagGroupVC: VCwithTable {
       self.saveNewTag()
     }
 
-    let dismissAction = UIAlertAction(title: "Отмена", style: .destructive) { _ in
+    let dismissAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
       self.newTagAlertController.textFields?.last?.text?.removeAll()
     }
 
@@ -85,12 +91,12 @@ class EditTagGroupVC: VCwithTable {
   }
 
   private func setActionsAlertController() {
-    hideAction = UIAlertAction(title: "Скрыть", style: .default) { _ in
+    hideAction = UIAlertAction(title: "Hide", style: .default) { _ in
       self.tagsRepository.updateHidden(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 
-    let changeGroupAction = UIAlertAction(title: "Переместить", style: .default) { _ in
+    let changeGroupAction = UIAlertAction(title: "Reorder", style: .default) { _ in
       let selectGroupVC = SelectGroupVC(with: self.groupId)
       var popupVC = ALCardController()
 
@@ -100,7 +106,7 @@ class EditTagGroupVC: VCwithTable {
       selectGroupVC.onSelectionCompletion = { groupTitle in
         popupVC.dismiss(animated: true)
         self.onNeedToUpdateContent()
-        SPAlert.present(title: "Готово", message: "Тег перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
+        SPAlert.present(title: "Done", message: "Тег перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
       }
 
       popupVC = ALPopup.card(controller: selectGroupVC)
@@ -108,8 +114,6 @@ class EditTagGroupVC: VCwithTable {
     }
 
     let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
-      guard let tag = self.tagsRepository.findTag(with: self.editingTagId) else { return }
-      SPAlert.present(title: "Готово", message: "Тег «\(tag.name)» удалён", preset: .done, haptic: .success)
       self.tagsRepository.removeTag(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }
@@ -158,10 +162,12 @@ class EditTagGroupVC: VCwithTable {
 
 extension EditTagGroupVC: ViewControllerVMDelegate {
   func onNeedToUpdateContent() {
-    DispatchQueue.main.async {
-      guard let editTagVM = self.viewModel as? EditTagGroupVM else { return }
-      editTagVM.generateCellsDataForTags()
-      self.tableView.reloadData()
+    DispatchQueue.main.async { [self] in
+      UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
+        guard let editTagVM = self.viewModel as? EditTagGroupVM else { return }
+        editTagVM.generateCellsDataForTags()
+        self.tableView.reloadData()
+      }
     }
   }
 }
