@@ -5,7 +5,7 @@ class TabbarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setTabbarItems()
-    selectedIndex = 3
+    selectedIndex = 0
     delegate = self
   }
 

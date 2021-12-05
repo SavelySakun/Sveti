@@ -2,10 +2,41 @@ import UIKit
 
 class ColorHelper {
 
-  private let chartColors: [UIColor] = [#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), #colorLiteral(red: 0.2549019608, green: 0.2745098039, blue: 0.3019607843, alpha: 1), #colorLiteral(red: 0.3333333333, green: 0.04705882353, blue: 0.09411764706, alpha: 1), #colorLiteral(red: 0.9764705882, green: 0.2235294118, blue: 0.2352941176, alpha: 1), #colorLiteral(red: 0.9450980392, green: 0.3882352941, blue: 0.01568627451, alpha: 1), #colorLiteral(red: 0.831372549, green: 0.6196078431, blue: 0.1294117647, alpha: 1), #colorLiteral(red: 0.6196078431, green: 0.4823529412, blue: 0.5490196078, alpha: 1), #colorLiteral(red: 0.4666666667, green: 0.5647058824, blue: 0.8117647059, alpha: 1), #colorLiteral(red: 0.6862745098, green: 0.4470588235, blue: 0.9137254902, alpha: 1), #colorLiteral(red: 0.4235294118, green: 0.7137254902, blue: 0.3294117647, alpha: 1), #colorLiteral(red: 0.03921568627, green: 0.7294117647, blue: 1, alpha: 1)]
+  enum ColorsPalette {
+    case chart, tag
+  }
 
-  func getColor(value: Int, alpha: CGFloat = 0.5) -> UIColor {
+  private let chartColors: [Int: UIColor] = [
+    0: #colorLiteral(red: 0.2705882353, green: 0.3333333333, blue: 0.3803921569, alpha: 1),
+    1: #colorLiteral(red: 0.2705882353, green: 0.3333333333, blue: 0.3803921569, alpha: 1),
+    2: #colorLiteral(red: 0.6705882353, green: 0.02745098039, blue: 0.1019607843, alpha: 1),
+    3: #colorLiteral(red: 0.6705882353, green: 0.02745098039, blue: 0.1019607843, alpha: 1),
+    4: #colorLiteral(red: 0.9450980392, green: 0.3882352941, blue: 0.01568627451, alpha: 1),
+    5: #colorLiteral(red: 0.9450980392, green: 0.3882352941, blue: 0.01568627451, alpha: 1),
+    6: #colorLiteral(red: 0.8117647059, green: 0.2352941176, blue: 0.6549019608, alpha: 1),
+    7: #colorLiteral(red: 0.03921568627, green: 0.7294117647, blue: 1, alpha: 1),
+    8: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1),
+    9: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1),
+    10: #colorLiteral(red: 0.137254902, green: 0.6588235294, blue: 0.4862745098, alpha: 1)
+  ]
+
+  private let tagsBackColors: [Int: UIColor] = [
+    0: #colorLiteral(red: 0.2666666667, green: 0.3254901961, blue: 0.3725490196, alpha: 1),
+    1: #colorLiteral(red: 0.2666666667, green: 0.3254901961, blue: 0.3725490196, alpha: 1),
+    2: #colorLiteral(red: 0.6156862745, green: 0.02745098039, blue: 0.09411764706, alpha: 1),
+    3: #colorLiteral(red: 0.6156862745, green: 0.02745098039, blue: 0.09411764706, alpha: 1),
+    4: #colorLiteral(red: 0.8666666667, green: 0.3529411765, blue: 0.01176470588, alpha: 1),
+    5: #colorLiteral(red: 0.8666666667, green: 0.3529411765, blue: 0.01176470588, alpha: 1),
+    6: #colorLiteral(red: 0.768627451, green: 0.1921568627, blue: 0.6156862745, alpha: 1),
+    7: #colorLiteral(red: 0, green: 0.6862745098, blue: 0.9607843137, alpha: 1),
+    8: #colorLiteral(red: 0.1176470588, green: 0.6823529412, blue: 0.3058823529, alpha: 1),
+    9: #colorLiteral(red: 0.1176470588, green: 0.6823529412, blue: 0.3058823529, alpha: 1),
+    10: #colorLiteral(red: 0.1215686275, green: 0.5960784314, blue: 0.4392156863, alpha: 1)
+  ]
+
+  func getColor(value: Int, alpha: CGFloat = 1.0, palette: ColorsPalette = .chart) -> UIColor {
     guard value >= 0 && value <= 10 else { return .systemGray3 }
-    return chartColors[value].withAlphaComponent(alpha)
+    let palette = (palette == .chart) ? chartColors : tagsBackColors
+    return palette[value]?.withAlphaComponent(alpha) ?? .black
   }
 }

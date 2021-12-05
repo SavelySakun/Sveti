@@ -3,11 +3,12 @@ import UIKit
 class DiaryTagCollectionView: UICollectionView {
 
   var tags = [Tag]()
+  var tagsBackColor: UIColor = .systemGray2
 
   override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
     let collectionViewLayout = LeftAlignedCollectionViewFlowLayout()
     collectionViewLayout.minimumLineSpacing = 4
-    collectionViewLayout.minimumInteritemSpacing = 0
+    collectionViewLayout.minimumInteritemSpacing = 8
     collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 
     super.init(frame: frame, collectionViewLayout: collectionViewLayout)
@@ -43,6 +44,7 @@ extension DiaryTagCollectionView: UICollectionViewDataSource, UICollectionViewDe
 
     let tag = tags[indexPath.row]
     cell.set(with: tag)
+    cell.contentView.backgroundColor = tagsBackColor
 
     return cell
   }
