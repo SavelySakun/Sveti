@@ -7,7 +7,9 @@ class TagsRepository {
   private let userDefaults = UserDefaults()
 
   var groups: [TagGroup] {
-    realm.objects(TagGroup.self).toArray()
+    let tagGroupList = realm.objects(TagGroupList.self).last
+    let groupList = tagGroupList?.groupList.toArray() ?? [TagGroup]()
+    return groupList
   }
 
   init() {
@@ -25,9 +27,14 @@ class TagsRepository {
 
     guard !isSaved else { return }
     let groups = DefaultTags().groups
+    let tagGroupList = TagGroupList()
+
+    groups.forEach { group in
+      tagGroupList.groupList.append(group)
+    }
 
     try! realm.write {
-      realm.add(groups)
+      realm.add(tagGroupList)
     }
 
     userDefaults.set(true, forKey: UDKeys.isDefaultTagsSaved)
@@ -128,9 +135,10 @@ class TagsRepository {
   }
 
   func deleteGroup(with id: String) {
-    guard let object = realm.objects(TagGroup.self).filter("id = %@", id).first else { return }
+    let tagGroupList = realm.objects(TagGroupList.self).last?.groupList
+    guard let indexOfGroupToDelete = tagGroupList?.firstIndex(where: { $0.id == id }) else { return }
     try! realm.write {
-      realm.delete(object)
+      tagGroupList?.remove(at: indexOfGroupToDelete)
     }
   }
 
@@ -150,8 +158,16 @@ class TagsRepository {
 
   func addNewGroup(with name: String, id: String) {
     let tagGroup = TagGroup(title: name, tags: [Tag](), id: id)
+    guard let tagGroupList = realm.objects(TagGroupList.self).last else { return }
     try! realm.write {
-      realm.add(tagGroup)
+      tagGroupList.groupList.append(tagGroup)
+    }
+  }
+
+  func reorderGroup(moveGroupAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    let tagGroupList = realm.objects(TagGroupList.self).last
+    try! realm.write {
+      tagGroupList?.groupList.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
   }
 }

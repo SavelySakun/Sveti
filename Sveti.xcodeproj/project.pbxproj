@@ -35,6 +35,8 @@
 		FC25ADC92740FC79000DE791 /* SelectStatTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC82740FC79000DE791 /* SelectStatTableHeaderView.swift */; };
 		FC25ADCB2740FCE4000DE791 /* SelectStatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADCA2740FCE4000DE791 /* SelectStatTableView.swift */; };
 		FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADCC2741025B000DE791 /* StatTypes.swift */; };
+		FC27075B275C9EF800A2440A /* TagGroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC27075A275C9EF700A2440A /* TagGroupList.swift */; };
+		FC27075D275CA2A600A2440A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC27075C275CA2A600A2440A /* List.swift */; };
 		FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */; };
 		FC29A67026ECE11200DC87DA /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66F26ECE11200DC87DA /* StatsVC.swift */; };
 		FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */; };
@@ -208,6 +210,8 @@
 		FC25ADC82740FC79000DE791 /* SelectStatTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableHeaderView.swift; sourceTree = "<group>"; };
 		FC25ADCA2740FCE4000DE791 /* SelectStatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableView.swift; sourceTree = "<group>"; };
 		FC25ADCC2741025B000DE791 /* StatTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTypes.swift; sourceTree = "<group>"; };
+		FC27075A275C9EF700A2440A /* TagGroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupList.swift; sourceTree = "<group>"; };
+		FC27075C275CA2A600A2440A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		FC29A66226EC979A00DC87DA /* SvetiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC29A66626EC979A00DC87DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepositoryTests.swift; sourceTree = "<group>"; };
@@ -459,6 +463,7 @@
 			children = (
 				FC0CCC6C26BE6A52004CDE8A /* Tag.swift */,
 				FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */,
+				FC27075A275C9EF700A2440A /* TagGroupList.swift */,
 			);
 			path = "Tag Models";
 			sourceTree = "<group>";
@@ -767,6 +772,7 @@
 				FC7E6D9326AC57EC00126B97 /* Result.swift */,
 				FC42A6C527350F8E004A56F9 /* Array.swift */,
 				FC1563A4274692F800AAD925 /* Double.swift */,
+				FC27075C275CA2A600A2440A /* List.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1273,6 +1279,7 @@
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
 				FC1563FA2748FA0F00AAD925 /* IMoreItem.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
+				FC27075D275CA2A600A2440A /* List.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
 				FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */,
 				FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */,
@@ -1350,6 +1357,7 @@
 				FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */,
 				FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */,
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
+				FC27075B275C9EF800A2440A /* TagGroupList.swift in Sources */,
 				FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */,
 				FCE3689D26D268FB00A05271 /* SelectGroupTableDataProvider.swift in Sources */,
 				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,

@@ -35,6 +35,6 @@ class EditTagGroupsTable: TableView {
   }
 
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    //
+    TagsRepository().reorderGroup(moveGroupAt: sourceIndexPath, to: destinationIndexPath)
   }
 }
