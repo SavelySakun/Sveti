@@ -40,5 +40,4 @@ class MathHelper {
 
     return total / T(values.count)
   }
-
 }

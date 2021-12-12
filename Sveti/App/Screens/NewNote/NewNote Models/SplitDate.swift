@@ -8,9 +8,11 @@ class SplitDate: Object {
   @objc dynamic var ddMMyyyy = String()
   @objc dynamic var ddMMyy = String()
   @objc dynamic var dMMMMyyyy = String()
+  @objc dynamic var dMMMM = String()
   @objc dynamic var dMM = String()
   @objc dynamic var MM = String()
   @objc dynamic var MMYY = String()
+  @objc dynamic var weekday = String()
 
   var endOfDay: Date {
     Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: rawDate) ?? rawDate
@@ -47,6 +49,8 @@ class SplitDate: Object {
     setMM()
     setMMYY()
     setDDmmYY()
+    setDmmmm()
+    setWeekday()
   }
 
   private func setYYYY() {
@@ -88,4 +92,15 @@ class SplitDate: Object {
     dateFormatter.dateFormat = "dd.MM.yy"
     ddMMyy = dateFormatter.string(from: rawDate)
   }
+
+  private func setDmmmm() {
+    dateFormatter.dateFormat = "d MMMM"
+    dMMMM = dateFormatter.string(from: rawDate)
+  }
+
+  private func setWeekday() {
+    dateFormatter.dateFormat = "EEEE"
+    weekday = dateFormatter.string(from: rawDate)
+  }
+
 }

@@ -55,7 +55,7 @@ class DiaryVC: BaseViewController {
   }
 
   private func updateEmptyViewVisibility() {
-    emptyView.isHidden = !viewModel.sections.isEmpty
+    emptyView.isHidden = !viewModel.sectionsWithNotes.isEmpty
   }
 }
 
@@ -66,29 +66,42 @@ extension DiaryVC: UITableViewDelegate {
 extension DiaryVC: UITableViewDataSource {
 
   func numberOfSections(in tableView: UITableView) -> Int {
-    viewModel.sections.count
+    viewModel.sectionsWithNotes.count
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    viewModel.sections[section].notes.count
+    viewModel.sectionsWithNotes[section].notes.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as? DiaryCell else { return UITableViewCell() }
-    let note = viewModel.sections[indexPath.section].notes[indexPath.row]
+    let note = viewModel.sectionsWithNotes[indexPath.section].notes[indexPath.row]
     cell.configure(with: note)
     return cell
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let sectionItem = viewModel.sections[section]
-    return DiaryTableSectionHeader(date: sectionItem.date, averageScore: sectionItem.average)
+    return getDiaryTableSectionHeader(for: section)
+  }
+
+  private func getDiaryTableSectionHeader(for section: Int) -> DiaryTableSectionHeader {
+
+    var isSameYear = false // If current & previous section item have the same date -> don't show year string in the current section title.
+    let sectionItem = viewModel.sectionsWithNotes[section]
+
+    if let nextSectionItem = viewModel.sectionsWithNotes[safe: (section + 1)] {
+      isSameYear = (nextSectionItem.date.MMYY == sectionItem.date.MMYY)
+    }
+
+    let itemDate = sectionItem.date
+    let date = isSameYear ? itemDate.dMMMM : itemDate.dMMMMyyyy
+    return DiaryTableSectionHeader(date: "\(itemDate.weekday), \(date)", averageScore: sectionItem.average)
   }
 
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
     let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (_, _, completion) in
-      let noteToDeleteId = self.viewModel.sections[indexPath.section].notes[indexPath.row].id
+      let noteToDeleteId = self.viewModel.sectionsWithNotes[indexPath.section].notes[indexPath.row].id
       self.viewModel.deleteNote(noteId: noteToDeleteId)
       completion(true)
       self.updateContent()
@@ -101,7 +114,7 @@ extension DiaryVC: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedNote = viewModel.sections[indexPath.section].notes[indexPath.row]
+    let selectedNote = viewModel.sectionsWithNotes[indexPath.section].notes[indexPath.row]
     let detailNoteVC = DetailNoteVC(noteId: selectedNote.id)
     self.navigationController?.pushViewController(detailNoteVC, animated: true)
   }
