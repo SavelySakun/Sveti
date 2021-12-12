@@ -1,20 +1,13 @@
 import UIKit
 
-class EditTagGroupsMoreItem: IMoreItem {
+class EditTagGroupsMoreItem: ISimpleCellItem {
   var title: String = "Tag groups"
-  var iconBackgroundColor: UIColor = .systemBlue
+  var iconBackgroundColor: UIColor? = .systemBlue
   var iconImage: UIImage? = UIImage(named: "folder")?.withRenderingMode(.alwaysTemplate)
-  var iconTintColor: UIColor = .white
-  var onTapAction: (() -> Void)?
+  var iconTintColor: UIColor? = .white
 
-  init() {
-    setOnTapAction()
-  }
-
-  private func setOnTapAction() {
-    onTapAction = {
-      guard let currentVC = CurrentVC.current else { return }
-      currentVC.navigationController?.pushViewController(EditTagGroupsVC(), animated: true)
-    }
+  var onTapAction: (() -> Void)? = {
+    guard let currentVC = CurrentVC.current else { return }
+    currentVC.navigationController?.pushViewController(EditTagGroupsVC(), animated: true)
   }
 }

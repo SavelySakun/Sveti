@@ -1,8 +1,8 @@
 import UIKit
 
-class MoreVC: VCwithTable {
+class AboutVC: VCwithTable {
 
-  override init(with tableStyle: UITableView.Style = .insetGrouped) {
+  override init(with tableStyle: UITableView.Style = .grouped) {
     super.init(with: tableStyle)
     tableView = TableViewWithTapAction(viewModel: viewModel)
   }
@@ -13,13 +13,12 @@ class MoreVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
-    title = "More"
+    title = "About"
     tableView.backgroundColor = .systemGray6
   }
 
   override func getDataProvider() -> TableDataProvider? {
-    return MoreTableDataProvider()
+    return AboutTableDataProvider()
   }
 
 }
-

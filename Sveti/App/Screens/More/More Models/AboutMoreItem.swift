@@ -1,21 +1,14 @@
 import UIKit
 
-class AboutMoreItem: IMoreItem {
+class AboutMoreItem: ISimpleCellItem {
   var title: String = "About"
-  var iconBackgroundColor: UIColor = .orange
+  var iconBackgroundColor: UIColor? = .systemPurple
   var iconImage: UIImage? = UIImage(named: "about")?.withRenderingMode(.alwaysTemplate)
-  var iconTintColor: UIColor = .white
-  var onTapAction: (() -> Void)?
+  var iconTintColor: UIColor? = .white
 
-  init() {
-    setOnTapAction()
-  }
-
-  private func setOnTapAction() {
-    onTapAction = {
-      guard let currentVC = CurrentVC.current else { return }
-      let contactDeveloperVC = ContactDeveloperVC()
-      currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
-    }
+  var onTapAction: (() -> Void)? = {
+    guard let currentVC = CurrentVC.current else { return }
+    let contactDeveloperVC = AboutVC()
+    currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
   }
 }

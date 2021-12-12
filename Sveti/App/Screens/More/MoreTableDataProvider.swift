@@ -6,12 +6,12 @@ class MoreTableDataProvider: TableDataProvider {
 
     let tableSections = [
       TableSection(title: "Features", cellsData: [
-        CellData(type: MoreCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: EditTagGroupsMoreItem())),
+        CellData(type: SimpleCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: EditTagGroupsMoreItem())),
         //CellData(type: MoreCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: DownloadDataMoreItem()))
       ]),
       TableSection(title: "Other", cellsData: [
-        CellData(type: MoreCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: ContactDeveloperMoreItem())),
-        //CellData(type: MoreCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: AboutMoreItem()))
+        CellData(type: SimpleCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: ContactDeveloperMoreItem())),
+        CellData(type: SimpleCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: AboutMoreItem()))
       ])
     ]
     return tableSections

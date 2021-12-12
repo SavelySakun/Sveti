@@ -1,22 +1,15 @@
 import UIKit
 import MessageUI
 
-class ContactDeveloperMoreItem: IMoreItem {
+class ContactDeveloperMoreItem: ISimpleCellItem {
   var title: String = "Contact us"
-  var iconBackgroundColor: UIColor = .systemPink
+  var iconBackgroundColor: UIColor? = .systemPink
   var iconImage: UIImage? = UIImage(systemName: "quote.bubble.fill")
-  var iconTintColor: UIColor = .white
-  var onTapAction: (() -> Void)?
+  var iconTintColor: UIColor? = .white
 
-  init() {
-    setOnTapAction()
-  }
-
-  private func setOnTapAction() {
-    onTapAction = {
-      guard let currentVC = CurrentVC.current else { return }
-      let contactDeveloperVC = ContactDeveloperVC()
-      currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
-    }
+  var onTapAction: (() -> Void)? = {
+    guard let currentVC = CurrentVC.current else { return }
+    let contactDeveloperVC = ContactDeveloperVC()
+    currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
   }
 }

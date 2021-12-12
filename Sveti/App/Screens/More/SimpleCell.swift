@@ -1,6 +1,10 @@
 import UIKit
 
-class MoreCell: Cell {
+protocol ICellWithOnTapAction {
+  var onTapAction: (() -> Void)? { get set }
+}
+
+class SimpleCell: Cell, ICellWithOnTapAction {
 
   private let iconView = IconView()
   private let titleLabel = UILabel()
@@ -26,12 +30,19 @@ class MoreCell: Cell {
   }
 
   override func configureSelf(with viewModel: CellVM) {
-    guard let moreItem = viewModel.cellValue as? IMoreItem else { return }
-    iconView.backgroundColor = moreItem.iconBackgroundColor
-    iconView.iconTintColor = moreItem.iconTintColor
-    iconView.image = moreItem.iconImage
+    guard let moreItem = viewModel.cellValue as? ISimpleCellItem else { return }
     titleLabel.text = moreItem.title
     onTapAction = moreItem.onTapAction
-  }
 
+    guard let iconImage = moreItem.iconImage,
+          let iconTintColor = moreItem.iconTintColor,
+          let iconBackground = moreItem.iconBackgroundColor else {
+      iconView.snp.makeConstraints { $0.width.equalTo(0) }
+      return
+    }
+
+    iconView.backgroundColor = iconBackground
+    iconView.iconTintColor = iconTintColor
+    iconView.image = iconImage
+  }
 }
