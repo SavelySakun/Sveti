@@ -57,13 +57,18 @@ class BarChartCell: Cell {
 
   private func setDataForChart() {
     currentStatLabel.text = "Average " + StatSettingsManager.shared.settings.statType.getStatTypeDescription().lowercased()
+
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
     dataSet.colors = StatDayChartFormatter().generateColorsForBars()
     dataSet.highlightColor = .systemBlue
     dataSet.valueFont = .systemFont(ofSize: 12)
     dataSet.valueFormatter = StatDayValueFormatter()
+
     let barChartData = BarChartData(dataSet: dataSet)
     barChartView.data = barChartData
+    setVisibleXRange()
+    barChartView.zoomOut()
+    barChartView.moveViewToX(Double(dataSet.count))
   }
 
   private func setChartStyle() {
@@ -97,7 +102,12 @@ class BarChartCell: Cell {
   private func setVisibleXRange() {
     guard StatDayContentManager.shared.isHasContentToDraw() else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
-    barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
+
+    guard let currentVC = CurrentVC.current else { return }
+    let currentVCWidth = currentVC.view.frame.width
+    let barItemMinimalWidth: CGFloat = 30.0
+    let totalAvailableItems = Double(currentVCWidth / barItemMinimalWidth)
+    barChartView.setVisibleXRange(minXRange: 0, maxXRange: totalAvailableItems)
   }
 
   private func setNoDataTextImage() {
