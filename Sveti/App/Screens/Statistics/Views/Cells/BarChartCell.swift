@@ -45,7 +45,6 @@ class BarChartCell: Cell {
     updateContentVisibility(isHasContent: isHasContent)
     guard isHasContent else { return }
     animateBar()
-    setVisibleXRange()
     barChartView.xAxis.valueFormatter = StatDayChartFormatter()
   }
 
@@ -72,6 +71,7 @@ class BarChartCell: Cell {
     barChartView.backgroundColor = .white
     barChartView.legend.enabled = false
     barChartView.extraTopOffset = 20.0
+    barChartView.viewPortHandler.setMaximumScaleY(1.0)
 
     let leftAxis = barChartView.leftAxis
     let xAxis = barChartView.xAxis
@@ -95,7 +95,7 @@ class BarChartCell: Cell {
   }
 
   private func setVisibleXRange() {
-    guard StatDayContentManager.shared.isHaveContentToDraw() else { return }
+    guard StatDayContentManager.shared.isHasContentToDraw() else { return }
     barChartView.setVisibleYRange(minYRange: 10, maxYRange: 10, axis: .left)
     barChartView.setVisibleXRange(minXRange: 0, maxXRange: 25)
   }
