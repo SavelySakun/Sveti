@@ -37,6 +37,7 @@
 		FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADCC2741025B000DE791 /* StatTypes.swift */; };
 		FC27075B275C9EF800A2440A /* TagGroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC27075A275C9EF700A2440A /* TagGroupList.swift */; };
 		FC27075D275CA2A600A2440A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC27075C275CA2A600A2440A /* List.swift */; };
+		FC27091B27664F7E00A2440A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC27091A27664F7E00A2440A /* GoogleService-Info.plist */; };
 		FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */; };
 		FC29A67026ECE11200DC87DA /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66F26ECE11200DC87DA /* StatsVC.swift */; };
 		FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */; };
@@ -133,6 +134,8 @@
 		FCB9ECBB274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBA274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift */; };
 		FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBC274BE8D900E3E864 /* EditTagGroupsCell.swift */; };
 		FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ED03274FF49100E3E864 /* EditTagGroupsTable.swift */; };
+		FCC922A4276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FCC922A3276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FCC922A5276655BD009F7508 /* FirebaseCrashlytics */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -212,6 +215,7 @@
 		FC25ADCC2741025B000DE791 /* StatTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTypes.swift; sourceTree = "<group>"; };
 		FC27075A275C9EF700A2440A /* TagGroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupList.swift; sourceTree = "<group>"; };
 		FC27075C275CA2A600A2440A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		FC27091A27664F7E00A2440A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FC29A66226EC979A00DC87DA /* SvetiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC29A66626EC979A00DC87DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepositoryTests.swift; sourceTree = "<group>"; };
@@ -245,7 +249,7 @@
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FC6C56E4266000FD000188A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC6C56E7266000FD000188A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FC6C56E9266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sveti/Utility/Info.plist; sourceTree = SOURCE_ROOT; };
+		FC6C56E9266000FD000188A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sveti/Info.plist; sourceTree = SOURCE_ROOT; };
 		FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreview.swift; sourceTree = "<group>"; };
 		FC6C58A62661377A000188A6 /* NewNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteVC.swift; sourceTree = "<group>"; };
 		FC6C58AB26613C32000188A6 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -356,7 +360,9 @@
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
+				FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */,
 				DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */,
+				FCC922A4276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +545,6 @@
 		FC1563F02748DD4D00AAD925 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				FC6C56E9266000FD000188A6 /* Info.plist */,
 				FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */,
 				FCB0644426B6817400A0494A /* .swiftlint.yml */,
 			);
@@ -759,6 +764,8 @@
 				FC7E6D1826AB195B00126B97 /* Screens */,
 				FC1563F02748DD4D00AAD925 /* Utility */,
 				FC6C56E4266000FD000188A6 /* Assets.xcassets */,
+				FC27091A27664F7E00A2440A /* GoogleService-Info.plist */,
+				FC6C56E9266000FD000188A6 /* Info.plist */,
 			);
 			path = Sveti;
 			sourceTree = "<group>";
@@ -1023,6 +1030,7 @@
 				FC6C56D6266000FB000188A6 /* Resources */,
 				FCB0644326B6805300A0494A /* SwiftLint */,
 				3B160C6F182F3E73D359C878 /* [CP] Embed Pods Frameworks */,
+				FCC922A8276656D8009F7508 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1036,6 +1044,8 @@
 				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
 				FCE3689F26D26C9400A05271 /* ALPopup */,
 				FCE368A426D27E6900A05271 /* SPAlert */,
+				FCC922A3276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				FCC922A5276655BD009F7508 /* FirebaseCrashlytics */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -1080,6 +1090,7 @@
 				FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */,
 				FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */,
+				FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -1112,6 +1123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */,
+				FC27091B27664F7E00A2440A /* GoogleService-Info.plist in Resources */,
 				FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */,
 				FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */,
 			);
@@ -1237,6 +1249,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		FCC922A8276656D8009F7508 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1543,7 +1575,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1635,7 +1667,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Utility/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1656,7 +1688,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6389Z2D8J8;
-				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Utility/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1743,6 +1775,14 @@
 				minimumVersion = 6.5.6;
 			};
 		};
+		FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.10.0;
+			};
+		};
 		FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alxrguz/ALPopup";
@@ -1781,6 +1821,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		FCC922A3276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		FCC922A5276655BD009F7508 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		FCE3689F26D26C9400A05271 /* ALPopup */ = {
 			isa = XCSwiftPackageProductDependency;

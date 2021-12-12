@@ -1,5 +1,6 @@
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,7 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     RealmHelper.shared.configureRealm()
     UISetup()
     dataSetup()
-		return true
+    FirebaseApp.configure()
+
+	return true
 	}
 
 	// MARK: UISceneSession Lifecycle
