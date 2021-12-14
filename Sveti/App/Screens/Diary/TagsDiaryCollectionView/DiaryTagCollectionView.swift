@@ -9,7 +9,7 @@ class DiaryTagCollectionView: UICollectionView {
     let collectionViewLayout = LeftAlignedCollectionViewFlowLayout()
     collectionViewLayout.minimumLineSpacing = 4
     collectionViewLayout.minimumInteritemSpacing = 8
-    collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+    collectionViewLayout.estimatedItemSize = CGSize(width: 70, height: 27)
 
     super.init(frame: frame, collectionViewLayout: collectionViewLayout)
     setLayout()

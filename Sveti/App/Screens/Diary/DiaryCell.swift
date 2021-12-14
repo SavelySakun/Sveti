@@ -20,6 +20,7 @@ class DiaryCell: Cell {
       tagCollectionView.tagsBackColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), palette: .tag)
       tagCollectionView.tags = Array(note.tags)
       tagCollectionView.reloadData()
+      updateTagCollectionHeight()
     }
   }
 
@@ -69,11 +70,17 @@ class DiaryCell: Cell {
   private func setTagCollectionView() {
     containerView.addSubview(tagCollectionView)
     tagCollectionView.snp.makeConstraints { (make) in
-      make.height.equalTo(30) // todo: сделать автовысоту
       make.top.equalTo(commentLabel.snp.bottom).offset(UIUtils.defaultOffset)
       make.left.equalToSuperview().offset(UIUtils.middleOffset)
       make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
       make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
+    }
+  }
+
+  private func updateTagCollectionHeight() {
+    let contentSize = tagCollectionView.collectionViewLayout.collectionViewContentSize
+    tagCollectionView.snp.makeConstraints { (make) in
+      make.height.equalTo(contentSize.height)
     }
   }
 }
