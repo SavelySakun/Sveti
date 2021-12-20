@@ -14,7 +14,7 @@ class DetailNoteVC: VCwithTable {
 
   override func getDataProvider() -> TableDataProvider? {
     self.note = repository.getNote(with: noteId)
-    let dataProvider = DetailNoteTableDataProvider(with: note)
+    let dataProvider = DetailNoteTableDataProvider(with: noteId)
     return dataProvider
   }
 
@@ -50,12 +50,10 @@ class DetailNoteVC: VCwithTable {
 
   private func onEditingVCDismiss() {
     guard let note = self.note else { return }
-
-    self.note = self.repository.getNote(with: note.id)
-    let dataProvider = DetailNoteTableDataProvider(with: note)
-    self.viewModel = ViewControllerVM(tableDataProvider: dataProvider)
-    DispatchQueue.main.async {
-      self.tableView.reloadData()
+    DispatchQueue.main.async { [self] in
+      viewModel.tableDataProvider?.updateSections(with: note.id)
+      tableView.registerCells()
+      tableView.reloadData()
     }
     SPIndicator.present(title: "Запись обновлена", preset: .done, haptic: .success, from: .top)
   }
