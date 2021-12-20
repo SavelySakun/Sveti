@@ -19,8 +19,6 @@
 		FC0CCC9426BE8BA8004CDE8A /* TagSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC9326BE8BA8004CDE8A /* TagSectionHeaderView.swift */; };
 		FC0CCC9626BE969D004CDE8A /* TagsSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC9526BE969D004CDE8A /* TagsSectionFooterView.swift */; };
 		FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */; };
-		FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */; };
-		FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */; };
 		FC1563A5274692F800AAD925 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563A4274692F800AAD925 /* Double.swift */; };
 		FC1563F32748E8B700AAD925 /* MoreTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */; };
 		FC1563F52748E9AA00AAD925 /* SimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F42748E9AA00AAD925 /* SimpleCell.swift */; };
@@ -202,8 +200,6 @@
 		FC0CCC9326BE8BA8004CDE8A /* TagSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSectionHeaderView.swift; sourceTree = "<group>"; };
 		FC0CCC9526BE969D004CDE8A /* TagsSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSectionFooterView.swift; sourceTree = "<group>"; };
 		FC0CCC9726BE9A05004CDE8A /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
-		FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCollectionView.swift; sourceTree = "<group>"; };
-		FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTagCell.swift; sourceTree = "<group>"; };
 		FC1563A4274692F800AAD925 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableDataProvider.swift; sourceTree = "<group>"; };
 		FC1563F42748E9AA00AAD925 /* SimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCell.swift; sourceTree = "<group>"; };
@@ -439,15 +435,6 @@
 				FC84E81C26C7CE040081CBA2 /* CollectionViewSizeConstants.swift */,
 			);
 			path = TagCollectionView;
-			sourceTree = "<group>";
-		};
-		FC0CCCB726BFF1CD004CDE8A /* TagsDiaryCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				FC0CCCB826BFF291004CDE8A /* DiaryTagCollectionView.swift */,
-				FC0CCCBA26BFF3B7004CDE8A /* DiaryTagCell.swift */,
-			);
-			path = TagsDiaryCollectionView;
 			sourceTree = "<group>";
 		};
 		FC1563E32748D91A00AAD925 /* Stat Models */ = {
@@ -854,7 +841,6 @@
 		FC7E6D1C26AB1A1600126B97 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				FC0CCCB726BFF1CD004CDE8A /* TagsDiaryCollectionView */,
 				FCAAD9F126B84FAB00607DC0 /* SectionHeader */,
 				FC7E6D1F26AB1F6400126B97 /* DiaryCell.swift */,
 				FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */,
@@ -1388,7 +1374,6 @@
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
 				FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* EditTagGroupTableFooter.swift in Sources */,
-				FC0CCCBB26BFF3B7004CDE8A /* DiaryTagCell.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
@@ -1403,7 +1388,6 @@
 				FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */,
 				FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* TextOnRoundView.swift in Sources */,
-				FC0CCCB926BFF291004CDE8A /* DiaryTagCollectionView.swift in Sources */,
 				FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
 				FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */,
