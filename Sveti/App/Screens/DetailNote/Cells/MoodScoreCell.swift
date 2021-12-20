@@ -18,7 +18,6 @@ class MoodScoreCell: Cell {
     emotionalStateScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.emotionalState)
     physicalStateScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.physicalState)
     averageLabel.text = mathHelper.getAverageMood(from: note)
-    guard mood.average > 7.0 || mood.average < 5.0 else { return }
     averageLabel.textColor = ColorHelper().getColor(value: Int(mood.average), alpha: 1)
   }
 
@@ -42,7 +41,8 @@ class MoodScoreCell: Cell {
       physicalStateScoreView,
     ])
 
-    physicalStateScoreView.stateLabel.text = "физическое состояние"
+    emotionalStateScoreView.stateLabel.text = "emotional state"
+    physicalStateScoreView.stateLabel.text = "phyzical state"
 
     statesStackView.axis = .vertical
     statesStackView.spacing = 0
@@ -50,6 +50,7 @@ class MoodScoreCell: Cell {
 
   private func setGlobalStackView() {
     averageLabel.text = "9"
+    averageLabel.font = UIFont.boldSystemFont(ofSize: 16)
     averageLabel.textAlignment = .center
     averageLabel.snp.makeConstraints { (make) in
       make.width.equalTo(45)

@@ -85,7 +85,6 @@ class ScoreView: UIView {
   }
 
   func addGlobalStackView() {
-    stateLabel.text = "эмоциональное состояние"
     stateLabel.textAlignment = .left
 
     let globalStackView = UIStackView(arrangedSubviews: [

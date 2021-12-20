@@ -11,4 +11,8 @@ class TableDataProvider {
   func configureSections(with data: Any? = nil) -> [TableSection] {
     return [TableSection(title: "Отредактируй секции в TableDataProvider", cellsData: [])]
   }
+
+  func updateSections(with data: Any? = nil) {
+    self.sections = configureSections(with: data)
+  }
 }

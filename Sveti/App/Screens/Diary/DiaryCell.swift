@@ -6,7 +6,7 @@ class DiaryCell: Cell {
   private let scoreTimeView = ScoreTimeView()
   private let commentLabel = UILabel()
   private let containerView = UIView()
-  private let tagListView = TagListView()
+  private let tagListView = SvetiTagListView()
 
   func configure(with note: Note) {
     commentLabel.text = note.comment
@@ -17,12 +17,7 @@ class DiaryCell: Cell {
   }
 
   private func setTagListView(with note: Note) {
-    tagListView.removeAllTags()
-    tagListView.tagBackgroundColor = ColorHelper().getColor(value: Int(note.mood?.average ?? 6.0), palette: .tag)
-
-    note.tags.forEach { tag in
-      tagListView.addTag(tag.name)
-    }
+    tagListView.setTags(from: note)
 
     tagListView.snp.updateConstraints { make in
       let offset = (commentLabel.text?.isEmpty ?? true) ? 0 : UIUtils.defaultOffset
@@ -74,13 +69,6 @@ class DiaryCell: Cell {
   }
 
   private func setTagListViewLayout() {
-    tagListView.isUserInteractionEnabled = false
-    tagListView.textFont = UIFont.systemFont(ofSize: 14)
-    tagListView.cornerRadius = 6
-    tagListView.paddingY = 5
-    tagListView.paddingX = 8
-    tagListView.marginY = 5
-
     containerView.addSubview(tagListView)
     tagListView.snp.makeConstraints { (make) in
       make.top.equalTo(commentLabel.snp.bottom).offset(UIUtils.defaultOffset)

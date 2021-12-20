@@ -14,7 +14,7 @@ class DetailNoteVC: VCwithTable {
 
   override func getDataProvider() -> TableDataProvider? {
     self.note = repository.getNote(with: noteId)
-    let dataProvider = DetailNoteTableDataProvider(with: note)
+    let dataProvider = DetailNoteTableDataProvider(with: noteId)
     return dataProvider
   }
 
@@ -31,14 +31,14 @@ class DetailNoteVC: VCwithTable {
 
   private func setTitle(date: SplitDate?) {
     guard let date = date else {
-      title = "Заметка"
+      title = "Note"
       return
     }
     title = "\(date.dMMMMyyyy) в \(date.HHmm)"
   }
 
   private func addEditButton() {
-    let editButton = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(onEdit))
+    let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(onEdit))
     navigationItem.rightBarButtonItem = editButton
   }
 
@@ -50,14 +50,12 @@ class DetailNoteVC: VCwithTable {
 
   private func onEditingVCDismiss() {
     guard let note = self.note else { return }
-
-    self.note = self.repository.getNote(with: note.id)
-    let dataProvider = DetailNoteTableDataProvider(with: note)
-    self.viewModel = ViewControllerVM(tableDataProvider: dataProvider)
-    DispatchQueue.main.async {
-      self.tableView.reloadData()
+    DispatchQueue.main.async { [self] in
+      viewModel.tableDataProvider?.updateSections(with: note.id)
+      tableView.registerCells()
+      tableView.reloadData()
     }
-    SPIndicator.present(title: "Запись обновлена", preset: .done, haptic: .success, from: .top)
+    SPIndicator.present(title: "Note updated", preset: .done, haptic: .success, from: .top)
   }
 
   private func addTableView() {

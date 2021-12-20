@@ -21,7 +21,7 @@ class CommentCell: Cell {
 
   private func updateTextView() {
     let note = viewModel?.cellValue as? Note
-    if note?.comment == nil {
+    if note?.comment.isEmpty ?? true {
       commentTextField.textView.text = String()
       commentTextField.placeholderLabel.isHidden = false
     } else {

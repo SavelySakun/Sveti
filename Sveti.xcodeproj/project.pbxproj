@@ -63,6 +63,8 @@
 		FC42A798273ABE92004A56F9 /* IStatContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A797273ABE92004A56F9 /* IStatContentManager.swift */; };
 		FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */; };
 		FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A79C273AC031004A56F9 /* IRepository.swift */; };
+		FC451CAE2770DA080078B83A /* SvetiTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CAD2770DA080078B83A /* SvetiTagListView.swift */; };
+		FC451CB02770DB0B0078B83A /* DetailTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CAF2770DB0B0078B83A /* DetailTagsCell.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E4266000FD000188A6 /* Assets.xcassets */; };
@@ -246,6 +248,8 @@
 		FC42A797273ABE92004A56F9 /* IStatContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStatContentManager.swift; sourceTree = "<group>"; };
 		FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSettingsRepository.swift; sourceTree = "<group>"; };
 		FC42A79C273AC031004A56F9 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
+		FC451CAD2770DA080078B83A /* SvetiTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiTagListView.swift; sourceTree = "<group>"; };
+		FC451CAF2770DB0B0078B83A /* DetailTagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTagsCell.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -846,6 +850,7 @@
 				FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */,
 				FC7E6D9626AC625800126B97 /* DiaryVM.swift */,
 				FC7E6DA026AD4CD200126B97 /* ImageTextView.swift */,
+				FC451CAD2770DA080078B83A /* SvetiTagListView.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				FCB0643026B55D6A00A0494A /* MoodScoreCell.swift */,
 				FCB0643426B560A000A0494A /* ScoreView.swift */,
 				FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */,
+				FC451CAF2770DB0B0078B83A /* DetailTagsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1418,6 +1424,7 @@
 				FC25ADC92740FC79000DE791 /* SelectStatTableHeaderView.swift in Sources */,
 				FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* TagCollectionView.swift in Sources */,
+				FC451CAE2770DA080078B83A /* SvetiTagListView.swift in Sources */,
 				FC42A74E27397E17004A56F9 /* StatSettingsManager.swift in Sources */,
 				FC42A75227397EB1004A56F9 /* StatsContentRepository.swift in Sources */,
 				FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */,
@@ -1447,6 +1454,7 @@
 				FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */,
 				FC1564022749007700AAD925 /* TableViewWithTapAction.swift in Sources */,
 				FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */,
+				FC451CB02770DB0B0078B83A /* DetailTagsCell.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
 				FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
