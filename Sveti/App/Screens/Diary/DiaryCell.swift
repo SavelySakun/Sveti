@@ -1,25 +1,32 @@
 import UIKit
+import TagListView
 
 class DiaryCell: Cell {
 
   private let scoreTimeView = ScoreTimeView()
   private let commentLabel = UILabel()
   private let containerView = UIView()
-  private let tagCollectionView = DiaryTagCollectionView()
+  private let tagListView = TagListView()
 
   func configure(with note: Note) {
     commentLabel.text = note.comment
     scoreTimeView.configure(with: note)
     containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 0.65)
     contentView.backgroundColor = .systemGray6
-    setTagCollection(with: note)
+    setTagListView(with: note)
   }
 
-  private func setTagCollection(with note: Note) {
-    DispatchQueue.main.async { [self] in
-      tagCollectionView.tagsBackColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), palette: .tag)
-      tagCollectionView.tags = Array(note.tags)
-      tagCollectionView.reloadData()
+  private func setTagListView(with note: Note) {
+    tagListView.removeAllTags()
+    tagListView.tagBackgroundColor = ColorHelper().getColor(value: Int(note.mood?.average ?? 6.0), palette: .tag)
+
+    note.tags.forEach { tag in
+      tagListView.addTag(tag.name)
+    }
+
+    tagListView.snp.updateConstraints { make in
+      let offset = (commentLabel.text?.isEmpty ?? true) ? 0 : UIUtils.defaultOffset
+      make.top.equalTo(commentLabel.snp.bottom).offset(offset)
     }
   }
 
@@ -28,7 +35,7 @@ class DiaryCell: Cell {
     setContainer()
     setScoreTime()
     setComment()
-    setTagCollectionView()
+    setTagListViewLayout()
   }
 
   private func setContainer() {
@@ -66,10 +73,16 @@ class DiaryCell: Cell {
     }
   }
 
-  private func setTagCollectionView() {
-    containerView.addSubview(tagCollectionView)
-    tagCollectionView.snp.makeConstraints { (make) in
-      make.height.equalTo(30) // todo: сделать автовысоту
+  private func setTagListViewLayout() {
+    tagListView.isUserInteractionEnabled = false
+    tagListView.textFont = UIFont.systemFont(ofSize: 14)
+    tagListView.cornerRadius = 6
+    tagListView.paddingY = 5
+    tagListView.paddingX = 8
+    tagListView.marginY = 5
+
+    containerView.addSubview(tagListView)
+    tagListView.snp.makeConstraints { (make) in
       make.top.equalTo(commentLabel.snp.bottom).offset(UIUtils.defaultOffset)
       make.left.equalToSuperview().offset(UIUtils.middleOffset)
       make.right.equalToSuperview().offset(-UIUtils.defaultOffset)

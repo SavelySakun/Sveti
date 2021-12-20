@@ -11,7 +11,7 @@ class Icon8Model: ISimpleCellItem {
   var onTapAction: (() -> Void)?
 
   init() {
-    title = "Icons by Icons8 (icons8.com) 💛"
+    title = "Icons by Icons8 💛"
 
     onTapAction = {
       guard let url = URL(string: "https://icons8.com/") else { return }
