@@ -106,19 +106,19 @@ class EditTagGroupVC: VCwithTable {
       selectGroupVC.onSelectionCompletion = { groupTitle in
         popupVC.dismiss(animated: true)
         self.onNeedToUpdateContent()
-        SPAlert.present(title: "Done", message: "Тег перемещен в группу «\(groupTitle)»", preset: .done, haptic: .success)
+        SPAlert.present(title: "Done", message: "Tag moved to «\(groupTitle)»", preset: .done, haptic: .success)
       }
 
       popupVC = ALPopup.card(controller: selectGroupVC)
       popupVC.push(from: self)
     }
 
-    let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
+    let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
       self.tagsRepository.removeTag(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 
-    let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+    let cancelAction = UIAlertAction(title: "Discard", style: .cancel)
 
     [hideAction, changeGroupAction, deleteAction, cancelAction].forEach { action in
       actionsAlertController.addAction(action)
@@ -128,7 +128,7 @@ class EditTagGroupVC: VCwithTable {
   func showEditAlert(forTag id: String) {
     editingTagId = id
     let isTagHidden = tagsRepository.findTag(with: id)?.isHidden ?? false
-    hideAction.setValue((isTagHidden ? "Сделать активным" : "Скрыть"), forKey: "title")
+    hideAction.setValue((isTagHidden ? "Make active" : "Hide"), forKey: "title")
     present(actionsAlertController, animated: true, completion: nil)
   }
 
@@ -146,13 +146,13 @@ class EditTagGroupVC: VCwithTable {
   }
 
   private func setActionsForDeleteAlertController() {
-    let deleteAction = UIAlertAction(title: "Удалить", style: .destructive) { _ in
+    let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
       self.tagsRepository.deleteGroup(with: self.groupId)
       self.navigationController?.popViewController(animated: true)
-      SPAlert.present(title: "Готово", message: "Группа удалена", preset: .done, haptic: .success)
+      SPAlert.present(title: "Done", message: "Group deleted", preset: .done, haptic: .success)
     }
 
-    let cancelAction = UIAlertAction(title: "Отмена", style: .default)
+    let cancelAction = UIAlertAction(title: "Discard", style: .default)
 
     [deleteAction, cancelAction].forEach { action in
       deleteGroupAlertController.addAction(action)

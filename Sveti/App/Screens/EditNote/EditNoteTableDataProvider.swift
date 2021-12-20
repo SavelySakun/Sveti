@@ -19,8 +19,8 @@ class EditNoteTableDataProvider: TableDataProvider {
         CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Emotional", cellValue: data))
       ]),
 
-      TableSection(title: "Комментарий", cellsData: [
-        CellData(type: CommentCell.self, viewModel: CellVM(title: "Комментарий", cellValue: data))
+      TableSection(title: "Comment", cellsData: [
+        CellData(type: CommentCell.self, viewModel: CellVM(title: "", cellValue: data))
       ])
     ]
 

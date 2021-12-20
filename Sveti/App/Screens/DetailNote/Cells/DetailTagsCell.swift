@@ -12,7 +12,7 @@ class DetailTagsCell: Cell {
   private func setTagListView() {
     contentView.addSubview(tagsListView)
     tagsListView.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview().inset(UIUtils.defaultOffset)
+      make.edges.equalToSuperview().inset(UIUtils.middleOffset)
     }
   }
 

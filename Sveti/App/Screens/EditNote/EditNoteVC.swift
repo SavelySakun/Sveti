@@ -20,11 +20,11 @@ class EditNoteVC: NewNoteVC {
   }
 
   override func setTitle() {
-    title = "Изменить"
+    title = "Edit"
   }
 
   override func setLeftBarButton() {
-    let leftButton = UIBarButtonItem(title: "Удалить", style: .plain, target: self, action: #selector(onDelete))
+    let leftButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(onDelete))
     leftButton.tintColor = .red
     navigationItem.leftBarButtonItem = leftButton
   }
@@ -34,7 +34,7 @@ class EditNoteVC: NewNoteVC {
           let note = NotesRepository().getNote(with: noteId) else { return }
     StatDaysDataManager().removeStat(with: note)
     NotesRepository().deleteNote(noteId: noteId)
-    SPIndicator.present(title: "Запись удалена", preset: .done, haptic: .success, from: .top)
+    SPIndicator.present(title: "Note deleted", preset: .done, haptic: .success, from: .top)
     self.navigationController?.popToRootViewController(animated: true)
   }
 
