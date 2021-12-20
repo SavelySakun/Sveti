@@ -77,6 +77,7 @@ extension DiaryVC: UITableViewDataSource {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as? DiaryCell else { return UITableViewCell() }
     let note = viewModel.sectionsWithNotes[indexPath.section].notes[indexPath.row]
     cell.configure(with: note)
+    cell.layoutIfNeeded()
     return cell
   }
 

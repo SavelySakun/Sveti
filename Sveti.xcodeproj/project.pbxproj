@@ -11,6 +11,7 @@
 		C9CDFC695A5DE5C1F7CF2F56 /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */; };
 		DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */; };
 		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
+		FC04F8472770BF1800368CC1 /* TagListView in Frameworks */ = {isa = PBXBuildFile; productRef = FC04F8462770BF1800368CC1 /* TagListView */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
 		FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6E26BE6CDA004CDE8A /* TagsRepository.swift */; };
 		FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC7126BE6D0D004CDE8A /* TagGroup.swift */; };
@@ -368,6 +369,7 @@
 				FCE368A026D26C9400A05271 /* ALPopup in Frameworks */,
 				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
+				FC04F8472770BF1800368CC1 /* TagListView in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
 				FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */,
@@ -1077,6 +1079,7 @@
 				FCE368A426D27E6900A05271 /* SPAlert */,
 				FCC922A3276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				FCC922A5276655BD009F7508 /* FirebaseCrashlytics */,
+				FC04F8462770BF1800368CC1 /* TagListView */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -1122,6 +1125,7 @@
 				FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */,
 				FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */,
 				FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -1779,6 +1783,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ElaWorkshop/TagListView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
 		FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1838,6 +1850,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FC04F8462770BF1800368CC1 /* TagListView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */;
+			productName = TagListView;
+		};
 		FC6C58AE26613D0C000188A6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FC6C58AD26613D0C000188A6 /* XCRemoteSwiftPackageReference "SnapKit" */;
