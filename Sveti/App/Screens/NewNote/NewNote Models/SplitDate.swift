@@ -1,8 +1,12 @@
 import RealmSwift
 import Foundation
 
-class SplitDate: Object {
+enum DateFormats: String {
+  case yyyy, HHmm, ddMMyyyy, ddMMyy, dMMMMyyyy, dMMMM, dMM, MM, MMYY, weekday
+}
 
+class SplitDate: Object {
+  @objc dynamic var rawDate = Date()
   @objc dynamic var yyyy = String()
   @objc dynamic var HHmm = String()
   @objc dynamic var ddMMyyyy = String()
@@ -21,8 +25,6 @@ class SplitDate: Object {
   var startOfDay: Date {
     Calendar.current.date(bySettingHour: 0, minute: 0, second: 1, of: rawDate) ?? rawDate
   }
-
-  @objc dynamic var rawDate = Date()
 
   private var dateFormatter = DateFormatter()
 
