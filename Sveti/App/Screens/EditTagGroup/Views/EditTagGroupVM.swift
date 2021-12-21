@@ -47,7 +47,7 @@ class EditTagGroupVM: ViewControllerVM {
   private func hideTag(with tagId: String) {
     print("Обновил видимость: \(tagId)")
     subscribers.removeAll()
-    tagsRepository.updateHidden(with: tagId)
+    tagsRepository.updateTagHiddenStatus(with: tagId)
     delegate?.onNeedToUpdateContent()
   }
 

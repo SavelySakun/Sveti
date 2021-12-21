@@ -92,7 +92,7 @@ class EditTagGroupVC: VCwithTable {
 
   private func setActionsAlertController() {
     hideAction = UIAlertAction(title: "Hide", style: .default) { _ in
-      self.tagsRepository.updateHidden(with: self.editingTagId)
+      self.tagsRepository.updateTagHiddenStatus(with: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 

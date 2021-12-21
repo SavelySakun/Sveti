@@ -78,7 +78,7 @@ class TagsRepository {
     return groups.first { $0.id == id }
   }
 
-  func updateHidden(with id: String) {
+  func updateTagHiddenStatus(with id: String) {
     guard let tag = findTag(with: id) else { return }
     try! realm.write {
       tag.isHidden = !tag.isHidden
