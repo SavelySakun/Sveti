@@ -43,13 +43,16 @@ class DetailNoteVC: VCwithTable {
   }
 
   @objc private func onEdit() {
-    let editVC = EditNoteVC(noteId: note?.id)
+    guard let note = self.note else { return }
+    let editVC = EditNoteVC(noteId: note.id)
+    StatDaysDataManager().removeStat(with: note)
     editVC.onDismissal = { self.onEditingVCDismiss() }
     self.navigationController?.pushViewController(editVC, animated: true)
   }
 
   private func onEditingVCDismiss() {
     guard let note = self.note else { return }
+    StatDaysDataManager().updateStat(with: note)
     DispatchQueue.main.async { [self] in
       viewModel.tableDataProvider?.updateSections(with: note.id)
       tableView.registerCells()
