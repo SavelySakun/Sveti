@@ -2,21 +2,30 @@ import RealmSwift
 import Foundation
 
 enum DateFormats: String {
-  case yyyy, HHmm, ddMMyyyy, ddMMyy, dMMMMyyyy, dMMMM, dMM, MM, MMYY, weekday
+  case yyyy = "yyyy"
+  case HHmm = "HH:mm"
+  case ddMMyyyy = "dd.MM.yyyy"
+  case ddMMyy = "dd.MM.yy"
+  case dMMMMyyyy = "d MMMM yyyy"
+  case dMMMM = "d MMMM"
+  case dMM = "d.MM"
+  case MM = "MM"
+  case MMYY = "MM.yy"
+  case weekday = "EEEE"
 }
 
 class SplitDate: Object {
   @objc dynamic var rawDate = Date()
-  @objc dynamic var yyyy = String()
-  @objc dynamic var HHmm = String()
-  @objc dynamic var ddMMyyyy = String()
-  @objc dynamic var ddMMyy = String()
-  @objc dynamic var dMMMMyyyy = String()
-  @objc dynamic var dMMMM = String()
-  @objc dynamic var dMM = String()
-  @objc dynamic var MM = String()
-  @objc dynamic var MMYY = String()
-  @objc dynamic var weekday = String()
+  @objc dynamic var yyyy: String { getDate(with: .yyyy) }
+  @objc dynamic var HHmm: String { getDate(with: .HHmm) }
+  @objc dynamic var ddMMyyyy: String { getDate(with: .ddMMyyyy) }
+  @objc dynamic var ddMMyy: String { getDate(with: .ddMMyy) }
+  @objc dynamic var dMMMMyyyy: String { getDate(with: .dMMMMyyyy) }
+  @objc dynamic var dMMMM: String { getDate(with: .dMMMM) }
+  @objc dynamic var dMM: String { getDate(with: .dMM) }
+  @objc dynamic var MM: String { getDate(with: .MM) }
+  @objc dynamic var MMYY: String { getDate(with: .MMYY) }
+  @objc dynamic var weekday: String { getDate(with: .weekday) }
 
   var endOfDay: Date {
     Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: rawDate) ?? rawDate
@@ -31,7 +40,6 @@ class SplitDate: Object {
   convenience init(rawDate: Date) {
     self.init()
     self.rawDate = rawDate
-    defaultSetup()
   }
 
   convenience init(ddMMyyyy: String) {
@@ -39,70 +47,10 @@ class SplitDate: Object {
     dateFormatter.dateFormat = "dd.MM.yyyy"
     let rawDate = dateFormatter.date(from: ddMMyyyy)
     self.rawDate = rawDate ?? Date()
-    defaultSetup()
   }
 
-  private func defaultSetup() {
-    setYYYY()
-    setHHmm()
-    setDDmmYYYY()
-    setDmmmmYYYY()
-    setDmm()
-    setMM()
-    setMMYY()
-    setDDmmYY()
-    setDmmmm()
-    setWeekday()
+  private func getDate(with format: DateFormats) -> String {
+    dateFormatter.dateFormat = format.rawValue
+    return dateFormatter.string(from: rawDate)
   }
-
-  private func setYYYY() {
-    dateFormatter.dateFormat = "yyyy"
-    yyyy = dateFormatter.string(from: rawDate)
-  }
-
-  private func setHHmm() {
-    dateFormatter.dateFormat = "HH:mm"
-    HHmm = dateFormatter.string(from: rawDate)
-  }
-
-  private func setDDmmYYYY() {
-    dateFormatter.dateFormat = "dd.MM.yyyy"
-    ddMMyyyy = dateFormatter.string(from: rawDate)
-  }
-
-  private func setDmmmmYYYY() {
-    dateFormatter.dateFormat = "d MMMM yyyy"
-    dMMMMyyyy = dateFormatter.string(from: rawDate)
-  }
-
-  private func setDmm() {
-    dateFormatter.dateFormat = "d.MM"
-    dMM = dateFormatter.string(from: rawDate)
-  }
-
-  private func setMM() {
-    dateFormatter.dateFormat = "MM"
-    MM = dateFormatter.string(from: rawDate)
-  }
-
-  private func setMMYY() {
-    dateFormatter.dateFormat = "MM.yy"
-    MMYY = dateFormatter.string(from: rawDate)
-  }
-
-  private func setDDmmYY() {
-    dateFormatter.dateFormat = "dd.MM.yy"
-    ddMMyy = dateFormatter.string(from: rawDate)
-  }
-
-  private func setDmmmm() {
-    dateFormatter.dateFormat = "d MMMM"
-    dMMMM = dateFormatter.string(from: rawDate)
-  }
-
-  private func setWeekday() {
-    dateFormatter.dateFormat = "EEEE"
-    weekday = dateFormatter.string(from: rawDate)
-  }
-
 }
