@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/alxrguz/ALPopup",
         "state": {
           "branch": null,
-          "revision": "9c4d5527d2ba12fefeb289f365ae92b670979f8d",
-          "version": "1.0.9"
+          "revision": "d2cab88a04545a6fd3c88a6881f0a546b8f8d8ab",
+          "version": "1.1.0"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
         "state": {
           "branch": null,
-          "revision": "4dc6bc7d1c9747bd0c261c8c055903f9fdef91f7",
-          "version": "6.5.6"
+          "revision": "474f849accae40fe61b5302d9b057dd48ee073ba",
+          "version": "6.5.9"
         }
       },
       {
@@ -123,8 +123,8 @@
         "repositoryURL": "https://github.com/realm/realm-cocoa.git",
         "state": {
           "branch": null,
-          "revision": "7a3e25994d4d917efe30fa4496775d3f024b71b6",
-          "version": "10.13.0"
+          "revision": "e83cc9f28e8bccd477b6b81cee521c02239d2773",
+          "version": "10.20.2"
         }
       },
       {
@@ -132,8 +132,8 @@
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "9a7d09994e85b7eda8e3553b444bcfef6ec3f9ea",
-          "version": "11.3.0"
+          "revision": "c3c11a841642ac93c27bd1edd61f989fc0bfb809",
+          "version": "11.6.1"
         }
       },
       {
@@ -150,8 +150,8 @@
         "repositoryURL": "https://github.com/ivanvorobei/SPAlert.git",
         "state": {
           "branch": null,
-          "revision": "6ddb588018625ac7da49a578327bfdb1d8ce9b68",
-          "version": "3.3.1"
+          "revision": "52c6fbfd025c8aeb2236c4f629dcca59e0060de6",
+          "version": "3.5.1"
         }
       },
       {
@@ -159,8 +159,8 @@
         "repositoryURL": "https://github.com/ivanvorobei/SPIndicator.git",
         "state": {
           "branch": null,
-          "revision": "ec54c0e60a038ef7290280259638fcc22f0ceb69",
-          "version": "1.3.1"
+          "revision": "2f67eeace945680865ba2baeb38fb0654fa4d537",
+          "version": "1.6.3"
         }
       },
       {

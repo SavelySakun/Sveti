@@ -49,7 +49,7 @@ class StatDaysRepositoryTests: XCTestCase {
 
   func testRemoveIfNoData() throws {
     let statDayWithNoStates = StatDay()
-    statDayWithNoStates.date = testDate
+    statDayWithNoStates.splitDate = testDate
     let initialStatDayCount = sut.getSavedObjectsCount()
 
     sut.saveNewStatDay(statDay: statDayWithNoStates)
@@ -63,7 +63,7 @@ class StatDaysRepositoryTests: XCTestCase {
 
   func testSaveNewStatDay() throws {
     let newStatDay = StatDay()
-    newStatDay.date = testDate // different date as opposed to default
+    newStatDay.splitDate = testDate // different date as opposed to default
     let currentSavedCount = sut.getSavedObjectsCount()
 
     sut.saveNewStatDay(statDay: newStatDay)

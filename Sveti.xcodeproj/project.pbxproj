@@ -65,6 +65,7 @@
 		FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A79C273AC031004A56F9 /* IRepository.swift */; };
 		FC451CAE2770DA080078B83A /* SvetiTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CAD2770DA080078B83A /* SvetiTagListView.swift */; };
 		FC451CB02770DB0B0078B83A /* DetailTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CAF2770DB0B0078B83A /* DetailTagsCell.swift */; };
+		FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB12771D1F80078B83A /* SplitDateTests.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E4266000FD000188A6 /* Assets.xcassets */; };
@@ -250,6 +251,7 @@
 		FC42A79C273AC031004A56F9 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
 		FC451CAD2770DA080078B83A /* SvetiTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiTagListView.swift; sourceTree = "<group>"; };
 		FC451CAF2770DB0B0078B83A /* DetailTagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTagsCell.swift; sourceTree = "<group>"; };
+		FC451CB12771D1F80078B83A /* SplitDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDateTests.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 			children = (
 				FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */,
 				FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */,
+				FC451CB12771D1F80078B83A /* SplitDateTests.swift */,
 				FC29A66626EC979A00DC87DA /* Info.plist */,
 			);
 			path = SvetiTests;
@@ -1313,6 +1316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */,
+				FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */,
 				FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

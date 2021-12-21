@@ -3,7 +3,7 @@ import XCTest
 
 class StatStateManagerTest: XCTestCase {
 
-  private let sut = StatStateManager()
+  private let sut = StatDaysDataManager()
   private let statDaysRepository = StatDaysRepository()
   private let notesRepository = NotesRepository()
 
@@ -40,7 +40,7 @@ class StatStateManagerTest: XCTestCase {
 
   func testRemoveStat() throws {
     let phyzicalStatesCount = getCountOfPhyzicalStatesOfDefaultStatDay()
-    sut.removeStat(with: defaultNote.id)
+    sut.removeStat(with: defaultNote)
     let updatedPhyzicalStatesCount = getCountOfPhyzicalStatesOfDefaultStatDay()
     XCTAssertEqual(phyzicalStatesCount! - updatedPhyzicalStatesCount!, 1, "StatDay didn't update.")
   }
@@ -51,7 +51,7 @@ class StatStateManagerTest: XCTestCase {
   }
 
   func checkStatDayCorrectness(_ statDay: StatDay, file: StaticString = #file, line: UInt = #line) {
-    XCTAssert(statDay.date == defaultNote.splitDate!.ddMMyyyy, "StatDay's date is incorrect", file: file, line: line)
+    XCTAssert(statDay.splitDate?.ddMMyyyy == defaultNote.splitDate!.ddMMyyyy, "StatDay's date is incorrect", file: file, line: line)
     XCTAssert(statDay.totalNotes == 1, "StatDay's total notes is incorrect", file: file, line: line)
     XCTAssert(statDay.emotionalStates.contains(2.0), "StatDay doesn't contain correct emotional state.", file: file, line: line)
     XCTAssert(statDay.phyzicalStates.contains(2.0), "StatDay doesn't contain correct emotional state.", file: file, line: line)
