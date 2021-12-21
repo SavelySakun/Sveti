@@ -1,7 +1,7 @@
 import Foundation
 
 class DefaultTags {
-  var groups = [
+  let groups = [
     TagGroup(title: "Leisure", tags: [
       Tag(name: "idleness", id: "1"),
       Tag(name: "movie", id: "2"),
@@ -43,6 +43,17 @@ class DefaultTags {
       Tag(name: "disease", id: "27"),
       Tag(name: "fatigue", id: "28")
     ])
+  ]
+
+  let testGroups = [
+    TagGroup(title: "Health", tags: [
+      Tag(name: "good", id: "1"),
+      Tag(name: "bad", id: "2"),
+    ], id: "health"),
+
+    TagGroup(title: "Activity", tags: [
+      Tag(name: "read", id: "3")
+    ], id: "activity")
   ]
 }
 

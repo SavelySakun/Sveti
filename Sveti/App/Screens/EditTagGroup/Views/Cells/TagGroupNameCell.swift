@@ -9,7 +9,7 @@ class TagGroupNameCell: Cell {
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
     guard let groupId = viewModel.cellValue as? String,
-          let group = TagsRepository().getGroup(with: groupId) else { return }
+          let group = TagsRepository().getGroup(withId: groupId) else { return }
     self.groupId = groupId
     groupNameTextField.text = group.title
   }

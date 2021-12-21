@@ -92,7 +92,7 @@ class EditTagGroupVC: VCwithTable {
 
   private func setActionsAlertController() {
     hideAction = UIAlertAction(title: "Hide", style: .default) { _ in
-      self.tagsRepository.updateTagHiddenStatus(with: self.editingTagId)
+      self.tagsRepository.updateTagHiddenStatus(withId: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 
@@ -114,7 +114,7 @@ class EditTagGroupVC: VCwithTable {
     }
 
     let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-      self.tagsRepository.removeTag(with: self.editingTagId)
+      self.tagsRepository.removeTag(withId: self.editingTagId)
       self.onNeedToUpdateContent()
     }
 
@@ -127,7 +127,7 @@ class EditTagGroupVC: VCwithTable {
 
   func showEditAlert(forTag id: String) {
     editingTagId = id
-    let isTagHidden = tagsRepository.findTag(with: id)?.isHidden ?? false
+    let isTagHidden = tagsRepository.findTag(withId: id)?.isHidden ?? false
     hideAction.setValue((isTagHidden ? "Make active" : "Hide"), forKey: "title")
     present(actionsAlertController, animated: true, completion: nil)
   }
@@ -140,7 +140,7 @@ class EditTagGroupVC: VCwithTable {
     let alertTextField = self.newTagAlertController.textFields?.last
     guard let newTagName = alertTextField?.text,
           !newTagName.isEmpty else { return }
-    tagsRepository.addNewTag(name: newTagName, groupId: groupId)
+    tagsRepository.addNewTag(withName: newTagName, groupId: groupId)
     onNeedToUpdateContent()
     alertTextField?.text?.removeAll()
   }

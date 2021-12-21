@@ -78,7 +78,7 @@ extension EditTagGroupsVC: UITextFieldDelegate {
     }
     addNewAction.isEnabled = true
     let newGroupId = UUID().uuidString
-    TagsRepository().addNewGroup(with: newGroupName, id: newGroupId)
+    TagsRepository().addNewGroup(withName: newGroupName, id: newGroupId)
     let editTagGroupVC = EditTagGroupVC(groupId: newGroupId)
     editTagGroupVC.onClosingCompletion = {
       self.updateContent()

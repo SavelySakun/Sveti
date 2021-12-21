@@ -26,7 +26,8 @@ class TagsRepository {
     let isSaved = userDefaults.bool(forKey: UDKeys.isDefaultTagsSaved)
 
     guard !isSaved else { return }
-    let groups = DefaultTags().groups
+    let defaultDags = DefaultTags()
+    let groups: [TagGroup] = TestHelper.isTestMode ? defaultDags.testGroups : defaultDags.groups
     let tagGroupList = TagGroupList()
 
     groups.forEach { group in
@@ -40,7 +41,7 @@ class TagsRepository {
     userDefaults.set(true, forKey: UDKeys.isDefaultTagsSaved)
   }
 
-  func findTag(with id: String) -> Tag? {
+  func findTag(withId id: String) -> Tag? {
     var tag: Tag?
     groups.forEach { group in
       guard tag == nil else { return }
@@ -49,7 +50,7 @@ class TagsRepository {
     return tag
   }
 
-  func getTags(with name: String) -> [Tag] {
+  func getTags(withName name: String) -> [Tag] {
     var tags = [Tag]()
     let searchedGroups = groups
 
@@ -70,16 +71,16 @@ class TagsRepository {
     }
   }
 
-  func findGroupId(with number: Int) -> String {
+  func findGroupId(withIndex number: Int) -> String {
     groups[number].id
   }
 
-  func getGroup(with id: String) -> TagGroup? {
+  func getGroup(withId id: String) -> TagGroup? {
     return groups.first { $0.id == id }
   }
 
-  func updateTagHiddenStatus(with id: String) {
-    guard let tag = findTag(with: id) else { return }
+  func updateTagHiddenStatus(withId id: String) {
+    guard let tag = findTag(withId: id) else { return }
     try! realm.write {
       tag.isHidden = !tag.isHidden
     }
@@ -94,14 +95,14 @@ class TagsRepository {
     groups[section].tags.filter { $0.isHidden == false }
   }
 
-  func renameTag(withId id: String, and newName: String) {
-    guard let tag = findTag(with: id) else { return }
+  func renameTag(withId id: String, newName: String) {
+    guard let tag = findTag(withId: id) else { return }
     try! realm.write {
       tag.name = newName
     }
   }
 
-  func removeTag(with id: String) {
+  func removeTag(withId id: String) {
     var indexOfDeletingTag: Int?
     var indexOfGroup = 0
 
@@ -119,14 +120,14 @@ class TagsRepository {
 
   func moveTagTo(newGroupId: String, tagId: String) {
     guard let indexOfNewGroup = groups.firstIndex(where: { $0.id == newGroupId }),
-          let tagToMove = findTag(with: tagId) else { return }
-    removeTag(with: tagId)
+          let tagToMove = findTag(withId: tagId) else { return }
+    removeTag(withId: tagId)
     try! realm.write {
       groups[indexOfNewGroup].tags.append(tagToMove)
     }
   }
 
-  func addNewTag(name: String, groupId: String) {
+  func addNewTag(withName name: String, groupId: String) {
     try! realm.write {
       let newTag = Tag(name: name)
       guard let index = groups.firstIndex(where: { $0.id == groupId }) else { return }
@@ -142,7 +143,7 @@ class TagsRepository {
     }
   }
 
-  func reorder(moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath, and groupId: String) {
+  func reorder(moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath, groupId: String) {
     let editingGroup = groups.first(where: { $0.id == groupId })
     try! realm.write {
       editingGroup?.tags.swapAt(sourceIndexPath.row, destinationIndexPath.row)
@@ -156,7 +157,7 @@ class TagsRepository {
     }
   }
 
-  func addNewGroup(with name: String, id: String) {
+  func addNewGroup(withName name: String, id: String) {
     let tagGroup = TagGroup(title: name, tags: [Tag](), id: id)
     guard let tagGroupList = realm.objects(TagGroupList.self).last else { return }
     try! realm.write {
@@ -168,6 +169,13 @@ class TagsRepository {
     let tagGroupList = realm.objects(TagGroupList.self).last
     try! realm.write {
       tagGroupList?.groupList.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+  }
+
+  func removeAll() {
+    let object = realm.objects(TagGroupList.self)
+    try! realm.write {
+      realm.delete(object)
     }
   }
 }

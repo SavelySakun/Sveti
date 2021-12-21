@@ -112,7 +112,7 @@ class TagSectionHeaderView: UICollectionReusableView {
   }
 
   @objc func onEditTap() {
-    let groupId = TagsRepository().findGroupId(with: section)
+    let groupId = TagsRepository().findGroupId(withIndex: section)
     let editTagGroupVC = EditTagGroupVC(groupId: groupId)
     editTagGroupVC.onClosingCompletion = {
       self.delegate?.onDoneTagGroupEdit()

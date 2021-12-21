@@ -12,7 +12,7 @@ class EditTagGroupVM: ViewControllerVM {
   }
 
   func generateCellsDataForTags() {
-    guard let group = tagsRepository.getGroup(with: tagGroupId) else { return }
+    guard let group = tagsRepository.getGroup(withId: tagGroupId) else { return }
     var tagsData = [CellData]()
     var hiddenTagsData = [CellData]()
 
@@ -47,7 +47,7 @@ class EditTagGroupVM: ViewControllerVM {
   private func hideTag(with tagId: String) {
     print("Обновил видимость: \(tagId)")
     subscribers.removeAll()
-    tagsRepository.updateTagHiddenStatus(with: tagId)
+    tagsRepository.updateTagHiddenStatus(withId: tagId)
     delegate?.onNeedToUpdateContent()
   }
 

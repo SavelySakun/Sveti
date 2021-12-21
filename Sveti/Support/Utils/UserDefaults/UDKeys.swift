@@ -1,6 +1,6 @@
 import Foundation
 
-class UDKeys {
+enum UDKeys {
   static let isDefaultTagsSaved = "isDefaultTagsSaved"
   static let isDefaultStatDaysSettingsSaved = "isDefaultStatDaysSettingsSaved"
 }

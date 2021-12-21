@@ -85,6 +85,6 @@ class TagGroupCell: Cell {
 extension TagGroupCell: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     guard let newName = textField.text else { return }
-    TagsRepository().renameTag(withId: tagId, and: newName)
+    TagsRepository().renameTag(withId: tagId, newName: newName)
   }
 }
