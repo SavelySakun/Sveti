@@ -3,6 +3,7 @@ import UIKit
 class DiaryVC: BaseViewController {
 
   private let emptyView = ImageTextView(imageName: "2cats", text: "Add the first note in the \"New note\" section")
+  private let arrowImageView = UIImageView()
   private let tableView = UITableView()
   private let viewModel = DiaryVM()
 
@@ -28,6 +29,7 @@ class DiaryVC: BaseViewController {
     title = "Diary"
     setTable()
     setEmptyView()
+    setArrowToNewNoteTapBar()
     view.backgroundColor = .systemGray6
   }
 
@@ -55,7 +57,36 @@ class DiaryVC: BaseViewController {
   }
 
   private func updateEmptyViewVisibility() {
-    emptyView.isHidden = !viewModel.sectionsWithNotes.isEmpty
+    let isHidden = !viewModel.sectionsWithNotes.isEmpty
+    emptyView.isHidden = isHidden
+    arrowImageView.isHidden = isHidden
+  }
+
+  private func setArrowToNewNoteTapBar() {
+    arrowImageView.image = UIImage(named: "arrow")?.withRenderingMode(.alwaysTemplate)
+    arrowImageView.tintColor = .systemBlue
+    view.addSubview(arrowImageView)
+    arrowImageView.snp.makeConstraints { (make) in
+      make.left.equalToSuperview().offset(calculateOffsetForArrow())
+      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
+      make.height.equalTo(100)
+      make.width.equalTo(20)
+    }
+  }
+
+  private func calculateOffsetForArrow() -> CGFloat {
+    let tabbarButtonItems = orderedTabBarItemViews()
+    let diaryItem = tabbarButtonItems[0]
+    let maxXoffsetToButton = diaryItem.frame.maxX
+    let minXoffsetToButton = diaryItem.frame.minX
+    let correctOffsetToCenter = (0.45 * (maxXoffsetToButton - minXoffsetToButton)) + maxXoffsetToButton
+    return correctOffsetToCenter
+  }
+
+  private func orderedTabBarItemViews() -> [UIView] {
+    guard let tabbar = tabBarController?.tabBar else { return [] }
+    let interactionViews = tabbar.subviews.filter { $0.isUserInteractionEnabled }
+    return interactionViews.sorted(by: { $0.frame.minX < $1.frame.minX })
   }
 }
 
