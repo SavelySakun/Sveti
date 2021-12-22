@@ -113,7 +113,8 @@ class BarChartCell: Cell {
   private func setNoDataTextImage() {
     contentView.addSubview(noDataTextImage)
     noDataTextImage.snp.makeConstraints { (make) in
-      make.top.bottom.equalToSuperview().inset(UIUtils.bigOffset)
+      make.top.equalToSuperview().inset(50)
+      make.bottom.equalToSuperview().inset(UIUtils.bigOffset)
       make.centerX.equalToSuperview()
       make.width.equalToSuperview().multipliedBy(0.8)
       make.height.equalToSuperview().multipliedBy(0.7)
