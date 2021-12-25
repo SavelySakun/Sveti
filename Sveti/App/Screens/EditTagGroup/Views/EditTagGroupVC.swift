@@ -96,7 +96,7 @@ class EditTagGroupVC: VCwithTable {
       self.onNeedToUpdateContent()
     }
 
-    let changeGroupAction = UIAlertAction(title: "Reorder", style: .default) { _ in
+    let changeGroupAction = UIAlertAction(title: "Move to group", style: .default) { _ in
       let selectGroupVC = SelectGroupVC(with: self.groupId)
       var popupVC = ALCardController()
 
