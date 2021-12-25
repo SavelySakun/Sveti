@@ -26,6 +26,16 @@ enum MainEvents: String {
   case deleteTag = "delete_tag"
   case hideTag = "hideTag"
   case moveTag = "move_tag"
+
+  // Screens
+  case More = "open_more"
+  case Diary = "open_diary"
+  case DetailNote = "open_detail_note"
+  case NewNote = "open_new_note"
+  case Statistics = "open_statistics"
+  case EditTagGroup = "open_edit_tag_group"
+  case EditNote = "open_edit_note"
+  case EditTagGroups = "open_edit_tag_groups"
 }
 
 class SvetiAnalytics {

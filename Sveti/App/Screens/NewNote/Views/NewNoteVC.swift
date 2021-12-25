@@ -15,6 +15,11 @@ class NewNoteVC: BaseViewController {
     tableView.onUpdate() // need for updating height of tag cell
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    logOpenEvent()
+  }
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setLayout()
@@ -25,6 +30,10 @@ class NewNoteVC: BaseViewController {
 		addTableView()
     configureClearAlert()
 	}
+
+  func logOpenEvent() {
+    SvetiAnalytics.logMainEvent(.NewNote)
+  }
 
   func setLeftBarButton() {
     let leftButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(onCancel))

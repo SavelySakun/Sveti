@@ -43,6 +43,7 @@ class NewNoteVM: ViewControllerVM {
   func saveCurrentNote() {
     NotesRepository().save(note)
     StatDaysDataManager().updateStat(with: note)
+    SvetiAnalytics.logMainEvent(.createNote)
   }
 
 

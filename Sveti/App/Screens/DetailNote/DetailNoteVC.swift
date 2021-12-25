@@ -12,6 +12,11 @@ class DetailNoteVC: VCwithTable {
     super.init(with: tableStyle)
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    SvetiAnalytics.logMainEvent(.DetailNote)
+  }
+
   override func getDataProvider() -> TableDataProvider? {
     self.note = repository.getNote(with: noteId)
     let dataProvider = DetailNoteTableDataProvider(with: noteId)

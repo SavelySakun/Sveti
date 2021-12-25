@@ -20,6 +20,7 @@ class StatsVC: VCwithTable {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     updateContent()
+    SvetiAnalytics.logMainEvent(.Statistics)
   }
 
   override func updateContent() {

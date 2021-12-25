@@ -29,18 +29,24 @@ class EditNoteVC: NewNoteVC {
     navigationItem.leftBarButtonItem = leftButton
   }
 
+  override func logOpenEvent() {
+    SvetiAnalytics.logMainEvent(.EditNote)
+  }
+
   @objc func onDelete() {
     guard let noteId = self.noteId,
           let note = NotesRepository().getNote(with: noteId) else { return }
     StatDaysDataManager().removeStat(with: note)
     NotesRepository().deleteNote(noteId: noteId)
     SPIndicator.present(title: "Note deleted", preset: .done, haptic: .success, from: .top)
+    SvetiAnalytics.logMainEvent(.deleteNote)
     self.navigationController?.popToRootViewController(animated: true)
   }
 
   override func onSave() {
     guard let dismissAction = onDismissal else { return }
     dismissAction()
+    SvetiAnalytics.logMainEvent(.editNote)
     self.navigationController?.popViewController(animated: true)
   }
 }

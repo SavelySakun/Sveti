@@ -51,6 +51,7 @@ class EditingTableView: TableView {
 
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     TagsRepository().reorder(moveRowAt: sourceIndexPath, to: destinationIndexPath, groupId: groupId)
+    SvetiAnalytics.logMainEvent(.reorderTag)
   }
 
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
