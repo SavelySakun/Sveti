@@ -118,8 +118,11 @@ class TagSectionHeaderView: UICollectionReusableView {
       self.delegate?.onDoneTagGroupEdit()
       CurrentVC.current = CurrentVC.past
     }
+
     if let navigationController = CurrentVC.current?.presentedViewController as? UINavigationController {
       navigationController.pushViewController(editTagGroupVC, animated: true)
+    } else if let currentVC = CurrentVC.current {
+      currentVC.navigationController?.pushViewController(editTagGroupVC, animated: true)
     }
   }
 }
