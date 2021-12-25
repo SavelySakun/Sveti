@@ -11,8 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     RealmHelper.shared.configureRealm()
     UISetup()
     dataSetup()
-    FirebaseApp.configure()
-    Analytics.logEvent(AnalyticsEventAppOpen, parameters: nil)
+    firebaseSetup()
 
     return true
   }
@@ -33,5 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   private func dataSetup() {
     TagsRepository().saveDefaultTags()
     StatSettingsRepository().saveDefaultSettings()
+  }
+
+  private func firebaseSetup() {
+    FirebaseApp.configure()
+    #if targetEnvironment(simulator)
+    Analytics.setAnalyticsCollectionEnabled(false)
+    #endif
+    Analytics.logEvent(AnalyticsEventAppOpen, parameters: nil)
   }
 }

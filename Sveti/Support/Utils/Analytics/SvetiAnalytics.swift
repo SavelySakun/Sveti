@@ -39,7 +39,7 @@ enum MainEvents: String {
 }
 
 class SvetiAnalytics {
-  static func logMainEvent(_ event: MainEvents) {
+  static func log(_ event: MainEvents) {
     Analytics.logEvent(event.rawValue, parameters: nil)
   }
 }

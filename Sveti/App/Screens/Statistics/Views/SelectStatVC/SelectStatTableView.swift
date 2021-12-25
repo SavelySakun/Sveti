@@ -10,7 +10,7 @@ class SelectStatTableView: TableView {
     try! realm.write {
       StatSettingsManager.shared.settings.statType = statType ?? .averageEmotionalAndPhysical
     }
-    SvetiAnalytics.logMainEvent(.selectTypeOfAverageStat)
+    SvetiAnalytics.log(.selectTypeOfAverageStat)
     guard let statDaysVC = CurrentVC.current as? StatsVC else { return }
     statDaysVC.popupVC?.dismiss(animated: true) {
       statDaysVC.updateContent()

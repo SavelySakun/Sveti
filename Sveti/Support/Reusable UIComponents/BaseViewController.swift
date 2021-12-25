@@ -9,6 +9,7 @@ class BaseViewController: UIViewController {
     super.viewDidAppear(animated)
     guard markAsCurrentVC else { return }
     CurrentVC.current = self
+    logOpenScreenEvent()
   }
 
   override func viewDidLoad() {
@@ -28,4 +29,7 @@ class BaseViewController: UIViewController {
 
   /// Use for any data reload.
   func updateContent() {}
+
+  /// Use for log any screen open events. Called in ViewDidAppear().
+  func logOpenScreenEvent() {}
 }

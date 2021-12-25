@@ -10,9 +10,8 @@ class EditTagGroupsVC: VCwithTable {
     tableView = EditTagGroupsTable(viewModel: viewModel)
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    SvetiAnalytics.logMainEvent(.EditTagGroups)
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.EditTagGroups)
   }
 
   required init?(coder: NSCoder) {
@@ -84,7 +83,7 @@ extension EditTagGroupsVC: UITextFieldDelegate {
     addNewAction.isEnabled = true
     let newGroupId = UUID().uuidString
     TagsRepository().addNewGroup(withName: newGroupName, id: newGroupId)
-    SvetiAnalytics.logMainEvent(.addTagGroup)
+    SvetiAnalytics.log(.addTagGroup)
     let editTagGroupVC = EditTagGroupVC(groupId: newGroupId)
     editTagGroupVC.onClosingCompletion = {
       self.updateContent()

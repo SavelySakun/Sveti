@@ -7,9 +7,8 @@ class MoreVC: VCwithTable {
     tableView = TableViewWithTapAction(viewModel: viewModel)
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    SvetiAnalytics.logMainEvent(.More)
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.More)
   }
 
   required init?(coder: NSCoder) {

@@ -12,9 +12,8 @@ class DetailNoteVC: VCwithTable {
     super.init(with: tableStyle)
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    SvetiAnalytics.logMainEvent(.DetailNote)
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.DetailNote)
   }
 
   override func getDataProvider() -> TableDataProvider? {
