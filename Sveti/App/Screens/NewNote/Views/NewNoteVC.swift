@@ -15,6 +15,10 @@ class NewNoteVC: BaseViewController {
     tableView.onUpdate() // need for updating height of tag cell
   }
 
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.NewNote)
+  }
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setLayout()

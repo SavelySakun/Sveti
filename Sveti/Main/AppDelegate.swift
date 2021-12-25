@@ -1,19 +1,20 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Firebase
+import FirebaseAnalytics
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     RealmHelper.shared.configureRealm()
     UISetup()
     dataSetup()
-    FirebaseApp.configure()
+    firebaseSetup()
 
-	return true
-	}
+    return true
+  }
 
 	// MARK: UISceneSession Lifecycle
 	func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -25,10 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // MARK: Setup
   private func UISetup() {
     IQKeyboardManager.shared.enable = true
+    UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
   }
 
   private func dataSetup() {
     TagsRepository().saveDefaultTags()
     StatSettingsRepository().saveDefaultSettings()
+  }
+
+  private func firebaseSetup() {
+    FirebaseApp.configure()
+    #if targetEnvironment(simulator)
+    Analytics.setAnalyticsCollectionEnabled(false)
+    #endif
+    Analytics.logEvent(AnalyticsEventAppOpen, parameters: nil)
   }
 }

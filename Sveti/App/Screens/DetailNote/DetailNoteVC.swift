@@ -12,6 +12,10 @@ class DetailNoteVC: VCwithTable {
     super.init(with: tableStyle)
   }
 
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.DetailNote)
+  }
+
   override func getDataProvider() -> TableDataProvider? {
     self.note = repository.getNote(with: noteId)
     let dataProvider = DetailNoteTableDataProvider(with: noteId)

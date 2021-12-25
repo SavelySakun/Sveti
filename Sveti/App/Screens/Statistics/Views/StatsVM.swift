@@ -26,12 +26,15 @@ class StatsVM: ViewControllerVM {
       case .selectMinumumDate:
         guard let minimumDate = event.value as? Date else { return }
         statSettings.minimumDate = SplitDate(rawDate: minimumDate).startOfDay
+        SvetiAnalytics.log(.changeStatDateRange)
       case .selectMaximumDate:
         guard let maximumDate = event.value as? Date else { return }
         statSettings.maximumDate = SplitDate(rawDate: maximumDate).endOfDay
+        SvetiAnalytics.log(.changeStatDateRange)
       case .changeGrouping:
         guard let groupingType = event.value as? GroupingType else { return }
         statSettings.groupingType = groupingType
+        SvetiAnalytics.log(.changeStatGroupingType)
       case .none:
         return
       }

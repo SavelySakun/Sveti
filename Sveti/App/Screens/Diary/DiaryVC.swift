@@ -12,6 +12,10 @@ class DiaryVC: BaseViewController {
     self.updateContent()
   }
 
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.Diary)
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     setLayout()
@@ -137,6 +141,7 @@ extension DiaryVC: UITableViewDataSource {
       self.viewModel.deleteNote(noteId: noteToDeleteId)
       completion(true)
       self.updateContent()
+      SvetiAnalytics.log(.deleteNote)
     }
 
     let image = UIImage(named: "Delete")?.imageResized(to: .init(width: 22, height: 22))
@@ -148,6 +153,7 @@ extension DiaryVC: UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedNote = viewModel.sectionsWithNotes[indexPath.section].notes[indexPath.row]
     let detailNoteVC = DetailNoteVC(noteId: selectedNote.id)
+    SvetiAnalytics.log(.openNote)
     self.navigationController?.pushViewController(detailNoteVC, animated: true)
   }
 

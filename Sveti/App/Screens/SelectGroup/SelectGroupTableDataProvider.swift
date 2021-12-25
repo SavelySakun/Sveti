@@ -13,7 +13,7 @@ class SelectGroupTableDataProvider: TableDataProvider {
     editingGroupId = groupId
     
     let tableSections = [
-      TableSection(title: "Выберите группу", cellsData: getCellsData()),
+      TableSection(title: "Select a group", cellsData: getCellsData()),
     ]
     return tableSections
   }

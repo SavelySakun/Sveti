@@ -63,6 +63,7 @@
 		FC42A798273ABE92004A56F9 /* IStatContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A797273ABE92004A56F9 /* IStatContentManager.swift */; };
 		FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */; };
 		FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A79C273AC031004A56F9 /* IRepository.swift */; };
+		FC445B0127772079006458D1 /* SvetiAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC445B0027772079006458D1 /* SvetiAnalytics.swift */; };
 		FC451CAE2770DA080078B83A /* SvetiTagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CAD2770DA080078B83A /* SvetiTagListView.swift */; };
 		FC451CB02770DB0B0078B83A /* DetailTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CAF2770DB0B0078B83A /* DetailTagsCell.swift */; };
 		FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB12771D1F80078B83A /* SplitDateTests.swift */; };
@@ -130,6 +131,7 @@
 		FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */; };
 		FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FCB0644426B6817400A0494A /* .swiftlint.yml */; };
 		FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0644626B68E9500A0494A /* VCwithTable.swift */; };
+		FCB3D3B9277719FA00A23664 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */; };
 		FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */; };
 		FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */; };
 		FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */; };
@@ -138,7 +140,6 @@
 		FCB9ECBB274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBA274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift */; };
 		FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBC274BE8D900E3E864 /* EditTagGroupsCell.swift */; };
 		FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ED03274FF49100E3E864 /* EditTagGroupsTable.swift */; };
-		FCC922A4276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = FCC922A3276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FCC922A5276655BD009F7508 /* FirebaseCrashlytics */; };
 		FCC922AB27665EC4009F7508 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922AA27665EC4009F7508 /* AboutVC.swift */; };
 		FCC922AF276660B5009F7508 /* AboutTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922AE276660B5009F7508 /* AboutTableDataProvider.swift */; };
@@ -251,6 +252,7 @@
 		FC42A797273ABE92004A56F9 /* IStatContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStatContentManager.swift; sourceTree = "<group>"; };
 		FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSettingsRepository.swift; sourceTree = "<group>"; };
 		FC42A79C273AC031004A56F9 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
+		FC445B0027772079006458D1 /* SvetiAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiAnalytics.swift; sourceTree = "<group>"; };
 		FC451CAD2770DA080078B83A /* SvetiTagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiTagListView.swift; sourceTree = "<group>"; };
 		FC451CAF2770DB0B0078B83A /* DetailTagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTagsCell.swift; sourceTree = "<group>"; };
 		FC451CB12771D1F80078B83A /* SplitDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDateTests.swift; sourceTree = "<group>"; };
@@ -379,8 +381,8 @@
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
 				FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */,
+				FCB3D3B9277719FA00A23664 /* FirebaseAnalytics in Frameworks */,
 				DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */,
-				FCC922A4276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +749,14 @@
 			path = RepoProtocols;
 			sourceTree = "<group>";
 		};
+		FC445AFF27772063006458D1 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				FC445B0027772079006458D1 /* SvetiAnalytics.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		FC451CB52771F4370078B83A /* NewNoteTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -809,6 +819,7 @@
 		FC6C58B72663D1CD000188A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FC445AFF27772063006458D1 /* Analytics */,
 				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC29A67326ECEAB300DC87DA /* TestHelper */,
 				FC6C58B82663D1DB000188A6 /* UIUtils.swift */,
@@ -1086,9 +1097,9 @@
 				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
 				FCE3689F26D26C9400A05271 /* ALPopup */,
 				FCE368A426D27E6900A05271 /* SPAlert */,
-				FCC922A3276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				FCC922A5276655BD009F7508 /* FirebaseCrashlytics */,
 				FC04F8462770BF1800368CC1 /* TagListView */,
+				FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -1422,6 +1433,7 @@
 				FCC922B6276664AA009F7508 /* Bundle.swift in Sources */,
 				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
 				FC6C58B62663CFB9000188A6 /* TagCollectionCell.swift in Sources */,
+				FC445B0127772079006458D1 /* SvetiAnalytics.swift in Sources */,
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,
 				FC7E6D9F26AD290E00126B97 /* RealmHelper.swift in Sources */,
 				FC6C58A72661377A000188A6 /* NewNoteVC.swift in Sources */,
@@ -1887,10 +1899,10 @@
 			package = FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
-		FCC922A3276655BD009F7508 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+		FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
+			productName = FirebaseAnalytics;
 		};
 		FCC922A5276655BD009F7508 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;

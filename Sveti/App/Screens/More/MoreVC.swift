@@ -7,6 +7,10 @@ class MoreVC: VCwithTable {
     tableView = TableViewWithTapAction(viewModel: viewModel)
   }
 
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.More)
+  }
+
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }

@@ -30,6 +30,10 @@ class EditTagGroupVC: VCwithTable {
     onClosingCompletion()
   }
 
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.EditTagGroup)
+  }
+
   override func getDataProvider() -> TableDataProvider? {
     EditTagGroupTableDataProvider(with: groupId)
   }
@@ -94,9 +98,10 @@ class EditTagGroupVC: VCwithTable {
     hideAction = UIAlertAction(title: "Hide", style: .default) { _ in
       self.tagsRepository.updateTagHiddenStatus(withId: self.editingTagId)
       self.onNeedToUpdateContent()
+      SvetiAnalytics.log(.hideTag)
     }
 
-    let changeGroupAction = UIAlertAction(title: "Reorder", style: .default) { _ in
+    let changeGroupAction = UIAlertAction(title: "Move to group", style: .default) { _ in
       let selectGroupVC = SelectGroupVC(with: self.groupId)
       var popupVC = ALCardController()
 
@@ -107,6 +112,7 @@ class EditTagGroupVC: VCwithTable {
         popupVC.dismiss(animated: true)
         self.onNeedToUpdateContent()
         SPAlert.present(title: "Done", message: "Tag moved to «\(groupTitle)»", preset: .done, haptic: .success)
+        SvetiAnalytics.log(.moveTag)
       }
 
       popupVC = ALPopup.card(controller: selectGroupVC)
@@ -116,6 +122,7 @@ class EditTagGroupVC: VCwithTable {
     let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
       self.tagsRepository.removeTag(withId: self.editingTagId)
       self.onNeedToUpdateContent()
+      SvetiAnalytics.log(.deleteTag)
     }
 
     let cancelAction = UIAlertAction(title: "Discard", style: .cancel)
@@ -143,6 +150,7 @@ class EditTagGroupVC: VCwithTable {
     tagsRepository.addNewTag(withName: newTagName, groupId: groupId)
     onNeedToUpdateContent()
     alertTextField?.text?.removeAll()
+    SvetiAnalytics.log(.addTag)
   }
 
   private func setActionsForDeleteAlertController() {
@@ -150,6 +158,7 @@ class EditTagGroupVC: VCwithTable {
       self.tagsRepository.deleteGroup(with: self.groupId)
       self.navigationController?.popViewController(animated: true)
       SPAlert.present(title: "Done", message: "Group deleted", preset: .done, haptic: .success)
+      SvetiAnalytics.log(.deleteTagGroup)
     }
 
     let cancelAction = UIAlertAction(title: "Discard", style: .default)
