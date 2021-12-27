@@ -31,3 +31,9 @@ DerivedData/
 /.idea/MoodTracker.iml
 /.idea/vcs.xml
 /.idea/workspace.xml
+/fastlane/Appfile
+/fastlane/Matchfile
+/Sveti.app.dSYM.zip
+/Sveti.ipa
+/fastlane/SvetiAPIAuthKey.p8
+/fastlane/Fastfile

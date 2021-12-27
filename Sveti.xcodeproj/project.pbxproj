@@ -331,6 +331,7 @@
 		FCC922B2276663F2009F7508 /* AppInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoModel.swift; sourceTree = "<group>"; };
 		FCC922B5276664AA009F7508 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FCC922B727666798009F7508 /* Icon8Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon8Model.swift; sourceTree = "<group>"; };
+		FCCF74C9277A25BB00A58D40 /* Sveti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sveti.entitlements; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -790,6 +791,7 @@
 		FC6C56DA266000FB000188A6 /* Sveti */ = {
 			isa = PBXGroup;
 			children = (
+				FCCF74C9277A25BB00A58D40 /* Sveti.entitlements */,
 				FC1563F12748DDA900AAD925 /* Main */,
 				FC1563EE2748DB8500AAD925 /* Support */,
 				FC7E6D1826AB195B00126B97 /* Screens */,
@@ -1729,16 +1731,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sveti/Sveti.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6389Z2D8J8;
+				DEVELOPMENT_TEAM = AQXX2T2SYK;
 				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sava.sveti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1750,16 +1755,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sveti/Sveti.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6389Z2D8J8;
+				DEVELOPMENT_TEAM = AQXX2T2SYK;
 				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sava.sveti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
