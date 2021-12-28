@@ -1734,6 +1734,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sveti/Sveti.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AQXX2T2SYK;
 				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1758,6 +1759,7 @@
 				CODE_SIGN_ENTITLEMENTS = Sveti/Sveti.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AQXX2T2SYK;
 				INFOPLIST_FILE = "$(SRCROOT)/Sveti/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
