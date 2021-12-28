@@ -146,7 +146,8 @@ extension DiaryVC: UITableViewDataSource {
 
     let image = UIImage(named: "Delete")?.imageResized(to: .init(width: 22, height: 22))
     deleteAction.image = image
-    deleteAction.backgroundColor = .white
+    deleteAction.backgroundColor = .systemGray6
+    deleteAction.title = String()
     return UISwipeActionsConfiguration(actions: [deleteAction])
   }
 
