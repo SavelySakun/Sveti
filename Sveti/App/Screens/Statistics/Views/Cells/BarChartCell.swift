@@ -107,7 +107,7 @@ class BarChartCell: Cell {
     let currentVCWidth = currentVC.view.frame.width
     let barItemMinimalWidth: CGFloat = 30.0
     let totalAvailableItems = Double(currentVCWidth / barItemMinimalWidth)
-    barChartView.setVisibleXRange(minXRange: 0, maxXRange: totalAvailableItems)
+    barChartView.setVisibleXRange(minXRange: 5, maxXRange: totalAvailableItems)
   }
 
   private func setNoDataTextImage() {
