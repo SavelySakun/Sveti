@@ -6,8 +6,7 @@ class MoreTableDataProvider: TableDataProvider {
 
     let tableSections = [
       TableSection(title: "Features", cellsData: [
-        CellData(type: SimpleCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: EditTagGroupsMoreItem())),
-        //CellData(type: MoreCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: DownloadDataMoreItem()))
+        CellData(type: SimpleCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: EditTagGroupsMoreItem()))
       ]),
       TableSection(title: "Other", cellsData: [
         CellData(type: SimpleCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: ContactDeveloperMoreItem())),
