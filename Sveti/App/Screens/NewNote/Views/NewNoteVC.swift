@@ -5,8 +5,7 @@ import SPIndicator
 class NewNoteVC: BaseViewController {
 
   let viewModel = NewNoteVM(tableDataProvider: NewNoteTableDataProvider())
-  let saveAlert = UIAlertController(title: "Attention", message: "Save new note?", preferredStyle: .alert)
-  let cancelAlert = UIAlertController(title: "Attention", message: "You will lose all changes.", preferredStyle: .alert)
+  let cancelAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
   lazy var tableView = TableView(viewModel: viewModel)
 
@@ -32,12 +31,13 @@ class NewNoteVC: BaseViewController {
 
   func setLeftBarButton() {
     let leftButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(onCancel))
-    leftButton.tintColor = .systemRed
     navigationItem.leftBarButtonItem = leftButton
   }
 
   func setRightBarButton() {
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(onSave))
+    let rightButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(onSave))
+    rightButton.tintColor = .systemGreen
+    navigationItem.rightBarButtonItem = rightButton
   }
 
   func setTitle() {
@@ -51,10 +51,10 @@ class NewNoteVC: BaseViewController {
   }
 
   private func configureClearAlert() {
-    let okAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+    let okAction = UIAlertAction(title: "Delete note draft", style: .destructive) { _ in
       self.dismiss(animated: true)
     }
-    let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+    let noAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
     [okAction, noAction].forEach { action in
       cancelAlert.addAction(action)
@@ -79,11 +79,7 @@ class NewNoteVC: BaseViewController {
   }
 
   @objc private func onCancel() {
-    if viewModel.hasChanges {
-      present(cancelAlert, animated: true, completion: nil)
-    } else {
-      self.dismiss(animated: true, completion: nil)
-    }
+    present(cancelAlert, animated: true, completion: nil)
   }
 
   private func clearAllInput() {
