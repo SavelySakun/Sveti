@@ -5,5 +5,6 @@ protocol ISimpleCellItem: AnyObject {
   var iconImage: UIImage? { get set }
   var iconTintColor: UIColor? { get set }
   var iconBackgroundColor: UIColor? { get set }
+  var accessoryImage: UIImage? { get set }
   var onTapAction: (() -> Void)? { get set }
 }

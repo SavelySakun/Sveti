@@ -8,11 +8,11 @@ class SimpleCell: Cell, ICellWithOnTapAction {
 
   private let iconView = IconView()
   private let titleLabel = UILabel()
+  private var cellItem: ISimpleCellItem?
+
   var onTapAction: (() -> Void)?
 
   override func setLayout() {
-    accessoryType = .disclosureIndicator
-
     contentView.addSubview(iconView)
     iconView.layer.cornerRadius = 8
     iconView.snp.makeConstraints { (make) in
@@ -30,19 +30,45 @@ class SimpleCell: Cell, ICellWithOnTapAction {
   }
 
   override func configureSelf(with viewModel: CellVM) {
-    guard let moreItem = viewModel.cellValue as? ISimpleCellItem else { return }
-    titleLabel.text = moreItem.title
-    onTapAction = moreItem.onTapAction
+    guard let cellItem = viewModel.cellValue as? ISimpleCellItem else { return }
+    self.cellItem = cellItem
 
-    guard let iconImage = moreItem.iconImage,
-          let iconTintColor = moreItem.iconTintColor,
-          let iconBackground = moreItem.iconBackgroundColor else {
+    titleLabel.text = cellItem.title
+    onTapAction = cellItem.onTapAction
+
+    setIcon()
+    setAccessory()
+  }
+
+  private func setIcon() {
+    guard let cellItem = self.cellItem,
+          let iconImage = cellItem.iconImage else {
       iconView.snp.makeConstraints { $0.width.equalTo(0) }
       return
     }
 
-    iconView.backgroundColor = iconBackground
-    iconView.iconTintColor = iconTintColor
     iconView.image = iconImage
+
+    if let iconTintColor = cellItem.iconTintColor {
+      iconView.iconTintColor = iconTintColor
+    }
+    if let iconBackground = cellItem.iconBackgroundColor {
+      iconView.backgroundColor = iconBackground
+    }
+  }
+
+  private func setAccessory() {
+    guard let cellItem = self.cellItem else { return }
+
+    if let accessoryImage = cellItem.accessoryImage {
+      let image = accessoryImage.withRenderingMode(.alwaysTemplate)
+      let imageView = UIImageView(image: image)
+      imageView.tintColor = .systemGray3
+      accessoryView = imageView
+      let accessoryWidthHeight = frame.height * 0.5
+      accessoryView?.bounds = CGRect(x: 0, y: 0, width: accessoryWidthHeight, height: accessoryWidthHeight)
+    } else {
+      accessoryType = .disclosureIndicator
+    }
   }
 }
