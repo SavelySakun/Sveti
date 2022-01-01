@@ -21,6 +21,7 @@ class NewNoteVC: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setLayout()
+        setModalPresentation()
 	}
 
 	private func setLayout() {
@@ -29,6 +30,11 @@ class NewNoteVC: BaseViewController {
     configureClearAlert()
 	}
 
+  private func setModalPresentation() {
+    navigationController?.presentationController?.delegate = self
+    isModalInPresentation = true
+  }
+
   func setLeftBarButton() {
     let leftButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(onCancel))
     navigationItem.leftBarButtonItem = leftButton
@@ -36,7 +42,6 @@ class NewNoteVC: BaseViewController {
 
   func setRightBarButton() {
     let rightButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(onSave))
-    rightButton.tintColor = .systemGreen
     navigationItem.rightBarButtonItem = rightButton
   }
 
@@ -87,5 +92,11 @@ class NewNoteVC: BaseViewController {
     DispatchQueue.main.async {
       self.tableView.reloadData()
     }
+  }
+}
+
+extension NewNoteVC: UIAdaptivePresentationControllerDelegate {
+  func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+    present(cancelAlert, animated: true)
   }
 }
