@@ -54,9 +54,7 @@
 		FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6EE27366396004A56F9 /* StatsFilterEvent.swift */; };
 		FC42A6F127366615004A56F9 /* GroupingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6F027366615004A56F9 /* GroupingType.swift */; };
 		FC42A6F42737FE78004A56F9 /* StatGenerationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A6F32737FE78004A56F9 /* StatGenerationResult.swift */; };
-		FC42A74E27397E17004A56F9 /* StatSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A74D27397E17004A56F9 /* StatSettingsManager.swift */; };
 		FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A74F27397E21004A56F9 /* StatSettings.swift */; };
-		FC42A75227397EB1004A56F9 /* StatsContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */; };
 		FC42A75427397F86004A56F9 /* StatsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A75327397F86004A56F9 /* StatsDataSource.swift */; };
 		FC42A792273ABD00004A56F9 /* StatDayContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A791273ABD00004A56F9 /* StatDayContentManager.swift */; };
 		FC42A796273ABDE8004A56F9 /* IStatSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42A795273ABDE8004A56F9 /* IStatSettingsManager.swift */; };
@@ -246,9 +244,7 @@
 		FC42A6EE27366396004A56F9 /* StatsFilterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsFilterEvent.swift; sourceTree = "<group>"; };
 		FC42A6F027366615004A56F9 /* GroupingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingType.swift; sourceTree = "<group>"; };
 		FC42A6F32737FE78004A56F9 /* StatGenerationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatGenerationResult.swift; sourceTree = "<group>"; };
-		FC42A74D27397E17004A56F9 /* StatSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSettingsManager.swift; sourceTree = "<group>"; };
 		FC42A74F27397E21004A56F9 /* StatSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatSettings.swift; sourceTree = "<group>"; };
-		FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsContentRepository.swift; sourceTree = "<group>"; };
 		FC42A75327397F86004A56F9 /* StatsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDataSource.swift; sourceTree = "<group>"; };
 		FC42A791273ABD00004A56F9 /* StatDayContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDayContentManager.swift; sourceTree = "<group>"; };
 		FC42A795273ABDE8004A56F9 /* IStatSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStatSettingsManager.swift; sourceTree = "<group>"; };
@@ -533,7 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				FC8BE9D626E7AE0300D12704 /* StatDaysRepository.swift */,
-				FC42A75127397EB1004A56F9 /* StatsContentRepository.swift */,
 				FC42A799273ABFF4004A56F9 /* StatSettingsRepository.swift */,
 			);
 			path = Repos;
@@ -941,7 +936,6 @@
 		FC8BE9D326E7AD2900D12704 /* StatisticsManager */ = {
 			isa = PBXGroup;
 			children = (
-				FC42A74D27397E17004A56F9 /* StatSettingsManager.swift */,
 				FC42A791273ABD00004A56F9 /* StatDayContentManager.swift */,
 				FC42A793273ABD4A004A56F9 /* StatDays */,
 				FC42A794273ABDD1004A56F9 /* StatProtocols */,
@@ -1479,8 +1473,6 @@
 				FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* TagCollectionView.swift in Sources */,
 				FC451CAE2770DA080078B83A /* SvetiTagListView.swift in Sources */,
-				FC42A74E27397E17004A56F9 /* StatSettingsManager.swift in Sources */,
-				FC42A75227397EB1004A56F9 /* StatsContentRepository.swift in Sources */,
 				FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */,
 				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
 				FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */,

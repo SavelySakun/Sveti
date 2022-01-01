@@ -15,10 +15,10 @@ class StatDayContentManager: IStatContentManager {
   }
 
   func updateStatContent() {
-    let settings = StatSettingsManager.shared
+    let settings = StatSettingsRepository().settings
 
     // Important: we pass content manager into data generator
-    let dataGenerator = StatDaysDataSetGenerator(settingsManager: settings, contentManager: self)
+    let dataGenerator = StatDaysDataSetGenerator(statSettings: settings, contentManager: self)
     dataGenerator.fillContentManagerWithData()
   }
 

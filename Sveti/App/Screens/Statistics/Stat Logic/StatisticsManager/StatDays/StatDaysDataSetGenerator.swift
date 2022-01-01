@@ -5,8 +5,8 @@ class StatDaysDataSetGenerator {
   private let settings: StatSettings
   private let contentManager: StatDayContentManager
 
-  init(settingsManager: StatSettingsManager, contentManager: StatDayContentManager) {
-    self.settings = settingsManager.settings
+  init(statSettings: StatSettings, contentManager: StatDayContentManager) {
+    self.settings = statSettings
     self.contentManager = contentManager
   }
 

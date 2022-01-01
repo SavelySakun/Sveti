@@ -11,7 +11,7 @@ class StatDayChartFormatter: IAxisValueFormatter {
 
   private func configureLabels() {
     guard let currentlyDrawedStat = StatDayContentManager.shared.currentlyDrawedStat else { return }
-    let groupingType = StatSettingsManager.shared.settings.groupingType
+    let groupingType = StatSettingsRepository().settings.groupingType
 
     currentlyDrawedStat.forEach { drawableStat in
       let splitDate = drawableStat.splitDate
@@ -35,7 +35,7 @@ class StatDayChartFormatter: IAxisValueFormatter {
   }
 
   func generateColorsForBars() -> [UIColor] {
-    let statType = StatSettingsManager.shared.settings.statType
+    let statType = StatSettingsRepository().settings.statType
     guard let currentlyDrawedStat = StatDayContentManager.shared.currentlyDrawedStat else { return [UIColor]() }
     var colorsForBars = [UIColor]()
 

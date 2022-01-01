@@ -73,7 +73,7 @@ class StatsTableHeaderView: UIView {
   }
 
   private func setDefaultValues() {
-    let settings = StatSettingsManager.shared.settings
+    let settings = StatSettingsRepository().settings
     minimumDatePicker.date = settings.minimumDate
     maximumDatePicker.date = settings.maximumDate
     segmentedControl.selectedSegmentIndex = settings.groupingType.rawValue

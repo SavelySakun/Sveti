@@ -56,7 +56,9 @@ class BarChartCell: Cell {
   }
 
   private func setDataForChart() {
-    currentStatLabel.text = "Average " + StatSettingsManager.shared.settings.statType.getStatTypeDescription().lowercased()
+    let statType = StatSettingsRepository().settings.statType
+    let statTypeDescription = statType.getStatTypeDescription().lowercased()
+    currentStatLabel.text = "Average " + statTypeDescription
 
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
     dataSet.highlightEnabled = false

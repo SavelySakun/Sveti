@@ -68,12 +68,8 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
   }
 
   // Weeks
-  func test_add_1_note_week_correctness() {
-
-  }
-
-  func test_add_3_notes_week_correctness() {
-
+  func test_add_7_notes_in_different_weekdays_grouping_correct_mood_value() {
+    
   }
 
   // Month
