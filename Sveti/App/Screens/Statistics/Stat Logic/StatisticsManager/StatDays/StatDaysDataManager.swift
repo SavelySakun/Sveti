@@ -27,7 +27,7 @@ class StatDaysDataManager {
   /// If statDay doesn't exist for specific date
   func saveStat(with note: Note) {
     let statDayToSave = getNewStatDay(from: note)
-    StatDaysRepository().saveNewStatDay(statDay: statDayToSave)
+    statDaysRepository.saveNewStatDay(statDay: statDayToSave)
   }
 
   func getNewStatDay(from note: Note) -> StatDay {
@@ -41,6 +41,10 @@ class StatDaysDataManager {
     statDay.emotionalStates.append(mood.emotionalState)
     statDay.phyzicalStates.append(mood.physicalState)
     return statDay
+  }
+
+  func removeAll() {
+    statDaysRepository.removeAll()
   }
 
 }
