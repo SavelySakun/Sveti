@@ -7,6 +7,7 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
   let contentManager = StatDayContentManager()
   let notesRepository = NotesRepository()
   let statDaysDataManager = StatDaysDataManager()
+  let statSettingsRepository = StatSettingsRepository()
 
   override func tearDownWithError() throws {
     notesRepository.removeAll()
@@ -55,6 +56,8 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
   }
 
   func test_add_3_notes_in_3_different_days_correct_drawedStat_count() {
+    statSettingsRepository.updateGrouping(.day)
+
     addNoteAndUpdateStats(noteDate: "01.01.2020")
     addNoteAndUpdateStats(noteDate: "02.01.2020")
     addNoteAndUpdateStats(noteDate: "03.01.2020")
@@ -68,30 +71,51 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
   }
 
   // Weeks
-  func test_add_7_notes_in_different_weekdays_grouping_correct_mood_value() {
-    
+  func test_add_3_notes_in_3_different_days_week_grouping_correct_mood_value() {
+    statSettingsRepository.updateGrouping(.week)
+
+    addNoteAndUpdateStats(noteDate: "04.01.2020")
+    addNoteAndUpdateStats(noteDate: "05.01.2020", emotionalState: 5.0)
+    addNoteAndUpdateStats(noteDate: "06.01.2020", physicalState: 7.0)
+
+    guard let lastCurrentlyDrawedStat = contentManager.currentlyDrawedStat?.last else {
+      XCTFail("Empty currentlyDrawedStat. Not valid")
+      return
+    }
+
+    XCTAssertTrue(lastCurrentlyDrawedStat.averageState == 6.0)
   }
 
   // Month
-  func test_add_1_note_month_correctness() {
+  func test_add_3_notes_month_correct_mood_value() {
+    statSettingsRepository.updateGrouping(.month)
 
-  }
+    addNoteAndUpdateStats(noteDate: "04.01.2020")
+    addNoteAndUpdateStats(noteDate: "11.01.2020", emotionalState: 5.0)
+    addNoteAndUpdateStats(noteDate: "18.01.2020", physicalState: 7.0)
 
-  func test_add_3_notes_month_correctness() {
+    guard let lastCurrentlyDrawedStat = contentManager.currentlyDrawedStat?.last else {
+      XCTFail("Empty currentlyDrawedStat. Not valid")
+      return
+    }
 
-  }
-
-  func test_add_12_notes_month_correctness() {
-
+    XCTAssertTrue(lastCurrentlyDrawedStat.averageState == 6.0)
   }
 
   // Year
-  func test_add_1_note_year_correctness() {
+  func test_add_3_notes_year_correct_mood_value() {
+    statSettingsRepository.updateGrouping(.year)
 
-  }
+    addNoteAndUpdateStats(noteDate: "01.01.2020")
+    addNoteAndUpdateStats(noteDate: "01.02.2020", emotionalState: 5.0)
+    addNoteAndUpdateStats(noteDate: "01.03.2020", physicalState: 7.0)
 
-  func test_add_3_notes_year_correctness() {
+    guard let lastCurrentlyDrawedStat = contentManager.currentlyDrawedStat?.last else {
+      XCTFail("Empty currentlyDrawedStat. Not valid")
+      return
+    }
 
+    XCTAssertTrue(lastCurrentlyDrawedStat.averageState == 6.0)
   }
 
   private func addNoteAndUpdateStats(noteDate: String, emotionalState: Double = 6.0, physicalState: Double = 6.0) {
@@ -103,5 +127,4 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
     statDaysDataManager.updateStat(with: note)
     contentManager.updateStatContent()
   }
-
 }
