@@ -11,8 +11,10 @@ class StatDayContentManager: IStatContentManager {
   
   func getStatContent() -> BarChartDataSet? {
     let settings = StatSettingsManager.shared
+
+    // Important: we pass content manager into data generator
     let dataGenerator = StatDaysDataSetGenerator(settingsManager: settings, contentManager: self)
-    dataGenerator.generateDataForManager()
+    dataGenerator.fillContentManagerWithData()
     return self.dataSet
   }
 

@@ -59,8 +59,8 @@ class BarChartCell: Cell {
     currentStatLabel.text = "Average " + StatSettingsManager.shared.settings.statType.getStatTypeDescription().lowercased()
 
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
+    dataSet.highlightEnabled = false
     dataSet.colors = StatDayChartFormatter().generateColorsForBars()
-    dataSet.highlightColor = .systemBlue
     dataSet.valueFont = .systemFont(ofSize: 12)
     dataSet.valueFormatter = StatDayValueFormatter()
 

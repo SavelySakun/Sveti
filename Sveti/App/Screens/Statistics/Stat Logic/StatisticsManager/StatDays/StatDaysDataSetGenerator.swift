@@ -13,12 +13,14 @@ class StatDaysDataSetGenerator {
   private let statDaysRepository = StatDaysRepository()
 
   /// Generate content for days average mood bar chart.
-  func generateDataForManager() {
+  func fillContentManagerWithData() {
     guard let allStatDays = statDaysRepository.getAll(), !allStatDays.isEmpty else {
       contentManager.contentGenerationResult = .noDataAtAll
       return
     }
     let dataEntry = prepateDataEntry(from: allStatDays)
+
+    // Fills content manager with dataset
     contentManager.dataSet = BarChartDataSet(entries: dataEntry)
   }
 
