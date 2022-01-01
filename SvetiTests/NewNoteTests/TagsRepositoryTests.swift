@@ -1,7 +1,7 @@
 import XCTest
 @testable import Sveti
 
-// For all test cases used test tag groups (DefaultTags).
+// For all test cases used test tag groups (DefaultTags class).
 class TagsRepositoryTests: XCTestCase {
 
   private var sut = TagsRepository()

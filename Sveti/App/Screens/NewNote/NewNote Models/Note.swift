@@ -8,7 +8,7 @@ class Note: Object, Comparable {
     return leftDate < rightDate
   }
   
-  @objc dynamic var id = Int()
+  @objc dynamic var id = Int(Date().timeIntervalSince1970)
   @objc dynamic var splitDate: SplitDate? = SplitDate(rawDate: Date())
   @objc dynamic var mood: Mood? = Mood()
   @objc dynamic var comment = String()

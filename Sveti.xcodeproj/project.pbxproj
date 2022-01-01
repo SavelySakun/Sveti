@@ -120,6 +120,7 @@
 		FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93A9272ED3A700582765 /* StatsVM.swift */; };
 		FC9F93AC272ED9F800582765 /* DrawableStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9F93AB272ED9F800582765 /* DrawableStat.swift */; };
 		FCA8D753278095F200212E51 /* LinkToSiteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8D752278095F200212E51 /* LinkToSiteModel.swift */; };
+		FCA8D7552780AEF400212E51 /* NotesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8D7542780AEF400212E51 /* NotesRepositoryTests.swift */; };
 		FCAAD9F326B84FC700607DC0 /* TextOnRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAD9F226B84FC700607DC0 /* TextOnRoundView.swift */; };
 		FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */; };
 		FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0642926B5436500A0494A /* DetailNoteVC.swift */; };
@@ -309,6 +310,7 @@
 		FC9F93A9272ED3A700582765 /* StatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVM.swift; sourceTree = "<group>"; };
 		FC9F93AB272ED9F800582765 /* DrawableStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableStat.swift; sourceTree = "<group>"; };
 		FCA8D752278095F200212E51 /* LinkToSiteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkToSiteModel.swift; sourceTree = "<group>"; };
+		FCA8D7542780AEF400212E51 /* NotesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRepositoryTests.swift; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* TextOnRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOnRoundView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -764,6 +766,7 @@
 			isa = PBXGroup;
 			children = (
 				FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */,
+				FCA8D7542780AEF400212E51 /* NotesRepositoryTests.swift */,
 			);
 			path = NewNoteTests;
 			sourceTree = "<group>";
@@ -1345,6 +1348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA8D7552780AEF400212E51 /* NotesRepositoryTests.swift in Sources */,
 				FC451CB42771F3E60078B83A /* TagsRepositoryTests.swift in Sources */,
 				FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */,
 				FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */,

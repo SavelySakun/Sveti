@@ -1,26 +1,17 @@
 import Foundation
 import RealmSwift
 
-enum TimeRange {
-  case all
-  case today
-  case thisWeek
-  case thisMonth
-  case thisYear
-}
-
 class NotesRepository {
 
   let realm = try! Realm()
 
   func save(_ note: Note) {
-    let noteToSave = getPreparedToSave(note)
     try! realm.write {
-      realm.add(noteToSave)
+      realm.add(note)
     }
   }
 
-  func getNotes(range: TimeRange = .all) -> [Note] {
+  func getNotes() -> [Note] {
     var notes = realm.objects(Note.self).toArray()
     notes.sort(by: >)
     return notes
@@ -37,10 +28,10 @@ class NotesRepository {
     return realm.objects(Note.self).filter("id = %@", id).first
   }
 
-  private func getPreparedToSave(_ note: Note) -> Note {
-    let note = note
-    let date = Date()
-    note.id = Int(date.timeIntervalSince1970)
-    return note
+  func removeAll() {
+    let object = realm.objects(Note.self)
+    try! realm.write {
+      realm.delete(object)
+    }
   }
 }
