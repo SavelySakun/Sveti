@@ -14,7 +14,7 @@ class AppInfoModel: ISimpleCellItem {
   init() {
     let appReleaseVersion = Bundle.main.releaseVersionNumber ?? "-"
     let appBundleVersion = Bundle.main.buildVersionNumber ?? "-"
-    title = "Sveti App info: \(appReleaseVersion) (\(appBundleVersion)) ⚙️"
+    title = "Sveti App: \(appReleaseVersion) (\(appBundleVersion)) ⚙️"
 
     onTapAction = {
       UIPasteboard.general.string = self.title
