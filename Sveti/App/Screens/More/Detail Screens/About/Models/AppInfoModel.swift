@@ -8,13 +8,14 @@ class AppInfoModel: ISimpleCellItem {
   var iconImage: UIImage? = nil
   var iconTintColor: UIColor? = nil
   var iconBackgroundColor: UIColor? = nil
+  var accessoryImage: UIImage? = UIImage(named: "copy")
 
   var onTapAction: (() -> Void)?
 
   init() {
     let appReleaseVersion = Bundle.main.releaseVersionNumber ?? "-"
     let appBundleVersion = Bundle.main.buildVersionNumber ?? "-"
-    title = "Sveti App: \(appReleaseVersion) (\(appBundleVersion)) ⚙️"
+    title = "Sveti app version: \(appReleaseVersion) (\(appBundleVersion))"
 
     onTapAction = {
       UIPasteboard.general.string = self.title

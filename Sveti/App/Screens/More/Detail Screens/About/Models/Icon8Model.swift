@@ -7,6 +7,7 @@ class Icon8Model: ISimpleCellItem {
   var iconImage: UIImage? = nil
   var iconTintColor: UIColor? = nil
   var iconBackgroundColor: UIColor? = nil
+  var accessoryImage: UIImage? = UIImage(named: "globe")
 
   var onTapAction: (() -> Void)?
 

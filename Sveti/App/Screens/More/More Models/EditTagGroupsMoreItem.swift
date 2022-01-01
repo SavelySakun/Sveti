@@ -5,6 +5,7 @@ class EditTagGroupsMoreItem: ISimpleCellItem {
   var iconBackgroundColor: UIColor? = .systemBlue
   var iconImage: UIImage? = UIImage(named: "folder")?.withRenderingMode(.alwaysTemplate)
   var iconTintColor: UIColor? = .white
+  var accessoryImage: UIImage? = nil
 
   var onTapAction: (() -> Void)? = {
     guard let currentVC = CurrentVC.current else { return }

@@ -6,6 +6,7 @@ class ContactDeveloperMoreItem: ISimpleCellItem {
   var iconBackgroundColor: UIColor? = .systemPink
   var iconImage: UIImage? = UIImage(systemName: "quote.bubble.fill")
   var iconTintColor: UIColor? = .white
+  var accessoryImage: UIImage? = nil
 
   var onTapAction: (() -> Void)? = {
     guard let currentVC = CurrentVC.current else { return }
