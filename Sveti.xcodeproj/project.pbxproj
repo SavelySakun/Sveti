@@ -313,6 +313,7 @@
 		FCA8D75D2781A4D800212E51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FCA8D75F2781A4F200212E51 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FCA8D7602781A68600212E51 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FCA8D76227820FE800212E51 /* Sveti.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Sveti.entitlements; sourceTree = "<group>"; };
 		FCAAD9F226B84FC700607DC0 /* TextOnRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOnRoundView.swift; sourceTree = "<group>"; };
 		FCB0642926B5436500A0494A /* DetailNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteVC.swift; sourceTree = "<group>"; };
 		FCB0642D26B5479D00A0494A /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -800,6 +801,7 @@
 				FC6C56E4266000FD000188A6 /* Assets.xcassets */,
 				FC27091A27664F7E00A2440A /* GoogleService-Info.plist */,
 				FC6C56E9266000FD000188A6 /* Info.plist */,
+				FCA8D76227820FE800212E51 /* Sveti.entitlements */,
 				FCA8D75E2781A4D800212E51 /* Localizable.strings */,
 			);
 			path = Sveti;
