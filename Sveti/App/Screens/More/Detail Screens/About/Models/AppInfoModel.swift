@@ -15,7 +15,7 @@ class AppInfoModel: ISimpleCellItem {
   init() {
     let appReleaseVersion = Bundle.main.releaseVersionNumber ?? "-"
     let appBundleVersion = Bundle.main.buildVersionNumber ?? "-"
-    title = "Sveti app version: \(appReleaseVersion) (\(appBundleVersion))".localized
+    title = String(format: NSLocalizedString("Sveti app version: %@ (%@)", comment: ""), appReleaseVersion, appBundleVersion)
 
     onTapAction = {
       UIPasteboard.general.string = self.title

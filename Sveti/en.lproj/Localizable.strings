@@ -112,7 +112,7 @@
 "Note deleted" = "Note deleted";
 
 // More
-"Sveti app version: %d (%d)" = "Sveti app version: %d (%d)";
+"Sveti app version: %@ (%@)" = "Sveti app version: %@ (%@)";
 "Info copied" = "Info copied";
 "Icons by Icons8 💛" = "Icons by Icons8 💛";
 "What's new & Roadmap" = "What's new & Roadmap";
