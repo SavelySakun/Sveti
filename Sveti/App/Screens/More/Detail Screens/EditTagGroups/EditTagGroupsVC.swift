@@ -2,12 +2,18 @@ import UIKit
 
 class EditTagGroupsVC: VCwithTable {
 
-  let newTagAlert = UIAlertController(title: "Add new group".localized, message: "Specify the name of the group".localized, preferredStyle: .alert)
-  let addNewAction = UIAlertAction(title: "Add".localized, style: .default)
+  private let newGroupAlert = UIAlertController(title: "Add new group".localized, message: "Specify the name of the group".localized, preferredStyle: .alert)
+  private var addNewAction: UIAlertAction?
+  private var alertTextField: UITextField? {
+    newGroupAlert.textFields?.last
+  }
 
   override init(with tableStyle: UITableView.Style = .insetGrouped) {
     super.init(with: tableStyle)
     tableView = EditTagGroupsTable(viewModel: viewModel)
+    addNewAction = UIAlertAction(title: "Add".localized, style: .default) { _ in
+      self.saveNewGroup()
+    }
   }
 
   override func logOpenScreenEvent() {
@@ -42,15 +48,18 @@ class EditTagGroupsVC: VCwithTable {
   }
 
   private func setNewGroupAlert() {
-    newTagAlert.addTextField { textField in
+    newGroupAlert.addTextField { textField in
       textField.placeholder = "Group name".localized
       textField.addTarget(self, action: #selector(self.textFieldDidChange), for: .allEditingEvents)
-      textField.delegate = self
     }
 
-    let dismissAction = UIAlertAction(title: "Cancel".localized, style: .destructive)
+    let dismissAction = UIAlertAction(title: "Cancel".localized, style: .cancel) {_ in
+      self.alertTextField?.text?.removeAll()
+    }
+
+    guard let addNewAction = self.addNewAction else { return }
     [addNewAction, dismissAction].forEach { action in
-      newTagAlert.addAction(action)
+      newGroupAlert.addAction(action)
     }
   }
 
@@ -67,20 +76,18 @@ class EditTagGroupsVC: VCwithTable {
   }
 
   @objc private func onNewGroup() {
-    present(newTagAlert, animated: true, completion: nil)
+    present(newGroupAlert, animated: true, completion: nil)
   }
 
   @objc private func textFieldDidChange() {
-    addNewAction.isEnabled = !(newTagAlert.textFields?.last?.text?.isEmpty ?? true)
+    addNewAction?.isEnabled = !(newGroupAlert.textFields?.last?.text?.isEmpty ?? true)
   }
-}
 
-extension EditTagGroupsVC: UITextFieldDelegate {
-  func textFieldDidEndEditing(_ textField: UITextField) {
-    guard let newGroupName = textField.text, !newGroupName.isEmpty else {
+  @objc private func saveNewGroup() {
+    guard let newGroupName = alertTextField?.text, !newGroupName.isEmpty else {
       return
     }
-    addNewAction.isEnabled = true
+    addNewAction?.isEnabled = true
     let newGroupId = UUID().uuidString
     TagsRepository().addNewGroup(withName: newGroupName, id: newGroupId)
     SvetiAnalytics.log(.addTagGroup)
@@ -89,6 +96,6 @@ extension EditTagGroupsVC: UITextFieldDelegate {
       self.updateContent()
     }
     navigationController?.pushViewController(editTagGroupVC, animated: true)
-    newTagAlert.textFields?.last?.text = ""
+    newGroupAlert.textFields?.last?.text?.removeAll()
   }
 }

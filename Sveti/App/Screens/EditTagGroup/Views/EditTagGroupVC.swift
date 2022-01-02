@@ -85,11 +85,11 @@ class EditTagGroupVC: VCwithTable {
       self.saveNewTag()
     }
 
-    let dismissAction = UIAlertAction(title: "Cancel".localized, style: .destructive) { _ in
+    let dismissAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { _ in
       self.newTagAlertController.textFields?.last?.text?.removeAll()
     }
 
-    [dismissAction, addAction].forEach { action in
+    [addAction, dismissAction].forEach { action in
       newTagAlertController.addAction(action)
     }
   }
@@ -161,7 +161,7 @@ class EditTagGroupVC: VCwithTable {
       SvetiAnalytics.log(.deleteTagGroup)
     }
 
-    let cancelAction = UIAlertAction(title: "Discard".localized, style: .default)
+    let cancelAction = UIAlertAction(title: "Cancel".localized, style: .default)
 
     [deleteAction, cancelAction].forEach { action in
       deleteGroupAlertController.addAction(action)
