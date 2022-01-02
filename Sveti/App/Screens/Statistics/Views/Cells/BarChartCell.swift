@@ -57,8 +57,8 @@ class BarChartCell: Cell {
 
   private func setDataForChart() {
     let statType = StatSettingsRepository().settings.statType
-    let statTypeDescription = statType.getStatTypeDescription().lowercased()
-    currentStatLabel.text = "Average " + statTypeDescription
+    let statTypeDescription = statType.getStatTypeDescription().localizedLowercase
+    currentStatLabel.text = "\("Average".localized) \(statTypeDescription)"
 
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
     dataSet.highlightEnabled = false
@@ -130,12 +130,12 @@ class BarChartCell: Cell {
     guard !isHasContent else { return }
     switch contentGenerationResult {
     case .noDataAtAll:
-      noDataTextImage.textLabel.text = "There is nothing to analyze yet. Add the first note about how you feel."
+      noDataTextImage.textLabel.text = "There is nothing to analyze yet. Add the first note about how you feel.".localized
       noDataTextImage.imageView.image = UIImage(named: "noDataAtAll")
     case .success:
       return
     case .noDataInTimeRange:
-      noDataTextImage.textLabel.text = "There are no notes in the specified time range. Only the cat was found."
+      noDataTextImage.textLabel.text = "There are no notes in the specified time range. Only the cat was found.".localized
       noDataTextImage.imageView.image = UIImage(named: "noDataFilter")
     }
   }

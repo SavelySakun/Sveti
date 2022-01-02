@@ -6,20 +6,20 @@ class EditNoteTableDataProvider: TableDataProvider {
 
     let tableSections = [
 
-      TableSection(title: "Date", cellsData: [
+      TableSection(title: "Date".localized, cellsData: [
         CellData(type: DatePickerCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: data))
       ]),
 
-      TableSection(title: "Tags", cellsData: [
+      TableSection(title: "Tags".localized, cellsData: [
         CellData(type: TagCell.self, viewModel: CellVM(title: nil, cellValue: data))
       ]),
 
-      TableSection(title: "Mood", cellsData: [
-        CellData(type: PhysicalStateSliderCell.self, viewModel: CellVM(title: "Physical", cellValue: data)),
-        CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Emotional", cellValue: data))
+      TableSection(title: "Mood".localized, cellsData: [
+        CellData(type: PhysicalStateSliderCell.self, viewModel: CellVM(title: "Physical".localized, cellValue: data)),
+        CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Emotional".localized, cellValue: data))
       ]),
 
-      TableSection(title: "Comment", cellsData: [
+      TableSection(title: "Comment".localized, cellsData: [
         CellData(type: CommentCell.self, viewModel: CellVM(title: "", cellValue: data))
       ])
     ]

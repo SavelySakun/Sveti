@@ -2,7 +2,7 @@ import UIKit
 import MessageUI
 
 class ContactDeveloperMoreItem: ISimpleCellItem {
-  var title: String = "Contact us"
+  var title: String = "Contact us".localized
   var iconBackgroundColor: UIColor? = .systemPink
   var iconImage: UIImage? = UIImage(systemName: "quote.bubble.fill")
   var iconTintColor: UIColor? = .white

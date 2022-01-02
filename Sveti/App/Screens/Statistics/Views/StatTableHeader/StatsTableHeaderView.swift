@@ -7,7 +7,7 @@ class StatsTableHeaderView: UIView {
   let identifier = "StatsTableHeaderView"
   let minimumDatePicker = UIDatePicker()
   let maximumDatePicker = UIDatePicker()
-  let segmentedControl = UISegmentedControl(items: ["Day", "Week", "Month", "Year"])
+  let segmentedControl = UISegmentedControl(items: ["Day".localized, "Week".localized, "Month".localized, "Year".localized])
   let pickersStackView = UIStackView()
 
   override init(frame: CGRect) {

@@ -17,7 +17,7 @@ class MoreVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
-    title = "More"
+    title = "More".localized
     tableView.backgroundColor = .systemGray6
   }
 

@@ -2,7 +2,7 @@ import UIKit
 
 class DiaryVC: BaseViewController {
 
-  private let emptyView = ImageTextView(imageName: "2cats", text: "Add the first note in the \"New note\" section")
+  private let emptyView = ImageTextView(imageName: "2cats", text: "Add the first note in the \"New note\" section".localized)
   private let arrowImageView = UIImageView()
   private let tableView = UITableView()
   private let viewModel = DiaryVM()
@@ -30,7 +30,7 @@ class DiaryVC: BaseViewController {
   }
 
   private func setLayout() {
-    title = "Diary"
+    title = "Diary".localized
     setTable()
     setEmptyView()
     setArrowToNewNoteTapBar()
@@ -131,12 +131,12 @@ extension DiaryVC: UITableViewDataSource {
 
     let itemDate = sectionItem.date
     let date = isSameYear ? itemDate.dMMMM : itemDate.dMMMMyyyy
-    return DiaryTableSectionHeader(date: "\(itemDate.weekday), \(date)", averageScore: sectionItem.average)
+    return DiaryTableSectionHeader(date: "\(itemDate.weekday.localizedCapitalized), \(date)", averageScore: sectionItem.average)
   }
 
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-    let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (_, _, completion) in
+    let deleteAction = UIContextualAction(style: .normal, title: "Delete".localized) { (_, _, completion) in
       let noteToDeleteId = self.viewModel.sectionsWithNotes[indexPath.section].notes[indexPath.row].id
       self.viewModel.deleteNote(noteId: noteToDeleteId)
       completion(true)

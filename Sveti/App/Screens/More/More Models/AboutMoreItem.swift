@@ -1,7 +1,7 @@
 import UIKit
 
 class AboutMoreItem: ISimpleCellItem {
-  var title: String = "About"
+  var title: String = "About".localized
   var iconBackgroundColor: UIColor? = .systemPurple
   var iconImage: UIImage? = UIImage(named: "about")?.withRenderingMode(.alwaysTemplate)
   var iconTintColor: UIColor? = .white

@@ -15,11 +15,11 @@ class AppInfoModel: ISimpleCellItem {
   init() {
     let appReleaseVersion = Bundle.main.releaseVersionNumber ?? "-"
     let appBundleVersion = Bundle.main.buildVersionNumber ?? "-"
-    title = "Sveti app version: \(appReleaseVersion) (\(appBundleVersion))"
+    title = "Sveti app version: \(appReleaseVersion) (\(appBundleVersion))".localized
 
     onTapAction = {
       UIPasteboard.general.string = self.title
-      SPAlert.present(title: "Info copied", preset: .done)
+      SPAlert.present(title: "Info copied".localized, preset: .done)
     }
   }
 }

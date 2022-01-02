@@ -32,6 +32,8 @@ class ImageTextView: UIView {
     textLabel.textColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 1)
     textLabel.numberOfLines = 0
     textLabel.textAlignment = .center
+    textLabel.adjustsFontSizeToFitWidth = true
+
     addSubview(imageView)
     addSubview(textLabel)
 
@@ -45,7 +47,7 @@ class ImageTextView: UIView {
       make.edges.equalToSuperview()
     }
     textLabel.snp.makeConstraints { (make) in
-      make.height.equalTo(60)
+      make.height.equalTo(70)
     }
   }
 

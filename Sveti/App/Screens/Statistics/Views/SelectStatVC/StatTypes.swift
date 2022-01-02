@@ -9,11 +9,11 @@ import RealmSwift
   func getStatTypeDescription() -> String {
     switch self {
     case .averageEmotional:
-      return "Emotional 💚"
+      return "Emotional 💚".localized
     case .averagePhysical:
-      return "Physical ✊"
+      return "Physical ✊".localized
     case .averageEmotionalAndPhysical:
-      return "Emotional & physical 🌿"
+      return "Emotional & physical 🌿".localized
     }
   }
 }

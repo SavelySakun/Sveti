@@ -36,17 +36,17 @@ class NewNoteVC: BaseViewController {
   }
 
   func setLeftBarButton() {
-    let leftButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(onCancel))
+    let leftButton = UIBarButtonItem(title: "Cancel".localized, style: .plain, target: self, action: #selector(onCancel))
     navigationItem.leftBarButtonItem = leftButton
   }
 
   func setRightBarButton() {
-    let rightButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(onSave))
+    let rightButton = UIBarButtonItem(title: "Save".localized, style: .done, target: self, action: #selector(onSave))
     navigationItem.rightBarButtonItem = rightButton
   }
 
   func setTitle() {
-    title = "New note"
+    title = "New note".localized
   }
 
 	private func setNavigationBar() {
@@ -56,10 +56,10 @@ class NewNoteVC: BaseViewController {
   }
 
   private func configureClearAlert() {
-    let okAction = UIAlertAction(title: "Delete note draft", style: .destructive) { _ in
+    let okAction = UIAlertAction(title: "Delete note draft".localized, style: .destructive) { _ in
       self.dismiss(animated: true)
     }
-    let noAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    let noAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
 
     [okAction, noAction].forEach { action in
       cancelAlert.addAction(action)
@@ -79,7 +79,7 @@ class NewNoteVC: BaseViewController {
       currentVC.updateContent()
     }
     self.dismiss(animated: true) {
-      SPIndicator.present(title: "Note saved", message: nil, preset: .done, from: .top, completion: nil)
+      SPIndicator.present(title: "Note saved".localized, message: nil, preset: .done, from: .top, completion: nil)
     }
   }
 

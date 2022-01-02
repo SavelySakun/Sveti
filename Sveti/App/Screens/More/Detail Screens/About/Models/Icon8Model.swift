@@ -12,7 +12,7 @@ class Icon8Model: ISimpleCellItem {
   var onTapAction: (() -> Void)?
 
   init() {
-    title = "Icons by Icons8 💛"
+    title = "Icons by Icons8 💛".localized
 
     onTapAction = {
       guard let url = URL(string: "https://icons8.com/") else { return }

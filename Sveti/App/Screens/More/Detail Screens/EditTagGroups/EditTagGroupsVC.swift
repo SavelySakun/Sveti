@@ -2,8 +2,8 @@ import UIKit
 
 class EditTagGroupsVC: VCwithTable {
 
-  let newTagAlert = UIAlertController(title: "Add new group", message: "Specify the name of the group", preferredStyle: .alert)
-  let addNewAction = UIAlertAction(title: "Add", style: .default)
+  let newTagAlert = UIAlertController(title: "Add new group".localized, message: "Specify the name of the group".localized, preferredStyle: .alert)
+  let addNewAction = UIAlertAction(title: "Add".localized, style: .default)
 
   override init(with tableStyle: UITableView.Style = .insetGrouped) {
     super.init(with: tableStyle)
@@ -20,7 +20,7 @@ class EditTagGroupsVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
-    title = "Tag groups"
+    title = "Tag groups".localized
     tableView.backgroundColor = .systemGray6
     tableView.allowsSelectionDuringEditing = true
     tableView.isEditing = true
@@ -43,12 +43,12 @@ class EditTagGroupsVC: VCwithTable {
 
   private func setNewGroupAlert() {
     newTagAlert.addTextField { textField in
-      textField.placeholder = "Group name"
+      textField.placeholder = "Group name".localized
       textField.addTarget(self, action: #selector(self.textFieldDidChange), for: .allEditingEvents)
       textField.delegate = self
     }
 
-    let dismissAction = UIAlertAction(title: "Cancel", style: .destructive)
+    let dismissAction = UIAlertAction(title: "Cancel".localized, style: .destructive)
     [addNewAction, dismissAction].forEach { action in
       newTagAlert.addAction(action)
     }

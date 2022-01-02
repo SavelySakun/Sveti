@@ -6,6 +6,7 @@ class SelectGroupCell: Cell {
   override func setLayout() {
     accessoryType = .disclosureIndicator
     contentView.addSubview(titleLabel)
+    titleLabel.adjustsFontSizeToFitWidth = true
     titleLabel.snp.makeConstraints { (make) in
       make.top.bottom.equalToSuperview().inset(UIUtils.middleOffset)
       make.left.right.equalToSuperview().inset(UIUtils.bigOffset)

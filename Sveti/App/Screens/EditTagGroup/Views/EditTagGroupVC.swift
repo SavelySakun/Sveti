@@ -5,8 +5,8 @@ import SPAlert
 class EditTagGroupVC: VCwithTable {
 
   private let actionsAlertController = UIAlertController()
-  private let newTagAlertController = UIAlertController(title: "Add a tag", message: nil, preferredStyle: .alert)
-  private let deleteGroupAlertController = UIAlertController(title: "Attention", message: "Delete group?", preferredStyle: .alert)
+  private let newTagAlertController = UIAlertController(title: "Add a tag".localized, message: nil, preferredStyle: .alert)
+  private let deleteGroupAlertController = UIAlertController(title: "Attention".localized, message: "Delete group?".localized, preferredStyle: .alert)
 
   let groupId: String
   private let tagsRepository = TagsRepository()
@@ -56,7 +56,7 @@ class EditTagGroupVC: VCwithTable {
 
     tableView.tableFooterView = footerView
 
-    title = "Edit"
+    title = "Edit".localized
     navigationItem.largeTitleDisplayMode = .never
     setActionsAlertController()
     setNewTagButton()
@@ -78,14 +78,14 @@ class EditTagGroupVC: VCwithTable {
 
   private func setNewTagAlert() {
     newTagAlertController.addTextField { textField in
-      textField.placeholder = "Tag name"
+      textField.placeholder = "Tag name".localized
     }
 
-    let addAction = UIAlertAction(title: "Add", style: .default) { _ in
+    let addAction = UIAlertAction(title: "Add".localized, style: .default) { _ in
       self.saveNewTag()
     }
 
-    let dismissAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+    let dismissAction = UIAlertAction(title: "Cancel".localized, style: .destructive) { _ in
       self.newTagAlertController.textFields?.last?.text?.removeAll()
     }
 
@@ -95,13 +95,13 @@ class EditTagGroupVC: VCwithTable {
   }
 
   private func setActionsAlertController() {
-    hideAction = UIAlertAction(title: "Hide", style: .default) { _ in
+    hideAction = UIAlertAction(title: "Hide".localized, style: .default) { _ in
       self.tagsRepository.updateTagHiddenStatus(withId: self.editingTagId)
       self.onNeedToUpdateContent()
       SvetiAnalytics.log(.hideTag)
     }
 
-    let changeGroupAction = UIAlertAction(title: "Move to group", style: .default) { _ in
+    let changeGroupAction = UIAlertAction(title: "Move to group".localized, style: .default) { _ in
       let selectGroupVC = SelectGroupVC(with: self.groupId)
       var popupVC = ALCardController()
 
@@ -111,7 +111,7 @@ class EditTagGroupVC: VCwithTable {
       selectGroupVC.onSelectionCompletion = { groupTitle in
         popupVC.dismiss(animated: true)
         self.onNeedToUpdateContent()
-        SPAlert.present(title: "Done", message: "Tag moved to «\(groupTitle)»", preset: .done, haptic: .success)
+        SPAlert.present(title: "Done".localized, message: "Tag moved to «\(groupTitle)»".localized, preset: .done, haptic: .success)
         SvetiAnalytics.log(.moveTag)
       }
 
@@ -119,13 +119,13 @@ class EditTagGroupVC: VCwithTable {
       popupVC.push(from: self)
     }
 
-    let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+    let deleteAction = UIAlertAction(title: "Delete".localized, style: .destructive) { _ in
       self.tagsRepository.removeTag(withId: self.editingTagId)
       self.onNeedToUpdateContent()
       SvetiAnalytics.log(.deleteTag)
     }
 
-    let cancelAction = UIAlertAction(title: "Discard", style: .cancel)
+    let cancelAction = UIAlertAction(title: "Discard".localized, style: .cancel)
 
     [hideAction, changeGroupAction, deleteAction, cancelAction].forEach { action in
       actionsAlertController.addAction(action)
@@ -135,7 +135,7 @@ class EditTagGroupVC: VCwithTable {
   func showEditAlert(forTag id: String) {
     editingTagId = id
     let isTagHidden = tagsRepository.findTag(withId: id)?.isHidden ?? false
-    hideAction.setValue((isTagHidden ? "Make active" : "Hide"), forKey: "title")
+    hideAction.setValue((isTagHidden ? "Make active".localized : "Hide".localized), forKey: "title")
     present(actionsAlertController, animated: true, completion: nil)
   }
 
@@ -154,14 +154,14 @@ class EditTagGroupVC: VCwithTable {
   }
 
   private func setActionsForDeleteAlertController() {
-    let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+    let deleteAction = UIAlertAction(title: "Delete".localized, style: .destructive) { _ in
       self.tagsRepository.deleteGroup(with: self.groupId)
       self.navigationController?.popViewController(animated: true)
-      SPAlert.present(title: "Done", message: "Group deleted", preset: .done, haptic: .success)
+      SPAlert.present(title: "Done".localized, message: "Group deleted".localized, preset: .done, haptic: .success)
       SvetiAnalytics.log(.deleteTagGroup)
     }
 
-    let cancelAction = UIAlertAction(title: "Discard", style: .default)
+    let cancelAction = UIAlertAction(title: "Discard".localized, style: .default)
 
     [deleteAction, cancelAction].forEach { action in
       deleteGroupAlertController.addAction(action)
