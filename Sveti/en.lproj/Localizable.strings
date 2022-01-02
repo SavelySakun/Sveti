@@ -8,8 +8,7 @@
 "emotional state" = "emotional state";
 "phyzical state" = "phyzical state";
 "Note" = "Note";
-"%d in %d" = "%d in %d";
-"Edit" = "Edit";
+"%d in %d" = "%d at %d";
 "Note updated" = "Note updated";
 "Mark" = "Mark";
 "Comment" = "Comment";
@@ -61,7 +60,6 @@
 "Save" = "Save";
 "New note" = "New note";
 "Delete note draft" = "Delete note draft";
-"Cancel" = "Cancel";
 "Note saved" = "Note saved";
 "Date" = "Date";
 "Mood" = "Mood";
@@ -94,12 +92,10 @@
 "Delete group?" = "Delete group?";
 "Tag name" = "Tag name";
 "Add" = "Add";
-"Cancel" = "Cancel";
 "Hide" = "Hide";
 "Move to group" = "Move to group";
 "Done" = "Done";
 "Tag moved to «%d»" = "Tag moved to «%d»";
-"Delete" = "Delete";
 "Discard" = "Discard";
 "Make active" = "Make active";
 "Group deleted" = "Group deleted";
@@ -126,7 +122,6 @@
 "Sveti Feedback" = "Sveti Feedback";
 "Sending an email is not supported. You need to set up mail" = "Sending an email is not supported. You need to set up mail";
 "The email has been sent!" = "The email has been sent!";
-"Contact us" = "Contact us";
 "More" = "More";
 "Features" = "Features";
 "Other" = "Other";
