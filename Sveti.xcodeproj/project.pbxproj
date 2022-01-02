@@ -152,7 +152,6 @@
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
-		FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */; };
 		FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */; };
 		FCE3689626D2391000A05271 /* NoTagFoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689526D2391000A05271 /* NoTagFoundCell.swift */; };
 		FCE3689926D2656E00A05271 /* SelectGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3689826D2656E00A05271 /* SelectGroupVC.swift */; };
@@ -341,7 +340,6 @@
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
-		FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteTableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
 		FCE3689526D2391000A05271 /* NoTagFoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTagFoundCell.swift; sourceTree = "<group>"; };
 		FCE3689826D2656E00A05271 /* SelectGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupVC.swift; sourceTree = "<group>"; };
@@ -523,7 +521,6 @@
 			children = (
 				FC3A898A26A0583B0048E4ED /* Cells */,
 				FC6C58A62661377A000188A6 /* NewNoteVC.swift */,
-				FCD9AB52268A34C600817746 /* NewNoteTableDataProvider.swift */,
 				FC6C58E426653526000188A6 /* NewNoteVM.swift */,
 			);
 			path = Views;
@@ -1414,7 +1411,6 @@
 				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
 				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
-				FCD9AB53268A34C600817746 /* NewNoteTableDataProvider.swift in Sources */,
 				FC42A6C627350F8E004A56F9 /* Array.swift in Sources */,
 				FCC922AF276660B5009F7508 /* AboutTableDataProvider.swift in Sources */,
 				FCB0642A26B5436500A0494A /* DetailNoteVC.swift in Sources */,

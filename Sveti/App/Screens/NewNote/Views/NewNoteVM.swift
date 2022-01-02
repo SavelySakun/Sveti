@@ -38,6 +38,7 @@ class NewNoteVM: ViewControllerVM {
         return
       }
     }
+    tableDataProvider?.updateSections(with: note)
   }
 
   func saveCurrentNote() {
