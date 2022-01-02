@@ -130,12 +130,12 @@ class BarChartCell: Cell {
     guard !isHasContent else { return }
     switch contentGenerationResult {
     case .noDataAtAll:
-      noDataTextImage.textLabel.text = "There is nothing to analyze yet. Add the first note about how you feel.".localized
+      noDataTextImage.textLabel.text = "There is nothing to analyze yet. Add the first note about how you feel".localized
       noDataTextImage.imageView.image = UIImage(named: "noDataAtAll")
     case .success:
       return
     case .noDataInTimeRange:
-      noDataTextImage.textLabel.text = "There are no notes in the specified time range. Only the cat was found.".localized
+      noDataTextImage.textLabel.text = "There are no notes in the specified time range. But we found a cat".localized
       noDataTextImage.imageView.image = UIImage(named: "noDataFilter")
     }
   }

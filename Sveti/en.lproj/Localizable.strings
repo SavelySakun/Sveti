@@ -74,10 +74,10 @@
 "Month" = "Month";
 "Year" = "Year";
 "Select type" = "Select type";
-"Select the type of average state to analyze." = "Select the type of average state to analyze.";
+"Select the type of average state to analyze" = "Select the type of average state to analyze";
 "Average" = "Average";
-"There is nothing to analyze yet. Add the first note about how you feel." = "There is nothing to analyze yet. Add the first note about how you feel.";
-"There are no notes in the specified time range. Only the cat was found." = "There are no notes in the specified time range. Only the cat was found.";
+"There is nothing to analyze yet. Add the first note about how you feel" = "There is nothing to analyze yet. Add the first note about how you feel";
+"There are no notes in the specified time range. But we found a cat" = "There are no notes in the specified time range. But we found a cat";
 "error" = "error";
 "Emotional 💚" = "Emotional 💚";
 "Physical ✊" = "Physical ✊";
