@@ -32,7 +32,7 @@ class TagCell: Cell {
   private func addSearchField() {
     searchBar.delegate = self
     searchBar.searchBarStyle = .default
-    searchBar.placeholder = "Search"
+    searchBar.placeholder = "Search".localized
     searchBar.searchTextField.autocapitalizationType = .none
     searchBar.searchTextField.backgroundColor = .systemGray6
     searchBar.layer.borderWidth = 2
@@ -98,7 +98,7 @@ extension TagCell: UISearchBarDelegate {
       let findTags = tagsRepository.getTags(withName: searchText)
       tagsCollection.nothingFoundLabel.isHidden = !findTags.isEmpty
       tagsCollection.isSearchMode = true
-      tagsCollection.tagGroups = [TagGroup(title: "Search result", tags: findTags)]
+      tagsCollection.tagGroups = [TagGroup(title: "Search result".localized, tags: findTags)]
     }
 
     DispatchQueue.main.async {

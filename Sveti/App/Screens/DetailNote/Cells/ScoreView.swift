@@ -62,7 +62,6 @@ class ScoreView: UIView {
   private func setScoreSeparatorsStack() {
     let leftSeparatorView = UIView()
     let rightSeparatorView = UIView()
-    scoreLabel.text = "7"
     scoreLabel.textAlignment = .center
 
     [leftSeparatorView, rightSeparatorView].forEach { separator in

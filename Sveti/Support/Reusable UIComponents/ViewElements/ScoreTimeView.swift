@@ -20,7 +20,7 @@ class ScoreTimeView: UIView {
   }
 
   private func getTime(from note: Note) -> String {
-    return "at \(note.splitDate?.HHmm ?? "")"
+    return "at \(note.splitDate?.HHmm ?? "")".localized
   }
 
   private func setLayout() {

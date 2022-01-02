@@ -12,7 +12,7 @@ class SelectStatTableHeaderView: UIView {
   }
 
   func setLayout() {
-    let imageView = ImageTextView(imageName: "catMath", text: "Select the type of average state to analyze.")
+    let imageView = ImageTextView(imageName: "catMath", text: "Select the type of average state to analyze.".localized)
     addSubview(imageView)
     imageView.snp.makeConstraints { (make) in
       make.left.right.equalToSuperview().inset(UIUtils.bigOffset * 2)

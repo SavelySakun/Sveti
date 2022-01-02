@@ -2,7 +2,7 @@ import UIKit
 
 class NoTagFound: Cell {
 
-  private let noTagsView = ImageTextView(imageName: "surprise", text: "Please add at least 1 tag")
+  private let noTagsView = ImageTextView(imageName: "surprise", text: "Please add at least 1 tag".localized)
 
   override func setLayout() {
     let backView = UIView()

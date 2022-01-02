@@ -13,7 +13,7 @@ class AboutVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
-    title = "About"
+    title = "About".localized
     tableView.backgroundColor = .systemGray6
   }
 

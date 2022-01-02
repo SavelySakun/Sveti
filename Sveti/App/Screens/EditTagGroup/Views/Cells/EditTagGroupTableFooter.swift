@@ -15,7 +15,7 @@ class EditTagGroupTableFooter: UIView {
 
   private func setLayout() {
     let deleteButton = UIButton()
-    deleteButton.setTitle("Delete group", for: .normal)
+    deleteButton.setTitle("Delete group".localized, for: .normal)
     deleteButton.setTitleColor(.systemRed, for: .normal)
     deleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
 

@@ -41,15 +41,14 @@ class MoodScoreCell: Cell {
       physicalStateScoreView,
     ])
 
-    emotionalStateScoreView.stateLabel.text = "emotional state"
-    physicalStateScoreView.stateLabel.text = "phyzical state"
+    emotionalStateScoreView.stateLabel.text = "emotional state".localized
+    physicalStateScoreView.stateLabel.text = "phyzical state".localized
 
     statesStackView.axis = .vertical
     statesStackView.spacing = 0
   }
 
   private func setGlobalStackView() {
-    averageLabel.text = "9"
     averageLabel.font = UIFont.boldSystemFont(ofSize: 16)
     averageLabel.textAlignment = .center
     averageLabel.snp.makeConstraints { (make) in

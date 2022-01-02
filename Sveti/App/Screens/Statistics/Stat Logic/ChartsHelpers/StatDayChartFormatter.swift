@@ -30,7 +30,7 @@ class StatDayChartFormatter: IAxisValueFormatter {
 
   func stringForValue(_ value: Double, axis: AxisBase?) -> String {
     let index = Int(value)
-    guard let label = xAxisLabels[safe: index] else { return "error" }
+    guard let label = xAxisLabels[safe: index] else { return "error".localized }
     return label
   }
 

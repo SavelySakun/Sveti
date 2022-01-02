@@ -5,20 +5,20 @@ class NewNoteTableDataProvider: TableDataProvider {
   override func configureSections(with data: Any? = nil) -> [TableSection] {
     let tableSections = [
 
-      TableSection(title: "Date", cellsData: [
+      TableSection(title: "Date".localized, cellsData: [
         CellData(type: DatePickerCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: nil))
       ]),
 
-      TableSection(title: "Tags", cellsData: [
+      TableSection(title: "Tags".localized, cellsData: [
         CellData(type: TagCell.self, viewModel: CellVM())
       ]),
 
-      TableSection(title: "Mood", cellsData: [
-        CellData(type: PhysicalStateSliderCell.self, viewModel: CellVM(title: "Physical")),
-        CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Emotional"))
+      TableSection(title: "Mood".localized, cellsData: [
+        CellData(type: PhysicalStateSliderCell.self, viewModel: CellVM(title: "Physical".localized)),
+        CellData(type: EmotionalStateSliderCell.self, viewModel: CellVM(title: "Emotional".localized))
       ]),
 
-      TableSection(title: "Comment", cellsData: [
+      TableSection(title: "Comment".localized, cellsData: [
         CellData(type: CommentCell.self, viewModel: CellVM(title: ""))
       ]),
 

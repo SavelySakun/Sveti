@@ -35,14 +35,14 @@ class DetailNoteVC: VCwithTable {
 
   private func setTitle(date: SplitDate?) {
     guard let date = date else {
-      title = "Note"
+      title = "Note".localized
       return
     }
-    title = "\(date.dMMMMyyyy) в \(date.HHmm)"
+    title = "\(date.dMMMMyyyy) in \(date.HHmm)".localized
   }
 
   private func addEditButton() {
-    let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(onEdit))
+    let editButton = UIBarButtonItem(title: "Edit".localized, style: .plain, target: self, action: #selector(onEdit))
     navigationItem.rightBarButtonItem = editButton
   }
 
@@ -62,7 +62,7 @@ class DetailNoteVC: VCwithTable {
       tableView.registerCells()
       tableView.reloadData()
     }
-    SPIndicator.present(title: "Note updated", preset: .done, haptic: .success, from: .top)
+    SPIndicator.present(title: "Note updated".localized, preset: .done, haptic: .success, from: .top)
   }
 
   private func addTableView() {

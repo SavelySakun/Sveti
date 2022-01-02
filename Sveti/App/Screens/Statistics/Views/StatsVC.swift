@@ -44,7 +44,7 @@ class StatsVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
-    title = "Statistics"
+    title = "Statistics".localized
     tableView.backgroundColor = .systemGray6
     setNavigationBar()
   }

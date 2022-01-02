@@ -1,0 +1,132 @@
+// Diary
+"Add the first note in the \"New note\" section" = "Add the first note in the \"New note\" section";
+"Diary" = "Diary";
+"Delete" = "Delete";
+"at %d" = "at %d";
+
+// Detail note
+"emotional state" = "emotional state";
+"phyzical state" = "phyzical state";
+"Note" = "Note";
+"%d in %d" = "%d in %d";
+"Edit" = "Edit";
+"Note updated" = "Note updated";
+"Mark" = "Mark";
+"Comment" = "Comment";
+"Tags" = "Tags";
+
+// Default tags
+"Leisure" = "Leisure";
+"idleness" = "idleness";
+"movie" = "movie";
+"walk" = "walk";
+"reading" = "reading";
+"game" = "game";
+"music" = "music";
+"cleaning" = "cleaning";
+"cooking" = "cooking";
+
+"Emotions" = "Emotions";
+"excitement" = "excitement";
+"apathy" = "apathy";
+"inspiration" = "inspiration";
+"sadness" = "sadness";
+"anxiety" = "anxiety";
+"stress" = "stress";
+"loneliness" = "loneliness";
+"irritation" = "irritation";
+
+"Sleep" = "Sleep";
+"late rise" = "late rise";
+"early rise" = "early rise";
+"not enough sleep" = "not enough sleep";
+"slept well" = "slept well";
+
+"Food" = "Food";
+"coffee" = "coffee";
+"tea" = "tea";
+"tasty food" = "tasty food";
+"tasteless food" = "tasteless food";
+"hunger" = "hunger";
+
+"Health" = "Health";
+"disease" = "disease";
+"fatigue" = "fatigue";
+
+// New note
+"Search" = "Search";
+"Search result" = "Search result";
+"Ideas, thoughts, comments..." = "Ideas, thoughts, comments...";
+"Cancel" = "Cancel";
+"Save" = "Save";
+"New note" = "New note";
+"Delete note draft" = "Delete note draft";
+"Cancel" = "Cancel";
+"Note saved" = "Note saved";
+"Date" = "Date";
+"Mood" = "Mood";
+"Comment" = "Comment";
+"Physical" = "Physical";
+"Emotional" = "Emotional";
+
+// Statistics
+"Statistics" = "Statistics";
+"Day" = "Day";
+"Week" = "Week";
+"Month" = "Month";
+"Year" = "Year";
+"Select type" = "Select type";
+"Select the type of average state to analyze." = "Select the type of average state to analyze.";
+"Average" = "Average";
+"There is nothing to analyze yet. Add the first note about how you feel." = "There is nothing to analyze yet. Add the first note about how you feel.";
+"There are no notes in the specified time range. Only the cat was found." = "There are no notes in the specified time range. Only the cat was found.";
+"error" = "error";
+"Emotional 💚" = "Emotional 💚";
+"Physical ✊" = "Physical ✊";
+"Emotional & physical 🌿" = "Emotional & physical 🌿";
+
+// Tag editing
+"Select a group" = "Select a group";
+"Please add at least 1 tag" = "Please add at least 1 tag";
+"Delete group" = "Delete group";
+"Add a tag" = "Add a tag";
+"Attention" = "Attention";
+"Delete group?" = "Delete group?";
+"Tag name" = "Tag name";
+"Add" = "Add";
+"Cancel" = "Cancel";
+"Hide" = "Hide";
+"Move to group" = "Move to group";
+"Done" = "Done";
+"Tag moved to «%d»" = "Tag moved to «%d»";
+"Delete" = "Delete";
+"Discard" = "Discard";
+"Make active" = "Make active";
+"Group deleted" = "Group deleted";
+"Group name" = "Group name";
+"Active" = "Active";
+"Hidden" = "Hidden";
+"Add new group" = "Add new group";
+"Specify the name of the group" = "Specify the name of the group";
+"Tag groups" = "Tag groups";
+"Groups" = "Groups";
+
+// Edit note
+"Edit" = "Edit";
+"Note deleted" = "Note deleted";
+
+// More
+"Sveti app version: %d (%d)" = "Sveti app version: %d (%d)";
+"Info copied" = "Info copied";
+"Icons by Icons8 💛" = "Icons by Icons8 💛";
+"What's new & Roadmap" = "What's new & Roadmap";
+"About" = "About";
+"Contact us" = "Contact us";
+"Share information about bugs or words of support" = "Share information about bugs or words of support";
+"Sveti Feedback" = "Sveti Feedback";
+"Sending an email is not supported. You need to set up mail" = "Sending an email is not supported. You need to set up mail";
+"The email has been sent!" = "The email has been sent!";
+"Contact us" = "Contact us";
+"More" = "More";
+"Features" = "Features";
+"Other" = "Other";
