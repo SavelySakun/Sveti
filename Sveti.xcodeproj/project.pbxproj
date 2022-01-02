@@ -887,7 +887,7 @@
 				FC7E6D1F26AB1F6400126B97 /* DiaryCell.swift */,
 				FC7E6D1D26AB1A2600126B97 /* DiaryVC.swift */,
 				FC7E6D9626AC625800126B97 /* DiaryVM.swift */,
-				FC7E6DA026AD4CD200126B97 /* ImageTextView.swift */,
+				FC7E6D2226AB1FF400126B97 /* ScoreTimeView.swift */,
 				FC451CAD2770DA080078B83A /* SvetiTagListView.swift */,
 			);
 			path = Diary;
@@ -896,7 +896,7 @@
 		FC7E6D2126AB1FD000126B97 /* ViewElements */ = {
 			isa = PBXGroup;
 			children = (
-				FC7E6D2226AB1FF400126B97 /* ScoreTimeView.swift */,
+				FC7E6DA026AD4CD200126B97 /* ImageTextView.swift */,
 				FC1563F62748ED8E00AAD925 /* IconView.swift */,
 				FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */,
 			);

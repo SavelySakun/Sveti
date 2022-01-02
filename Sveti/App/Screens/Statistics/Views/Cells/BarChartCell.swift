@@ -57,8 +57,8 @@ class BarChartCell: Cell {
 
   private func setDataForChart() {
     let statType = StatSettingsRepository().settings.statType
-    let statTypeDescription = statType.getStatTypeDescription().lowercased()
-    currentStatLabel.text = "\("Average".localized) \(statTypeDescription.localized)"
+    let statTypeDescription = statType.getStatTypeDescription().localizedLowercase
+    currentStatLabel.text = "\("Average".localized) \(statTypeDescription)"
 
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
     dataSet.highlightEnabled = false

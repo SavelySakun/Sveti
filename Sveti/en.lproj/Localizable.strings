@@ -2,13 +2,13 @@
 "Add the first note in the \"New note\" section" = "Add the first note in the \"New note\" section";
 "Diary" = "Diary";
 "Delete" = "Delete";
-"at %d" = "at %d";
+"at %@" = "at %@";
 
 // Detail note
 "emotional state" = "emotional state";
 "phyzical state" = "phyzical state";
 "Note" = "Note";
-"%d in %d" = "%d at %d";
+"%@ at %@" = "%@ at %@";
 "Note updated" = "Note updated";
 "Mark" = "Mark";
 "Comment" = "Comment";

@@ -2,13 +2,13 @@
 "Add the first note in the \"New note\" section" = "Добавьте первую запись в разделе \"Новая запись\"";
 "Diary" = "Дневник";
 "Delete" = "Удалить";
-"at %d" = "в %d";
+"at %@" = "в %@";
 
 // Detail note
 "emotional state" = "эмоциональное состояние";
 "phyzical state" = "физическое состояние";
 "Note" = "Запись";
-"%d at %d" = "%d в %d";
+"%@ at %@" = "%@ в %@";
 "Edit" = "Изменить";
 "Note updated" = "Запись обновлена";
 "Mark" = "Отметка";

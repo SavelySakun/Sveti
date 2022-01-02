@@ -38,7 +38,7 @@ class DetailNoteVC: VCwithTable {
       title = "Note".localized
       return
     }
-    title = "\(date.dMMMMyyyy) at \(date.HHmm)".localized
+    title = String(format: NSLocalizedString("%@ at %@", comment: ""), date.dMMMMyyyy, date.HHmm)
   }
 
   private func addEditButton() {

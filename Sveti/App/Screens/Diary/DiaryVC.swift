@@ -131,7 +131,7 @@ extension DiaryVC: UITableViewDataSource {
 
     let itemDate = sectionItem.date
     let date = isSameYear ? itemDate.dMMMM : itemDate.dMMMMyyyy
-    return DiaryTableSectionHeader(date: "\(itemDate.weekday), \(date)", averageScore: sectionItem.average)
+    return DiaryTableSectionHeader(date: "\(itemDate.weekday.localizedCapitalized), \(date)", averageScore: sectionItem.average)
   }
 
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
