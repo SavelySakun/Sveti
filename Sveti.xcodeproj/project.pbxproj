@@ -338,7 +338,6 @@
 		FCC922B2276663F2009F7508 /* AppInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoModel.swift; sourceTree = "<group>"; };
 		FCC922B5276664AA009F7508 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FCC922B727666798009F7508 /* Icon8Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon8Model.swift; sourceTree = "<group>"; };
-		FCCF74C9277A25BB00A58D40 /* Sveti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sveti.entitlements; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -797,7 +796,6 @@
 		FC6C56DA266000FB000188A6 /* Sveti */ = {
 			isa = PBXGroup;
 			children = (
-				FCCF74C9277A25BB00A58D40 /* Sveti.entitlements */,
 				FC1563F12748DDA900AAD925 /* Main */,
 				FC1563EE2748DB8500AAD925 /* Support */,
 				FC7E6D1826AB195B00126B97 /* Screens */,
