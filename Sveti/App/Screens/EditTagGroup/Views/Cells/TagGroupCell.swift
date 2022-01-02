@@ -15,6 +15,7 @@ class TagGroupCell: Cell {
     tagNameTextField.text = tag.name
     tagNameTextField.delegate = self
     tagNameTextField.autocapitalizationType = .none
+    tagNameTextField.adjustsFontSizeToFitWidth = true
   }
 
   override func setLayout() {

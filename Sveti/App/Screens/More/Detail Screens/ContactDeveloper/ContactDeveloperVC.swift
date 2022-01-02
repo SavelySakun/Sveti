@@ -37,7 +37,7 @@ class ContactDeveloperVC: VCwithScrollView {
     contentView.addSubview(textImageView)
     textImageView.setContent(imageName: "purrDate", text: "Share information about bugs or words of support".localized)
     textImageView.snp.makeConstraints { (make) in
-      make.width.equalTo(view.snp.width).multipliedBy(0.6)
+      make.width.equalTo(view.snp.width).multipliedBy(0.7)
       make.height.equalTo(view.snp.height).multipliedBy(0.3)
       make.top.equalToSuperview().offset(UIUtils.kongOffset)
       make.centerX.equalToSuperview()

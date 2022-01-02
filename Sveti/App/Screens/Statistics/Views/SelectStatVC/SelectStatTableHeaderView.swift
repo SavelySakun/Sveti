@@ -12,10 +12,13 @@ class SelectStatTableHeaderView: UIView {
   }
 
   func setLayout() {
-    let imageView = ImageTextView(imageName: "catMath", text: "Select the type of average state to analyze.".localized)
-    addSubview(imageView)
-    imageView.snp.makeConstraints { (make) in
-      make.left.right.equalToSuperview().inset(UIUtils.bigOffset * 2)
+    let imageTextView = ImageTextView(imageName: "catMath", text: "Select the type of average state to analyze.".localized)
+    addSubview(imageTextView)
+    imageTextView.imageView.snp.makeConstraints { (make) in
+      make.height.equalToSuperview().multipliedBy(0.6)
+    }
+    imageTextView.snp.makeConstraints { (make) in
+      make.left.right.equalToSuperview().inset(UIUtils.bigOffset)
       make.top.equalToSuperview().offset(40)
       make.bottom.equalToSuperview()
     }

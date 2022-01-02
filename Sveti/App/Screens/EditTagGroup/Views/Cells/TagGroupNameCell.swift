@@ -33,6 +33,7 @@ class TagGroupNameCell: Cell {
 
   private func setTextField() {
     groupNameTextField.delegate = self
+    groupNameTextField.adjustsFontSizeToFitWidth = true
     containerView.addSubview(groupNameTextField)
     groupNameTextField.snp.makeConstraints { (make) in
       make.top.left.equalToSuperview().offset(UIUtils.middleOffset)
