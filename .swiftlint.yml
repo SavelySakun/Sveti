@@ -1,0 +1,64 @@
+disabled_rules:
+- line_length
+- control_statement
+- nesting
+- identifier_name
+- force_try
+- type_name
+
+opt_in_rules:
+- trailing_whitespace
+- empty_count
+- empty_string
+- anyobject_protocol
+- array_init
+- capture_variable
+- class_delegate_protocol
+- closing_brace
+- closure_body_length
+- closure_end_indentation
+- closure_parameter_position
+- closure_spacing
+- collection_alignment
+- colon
+- comma
+- compiler_protocol_init
+- computed_accessors_order
+- contains_over_filter_count
+- contains_over_filter_is_empty
+- contains_over_first_not_nil
+- contains_over_range_nil_comparison
+- control_statement
+- cyclomatic_complexity
+- deployment_target
+- discarded_notification_center_observer
+- discouraged_assert
+- discouraged_direct_init
+- duplicate_imports
+- discouraged_optional_boolean
+- void_return
+- unused_declaration
+- syntactic_sugar
+
+excluded:
+- Carthage
+- Pods
+- SwiftLint/Common/3rdPartyLib
+
+function_body_length:
+    warning: 300
+    error: 500
+function_parameter_count:
+    warning: 6
+    error: 8
+type_body_length:
+    warning: 300
+    error: 500
+file_length:
+    warning: 1000
+    error: 1500
+    ignore_comment_only_lines: true
+cyclomatic_complexity:
+    warning: 15
+    error: 25
+reporter: "xcode"

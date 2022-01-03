@@ -6,6 +6,7 @@
 xcuserdata/
 */.idea
 Pods/
+GoogleService-Info.plist
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
@@ -30,3 +31,9 @@ DerivedData/
 /.idea/MoodTracker.iml
 /.idea/vcs.xml
 /.idea/workspace.xml
+/fastlane/Appfile
+/fastlane/Matchfile
+/Sveti.app.dSYM.zip
+/Sveti.ipa
+/fastlane/SvetiAPIAuthKey.p8
+/fastlane/Fastfile

@@ -35,7 +35,6 @@ extension SelectGroupVC: SelectGroupTableViewDelegate {
   func onSelectGroup(with id: String) {
     let tagsRepository = TagsRepository()
     tagsRepository.moveTagTo(newGroupId: id, tagId: moovingTagId)
-    onSelectionCompletion(tagsRepository.getGroup(with: id)?.title ?? "новая")
+    onSelectionCompletion(tagsRepository.getGroup(withId: id)?.title ?? "новая")
   }
-
 }

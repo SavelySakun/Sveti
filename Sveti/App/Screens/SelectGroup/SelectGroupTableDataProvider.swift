@@ -11,14 +11,14 @@ class SelectGroupTableDataProvider: TableDataProvider {
   override func configureSections(with data: Any? = nil) -> [TableSection] {
     guard let groupId = data as? String else { return [TableSection]() }
     editingGroupId = groupId
-    
+
     let tableSections = [
-      TableSection(title: "Выберите группу", cellsData: getDataForCells()),
+      TableSection(title: "Select a group".localized, cellsData: getCellsData())
     ]
     return tableSections
   }
 
-  private func getDataForCells() -> [CellData] {
+  private func getCellsData() -> [CellData] {
     var cellsData = [CellData]()
     let groups = TagsRepository().groups
 
@@ -32,4 +32,3 @@ class SelectGroupTableDataProvider: TableDataProvider {
     return cellsData
   }
 }
-

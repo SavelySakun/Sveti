@@ -62,7 +62,6 @@ class ScoreView: UIView {
   private func setScoreSeparatorsStack() {
     let leftSeparatorView = UIView()
     let rightSeparatorView = UIView()
-    scoreLabel.text = "7"
     scoreLabel.textAlignment = .center
 
     [leftSeparatorView, rightSeparatorView].forEach { separator in
@@ -85,7 +84,6 @@ class ScoreView: UIView {
   }
 
   func addGlobalStackView() {
-    stateLabel.text = "эмоциональное состояние"
     stateLabel.textAlignment = .left
 
     let globalStackView = UIStackView(arrangedSubviews: [
@@ -97,10 +95,7 @@ class ScoreView: UIView {
 
     addSubview(globalStackView)
     globalStackView.snp.makeConstraints { (make) in
-      make.top.equalToSuperview()
-      make.left.equalToSuperview()
-      make.right.equalToSuperview()
-      make.bottom.equalToSuperview()
+      make.edges.equalToSuperview()
       make.height.equalTo(45)
     }
   }

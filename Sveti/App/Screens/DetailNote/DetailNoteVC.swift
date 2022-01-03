@@ -12,9 +12,13 @@ class DetailNoteVC: VCwithTable {
     super.init(with: tableStyle)
   }
 
+  override func logOpenScreenEvent() {
+    SvetiAnalytics.log(.DetailNote)
+  }
+
   override func getDataProvider() -> TableDataProvider? {
     self.note = repository.getNote(with: noteId)
-    let dataProvider = DetailNoteTableDataProvider(with: note)
+    let dataProvider = DetailNoteTableDataProvider(with: noteId)
     return dataProvider
   }
 
@@ -31,39 +35,40 @@ class DetailNoteVC: VCwithTable {
 
   private func setTitle(date: SplitDate?) {
     guard let date = date else {
-      title = "Заметка"
+      title = "Note".localized
       return
     }
-    title = "\(date.dMMMMyyyy) в \(date.HHmm)"
+    title = String(format: NSLocalizedString("%@ at %@", comment: ""), date.dMMMMyyyy, date.HHmm)
   }
 
   private func addEditButton() {
-    let editButton = UIBarButtonItem(title: "Изменить", style: .plain, target: self, action: #selector(onEdit))
+    let editButton = UIBarButtonItem(title: "Edit".localized, style: .plain, target: self, action: #selector(onEdit))
     navigationItem.rightBarButtonItem = editButton
   }
 
   @objc private func onEdit() {
-    let editVC = EditNoteVC(noteId: note?.id)
+    guard let note = self.note else { return }
+    let editVC = EditNoteVC(noteId: note.id)
+    StatDaysDataManager().removeStat(with: note)
     editVC.onDismissal = { self.onEditingVCDismiss() }
     self.navigationController?.pushViewController(editVC, animated: true)
   }
 
   private func onEditingVCDismiss() {
     guard let note = self.note else { return }
-
-    self.note = self.repository.getNote(with: note.id)
-    let dataProvider = DetailNoteTableDataProvider(with: note)
-    self.viewModel = ViewControllerVM(tableDataProvider: dataProvider)
-    DispatchQueue.main.async {
-      self.tableView.reloadData()
+    StatDaysDataManager().updateStat(with: note)
+    DispatchQueue.main.async { [self] in
+      viewModel.tableDataProvider?.updateSections(with: note.id)
+      tableView.registerCells()
+      tableView.reloadData()
     }
-    SPIndicator.present(title: "Запись обновлена", preset: .done, haptic: .success, from: .top)
+    SPIndicator.present(title: "Note updated".localized, preset: .done, haptic: .success, from: .top)
   }
 
   private func addTableView() {
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in
-      make.top.left.right.bottom.equalToSuperview()
+      make.top.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
     }
   }
 

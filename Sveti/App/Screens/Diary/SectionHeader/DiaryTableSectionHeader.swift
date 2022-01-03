@@ -4,9 +4,8 @@ class DiaryTableSectionHeader: UIView {
 
   private let dateLabel = UILabel()
   private let separator = UIView()
-  private let averageScoreView = AverageScoreView()
+  private let averageScoreView = TextOnRoundView()
   private lazy var timeWithScoreStack = UIStackView(arrangedSubviews: [dateLabel, averageScoreView])
-
 
   init(date: String, averageScore: String? = nil) {
     super.init(frame: .zero)
@@ -14,7 +13,7 @@ class DiaryTableSectionHeader: UIView {
     dateLabel.text = date
 
     averageScoreView.isHidden = (averageScore == nil)
-    averageScoreView.scoreLabel.text = averageScore
+    averageScoreView.textLabel.text = averageScore
   }
 
   required init?(coder: NSCoder) {
@@ -22,7 +21,7 @@ class DiaryTableSectionHeader: UIView {
   }
 
   private func setLayout() {
-    backgroundColor = .white
+    backgroundColor = .systemGray6
     setDateLabel()
     setDateAndAverageScore()
     setSeparator()
@@ -34,7 +33,7 @@ class DiaryTableSectionHeader: UIView {
   }
 
   private func setSeparator() {
-    separator.backgroundColor = .systemGray6
+    separator.backgroundColor = .systemGray4
     addSubview(separator)
     separator.snp.makeConstraints { (make) in
       make.centerY.equalTo(timeWithScoreStack.snp.centerY)
@@ -49,9 +48,8 @@ class DiaryTableSectionHeader: UIView {
     timeWithScoreStack.spacing = 10
     addSubview(timeWithScoreStack)
     timeWithScoreStack.snp.makeConstraints { (make) in
-      make.top.equalToSuperview().offset(10)
+      make.top.bottom.equalToSuperview().inset(10)
       make.left.equalToSuperview().offset(30)
-      make.bottom.equalToSuperview().offset(-10)
     }
   }
 

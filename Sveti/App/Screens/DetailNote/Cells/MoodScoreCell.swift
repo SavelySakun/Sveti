@@ -18,7 +18,6 @@ class MoodScoreCell: Cell {
     emotionalStateScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.emotionalState)
     physicalStateScoreView.scoreLabel.text = mathHelper.getMoodScore(from: mood.physicalState)
     averageLabel.text = mathHelper.getAverageMood(from: note)
-    guard mood.average > 7.0 || mood.average < 5.0 else { return }
     averageLabel.textColor = ColorHelper().getColor(value: Int(mood.average), alpha: 1)
   }
 
@@ -39,17 +38,18 @@ class MoodScoreCell: Cell {
   private func setStateScoresStackView() {
     statesStackView = UIStackView(arrangedSubviews: [
       emotionalStateScoreView,
-      physicalStateScoreView,
+      physicalStateScoreView
     ])
 
-    physicalStateScoreView.stateLabel.text = "физическое состояние"
+    emotionalStateScoreView.stateLabel.text = "emotional state".localized
+    physicalStateScoreView.stateLabel.text = "phyzical state".localized
 
     statesStackView.axis = .vertical
     statesStackView.spacing = 0
   }
 
   private func setGlobalStackView() {
-    averageLabel.text = "9"
+    averageLabel.font = UIFont.boldSystemFont(ofSize: 16)
     averageLabel.textAlignment = .center
     averageLabel.snp.makeConstraints { (make) in
       make.width.equalTo(45)
@@ -65,10 +65,9 @@ class MoodScoreCell: Cell {
 
     containerView.addSubview(globalStack)
     globalStack.snp.makeConstraints { (make) in
-      make.top.equalToSuperview().offset(10)
+      make.top.bottom.equalToSuperview().inset(10)
       make.left.equalToSuperview().offset(20)
       make.right.equalToSuperview()
-      make.bottom.equalToSuperview().offset(-10)
     }
   }
 

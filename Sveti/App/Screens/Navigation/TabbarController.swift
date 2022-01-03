@@ -5,28 +5,28 @@ class TabbarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setTabbarItems()
-    selectedIndex = 2
+    selectedIndex = 0
     delegate = self
   }
 
-  func setTabbarItems() {
+  private func setTabbarItems() {
     let diaryController = createNavigationController(
       vc: DiaryVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.diaryIcon),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.diarySelected),
-      tabBarTitle: "Diary"
+      tabBarTitle: "Diary".localized
     )
 
     let statisticsController = createNavigationController(
       vc: StatsVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.statistics),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.statisticsFilled),
-      tabBarTitle: "Statistics",
+      tabBarTitle: "Statistics".localized,
       largeTitle: false)
 
     let newNoteVC = UIViewController()
     let newNoteItem = UITabBarItem(
-      title: "New note",
+      title: "New note".localized,
       image: getIcon(named: Constants.ImageNames.Tabbar.newNote),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.newNoteSelected)
     )
@@ -36,7 +36,7 @@ class TabbarController: UITabBarController {
       vc: MoreVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.more),
       selectedImage: getIcon(named: Constants.ImageNames.Tabbar.more),
-      tabBarTitle: "More"
+      tabBarTitle: "More".localized
     )
 
     viewControllers = [diaryController, newNoteVC, statisticsController, moreController]
@@ -59,7 +59,6 @@ class TabbarController: UITabBarController {
   private func getIcon(named: String) -> UIImage? {
     return UIImage(named: named)?.imageResized(to: .init(width: 24, height: 24))
   }
-
 }
 
 extension TabbarController: UITabBarControllerDelegate {

@@ -11,9 +11,6 @@ class NewNoteUITests: XCTestCase {
     app.tabBars["Tab Bar"].buttons["New note"].tap()
   }
 
-  override func tearDownWithError() throws {
-  }
-
   func testTagCellExist() throws {
     let tagCell = app.cells.element(matching: .cell, identifier: "tag-cell")
     XCTAssert(tagCell.exists)
@@ -67,12 +64,6 @@ class NewNoteUITests: XCTestCase {
     XCTAssert(physicalCell.exists)
   }
 
-  func testSliderWork() throws {
-    app/*@START_MENU_TOKEN@*/.tables.containing(.cell, identifier:"tag-cell").element/*[[".tables.containing(.other, identifier:\"TAGS\").element",".tables.containing(.other, identifier:\"DATE\").element",".tables.containing(.cell, identifier:\"comment-cell\").element",".tables.containing(.cell, identifier:\"emotional-cell\").element",".tables.containing(.cell, identifier:\"physical-cell\").element",".tables.containing(.cell, identifier:\"tag-cell\").element"],[[[-1,5],[-1,4],[-1,3],[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
-    let tablesQuery = app.tables
-    tablesQuery.cells["physical-cell"].sliders["60 %"].swipeLeft()
-  }
-
   func testDateCellWork() throws {
     app.tables/*@START_MENU_TOKEN@*/.otherElements["Date and Time Picker"]/*[[".cells.otherElements[\"Date and Time Picker\"]",".otherElements[\"Date and Time Picker\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
   }
@@ -81,7 +72,7 @@ class NewNoteUITests: XCTestCase {
     let testText = self.testText
     app.tables.cells["tag-cell"].children(matching: .button).matching(identifier: "edit").element(boundBy: 4).tap()
     let editNavigationBar = app.navigationBars["Edit"]
-    editNavigationBar.buttons["Add"].tap()
+    editNavigationBar.buttons["add"].tap()
     let textFieldInAlert = app.alerts["Add a tag"].scrollViews.otherElements.collectionViews.textFields["Tag name"]
     textFieldInAlert.tap()
     textFieldInAlert.typeText(testText)
@@ -90,16 +81,4 @@ class NewNoteUITests: XCTestCase {
     let newTag = app.tables.staticTexts[testText]
     XCTAssert(newTag.exists)
   }
-
-  func testSectionCollapse() throws {
-    let tagName = "movie"
-    XCTAssert(app.tables.staticTexts[tagName].exists)
-
-    app.tables.cells["tag-cell"].children(matching: .button).matching(identifier: "arrow up").element(boundBy: 0).tap()
-    XCTAssert(!app.tables.staticTexts[tagName].exists)
-
-    app.tables.buttons["arrow down"].tap()
-    XCTAssert(app.tables.staticTexts[tagName].exists)
-  }
-
 }
