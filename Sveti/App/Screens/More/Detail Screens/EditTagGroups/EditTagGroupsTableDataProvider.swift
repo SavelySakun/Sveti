@@ -11,7 +11,7 @@ class EditTagGroupsTableDataProvider: TableDataProvider {
     var cellsData = [CellData]()
 
     tagGroups.forEach { group in
-      let cellData = CellData(type: EditTagGroupsCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: group))
+      let cellData = CellData(type: EditTagGroupsCell.self, viewModel: CellVM(cellValue: group))
       cellsData.append(cellData)
     }
 

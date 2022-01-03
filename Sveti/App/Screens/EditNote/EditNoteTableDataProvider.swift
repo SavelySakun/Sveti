@@ -5,9 +5,8 @@ class EditNoteTableDataProvider: TableDataProvider {
   override func configureSections(with data: Any? = nil) -> [TableSection] {
 
     let tableSections = [
-
       TableSection(title: "Date".localized, cellsData: [
-        CellData(type: DatePickerCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: data))
+        CellData(type: DatePickerCell.self, viewModel: CellVM(cellValue: data))
       ]),
 
       TableSection(title: "Tags".localized, cellsData: [
@@ -20,7 +19,7 @@ class EditNoteTableDataProvider: TableDataProvider {
       ]),
 
       TableSection(title: "Comment".localized, cellsData: [
-        CellData(type: CommentCell.self, viewModel: CellVM(title: "", cellValue: data))
+        CellData(type: CommentCell.self, viewModel: CellVM(cellValue: data))
       ])
     ]
 
