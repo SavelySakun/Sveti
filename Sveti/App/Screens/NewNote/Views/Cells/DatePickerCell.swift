@@ -29,7 +29,7 @@ class DatePickerCell: Cell {
 
     contentView.addSubview(datePicker)
     datePicker.snp.makeConstraints { (make) in
-      make.top.left.right.bottom.equalToSuperview()
+      make.top.left.bottom.equalToSuperview()
     }
   }
 
