@@ -24,7 +24,7 @@ class NewNoteVC: BaseViewController {
         setModalPresentation()
 	}
 
-	private func setLayout() {
+	func setLayout() {
 		setNavigationBar()
 		addTableView()
     configureClearAlert()

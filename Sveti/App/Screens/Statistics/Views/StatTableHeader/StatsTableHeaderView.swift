@@ -51,7 +51,7 @@ class StatsTableHeaderView: UIView {
 
     addSubview(pickersStackView)
     pickersStackView.snp.makeConstraints { (make) in
-      make.height.equalTo(28)
+      make.height.equalTo(36)
       make.centerX.equalToSuperview()
       make.top.equalToSuperview().inset(18)
     }

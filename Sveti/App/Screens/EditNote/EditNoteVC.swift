@@ -24,13 +24,29 @@ class EditNoteVC: NewNoteVC {
   }
 
   override func setLeftBarButton() {
-    let leftButton = UIBarButtonItem(title: "Delete".localized, style: .plain, target: self, action: #selector(onDelete))
-    leftButton.tintColor = .red
-    navigationItem.leftBarButtonItem = leftButton
+    return // On edit note screen we don't need custom left bar button
   }
 
   override func logOpenScreenEvent() {
     SvetiAnalytics.log(.EditNote)
+  }
+
+  override func onSave() {
+    guard let dismissAction = onDismissal else { return }
+    dismissAction()
+    SvetiAnalytics.log(.editNote)
+    self.navigationController?.popViewController(animated: true)
+  }
+
+  override func setLayout() {
+    super.setLayout()
+    setTableFooter()
+  }
+
+  private func setTableFooter() {
+    let footerView = DeleteTableFooter(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
+    footerView.onDeleteTapHandler = { self.onDelete() }
+    tableView.tableFooterView = footerView
   }
 
   @objc func onDelete() {
@@ -41,12 +57,5 @@ class EditNoteVC: NewNoteVC {
     SPIndicator.present(title: "Note deleted".localized, preset: .done, haptic: .success, from: .top)
     SvetiAnalytics.log(.deleteNote)
     self.navigationController?.popToRootViewController(animated: true)
-  }
-
-  override func onSave() {
-    guard let dismissAction = onDismissal else { return }
-    dismissAction()
-    SvetiAnalytics.log(.editNote)
-    self.navigationController?.popViewController(animated: true)
   }
 }
