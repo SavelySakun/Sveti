@@ -1,8 +1,9 @@
 import UIKit
 
-class EditTagGroupTableFooter: UIView {
+class DeleteTableFooter: UIView {
 
   var onDeleteTapHandler: (() -> Void) = { return }
+  let deleteButton = UIButton()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -14,8 +15,7 @@ class EditTagGroupTableFooter: UIView {
   }
 
   private func setLayout() {
-    let deleteButton = UIButton()
-    deleteButton.setTitle("Delete group".localized, for: .normal)
+    deleteButton.setTitle("Delete".localized, for: .normal)
     deleteButton.setTitleColor(.systemRed, for: .normal)
     deleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
 

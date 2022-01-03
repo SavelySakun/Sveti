@@ -49,12 +49,7 @@ class EditTagGroupVC: VCwithTable {
     tableView.isEditing = true
     tableView.eventDebounceValue = 0
 
-    let footerView = EditTagGroupTableFooter(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
-    footerView.onDeleteTapHandler = {
-      self.present(self.deleteGroupAlertController, animated: true, completion: nil)
-    }
-
-    tableView.tableFooterView = footerView
+    setTableFooter()
 
     title = "Edit".localized
     navigationItem.largeTitleDisplayMode = .never
@@ -62,6 +57,15 @@ class EditTagGroupVC: VCwithTable {
     setNewTagButton()
     setNewTagAlert()
     setActionsForDeleteAlertController()
+  }
+
+  private func setTableFooter() {
+    let footerView = DeleteTableFooter(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
+    footerView.deleteButton.setTitle("Delete group".localized, for: .normal)
+    footerView.onDeleteTapHandler = {
+      self.present(self.deleteGroupAlertController, animated: true, completion: nil)
+    }
+    tableView.tableFooterView = footerView
   }
 
   private func setNewTagButton() {
