@@ -73,4 +73,18 @@ class DiaryVM {
     return mathHelper.getMoodScore(from: averageScore, digits: 1)
   }
 
+  func getDiaryTableSectionHeader(for section: Int) -> DiaryTableSectionHeader {
+
+    var isSameYear = false // If current & previous section item have the same date -> don't show year string in the current section title.
+    let sectionItem = sectionsWithNotes[section]
+
+    if let nextSectionItem = sectionsWithNotes[safe: (section + 1)] {
+      isSameYear = (nextSectionItem.date.MMYY == sectionItem.date.MMYY)
+    }
+
+    let itemDate = sectionItem.date
+    let date = isSameYear ? itemDate.dMMMM : itemDate.dMMMMyyyy
+    return DiaryTableSectionHeader(date: "\(itemDate.weekday.localizedCapitalized), \(date)", averageScore: sectionItem.average)
+  }
+
 }

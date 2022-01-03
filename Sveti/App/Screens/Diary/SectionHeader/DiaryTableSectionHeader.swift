@@ -48,9 +48,8 @@ class DiaryTableSectionHeader: UIView {
     timeWithScoreStack.spacing = 10
     addSubview(timeWithScoreStack)
     timeWithScoreStack.snp.makeConstraints { (make) in
-      make.top.equalToSuperview().offset(10)
+      make.top.bottom.equalToSuperview().inset(10)
       make.left.equalToSuperview().offset(30)
-      make.bottom.equalToSuperview().offset(-10)
     }
   }
 

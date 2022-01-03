@@ -94,11 +94,7 @@ class DiaryVC: BaseViewController {
   }
 }
 
-extension DiaryVC: UITableViewDelegate {
-
-}
-
-extension DiaryVC: UITableViewDataSource {
+extension DiaryVC: UITableViewDataSource, UITableViewDelegate {
 
   func numberOfSections(in tableView: UITableView) -> Int {
     viewModel.sectionsWithNotes.count
@@ -117,21 +113,7 @@ extension DiaryVC: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    return getDiaryTableSectionHeader(for: section)
-  }
-
-  private func getDiaryTableSectionHeader(for section: Int) -> DiaryTableSectionHeader {
-
-    var isSameYear = false // If current & previous section item have the same date -> don't show year string in the current section title.
-    let sectionItem = viewModel.sectionsWithNotes[section]
-
-    if let nextSectionItem = viewModel.sectionsWithNotes[safe: (section + 1)] {
-      isSameYear = (nextSectionItem.date.MMYY == sectionItem.date.MMYY)
-    }
-
-    let itemDate = sectionItem.date
-    let date = isSameYear ? itemDate.dMMMM : itemDate.dMMMMyyyy
-    return DiaryTableSectionHeader(date: "\(itemDate.weekday.localizedCapitalized), \(date)", averageScore: sectionItem.average)
+    return viewModel.getDiaryTableSectionHeader(for: section)
   }
 
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

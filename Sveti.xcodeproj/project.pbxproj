@@ -824,6 +824,7 @@
 				FC7E6D2726AC019C00126B97 /* Constants.swift */,
 				FC7E6DC226AF27B600126B97 /* ColorHelper.swift */,
 				FC7E6DC426AF29B500126B97 /* MathHelper.swift */,
+				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -832,7 +833,6 @@
 			isa = PBXGroup;
 			children = (
 				FC42A79B273AC022004A56F9 /* RepoProtocols */,
-				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 			);
 			path = "Global Models & Protocols";
 			sourceTree = "<group>";

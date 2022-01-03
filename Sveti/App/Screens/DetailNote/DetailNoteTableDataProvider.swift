@@ -12,8 +12,6 @@ class DetailNoteTableDataProvider: TableDataProvider {
       ])
     ]
 
-   // guard let note = data as? Note else { return tableSections }
-
     if !note.comment.isEmpty {
       tableSections.append(
         TableSection(title: "Comment".localized, cellsData: [

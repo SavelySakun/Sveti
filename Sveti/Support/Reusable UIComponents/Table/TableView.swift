@@ -84,7 +84,7 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
 
 extension TableView: CellDelegate {
   func onUpdate() {
-    // Использую для автовысоты UITextView
+    // Used for UITextView auto height
     self.beginUpdates()
     self.endUpdates()
   }
