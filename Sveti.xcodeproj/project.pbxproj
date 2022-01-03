@@ -708,13 +708,6 @@
 			path = StatTableHeader;
 			sourceTree = "<group>";
 		};
-		FC42A6F227367D89004A56F9 /* ExtensionsProtocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ExtensionsProtocols;
-			sourceTree = "<group>";
-		};
 		FC42A793273ABD4A004A56F9 /* StatDays */ = {
 			isa = PBXGroup;
 			children = (
@@ -809,7 +802,6 @@
 		FC6C58A1266136B5000188A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FC42A6F227367D89004A56F9 /* ExtensionsProtocols */,
 				FC6C58A2266136E5000188A6 /* SwiftUIPreview.swift */,
 				FC7E6D2926AC037900126B97 /* UIImage.swift */,
 				FC7E6D9326AC57EC00126B97 /* Result.swift */,
