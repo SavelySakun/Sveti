@@ -5,7 +5,7 @@ import SPIndicator
 class NewNoteVC: BaseViewController {
 
   let viewModel = NewNoteVM(tableDataProvider: EditNoteTableDataProvider())
-  let cancelAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+  let cancelAlert = UIAlertController(title: nil, message: nil, preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet)
 
   lazy var tableView = TableView(viewModel: viewModel)
 

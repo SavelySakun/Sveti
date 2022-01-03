@@ -68,7 +68,7 @@ class DetailNoteVC: VCwithTable {
   private func addTableView() {
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in
-      make.top.left.right.bottom.equalToSuperview()
+      make.top.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
     }
   }
 

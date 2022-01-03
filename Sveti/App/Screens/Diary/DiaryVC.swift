@@ -46,7 +46,7 @@ class DiaryVC: BaseViewController {
 
     view.addSubview(tableView)
     tableView.snp.makeConstraints { (make) in
-      make.top.left.bottom.right.equalToSuperview()
+      make.top.left.bottom.right.equalTo(view.safeAreaLayoutGuide)
     }
   }
 
