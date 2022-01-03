@@ -67,6 +67,7 @@
 		FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB12771D1F80078B83A /* SplitDateTests.swift */; };
 		FC451CB42771F3E60078B83A /* TagsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */; };
 		FC451CB72771F96B0078B83A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB62771F96B0078B83A /* TestHelper.swift */; };
+		FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC518DBE2782FA21008C351B /* StatsBarChartView.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E4266000FD000188A6 /* Assets.xcassets */; };
@@ -257,6 +258,7 @@
 		FC451CB12771D1F80078B83A /* SplitDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDateTests.swift; sourceTree = "<group>"; };
 		FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepositoryTests.swift; sourceTree = "<group>"; };
 		FC451CB62771F96B0078B83A /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		FC518DBE2782FA21008C351B /* StatsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarChartView.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				FC42A6E92736428F004A56F9 /* StatTableHeader */,
 				FC25ADC12740F4EB000DE791 /* SelectStatVC */,
 				FC29A67626EDDDA800DC87DA /* Cells */,
+				FC518DBE2782FA21008C351B /* StatsBarChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1383,6 +1386,7 @@
 				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
+				FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */,
 				FC1563FA2748FA0F00AAD925 /* ISimpleCellItem.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
 				FC27075D275CA2A600A2440A /* List.swift in Sources */,
