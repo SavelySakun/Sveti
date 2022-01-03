@@ -4,6 +4,7 @@ disabled_rules:
 - nesting
 - identifier_name
 - force_try
+- type_name
 
 opt_in_rules:
 - trailing_whitespace

@@ -24,6 +24,4 @@ class MoreVC: VCwithTable {
   override func getDataProvider() -> TableDataProvider? {
     return MoreTableDataProvider()
   }
-
 }
-

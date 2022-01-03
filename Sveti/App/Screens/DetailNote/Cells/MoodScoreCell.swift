@@ -38,7 +38,7 @@ class MoodScoreCell: Cell {
   private func setStateScoresStackView() {
     statesStackView = UIStackView(arrangedSubviews: [
       emotionalStateScoreView,
-      physicalStateScoreView,
+      physicalStateScoreView
     ])
 
     emotionalStateScoreView.stateLabel.text = "emotional state".localized

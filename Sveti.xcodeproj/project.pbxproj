@@ -132,7 +132,6 @@
 		FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */; };
 		FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */; };
 		FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */; };
-		FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FCB0644426B6817400A0494A /* .swiftlint.yml */; };
 		FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0644626B68E9500A0494A /* VCwithTable.swift */; };
 		FCB3D3B9277719FA00A23664 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */; };
 		FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */; };
@@ -323,7 +322,6 @@
 		FCB0643826B5959600A0494A /* DetailNoteCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteCommentCell.swift; sourceTree = "<group>"; };
 		FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteVC.swift; sourceTree = "<group>"; };
 		FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteTableDataProvider.swift; sourceTree = "<group>"; };
-		FCB0644426B6817400A0494A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FCB0644626B68E9500A0494A /* VCwithTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithTable.swift; sourceTree = "<group>"; };
 		FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsMoreItem.swift; sourceTree = "<group>"; };
@@ -561,7 +559,6 @@
 			isa = PBXGroup;
 			children = (
 				FC6C56E6266000FD000188A6 /* LaunchScreen.storyboard */,
-				FCB0644426B6817400A0494A /* .swiftlint.yml */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1196,7 +1193,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA8D75C2781A4D800212E51 /* Localizable.strings in Resources */,
-				FCB0644526B6817400A0494A /* .swiftlint.yml in Resources */,
 				FC27091B27664F7E00A2440A /* GoogleService-Info.plist in Resources */,
 				FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */,
 				FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */,
@@ -1322,7 +1318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		FCC922A8276656D8009F7508 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;

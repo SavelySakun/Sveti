@@ -5,7 +5,7 @@ class AboutMoreItem: ISimpleCellItem {
   var iconBackgroundColor: UIColor? = .systemPurple
   var iconImage: UIImage? = UIImage(named: "about")?.withRenderingMode(.alwaysTemplate)
   var iconTintColor: UIColor? = .white
-  var accessoryImage: UIImage? = nil
+  var accessoryImage: UIImage?
 
   var onTapAction: (() -> Void)? = {
     guard let currentVC = CurrentVC.current else { return }

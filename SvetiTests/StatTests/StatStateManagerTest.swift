@@ -10,12 +10,12 @@ class StatStateManagerTest: XCTestCase {
   private lazy var statTestHelper = StatTestHelper()
   private lazy var defaultNote: Note = statTestHelper.defaultNote
   private lazy var defaultStatDay: StatDay = statTestHelper.defaultStatDay
-  
+
   override func setUpWithError() throws {
     notesRepository.save(defaultNote)
     statDaysRepository.saveNewStatDay(statDay: defaultStatDay)
   }
-  
+
   override func tearDownWithError() throws {
     statDaysRepository.removeAll()
   }
@@ -30,7 +30,7 @@ class StatStateManagerTest: XCTestCase {
     let newStatDay = statDaysRepository.getStatDay(with: statTestHelper.defaultDate)
     XCTAssertNotNil(newStatDay, "Can't find saved statDay.")
   }
-  
+
   func testUpdateStat() throws {
     let phyzicalStatesCount = getCountOfPhyzicalStatesOfDefaultStatDay()
     sut.updateStat(with: defaultNote)

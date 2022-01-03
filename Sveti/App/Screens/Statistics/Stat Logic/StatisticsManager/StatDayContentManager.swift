@@ -4,11 +4,11 @@ import Charts
 class StatDayContentManager: IStatContentManager {
   typealias T = BarChartDataSet?
   static let shared = StatDayContentManager()
-  
+
   var contentGenerationResult: StatGenerationResult = .success
   var currentlyDrawedStat: [DrawableStat]? = [DrawableStat]()
   var dataSet: BarChartDataSet?
-  
+
   func getStatContent() -> BarChartDataSet? {
     updateStatContent()
     return self.dataSet

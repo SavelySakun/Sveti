@@ -23,5 +23,4 @@ class StatTestHelper {
     note.mood?.emotionalState = 2.0
     return note
   }()
-  
 }

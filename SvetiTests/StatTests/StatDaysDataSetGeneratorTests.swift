@@ -39,7 +39,7 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
       return
     }
 
-    XCTAssertTrue(entries.count > 0)
+    XCTAssertTrue(!entries.isEmpty)
   }
 
   func test_add_3_notes_in_one_day_correct_mood_value() {

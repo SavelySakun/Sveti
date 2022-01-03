@@ -7,7 +7,6 @@ class DiaryTableSectionHeader: UIView {
   private let averageScoreView = TextOnRoundView()
   private lazy var timeWithScoreStack = UIStackView(arrangedSubviews: [dateLabel, averageScoreView])
 
-
   init(date: String, averageScore: String? = nil) {
     super.init(frame: .zero)
     setLayout()

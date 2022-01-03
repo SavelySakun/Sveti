@@ -59,4 +59,3 @@ class StatDayChartFormatter: IAxisValueFormatter {
     return colorsForBars
   }
 }
-

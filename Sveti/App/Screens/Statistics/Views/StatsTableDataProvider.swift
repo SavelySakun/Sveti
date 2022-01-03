@@ -10,5 +10,5 @@ class StatsTableDataProvider: TableDataProvider {
     ]
     return tableSections
   }
-  
+
 }

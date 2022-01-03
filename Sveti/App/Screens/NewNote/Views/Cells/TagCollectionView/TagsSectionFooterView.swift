@@ -19,7 +19,6 @@ class TagSectionFooterView: UICollectionReusableView {
     fatalError("init(coder:) has not been implemented")
   }
 
-
   private func setLayout() {
     let separatorView = UIView()
     separatorView.backgroundColor = .systemGray5

@@ -13,7 +13,6 @@ class TextOnRoundView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-
   private func setLayout() {
     setBackground()
     addScore()

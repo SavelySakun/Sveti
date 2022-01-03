@@ -7,7 +7,7 @@ class Note: Object, Comparable {
     let rightDate = rhs.splitDate?.rawDate.timeIntervalSince1970 ?? 1.0
     return leftDate < rightDate
   }
-  
+
   @objc dynamic var id = Int(Date().timeIntervalSince1970)
   @objc dynamic var splitDate: SplitDate? = SplitDate(rawDate: Date())
   @objc dynamic var mood: Mood? = Mood()

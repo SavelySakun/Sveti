@@ -19,7 +19,6 @@ class IconView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-
   private func setLayout() {
     addSubview(imageView)
     imageView.snp.makeConstraints { (make) in

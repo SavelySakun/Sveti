@@ -20,7 +20,7 @@ class ScoreTimeView: UIView {
   }
 
   private func getTime(from note: Note) -> String {
-    guard let hourString = note.splitDate?.HHmm else { return ""}
+    guard let hourString = note.splitDate?.HHmm else { return "" }
     return String(format: NSLocalizedString("at %@", comment: ""), hourString)
   }
 
