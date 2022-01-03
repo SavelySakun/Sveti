@@ -421,7 +421,6 @@
 		FC01D41E26D6AAA400C984E7 /* More */ = {
 			isa = PBXGroup;
 			children = (
-				FC1563FD2748FF0E00AAD925 /* Detail Screens */,
 				FC1563F82748FA0200AAD925 /* More Models */,
 				FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */,
 				FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */,
@@ -585,16 +584,6 @@
 				FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */,
 			);
 			path = "More Models";
-			sourceTree = "<group>";
-		};
-		FC1563FD2748FF0E00AAD925 /* Detail Screens */ = {
-			isa = PBXGroup;
-			children = (
-				FCC922A927665EB4009F7508 /* About */,
-				FCB9ECB6274BE33300E3E864 /* EditTagGroups */,
-				FC1563FE2748FF1A00AAD925 /* ContactDeveloper */,
-			);
-			path = "Detail Screens";
 			sourceTree = "<group>";
 		};
 		FC1563FE2748FF1A00AAD925 /* ContactDeveloper */ = {
@@ -769,6 +758,16 @@
 			path = NewNoteTests;
 			sourceTree = "<group>";
 		};
+		FC518DC22782FBCD008C351B /* MoreDetailScreens */ = {
+			isa = PBXGroup;
+			children = (
+				FCC922A927665EB4009F7508 /* About */,
+				FCB9ECB6274BE33300E3E864 /* EditTagGroups */,
+				FC1563FE2748FF1A00AAD925 /* ContactDeveloper */,
+			);
+			path = MoreDetailScreens;
+			sourceTree = "<group>";
+		};
 		FC6C56CF266000FB000188A6 = {
 			isa = PBXGroup;
 			children = (
@@ -857,6 +856,7 @@
 				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
 				FCB0643C26B5C74600A0494A /* EditNote */,
 				FC01D41E26D6AAA400C984E7 /* More */,
+				FC518DC22782FBCD008C351B /* MoreDetailScreens */,
 				FC84E84326C912D50081CBA2 /* Navigation */,
 			);
 			name = Screens;
