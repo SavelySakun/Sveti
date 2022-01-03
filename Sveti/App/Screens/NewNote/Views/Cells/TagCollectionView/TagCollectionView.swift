@@ -132,7 +132,7 @@ extension TagCollectionView: UICollectionViewDataSource {
       let group = tagGroups[indexPath.section]
       let groupTitle = group.title
       sectionHeader.set(with: groupTitle, isExpanded: group.isExpanded, isSearchMode: isSearchMode)
-      
+
       return sectionHeader
 
     case UICollectionView.elementKindSectionFooter:
@@ -171,7 +171,6 @@ extension TagCollectionView: UICollectionViewDelegate {
     interactionDelegate?.onTagSelection(tag: tag)
   }
 }
-
 
 extension TagCollectionView: TagSectionHeaderViewDelegate {
   func onCollapseButtonTap(in section: Int) {

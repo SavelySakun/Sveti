@@ -43,5 +43,3 @@ class SvetiAnalytics {
     Analytics.logEvent(event.rawValue, parameters: nil)
   }
 }
-
-

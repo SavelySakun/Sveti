@@ -14,7 +14,7 @@ class StatsVM: ViewControllerVM {
     statSettingsRepository.updateMaximumDate(SplitDate(rawDate: Date()).endOfDay)
   }
 
-  override func handle<T>(_ event: T) where T : Event {
+  override func handle<T>(_ event: T) where T: Event {
     guard let event = event as? StatsFilterEvent else { return }
     let eventType = StatsFilterEventType(rawValue: event.type)
 
@@ -35,9 +35,7 @@ class StatsVM: ViewControllerVM {
       return
     }
 
-
     guard let statDaysVC = CurrentVC.current as? StatsVC else { return }
     statDaysVC.updateContent()
   }
-  
 }

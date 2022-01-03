@@ -9,7 +9,7 @@ class TabbarController: UITabBarController {
     delegate = self
   }
 
-  func setTabbarItems() {
+  private func setTabbarItems() {
     let diaryController = createNavigationController(
       vc: DiaryVC(),
       image: getIcon(named: Constants.ImageNames.Tabbar.diaryIcon),
@@ -59,7 +59,6 @@ class TabbarController: UITabBarController {
   private func getIcon(named: String) -> UIImage? {
     return UIImage(named: named)?.imageResized(to: .init(width: 24, height: 24))
   }
-
 }
 
 extension TabbarController: UITabBarControllerDelegate {

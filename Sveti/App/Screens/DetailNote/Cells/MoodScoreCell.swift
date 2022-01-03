@@ -38,7 +38,7 @@ class MoodScoreCell: Cell {
   private func setStateScoresStackView() {
     statesStackView = UIStackView(arrangedSubviews: [
       emotionalStateScoreView,
-      physicalStateScoreView,
+      physicalStateScoreView
     ])
 
     emotionalStateScoreView.stateLabel.text = "emotional state".localized
@@ -65,10 +65,9 @@ class MoodScoreCell: Cell {
 
     containerView.addSubview(globalStack)
     globalStack.snp.makeConstraints { (make) in
-      make.top.equalToSuperview().offset(10)
+      make.top.bottom.equalToSuperview().inset(10)
       make.left.equalToSuperview().offset(20)
       make.right.equalToSuperview()
-      make.bottom.equalToSuperview().offset(-10)
     }
   }
 

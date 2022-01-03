@@ -3,9 +3,9 @@ import UIKit
 class LinkToSiteModel: ISimpleCellItem {
   var title: String
 
-  var iconImage: UIImage? = nil
-  var iconTintColor: UIColor? = nil
-  var iconBackgroundColor: UIColor? = nil
+  var iconImage: UIImage?
+  var iconTintColor: UIColor?
+  var iconBackgroundColor: UIColor?
   var accessoryImage: UIImage? = UIImage(named: "globe")
 
   var onTapAction: (() -> Void)?

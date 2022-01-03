@@ -47,7 +47,6 @@ class NewNoteVM: ViewControllerVM {
     SvetiAnalytics.log(.createNote)
   }
 
-
   func clearInput() {
     subscribers.removeAll()
     observingCellsWithIds.removeAll()

@@ -11,9 +11,9 @@ class SelectGroupTableDataProvider: TableDataProvider {
   override func configureSections(with data: Any? = nil) -> [TableSection] {
     guard let groupId = data as? String else { return [TableSection]() }
     editingGroupId = groupId
-    
+
     let tableSections = [
-      TableSection(title: "Select a group".localized, cellsData: getCellsData()),
+      TableSection(title: "Select a group".localized, cellsData: getCellsData())
     ]
     return tableSections
   }
@@ -32,4 +32,3 @@ class SelectGroupTableDataProvider: TableDataProvider {
     return cellsData
   }
 }
-

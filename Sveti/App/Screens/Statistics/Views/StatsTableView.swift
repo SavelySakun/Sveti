@@ -8,8 +8,8 @@ class StatsTableView: TableView {
     let subscriber = tableHeaderView.publisher
       .debounce(for: .seconds(eventDebounceValue), scheduler: RunLoop.main)
       .sink { event in
-      self.viewModel.handle(event)
-    }
+        self.viewModel.handle(event)
+      }
 
     viewModel.addSubscriber(newSub: subscriber, with: tableHeaderView.identifier)
     self.tableHeaderView = tableHeaderView

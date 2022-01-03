@@ -13,7 +13,6 @@ class TextOnRoundView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-
   private func setLayout() {
     setBackground()
     addScore()
@@ -27,10 +26,8 @@ class TextOnRoundView: UIView {
   private func addScore() {
     addSubview(textLabel)
     textLabel.snp.makeConstraints { (make) in
-      make.top.equalToSuperview().offset(5)
-      make.left.equalToSuperview().offset(10)
-      make.bottom.equalToSuperview().offset(-5)
-      make.right.equalToSuperview().offset(-10)
+      make.top.bottom.equalToSuperview().inset(5)
+      make.left.right.equalToSuperview().inset(10)
     }
   }
 

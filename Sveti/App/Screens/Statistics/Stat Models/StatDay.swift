@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class StatDay: Object, Dated  {
+class StatDay: Object, Dated {
   var date: Date {
     return splitDate?.rawDate ?? Date()
   }

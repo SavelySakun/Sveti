@@ -2,7 +2,7 @@ import UIKit
 import Charts
 
 class BarChartCell: Cell {
-  private let barChartView = BarChartView()
+  private let barChartView = StatsBarChartView()
   private let noDataTextImage = ImageTextView()
   private let currentStatLabel = UILabel()
   private var contentGenerationResult: StatGenerationResult {
@@ -17,7 +17,6 @@ class BarChartCell: Cell {
     selectionStyle = .none
     addSubviews()
     setNoDataTextImage()
-    setChartStyle()
   }
 
   private func addSubviews() {
@@ -39,7 +38,6 @@ class BarChartCell: Cell {
   }
 
   private func configureChart() {
-    barChartView.delegate = self
     setDataForChart()
     let isHasContent = (contentGenerationResult == .success)
     updateContentVisibility(isHasContent: isHasContent)
@@ -71,34 +69,6 @@ class BarChartCell: Cell {
     setVisibleXRange()
     barChartView.zoomOut()
     barChartView.moveViewToX(Double(dataSet.count))
-  }
-
-  private func setChartStyle() {
-    // General
-    barChartView.backgroundColor = .white
-    barChartView.legend.enabled = false
-    barChartView.extraTopOffset = 20.0
-    barChartView.viewPortHandler.setMaximumScaleY(1.0)
-
-    let leftAxis = barChartView.leftAxis
-    let xAxis = barChartView.xAxis
-
-    // Left axis
-    leftAxis.axisMaximum = 10.0
-    leftAxis.axisMinimum = 0.0
-    leftAxis.labelFont = .systemFont(ofSize: 12.0)
-    leftAxis.axisLineColor = .systemGray2
-    leftAxis.gridColor = .systemGray2
-
-    // Right axis
-    barChartView.rightAxis.enabled = false
-
-    // xAxis
-    xAxis.drawGridLinesEnabled = false
-    xAxis.axisLineColor = .systemGray2
-    xAxis.labelPosition = .bottom
-    xAxis.labelFont = .systemFont(ofSize: 12.0)
-    xAxis.granularity = 1.0
   }
 
   private func setVisibleXRange() {
@@ -139,8 +109,4 @@ class BarChartCell: Cell {
       noDataTextImage.imageView.image = UIImage(named: "noDataFilter")
     }
   }
-}
-
-extension BarChartCell: ChartViewDelegate {
-
 }

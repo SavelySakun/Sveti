@@ -38,10 +38,8 @@ class DiaryCell: Cell {
     containerView.layer.cornerRadius = 14
     containerView.backgroundColor = .clear
     containerView.snp.makeConstraints { (make) in
-      make.top.equalToSuperview().offset(6)
-      make.left.equalToSuperview().offset(15)
-      make.right.equalToSuperview().offset(-15)
-      make.bottom.equalToSuperview().offset(-6)
+      make.top.bottom.equalToSuperview().inset(6)
+      make.left.right.equalToSuperview().inset(15)
     }
   }
 
@@ -63,8 +61,7 @@ class DiaryCell: Cell {
     containerView.addSubview(commentLabel)
     commentLabel.snp.makeConstraints { (make) in
       make.top.equalTo(scoreTimeView.snp.bottom).offset(8)
-      make.left.equalToSuperview().offset(UIUtils.middleOffset)
-      make.right.equalToSuperview().offset(-UIUtils.middleOffset)
+      make.left.right.equalToSuperview().inset(UIUtils.middleOffset)
     }
   }
 
@@ -73,8 +70,7 @@ class DiaryCell: Cell {
     tagListView.snp.makeConstraints { (make) in
       make.top.equalTo(commentLabel.snp.bottom).offset(UIUtils.defaultOffset)
       make.left.equalToSuperview().offset(UIUtils.middleOffset)
-      make.right.equalToSuperview().offset(-UIUtils.defaultOffset)
-      make.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
+      make.right.bottom.equalToSuperview().offset(-UIUtils.defaultOffset)
     }
   }
 }

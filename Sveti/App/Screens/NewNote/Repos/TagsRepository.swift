@@ -91,7 +91,7 @@ class TagsRepository {
     return activeTags.count
   }
 
-  func getActiveTags(in section: Int) -> [Tag]{
+  func getActiveTags(in section: Int) -> [Tag] {
     groups[section].tags.filter { $0.isHidden == false }
   }
 

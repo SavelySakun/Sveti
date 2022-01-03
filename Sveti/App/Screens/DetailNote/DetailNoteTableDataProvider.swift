@@ -8,16 +8,14 @@ class DetailNoteTableDataProvider: TableDataProvider {
 
     var tableSections = [
       TableSection(title: "Mark".localized, cellsData: [
-        CellData(type: MoodScoreCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: note))
+        CellData(type: MoodScoreCell.self, viewModel: CellVM(cellValue: note))
       ])
     ]
-
-   // guard let note = data as? Note else { return tableSections }
 
     if !note.comment.isEmpty {
       tableSections.append(
         TableSection(title: "Comment".localized, cellsData: [
-          CellData(type: DetailNoteCommentCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: note))
+          CellData(type: DetailNoteCommentCell.self, viewModel: CellVM(cellValue: note))
         ])
       )
     }
@@ -25,7 +23,7 @@ class DetailNoteTableDataProvider: TableDataProvider {
     if !note.tags.isEmpty {
       tableSections.append(
         TableSection(title: "Tags".localized, cellsData: [
-          CellData(type: DetailTagsCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: note))
+          CellData(type: DetailTagsCell.self, viewModel: CellVM(cellValue: note))
         ])
       )
     }
