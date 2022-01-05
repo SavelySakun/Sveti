@@ -1,7 +1,7 @@
 ## About
 **Sveti** is a mood tracker app which allows you to add diary notes with physical & emotional state. You can attach tags and comments to diary entries to make a note more accurate. It is possible to view the statistics of well-being for a specified period of time with a different grouping of data.
 
-More information about the application, releases, and development plans [can be found here](https://sava.notion.site/Sveti-e10863a20154429db4b5bd866a4d4b38).
+Sveti in the [AppStore](https://apps.apple.com/ru/app/sveti/id1602251000). More information about the application, releases, and development plans [can be found here](https://sava.notion.site/Sveti-e10863a20154429db4b5bd866a4d4b38).
 
 ## Features
 - Adding notes with tags, comments.
