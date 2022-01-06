@@ -3,6 +3,8 @@ import UIKit
 class OnboardingVC: BaseViewController, IOnboardingController {
 
   var viewModel: IOnboardingVM
+  private let nextButton = UIButton()
+  private let backButton = UIButton()
 
   // views
   private let onboardingContentView = OnboardingContentView()
@@ -33,6 +35,8 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     view.backgroundColor = .white
     setNavigationBar()
     setOnboardingContentView()
+    setNextButton()
+    setBackButon()
   }
 
   private func setNavigationBar() {
@@ -67,6 +71,37 @@ class OnboardingVC: BaseViewController, IOnboardingController {
 
   private func setInitialContent() {
     //
+  }
+
+  private func setNextButton() {
+    nextButton.setImage(UIImage(systemName: "arrow.right"), for: .normal)
+    nextButton.backgroundColor = .systemBlue
+    nextButton.contentMode = .center
+    nextButton.imageView?.snp.makeConstraints { (make) in
+      make.width.height.equalToSuperview().multipliedBy(0.6)
+    }
+    nextButton.tintColor = .white
+    nextButton.layer.cornerRadius = 35
+
+    view.addSubview(nextButton)
+    nextButton.snp.makeConstraints { (make) in
+      make.width.height.equalTo(70)
+      make.centerX.equalToSuperview()
+      make.bottom.equalToSuperview().offset(-80)
+    }
+  }
+
+  private func setBackButon() {
+    view.addSubview(backButton)
+    backButton.setTitle("Back", for: .normal)
+    backButton.setTitleColor(.systemBlue, for: .normal)
+
+    backButton.snp.makeConstraints { (make) in
+      make.right.equalTo(nextButton.snp.left).offset(-40)
+      make.height.equalTo(50)
+      make.width.equalTo(nextButton.snp.width)
+      make.centerY.equalTo(nextButton.snp.centerY)
+    }
   }
 
 }

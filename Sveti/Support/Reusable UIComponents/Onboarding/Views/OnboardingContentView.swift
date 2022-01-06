@@ -3,7 +3,7 @@ import UIKit
 class OnboardingContentView: UIView {
 
   private let globalBackgroundView = UIView()
-  private let imageWithGradientBackground = UIView()
+  private let imageWithGradientBackground = ImageWithGradientBackground()
   private let progressView = UIProgressView(progressViewStyle: .bar)
   private let titleLabel = UILabel()
   private let subtitleLabel = UILabel()
@@ -31,7 +31,7 @@ class OnboardingContentView: UIView {
 
   private func setGlobalBackgroundView() {
     addSubview(globalBackgroundView)
-    globalBackgroundView.backgroundColor = .orange
+    globalBackgroundView.backgroundColor = .orange.withAlphaComponent(0.7)
 
     globalBackgroundView.snp.makeConstraints { (make) in
       make.top.left.right.equalToSuperview()
@@ -41,7 +41,6 @@ class OnboardingContentView: UIView {
 
   private func setImageWithGradient() {
     addSubview(imageWithGradientBackground)
-    imageWithGradientBackground.backgroundColor = .yellow
     imageWithGradientBackground.layer.cornerRadius = 12
 
     imageWithGradientBackground.snp.makeConstraints { (make) in
@@ -56,6 +55,7 @@ class OnboardingContentView: UIView {
     progressView.setProgress(0.3, animated: true)
     progressView.layer.cornerRadius = 2
     progressView.trackTintColor = .systemGray5
+    progressView.tintColor = .systemBlue
     progressView.layer.cornerRadius = 4
     progressView.layer.masksToBounds = true
 

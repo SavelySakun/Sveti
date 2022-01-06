@@ -170,6 +170,7 @@
 		FCE3974727875779001BC98F /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974627875779001BC98F /* OnboardingVM.swift */; };
 		FCE3974B27875C2E001BC98F /* SvetiOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */; };
 		FCE3974D27875F8B001BC98F /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */; };
+		FCE3974F278774A9001BC98F /* ImageWithGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */; };
 		FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */; };
 		FCEA31B826D67B940062509A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA31B726D67B940062509A /* Note.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
@@ -367,6 +368,7 @@
 		FCE3974627875779001BC98F /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiOnboardingVC.swift; sourceTree = "<group>"; };
 		FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
+		FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithGradientBackground.swift; sourceTree = "<group>"; };
 		FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableFooter.swift; sourceTree = "<group>"; };
 		FCEA31B726D67B940062509A /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
@@ -1077,6 +1079,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */,
+				FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1446,6 +1449,7 @@
 				FCEEB2E026CD81F000F7B00F /* TagEvent.swift in Sources */,
 				FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */,
 				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
+				FCE3974F278774A9001BC98F /* ImageWithGradientBackground.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
 				FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */,
