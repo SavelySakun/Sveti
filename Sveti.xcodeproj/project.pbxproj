@@ -160,6 +160,12 @@
 		FCE368A026D26C9400A05271 /* ALPopup in Frameworks */ = {isa = PBXBuildFile; productRef = FCE3689F26D26C9400A05271 /* ALPopup */; };
 		FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE368A126D2749400A05271 /* SelectGroupTableView.swift */; };
 		FCE368A526D27E6900A05271 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = FCE368A426D27E6900A05271 /* SPAlert */; };
+		FCE3973927874F45001BC98F /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973827874F45001BC98F /* OnboardingVC.swift */; };
+		FCE3973B27875331001BC98F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973A27875331001BC98F /* OnboardingSlide.swift */; };
+		FCE3973D27875347001BC98F /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973C27875347001BC98F /* OnboardingState.swift */; };
+		FCE3973F278753E5001BC98F /* BackgroundGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */; };
+		FCE3974127875471001BC98F /* IOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974027875471001BC98F /* IOnboardingController.swift */; };
+		FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */; };
 		FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */; };
 		FCEA31B826D67B940062509A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA31B726D67B940062509A /* Note.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
@@ -347,6 +353,12 @@
 		FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupCell.swift; sourceTree = "<group>"; };
 		FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCE368A126D2749400A05271 /* SelectGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableView.swift; sourceTree = "<group>"; };
+		FCE3973827874F45001BC98F /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		FCE3973A27875331001BC98F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		FCE3973C27875347001BC98F /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
+		FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientColors.swift; sourceTree = "<group>"; };
+		FCE3974027875471001BC98F /* IOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingController.swift; sourceTree = "<group>"; };
+		FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMoveDirection.swift; sourceTree = "<group>"; };
 		FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableFooter.swift; sourceTree = "<group>"; };
 		FCEA31B726D67B940062509A /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
@@ -858,6 +870,7 @@
 		FC7E6D1A26AB199000126B97 /* Reusable UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FCE3973527874F1B001BC98F /* Onboarding */,
 				FC7E6D2126AB1FD000126B97 /* ViewElements */,
 				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
 				FCB0644626B68E9500A0494A /* VCwithTable.swift */,
@@ -1038,6 +1051,35 @@
 				FCE368A126D2749400A05271 /* SelectGroupTableView.swift */,
 			);
 			path = SelectGroup;
+			sourceTree = "<group>";
+		};
+		FCE3973527874F1B001BC98F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3973727874F37001BC98F /* Models */,
+				FCE3973627874F32001BC98F /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FCE3973627874F32001BC98F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3973827874F45001BC98F /* OnboardingVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCE3973727874F37001BC98F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3973C27875347001BC98F /* OnboardingState.swift */,
+				FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */,
+				FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */,
+				FCE3973A27875331001BC98F /* OnboardingSlide.swift */,
+				FCE3974027875471001BC98F /* IOnboardingController.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1460,6 +1502,7 @@
 				FC84E81D26C7CE040081CBA2 /* CollectionViewSizeConstants.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
 				FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */,
+				FCE3973927874F45001BC98F /* OnboardingVC.swift in Sources */,
 				FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */,
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
 				FC27075B275C9EF800A2440A /* TagGroupList.swift in Sources */,
@@ -1474,6 +1517,7 @@
 				FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */,
 				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
 				FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */,
+				FCE3973B27875331001BC98F /* OnboardingSlide.swift in Sources */,
 				FCC922B827666798009F7508 /* Icon8Model.swift in Sources */,
 				FC1563F72748ED8E00AAD925 /* IconView.swift in Sources */,
 				FCEEB21926CBF2D000F7B00F /* IconButton.swift in Sources */,
@@ -1481,16 +1525,20 @@
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC42A796273ABDE8004A56F9 /* IStatSettingsManager.swift in Sources */,
 				FC6C58C02663D640000188A6 /* TagCell.swift in Sources */,
+				FCE3974127875471001BC98F /* IOnboardingController.swift in Sources */,
 				FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */,
 				FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */,
 				FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */,
+				FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
+				FCE3973F278753E5001BC98F /* BackgroundGradientColors.swift in Sources */,
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */,
 				FC42A6F127366615004A56F9 /* GroupingType.swift in Sources */,
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,
 				FCEA31B826D67B940062509A /* Note.swift in Sources */,
 				FC8BE9B226E65F3200D12704 /* StatDay.swift in Sources */,
+				FCE3973D27875347001BC98F /* OnboardingState.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
