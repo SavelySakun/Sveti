@@ -166,6 +166,8 @@
 		FCE3973F278753E5001BC98F /* BackgroundGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */; };
 		FCE3974127875471001BC98F /* IOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974027875471001BC98F /* IOnboardingController.swift */; };
 		FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */; };
+		FCE39745278756FC001BC98F /* IOnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39744278756FC001BC98F /* IOnboardingVM.swift */; };
+		FCE3974727875779001BC98F /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974627875779001BC98F /* OnboardingVM.swift */; };
 		FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */; };
 		FCEA31B826D67B940062509A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA31B726D67B940062509A /* Note.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
@@ -359,6 +361,8 @@
 		FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientColors.swift; sourceTree = "<group>"; };
 		FCE3974027875471001BC98F /* IOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingController.swift; sourceTree = "<group>"; };
 		FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMoveDirection.swift; sourceTree = "<group>"; };
+		FCE39744278756FC001BC98F /* IOnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingVM.swift; sourceTree = "<group>"; };
+		FCE3974627875779001BC98F /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
 		FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableFooter.swift; sourceTree = "<group>"; };
 		FCEA31B726D67B940062509A /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
@@ -1066,6 +1070,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE3973827874F45001BC98F /* OnboardingVC.swift */,
+				FCE3974627875779001BC98F /* OnboardingVM.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1073,13 +1078,22 @@
 		FCE3973727874F37001BC98F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FCE39748278757E8001BC98F /* Interfaces */,
 				FCE3973C27875347001BC98F /* OnboardingState.swift */,
 				FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */,
 				FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */,
 				FCE3973A27875331001BC98F /* OnboardingSlide.swift */,
-				FCE3974027875471001BC98F /* IOnboardingController.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FCE39748278757E8001BC98F /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3974027875471001BC98F /* IOnboardingController.swift */,
+				FCE39744278756FC001BC98F /* IOnboardingVM.swift */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1446,6 +1460,7 @@
 				FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */,
 				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
+				FCE39745278756FC001BC98F /* IOnboardingVM.swift in Sources */,
 				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
 				FC42A6C627350F8E004A56F9 /* Array.swift in Sources */,
 				FCC922AF276660B5009F7508 /* AboutTableDataProvider.swift in Sources */,
@@ -1500,6 +1515,7 @@
 				FC42A6F42737FE78004A56F9 /* StatGenerationResult.swift in Sources */,
 				FCE3689626D2391000A05271 /* NoTagFoundCell.swift in Sources */,
 				FC84E81D26C7CE040081CBA2 /* CollectionViewSizeConstants.swift in Sources */,
+				FCE3974727875779001BC98F /* OnboardingVM.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
 				FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */,
 				FCE3973927874F45001BC98F /* OnboardingVC.swift in Sources */,
