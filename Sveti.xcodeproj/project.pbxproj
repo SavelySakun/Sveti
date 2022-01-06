@@ -168,6 +168,8 @@
 		FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */; };
 		FCE39745278756FC001BC98F /* IOnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39744278756FC001BC98F /* IOnboardingVM.swift */; };
 		FCE3974727875779001BC98F /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974627875779001BC98F /* OnboardingVM.swift */; };
+		FCE3974B27875C2E001BC98F /* SvetiOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */; };
+		FCE3974D27875F8B001BC98F /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */; };
 		FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */; };
 		FCEA31B826D67B940062509A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA31B726D67B940062509A /* Note.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
@@ -363,6 +365,8 @@
 		FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMoveDirection.swift; sourceTree = "<group>"; };
 		FCE39744278756FC001BC98F /* IOnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingVM.swift; sourceTree = "<group>"; };
 		FCE3974627875779001BC98F /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
+		FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiOnboardingVC.swift; sourceTree = "<group>"; };
+		FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
 		FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableFooter.swift; sourceTree = "<group>"; };
 		FCEA31B726D67B940062509A /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
@@ -1060,8 +1064,11 @@
 		FCE3973527874F1B001BC98F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				FCE3974927875C10001BC98F /* Onboardings */,
 				FCE3973727874F37001BC98F /* Models */,
 				FCE3973627874F32001BC98F /* Views */,
+				FCE3973827874F45001BC98F /* OnboardingVC.swift */,
+				FCE3974627875779001BC98F /* OnboardingVM.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1069,8 +1076,7 @@
 		FCE3973627874F32001BC98F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FCE3973827874F45001BC98F /* OnboardingVC.swift */,
-				FCE3974627875779001BC98F /* OnboardingVM.swift */,
+				FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1094,6 +1100,14 @@
 				FCE39744278756FC001BC98F /* IOnboardingVM.swift */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		FCE3974927875C10001BC98F /* Onboardings */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */,
+			);
+			path = Onboardings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1495,6 +1509,7 @@
 				FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* TextOnRoundView.swift in Sources */,
 				FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */,
+				FCE3974D27875F8B001BC98F /* OnboardingContentView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
 				FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */,
 				FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */,
@@ -1544,6 +1559,7 @@
 				FCE3974127875471001BC98F /* IOnboardingController.swift in Sources */,
 				FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */,
 				FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */,
+				FCE3974B27875C2E001BC98F /* SvetiOnboardingVC.swift in Sources */,
 				FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */,
 				FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
