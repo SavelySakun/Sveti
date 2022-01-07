@@ -109,6 +109,7 @@ class OnboardingVC: BaseViewController, IOnboardingController {
   }
 
   func move(to direction: OnboardingMoveDirection) {
+    makeHapticFeedback()
     viewModel.updateOnboardingProgression(direction: direction)
     updateButtonsState()
     showSlideOrDismiss()
@@ -142,6 +143,11 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     }
   }
 
-
+  private func makeHapticFeedback() {
+    var feedbackGenerator: UISelectionFeedbackGenerator? = UISelectionFeedbackGenerator()
+    feedbackGenerator?.prepare()
+    feedbackGenerator?.selectionChanged()
+    feedbackGenerator = nil
+  }
 
 }
