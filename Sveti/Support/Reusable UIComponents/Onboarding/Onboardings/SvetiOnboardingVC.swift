@@ -2,7 +2,7 @@ import UIKit
 
 class SvetiOnboardingVC: OnboardingVC {
   init() {
-    super.init(viewModel: OnboardingVM(key: "SvetiOnboarding", slides: [
+    super.init(viewModel: OnboardingVM(userDefaultsKey: "SvetiOnboarding", slides: [
 
       OnboardingSlide(title: "What is Sveti?", subtitle: "Sveti is your well-being diary. Add entries, specify tags, and, of course, see statistics.", globalBackgroundColor: #colorLiteral(red: 1, green: 0.8, blue: 0.4470588235, alpha: 1), imageBackgroundGradientColors: [#colorLiteral(red: 1, green: 0.7031058073, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.4022059441, blue: 0, alpha: 1)], image: UIImage(named: "noDataFilter")),
 

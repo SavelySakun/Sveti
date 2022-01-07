@@ -1,21 +1,20 @@
 import UIKit
 
 class OnboardingVC: BaseViewController, IOnboardingController {
-
   var viewModel: IOnboardingVM
   private let nextButton = UIButton()
   private let backButton = UIButton()
-
-  // views
   private let onboardingContentView = OnboardingContentView()
 
   init(viewModel: IOnboardingVM) {
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
+    markAsCurrentVC = false
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    guard !viewModel.getOnboardingWatchStatus() else { return }
     setLayout()
   }
 
@@ -52,7 +51,8 @@ class OnboardingVC: BaseViewController, IOnboardingController {
   }
 
   @objc private func onCancel() {
-    self.dismiss(animated: true)
+    viewModel.markAsWatched()
+    dismiss(animated: true)
   }
 
   private func setOnboardingContentView() {
@@ -115,7 +115,7 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     showSlideOrDismiss()
   }
 
-  func updateButtonsState() {
+  private func updateButtonsState() {
     let state = viewModel.onboardingState
     let buttonImageName = (state == .hasSlides || state == .firstSlide) ? "arrow.right" : "checkmark"
     let buttonBackground: UIColor = (state == .lastSlide) ? #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1) : .systemBlue
@@ -131,14 +131,17 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     }
   }
 
-  func presentIfNeeded() {
-    //
+  func presentIfNeeded(from parent: UIViewController) {
+    guard !viewModel.getOnboardingWatchStatus() else { return }
+    let navigationController = UINavigationController(rootViewController: self)
+    parent.present(navigationController, animated: true)
   }
 
   private func showSlideOrDismiss() {
     if let slide = viewModel.getSlide() {
       onboardingContentView.updateContent(slide: slide, progression: viewModel.getOnboardingProgressionValue())
     } else {
+      viewModel.markAsWatched()
       dismiss(animated: true)
     }
   }
@@ -149,5 +152,4 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     feedbackGenerator?.selectionChanged()
     feedbackGenerator = nil
   }
-
 }

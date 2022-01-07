@@ -1,7 +1,7 @@
-import Foundation
+import UIKit
 
 protocol IOnboardingController {
   var viewModel: IOnboardingVM { get set }
-  func presentIfNeeded()
+  func presentIfNeeded(from parent: UIViewController)
   func move(to: OnboardingMoveDirection)
 }

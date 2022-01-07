@@ -163,7 +163,6 @@
 		FCE3973927874F45001BC98F /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973827874F45001BC98F /* OnboardingVC.swift */; };
 		FCE3973B27875331001BC98F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973A27875331001BC98F /* OnboardingSlide.swift */; };
 		FCE3973D27875347001BC98F /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973C27875347001BC98F /* OnboardingState.swift */; };
-		FCE3973F278753E5001BC98F /* BackgroundGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */; };
 		FCE3974127875471001BC98F /* IOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974027875471001BC98F /* IOnboardingController.swift */; };
 		FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */; };
 		FCE39745278756FC001BC98F /* IOnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39744278756FC001BC98F /* IOnboardingVM.swift */; };
@@ -361,7 +360,6 @@
 		FCE3973827874F45001BC98F /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		FCE3973A27875331001BC98F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		FCE3973C27875347001BC98F /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
-		FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientColors.swift; sourceTree = "<group>"; };
 		FCE3974027875471001BC98F /* IOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingController.swift; sourceTree = "<group>"; };
 		FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMoveDirection.swift; sourceTree = "<group>"; };
 		FCE39744278756FC001BC98F /* IOnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingVM.swift; sourceTree = "<group>"; };
@@ -1090,7 +1088,6 @@
 				FCE39748278757E8001BC98F /* Interfaces */,
 				FCE3973C27875347001BC98F /* OnboardingState.swift */,
 				FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */,
-				FCE3973E278753E5001BC98F /* BackgroundGradientColors.swift */,
 				FCE3973A27875331001BC98F /* OnboardingSlide.swift */,
 			);
 			path = Models;
@@ -1567,7 +1564,6 @@
 				FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */,
 				FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
-				FCE3973F278753E5001BC98F /* BackgroundGradientColors.swift in Sources */,
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */,
 				FC42A6F127366615004A56F9 /* GroupingType.swift in Sources */,

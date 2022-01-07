@@ -5,18 +5,27 @@ class OnboardingVM: IOnboardingVM {
   var currentSlideIndex: Int = 0
   var onboardingKey: String
   var slides: [OnboardingSlide]
+
+  private let userDefaults = UserDefaults()
   
-  init(key: String, slides: [OnboardingSlide]) {
-    self.onboardingKey = key
+  init(userDefaultsKey: String, slides: [OnboardingSlide]) {
+    self.onboardingKey = userDefaultsKey
     self.slides = slides
+    setupDefaults()
   }
 
-  func updateOnboardingWatchStatus() {
-    //
+  func markAsWatched() {
+    userDefaults.set(true, forKey: onboardingKey)
   }
 
   func getOnboardingWatchStatus() -> Bool {
-    true
+    userDefaults.bool(forKey: onboardingKey)
+  }
+
+  func setupDefaults() {
+    userDefaults.register(
+      defaults: [self.onboardingKey: false]
+    )
   }
 
   func updateOnboardingProgression(direction: OnboardingMoveDirection) {
@@ -40,8 +49,4 @@ class OnboardingVM: IOnboardingVM {
     let slidesCount = Float(slides.count - 1) // need to show 100% full progress bar on last slide
     return currentSlideIndex / slidesCount
   }
-
-
 }
-
-

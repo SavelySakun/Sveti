@@ -2,7 +2,7 @@ import Foundation
 
 protocol IOnboardingVM {
   var onboardingKey: String { get set }
-  func updateOnboardingWatchStatus()
+  func markAsWatched()
   func getOnboardingWatchStatus() -> Bool
   func updateOnboardingProgression(direction: OnboardingMoveDirection)
   func getSlide() -> OnboardingSlide?

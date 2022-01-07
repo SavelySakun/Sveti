@@ -20,7 +20,6 @@ class ImageWithGradientBackground: UIView {
 
   private func setImageView() {
     addSubview(imageView)
-    imageView.image = UIImage(named: "purrDate")
     imageView.contentMode = .scaleAspectFit
     imageView.snp.makeConstraints { (make) in
       make.centerX.centerY.equalToSuperview()
