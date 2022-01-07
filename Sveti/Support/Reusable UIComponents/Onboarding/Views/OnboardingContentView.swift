@@ -17,8 +17,17 @@ class OnboardingContentView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setContent(slide: OnboardingSlide) {
-    //
+  func updateContent(slide: OnboardingSlide, progression: Float) {
+    DispatchQueue.main.async { [self] in
+      UIView.transition(with: self, duration: 0.4, options: .transitionCrossDissolve) {
+        globalBackgroundView.backgroundColor = slide.globalBackgroundColor
+        titleLabel.text = slide.title
+        subtitleLabel.text = slide.subtitle
+        imageWithGradientBackground.update(slide: slide)
+        progressView.tintColor = (progression == 1.0) ? #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1) : .systemBlue
+      }
+      progressView.setProgress(progression, animated: true)
+    }
   }
 
   private func setLayout() {
@@ -52,10 +61,9 @@ class OnboardingContentView: UIView {
 
   private func setProgressView() {
     addSubview(progressView)
-    progressView.setProgress(0.3, animated: true)
+    progressView.progress = 0.0
     progressView.layer.cornerRadius = 2
     progressView.trackTintColor = .systemGray5
-    progressView.tintColor = .systemBlue
     progressView.layer.cornerRadius = 4
     progressView.layer.masksToBounds = true
 
@@ -71,7 +79,6 @@ class OnboardingContentView: UIView {
     addSubview(titleLabel)
     titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .regular)
     titleLabel.numberOfLines = 0
-    titleLabel.text = "It's very late to answer but actually I had the same problem."
 
     titleLabel.snp.makeConstraints { (make) in
       make.top.equalTo(progressView.snp.bottom).offset(42)
@@ -84,7 +91,6 @@ class OnboardingContentView: UIView {
     subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
     subtitleLabel.textColor = .systemGray
     subtitleLabel.numberOfLines = 0
-    subtitleLabel.text = "Days above sea female seas. You rule man day. Heaven him that whales void signs. There unto. Under created created. The it upon called give the own moved bring air."
 
     subtitleLabel.snp.makeConstraints { (make) in
       make.top.equalTo(titleLabel.snp.bottom).offset(22)

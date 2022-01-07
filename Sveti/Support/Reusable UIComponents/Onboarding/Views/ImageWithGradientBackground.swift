@@ -15,7 +15,6 @@ class ImageWithGradientBackground: UIView {
   }
 
   private func setLayout() {
-    //setGradient()
     setImageView()
   }
 
@@ -30,9 +29,14 @@ class ImageWithGradientBackground: UIView {
   }
 
   private func setGradient() {
-    gradientLayer.frame = self.frame
-    gradientLayer.colors = [UIColor.red.cgColor, UIColor.black.cgColor]
-    layer.addSublayer(gradientLayer)
+  }
+
+  func update(slide: OnboardingSlide) {
+    gradientLayer.frame = bounds
+    gradientLayer.colors = [UIColor.orange.cgColor, UIColor.blue.cgColor]
+    gradientLayer.cornerRadius = 12
+    layer.insertSublayer(gradientLayer, at: 0)
+    imageView.image = slide.image
   }
 
 
