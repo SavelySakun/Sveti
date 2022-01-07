@@ -149,6 +149,8 @@
 		FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B2276663F2009F7508 /* AppInfoModel.swift */; };
 		FCC922B6276664AA009F7508 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B5276664AA009F7508 /* Bundle.swift */; };
 		FCC922B827666798009F7508 /* Icon8Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B727666798009F7508 /* Icon8Model.swift */; };
+		FCCA2ED42788913D00C46EA9 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FCCA2ED32788913D00C46EA9 /* DeviceKit */; };
+		FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -348,6 +350,7 @@
 		FCC922B2276663F2009F7508 /* AppInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoModel.swift; sourceTree = "<group>"; };
 		FCC922B5276664AA009F7508 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FCC922B727666798009F7508 /* Icon8Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon8Model.swift; sourceTree = "<group>"; };
+		FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -403,6 +406,7 @@
 				FCE368A026D26C9400A05271 /* ALPopup in Frameworks */,
 				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
+				FCCA2ED42788913D00C46EA9 /* DeviceKit in Frameworks */,
 				FC04F8472770BF1800368CC1 /* TagListView in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
@@ -845,6 +849,7 @@
 				FC7E6DC226AF27B600126B97 /* ColorHelper.swift */,
 				FC7E6DC426AF29B500126B97 /* MathHelper.swift */,
 				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
+				FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1179,6 +1184,7 @@
 				FCC922A5276655BD009F7508 /* FirebaseCrashlytics */,
 				FC04F8462770BF1800368CC1 /* TagListView */,
 				FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */,
+				FCCA2ED32788913D00C46EA9 /* DeviceKit */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -1226,6 +1232,7 @@
 				FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */,
 				FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */,
+				FCCA2ED22788913D00C46EA9 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -1494,6 +1501,7 @@
 				FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */,
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
 				FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */,
+				FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,
@@ -1966,6 +1974,14 @@
 				minimumVersion = 8.10.0;
 			};
 		};
+		FCCA2ED22788913D00C46EA9 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
 		FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alxrguz/ALPopup";
@@ -2019,6 +2035,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		FCCA2ED32788913D00C46EA9 /* DeviceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCCA2ED22788913D00C46EA9 /* XCRemoteSwiftPackageReference "DeviceKit" */;
+			productName = DeviceKit;
 		};
 		FCE3689F26D26C9400A05271 /* ALPopup */ = {
 			isa = XCSwiftPackageProductDependency;

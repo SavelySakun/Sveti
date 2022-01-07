@@ -1,4 +1,5 @@
 import UIKit
+import DeviceKit
 
 class OnboardingContentView: UIView {
 
@@ -7,6 +8,11 @@ class OnboardingContentView: UIView {
   private let progressView = UIProgressView(progressViewStyle: .bar)
   private let titleLabel = UILabel()
   private let subtitleLabel = UILabel()
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    imageWithGradientBackground.updateLayer()
+  }
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -68,7 +74,7 @@ class OnboardingContentView: UIView {
     progressView.layer.masksToBounds = true
 
     progressView.snp.makeConstraints { (make) in
-      make.top.equalTo(imageWithGradientBackground.snp.bottom).offset(29)
+      make.top.equalTo(imageWithGradientBackground.snp.bottom).offset(DeviceUtils.isSmallDiagonal ? 15 : 29)
       make.width.equalTo(imageWithGradientBackground.snp.width).multipliedBy(0.3)
       make.height.equalTo(7)
       make.centerX.equalTo(imageWithGradientBackground.snp.centerX)
@@ -77,25 +83,27 @@ class OnboardingContentView: UIView {
 
   private func setTitleLabel() {
     addSubview(titleLabel)
-    titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .regular)
+    let titleFontSize: CGFloat = DeviceUtils.isSmallDiagonal ? 18.0 : 22.0
+    titleLabel.font = UIFont.systemFont(ofSize: titleFontSize, weight: .regular)
     titleLabel.numberOfLines = 0
 
     titleLabel.snp.makeConstraints { (make) in
-      make.top.equalTo(progressView.snp.bottom).offset(42)
+      make.top.equalTo(progressView.snp.bottom).offset((Device.current.diagonal <= 5.5) ? 18 : 42)
       make.left.right.equalToSuperview().inset(32)
     }
   }
 
   private func setSubtitleLabel() {
     addSubview(subtitleLabel)
-    subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+    let subtitleFontSize: CGFloat = DeviceUtils.isSmallDiagonal ? 14.0 : 16.0
+    subtitleLabel.font = UIFont.systemFont(ofSize: subtitleFontSize, weight: .regular)
     subtitleLabel.textColor = .systemGray
     subtitleLabel.numberOfLines = 0
 
     subtitleLabel.snp.makeConstraints { (make) in
-      make.top.equalTo(titleLabel.snp.bottom).offset(22)
+      make.top.equalTo(titleLabel.snp.bottom).offset(DeviceUtils.isSmallDiagonal ? 12 : 22)
       make.left.equalToSuperview().inset(32)
-      make.right.equalToSuperview().inset(40)
+      make.right.equalToSuperview().inset(35)
     }
   }
 

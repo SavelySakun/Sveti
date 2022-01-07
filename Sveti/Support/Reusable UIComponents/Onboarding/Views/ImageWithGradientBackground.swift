@@ -42,5 +42,7 @@ class ImageWithGradientBackground: UIView {
     imageView.image = slide.image
   }
 
-
+  func updateLayer() {
+    gradientLayer.frame = bounds
+  }
 }

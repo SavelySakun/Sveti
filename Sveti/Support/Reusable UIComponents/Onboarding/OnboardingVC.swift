@@ -1,4 +1,5 @@
 import UIKit
+import DeviceKit
 
 class OnboardingVC: BaseViewController, IOnboardingController {
   var viewModel: IOnboardingVM
@@ -76,14 +77,18 @@ class OnboardingVC: BaseViewController, IOnboardingController {
       make.width.height.equalToSuperview().multipliedBy(0.6)
     }
     nextButton.tintColor = .white
-    nextButton.layer.cornerRadius = 35
     nextButton.addTarget(self, action: #selector(onNextTap), for: .touchUpInside)
+
+    let bottomOffset = (Device.current.diagonal <= 5.5) ? UIUtils.middleOffset : 80
+    let buttonWidthHeight = DeviceUtils.isSmallDiagonal ? 50: 70
+
+    nextButton.layer.cornerRadius = CGFloat(buttonWidthHeight / 2)
 
     view.addSubview(nextButton)
     nextButton.snp.makeConstraints { (make) in
-      make.width.height.equalTo(70)
+      make.width.height.equalTo(buttonWidthHeight)
       make.centerX.equalToSuperview()
-      make.bottom.equalToSuperview().offset(-80)
+      make.bottom.equalToSuperview().offset(-bottomOffset)
     }
   }
 
