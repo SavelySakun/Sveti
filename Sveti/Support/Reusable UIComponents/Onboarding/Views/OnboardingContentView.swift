@@ -51,7 +51,7 @@ class OnboardingContentView: UIView {
     globalBackgroundView.backgroundColor = .orange.withAlphaComponent(0.7)
 
     globalBackgroundView.snp.makeConstraints { (make) in
-      make.top.left.right.equalToSuperview()
+      make.top.left.right.equalToSuperview().inset(-50) // Inset for horizontal layout & correct safearealayoutguides
       make.height.equalTo(snp.height).multipliedBy(0.3)
     }
   }
@@ -63,10 +63,16 @@ class OnboardingContentView: UIView {
       make.centerY.equalTo(globalBackgroundView.snp.bottom)
       make.centerX.equalToSuperview()
 
-      orientationConstraints.portraitConstraints.append(make.width.equalToSuperview().multipliedBy(0.87).constraint)
-      orientationConstraints.horizontalConstraints.append(make.width.equalToSuperview().multipliedBy(0.3).constraint)
+      orientationConstraints.portraitConstraints.append(contentsOf: [
+        make.width.equalToSuperview().multipliedBy(0.87).constraint,
+        make.centerY.equalTo(globalBackgroundView.snp.bottom).constraint,
+        make.height.equalToSuperview().multipliedBy(0.26).constraint
+      ])
 
-      make.height.equalToSuperview().multipliedBy(0.26)
+      orientationConstraints.horizontalConstraints.append(contentsOf: [
+        make.width.equalToSuperview().multipliedBy(0.3).constraint,
+        make.height.equalToSuperview().multipliedBy(0.3).constraint
+      ])
     }
   }
 
