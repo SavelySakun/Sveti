@@ -2,8 +2,8 @@ import UIKit
 
 class ImageWithGradientBackground: UIView {
 
+  private let gradientImageView = UIImageView()
   private let imageView = UIImageView()
-  private let gradientLayer = CAGradientLayer()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -15,6 +15,7 @@ class ImageWithGradientBackground: UIView {
   }
 
   private func setLayout() {
+    setGradientImageView()
     setImageView()
   }
 
@@ -27,22 +28,20 @@ class ImageWithGradientBackground: UIView {
     }
   }
 
-  private func setGradient() {
+  private func setGradientImageView() {
+    addSubview(gradientImageView)
+    gradientImageView.snp.makeConstraints { (make) in
+      make.edges.equalToSuperview()
+    }
+
+    gradientImageView.contentMode = .scaleAspectFill
+    gradientImageView.layer.cornerRadius = 12
+    gradientImageView.clipsToBounds = true
   }
 
   func update(slide: OnboardingSlide) {
-    gradientLayer.frame = bounds
-    var colors: [Any] = []
-    slide.imageBackgroundGradientColors.forEach { color in
-      colors.append(color.cgColor)
-    }
-    gradientLayer.colors = colors
-    gradientLayer.cornerRadius = 12
-    layer.insertSublayer(gradientLayer, at: 0)
+    gradientImageView.image = UIImage(named: "gradientOrange")
     imageView.image = slide.image
   }
 
-  func updateLayer() {
-    gradientLayer.frame = bounds
-  }
 }

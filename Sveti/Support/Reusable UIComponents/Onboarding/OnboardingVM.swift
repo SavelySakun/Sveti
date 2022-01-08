@@ -19,6 +19,7 @@ class OnboardingVM: IOnboardingVM {
   }
 
   func getOnboardingWatchStatus() -> Bool {
+    return false
     userDefaults.bool(forKey: onboardingKey)
   }
 

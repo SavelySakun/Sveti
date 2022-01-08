@@ -1,17 +1,18 @@
 import UIKit
 import DeviceKit
+import SnapKit
 
 class OnboardingContentView: UIView {
-
   private let globalBackgroundView = UIView()
   private let imageWithGradientBackground = ImageWithGradientBackground()
   private let progressView = UIProgressView(progressViewStyle: .bar)
   private let titleLabel = UILabel()
   private let subtitleLabel = UILabel()
+  private var orientationConstraints = OrientationConstraints()
 
   override func layoutSubviews() {
     super.layoutSubviews()
-    imageWithGradientBackground.updateLayer()
+    orientationConstraints.update()
   }
 
   override init(frame: CGRect) {
@@ -42,6 +43,7 @@ class OnboardingContentView: UIView {
     setProgressView()
     setTitleLabel()
     setSubtitleLabel()
+    orientationConstraints.update()
   }
 
   private func setGlobalBackgroundView() {
@@ -57,10 +59,13 @@ class OnboardingContentView: UIView {
   private func setImageWithGradient() {
     addSubview(imageWithGradientBackground)
     imageWithGradientBackground.layer.cornerRadius = 12
-
     imageWithGradientBackground.snp.makeConstraints { (make) in
       make.centerY.equalTo(globalBackgroundView.snp.bottom)
-      make.left.right.equalToSuperview().inset(28)
+      make.centerX.equalToSuperview()
+
+      orientationConstraints.portraitConstraints.append(make.width.equalToSuperview().multipliedBy(0.87).constraint)
+      orientationConstraints.horizontalConstraints.append(make.width.equalToSuperview().multipliedBy(0.3).constraint)
+
       make.height.equalToSuperview().multipliedBy(0.26)
     }
   }
@@ -88,7 +93,12 @@ class OnboardingContentView: UIView {
     titleLabel.numberOfLines = 0
 
     titleLabel.snp.makeConstraints { (make) in
-      make.top.equalTo(progressView.snp.bottom).offset((Device.current.diagonal <= 5.5) ? 18 : 42)
+      orientationConstraints.portraitConstraints.append(
+        make.top.equalTo(progressView.snp.bottom).offset((Device.current.diagonal <= 5.5) ? 18 : 42).constraint
+      )
+      orientationConstraints.horizontalConstraints.append(
+        make.top.equalTo(progressView.snp.bottom).offset(18).constraint
+      )
       make.left.right.equalToSuperview().inset(32)
     }
   }
@@ -101,7 +111,13 @@ class OnboardingContentView: UIView {
     subtitleLabel.numberOfLines = 0
 
     subtitleLabel.snp.makeConstraints { (make) in
-      make.top.equalTo(titleLabel.snp.bottom).offset(DeviceUtils.isSmallDiagonal ? 12 : 22)
+      orientationConstraints.portraitConstraints.append(
+        make.top.equalTo(titleLabel.snp.bottom).offset(DeviceUtils.isSmallDiagonal ? 12 : 22).constraint
+      )
+      orientationConstraints.horizontalConstraints.append(
+        make.top.equalTo(titleLabel.snp.bottom).offset(12).constraint
+      )
+
       make.left.equalToSuperview().inset(32)
       make.right.equalToSuperview().inset(35)
     }

@@ -6,6 +6,12 @@ class OnboardingVC: BaseViewController, IOnboardingController {
   private let nextButton = UIButton()
   private let backButton = UIButton()
   private let onboardingContentView = OnboardingContentView()
+  private var orientationConstraints = OrientationConstraints()
+
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    orientationConstraints.update()
+  }
 
   init(viewModel: IOnboardingVM) {
     self.viewModel = viewModel
@@ -30,6 +36,7 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     setNextButton()
     setBackButon()
     setInitialContent()
+    orientationConstraints.update()
   }
 
   private func setNavigationBar() {
@@ -88,7 +95,13 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     nextButton.snp.makeConstraints { (make) in
       make.width.height.equalTo(buttonWidthHeight)
       make.centerX.equalToSuperview()
-      make.bottom.equalToSuperview().offset(-bottomOffset)
+
+      orientationConstraints.portraitConstraints.append(
+        make.bottom.equalToSuperview().offset(-bottomOffset).constraint
+      )
+      orientationConstraints.horizontalConstraints.append(
+        make.bottom.equalToSuperview().offset(-UIUtils.middleOffset).constraint
+      )
     }
   }
 

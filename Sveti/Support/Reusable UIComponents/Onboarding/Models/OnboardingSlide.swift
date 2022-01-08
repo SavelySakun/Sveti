@@ -6,4 +6,5 @@ struct OnboardingSlide {
   let globalBackgroundColor: UIColor
   let imageBackgroundGradientColors: [UIColor]
   let image: UIImage?
+//  let gradientImage: UIImage = UIImage(named: "")
 }
