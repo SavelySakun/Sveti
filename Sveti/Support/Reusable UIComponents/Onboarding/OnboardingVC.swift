@@ -66,7 +66,7 @@ class OnboardingVC: BaseViewController, IOnboardingController {
   private func setOnboardingContentView() {
     view.addSubview(onboardingContentView)
     onboardingContentView.snp.makeConstraints { (make) in
-      make.edges.equalToSuperview()
+      make.edges.equalTo(view.safeAreaLayoutGuide)
     }
   }
 

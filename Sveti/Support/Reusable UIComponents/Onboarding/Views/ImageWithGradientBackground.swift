@@ -40,7 +40,7 @@ class ImageWithGradientBackground: UIView {
   }
 
   func update(slide: OnboardingSlide) {
-    gradientImageView.image = UIImage(named: "gradientOrange")
+    gradientImageView.image = slide.gradientImage
     imageView.image = slide.image
   }
 

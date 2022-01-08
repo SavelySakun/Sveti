@@ -151,7 +151,7 @@
 		FCC922B827666798009F7508 /* Icon8Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B727666798009F7508 /* Icon8Model.swift */; };
 		FCCA2ED42788913D00C46EA9 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FCCA2ED32788913D00C46EA9 /* DeviceKit */; };
 		FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */; };
-		FCCA2ED82789B25500C46EA9 /* Snapkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED72789B25500C46EA9 /* Snapkit.swift */; };
+		FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -352,7 +352,7 @@
 		FCC922B5276664AA009F7508 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FCC922B727666798009F7508 /* Icon8Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon8Model.swift; sourceTree = "<group>"; };
 		FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
-		FCCA2ED72789B25500C46EA9 /* Snapkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapkit.swift; sourceTree = "<group>"; };
+		FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationConstraints.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -852,7 +852,7 @@
 				FC7E6DC426AF29B500126B97 /* MathHelper.swift */,
 				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 				FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */,
-				FCCA2ED72789B25500C46EA9 /* Snapkit.swift */,
+				FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1461,7 +1461,7 @@
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
 				FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */,
 				FC1563FA2748FA0F00AAD925 /* ISimpleCellItem.swift in Sources */,
-				FCCA2ED82789B25500C46EA9 /* Snapkit.swift in Sources */,
+				FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
 				FC27075D275CA2A600A2440A /* List.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
