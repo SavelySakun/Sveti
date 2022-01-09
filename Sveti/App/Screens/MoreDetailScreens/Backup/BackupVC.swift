@@ -1,6 +1,6 @@
 import UIKit
 
-class AboutVC: VCwithTable {
+class BackupVC: VCwithTable {
 
   override init(with tableStyle: UITableView.Style = .grouped) {
     super.init(with: tableStyle)
@@ -13,11 +13,11 @@ class AboutVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
-    title = "About".localized
+    title = "Backup & Restore"
     tableView.backgroundColor = .systemGray6
   }
 
   override func getDataProvider() -> TableDataProvider? {
-    return AboutTableDataProvider()
+    return BackupTableDataProvider()
   }
 }

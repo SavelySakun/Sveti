@@ -6,7 +6,8 @@ class MoreTableDataProvider: TableDataProvider {
     let cellType = SimpleCell.self
     let tableSections = [
       TableSection(title: "Features".localized, cellsData: [
-        CellData(type: cellType, viewModel: CellVM(cellValue: EditTagGroupsMoreItem()))
+        CellData(type: cellType, viewModel: CellVM(cellValue: EditTagGroupsMoreItem())),
+        CellData(type: cellType, viewModel: CellVM(cellValue: BackupMoreItem()))
       ]),
       TableSection(title: "Other".localized, cellsData: [
         CellData(type: cellType, viewModel: CellVM(cellValue: ContactDeveloperMoreItem())),

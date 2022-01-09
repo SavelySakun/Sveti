@@ -47,7 +47,7 @@ class SimpleCell: Cell, ICellWithOnTapAction {
       return
     }
 
-    iconView.image = iconImage
+    iconView.image = iconImage.withRenderingMode(.alwaysTemplate)
 
     if let iconTintColor = cellItem.iconTintColor {
       iconView.iconTintColor = iconTintColor
