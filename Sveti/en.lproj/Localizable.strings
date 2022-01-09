@@ -125,3 +125,13 @@
 "More" = "More";
 "Features" = "Features";
 "Other" = "Other";
+
+// Onboarding Sveti
+"What is Sveti?" = "What is Sveti?";
+"Sveti is your well-being diary. Add entries, specify tags, and, of course, see statistics." = "Sveti is your well-being diary. Add entries, specify tags, and, of course, see statistics.";
+"Why Sveti?" = "Why Sveti?";
+"The main difference from other diaries is that you can track both your physical and emotional state." = "The main difference from other diaries is that you can track both your physical and emotional state.";
+"Why track your mood?" = "Why track your mood?";
+"A trend noticed at an early stage allows you to change the factors influencing it." = "A trend noticed at an early stage allows you to change the factors influencing it.";
+"All information stored in Sveti is absolutely private" = "All information stored in Sveti is absolutely private";
+"Records & statistics are saved only on your device and no one has access to them." = "Records & statistics are saved only on your device and no one has access to them.";

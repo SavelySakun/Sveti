@@ -149,6 +149,12 @@
 		FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B2276663F2009F7508 /* AppInfoModel.swift */; };
 		FCC922B6276664AA009F7508 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B5276664AA009F7508 /* Bundle.swift */; };
 		FCC922B827666798009F7508 /* Icon8Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B727666798009F7508 /* Icon8Model.swift */; };
+		FCCA2ED42788913D00C46EA9 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FCCA2ED32788913D00C46EA9 /* DeviceKit */; };
+		FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */; };
+		FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */; };
+		FCCA2EDA278AE6B800C46EA9 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */; };
+		FCCA2EDC278AE75C00C46EA9 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */; };
+		FCCA2EEE278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -160,6 +166,16 @@
 		FCE368A026D26C9400A05271 /* ALPopup in Frameworks */ = {isa = PBXBuildFile; productRef = FCE3689F26D26C9400A05271 /* ALPopup */; };
 		FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE368A126D2749400A05271 /* SelectGroupTableView.swift */; };
 		FCE368A526D27E6900A05271 /* SPAlert in Frameworks */ = {isa = PBXBuildFile; productRef = FCE368A426D27E6900A05271 /* SPAlert */; };
+		FCE3973927874F45001BC98F /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973827874F45001BC98F /* OnboardingVC.swift */; };
+		FCE3973B27875331001BC98F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973A27875331001BC98F /* OnboardingSlide.swift */; };
+		FCE3973D27875347001BC98F /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3973C27875347001BC98F /* OnboardingState.swift */; };
+		FCE3974127875471001BC98F /* IOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974027875471001BC98F /* IOnboardingController.swift */; };
+		FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */; };
+		FCE39745278756FC001BC98F /* IOnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE39744278756FC001BC98F /* IOnboardingVM.swift */; };
+		FCE3974727875779001BC98F /* OnboardingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974627875779001BC98F /* OnboardingVM.swift */; };
+		FCE3974B27875C2E001BC98F /* SvetiOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */; };
+		FCE3974D27875F8B001BC98F /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */; };
+		FCE3974F278774A9001BC98F /* ImageWithGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */; };
 		FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */; };
 		FCEA31B826D67B940062509A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA31B726D67B940062509A /* Note.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
@@ -338,6 +354,11 @@
 		FCC922B2276663F2009F7508 /* AppInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoModel.swift; sourceTree = "<group>"; };
 		FCC922B5276664AA009F7508 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FCC922B727666798009F7508 /* Icon8Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon8Model.swift; sourceTree = "<group>"; };
+		FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
+		FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationConstraints.swift; sourceTree = "<group>"; };
+		FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
+		FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
+		FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiAnalyticsKeys.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -347,6 +368,16 @@
 		FCE3689A26D267DF00A05271 /* SelectGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupCell.swift; sourceTree = "<group>"; };
 		FCE3689C26D268FB00A05271 /* SelectGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCE368A126D2749400A05271 /* SelectGroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupTableView.swift; sourceTree = "<group>"; };
+		FCE3973827874F45001BC98F /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		FCE3973A27875331001BC98F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		FCE3973C27875347001BC98F /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
+		FCE3974027875471001BC98F /* IOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingController.swift; sourceTree = "<group>"; };
+		FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMoveDirection.swift; sourceTree = "<group>"; };
+		FCE39744278756FC001BC98F /* IOnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOnboardingVM.swift; sourceTree = "<group>"; };
+		FCE3974627875779001BC98F /* OnboardingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVM.swift; sourceTree = "<group>"; };
+		FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiOnboardingVC.swift; sourceTree = "<group>"; };
+		FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
+		FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithGradientBackground.swift; sourceTree = "<group>"; };
 		FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableFooter.swift; sourceTree = "<group>"; };
 		FCEA31B726D67B940062509A /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
@@ -383,6 +414,7 @@
 				FCE368A026D26C9400A05271 /* ALPopup in Frameworks */,
 				FCB0642726B52DDA00A0494A /* IQKeyboardManagerSwift in Frameworks */,
 				FC7E6D9226AC542F00126B97 /* RealmSwift in Frameworks */,
+				FCCA2ED42788913D00C46EA9 /* DeviceKit in Frameworks */,
 				FC04F8472770BF1800368CC1 /* TagListView in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
@@ -435,6 +467,7 @@
 			children = (
 				FC01D87F26E35F5F00C984E7 /* Info.plist */,
 				FC8BE95226E3738500D12704 /* NewNoteUITests.swift */,
+				FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */,
 			);
 			path = SvetiUITests;
 			sourceTree = "<group>";
@@ -738,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				FC445B0027772079006458D1 /* SvetiAnalytics.swift */,
+				FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -825,6 +859,8 @@
 				FC7E6DC226AF27B600126B97 /* ColorHelper.swift */,
 				FC7E6DC426AF29B500126B97 /* MathHelper.swift */,
 				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
+				FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */,
+				FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -858,6 +894,7 @@
 		FC7E6D1A26AB199000126B97 /* Reusable UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FCE3973527874F1B001BC98F /* Onboarding */,
 				FC7E6D2126AB1FD000126B97 /* ViewElements */,
 				FCD9AB54268A3F3500817746 /* ViewControllerVM.swift */,
 				FCB0644626B68E9500A0494A /* VCwithTable.swift */,
@@ -1040,6 +1077,56 @@
 			path = SelectGroup;
 			sourceTree = "<group>";
 		};
+		FCE3973527874F1B001BC98F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3974927875C10001BC98F /* Onboardings */,
+				FCE3973727874F37001BC98F /* Models */,
+				FCE3973627874F32001BC98F /* Views */,
+				FCE3973827874F45001BC98F /* OnboardingVC.swift */,
+				FCE3974627875779001BC98F /* OnboardingVM.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FCE3973627874F32001BC98F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */,
+				FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCE3973727874F37001BC98F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCE39748278757E8001BC98F /* Interfaces */,
+				FCE3973C27875347001BC98F /* OnboardingState.swift */,
+				FCE39742278754F4001BC98F /* OnboardingMoveDirection.swift */,
+				FCE3973A27875331001BC98F /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCE39748278757E8001BC98F /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3974027875471001BC98F /* IOnboardingController.swift */,
+				FCE39744278756FC001BC98F /* IOnboardingVM.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		FCE3974927875C10001BC98F /* Onboardings */ = {
+			isa = PBXGroup;
+			children = (
+				FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */,
+				FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */,
+			);
+			path = Onboardings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1059,6 +1146,8 @@
 				FC01D88126E35F5F00C984E7 /* PBXTargetDependency */,
 			);
 			name = SvetiUITests;
+			packageProductDependencies = (
+			);
 			productName = SvetiUITests;
 			productReference = FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -1078,6 +1167,8 @@
 				FC29A66826EC979B00DC87DA /* PBXTargetDependency */,
 			);
 			name = SvetiTests;
+			packageProductDependencies = (
+			);
 			productName = SvetiTests;
 			productReference = FC29A66226EC979A00DC87DA /* SvetiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1109,6 +1200,7 @@
 				FCC922A5276655BD009F7508 /* FirebaseCrashlytics */,
 				FC04F8462770BF1800368CC1 /* TagListView */,
 				FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */,
+				FCCA2ED32788913D00C46EA9 /* DeviceKit */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -1156,6 +1248,7 @@
 				FCE368A326D27E6900A05271 /* XCRemoteSwiftPackageReference "SPAlert" */,
 				FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */,
+				FCCA2ED22788913D00C46EA9 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -1313,7 +1406,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		FCC922A8276656D8009F7508 /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1342,6 +1435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCA2EDC278AE75C00C46EA9 /* OnboardingUITests.swift in Sources */,
 				FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1376,10 +1470,12 @@
 				FCEEB2E026CD81F000F7B00F /* TagEvent.swift in Sources */,
 				FCEEB08826CAD88F00F7B00F /* EditTagGroupVM.swift in Sources */,
 				FC84E8A126CAD1660081CBA2 /* TagGroupNameCell.swift in Sources */,
+				FCE3974F278774A9001BC98F /* ImageWithGradientBackground.swift in Sources */,
 				FC0CCC9226BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FCB0643126B55D6A00A0494A /* MoodScoreCell.swift in Sources */,
 				FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */,
 				FC1563FA2748FA0F00AAD925 /* ISimpleCellItem.swift in Sources */,
+				FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
 				FC27075D275CA2A600A2440A /* List.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
@@ -1402,8 +1498,10 @@
 				FC1563A5274692F800AAD925 /* Double.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
 				FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */,
+				FCCA2EEE278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift in Sources */,
 				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
+				FCE39745278756FC001BC98F /* IOnboardingVM.swift in Sources */,
 				FC7E6D2526ABFA6F00126B97 /* TabbarController.swift in Sources */,
 				FC42A6C627350F8E004A56F9 /* Array.swift in Sources */,
 				FCC922AF276660B5009F7508 /* AboutTableDataProvider.swift in Sources */,
@@ -1422,6 +1520,7 @@
 				FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */,
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
 				FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */,
+				FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,
@@ -1438,6 +1537,7 @@
 				FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* TextOnRoundView.swift in Sources */,
 				FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */,
+				FCE3974D27875F8B001BC98F /* OnboardingContentView.swift in Sources */,
 				FC7E6D2326AB1FF400126B97 /* ScoreTimeView.swift in Sources */,
 				FC9F93A8272ED30300582765 /* StatDaysDataSetGenerator.swift in Sources */,
 				FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */,
@@ -1446,6 +1546,7 @@
 				FCA8D7612781A68600212E51 /* String.swift in Sources */,
 				FCC922B6276664AA009F7508 /* Bundle.swift in Sources */,
 				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
+				FCCA2EDA278AE6B800C46EA9 /* OnboardingSlides.swift in Sources */,
 				FC6C58B62663CFB9000188A6 /* TagCollectionCell.swift in Sources */,
 				FC445B0127772079006458D1 /* SvetiAnalytics.swift in Sources */,
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,
@@ -1458,8 +1559,10 @@
 				FC42A6F42737FE78004A56F9 /* StatGenerationResult.swift in Sources */,
 				FCE3689626D2391000A05271 /* NoTagFoundCell.swift in Sources */,
 				FC84E81D26C7CE040081CBA2 /* CollectionViewSizeConstants.swift in Sources */,
+				FCE3974727875779001BC98F /* OnboardingVM.swift in Sources */,
 				FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */,
 				FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */,
+				FCE3973927874F45001BC98F /* OnboardingVC.swift in Sources */,
 				FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */,
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
 				FC27075B275C9EF800A2440A /* TagGroupList.swift in Sources */,
@@ -1474,6 +1577,7 @@
 				FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */,
 				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
 				FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */,
+				FCE3973B27875331001BC98F /* OnboardingSlide.swift in Sources */,
 				FCC922B827666798009F7508 /* Icon8Model.swift in Sources */,
 				FC1563F72748ED8E00AAD925 /* IconView.swift in Sources */,
 				FCEEB21926CBF2D000F7B00F /* IconButton.swift in Sources */,
@@ -1481,9 +1585,12 @@
 				FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */,
 				FC42A796273ABDE8004A56F9 /* IStatSettingsManager.swift in Sources */,
 				FC6C58C02663D640000188A6 /* TagCell.swift in Sources */,
+				FCE3974127875471001BC98F /* IOnboardingController.swift in Sources */,
 				FC84E84626C913370081CBA2 /* EditTagGroupVC.swift in Sources */,
 				FC0CCC9826BE9A05004CDE8A /* RoundButtonView.swift in Sources */,
+				FCE3974B27875C2E001BC98F /* SvetiOnboardingVC.swift in Sources */,
 				FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */,
+				FCE39743278754F4001BC98F /* OnboardingMoveDirection.swift in Sources */,
 				FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */,
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */,
@@ -1491,6 +1598,7 @@
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,
 				FCEA31B826D67B940062509A /* Note.swift in Sources */,
 				FC8BE9B226E65F3200D12704 /* StatDay.swift in Sources */,
+				FCE3973D27875347001BC98F /* OnboardingState.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
@@ -1886,6 +1994,14 @@
 				minimumVersion = 8.10.0;
 			};
 		};
+		FCCA2ED22788913D00C46EA9 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
 		FCE3689E26D26C9400A05271 /* XCRemoteSwiftPackageReference "ALPopup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alxrguz/ALPopup";
@@ -1939,6 +2055,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		FCCA2ED32788913D00C46EA9 /* DeviceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCCA2ED22788913D00C46EA9 /* XCRemoteSwiftPackageReference "DeviceKit" */;
+			productName = DeviceKit;
 		};
 		FCE3689F26D26C9400A05271 /* ALPopup */ = {
 			isa = XCSwiftPackageProductDependency;

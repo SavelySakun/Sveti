@@ -125,3 +125,13 @@
 "More" = "Ещё";
 "Features" = "Возможности";
 "Other" = "Прочее";
+
+// Onboarding Sveti
+"What is Sveti?" = "Что такое Sveti?";
+"Sveti is your well-being diary. Add entries, specify tags, and, of course, see statistics." = "Sveti — ваш дневник самочувствия. Добавляйте записи, указывайте теги и, конечно же, смотрите статистику.";
+"Why Sveti?" = "Почему Sveti?";
+"The main difference from other diaries is that you can track both your physical and emotional state." = "Основное отличие от других дневников в том, что вы можете отслеживать как свое физическое, так и эмоциональное состояние.";
+"Why track your mood?" = "Зачем отслеживать свое настроение?";
+"A trend noticed at an early stage allows you to change the factors influencing it." = "Тенденция, замеченная на ранней стадии, позволяет изменить влияющие на нее факторы.";
+"All information stored in Sveti is absolutely private" = "Вся информация, хранящаяся в Sveti, является абсолютно конфиденциальной.";
+"Records & statistics are saved only on your device and no one has access to them." = "Записи и статистика сохраняются только на вашем устройстве и ни у кого нет к ним доступа.";
