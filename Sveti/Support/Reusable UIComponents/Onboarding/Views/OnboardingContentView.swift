@@ -4,7 +4,7 @@ import SnapKit
 
 class OnboardingContentView: UIView {
   private let globalBackgroundView = UIView()
-  private let imageWithGradientBackground = ImageWithGradientBackground()
+  private let imageWithBackground = ImageWithGradientBackground()
   private let progressView = UIProgressView(progressViewStyle: .bar)
   private let titleLabel = UILabel()
   private let subtitleLabel = UILabel()
@@ -17,7 +17,17 @@ class OnboardingContentView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+    setAccessibilityIndicators()
     setLayout()
+  }
+
+  private func setAccessibilityIndicators() {
+    titleLabel.accessibilityIdentifier = "titleLabel"
+    accessibilityIdentifier = "onboardingContentView"
+    progressView.accessibilityIdentifier = "progressView"
+    globalBackgroundView.accessibilityIdentifier = "globalBackgroundView"
+    imageWithBackground.accessibilityIdentifier = "imageWithBackground"
+    subtitleLabel.accessibilityIdentifier = "subtitleLabel"
   }
 
   required init?(coder: NSCoder) {
@@ -30,10 +40,11 @@ class OnboardingContentView: UIView {
         globalBackgroundView.backgroundColor = slide.globalBackgroundColor
         titleLabel.text = slide.title
         subtitleLabel.text = slide.subtitle
-        imageWithGradientBackground.update(slide: slide)
+        imageWithBackground.update(slide: slide)
         progressView.tintColor = (progression == 1.0) ? #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1) : .systemBlue
       }
       progressView.setProgress(progression, animated: true)
+      progressView.accessibilityIdentifier = (progression == 1.0) ? "fullProgressView" : "progressView"
     }
   }
 
@@ -57,9 +68,9 @@ class OnboardingContentView: UIView {
   }
 
   private func setImageWithGradient() {
-    addSubview(imageWithGradientBackground)
-    imageWithGradientBackground.layer.cornerRadius = 12
-    imageWithGradientBackground.snp.makeConstraints { (make) in
+    addSubview(imageWithBackground)
+    imageWithBackground.layer.cornerRadius = 12
+    imageWithBackground.snp.makeConstraints { (make) in
       make.centerY.equalTo(globalBackgroundView.snp.bottom)
       make.centerX.equalToSuperview()
 
@@ -85,10 +96,10 @@ class OnboardingContentView: UIView {
     progressView.layer.masksToBounds = true
 
     progressView.snp.makeConstraints { (make) in
-      make.top.equalTo(imageWithGradientBackground.snp.bottom).offset(DeviceUtils.isSmallDiagonal ? 15 : 29)
-      make.width.equalTo(imageWithGradientBackground.snp.width).multipliedBy(0.3)
+      make.top.equalTo(imageWithBackground.snp.bottom).offset(DeviceUtils.isSmallDiagonal ? 15 : 29)
+      make.width.equalTo(imageWithBackground.snp.width).multipliedBy(0.3)
       make.height.equalTo(7)
-      make.centerX.equalTo(imageWithGradientBackground.snp.centerX)
+      make.centerX.equalTo(imageWithBackground.snp.centerX)
     }
   }
 

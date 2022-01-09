@@ -152,6 +152,8 @@
 		FCCA2ED42788913D00C46EA9 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FCCA2ED32788913D00C46EA9 /* DeviceKit */; };
 		FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */; };
 		FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */; };
+		FCCA2EDA278AE6B800C46EA9 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */; };
+		FCCA2EDC278AE75C00C46EA9 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -353,6 +355,8 @@
 		FCC922B727666798009F7508 /* Icon8Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon8Model.swift; sourceTree = "<group>"; };
 		FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationConstraints.swift; sourceTree = "<group>"; };
+		FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
+		FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 			children = (
 				FC01D87F26E35F5F00C984E7 /* Info.plist */,
 				FC8BE95226E3738500D12704 /* NewNoteUITests.swift */,
+				FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */,
 			);
 			path = SvetiUITests;
 			sourceTree = "<group>";
@@ -658,6 +663,7 @@
 		FC29A67326ECEAB300DC87DA /* TestHelper */ = {
 			isa = PBXGroup;
 			children = (
+				FCCA2EDF278AF06A00C46EA9 /* UITests */,
 				FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */,
 				FC451CB62771F96B0078B83A /* TestHelper.swift */,
 			);
@@ -1048,6 +1054,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FCCA2EDF278AF06A00C46EA9 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
 		FCD9AB4E268A335100817746 /* TableData */ = {
 			isa = PBXGroup;
 			children = (
@@ -1114,6 +1127,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE3974A27875C2E001BC98F /* SvetiOnboardingVC.swift */,
+				FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */,
 			);
 			path = Onboardings;
 			sourceTree = "<group>";
@@ -1137,6 +1151,8 @@
 				FC01D88126E35F5F00C984E7 /* PBXTargetDependency */,
 			);
 			name = SvetiUITests;
+			packageProductDependencies = (
+			);
 			productName = SvetiUITests;
 			productReference = FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -1156,6 +1172,8 @@
 				FC29A66826EC979B00DC87DA /* PBXTargetDependency */,
 			);
 			name = SvetiTests;
+			packageProductDependencies = (
+			);
 			productName = SvetiTests;
 			productReference = FC29A66226EC979A00DC87DA /* SvetiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1422,6 +1440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCA2EDC278AE75C00C46EA9 /* OnboardingUITests.swift in Sources */,
 				FC8BE95326E3738500D12704 /* NewNoteUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1531,6 +1550,7 @@
 				FCA8D7612781A68600212E51 /* String.swift in Sources */,
 				FCC922B6276664AA009F7508 /* Bundle.swift in Sources */,
 				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
+				FCCA2EDA278AE6B800C46EA9 /* OnboardingSlides.swift in Sources */,
 				FC6C58B62663CFB9000188A6 /* TagCollectionCell.swift in Sources */,
 				FC445B0127772079006458D1 /* SvetiAnalytics.swift in Sources */,
 				FC6C58C22663DB6F000188A6 /* CollectionHeaderView.swift in Sources */,

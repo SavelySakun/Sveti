@@ -77,7 +77,6 @@ class OnboardingVC: BaseViewController, IOnboardingController {
   }
 
   private func setNextButton() {
-    nextButton.setImage(UIImage(systemName: "arrow.right"), for: .normal)
     nextButton.backgroundColor = .systemBlue
     nextButton.contentMode = .center
     nextButton.imageView?.snp.makeConstraints { (make) in
@@ -107,6 +106,7 @@ class OnboardingVC: BaseViewController, IOnboardingController {
 
   private func setBackButon() {
     view.addSubview(backButton)
+    backButton.accessibilityIdentifier = "backButton"
     backButton.setTitle("Back", for: .normal)
     backButton.setTitleColor(.systemBlue, for: .normal)
     backButton.addTarget(self, action: #selector(onBackTap), for: .touchUpInside)
@@ -135,8 +135,12 @@ class OnboardingVC: BaseViewController, IOnboardingController {
 
   private func updateButtonsState() {
     let state = viewModel.onboardingState
-    let buttonImageName = (state == .hasSlides || state == .firstSlide) ? "arrow.right" : "checkmark"
+    let hasMoreSlides = (state == .hasSlides || state == .firstSlide)
+    let buttonImageName = hasMoreSlides ? "arrow.right" : "checkmark"
     let buttonBackground: UIColor = (state == .lastSlide) ? #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1) : .systemBlue
+    let buttonAccessibilityID = hasMoreSlides ? "nextButton" : "buttonDone"
+
+    nextButton.accessibilityIdentifier = buttonAccessibilityID
 
     DispatchQueue.main.async { [self] in
       UIView.transition(with: backButton, duration: 0.4, options: .transitionCrossDissolve) {

@@ -19,7 +19,7 @@ class OnboardingVM: IOnboardingVM {
   }
 
   func getOnboardingWatchStatus() -> Bool {
-    userDefaults.bool(forKey: onboardingKey)
+    return TestHelper.isTestMode ? false : userDefaults.bool(forKey: onboardingKey)
   }
 
   func setupDefaults() {
