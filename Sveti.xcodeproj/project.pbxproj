@@ -154,6 +154,7 @@
 		FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */; };
 		FCCA2EDA278AE6B800C46EA9 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */; };
 		FCCA2EDC278AE75C00C46EA9 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */; };
+		FCCA2EEE278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -357,6 +358,7 @@
 		FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationConstraints.swift; sourceTree = "<group>"; };
 		FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
 		FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
+		FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiAnalyticsKeys.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -663,7 +665,6 @@
 		FC29A67326ECEAB300DC87DA /* TestHelper */ = {
 			isa = PBXGroup;
 			children = (
-				FCCA2EDF278AF06A00C46EA9 /* UITests */,
 				FC29A67426ECEB3800DC87DA /* StatTestHelper.swift */,
 				FC451CB62771F96B0078B83A /* TestHelper.swift */,
 			);
@@ -770,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				FC445B0027772079006458D1 /* SvetiAnalytics.swift */,
+				FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1052,13 +1054,6 @@
 				FCA8D752278095F200212E51 /* LinkToSiteModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FCCA2EDF278AF06A00C46EA9 /* UITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UITests;
 			sourceTree = "<group>";
 		};
 		FCD9AB4E268A335100817746 /* TableData */ = {
@@ -1503,6 +1498,7 @@
 				FC1563A5274692F800AAD925 /* Double.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
 				FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */,
+				FCCA2EEE278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift in Sources */,
 				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
 				FCE39745278756FC001BC98F /* IOnboardingVM.swift in Sources */,

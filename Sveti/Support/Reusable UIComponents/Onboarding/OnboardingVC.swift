@@ -60,6 +60,7 @@ class OnboardingVC: BaseViewController, IOnboardingController {
 
   @objc private func onCancel() {
     viewModel.markAsWatched()
+    (viewModel.onboardingState == .lastSlide) ? trackOnboardingFinished() : trackEarlyExit()
     dismiss(animated: true)
   }
 
@@ -164,6 +165,7 @@ class OnboardingVC: BaseViewController, IOnboardingController {
       onboardingContentView.updateContent(slide: slide, progression: viewModel.getOnboardingProgressionValue())
     } else {
       viewModel.markAsWatched()
+      trackOnboardingFinished()
       dismiss(animated: true)
     }
   }
@@ -173,5 +175,13 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     feedbackGenerator?.prepare()
     feedbackGenerator?.selectionChanged()
     feedbackGenerator = nil
+  }
+
+  func trackEarlyExit() {
+    SvetiAnalytics.log(.earlyOnboardingExit, params: [MainEvents.numberOfSlideWhenEarlyExit.rawValue: viewModel.currentSlideIndex])
+  }
+
+  func trackOnboardingFinished() {
+    SvetiAnalytics.log(.onboardingFinished)
   }
 }
