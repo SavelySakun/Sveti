@@ -15,7 +15,12 @@ class RestoreFromCloudCellItem: ISimpleCellItem {
     title = "Restore data"
 
     onTapAction = {
+      let queue = DispatchQueue.global(qos: .background)
 
+      queue.async {
+        BackupManager().copyRealmFromCloud()
+        //BackupManager().restoreRealmFromCloud()
+      }
     }
   }
 }

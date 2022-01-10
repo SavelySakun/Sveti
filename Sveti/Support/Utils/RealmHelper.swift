@@ -5,7 +5,27 @@ import RealmSwift
 
 class RealmHelper {
 
-  private let schemaVersion: UInt64 = 7
+  private let userDefaults = UserDefaults()
+
+  var schemaVersion: UInt64 {
+    (userDefaults.value(forKey: UDKeys.realmSchemeVersion) as? UInt64) ?? 7
+  }
+
+ 
+
+  init() {
+    setDefaults()
+  }
+
+  private func setDefaults() {
+    userDefaults.register(
+      defaults: [UDKeys.realmSchemeVersion: 7]
+    )
+  }
+
+  func incrementSchemaVersion() {
+    userDefaults.set(schemaVersion + 1, forKey: UDKeys.realmSchemeVersion)
+  }
 
   func configureRealm() {
     let config = Realm.Configuration(

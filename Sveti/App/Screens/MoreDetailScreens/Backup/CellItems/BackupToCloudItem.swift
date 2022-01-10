@@ -15,7 +15,11 @@ class BackupToCloudCellItem: ISimpleCellItem {
     title = "Backup data to iCloud"
 
     onTapAction = {
-
+      let queue = DispatchQueue.global(qos: .background)
+      
+      queue.async {
+        BackupManager().makeRealmCopyToCloud()
+      }
     }
   }
 }
