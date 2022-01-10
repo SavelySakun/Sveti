@@ -161,6 +161,7 @@
 		FCCA2F11278C5BF800C46EA9 /* BackupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */; };
 		FCCA2F14278C5C2E00C46EA9 /* BackupToCloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */; };
 		FCCA2F16278C5CE400C46EA9 /* RestoreFromCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */; };
+		FCCA2FF4278F2AD400C46EA9 /* BackupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -371,6 +372,7 @@
 		FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupTableDataProvider.swift; sourceTree = "<group>"; };
 		FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupToCloudItem.swift; sourceTree = "<group>"; };
 		FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreFromCloud.swift; sourceTree = "<group>"; };
+		FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupVM.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -866,6 +868,7 @@
 		FC6C58B72663D1CD000188A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FCCA2FAD278DADB200C46EA9 /* Backup */,
 				FC445AFF27772063006458D1 /* Analytics */,
 				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC29A67326ECEAB300DC87DA /* TestHelper */,
@@ -876,7 +879,6 @@
 				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 				FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */,
 				FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */,
-				FCCA2EF2278B41DF00C46EA9 /* BackupManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1078,6 +1080,7 @@
 				FCCA2F12278C5C0D00C46EA9 /* CellItems */,
 				FCCA2F0E278C5BE000C46EA9 /* BackupVC.swift */,
 				FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */,
+				FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */,
 			);
 			path = Backup;
 			sourceTree = "<group>";
@@ -1089,6 +1092,14 @@
 				FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */,
 			);
 			path = CellItems;
+			sourceTree = "<group>";
+		};
+		FCCA2FAD278DADB200C46EA9 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				FCCA2EF2278B41DF00C46EA9 /* BackupManager.swift */,
+			);
+			path = Backup;
 			sourceTree = "<group>";
 		};
 		FCD9AB4E268A335100817746 /* TableData */ = {
@@ -1513,6 +1524,7 @@
 				FC1563FA2748FA0F00AAD925 /* ISimpleCellItem.swift in Sources */,
 				FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
+				FCCA2FF4278F2AD400C46EA9 /* BackupVM.swift in Sources */,
 				FC27075D275CA2A600A2440A /* List.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
 				FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */,
@@ -2015,7 +2027,7 @@
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.11.0;
+				minimumVersion = 10.21.0;
 			};
 		};
 		FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {

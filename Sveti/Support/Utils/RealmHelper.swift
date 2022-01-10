@@ -11,8 +11,6 @@ class RealmHelper {
     (userDefaults.value(forKey: UDKeys.realmSchemeVersion) as? UInt64) ?? 7
   }
 
- 
-
   init() {
     setDefaults()
   }
@@ -28,7 +26,15 @@ class RealmHelper {
   }
 
   func configureRealm() {
+    let fileNameForRealmBackup: String? = userDefaults.value(forKey: UDKeys.lastRealmBackupFilename) as? String
+
+    var urlOfBackupFile: URL? = Realm.Configuration.defaultConfiguration.fileURL
+    if let nameForRealmBackup = fileNameForRealmBackup {
+      urlOfBackupFile = Realm.Configuration.defaultConfiguration.fileURL?.deletingLastPathComponent().appendingPathComponent(nameForRealmBackup)
+    }
+
     let config = Realm.Configuration(
+      fileURL: urlOfBackupFile,
       schemaVersion: self.schemaVersion,
       migrationBlock: { _, oldSchemaVersion in
         if (oldSchemaVersion < self.schemaVersion) {

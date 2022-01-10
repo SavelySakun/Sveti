@@ -18,7 +18,7 @@ class RestoreFromCloudCellItem: ISimpleCellItem {
       let queue = DispatchQueue.global(qos: .background)
 
       queue.async {
-        BackupManager().copyRealmFromCloud()
+        BackupManager().loadBackupFromCloudKit()
         //BackupManager().restoreRealmFromCloud()
       }
     }

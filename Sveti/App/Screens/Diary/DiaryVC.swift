@@ -16,8 +16,8 @@ class DiaryVC: BaseViewController {
     super.viewDidAppear(animated)
     
     // Onboarding creation, remove after task completion!
-    let onboardingVC = SvetiOnboardingVC()
-    onboardingVC.presentIfNeeded(from: self)
+//    let onboardingVC = SvetiOnboardingVC()
+//    onboardingVC.presentIfNeeded(from: self)
   }
 
   override func logOpenScreenEvent() {

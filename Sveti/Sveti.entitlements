@@ -6,16 +6,11 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.Sveti</string>
+		<string>iCloud.com.sava.sveti</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>
 		<string>CloudKit</string>
-		<string>CloudDocuments</string>
-	</array>
-	<key>com.apple.developer.ubiquity-container-identifiers</key>
-	<array>
-		<string>iCloud.Sveti</string>
 	</array>
 </dict>
 </plist>

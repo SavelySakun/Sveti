@@ -18,7 +18,7 @@ class BackupToCloudCellItem: ISimpleCellItem {
       let queue = DispatchQueue.global(qos: .background)
       
       queue.async {
-        BackupManager().makeRealmCopyToCloud()
+        BackupManager().saveToCloudKit()
       }
     }
   }
