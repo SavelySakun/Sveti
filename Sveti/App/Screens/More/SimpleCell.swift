@@ -39,6 +39,7 @@ class SimpleCell: Cell, ICellWithOnTapAction {
 
   private func setStyles() {
     subtitleLabel.font = UIFont.systemFont(ofSize: 14)
+    subtitleLabel.numberOfLines = 0
   }
 
   override func configureSelf(with viewModel: CellVM) {
@@ -46,9 +47,13 @@ class SimpleCell: Cell, ICellWithOnTapAction {
     self.cellItem = cellItem
 
     titleLabel.text = cellItem.title
+    titleLabel.textColor = cellItem.titleColor ?? .black
+
     subtitleLabel.text = cellItem.subtitle
     onTapAction = cellItem.onTapAction
     subtitleLabel.textColor = cellItem.subtitleColor ?? .systemGray2
+    isUserInteractionEnabled = cellItem.isActive
+    backgroundColor = cellItem.backgroundColor
 
     setIcon()
     setAccessory()
@@ -61,7 +66,8 @@ class SimpleCell: Cell, ICellWithOnTapAction {
       return
     }
 
-    iconView.image = iconImage.withRenderingMode(.alwaysTemplate)
+    iconView.image = iconImage
+    remakeIconViewConstraints()
 
     if let iconTintColor = cellItem.iconTintColor {
       iconView.iconTintColor = iconTintColor
@@ -71,17 +77,26 @@ class SimpleCell: Cell, ICellWithOnTapAction {
     }
   }
 
+  private func remakeIconViewConstraints() {
+    iconView.snp.remakeConstraints { make in
+      make.left.equalToSuperview().offset(UIUtils.defaultOffset)
+      make.top.equalToSuperview().inset(UIUtils.defaultOffset)
+      make.height.width.equalTo(32)
+    }
+  }
+
   private func setAccessory() {
     guard let cellItem = self.cellItem else { return }
 
     if let accessoryImage = cellItem.accessoryImage {
       let image = accessoryImage.withRenderingMode(.alwaysTemplate)
       let imageView = UIImageView(image: image)
-      imageView.tintColor = .systemGray3
+      imageView.tintColor = cellItem.accessoryTintColor ?? .systemGray3
       accessoryView = imageView
-      let accessoryWidthHeight = frame.height * 0.5
+      let accessoryWidthHeight = 22
       accessoryView?.bounds = CGRect(x: 0, y: 0, width: accessoryWidthHeight, height: accessoryWidthHeight)
     } else {
+      accessoryView = nil
       accessoryType = .disclosureIndicator
     }
   }

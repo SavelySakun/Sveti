@@ -11,11 +11,25 @@ class BackupVC: VCwithTable {
     configureBackupData()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    updateBackupInfo()
+  }
+
   private func configureBackupData() {
     guard let vm = viewModel as? BackupVM else { return }
-    vm.loadBackup()
     vm.backupDelegate = self
     vm.delegate = self
+  }
+
+  private func updateBackupInfo() {
+    guard let vm = viewModel as? BackupVM else { return }
+    vm.loadBackup()
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setActivityIndicator()
   }
 
   required init?(coder: NSCoder) {
@@ -38,22 +52,42 @@ class BackupVC: VCwithTable {
 }
 
 extension BackupVC: BackupVMDelegate {
+  func showLoadingIndicator() {
+    DispatchQueue.main.async {
+      self.activitiIndicator.startAnimating()
+    }
+  }
+
+  func stopLoadingIndicator() {
+    DispatchQueue.main.async {
+      self.activitiIndicator.stopAnimating()
+    }
+  }
+
   func showCompleteAlert(title: String, message: String) {
-    let alertView = SPAlertView(title: title, message: message, preset: .done)
-    alertView.duration = 2
-    alertView.present()
+    DispatchQueue.main.async {
+      let alertView = SPAlertView(title: title, message: message, preset: .done)
+      alertView.duration = 4
+      alertView.present()
+    }
   }
 
   func showErrorAlert(description: String) {
-    let alertView = SPAlertView(title: "Error".localized, message: description, preset: .error)
-    alertView.duration = 3
-    alertView.present()
+    DispatchQueue.main.async {
+      let alert = UIAlertController(title: "Error".localized, message: description, preferredStyle: .alert)
+      let closeAction = UIAlertAction(title: "OK", style: .default) { _ in
+        alert.dismiss(animated: true)
+      }
+      alert.addAction(closeAction)
+      self.navigationController?.present(alert, animated: true)
+    }
   }
 }
 
 extension BackupVC: ViewControllerVMDelegate {
   func onNeedToUpdateContent() {
     DispatchQueue.main.async { [self] in
+      activitiIndicator.stopAnimating()
       UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
         tableView.reloadData()
       }

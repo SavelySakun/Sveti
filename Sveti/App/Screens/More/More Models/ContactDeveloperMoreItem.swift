@@ -6,7 +6,7 @@ class ContactDeveloperMoreItem: SimpleCellItem {
     super.init()
     title = "Contact us".localized
     iconBackgroundColor = UIColor.systemPink
-    iconImage = UIImage(systemName: "quote.bubble.fill")
+    iconImage = UIImage(systemName: "quote.bubble.fill")?.withRenderingMode(.alwaysTemplate)
     iconTintColor = UIColor.white
 
     onTapAction = {

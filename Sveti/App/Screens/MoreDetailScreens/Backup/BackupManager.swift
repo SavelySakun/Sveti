@@ -15,6 +15,10 @@ class BackupManager {
     Realm.Configuration.defaultConfiguration.fileURL
   }
 
+  func isUserICloudAvailable() -> Bool {
+    FileManager.default.ubiquityIdentityToken != nil
+  }
+
   func saveToCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     guard let realmFileURL = getRealmURL() else {
       onCompletion(nil, "Can't find correct path to local data")
@@ -92,7 +96,7 @@ class BackupManager {
       self.saveBackupCloudKitRecordNameIfNeeded(recordName: lastRecord.recordID.recordName)
       self.backupFileURL = realmAsset.fileURL
       self.backupExist = true
-      let backupDate = lastRecord.creationDate ?? lastRecord.modificationDate
+      let backupDate = lastRecord.modificationDate ?? lastRecord.creationDate
       onCompletion(BackupInfo(state: .readyToRestoreBackup, lastBackupDate: backupDate), nil)
     }
   }
@@ -105,6 +109,11 @@ class BackupManager {
 
     guard let realmURL = getRealmURL() else {
       onCompletion(nil, "Can't find correct path to local data")
+      return
+    }
+
+    guard FileManager.default.fileExists(atPath: backupFileURL.path) else {
+      onCompletion(nil, "There are no files in backup")
       return
     }
 

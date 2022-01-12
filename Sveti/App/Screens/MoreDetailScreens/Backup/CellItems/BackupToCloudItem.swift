@@ -4,8 +4,7 @@ class BackupToCloudCellItem: SimpleCellItem {
   override init() {
     super.init()
 
-    title = "Backup data to iCloud"
-    subtitle = "Last backup - 12.11.2021 11:14"
+    title = "Save current data to the cloud"
     subtitleColor = #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1)
     iconTintColor = .white
     accessoryImage = UIImage(named: "sync")

@@ -4,6 +4,8 @@ import Network
 protocol BackupVMDelegate: AnyObject {
   func showCompleteAlert(title: String, message: String)
   func showErrorAlert(description: String)
+  func showLoadingIndicator()
+  func stopLoadingIndicator()
 }
 
 class BackupVM: ViewControllerVM {
@@ -12,6 +14,7 @@ class BackupVM: ViewControllerVM {
   private let backupManager = BackupManager()
   private let backgroundQueue = DispatchQueue.global(qos: .background)
   private var backupState: BackupState = .needToCheckBackupExistence
+  private var lastBackupUpdate: Date?
 
   weak var backupDelegate: BackupVMDelegate?
 
@@ -22,16 +25,19 @@ class BackupVM: ViewControllerVM {
 
   private func setNetworkMonitor() {
     networkMonitor.pathUpdateHandler = { pathUpdateHandler in
-      if pathUpdateHandler.status == .satisfied {
-        print("Internet connection is on.")
-      } else {
-        print("There's no internet connection.")
+      if pathUpdateHandler.status != .satisfied {
+        self.handleBackupInfo(BackupInfo(state: .noInternetConnection))
       }
     }
     networkMonitor.start(queue: backgroundQueue)
   }
 
   func loadBackup() {
+    guard backupManager.isUserICloudAvailable() else {
+      handleBackupInfo(BackupInfo(state: .needToAuthInICloud))
+      return
+    }
+    backupDelegate?.showLoadingIndicator()
     backgroundQueue.async { self.backupManager.loadBackupFromCloudKit {
       self.backupManagerResultHandler($0, $1) }
     }
@@ -46,13 +52,17 @@ class BackupVM: ViewControllerVM {
   }
 
   private func handleError(_ error: String?) {
+    backupDelegate?.stopLoadingIndicator()
     guard let error = error else { return }
     backupDelegate?.showErrorAlert(description: error)
   }
 
   private func handleBackupInfo(_ backupInfo: BackupInfo) {
     backupState = backupInfo.state
-    tableDataProvider?.updateSections(with: backupInfo)
+    lastBackupUpdate = backupInfo.lastBackupDate ?? self.lastBackupUpdate
+
+    tableDataProvider?.updateSections(with: BackupInfo(state: backupInfo.state, lastBackupDate: backupInfo.lastBackupDate ?? self.lastBackupUpdate))
+
     delegate?.onNeedToUpdateContent()
     guard let alertInfo = backupInfo.state.generateTitleMessageForAlert() else { return }
     let (title, subtitle) = alertInfo
@@ -60,6 +70,7 @@ class BackupVM: ViewControllerVM {
   }
 
   func updateBackup() {
+    backupDelegate?.showLoadingIndicator()
     backgroundQueue.async { [self] in
       if backupState == .noBackupFound {
         backupManager.saveToCloudKit { backupManagerResultHandler($0, $1) }
@@ -70,6 +81,7 @@ class BackupVM: ViewControllerVM {
   }
 
   func restoreData() {
+    backupDelegate?.showLoadingIndicator()
     backgroundQueue.async { self.backupManager.restoreBackup {
       self.backupManagerResultHandler($0, $1) }
     }
