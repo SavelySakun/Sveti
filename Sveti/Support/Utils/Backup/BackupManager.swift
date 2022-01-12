@@ -15,18 +15,24 @@ class BackupManager {
     Realm.Configuration.defaultConfiguration.fileURL
   }
 
-  func saveToCloudKit() {
-    guard let realmFileURL = getRealmURL() else { return }
+  func saveToCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
+    guard let realmFileURL = getRealmURL() else {
+      onCompletion(nil, "Can't find correct path to local data")
+      return
+    }
     let backupRecord = CKRecord(recordType: backupRecordType)
     backupRecord["realmfile"] = CKAsset(fileURL: realmFileURL)
-    database.save(backupRecord) { record, error in
-      if error == nil {
-        print("success save record")
+    database.save(backupRecord) { _, error in
+      guard error == nil else {
+        let errorDescription = error?.localizedDescription ?? "Unknown saving backup error"
+        onCompletion(nil, errorDescription)
+        return
       }
+      onCompletion(BackupInfo(state: .successBackupedToCloud, lastBackupDate: Date()), nil)
     }
   }
 
-  func updateExistingBackupRecord() {
+  func updateExistingBackupRecord(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     guard let realmFileURL = getRealmURL(),
     let existingRecord = getExistingBackupRecord() else { return }
     existingRecord["realmfile"] = CKAsset(fileURL: realmFileURL)
@@ -34,15 +40,18 @@ class BackupManager {
     let modifyRecordsOperation = CKModifyRecordsOperation(recordsToSave: [existingRecord], recordIDsToDelete: nil)
     modifyRecordsOperation.savePolicy = .changedKeys
     modifyRecordsOperation.modifyRecordsCompletionBlock = { _, _, error in
-
+      guard error == nil else {
+        let errorDescription = error?.localizedDescription ?? "Unknown modification backup error"
+        onCompletion(nil, errorDescription)
+        return
+      }
+      onCompletion(BackupInfo(state: .successBackupedToCloud, lastBackupDate: Date()), nil)
     }
-
     database.add(modifyRecordsOperation)
   }
 
   private func getExistingBackupRecord() -> CKRecord? {
     guard let backupRecordName = getBackupRecordName() else { return nil }
-
     return CKRecord(recordType: backupRecordType, recordID: CKRecord.ID(recordName: backupRecordName))
   }
 
@@ -62,41 +71,43 @@ class BackupManager {
     }
   }
 
-  // Call this first to know is there any backup exist
-  func loadBackupFromCloudKit() {
+  // Call this first to know is there any backup
+  func loadBackupFromCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     let query = CKQuery(recordType: "SvetiBackup", predicate: NSPredicate(value: true))
+
     database.perform(query, inZoneWith: nil) { records, error in
+      guard error == nil else {
+        let error = error?.localizedDescription ?? BackupError.failedToLoadBackup.rawValue
+        onCompletion(nil, error)
+        return
+      }
 
       guard let lastRecord = records?.last,
             let realmAsset = lastRecord.value(forKey: "realmfile") as? CKAsset else {
               self.backupExist = false
+              onCompletion(BackupInfo(state: .noBackupFound), nil)
               return
             }
 
       self.saveBackupCloudKitRecordNameIfNeeded(recordName: lastRecord.recordID.recordName)
       self.backupFileURL = realmAsset.fileURL
       self.backupExist = true
+      let backupDate = lastRecord.creationDate ?? lastRecord.modificationDate
+      onCompletion(BackupInfo(state: .readyToRestoreBackup, lastBackupDate: backupDate), nil)
     }
   }
 
-  func restoreBackup() {
-    guard let backupFileURL = backupFileURL else { return }
-    updateRealmWithBackup(backupFileURL: backupFileURL)
-  }
+  func restoreBackup(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
+    guard let backupFileURL = backupFileURL else {
+      onCompletion(nil, "Incorrect backup URL")
+      return
+    }
 
-  private func getBackupRecordName() -> String? {
-    userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String
-  }
+    guard let realmURL = getRealmURL() else {
+      onCompletion(nil, "Can't find correct path to local data")
+      return
+    }
 
-  // Saving recordName for updating in the future
-  private func saveBackupCloudKitRecordNameIfNeeded(recordName: String) {
-    let savedRecordName = userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String
-    guard savedRecordName == nil else { return }
-    self.userDefaults.set(recordName, forKey: UDKeys.backupCloudKitRecordName)
-  }
-
-  private func updateRealmWithBackup(backupFileURL: URL) {
-    guard let realmURL = getRealmURL() else { return }
     self.deleteFilesInDirectory(url: realmURL)
 
     do {
@@ -110,10 +121,21 @@ class BackupManager {
       let config = Realm.Configuration(fileURL: newRealmFileURL, schemaVersion: RealmHelper().schemaVersion)
       Realm.Configuration.defaultConfiguration = config
 
-      print("Successfully copyied Realm from iCloud!")
+      onCompletion(BackupInfo(state: .successRestoreData), nil)
     } catch let error as NSError {
-      print("Failed copying Realm from iCloud: \(error)")
+      onCompletion(nil, error.localizedDescription)
     }
+  }
+
+  private func getBackupRecordName() -> String? {
+    userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String
+  }
+
+  // Saving recordName for updating in the future
+  private func saveBackupCloudKitRecordNameIfNeeded(recordName: String) {
+    let savedRecordName = userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String
+    guard savedRecordName == nil else { return }
+    self.userDefaults.set(recordName, forKey: UDKeys.backupCloudKitRecordName)
   }
 
 }

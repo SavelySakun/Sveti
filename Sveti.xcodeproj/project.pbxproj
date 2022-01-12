@@ -162,6 +162,9 @@
 		FCCA2F14278C5C2E00C46EA9 /* BackupToCloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */; };
 		FCCA2F16278C5CE400C46EA9 /* RestoreFromCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */; };
 		FCCA2FF4278F2AD400C46EA9 /* BackupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */; };
+		FCCA2FF6278F33B500C46EA9 /* BackupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF5278F33B500C46EA9 /* BackupError.swift */; };
+		FCCA2FF8278F33D200C46EA9 /* BackupState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF7278F33D200C46EA9 /* BackupState.swift */; };
+		FCCA2FFA278F3F4300C46EA9 /* SimpleCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -373,6 +376,9 @@
 		FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupToCloudItem.swift; sourceTree = "<group>"; };
 		FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreFromCloud.swift; sourceTree = "<group>"; };
 		FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupVM.swift; sourceTree = "<group>"; };
+		FCCA2FF5278F33B500C46EA9 /* BackupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupError.swift; sourceTree = "<group>"; };
+		FCCA2FF7278F33D200C46EA9 /* BackupState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupState.swift; sourceTree = "<group>"; };
+		FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCellItem.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -711,6 +717,7 @@
 				FC6C58AB26613C32000188A6 /* TableView.swift */,
 				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
 				FC76B39226810F7700AF209F /* Cell.swift */,
+				FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */,
 				FCD9AB4E268A335100817746 /* TableData */,
 			);
 			path = Table;
@@ -1079,8 +1086,10 @@
 			children = (
 				FCCA2F12278C5C0D00C46EA9 /* CellItems */,
 				FCCA2F0E278C5BE000C46EA9 /* BackupVC.swift */,
-				FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */,
 				FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */,
+				FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */,
+				FCCA2FF5278F33B500C46EA9 /* BackupError.swift */,
+				FCCA2FF7278F33D200C46EA9 /* BackupState.swift */,
 			);
 			path = Backup;
 			sourceTree = "<group>";
@@ -1547,6 +1556,7 @@
 				FC1563A5274692F800AAD925 /* Double.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
 				FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */,
+				FCCA2FF6278F33B500C46EA9 /* BackupError.swift in Sources */,
 				FCCA2EEE278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift in Sources */,
 				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
@@ -1574,6 +1584,7 @@
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
+				FCCA2FFA278F3F4300C46EA9 /* SimpleCellItem.swift in Sources */,
 				FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */,
 				FCC922AB27665EC4009F7508 /* AboutVC.swift in Sources */,
 				FC7E6DA126AD4CD200126B97 /* ImageTextView.swift in Sources */,
@@ -1661,6 +1672,7 @@
 				FC451CB02770DB0B0078B83A /* DetailTagsCell.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
 				FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */,
+				FCCA2FF8278F33D200C46EA9 /* BackupState.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,18 +1,10 @@
 import UIKit
 import SPAlert
 
-class AppInfoModel: ISimpleCellItem {
-
-  var title: String
-
-  var iconImage: UIImage?
-  var iconTintColor: UIColor?
-  var iconBackgroundColor: UIColor?
-  var accessoryImage: UIImage? = UIImage(named: "copy")
-
-  var onTapAction: (() -> Void)?
-
-  init() {
+class AppInfoModel: SimpleCellItem {
+  override init() {
+    super.init()
+    accessoryImage = UIImage(named: "copy")
     let appReleaseVersion = Bundle.main.releaseVersionNumber ?? "-"
     let appBundleVersion = Bundle.main.buildVersionNumber ?? "-"
     title = String(format: NSLocalizedString("Sveti app version: %@ (%@)", comment: ""), appReleaseVersion, appBundleVersion)

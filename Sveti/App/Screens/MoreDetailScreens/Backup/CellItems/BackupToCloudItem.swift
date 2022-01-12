@@ -1,25 +1,18 @@
 import UIKit
 
-class BackupToCloudCellItem: ISimpleCellItem {
+class BackupToCloudCellItem: SimpleCellItem {
+  override init() {
+    super.init()
 
-  var title: String
-
-  var iconImage: UIImage?
-  var iconTintColor: UIColor? = .white
-  var iconBackgroundColor: UIColor? = #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1)
-  var accessoryImage: UIImage? = UIImage(named: "sync")
-
-  var onTapAction: (() -> Void)?
-
-  init() {
     title = "Backup data to iCloud"
-
+    subtitle = "Last backup - 12.11.2021 11:14"
+    subtitleColor = #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1)
+    iconTintColor = .white
+    accessoryImage = UIImage(named: "sync")
     onTapAction = {
-      let queue = DispatchQueue.global(qos: .background)
-      
-      queue.async {
-        BackupManager().saveToCloudKit()
-      }
+      guard let currentVC = CurrentVC.current as? BackupVC,
+      let viewModel = currentVC.viewModel as? BackupVM else { return }
+      viewModel.updateBackup()
     }
   }
 }

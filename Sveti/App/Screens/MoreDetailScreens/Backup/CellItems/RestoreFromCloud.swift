@@ -1,26 +1,15 @@
 import UIKit
 
-class RestoreFromCloudCellItem: ISimpleCellItem {
-
-  var title: String
-
-  var iconImage: UIImage?
-  var iconTintColor: UIColor? = .white
-  var iconBackgroundColor: UIColor?
-  var accessoryImage: UIImage? = UIImage(systemName: "square.and.arrow.down")
-
-  var onTapAction: (() -> Void)?
-
-  init() {
+class RestoreFromCloudCellItem: SimpleCellItem {
+  override init() {
+    super.init()
     title = "Restore data"
-
+    iconTintColor = .white
+    accessoryImage = UIImage(systemName: "square.and.arrow.down")
     onTapAction = {
-      let queue = DispatchQueue.global(qos: .background)
-
-      queue.async {
-        BackupManager().loadBackupFromCloudKit()
-        //BackupManager().restoreRealmFromCloud()
-      }
+      guard let currentVC = CurrentVC.current as? BackupVC,
+      let viewModel = currentVC.viewModel as? BackupVM else { return }
+      viewModel.restoreData()
     }
   }
 }
