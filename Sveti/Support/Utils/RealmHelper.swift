@@ -25,16 +25,21 @@ class RealmHelper {
     userDefaults.set(schemaVersion + 1, forKey: UDKeys.realmSchemeVersion)
   }
 
-  func configureRealm() {
+  func getRealmURL() -> URL? {
     let fileNameForRealmBackup: String? = userDefaults.value(forKey: UDKeys.lastRealmBackupFilename) as? String
 
-    var urlOfBackupFile: URL? = Realm.Configuration.defaultConfiguration.fileURL
+    var realmURL: URL? = Realm.Configuration.defaultConfiguration.fileURL
     if let nameForRealmBackup = fileNameForRealmBackup {
-      urlOfBackupFile = Realm.Configuration.defaultConfiguration.fileURL?.deletingLastPathComponent().appendingPathComponent(nameForRealmBackup)
+      realmURL = Realm.Configuration.defaultConfiguration.fileURL?.deletingLastPathComponent().appendingPathComponent(nameForRealmBackup)
     }
 
+    return realmURL
+  }
+
+  func configureRealm() {
+
     let config = Realm.Configuration(
-      fileURL: urlOfBackupFile,
+      fileURL: getRealmURL(),
       schemaVersion: self.schemaVersion,
       migrationBlock: { _, oldSchemaVersion in
         if (oldSchemaVersion < self.schemaVersion) {

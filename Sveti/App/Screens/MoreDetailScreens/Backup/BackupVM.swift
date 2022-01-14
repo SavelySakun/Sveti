@@ -4,6 +4,7 @@ import UIKit
 import Combine
 
 protocol BackupVMDelegate: AnyObject {
+  func showUpdatedAlert()
   func showCompleteAlert(title: String, message: String, image: UIImage?)
   func showAlert(title: String?, message: String, actions: [UIAlertAction]?)
   func updateLoadingIndicator(show: Bool)
@@ -46,6 +47,8 @@ class BackupVM: ViewControllerVM {
       updateBackup()
     case .onRestoreBackup:
       prepareForRestoreData()
+    case .onDeleteBackupFromCloud:
+      deleteBackup()
     case .none:
       return
     }
@@ -80,7 +83,7 @@ class BackupVM: ViewControllerVM {
   func updateBackup() {
     backupDelegate?.updateLoadingIndicator(show: true)
     backgroundQueue.async { [self] in
-      if backupState == .noBackupFound {
+      if backupState == .noBackupFound || backupState == .backupDeleted {
         backupManager.saveToCloudKit { backupManagerResultHandler($0, $1) }
       } else {
         backupManager.updateExistingBackupRecord { backupManagerResultHandler($0, $1) }
@@ -112,9 +115,24 @@ class BackupVM: ViewControllerVM {
     tableDataProvider?.updateSections(with: BackupInfo(state: backupInfo.state, lastBackupDate: backupInfo.lastBackupDate ?? self.lastBackupUpdate))
 
     delegate?.onNeedToUpdateContent()
-    guard let alertInfo = backupInfo.state.getAlertInfo() else { return }
+    guard let alertInfo = backupInfo.state.getAlertInfo() else {
+      backupDelegate?.showUpdatedAlert()
+      return
+    }
     let (title, subtitle, image) = alertInfo
 
     backupDelegate?.showCompleteAlert(title: title, message: subtitle, image: image)
+  }
+
+  private func deleteBackup() {
+    let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+      self.backupDelegate?.updateLoadingIndicator(show: true)
+      self.backgroundQueue.async {
+        self.backupManager.deleteBackupFromCloudKit { self.backupManagerResultHandler($0, $1) }
+      }
+    }
+
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+    backupDelegate?.showAlert(title: "Attention", message: "Cloud data will be deleted", actions: [cancelAction, deleteAction])
   }
 }

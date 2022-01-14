@@ -3,6 +3,7 @@ import Foundation
 enum BackupEventType: String {
   case onUpdateBackup
   case onRestoreBackup
+  case onDeleteBackupFromCloud
 }
 
 class BackupEvent: Event {

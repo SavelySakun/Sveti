@@ -17,13 +17,13 @@ class BackupTableSectionsConfigurator {
     switch backupState {
 
     case .needToCheckBackupExistence:
-      return [defaultTableSection]
+      return [defaultTableSection, deleteBackupSection]
 
     case .readyToRestoreBackup, .successRestoreData, .successBackupedToCloud:
       guard let date = backupDate else { return [defaultTableSection] }
-      return [defaultSectionWithBackupInfo(backupDate: date)]
+      return [defaultSectionWithBackupInfo(backupDate: date), deleteBackupSection]
 
-    case .noBackupFound:
+    case .noBackupFound, .backupDeleted:
       return [noBackupFoundSection, inactiveRestoreSection]
 
     case .noInternetConnection:
@@ -51,6 +51,10 @@ class BackupTableSectionsConfigurator {
       CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: getInactive(item: RestoreFromCloudCellItem())))
     ])
 
+  lazy var deleteBackupSection = TableSection(title: "Danger zone", cellsData: [
+      CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: DeleteBackupCellItem()))
+    ])
+
   lazy var noInternetAccessSection: TableSection = getWarningSection(title: "No internet access", subtitle: "Please check your device settings")
 
   lazy var needAuthICloudSection: TableSection = getWarningSection(title: "Need to log in to iCloud", subtitle: "You can do this in the device settings")
@@ -64,7 +68,7 @@ class BackupTableSectionsConfigurator {
     item.subtitleColor = getColorByDayPassed(dateOfLastBackup: backupDate)
 
     return TableSection(
-      title: "Options",
+      title: title,
       cellsData: [
         CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: item)),
         CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: RestoreFromCloudCellItem()))

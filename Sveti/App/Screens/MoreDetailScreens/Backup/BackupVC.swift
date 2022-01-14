@@ -1,7 +1,10 @@
 import UIKit
 import SPAlert
+import SPIndicator
 
 class BackupVC: VCwithTable {
+
+  private lazy var refreshControl = UIRefreshControl()
 
   override init(with tableStyle: UITableView.Style = .grouped) {
     super.init(with: tableStyle)
@@ -15,6 +18,11 @@ class BackupVC: VCwithTable {
     guard let vm = viewModel as? BackupVM else { return }
     vm.backupDelegate = self
     vm.delegate = self
+    loadBackupData()
+  }
+
+  private func loadBackupData() {
+    guard let vm = viewModel as? BackupVM else { return }
     vm.loadBackup()
   }
 
@@ -31,6 +39,8 @@ class BackupVC: VCwithTable {
     super.setLayout()
     title = "Backup & Restore"
     tableView.backgroundColor = .systemGray6
+    setRefreshControl()
+    setSyncNavButton()
   }
 
   override func getDataProvider() -> TableDataProvider? {
@@ -40,9 +50,37 @@ class BackupVC: VCwithTable {
   override func setViewModel(with dataProvider: TableDataProvider) {
     viewModel = BackupVM(tableDataProvider: dataProvider)
   }
+
+  private func setSyncNavButton() {
+    let button = UIButton()
+    button.snp.makeConstraints { (make) in
+      make.height.width.equalTo(28)
+    }
+    let image = UIImage(named: "syncCloud")?.withRenderingMode(.alwaysTemplate)
+    button.setImage(image, for: .normal)
+    button.addTarget(self, action: #selector(refresh), for: .touchUpInside)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+  }
+
+  private func setRefreshControl() {
+    refreshControl.tintColor = .systemGray3
+    refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    tableView.refreshControl = refreshControl
+  }
+
+  @objc func refresh() {
+    tableView.refreshControl?.endRefreshing()
+    loadBackupData()
+  }
 }
 
 extension BackupVC: BackupVMDelegate {
+  func showUpdatedAlert() {
+    DispatchQueue.main.async {
+      SPIndicator.present(title: "Updated", message: nil, preset: .done, from: .top, completion: nil)
+    }
+  }
+  
   func showCompleteAlert(title: String, message: String, image: UIImage?) {
     DispatchQueue.main.async {
       let preset: SPAlertIconPreset
@@ -52,7 +90,7 @@ extension BackupVC: BackupVMDelegate {
         preset = .done
       }
       let alertView = SPAlertView(title: title, message: message, preset: preset)
-      alertView.duration = 3
+      alertView.duration = 2.5
       alertView.present()
     }
   }
@@ -80,7 +118,7 @@ extension BackupVC: ViewControllerVMDelegate {
   func onNeedToUpdateContent() {
     DispatchQueue.main.async { [self] in
       activitiIndicator.stopAnimating()
-      UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
+      UIView.transition(with: tableView, duration: 0.2, options: .transitionCrossDissolve) {
         tableView.reloadData()
       }
     }

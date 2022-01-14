@@ -15,6 +15,7 @@ enum BackupState {
   case noBackupFound
   case noInternetConnection
   case needToAuthInICloud
+  case backupDeleted
 
   func getAlertInfo() -> (String, String, UIImage?)? {
     switch self {
@@ -24,6 +25,8 @@ enum BackupState {
       return ("Success", "All data has been restored", UIImage(systemName: "arrow.down.doc"))
     case .successBackupedToCloud:
       return ("Success", "All data has saved in cloud", UIImage(named: "cloud"))
+    case .backupDeleted:
+      return ("Success", "All data has been deleted", nil)
     }
   }
 }

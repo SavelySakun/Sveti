@@ -43,6 +43,7 @@ class SimpleCell: Cell, ICellWithOnTapAction {
   }
 
   private func setStyles() {
+    titleLabel.numberOfLines = 0
     subtitleLabel.font = UIFont.systemFont(ofSize: 14)
     subtitleLabel.numberOfLines = 0
   }

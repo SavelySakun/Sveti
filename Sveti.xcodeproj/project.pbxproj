@@ -68,6 +68,7 @@
 		FC451CB42771F3E60078B83A /* TagsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */; };
 		FC451CB72771F96B0078B83A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB62771F96B0078B83A /* TestHelper.swift */; };
 		FC4B18DF2791810300B63211 /* BackupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18DE2791810300B63211 /* BackupEvent.swift */; };
+		FC4B18E12791C78100B63211 /* DeleteBackupCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */; };
 		FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC518DBE2782FA21008C351B /* StatsBarChartView.swift */; };
 		FC598E3C278F64FB00F39689 /* WarningBackupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
@@ -287,6 +288,7 @@
 		FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepositoryTests.swift; sourceTree = "<group>"; };
 		FC451CB62771F96B0078B83A /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		FC4B18DE2791810300B63211 /* BackupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEvent.swift; sourceTree = "<group>"; };
+		FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBackupCellItem.swift; sourceTree = "<group>"; };
 		FC518DBE2782FA21008C351B /* StatsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarChartView.swift; sourceTree = "<group>"; };
 		FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningBackupItem.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1113,6 +1115,7 @@
 				FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */,
 				FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */,
 				FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */,
+				FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */,
 			);
 			path = CellItems;
 			sourceTree = "<group>";
@@ -1670,6 +1673,7 @@
 				FCEA31B826D67B940062509A /* Note.swift in Sources */,
 				FC8BE9B226E65F3200D12704 /* StatDay.swift in Sources */,
 				FCE3973D27875347001BC98F /* OnboardingState.swift in Sources */,
+				FC4B18E12791C78100B63211 /* DeleteBackupCellItem.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
