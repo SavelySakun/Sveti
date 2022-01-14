@@ -7,23 +7,14 @@ class BackupVC: VCwithTable {
     super.init(with: tableStyle)
     guard let dataProvider = getDataProvider() else { return }
     setViewModel(with: dataProvider)
-    tableView = TableViewWithTapAction(viewModel: viewModel)
+    tableView = SimpleTableView(viewModel: viewModel)
     configureBackupData()
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    updateBackupInfo()
   }
 
   private func configureBackupData() {
     guard let vm = viewModel as? BackupVM else { return }
     vm.backupDelegate = self
     vm.delegate = self
-  }
-
-  private func updateBackupInfo() {
-    guard let vm = viewModel as? BackupVM else { return }
     vm.loadBackup()
   }
 
@@ -52,34 +43,35 @@ class BackupVC: VCwithTable {
 }
 
 extension BackupVC: BackupVMDelegate {
-  func showLoadingIndicator() {
+  func showCompleteAlert(title: String, message: String, image: UIImage?) {
     DispatchQueue.main.async {
-      self.activitiIndicator.startAnimating()
-    }
-  }
-
-  func stopLoadingIndicator() {
-    DispatchQueue.main.async {
-      self.activitiIndicator.stopAnimating()
-    }
-  }
-
-  func showCompleteAlert(title: String, message: String) {
-    DispatchQueue.main.async {
-      let alertView = SPAlertView(title: title, message: message, preset: .done)
-      alertView.duration = 4
+      let preset: SPAlertIconPreset
+      if let existingImage = image {
+        preset = .custom(existingImage.withRenderingMode(.alwaysTemplate))
+      } else {
+        preset = .done
+      }
+      let alertView = SPAlertView(title: title, message: message, preset: preset)
+      alertView.duration = 3
       alertView.present()
     }
   }
 
-  func showErrorAlert(description: String) {
+  func showAlert(title: String?, message: String, actions: [UIAlertAction]?) {
     DispatchQueue.main.async {
-      let alert = UIAlertController(title: "Error".localized, message: description, preferredStyle: .alert)
-      let closeAction = UIAlertAction(title: "OK", style: .default) { _ in
-        alert.dismiss(animated: true)
+      let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+      if let actions = actions {
+        actions.forEach { alert.addAction($0) }
+      } else {
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
       }
-      alert.addAction(closeAction)
       self.navigationController?.present(alert, animated: true)
+    }
+  }
+
+  func updateLoadingIndicator(show: Bool) {
+    DispatchQueue.main.async { [self] in
+      show ? activitiIndicator.startAnimating() : activitiIndicator.stopAnimating()
     }
   }
 }

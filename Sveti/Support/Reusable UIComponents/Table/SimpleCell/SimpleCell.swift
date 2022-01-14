@@ -1,7 +1,12 @@
 import UIKit
+import Combine
+
+class BackupCell: SimpleCell {
+  
+}
 
 protocol ICellWithOnTapAction {
-  var onTapAction: (() -> Void)? { get set }
+  var onTapAction: ((PassthroughSubject<Event, Never>?) -> Void)? { get set }
 }
 
 class SimpleCell: Cell, ICellWithOnTapAction {
@@ -11,7 +16,7 @@ class SimpleCell: Cell, ICellWithOnTapAction {
   private let subtitleLabel = UILabel()
   private var cellItem: ISimpleCellItem?
 
-  var onTapAction: (() -> Void)?
+  var onTapAction: ((PassthroughSubject<Event, Never>?) -> Void)?
 
   override func setLayout() {
     setStyles()

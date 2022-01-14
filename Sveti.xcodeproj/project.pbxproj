@@ -26,7 +26,7 @@
 		FC1563FA2748FA0F00AAD925 /* ISimpleCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */; };
 		FC1563FC2748FBC900AAD925 /* ContactDeveloperMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */; };
 		FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */; };
-		FC1564022749007700AAD925 /* TableViewWithTapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1564012749007700AAD925 /* TableViewWithTapAction.swift */; };
+		FC1564022749007700AAD925 /* SimpleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1564012749007700AAD925 /* SimpleTableView.swift */; };
 		FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC156403274A21C400AAD925 /* VCwithScrollView.swift */; };
 		FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC22740F50A000DE791 /* SelectStatVC.swift */; };
 		FC25ADC52740F548000DE791 /* SelectStatTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */; };
@@ -67,6 +67,7 @@
 		FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB12771D1F80078B83A /* SplitDateTests.swift */; };
 		FC451CB42771F3E60078B83A /* TagsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */; };
 		FC451CB72771F96B0078B83A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB62771F96B0078B83A /* TestHelper.swift */; };
+		FC4B18DF2791810300B63211 /* BackupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18DE2791810300B63211 /* BackupEvent.swift */; };
 		FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC518DBE2782FA21008C351B /* StatsBarChartView.swift */; };
 		FC598E3C278F64FB00F39689 /* WarningBackupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
@@ -242,7 +243,7 @@
 		FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISimpleCellItem.swift; sourceTree = "<group>"; };
 		FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperMoreItem.swift; sourceTree = "<group>"; };
 		FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperVC.swift; sourceTree = "<group>"; };
-		FC1564012749007700AAD925 /* TableViewWithTapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithTapAction.swift; sourceTree = "<group>"; };
+		FC1564012749007700AAD925 /* SimpleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableView.swift; sourceTree = "<group>"; };
 		FC156403274A21C400AAD925 /* VCwithScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithScrollView.swift; sourceTree = "<group>"; };
 		FC25ADC22740F50A000DE791 /* SelectStatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatVC.swift; sourceTree = "<group>"; };
 		FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableDataProvider.swift; sourceTree = "<group>"; };
@@ -285,6 +286,7 @@
 		FC451CB12771D1F80078B83A /* SplitDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDateTests.swift; sourceTree = "<group>"; };
 		FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepositoryTests.swift; sourceTree = "<group>"; };
 		FC451CB62771F96B0078B83A /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		FC4B18DE2791810300B63211 /* BackupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEvent.swift; sourceTree = "<group>"; };
 		FC518DBE2782FA21008C351B /* StatsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarChartView.swift; sourceTree = "<group>"; };
 		FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningBackupItem.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -480,8 +482,6 @@
 				FC1563F82748FA0200AAD925 /* More Models */,
 				FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */,
 				FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */,
-				FC1563F42748E9AA00AAD925 /* SimpleCell.swift */,
-				FC1564012749007700AAD925 /* TableViewWithTapAction.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -634,7 +634,6 @@
 		FC1563F82748FA0200AAD925 /* More Models */ = {
 			isa = PBXGroup;
 			children = (
-				FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */,
 				FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */,
 				FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */,
 				FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */,
@@ -719,7 +718,7 @@
 				FC6C58AB26613C32000188A6 /* TableView.swift */,
 				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
 				FC76B39226810F7700AF209F /* Cell.swift */,
-				FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */,
+				FC4B18DD27917F1900B63211 /* SimpleCell */,
 				FCD9AB4E268A335100817746 /* TableData */,
 			);
 			path = Table;
@@ -808,6 +807,17 @@
 				FCA8D7542780AEF400212E51 /* NotesRepositoryTests.swift */,
 			);
 			path = NewNoteTests;
+			sourceTree = "<group>";
+		};
+		FC4B18DD27917F1900B63211 /* SimpleCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC1564012749007700AAD925 /* SimpleTableView.swift */,
+				FC1563F42748E9AA00AAD925 /* SimpleCell.swift */,
+				FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */,
+				FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */,
+			);
+			path = SimpleCell;
 			sourceTree = "<group>";
 		};
 		FC518DC22782FBCD008C351B /* MoreDetailScreens */ = {
@@ -1092,6 +1102,7 @@
 				FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */,
 				FCCA2FF5278F33B500C46EA9 /* BackupError.swift */,
 				FCCA2FF7278F33D200C46EA9 /* BackupState.swift */,
+				FC4B18DE2791810300B63211 /* BackupEvent.swift */,
 			);
 			path = Backup;
 			sourceTree = "<group>";
@@ -1599,6 +1610,7 @@
 				FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */,
 				FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */,
 				FC7E6D9726AC625800126B97 /* DiaryVM.swift in Sources */,
+				FC4B18DF2791810300B63211 /* BackupEvent.swift in Sources */,
 				FCA8D7612781A68600212E51 /* String.swift in Sources */,
 				FCC922B6276664AA009F7508 /* Bundle.swift in Sources */,
 				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
@@ -1663,7 +1675,7 @@
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
 				FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */,
 				FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */,
-				FC1564022749007700AAD925 /* TableViewWithTapAction.swift in Sources */,
+				FC1564022749007700AAD925 /* SimpleTableView.swift in Sources */,
 				FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */,
 				FC451CB02770DB0B0078B83A /* DetailTagsCell.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,

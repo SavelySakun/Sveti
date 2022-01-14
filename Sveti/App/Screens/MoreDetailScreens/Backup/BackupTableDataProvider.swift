@@ -4,50 +4,98 @@ import UIKit
 class BackupTableDataProvider: TableDataProvider {
 
   override func configureSections(with data: Any? = nil) -> [TableSection] {
-    guard let backupInfo = data as? BackupInfo else { return getDefaultTableSectons() }
+    let configurator = BackupTableSectionsConfigurator()
+    guard let backupInfo = data as? BackupInfo else { return configurator.getTableSections(backupState: .needToCheckBackupExistence)}
+    let tableSections = configurator.getTableSections(backupState: backupInfo.state, backupDate: backupInfo.lastBackupDate)
+    return tableSections
+  }
+}
 
-    var tableSections = getDefaultTableSectons()
-    let cellType = SimpleCell.self
+class BackupTableSectionsConfigurator {
 
-    switch backupInfo.state {
-    case .needToCheckBackupExistence: break
+  func getTableSections(backupState: BackupState, backupDate: Date? = nil) -> [TableSection] {
+    switch backupState {
+
+    case .needToCheckBackupExistence:
+      return [defaultTableSection]
+
     case .readyToRestoreBackup, .successRestoreData, .successBackupedToCloud:
-      guard let date = backupInfo.lastBackupDate else { break }
-      tableSections[0].cellsData[0] = getBackupCellData(backupDate: date)
-    case .noBackupFound: break
+      guard let date = backupDate else { return [defaultTableSection] }
+      return [defaultSectionWithBackupInfo(backupDate: date)]
+
+    case .noBackupFound:
+      return [noBackupFoundSection, inactiveRestoreSection]
+
     case .noInternetConnection:
-      tableSections = getInactiveDefaultCells()
-      let item = WarningBackupItem()
-      item.title = "No internet access"
-      item.subtitle = "Please check your device settings"
-      tableSections.insert(TableSection(title: "", cellsData: [
-        CellData(type: cellType, viewModel: CellVM(cellValue: item))
-      ]), at: 0)
+      return [noInternetAccessSection, inactiveDefaultTableSection]
+
     case .needToAuthInICloud:
-      tableSections = getInactiveDefaultCells()
-      let item = WarningBackupItem()
-      item.title = "Need to log in to iCloud"
-      item.subtitle = "You can do this in the device settings"
-      tableSections.insert(TableSection(title: "", cellsData: [
-        CellData(type: cellType, viewModel: CellVM(cellValue: item))
-      ]), at: 0)
+      return [needAuthICloudSection, inactiveDefaultTableSection]
     }
-
-    return tableSections
   }
 
-  private func getDefaultTableSectons() -> [TableSection] {
-    let cellType = SimpleCell.self
-    let tableSections = [
-      TableSection(title: "", cellsData: [
-        CellData(type: cellType, viewModel: CellVM(cellValue: BackupToCloudCellItem())),
-        CellData(type: cellType, viewModel: CellVM(cellValue: RestoreFromCloudCellItem()))
+  private let title = "Actions"
+
+  lazy var defaultTableSection: TableSection = TableSection(title: title, cellsData: [
+        CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: BackupToCloudCellItem())),
+        CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: RestoreFromCloudCellItem()))
       ])
-    ]
-    return tableSections
+
+  lazy var inactiveDefaultTableSection: TableSection = TableSection(title: title, cellsData: [
+    CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: getInactive(item: BackupToCloudCellItem()))),
+    CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: getInactive(item:RestoreFromCloudCellItem())))
+  ])
+
+  lazy var inactiveRestoreSection: TableSection = TableSection(title: title, cellsData: [
+      CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: BackupToCloudCellItem())),
+      CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: getInactive(item: RestoreFromCloudCellItem())))
+    ])
+
+  lazy var noInternetAccessSection: TableSection = getWarningSection(title: "No internet access", subtitle: "Please check your device settings")
+
+  lazy var needAuthICloudSection: TableSection = getWarningSection(title: "Need to log in to iCloud", subtitle: "You can do this in the device settings")
+
+  lazy var noBackupFoundSection: TableSection = getWarningSection(title: "Cloud backup not found", subtitle: "Create your first backup")
+
+  func defaultSectionWithBackupInfo(backupDate: Date) -> TableSection {
+    let item = BackupToCloudCellItem()
+    let date = SplitDate(rawDate: backupDate)
+    item.subtitle = "Last backup: \(date.dMMMMyyyy), \(date.HHmm)"
+    item.subtitleColor = getColorByDayPassed(dateOfLastBackup: backupDate)
+
+    return TableSection(
+      title: "Options",
+      cellsData: [
+        CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: item)),
+        CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: RestoreFromCloudCellItem()))
+      ])
   }
 
-  func configureColorForSubtitle(dateOfLastBackup: Date) -> UIColor {
+  private func getWarningSection(title: String, subtitle: String?) -> TableSection {
+    let item = WarningBackupItem()
+    item.title = title
+    item.subtitle = subtitle
+    return TableSection(
+      title: "",
+      cellsData: [
+        CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: item))
+      ])
+  }
+
+  private func getColorByDayPassed(dateOfLastBackup: Date) -> UIColor {
+    guard let daysPassed = calculateDaysPassed(dateOfLastBackup: dateOfLastBackup) else { return .systemGray2 }
+
+    switch daysPassed {
+    case 0...7:
+      return #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1)
+    case 8...30:
+      return .orange
+    default:
+      return .systemRed
+    }
+  }
+
+  private func calculateDaysPassed(dateOfLastBackup: Date) -> Int? {
     let calendar = Calendar.current
 
     // Replace the hour (time) of both dates with 00:00
@@ -55,47 +103,15 @@ class BackupTableDataProvider: TableDataProvider {
     let date2 = calendar.startOfDay(for: Date())
 
     let components = calendar.dateComponents([.day], from: date1, to: date2)
-    guard let daysPassed = components.day else { return .systemGray2 }
-    switch daysPassed {
-      case 0...7:
-      return #colorLiteral(red: 0.2049866915, green: 0.6625028849, blue: 0.5520762801, alpha: 1)
-      case 8...30:
-      return .orange
-      case 31...10000:
-      return .systemRed
-      default:
-      return .systemGray2
-    }
+    return components.day
   }
 
-  private func getBackupCellData(backupDate: Date) -> CellData {
-    let item = BackupToCloudCellItem()
-    let date = SplitDate(rawDate: backupDate)
-    item.title = "Save current data to the cloud"
-    item.subtitle = "Last backup: \(date.dMMMMyyyy), \(date.HHmm)"
-    item.subtitleColor = configureColorForSubtitle(dateOfLastBackup: backupDate)
-
-    return CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: item))
-  }
-
-  private func getInactiveDefaultCells() -> [TableSection] {
-    let cellType = SimpleCell.self
-    let backupItem = BackupToCloudCellItem()
-    let restoreItem = RestoreFromCloudCellItem()
-    [backupItem, restoreItem].forEach { item in
-      item.isActive = false
-      item.titleColor = .systemGray3
-      item.subtitleColor = .systemGray4
-      item.backgroundColor = .white.withAlphaComponent(0.5)
-      item.accessoryTintColor = .systemGray5
-    }
-
-    let tableSections = [
-      TableSection(title: "", cellsData: [
-        CellData(type: cellType, viewModel: CellVM(cellValue: backupItem)),
-        CellData(type: cellType, viewModel: CellVM(cellValue: restoreItem))
-      ])
-    ]
-    return tableSections
+  private func getInactive(item: SimpleCellItem) -> SimpleCellItem {
+    item.isActive = false
+    item.titleColor = .systemGray3
+    item.subtitleColor = .systemGray4
+    item.backgroundColor = .white.withAlphaComponent(0.5)
+    item.accessoryTintColor = .systemGray5
+    return item
   }
 }

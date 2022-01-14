@@ -9,7 +9,7 @@ class AppInfoModel: SimpleCellItem {
     let appBundleVersion = Bundle.main.buildVersionNumber ?? "-"
     title = String(format: NSLocalizedString("Sveti app version: %@ (%@)", comment: ""), appReleaseVersion, appBundleVersion)
 
-    onTapAction = {
+    onTapAction = { _ in
       UIPasteboard.general.string = self.title
       SPAlert.present(title: "Info copied".localized, preset: .done)
     }

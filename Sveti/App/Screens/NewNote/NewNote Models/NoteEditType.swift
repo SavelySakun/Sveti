@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 
 enum NoteEditType: String {
   case emotionalStateChange

@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 protocol ISimpleCellItem: AnyObject {
   var title: String? { get set }
@@ -10,7 +11,7 @@ protocol ISimpleCellItem: AnyObject {
   var iconBackgroundColor: UIColor? { get set }
   var accessoryImage: UIImage? { get set }
   var accessoryTintColor: UIColor? { get set }
-  var onTapAction: (() -> Void)? { get set }
+  var onTapAction: ((PassthroughSubject<Event, Never>?) -> Void)? { get set }
   var isActive: Bool { get set }
   var backgroundColor: UIColor { get set }
 }

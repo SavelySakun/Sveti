@@ -4,7 +4,7 @@ class AboutVC: VCwithTable {
 
   override init(with tableStyle: UITableView.Style = .grouped) {
     super.init(with: tableStyle)
-    tableView = TableViewWithTapAction(viewModel: viewModel)
+    tableView = SimpleTableView(viewModel: viewModel)
   }
 
   required init?(coder: NSCoder) {

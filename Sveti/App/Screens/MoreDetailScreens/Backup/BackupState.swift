@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct BackupInfo {
   let state: BackupState
@@ -15,22 +16,14 @@ enum BackupState {
   case noInternetConnection
   case needToAuthInICloud
 
-  func generateTitleMessageForAlert() -> (String, String)? {
+  func getAlertInfo() -> (String, String, UIImage?)? {
     switch self {
-    case .needToCheckBackupExistence:
-      return nil
-    case .readyToRestoreBackup:
+    case .needToCheckBackupExistence, .readyToRestoreBackup, .noBackupFound, .noInternetConnection, .needToAuthInICloud:
       return nil
     case .successRestoreData:
-      return ("Success", "All data has been restored")
+      return ("Success", "All data has been restored", UIImage(systemName: "arrow.down.doc"))
     case .successBackupedToCloud:
-      return ("Success", "All data has saved in cloud")
-    case .noBackupFound:
-      return nil
-    case .noInternetConnection:
-      return nil
-    case .needToAuthInICloud:
-      return nil
+      return ("Success", "All data has saved in cloud", UIImage(named: "cloud"))
     }
   }
 }

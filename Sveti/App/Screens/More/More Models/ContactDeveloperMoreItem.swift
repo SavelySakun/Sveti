@@ -9,7 +9,7 @@ class ContactDeveloperMoreItem: SimpleCellItem {
     iconImage = UIImage(systemName: "quote.bubble.fill")?.withRenderingMode(.alwaysTemplate)
     iconTintColor = UIColor.white
 
-    onTapAction = {
+    onTapAction = { _ in
       guard let currentVC = CurrentVC.current else { return }
       let contactDeveloperVC = ContactDeveloperVC()
       currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)

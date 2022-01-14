@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 class SimpleCellItem: ISimpleCellItem {
   var accessoryTintColor: UIColor?
@@ -12,5 +13,5 @@ class SimpleCellItem: ISimpleCellItem {
   var iconTintColor: UIColor?
   var iconBackgroundColor: UIColor?
   var accessoryImage: UIImage?
-  var onTapAction: (() -> Void)?
+  var onTapAction: ((PassthroughSubject<Event, Never>?) -> Void)?
 }

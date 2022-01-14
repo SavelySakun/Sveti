@@ -8,7 +8,7 @@ class BackupMoreItem: SimpleCellItem {
     iconImage = UIImage(systemName: "cloud.fill")?.withRenderingMode(.alwaysTemplate)
     iconTintColor = UIColor.white
 
-    onTapAction = {
+    onTapAction = { _ in
       guard let currentVC = CurrentVC.current else { return }
       let backupVC = BackupVC()
       currentVC.navigationController?.pushViewController(backupVC, animated: true)
