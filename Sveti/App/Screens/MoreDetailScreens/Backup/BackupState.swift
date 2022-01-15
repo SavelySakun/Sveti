@@ -9,7 +9,7 @@ struct BackupInfo {
 enum BackupState {
   case needToCheckBackupExistence
   case readyToRestoreBackup
-  case successRestoreData
+  case successDataRestore
   case successBackupedToCloud
 
   case noBackupFound
@@ -21,7 +21,7 @@ enum BackupState {
     switch self {
     case .needToCheckBackupExistence, .readyToRestoreBackup, .noBackupFound, .noInternetConnection, .needToAuthInICloud:
       return nil
-    case .successRestoreData:
+    case .successDataRestore:
       return ("Success", "All data has been restored", UIImage(systemName: "arrow.down.doc"))
     case .successBackupedToCloud:
       return ("Success", "All data has saved in cloud", UIImage(named: "cloud"))

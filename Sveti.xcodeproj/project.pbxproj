@@ -69,6 +69,7 @@
 		FC451CB72771F96B0078B83A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB62771F96B0078B83A /* TestHelper.swift */; };
 		FC4B18DF2791810300B63211 /* BackupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18DE2791810300B63211 /* BackupEvent.swift */; };
 		FC4B18E12791C78100B63211 /* DeleteBackupCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */; };
+		FC4B18E32792CAEC00B63211 /* BackupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E22792CAEC00B63211 /* BackupTests.swift */; };
 		FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC518DBE2782FA21008C351B /* StatsBarChartView.swift */; };
 		FC598E3C278F64FB00F39689 /* WarningBackupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
@@ -289,6 +290,7 @@
 		FC451CB62771F96B0078B83A /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		FC4B18DE2791810300B63211 /* BackupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEvent.swift; sourceTree = "<group>"; };
 		FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBackupCellItem.swift; sourceTree = "<group>"; };
+		FC4B18E22792CAEC00B63211 /* BackupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupTests.swift; sourceTree = "<group>"; };
 		FC518DBE2782FA21008C351B /* StatsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarChartView.swift; sourceTree = "<group>"; };
 		FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningBackupItem.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -670,6 +672,7 @@
 			children = (
 				FCA8D7562780C16C00212E51 /* StatTests */,
 				FC451CB52771F4370078B83A /* NewNoteTests */,
+				FC4B18E22792CAEC00B63211 /* BackupTests.swift */,
 				FC451CB12771D1F80078B83A /* SplitDateTests.swift */,
 				FC29A66626EC979A00DC87DA /* Info.plist */,
 			);
@@ -1510,6 +1513,7 @@
 			files = (
 				FCA8D7552780AEF400212E51 /* NotesRepositoryTests.swift in Sources */,
 				FC451CB42771F3E60078B83A /* TagsRepositoryTests.swift in Sources */,
+				FC4B18E32792CAEC00B63211 /* BackupTests.swift in Sources */,
 				FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */,
 				FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */,
 				FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */,

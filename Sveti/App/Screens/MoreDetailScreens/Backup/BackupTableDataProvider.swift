@@ -19,7 +19,7 @@ class BackupTableSectionsConfigurator {
     case .needToCheckBackupExistence:
       return [defaultTableSection, deleteBackupSection]
 
-    case .readyToRestoreBackup, .successRestoreData, .successBackupedToCloud:
+    case .readyToRestoreBackup, .successDataRestore, .successBackupedToCloud:
       guard let date = backupDate else { return [defaultTableSection] }
       return [defaultSectionWithBackupInfo(backupDate: date), deleteBackupSection]
 

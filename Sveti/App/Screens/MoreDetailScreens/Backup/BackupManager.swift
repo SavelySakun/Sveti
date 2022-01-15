@@ -82,7 +82,7 @@ class BackupManager {
     database.add(operation)
   }
 
-  func deleteFilesInLocalDirectory(url: URL?) {
+  private func deleteFilesInLocalDirectory(url: URL?) {
     guard let url = url else { return }
     do {
       let folderURL = url.deletingLastPathComponent()
@@ -126,7 +126,6 @@ class BackupManager {
   }
 
   func restoreBackup(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
-
     getExistingBackupRecord { existingBackupRecord in
       guard let record = existingBackupRecord else {
         onCompletion(nil, "Can't find correct backup record in cloud. Please refresh")
@@ -134,10 +133,10 @@ class BackupManager {
       }
 
       guard let realmBackupAsset = record.value(forKey: "realmfile") as? CKAsset,
-        let backupFileURL = realmBackupAsset.fileURL else {
-        onCompletion(nil, "Can't find backup file in cloud. Please refresh")
-        return
-      }
+            let backupFileURL = realmBackupAsset.fileURL else {
+              onCompletion(nil, "Can't find backup file in cloud. Please refresh")
+              return
+            }
 
       guard let realmURL = self.getRealmURL() else {
         onCompletion(nil, "Can't find correct path to local data")
@@ -168,7 +167,7 @@ class BackupManager {
         let config = Realm.Configuration(fileURL: newRealmFileURL, schemaVersion: RealmHelper().schemaVersion)
         Realm.Configuration.defaultConfiguration = config
 
-        onCompletion(BackupInfo(state: .successRestoreData), nil)
+        onCompletion(BackupInfo(state: .successDataRestore), nil)
       } catch let error as NSError {
         onCompletion(nil, error.localizedDescription)
       }
@@ -180,7 +179,10 @@ class BackupManager {
   }
 
   func deleteBackupFromCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
-    guard let recordName = userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String else { return }
+    guard let recordName = userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String else {
+      onCompletion(nil, "Cloud backup already doesn't exist. Please refresh")
+      return
+    }
     database.delete(withRecordID: CKRecord.ID(recordName: recordName)) { _, error in
       guard error == nil else {
         let error = error?.localizedDescription ?? "Unknown error during record deletion"
