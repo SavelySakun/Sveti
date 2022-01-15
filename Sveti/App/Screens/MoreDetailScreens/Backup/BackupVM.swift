@@ -74,6 +74,24 @@ class BackupVM: ViewControllerVM {
     self.handleBackupInfo(backupInfo)
   }
 
+  private func handleBackupInfo(_ backupInfo: BackupInfo) {
+    subscribers.removeAll() // <- remove old subcribers to avoid event handle action dublication while reusing cells because overrided addSubscriber() does't check already subscribed cells
+
+    backupState = backupInfo.state
+    lastBackupUpdate = backupInfo.lastBackupDate ?? self.lastBackupUpdate
+
+    tableDataProvider?.updateSections(with: BackupInfo(state: backupInfo.state, lastBackupDate: backupInfo.lastBackupDate ?? self.lastBackupUpdate))
+
+    delegate?.onNeedToUpdateContent()
+    guard let alertInfo = backupInfo.state.getAlertInfo() else {
+      backupDelegate?.showUpdatedAlert()
+      return
+    }
+    let (title, subtitle, image) = alertInfo
+
+    backupDelegate?.showCompleteAlert(title: title, message: subtitle, image: image)
+  }
+
   private func handleError(_ error: String?) {
     backupDelegate?.updateLoadingIndicator(show: false)
     guard let error = error else { return }
@@ -84,7 +102,7 @@ class BackupVM: ViewControllerVM {
     backupDelegate?.updateLoadingIndicator(show: true)
     backgroundQueue.async { [self] in
       if backupState == .noBackupFound || backupState == .backupDeleted {
-        backupManager.saveToCloudKit { backupManagerResultHandler($0, $1) }
+        backupManager.createBackupInCloudKit { backupManagerResultHandler($0, $1) }
       } else {
         backupManager.updateExistingBackupRecord { backupManagerResultHandler($0, $1) }
       }
@@ -104,24 +122,6 @@ class BackupVM: ViewControllerVM {
     backgroundQueue.async { self.backupManager.restoreBackup {
       self.backupManagerResultHandler($0, $1) }
     }
-  }
-
-  private func handleBackupInfo(_ backupInfo: BackupInfo) {
-    subscribers.removeAll() // <- remove old subcribers to avoid event handle action dublication while reusing cells because overrided addSubscriber() does't check already subscribed cells
-
-    backupState = backupInfo.state
-    lastBackupUpdate = backupInfo.lastBackupDate ?? self.lastBackupUpdate
-
-    tableDataProvider?.updateSections(with: BackupInfo(state: backupInfo.state, lastBackupDate: backupInfo.lastBackupDate ?? self.lastBackupUpdate))
-
-    delegate?.onNeedToUpdateContent()
-    guard let alertInfo = backupInfo.state.getAlertInfo() else {
-      backupDelegate?.showUpdatedAlert()
-      return
-    }
-    let (title, subtitle, image) = alertInfo
-
-    backupDelegate?.showCompleteAlert(title: title, message: subtitle, image: image)
   }
 
   private func deleteBackup() {

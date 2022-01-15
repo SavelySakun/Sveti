@@ -70,6 +70,7 @@
 		FC4B18DF2791810300B63211 /* BackupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18DE2791810300B63211 /* BackupEvent.swift */; };
 		FC4B18E12791C78100B63211 /* DeleteBackupCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */; };
 		FC4B18E32792CAEC00B63211 /* BackupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E22792CAEC00B63211 /* BackupTests.swift */; };
+		FC4B18E62792E84300B63211 /* LocalFilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E52792E84300B63211 /* LocalFilesManager.swift */; };
 		FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC518DBE2782FA21008C351B /* StatsBarChartView.swift */; };
 		FC598E3C278F64FB00F39689 /* WarningBackupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
@@ -291,6 +292,7 @@
 		FC4B18DE2791810300B63211 /* BackupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEvent.swift; sourceTree = "<group>"; };
 		FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBackupCellItem.swift; sourceTree = "<group>"; };
 		FC4B18E22792CAEC00B63211 /* BackupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupTests.swift; sourceTree = "<group>"; };
+		FC4B18E52792E84300B63211 /* LocalFilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFilesManager.swift; sourceTree = "<group>"; };
 		FC518DBE2782FA21008C351B /* StatsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarChartView.swift; sourceTree = "<group>"; };
 		FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningBackupItem.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -825,6 +827,15 @@
 			path = SimpleCell;
 			sourceTree = "<group>";
 		};
+		FC4B18E42792E83000B63211 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
+				FC4B18E52792E84300B63211 /* LocalFilesManager.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		FC518DC22782FBCD008C351B /* MoreDetailScreens */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,6 +903,7 @@
 		FC6C58B72663D1CD000188A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FC4B18E42792E83000B63211 /* Realm */,
 				FC445AFF27772063006458D1 /* Analytics */,
 				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC29A67326ECEAB300DC87DA /* TestHelper */,
@@ -899,7 +911,6 @@
 				FC7E6D2726AC019C00126B97 /* Constants.swift */,
 				FC7E6DC226AF27B600126B97 /* ColorHelper.swift */,
 				FC7E6DC426AF29B500126B97 /* MathHelper.swift */,
-				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 				FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */,
 				FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */,
 			);
@@ -1590,6 +1601,7 @@
 				FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */,
 				FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */,
 				FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */,
+				FC4B18E62792E84300B63211 /* LocalFilesManager.swift in Sources */,
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
 				FCB9EC72274A52E500E3E864 /* BackupMoreItem.swift in Sources */,
 				FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */,

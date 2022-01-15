@@ -38,7 +38,7 @@ class BackupTests: XCTestCase {
 
   func testB_createBackup() {
     runInAsyncQueueWithExpectation(timeout: 10) { expectation in
-      self.sut.saveToCloudKit { backupInfo, error in
+      self.sut.createBackupInCloudKit { backupInfo, error in
         self.checkResult(expectedBackupState: .successBackupedToCloud,
                     expectedError: nil, testResult: (backupInfo, error))
         expectation.fulfill()

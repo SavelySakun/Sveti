@@ -9,15 +9,16 @@ class BackupManager {
   private let filemanager = FileManager.default
   private let backupRecordType = "SvetiBackup"
 
-  func getRealmURL() -> URL? {
+  private func getRealmURL() -> URL? {
     RealmHelper().getRealmURL()
   }
 
+  // For backup feature user has to be authorized in iCloud
   func isUserICloudAvailable() -> Bool {
     FileManager.default.ubiquityIdentityToken != nil
   }
 
-  func saveToCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
+  func createBackupInCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     guard let realmFileURL = getRealmURL() else {
       onCompletion(nil, "Can't find correct path to local data")
       return
@@ -48,7 +49,8 @@ class BackupManager {
       }
 
       existingRecord["realmfile"] = CKAsset(fileURL: realmFileURL)
-      let modifyRecordsOperation = CKModifyRecordsOperation(recordsToSave: [existingRecord], recordIDsToDelete: nil)
+      let modifyRecordsOperation = CKModifyRecordsOperation(recordsToSave: [existingRecord],
+                                                            recordIDsToDelete: nil)
       modifyRecordsOperation.savePolicy = .changedKeys
 
       modifyRecordsOperation.modifyRecordsCompletionBlock = { records, _, error in
@@ -57,8 +59,9 @@ class BackupManager {
           onCompletion(nil, errorDescription)
           return
         }
+
         self.updateBackupLocalInfo(with: record)
-        onCompletion(BackupInfo(state: .successBackupedToCloud), nil)
+        onCompletion(BackupInfo(state: .successBackupedToCloud, lastBackupDate: Date()), nil)
       }
 
       self.database.add(modifyRecordsOperation)
@@ -80,22 +83,6 @@ class BackupManager {
       onCompletion(records[recordID])
     }
     database.add(operation)
-  }
-
-  private func deleteFilesInLocalDirectory(url: URL?) {
-    guard let url = url else { return }
-    do {
-      let folderURL = url.deletingLastPathComponent()
-      let enumerator = filemanager.enumerator(atPath: folderURL.path)
-      while let file = enumerator?.nextObject() as? String {
-        do {
-          try filemanager.removeItem(at: folderURL.appendingPathComponent(file))
-          print("Old file deleted")
-        } catch let error as NSError {
-          print("Failed deleting files : \(error)")
-        }
-      }
-    }
   }
 
   // Call this first to know is there any backup
@@ -121,8 +108,13 @@ class BackupManager {
     }
   }
 
+  // We need to store recordName of existing record in CloudKit to use it for updating & deleting backup file in cloud
   private func updateBackupLocalInfo(with record: CKRecord) {
     self.userDefaults.set(record.recordID.recordName, forKey: UDKeys.backupCloudKitRecordName)
+  }
+
+  private func getBackupRecordName() -> String? {
+    userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String
   }
 
   func restoreBackup(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
@@ -138,48 +130,23 @@ class BackupManager {
               return
             }
 
-      guard let realmURL = self.getRealmURL() else {
-        onCompletion(nil, "Can't find correct path to local data")
-        return
-      }
-
       guard FileManager.default.fileExists(atPath: backupFileURL.path) else {
         onCompletion(nil, "There are no correct backup files in the cloud. Please refresh")
         return
       }
 
-      do {
-        let backupRealmFileSchemaVersion = try schemaVersionAtURL(backupFileURL, encryptionKey: nil)
-        guard backupRealmFileSchemaVersion <= RealmHelper().schemaVersion else {
-          onCompletion(nil, "Backup file version is higher than the version of the files in the application. Please update the app")
+      LocalFilesManager().restoreBackup(from: backupFileURL) { isRestored, error in
+        guard error == nil, isRestored == true else {
+          onCompletion(nil, error ?? "Unknown data recovery error")
           return
         }
-
-        self.deleteFilesInLocalDirectory(url: realmURL)
-
-        let fileNameForRealmBackup = "\(UUID().uuidString.prefix(4))_sveti_backup.realm"
-        self.userDefaults.set(fileNameForRealmBackup, forKey: UDKeys.lastRealmBackupFilename)
-        self.userDefaults.set(Date(), forKey: UDKeys.lastRealmBackupDate)
-
-        let newRealmFileURL = realmURL.deletingLastPathComponent().appendingPathComponent(fileNameForRealmBackup)
-        try FileManager.default.copyItem(at: backupFileURL, to: newRealmFileURL)
-
-        let config = Realm.Configuration(fileURL: newRealmFileURL, schemaVersion: RealmHelper().schemaVersion)
-        Realm.Configuration.defaultConfiguration = config
-
         onCompletion(BackupInfo(state: .successDataRestore), nil)
-      } catch let error as NSError {
-        onCompletion(nil, error.localizedDescription)
       }
     }
   }
 
-  private func getBackupRecordName() -> String? {
-    userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String
-  }
-
   func deleteBackupFromCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
-    guard let recordName = userDefaults.value(forKey: UDKeys.backupCloudKitRecordName) as? String else {
+    guard let recordName = getBackupRecordName() else {
       onCompletion(nil, "Cloud backup already doesn't exist. Please refresh")
       return
     }
