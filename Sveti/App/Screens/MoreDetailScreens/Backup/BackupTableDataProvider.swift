@@ -34,7 +34,7 @@ class BackupTableSectionsConfigurator {
     }
   }
 
-  private let title = "Actions"
+  private let title = "Actions".localized
 
   lazy var defaultTableSection: TableSection = TableSection(title: title, cellsData: [
         CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: BackupToCloudCellItem())),
@@ -51,20 +51,20 @@ class BackupTableSectionsConfigurator {
       CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: getInactive(item: RestoreFromCloudCellItem())))
     ])
 
-  lazy var deleteBackupSection = TableSection(title: "Danger zone", cellsData: [
+  lazy var deleteBackupSection = TableSection(title: "Danger zone".localized, cellsData: [
       CellData(type: SimpleCell.self, viewModel: CellVM(cellValue: DeleteBackupCellItem()))
     ])
 
-  lazy var noInternetAccessSection: TableSection = getWarningSection(title: "No internet access", subtitle: "Please check your device settings")
+  lazy var noInternetAccessSection: TableSection = getWarningSection(title: "No internet access".localized, subtitle: "Please check your device settings".localized)
 
-  lazy var needAuthICloudSection: TableSection = getWarningSection(title: "Need to log in to iCloud", subtitle: "You can do this in the device settings")
+  lazy var needAuthICloudSection: TableSection = getWarningSection(title: "Need to log in to iCloud".localized, subtitle: "You can do this in the device settings".localized)
 
-  lazy var noBackupFoundSection: TableSection = getWarningSection(title: "Cloud backup not found", subtitle: "Create your first backup")
+  lazy var noBackupFoundSection: TableSection = getWarningSection(title: "Cloud backup not found".localized, subtitle: "Create your first backup".localized)
 
   func defaultSectionWithBackupInfo(backupDate: Date) -> TableSection {
     let item = BackupToCloudCellItem()
     let date = SplitDate(rawDate: backupDate)
-    item.subtitle = "Last backup: \(date.dMMMMyyyy), \(date.HHmm)"
+    item.subtitle = String(format: NSLocalizedString("Last backup: %@, %@", comment: ""), date.dMMMMyyyy, date.HHmm)
     item.subtitleColor = getColorByDayPassed(dateOfLastBackup: backupDate)
 
     return TableSection(

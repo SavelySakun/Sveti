@@ -37,7 +37,7 @@ class BackupVC: VCwithTable {
 
   override func setLayout() {
     super.setLayout()
-    title = "Backup & Restore"
+    title = "Backup & restore".localized
     tableView.backgroundColor = .systemGray6
     setRefreshControl()
     setSyncNavButton()
@@ -77,7 +77,7 @@ class BackupVC: VCwithTable {
 extension BackupVC: BackupVMDelegate {
   func showUpdatedAlert() {
     DispatchQueue.main.async {
-      SPIndicator.present(title: "Updated", message: nil, preset: .done, from: .top, completion: nil)
+      SPIndicator.present(title: "Updated".localized, message: nil, preset: .done, from: .top, completion: nil)
     }
   }
   

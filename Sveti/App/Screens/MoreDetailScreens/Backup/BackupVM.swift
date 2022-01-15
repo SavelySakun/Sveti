@@ -114,7 +114,7 @@ class BackupVM: ViewControllerVM {
     let continueAction = UIAlertAction(title: "OK", style: .default) { _ in
       self.restoreData()
     }
-    backupDelegate?.showAlert(title: "Attention", message: "This action will replace all app content stored on the device", actions: [cancelAction, continueAction])
+    backupDelegate?.showAlert(title: "Attention".localized, message: "This action will replace all app content stored on the device".localized, actions: [cancelAction, continueAction])
   }
 
   private func restoreData() {
@@ -125,14 +125,14 @@ class BackupVM: ViewControllerVM {
   }
 
   private func deleteBackup() {
-    let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+    let deleteAction = UIAlertAction(title: "Delete".localized, style: .destructive) { _ in
       self.backupDelegate?.updateLoadingIndicator(show: true)
       self.backgroundQueue.async {
         self.backupManager.deleteBackupFromCloudKit { self.backupManagerResultHandler($0, $1) }
       }
     }
 
-    let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-    backupDelegate?.showAlert(title: "Attention", message: "Cloud data will be deleted", actions: [cancelAction, deleteAction])
+    let cancelAction = UIAlertAction(title: "Cancel".localized, style: .default)
+    backupDelegate?.showAlert(title: "Attention".localized, message: "Cloud data will be deleted".localized, actions: [cancelAction, deleteAction])
   }
 }

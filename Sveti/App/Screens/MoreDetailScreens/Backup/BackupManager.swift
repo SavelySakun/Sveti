@@ -20,14 +20,14 @@ class BackupManager {
 
   func createBackupInCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     guard let realmFileURL = getRealmURL() else {
-      onCompletion(nil, "Can't find correct path to local data")
+      onCompletion(nil, "Can't find correct path to local data".localized)
       return
     }
     let backupRecord = CKRecord(recordType: backupRecordType)
     backupRecord["realmfile"] = CKAsset(fileURL: realmFileURL)
     database.save(backupRecord) { record, error in
       guard error == nil, let record = record else {
-        let errorDescription = error?.localizedDescription ?? "Unknown saving backup error"
+        let errorDescription = error?.localizedDescription ?? "Unknown saving backup error".localized
         onCompletion(nil, errorDescription)
         return
       }
@@ -38,13 +38,13 @@ class BackupManager {
 
   func updateExistingBackupRecord(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     guard let realmFileURL = getRealmURL() else {
-      onCompletion(nil, "Didn't find local files to update backup")
+      onCompletion(nil, "Didn't find local files to update backup".localized)
       return
     }
 
     getExistingBackupRecord() { record in
       guard let existingRecord = record else {
-        onCompletion(nil, "The data in the cloud no longer exists. Please refresh")
+        onCompletion(nil, "The data in the cloud no longer exists. Please refresh".localized)
         return
       }
 
@@ -55,7 +55,7 @@ class BackupManager {
 
       modifyRecordsOperation.modifyRecordsCompletionBlock = { records, _, error in
         guard error == nil, let record = records?.last else {
-          let errorDescription = error?.localizedDescription ?? "Unknown modification backup error"
+          let errorDescription = error?.localizedDescription ?? "Unknown backup modification error".localized
           onCompletion(nil, errorDescription)
           return
         }
@@ -120,24 +120,24 @@ class BackupManager {
   func restoreBackup(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     getExistingBackupRecord { existingBackupRecord in
       guard let record = existingBackupRecord else {
-        onCompletion(nil, "Can't find correct backup record in cloud. Please refresh")
+        onCompletion(nil, "Can't find correct backup record in the cloud. Please refresh".localized)
         return
       }
 
       guard let realmBackupAsset = record.value(forKey: "realmfile") as? CKAsset,
             let backupFileURL = realmBackupAsset.fileURL else {
-              onCompletion(nil, "Can't find backup file in cloud. Please refresh")
+              onCompletion(nil, "Can't find backup file in the cloud. Please refresh".localized)
               return
             }
 
       guard FileManager.default.fileExists(atPath: backupFileURL.path) else {
-        onCompletion(nil, "There are no correct backup files in the cloud. Please refresh")
+        onCompletion(nil, "There are no correct backup files in the cloud. Please refresh".localized)
         return
       }
 
       LocalFilesManager().restoreBackup(from: backupFileURL) { isRestored, error in
         guard error == nil, isRestored == true else {
-          onCompletion(nil, error ?? "Unknown data recovery error")
+          onCompletion(nil, error ?? "Unknown data recovery error".localized)
           return
         }
         onCompletion(BackupInfo(state: .successDataRestore), nil)
@@ -147,12 +147,12 @@ class BackupManager {
 
   func deleteBackupFromCloudKit(onCompletion: @escaping (BackupInfo?, String?) -> Void) {
     guard let recordName = getBackupRecordName() else {
-      onCompletion(nil, "Cloud backup already doesn't exist. Please refresh")
+      onCompletion(nil, "Cloud backup already doesn't exist. Please refresh".localized)
       return
     }
     database.delete(withRecordID: CKRecord.ID(recordName: recordName)) { _, error in
       guard error == nil else {
-        let error = error?.localizedDescription ?? "Unknown error during record deletion"
+        let error = error?.localizedDescription ?? "Unknown error during record deletion".localized
         onCompletion(nil, error)
         return
       }

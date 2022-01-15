@@ -22,11 +22,11 @@ enum BackupState {
     case .needToCheckBackupExistence, .readyToRestoreBackup, .noBackupFound, .noInternetConnection, .needToAuthInICloud:
       return nil
     case .successDataRestore:
-      return ("Success", "All data has been restored", UIImage(systemName: "arrow.down.doc"))
+      return ("Success".localized, "All data has been restored".localized, UIImage(systemName: "arrow.down.doc"))
     case .successBackupedToCloud:
-      return ("Success", "All data has saved in cloud", UIImage(named: "cloud"))
+      return ("Success".localized, "All data has saved in cloud".localized, UIImage(named: "cloud"))
     case .backupDeleted:
-      return ("Success", "All data has been deleted", nil)
+      return ("Success".localized, "All data has been deleted".localized, nil)
     }
   }
 }

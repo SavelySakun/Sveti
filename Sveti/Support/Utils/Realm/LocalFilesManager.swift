@@ -12,7 +12,7 @@ class LocalFilesManager {
 
     // Get URL of local Realm file
     guard let realmURL = RealmHelper().getRealmURL() else {
-      onCompletion((false, "Can't find correct path to local data"))
+      onCompletion((false, "Can't find correct path to local data".localized))
       return
     }
 
@@ -20,7 +20,7 @@ class LocalFilesManager {
       // Check correct scheme version of Realm to avoid crash when local verson lower then in backup
       let backupRealmFileSchemaVersion = try schemaVersionAtURL(backupFileURL, encryptionKey: nil)
       guard backupRealmFileSchemaVersion <= RealmHelper().schemaVersion else {
-        onCompletion((false, "Backup file version is higher than the version of the files in the application. Please update the app"))
+        onCompletion((false, "Backup file version is higher than the version of the files in the application. Please update the app".localized))
         return
       }
 
