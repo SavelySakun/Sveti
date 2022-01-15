@@ -6,24 +6,7 @@ import RealmSwift
 class RealmHelper {
 
   private let userDefaults = UserDefaults()
-
-  var schemaVersion: UInt64 {
-    (userDefaults.value(forKey: UDKeys.realmSchemeVersion) as? UInt64) ?? 7
-  }
-
-  init() {
-    setDefaults()
-  }
-
-  private func setDefaults() {
-    userDefaults.register(
-      defaults: [UDKeys.realmSchemeVersion: 7]
-    )
-  }
-
-  func incrementSchemaVersion() {
-    userDefaults.set(schemaVersion + 1, forKey: UDKeys.realmSchemeVersion)
-  }
+  var schemaVersion: UInt64 = 7
 
   func getRealmURL() -> URL? {
     let fileNameForRealmBackup: String? = userDefaults.value(forKey: UDKeys.lastRealmBackupFilename) as? String
@@ -37,10 +20,9 @@ class RealmHelper {
   }
 
   func configureRealm() {
-
     let config = Realm.Configuration(
       fileURL: getRealmURL(),
-      schemaVersion: self.schemaVersion,
+      schemaVersion: schemaVersion,
       migrationBlock: { _, oldSchemaVersion in
         if (oldSchemaVersion < self.schemaVersion) {
           // Nothing to do!

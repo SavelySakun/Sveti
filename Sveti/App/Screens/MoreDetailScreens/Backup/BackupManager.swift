@@ -133,8 +133,8 @@ class BackupManager {
         return
       }
 
-      guard let realmFile = record.value(forKey: "realmfile") as? CKAsset,
-        let backupFileURL = realmFile.fileURL else {
+      guard let realmBackupAsset = record.value(forKey: "realmfile") as? CKAsset,
+        let backupFileURL = realmBackupAsset.fileURL else {
         onCompletion(nil, "Can't find backup file in cloud. Please refresh")
         return
       }
@@ -149,9 +149,15 @@ class BackupManager {
         return
       }
 
-      self.deleteFilesInLocalDirectory(url: realmURL)
-
       do {
+        let backupRealmFileSchemaVersion = try schemaVersionAtURL(backupFileURL, encryptionKey: nil)
+        guard backupRealmFileSchemaVersion <= RealmHelper().schemaVersion else {
+          onCompletion(nil, "Backup file version is higher than the version of the files in the application. Please update the app")
+          return
+        }
+
+        self.deleteFilesInLocalDirectory(url: realmURL)
+
         let fileNameForRealmBackup = "\(UUID().uuidString.prefix(4))_sveti_backup.realm"
         self.userDefaults.set(fileNameForRealmBackup, forKey: UDKeys.lastRealmBackupFilename)
         self.userDefaults.set(Date(), forKey: UDKeys.lastRealmBackupDate)
