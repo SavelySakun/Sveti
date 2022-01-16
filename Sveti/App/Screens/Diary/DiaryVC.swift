@@ -14,10 +14,6 @@ class DiaryVC: BaseViewController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
-    // Onboarding creation, remove after task completion!
-//    let onboardingVC = SvetiOnboardingVC()
-//    onboardingVC.presentIfNeeded(from: self)
   }
 
   override func logOpenScreenEvent() {
@@ -27,6 +23,12 @@ class DiaryVC: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setLayout()
+    showOnboardingIfNeeded()
+  }
+
+  private func showOnboardingIfNeeded() {
+    let onboardingVC = SvetiOnboardingVC()
+    onboardingVC.presentIfNeeded(from: self)
   }
 
   override func updateContent() {
