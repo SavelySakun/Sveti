@@ -1,14 +1,16 @@
 import UIKit
 
-class EditTagGroupsMoreItem: ISimpleCellItem {
-  var title: String = "Tag groups".localized
-  var iconBackgroundColor: UIColor? = .systemBlue
-  var iconImage: UIImage? = UIImage(named: "folder")?.withRenderingMode(.alwaysTemplate)
-  var iconTintColor: UIColor? = .white
-  var accessoryImage: UIImage?
+class EditTagGroupsMoreItem: SimpleCellItem {
+  override init() {
+    super.init()
+    title = "Tag groups".localized
+    iconBackgroundColor = .systemBlue
+    iconImage = UIImage(named: "folder")?.withRenderingMode(.alwaysTemplate)
+    iconTintColor = .white
 
-  var onTapAction: (() -> Void)? = {
-    guard let currentVC = CurrentVC.current else { return }
-    currentVC.navigationController?.pushViewController(EditTagGroupsVC(), animated: true)
+    onTapAction = { _ in
+      guard let currentVC = CurrentVC.current else { return }
+      currentVC.navigationController?.pushViewController(EditTagGroupsVC(), animated: true)
+    }
   }
 }

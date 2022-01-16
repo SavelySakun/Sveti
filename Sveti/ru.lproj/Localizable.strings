@@ -135,3 +135,41 @@
 "A trend noticed at an early stage allows you to change the factors influencing it." = "Тенденция, замеченная на ранней стадии, позволяет изменить влияющие на нее факторы.";
 "All information stored in Sveti is absolutely private" = "Вся информация, хранящаяся в Sveti, является абсолютно конфиденциальной.";
 "Records & statistics are saved only on your device and no one has access to them." = "Записи и статистика сохраняются только на вашем устройстве и ни у кого нет к ним доступа.";
+
+// Backup
+"Can't find correct path to local data" = "Не удается найти правильный путь к локальным данным";
+"Unknown saving backup error" = "Неизвестная ошибка сохранения резервной копии";
+"Didn't find local files to update backup" = "Не удалось найти локальные файлы для обновления резервной копии";
+"The data in the cloud no longer exists. Please refresh" = "Данные в облаке больше не существуют. Пожалуйста, обновите";
+"Unknown backup modification error" = "Неизвестная ошибка модификации резервной копии";
+"Can't find correct backup record in the cloud. Please refresh" = "Не удается найти правильную резервную запись в облаке. Пожалуйста, обновите";
+"Can't find backup file in the cloud. Please refresh" = "Не удается найти файл резервной копии в облаке. Пожалуйста, обновите";
+"There are no correct backup files in the cloud. Please refresh" = "В облаке нет правильных файлов резервных копий. Пожалуйста, обновите";
+"Unknown data recovery error" = "Неизвестная ошибка восстановления данных";
+"Cloud backup already doesn't exist. Please refresh" = "Облачного резервного копирования уже не существует. Пожалуйста, обновите";
+"Unknown error during record deletion" = "Неизвестная ошибка при удалении записи";
+"Can't find correct path to local data" = "Не удается найти правильный путь к локальным данным";
+"Backup file version is higher than the version of the files in the application. Please update the app" = "Версия файла резервной копии выше, чем версия файлов в приложении. Пожалуйста, обновите приложение";
+"This action will replace all app content stored on the device" = "Это действие заменит весь контент приложения, хранящийся на устройстве";
+"Cloud data will be deleted" = "Облачные данные будут удалены";
+"Updated" = "Обновлено";
+"Success" = "Успешно";
+"All data has been restored" = "Все данные восстановлены";
+"All data has saved in cloud" = "Все данные сохранены в облаке";
+"All data has been deleted" = "Все данные удалены";
+
+// Backup cells & sections
+"Save data to the cloud" = "Сохранить данные в облако";
+"Restore data" = "Восстановить данные";
+"Delete cloud save" = "Удалить облачное сохранение";
+"This action cannot be undone" = "Это действие не может быть отменено";
+"Danger zone" = "Опасная зона";
+"No internet access" = "Нет доступа в Интернет";
+"Please check your device settings" = "Пожалуйста, проверьте настройки вашего устройства";
+"Need to log in to iCloud" = "Необходимо войти в iCloud";
+"You can do this in the device settings" = "Это можно сделать в настройках устройства";
+"Cloud backup not found" = "Облачная резервная копия не найдена";
+"Create your first backup" = "Создайте свою первую копию";
+"Last backup: %@, %@" = "Последнее сохранение: %@, %@";
+"Actions" = "Действия";
+"Backup & restore" = "Облачное сохранение";

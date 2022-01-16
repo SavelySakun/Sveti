@@ -3,7 +3,9 @@ import RealmSwift
 
 class NotesRepository {
 
-  let realm = try! Realm()
+  private var realm: Realm {
+    try! Realm()
+  }
 
   func save(_ note: Note) {
     try! realm.write {

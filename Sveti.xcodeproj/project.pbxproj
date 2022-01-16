@@ -26,7 +26,7 @@
 		FC1563FA2748FA0F00AAD925 /* ISimpleCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */; };
 		FC1563FC2748FBC900AAD925 /* ContactDeveloperMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */; };
 		FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */; };
-		FC1564022749007700AAD925 /* TableViewWithTapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1564012749007700AAD925 /* TableViewWithTapAction.swift */; };
+		FC1564022749007700AAD925 /* SimpleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1564012749007700AAD925 /* SimpleTableView.swift */; };
 		FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC156403274A21C400AAD925 /* VCwithScrollView.swift */; };
 		FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC22740F50A000DE791 /* SelectStatVC.swift */; };
 		FC25ADC52740F548000DE791 /* SelectStatTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */; };
@@ -67,7 +67,12 @@
 		FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB12771D1F80078B83A /* SplitDateTests.swift */; };
 		FC451CB42771F3E60078B83A /* TagsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */; };
 		FC451CB72771F96B0078B83A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC451CB62771F96B0078B83A /* TestHelper.swift */; };
+		FC4B18DF2791810300B63211 /* BackupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18DE2791810300B63211 /* BackupEvent.swift */; };
+		FC4B18E12791C78100B63211 /* DeleteBackupCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */; };
+		FC4B18E32792CAEC00B63211 /* BackupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E22792CAEC00B63211 /* BackupTests.swift */; };
+		FC4B18E62792E84300B63211 /* LocalFilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4B18E52792E84300B63211 /* LocalFilesManager.swift */; };
 		FC518DBF2782FA21008C351B /* StatsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC518DBE2782FA21008C351B /* StatsBarChartView.swift */; };
+		FC598E3C278F64FB00F39689 /* WarningBackupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */; };
 		FC6C56DC266000FB000188A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DB266000FB000188A6 /* AppDelegate.swift */; };
 		FC6C56DE266000FB000188A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6C56DD266000FB000188A6 /* SceneDelegate.swift */; };
 		FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6C56E4266000FD000188A6 /* Assets.xcassets */; };
@@ -138,7 +143,7 @@
 		FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */; };
 		FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */; };
 		FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */; };
-		FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */; };
+		FCB9EC72274A52E500E3E864 /* BackupMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC71274A52E500E3E864 /* BackupMoreItem.swift */; };
 		FCB9ECB9274BE66600E3E864 /* EditTagGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECB8274BE66600E3E864 /* EditTagGroupsVC.swift */; };
 		FCB9ECBB274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBA274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift */; };
 		FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9ECBC274BE8D900E3E864 /* EditTagGroupsCell.swift */; };
@@ -155,6 +160,16 @@
 		FCCA2EDA278AE6B800C46EA9 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */; };
 		FCCA2EDC278AE75C00C46EA9 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */; };
 		FCCA2EEE278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */; };
+		FCCA2EF0278B314300C46EA9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCA2EEF278B314300C46EA9 /* CloudKit.framework */; };
+		FCCA2EF3278B41DF00C46EA9 /* BackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2EF2278B41DF00C46EA9 /* BackupManager.swift */; };
+		FCCA2F0F278C5BE000C46EA9 /* BackupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F0E278C5BE000C46EA9 /* BackupVC.swift */; };
+		FCCA2F11278C5BF800C46EA9 /* BackupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */; };
+		FCCA2F14278C5C2E00C46EA9 /* BackupToCloudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */; };
+		FCCA2F16278C5CE400C46EA9 /* RestoreFromCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */; };
+		FCCA2FF4278F2AD400C46EA9 /* BackupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */; };
+		FCCA2FF6278F33B500C46EA9 /* BackupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF5278F33B500C46EA9 /* BackupError.swift */; };
+		FCCA2FF8278F33D200C46EA9 /* BackupState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF7278F33D200C46EA9 /* BackupState.swift */; };
+		FCCA2FFA278F3F4300C46EA9 /* SimpleCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */; };
 		FCD9AB4B268A321200817746 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4A268A321200817746 /* TableDataProvider.swift */; };
 		FCD9AB4D268A333900817746 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4C268A333900817746 /* TableSection.swift */; };
 		FCD9AB50268A336C00817746 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9AB4F268A336C00817746 /* CellData.swift */; };
@@ -231,7 +246,7 @@
 		FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISimpleCellItem.swift; sourceTree = "<group>"; };
 		FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperMoreItem.swift; sourceTree = "<group>"; };
 		FC1563FF2748FF3300AAD925 /* ContactDeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDeveloperVC.swift; sourceTree = "<group>"; };
-		FC1564012749007700AAD925 /* TableViewWithTapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithTapAction.swift; sourceTree = "<group>"; };
+		FC1564012749007700AAD925 /* SimpleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableView.swift; sourceTree = "<group>"; };
 		FC156403274A21C400AAD925 /* VCwithScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCwithScrollView.swift; sourceTree = "<group>"; };
 		FC25ADC22740F50A000DE791 /* SelectStatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatVC.swift; sourceTree = "<group>"; };
 		FC25ADC42740F548000DE791 /* SelectStatTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatTableDataProvider.swift; sourceTree = "<group>"; };
@@ -274,7 +289,12 @@
 		FC451CB12771D1F80078B83A /* SplitDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDateTests.swift; sourceTree = "<group>"; };
 		FC451CB32771F3E60078B83A /* TagsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepositoryTests.swift; sourceTree = "<group>"; };
 		FC451CB62771F96B0078B83A /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		FC4B18DE2791810300B63211 /* BackupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEvent.swift; sourceTree = "<group>"; };
+		FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBackupCellItem.swift; sourceTree = "<group>"; };
+		FC4B18E22792CAEC00B63211 /* BackupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupTests.swift; sourceTree = "<group>"; };
+		FC4B18E52792E84300B63211 /* LocalFilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFilesManager.swift; sourceTree = "<group>"; };
 		FC518DBE2782FA21008C351B /* StatsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBarChartView.swift; sourceTree = "<group>"; };
+		FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningBackupItem.swift; sourceTree = "<group>"; };
 		FC6C56D8266000FB000188A6 /* Sveti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sveti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6C56DB266000FB000188A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC6C56DD266000FB000188A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -344,7 +364,7 @@
 		FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImage.swift; sourceTree = "<group>"; };
 		FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsMoreItem.swift; sourceTree = "<group>"; };
 		FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMoreItem.swift; sourceTree = "<group>"; };
-		FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDataMoreItem.swift; sourceTree = "<group>"; };
+		FCB9EC71274A52E500E3E864 /* BackupMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupMoreItem.swift; sourceTree = "<group>"; };
 		FCB9ECB8274BE66600E3E864 /* EditTagGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsVC.swift; sourceTree = "<group>"; };
 		FCB9ECBA274BE6EC00E3E864 /* EditTagGroupsTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsTableDataProvider.swift; sourceTree = "<group>"; };
 		FCB9ECBC274BE8D900E3E864 /* EditTagGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupsCell.swift; sourceTree = "<group>"; };
@@ -359,6 +379,16 @@
 		FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
 		FCCA2EDB278AE75C00C46EA9 /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
 		FCCA2EED278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvetiAnalyticsKeys.swift; sourceTree = "<group>"; };
+		FCCA2EEF278B314300C46EA9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FCCA2EF2278B41DF00C46EA9 /* BackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupManager.swift; sourceTree = "<group>"; };
+		FCCA2F0E278C5BE000C46EA9 /* BackupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupVC.swift; sourceTree = "<group>"; };
+		FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupTableDataProvider.swift; sourceTree = "<group>"; };
+		FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupToCloudItem.swift; sourceTree = "<group>"; };
+		FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreFromCloud.swift; sourceTree = "<group>"; };
+		FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupVM.swift; sourceTree = "<group>"; };
+		FCCA2FF5278F33B500C46EA9 /* BackupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupError.swift; sourceTree = "<group>"; };
+		FCCA2FF7278F33D200C46EA9 /* BackupState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupState.swift; sourceTree = "<group>"; };
+		FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCellItem.swift; sourceTree = "<group>"; };
 		FCD9AB4A268A321200817746 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		FCD9AB4C268A333900817746 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		FCD9AB4F268A336C00817746 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
@@ -419,6 +449,7 @@
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
 				FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */,
+				FCCA2EF0278B314300C46EA9 /* CloudKit.framework in Frameworks */,
 				FCB3D3B9277719FA00A23664 /* FirebaseAnalytics in Frameworks */,
 				DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */,
 			);
@@ -430,6 +461,7 @@
 		24F49D303F3C42ED2E832889 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCCA2EEF278B314300C46EA9 /* CloudKit.framework */,
 				491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */,
 				3913FBF81BAF6DF946FECB26 /* Pods_Sveti_SvetiUITests.framework */,
 				D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */,
@@ -456,8 +488,6 @@
 				FC1563F82748FA0200AAD925 /* More Models */,
 				FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */,
 				FC1563F22748E8B700AAD925 /* MoreTableDataProvider.swift */,
-				FC1563F42748E9AA00AAD925 /* SimpleCell.swift */,
-				FC1564012749007700AAD925 /* TableViewWithTapAction.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -610,11 +640,10 @@
 		FC1563F82748FA0200AAD925 /* More Models */ = {
 			isa = PBXGroup;
 			children = (
-				FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */,
 				FC1563FB2748FBC900AAD925 /* ContactDeveloperMoreItem.swift */,
 				FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */,
 				FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */,
-				FCB9EC71274A52E500E3E864 /* DownloadDataMoreItem.swift */,
+				FCB9EC71274A52E500E3E864 /* BackupMoreItem.swift */,
 			);
 			path = "More Models";
 			sourceTree = "<group>";
@@ -645,6 +674,7 @@
 			children = (
 				FCA8D7562780C16C00212E51 /* StatTests */,
 				FC451CB52771F4370078B83A /* NewNoteTests */,
+				FC4B18E22792CAEC00B63211 /* BackupTests.swift */,
 				FC451CB12771D1F80078B83A /* SplitDateTests.swift */,
 				FC29A66626EC979A00DC87DA /* Info.plist */,
 			);
@@ -695,6 +725,7 @@
 				FC6C58AB26613C32000188A6 /* TableView.swift */,
 				FC6C58EA26653AF6000188A6 /* CellVM.swift */,
 				FC76B39226810F7700AF209F /* Cell.swift */,
+				FC4B18DD27917F1900B63211 /* SimpleCell */,
 				FCD9AB4E268A335100817746 /* TableData */,
 			);
 			path = Table;
@@ -785,9 +816,30 @@
 			path = NewNoteTests;
 			sourceTree = "<group>";
 		};
+		FC4B18DD27917F1900B63211 /* SimpleCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC1564012749007700AAD925 /* SimpleTableView.swift */,
+				FC1563F42748E9AA00AAD925 /* SimpleCell.swift */,
+				FCCA2FF9278F3F4300C46EA9 /* SimpleCellItem.swift */,
+				FC1563F92748FA0F00AAD925 /* ISimpleCellItem.swift */,
+			);
+			path = SimpleCell;
+			sourceTree = "<group>";
+		};
+		FC4B18E42792E83000B63211 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
+				FC4B18E52792E84300B63211 /* LocalFilesManager.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		FC518DC22782FBCD008C351B /* MoreDetailScreens */ = {
 			isa = PBXGroup;
 			children = (
+				FCCA2F0D278C5B8B00C46EA9 /* Backup */,
 				FCC922A927665EB4009F7508 /* About */,
 				FCB9ECB6274BE33300E3E864 /* EditTagGroups */,
 				FC1563FE2748FF1A00AAD925 /* ContactDeveloper */,
@@ -851,6 +903,7 @@
 		FC6C58B72663D1CD000188A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FC4B18E42792E83000B63211 /* Realm */,
 				FC445AFF27772063006458D1 /* Analytics */,
 				FC84E82226C902530081CBA2 /* UserDefaults */,
 				FC29A67326ECEAB300DC87DA /* TestHelper */,
@@ -858,7 +911,6 @@
 				FC7E6D2726AC019C00126B97 /* Constants.swift */,
 				FC7E6DC226AF27B600126B97 /* ColorHelper.swift */,
 				FC7E6DC426AF29B500126B97 /* MathHelper.swift */,
-				FC7E6D9E26AD290E00126B97 /* RealmHelper.swift */,
 				FCCA2ED52788922800C46EA9 /* DeviceUtils.swift */,
 				FCCA2ED72789B25500C46EA9 /* OrientationConstraints.swift */,
 			);
@@ -1054,6 +1106,32 @@
 				FCA8D752278095F200212E51 /* LinkToSiteModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FCCA2F0D278C5B8B00C46EA9 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				FCCA2EF2278B41DF00C46EA9 /* BackupManager.swift */,
+				FCCA2F12278C5C0D00C46EA9 /* CellItems */,
+				FCCA2F0E278C5BE000C46EA9 /* BackupVC.swift */,
+				FCCA2FF3278F2AD400C46EA9 /* BackupVM.swift */,
+				FCCA2F10278C5BF800C46EA9 /* BackupTableDataProvider.swift */,
+				FCCA2FF5278F33B500C46EA9 /* BackupError.swift */,
+				FCCA2FF7278F33D200C46EA9 /* BackupState.swift */,
+				FC4B18DE2791810300B63211 /* BackupEvent.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		FCCA2F12278C5C0D00C46EA9 /* CellItems */ = {
+			isa = PBXGroup;
+			children = (
+				FCCA2F13278C5C2E00C46EA9 /* BackupToCloudItem.swift */,
+				FCCA2F15278C5CE400C46EA9 /* RestoreFromCloud.swift */,
+				FC598E3B278F64FB00F39689 /* WarningBackupItem.swift */,
+				FC4B18E02791C78100B63211 /* DeleteBackupCellItem.swift */,
+			);
+			path = CellItems;
 			sourceTree = "<group>";
 		};
 		FCD9AB4E268A335100817746 /* TableData */ = {
@@ -1446,6 +1524,7 @@
 			files = (
 				FCA8D7552780AEF400212E51 /* NotesRepositoryTests.swift in Sources */,
 				FC451CB42771F3E60078B83A /* TagsRepositoryTests.swift in Sources */,
+				FC4B18E32792CAEC00B63211 /* BackupTests.swift in Sources */,
 				FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */,
 				FC451CB22771D1F80078B83A /* SplitDateTests.swift in Sources */,
 				FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */,
@@ -1458,6 +1537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1563F52748E9AA00AAD925 /* SimpleCell.swift in Sources */,
+				FCCA2EF3278B41DF00C46EA9 /* BackupManager.swift in Sources */,
 				FC84E82426C902680081CBA2 /* UDKeys.swift in Sources */,
 				FC1563F32748E8B700AAD925 /* MoreTableDataProvider.swift in Sources */,
 				FC42A792273ABD00004A56F9 /* StatDayContentManager.swift in Sources */,
@@ -1477,12 +1557,14 @@
 				FC1563FA2748FA0F00AAD925 /* ISimpleCellItem.swift in Sources */,
 				FCCA2ED82789B25500C46EA9 /* OrientationConstraints.swift in Sources */,
 				FC0CCC7226BE6D0D004CDE8A /* TagGroup.swift in Sources */,
+				FCCA2FF4278F2AD400C46EA9 /* BackupVM.swift in Sources */,
 				FC27075D275CA2A600A2440A /* List.swift in Sources */,
 				FC7E6DC126AEFAE400126B97 /* DatePickerCell.swift in Sources */,
 				FCB9ECBD274BE8D900E3E864 /* EditTagGroupsCell.swift in Sources */,
 				FCEEB21B26CC02A700F7B00F /* EditingTableView.swift in Sources */,
 				FC7E6D6026AC349400126B97 /* BaseViewController.swift in Sources */,
 				FCB9ECB9274BE66600E3E864 /* EditTagGroupsVC.swift in Sources */,
+				FCCA2F0F278C5BE000C46EA9 /* BackupVC.swift in Sources */,
 				FC42A6C827353DE5004A56F9 /* StatDayValueFormatter.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
 				FC42A75427397F86004A56F9 /* StatsDataSource.swift in Sources */,
@@ -1498,6 +1580,7 @@
 				FC1563A5274692F800AAD925 /* Double.swift in Sources */,
 				FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */,
 				FC25ADCD2741025B000DE791 /* StatTypes.swift in Sources */,
+				FCCA2FF6278F33B500C46EA9 /* BackupError.swift in Sources */,
 				FCCA2EEE278B0A9100C46EA9 /* SvetiAnalyticsKeys.swift in Sources */,
 				FC29A67826EDDDB600DC87DA /* BarChartCell.swift in Sources */,
 				FC84E82126C8FC350081CBA2 /* DefaultTags.swift in Sources */,
@@ -1518,13 +1601,16 @@
 				FC9F93AA272ED3A700582765 /* StatsVM.swift in Sources */,
 				FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */,
 				FCB9ED04274FF49100E3E864 /* EditTagGroupsTable.swift in Sources */,
+				FC4B18E62792E84300B63211 /* LocalFilesManager.swift in Sources */,
 				FC42A79D273AC031004A56F9 /* IRepository.swift in Sources */,
-				FCB9EC72274A52E500E3E864 /* DownloadDataMoreItem.swift in Sources */,
+				FCB9EC72274A52E500E3E864 /* BackupMoreItem.swift in Sources */,
 				FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */,
+				FC598E3C278F64FB00F39689 /* WarningBackupItem.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,
 				FC6C58B92663D1DB000188A6 /* UIUtils.swift in Sources */,
+				FCCA2FFA278F3F4300C46EA9 /* SimpleCellItem.swift in Sources */,
 				FC7E6D9926AC8A2E00126B97 /* DiaryTableSectionHeader.swift in Sources */,
 				FCC922AB27665EC4009F7508 /* AboutVC.swift in Sources */,
 				FC7E6DA126AD4CD200126B97 /* ImageTextView.swift in Sources */,
@@ -1543,6 +1629,7 @@
 				FCB0643326B55E0A00A0494A /* DetailNoteTableDataProvider.swift in Sources */,
 				FC3A898C26A0584D0048E4ED /* SliderCells.swift in Sources */,
 				FC7E6D9726AC625800126B97 /* DiaryVM.swift in Sources */,
+				FC4B18DF2791810300B63211 /* BackupEvent.swift in Sources */,
 				FCA8D7612781A68600212E51 /* String.swift in Sources */,
 				FCC922B6276664AA009F7508 /* Bundle.swift in Sources */,
 				FC6C58AC26613C32000188A6 /* TableView.swift in Sources */,
@@ -1570,11 +1657,13 @@
 				FCE3689D26D268FB00A05271 /* SelectGroupTableDataProvider.swift in Sources */,
 				FC451CB72771F96B0078B83A /* TestHelper.swift in Sources */,
 				FC7E6D1726AB03AC00126B97 /* NotesRepository.swift in Sources */,
+				FCCA2F11278C5BF800C46EA9 /* BackupTableDataProvider.swift in Sources */,
 				FC25ADC92740FC79000DE791 /* SelectStatTableHeaderView.swift in Sources */,
 				FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */,
 				FC6C58BC2663D3B3000188A6 /* TagCollectionView.swift in Sources */,
 				FC451CAE2770DA080078B83A /* SvetiTagListView.swift in Sources */,
 				FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */,
+				FCCA2F14278C5C2E00C46EA9 /* BackupToCloudItem.swift in Sources */,
 				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
 				FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */,
 				FCE3973B27875331001BC98F /* OnboardingSlide.swift in Sources */,
@@ -1595,20 +1684,23 @@
 				FC3A899126A05B330048E4ED /* TextView.swift in Sources */,
 				FC42A6C427350B7E004A56F9 /* StatDayChartFormatter.swift in Sources */,
 				FC42A6F127366615004A56F9 /* GroupingType.swift in Sources */,
+				FCCA2F16278C5CE400C46EA9 /* RestoreFromCloud.swift in Sources */,
 				FCB0643526B560A000A0494A /* ScoreView.swift in Sources */,
 				FCEA31B826D67B940062509A /* Note.swift in Sources */,
 				FC8BE9B226E65F3200D12704 /* StatDay.swift in Sources */,
 				FCE3973D27875347001BC98F /* OnboardingState.swift in Sources */,
+				FC4B18E12791C78100B63211 /* DeleteBackupCellItem.swift in Sources */,
 				FC6C58EB26653AF6000188A6 /* CellVM.swift in Sources */,
 				FC6C58B426614B65000188A6 /* CommentCell.swift in Sources */,
 				FC8BE9D726E7AE0300D12704 /* StatDaysRepository.swift in Sources */,
 				FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */,
 				FC42A6EF27366396004A56F9 /* StatsFilterEvent.swift in Sources */,
-				FC1564022749007700AAD925 /* TableViewWithTapAction.swift in Sources */,
+				FC1564022749007700AAD925 /* SimpleTableView.swift in Sources */,
 				FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */,
 				FC451CB02770DB0B0078B83A /* DetailTagsCell.swift in Sources */,
 				FCEEB2DD26CD80EC00F7B00F /* Event.swift in Sources */,
 				FC42A79A273ABFF4004A56F9 /* StatSettingsRepository.swift in Sources */,
+				FCCA2FF8278F33D200C46EA9 /* BackupState.swift in Sources */,
 				FC3A898826A054BF0048E4ED /* NoteEditType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1975,7 +2067,7 @@
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.11.0;
+				minimumVersion = 10.21.0;
 			};
 		};
 		FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {

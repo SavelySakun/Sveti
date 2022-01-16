@@ -4,6 +4,7 @@ class BaseViewController: UIViewController {
 
   var markAsCurrentVC = true
   var onClosingCompletion: (() -> Void) = { return }
+  var activitiIndicator = UIActivityIndicatorView(style: .large)
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -15,6 +16,25 @@ class BaseViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
+  }
+
+  func setActivityIndicator() {
+    view.addSubview(activitiIndicator)
+    activitiIndicator.layer.cornerRadius = 12
+    activitiIndicator.backgroundColor = .white.withAlphaComponent(0.7)
+    activitiIndicator.color = .systemGray
+    activitiIndicator.hidesWhenStopped = true
+
+    activitiIndicator.snp.makeConstraints { (make) in
+      make.centerX.centerY.equalToSuperview()
+      make.width.height.equalTo(120)
+    }
+  }
+
+  func startActivityIndicator() {
+    DispatchQueue.main.async {
+      self.activitiIndicator.startAnimating()
+    }
   }
 
   private func hideKeyboardWhenTappedAround() {

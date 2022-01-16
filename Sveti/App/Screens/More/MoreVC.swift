@@ -4,7 +4,7 @@ class MoreVC: VCwithTable {
 
   override init(with tableStyle: UITableView.Style = .insetGrouped) {
     super.init(with: tableStyle)
-    tableView = TableViewWithTapAction(viewModel: viewModel)
+    tableView = SimpleTableView(viewModel: viewModel)
   }
 
   override func logOpenScreenEvent() {

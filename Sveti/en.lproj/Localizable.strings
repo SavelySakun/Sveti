@@ -135,3 +135,41 @@
 "A trend noticed at an early stage allows you to change the factors influencing it." = "A trend noticed at an early stage allows you to change the factors influencing it.";
 "All information stored in Sveti is absolutely private" = "All information stored in Sveti is absolutely private";
 "Records & statistics are saved only on your device and no one has access to them." = "Records & statistics are saved only on your device and no one has access to them.";
+
+// Backup
+"Can't find correct path to local data" = "Can't find correct path to local data";
+"Unknown saving backup error" = "Unknown saving backup error";
+"Didn't find local files to update backup" = "Didn't find local files to update backup";
+"The data in the cloud no longer exists. Please refresh" = "The data in the cloud no longer exists. Please refresh";
+"Unknown backup modification error" = "Unknown backup modification error";
+"Can't find correct backup record in the cloud. Please refresh" = "Can't find correct backup record in the cloud. Please refresh";
+"Can't find backup file in the cloud. Please refresh" = "Can't find backup file in the cloud. Please refresh";
+"There are no correct backup files in the cloud. Please refresh" = "There are no correct backup files in the cloud. Please refresh";
+"Unknown data recovery error" = "Unknown data recovery error";
+"Cloud backup already doesn't exist. Please refresh" = "Cloud backup already doesn't exist. Please refresh";
+"Unknown error during record deletion" = "Unknown error during record deletion";
+"Can't find correct path to local data" = "Can't find correct path to local data";
+"Backup file version is higher than the version of the files in the application. Please update the app" = "Backup file version is higher than the version of the files in the application. Please update the app";
+"This action will replace all app content stored on the device" = "This action will replace all app content stored on the device";
+"Cloud data will be deleted" = "Cloud data will be deleted";
+"Updated" = "Updated";
+"Success" = "Success";
+"All data has been restored" = "All data has been restored";
+"All data has saved in cloud" = "All data has saved in cloud";
+"All data has been deleted" = "All data has been deleted";
+
+// Backup cells & sections
+"Save data to the cloud" = "Save data to the cloud";
+"Restore data" = "Restore data";
+"Delete cloud save" = "Delete cloud save";
+"This action cannot be undone" = "This action cannot be undone";
+"Danger zone" = "Danger zone";
+"No internet access" = "No internet access";
+"Please check your device settings" = "Please check your device settings";
+"Need to log in to iCloud" = "Need to log in to iCloud";
+"You can do this in the device settings" = "You can do this in the device settings";
+"Cloud backup not found" = "Cloud backup not found";
+"Create your first backup" = "Create your first backup";
+"Last backup: %@, %@" = "Last backup: %@, %@";
+"Actions" = "Actions";
+"Backup & restore" = "Backup & restore";
