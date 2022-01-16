@@ -134,7 +134,7 @@
 "Why track your mood?" = "Зачем отслеживать свое настроение?";
 "A trend noticed at an early stage allows you to change the factors influencing it." = "Тенденция, замеченная на ранней стадии, позволяет изменить влияющие на нее факторы.";
 "All information stored in Sveti is absolutely private" = "Вся информация, хранящаяся в Sveti, является абсолютно конфиденциальной.";
-"Records & statistics are saved only on your device and no one has access to them." = "Записи и статистика сохраняются только на вашем устройстве и ни у кого нет к ним доступа.";
+"No one has access to your notes and statistics. Cloud saves are stored in Apple's private database linked to your iCloud account." = "Ни у кого нет доступа к вашим заметкам и статистике. Облачные сохранения хранятся в базе данных Apple, связанной с вашей учетной записью iCloud.";
 
 // Backup
 "Can't find correct path to local data" = "Не удается найти правильный путь к локальным данным";

@@ -134,7 +134,7 @@
 "Why track your mood?" = "Why track your mood?";
 "A trend noticed at an early stage allows you to change the factors influencing it." = "A trend noticed at an early stage allows you to change the factors influencing it.";
 "All information stored in Sveti is absolutely private" = "All information stored in Sveti is absolutely private";
-"Records & statistics are saved only on your device and no one has access to them." = "Records & statistics are saved only on your device and no one has access to them.";
+"No one has access to your notes and statistics. Cloud saves are stored in Apple's private database linked to your iCloud account." = "No one has access to your notes and statistics. Cloud saves are stored in Apple's private database linked to your iCloud account.";
 
 // Backup
 "Can't find correct path to local data" = "Can't find correct path to local data";
