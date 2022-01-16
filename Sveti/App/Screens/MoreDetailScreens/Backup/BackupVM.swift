@@ -75,24 +75,31 @@ class BackupVM: ViewControllerVM {
   }
 
   private func handleBackupInfo(_ backupInfo: BackupInfo) {
+    trackBackupAnalytics(with: backupInfo.state)
+
     subscribers.removeAll() // <- remove old subcribers to avoid event handle action dublication while reusing cells because overrided addSubscriber() does't check already subscribed cells
 
     backupState = backupInfo.state
     lastBackupUpdate = backupInfo.lastBackupDate ?? self.lastBackupUpdate
 
     tableDataProvider?.updateSections(with: BackupInfo(state: backupInfo.state, lastBackupDate: backupInfo.lastBackupDate ?? self.lastBackupUpdate))
-
     delegate?.onNeedToUpdateContent()
+
     guard let alertInfo = backupInfo.state.getAlertInfo() else {
       backupDelegate?.showUpdatedAlert()
       return
     }
     let (title, subtitle, image) = alertInfo
-
     backupDelegate?.showCompleteAlert(title: title, message: subtitle, image: image)
   }
 
+  private func trackBackupAnalytics(with state: BackupState) {
+    guard let key = state.getAnalyticKey() else { return }
+    SvetiAnalytics.log(key)
+  }
+
   private func handleError(_ error: String?) {
+    SvetiAnalytics.log(.backupError, params: ["backup_error_text": error ?? ""])
     backupDelegate?.updateLoadingIndicator(show: false)
     guard let error = error else { return }
     backupDelegate?.showAlert(title: "Error".localized, message: error, actions: nil)

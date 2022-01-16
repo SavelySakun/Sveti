@@ -29,4 +29,16 @@ enum BackupState {
       return ("Success".localized, "All data has been deleted".localized, nil)
     }
   }
+
+  func getAnalyticKey() -> MainEvents? {
+    switch self {
+    case .needToCheckBackupExistence, .noInternetConnection, .needToAuthInICloud:
+      return nil
+    case .readyToRestoreBackup: return .successBackupInfoUpdate
+    case .successDataRestore: return .successRestore
+    case .successBackupedToCloud: return .successBackup
+    case .noBackupFound: return .successBackupInfoUpdate
+    case .backupDeleted: return .successBackupDeletion
+    }
+  }
 }

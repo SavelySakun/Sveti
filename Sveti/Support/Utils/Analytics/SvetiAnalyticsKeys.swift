@@ -40,4 +40,13 @@ enum MainEvents: String {
   case earlyOnboardingExit = "onboarding_early_exit"
   case numberOfSlideWhenEarlyExit = "number_of_slide_when_early_exit" // parameter
   case onboardingFinished = "onboarding_finished"
+
+  // Backup
+  case Backup = "open_backup"
+  case successBackupInfoUpdate = "success_backup_info_update"
+  case successBackup = "success_backup"
+  case successRestore = "success_restore"
+  case successBackupDeletion = "success_backup_deletion"
+  case initiateBackupUpdate = "initiate_backup_update"
+  case backupError = "backup_error" // as param pass error text
 }
