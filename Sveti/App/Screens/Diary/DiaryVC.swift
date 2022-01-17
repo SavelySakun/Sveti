@@ -12,10 +12,6 @@ class DiaryVC: BaseViewController {
     self.updateContent()
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-  }
-
   override func logOpenScreenEvent() {
     SvetiAnalytics.log(.Diary)
   }
