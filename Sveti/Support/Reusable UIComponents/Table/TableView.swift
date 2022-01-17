@@ -85,7 +85,8 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
 extension TableView: CellDelegate {
   func onUpdate() {
     // Used for UITextView auto height
-    self.beginUpdates()
-    self.endUpdates()
+    DispatchQueue.main.async {
+      self.performBatchUpdates(nil)
+    }
   }
 }
