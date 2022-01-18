@@ -1,10 +1,6 @@
 import UIKit
 import Combine
 
-class BackupCell: SimpleCell {
-  
-}
-
 protocol ICellWithOnTapAction {
   var onTapAction: ((PassthroughSubject<Event, Never>?) -> Void)? { get set }
 }

@@ -6,7 +6,7 @@ import RealmSwift
 class RealmHelper {
 
   private let userDefaults = UserDefaults()
-  var schemaVersion: UInt64 = 7
+  var schemaVersion: UInt64 = 8
 
   func getRealmURL() -> URL? {
     let fileNameForRealmBackup: String? = userDefaults.value(forKey: UDKeys.lastRealmBackupFilename) as? String

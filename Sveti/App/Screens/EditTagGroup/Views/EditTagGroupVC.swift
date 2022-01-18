@@ -40,7 +40,7 @@ class EditTagGroupVC: VCwithTable {
 
   override func setViewModel(with dataProvider: TableDataProvider) {
     viewModel = EditTagGroupVM(tableDataProvider: dataProvider, tagGroupId: groupId)
-    viewModel.delegate = self
+    viewModel.contentUpdateDelegate = self
   }
 
   override func setLayout() {
@@ -101,7 +101,7 @@ class EditTagGroupVC: VCwithTable {
   private func setActionsAlertController() {
     hideAction = UIAlertAction(title: "Hide".localized, style: .default) { _ in
       self.tagsRepository.updateTagHiddenStatus(withId: self.editingTagId)
-      self.onNeedToUpdateContent()
+      self.reloadContent()
       SvetiAnalytics.log(.hideTag)
     }
 
@@ -114,7 +114,7 @@ class EditTagGroupVC: VCwithTable {
 
       selectGroupVC.onSelectionCompletion = { groupTitle in
         popupVC.dismiss(animated: true)
-        self.onNeedToUpdateContent()
+        self.reloadContent()
         SPAlert.present(title: "Done".localized, message: "Tag moved to «\(groupTitle)»".localized, preset: .done, haptic: .success)
         SvetiAnalytics.log(.moveTag)
       }
@@ -124,9 +124,7 @@ class EditTagGroupVC: VCwithTable {
     }
 
     let deleteAction = UIAlertAction(title: "Delete".localized, style: .destructive) { _ in
-      self.tagsRepository.removeTag(withId: self.editingTagId)
-      self.onNeedToUpdateContent()
-      SvetiAnalytics.log(.deleteTag)
+      self.showAlertAboutRemoveTagInOldNotes()
     }
 
     let cancelAction = UIAlertAction(title: "Discard".localized, style: .cancel)
@@ -134,6 +132,23 @@ class EditTagGroupVC: VCwithTable {
     [hideAction, changeGroupAction, deleteAction, cancelAction].forEach { action in
       actionsAlertController.addAction(action)
     }
+  }
+
+  private func showAlertAboutRemoveTagInOldNotes() {
+    let okAction = UIAlertAction(title: "Display", style: .default)
+    let deleteAction = UIAlertAction(title: "Remove", style: .default) { _ in
+      NotesRepository().removeTagFromNotes(tagId: self.editingTagId)
+    }
+
+    self.showAlert(title: "Attention".localized, message: "Display a deleted tag in existing notes?", actions: [okAction, deleteAction]) {
+      self.removeTag()
+    }
+  }
+
+  private func removeTag() {
+    self.tagsRepository.removeTag(withId: self.editingTagId)
+    self.reloadContent()
+    SvetiAnalytics.log(.deleteTag)
   }
 
   func showEditAlert(forTag id: String) {
@@ -152,7 +167,7 @@ class EditTagGroupVC: VCwithTable {
     guard let newTagName = alertTextField?.text,
           !newTagName.isEmpty else { return }
     tagsRepository.addNewTag(withName: newTagName, groupId: groupId)
-    onNeedToUpdateContent()
+    reloadContent()
     alertTextField?.text?.removeAll()
     SvetiAnalytics.log(.addTag)
   }
@@ -174,7 +189,7 @@ class EditTagGroupVC: VCwithTable {
 }
 
 extension EditTagGroupVC: ViewControllerVMDelegate {
-  func onNeedToUpdateContent() {
+  func reloadContent() {
     DispatchQueue.main.async { [self] in
       UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
         guard let editTagVM = self.viewModel as? EditTagGroupVM else { return }

@@ -32,6 +32,7 @@ class EditNoteVC: NewNoteVC {
   }
 
   override func onSave() {
+    viewModel.saveCurrentNote()
     guard let dismissAction = onDismissal else { return }
     dismissAction()
     SvetiAnalytics.log(.editNote)
