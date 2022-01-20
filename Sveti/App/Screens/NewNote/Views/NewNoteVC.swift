@@ -68,6 +68,7 @@ class NewNoteVC: BaseViewController, ViewControllerVMDelegate {
   }
 
 	private func addTableView() {
+    tableView.separatorStyle = .none
 		view.addSubview(tableView)
 		tableView.snp.makeConstraints { (make) in
 			make.top.left.bottom.right.equalToSuperview()

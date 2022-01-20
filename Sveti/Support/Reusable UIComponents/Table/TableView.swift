@@ -40,6 +40,11 @@ class TableView: UITableView {
     dataSource = self
     delegate = self
   }
+
+  func isLastCellInSection(for indexPath: IndexPath) -> Bool {
+    let indexOfLastRowInSection = numberOfRows(inSection: indexPath.section) - 1
+    return indexOfLastRowInSection == indexPath.row
+  }
 }
 
 extension TableView: UITableViewDelegate, UITableViewDataSource {
@@ -77,9 +82,12 @@ extension TableView: UITableViewDelegate, UITableViewDataSource {
 
     viewModel.addSubscriber(newSub: subscriber, with: cellType.identifier)
 
+    if isLastCellInSection(for: indexPath) {
+      cell.separatorLine.isHidden = true
+    }
+
     return cell
 	}
-
 }
 
 extension TableView: CellDelegate {

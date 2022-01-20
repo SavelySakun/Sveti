@@ -92,11 +92,9 @@ extension TagCell: UISearchBarDelegate {
 
     if searchText.isEmpty {
       tagsCollection.isSearchMode = false
-      tagsCollection.nothingFoundLabel.isHidden = true
       tagsCollection.tagGroups = tagsRepository.groups
     } else {
       let findTags = tagsRepository.getTags(withName: searchText)
-      tagsCollection.nothingFoundLabel.isHidden = !findTags.isEmpty
       tagsCollection.isSearchMode = true
       tagsCollection.tagGroups = [TagGroup(title: "Search result".localized, tags: findTags)]
     }

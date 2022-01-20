@@ -14,4 +14,5 @@ class SimpleCellItem: ISimpleCellItem {
   var iconBackgroundColor: UIColor?
   var accessoryImage: UIImage?
   var onTapAction: ((PassthroughSubject<Event, Never>?) -> Void)?
+  var showAccessory: Bool = true
 }

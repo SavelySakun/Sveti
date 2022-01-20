@@ -192,7 +192,10 @@
 		FCE3974D27875F8B001BC98F /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */; };
 		FCE3974F278774A9001BC98F /* ImageWithGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */; };
 		FCE6C39B279889D00016BAB2 /* NonExistingTagsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6C39A279889D00016BAB2 /* NonExistingTagsItem.swift */; };
-		FCE6C39D279891E60016BAB2 /* DeleteNonExistingTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6C39C279891E60016BAB2 /* DeleteNonExistingTagsCell.swift */; };
+		FCE6C39D279891E60016BAB2 /* TouchableSimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6C39C279891E60016BAB2 /* TouchableSimpleCell.swift */; };
+		FCE6C43C279B155F0016BAB2 /* NoTagsInGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6C43B279B155F0016BAB2 /* NoTagsInGroupCell.swift */; };
+		FCE6C440279B20950016BAB2 /* NoTagGroupsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6C43F279B20950016BAB2 /* NoTagGroupsItem.swift */; };
+		FCE6C442279C08F10016BAB2 /* NonExistingTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6C441279C08F10016BAB2 /* NonExistingTagsCell.swift */; };
 		FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */; };
 		FCEA31B826D67B940062509A /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA31B726D67B940062509A /* Note.swift */; };
 		FCEEB08626CAD47100F7B00F /* EditTagGroupTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */; };
@@ -411,7 +414,10 @@
 		FCE3974C27875F8B001BC98F /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
 		FCE3974E278774A9001BC98F /* ImageWithGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithGradientBackground.swift; sourceTree = "<group>"; };
 		FCE6C39A279889D00016BAB2 /* NonExistingTagsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonExistingTagsItem.swift; sourceTree = "<group>"; };
-		FCE6C39C279891E60016BAB2 /* DeleteNonExistingTagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNonExistingTagsCell.swift; sourceTree = "<group>"; };
+		FCE6C39C279891E60016BAB2 /* TouchableSimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableSimpleCell.swift; sourceTree = "<group>"; };
+		FCE6C43B279B155F0016BAB2 /* NoTagsInGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTagsInGroupCell.swift; sourceTree = "<group>"; };
+		FCE6C43F279B20950016BAB2 /* NoTagGroupsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTagGroupsItem.swift; sourceTree = "<group>"; };
+		FCE6C441279C08F10016BAB2 /* NonExistingTagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonExistingTagsCell.swift; sourceTree = "<group>"; };
 		FCEA30F726D3DD5E0062509A /* DeleteTableFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableFooter.swift; sourceTree = "<group>"; };
 		FCEA31B726D67B940062509A /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FCEEB08526CAD47100F7B00F /* EditTagGroupTableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagGroupTableDataProvider.swift; sourceTree = "<group>"; };
@@ -509,8 +515,8 @@
 		FC0CCC6B26BE63BC004CDE8A /* TagCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				FCE6C43A279B15440016BAB2 /* Cells */,
 				FC6C58BB2663D3B3000188A6 /* TagCollectionView.swift */,
-				FC6C58B52663CFB9000188A6 /* TagCollectionCell.swift */,
 				FC6C58C12663DB6F000188A6 /* CollectionHeaderView.swift */,
 				FC0CCC9126BE8750004CDE8A /* LeftAlignedCollectionViewFlowLayout.swift */,
 				FC0CCC9326BE8BA8004CDE8A /* TagSectionHeaderView.swift */,
@@ -934,10 +940,10 @@
 			children = (
 				FC7E6D1C26AB1A1600126B97 /* Diary */,
 				FCB0642826B5430E00A0494A /* DetailNote */,
-				FC3A898426A053F60048E4ED /* NewNote */,
 				FC29A66E26ECE0DE00DC87DA /* Statistics */,
 				FCE3689726D2651000A05271 /* SelectGroup */,
 				FC84E84426C912DE0081CBA2 /* EditTagGroup */,
+				FC3A898426A053F60048E4ED /* NewNote */,
 				FCB0643C26B5C74600A0494A /* EditNote */,
 				FC01D41E26D6AAA400C984E7 /* More */,
 				FC518DC22782FBCD008C351B /* MoreDetailScreens */,
@@ -1078,7 +1084,9 @@
 				FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */,
 				FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */,
 				FCE6C39A279889D00016BAB2 /* NonExistingTagsItem.swift */,
-				FCE6C39C279891E60016BAB2 /* DeleteNonExistingTagsCell.swift */,
+				FCE6C43F279B20950016BAB2 /* NoTagGroupsItem.swift */,
+				FCE6C39C279891E60016BAB2 /* TouchableSimpleCell.swift */,
+				FCE6C441279C08F10016BAB2 /* NonExistingTagsCell.swift */,
 			);
 			path = EditNote;
 			sourceTree = "<group>";
@@ -1209,6 +1217,15 @@
 				FCCA2ED9278AE6B800C46EA9 /* OnboardingSlides.swift */,
 			);
 			path = Onboardings;
+			sourceTree = "<group>";
+		};
+		FCE6C43A279B15440016BAB2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC6C58B52663CFB9000188A6 /* TagCollectionCell.swift */,
+				FCE6C43B279B155F0016BAB2 /* NoTagsInGroupCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1575,6 +1592,7 @@
 				FC42A6C827353DE5004A56F9 /* StatDayValueFormatter.swift in Sources */,
 				FC6C58B126613D53000188A6 /* CellWithSlider.swift in Sources */,
 				FC42A75427397F86004A56F9 /* StatsDataSource.swift in Sources */,
+				FCE6C442279C08F10016BAB2 /* NonExistingTagsCell.swift in Sources */,
 				FCD9AB55268A3F3500817746 /* ViewControllerVM.swift in Sources */,
 				FC0CCC6F26BE6CDA004CDE8A /* TagsRepository.swift in Sources */,
 				FC7E6D1E26AB1A2600126B97 /* DiaryVC.swift in Sources */,
@@ -1627,6 +1645,7 @@
 				FCE3689B26D267DF00A05271 /* SelectGroupCell.swift in Sources */,
 				FC42A6E8273641D2004A56F9 /* StatsTableHeaderView.swift in Sources */,
 				FC42A75027397E21004A56F9 /* StatSettings.swift in Sources */,
+				FCE6C43C279B155F0016BAB2 /* NoTagsInGroupCell.swift in Sources */,
 				FC1564002748FF3300AAD925 /* ContactDeveloperVC.swift in Sources */,
 				FCAAD9F326B84FC700607DC0 /* TextOnRoundView.swift in Sources */,
 				FC156404274A21C400AAD925 /* VCwithScrollView.swift in Sources */,
@@ -1658,6 +1677,7 @@
 				FCB0643926B5959600A0494A /* DetailNoteCommentCell.swift in Sources */,
 				FCE3973927874F45001BC98F /* OnboardingVC.swift in Sources */,
 				FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */,
+				FCE6C440279B20950016BAB2 /* NoTagGroupsItem.swift in Sources */,
 				FC7E6DC326AF27B600126B97 /* ColorHelper.swift in Sources */,
 				FC27075B275C9EF800A2440A /* TagGroupList.swift in Sources */,
 				FC7E6D9B26AC927900126B97 /* SplitDate.swift in Sources */,
@@ -1672,7 +1692,7 @@
 				FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */,
 				FCCA2F14278C5C2E00C46EA9 /* BackupToCloudItem.swift in Sources */,
 				FCEEB08A26CADBD100F7B00F /* TagGroupCell.swift in Sources */,
-				FCE6C39D279891E60016BAB2 /* DeleteNonExistingTagsCell.swift in Sources */,
+				FCE6C39D279891E60016BAB2 /* TouchableSimpleCell.swift in Sources */,
 				FC25ADC32740F50A000DE791 /* SelectStatVC.swift in Sources */,
 				FCE3973B27875331001BC98F /* OnboardingSlide.swift in Sources */,
 				FCC922B827666798009F7508 /* Icon8Model.swift in Sources */,

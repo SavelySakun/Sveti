@@ -36,10 +36,10 @@ class NewNoteVM: ViewControllerVM {
       case .none:
         return
       case .needUpdate:
-        guard let (note, updateMessage) = event.value as? NoteUpdate else { return }
+        guard let note = event.value as? Note else { return }
         self.note = note
         needReload = true
-        informationDelegate?.showCompleteAlert(title: "Updated", message: updateMessage ?? "", image: nil)
+        informationDelegate?.showUpdatedAlert()
       }
 
     updateContent(needReload)
