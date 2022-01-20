@@ -13,4 +13,8 @@ class Note: Object, Comparable {
   @objc dynamic var mood: Mood? = Mood()
   @objc dynamic var comment = String()
   var tags = List<Tag>()
+
+  override static func primaryKey() -> String? {
+    return "id"
+  }
 }

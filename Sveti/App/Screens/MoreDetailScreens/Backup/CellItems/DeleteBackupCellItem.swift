@@ -5,7 +5,6 @@ class DeleteBackupCellItem: SimpleCellItem {
     super.init()
     title = "Delete cloud save".localized
     subtitle = "This action cannot be undone".localized
-    iconTintColor = .red
     accessoryImage = UIImage(named: "delete")?.withRenderingMode(.alwaysTemplate)
 
     onTapAction = { publisher in

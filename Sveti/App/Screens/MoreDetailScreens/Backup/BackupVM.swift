@@ -3,10 +3,10 @@ import Network
 import UIKit
 import Combine
 
-protocol BackupVMDelegate: AnyObject {
+protocol InformationDelegate: AnyObject {
   func showUpdatedAlert()
   func showCompleteAlert(title: String, message: String, image: UIImage?)
-  func showAlert(title: String?, message: String, actions: [UIAlertAction]?)
+  func showAlert(title: String?, message: String, actions: [UIAlertAction]?, completion: (() -> Void)?)
   func updateLoadingIndicator(show: Bool)
 }
 
@@ -18,7 +18,7 @@ class BackupVM: ViewControllerVM {
   private var backupState: BackupState = .needToCheckBackupExistence
   private var lastBackupUpdate: Date?
 
-  weak var backupDelegate: BackupVMDelegate?
+  weak var backupInformationDelegate: InformationDelegate?
 
   override init(tableDataProvider: TableDataProvider? = nil) {
     super.init(tableDataProvider: tableDataProvider)
@@ -60,7 +60,7 @@ class BackupVM: ViewControllerVM {
       handleBackupInfo(BackupInfo(state: .needToAuthInICloud))
       return
     }
-    backupDelegate?.updateLoadingIndicator(show: true)
+    backupInformationDelegate?.updateLoadingIndicator(show: true)
     backgroundQueue.async { self.backupManager.loadBackupFromCloudKit {
       self.backupManagerResultHandler($0, $1) }
     }
@@ -83,14 +83,14 @@ class BackupVM: ViewControllerVM {
     lastBackupUpdate = backupInfo.lastBackupDate ?? self.lastBackupUpdate
 
     tableDataProvider?.updateSections(with: BackupInfo(state: backupInfo.state, lastBackupDate: backupInfo.lastBackupDate ?? self.lastBackupUpdate))
-    delegate?.onNeedToUpdateContent()
+    contentUpdateDelegate?.reloadContent()
 
     guard let alertInfo = backupInfo.state.getAlertInfo() else {
-      backupDelegate?.showUpdatedAlert()
+      backupInformationDelegate?.showUpdatedAlert()
       return
     }
     let (title, subtitle, image) = alertInfo
-    backupDelegate?.showCompleteAlert(title: title, message: subtitle, image: image)
+    backupInformationDelegate?.showCompleteAlert(title: title, message: subtitle, image: image)
   }
 
   private func trackBackupAnalytics(with state: BackupState) {
@@ -100,13 +100,13 @@ class BackupVM: ViewControllerVM {
 
   private func handleError(_ error: String?) {
     SvetiAnalytics.log(.backupError, params: ["backup_error_text": error ?? ""])
-    backupDelegate?.updateLoadingIndicator(show: false)
+    backupInformationDelegate?.updateLoadingIndicator(show: false)
     guard let error = error else { return }
-    backupDelegate?.showAlert(title: "Error".localized, message: error, actions: nil)
+    backupInformationDelegate?.showAlert(title: "Error".localized, message: error, actions: nil, completion: nil)
   }
 
   func updateBackup() {
-    backupDelegate?.updateLoadingIndicator(show: true)
+    backupInformationDelegate?.updateLoadingIndicator(show: true)
     backgroundQueue.async { [self] in
       if backupState == .noBackupFound || backupState == .backupDeleted {
         backupManager.createBackupInCloudKit { backupManagerResultHandler($0, $1) }
@@ -121,11 +121,11 @@ class BackupVM: ViewControllerVM {
     let continueAction = UIAlertAction(title: "OK", style: .default) { _ in
       self.restoreData()
     }
-    backupDelegate?.showAlert(title: "Attention".localized, message: "This action will replace all app content stored on the device".localized, actions: [cancelAction, continueAction])
+    backupInformationDelegate?.showAlert(title: "Attention".localized, message: "This action will replace all app content stored on the device".localized, actions: [cancelAction, continueAction], completion: nil)
   }
 
   private func restoreData() {
-    backupDelegate?.updateLoadingIndicator(show: true)
+    backupInformationDelegate?.updateLoadingIndicator(show: true)
     backgroundQueue.async { self.backupManager.restoreBackup {
       self.backupManagerResultHandler($0, $1) }
     }
@@ -133,13 +133,13 @@ class BackupVM: ViewControllerVM {
 
   private func deleteBackup() {
     let deleteAction = UIAlertAction(title: "Delete".localized, style: .destructive) { _ in
-      self.backupDelegate?.updateLoadingIndicator(show: true)
+      self.backupInformationDelegate?.updateLoadingIndicator(show: true)
       self.backgroundQueue.async {
         self.backupManager.deleteBackupFromCloudKit { self.backupManagerResultHandler($0, $1) }
       }
     }
 
     let cancelAction = UIAlertAction(title: "Cancel".localized, style: .default)
-    backupDelegate?.showAlert(title: "Attention".localized, message: "Cloud data will be deleted".localized, actions: [cancelAction, deleteAction])
+    backupInformationDelegate?.showAlert(title: "Attention".localized, message: "Cloud data will be deleted".localized, actions: [cancelAction, deleteAction], completion: nil)
   }
 }

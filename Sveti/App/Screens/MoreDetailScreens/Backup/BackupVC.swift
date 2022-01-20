@@ -16,8 +16,8 @@ class BackupVC: VCwithTable {
 
   private func configureBackupData() {
     guard let vm = viewModel as? BackupVM else { return }
-    vm.backupDelegate = self
-    vm.delegate = self
+    vm.backupInformationDelegate = self
+    vm.contentUpdateDelegate = self
     loadBackupData()
   }
 
@@ -74,48 +74,8 @@ class BackupVC: VCwithTable {
   }
 }
 
-extension BackupVC: BackupVMDelegate {
-  func showUpdatedAlert() {
-    DispatchQueue.main.async {
-      SPIndicator.present(title: "Updated".localized, message: nil, preset: .done, from: .top, completion: nil)
-    }
-  }
-  
-  func showCompleteAlert(title: String, message: String, image: UIImage?) {
-    DispatchQueue.main.async {
-      let preset: SPAlertIconPreset
-      if let existingImage = image {
-        preset = .custom(existingImage.withRenderingMode(.alwaysTemplate))
-      } else {
-        preset = .done
-      }
-      let alertView = SPAlertView(title: title, message: message, preset: preset)
-      alertView.duration = 2.5
-      alertView.present()
-    }
-  }
-
-  func showAlert(title: String?, message: String, actions: [UIAlertAction]?) {
-    DispatchQueue.main.async {
-      let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-      if let actions = actions {
-        actions.forEach { alert.addAction($0) }
-      } else {
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-      }
-      self.navigationController?.present(alert, animated: true)
-    }
-  }
-
-  func updateLoadingIndicator(show: Bool) {
-    DispatchQueue.main.async { [self] in
-      show ? activitiIndicator.startAnimating() : activitiIndicator.stopAnimating()
-    }
-  }
-}
-
 extension BackupVC: ViewControllerVMDelegate {
-  func onNeedToUpdateContent() {
+  func reloadContent() {
     DispatchQueue.main.async { [self] in
       activitiIndicator.stopAnimating()
       UIView.transition(with: tableView, duration: 0.2, options: .transitionCrossDissolve) {

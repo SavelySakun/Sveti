@@ -4,15 +4,14 @@ import RealmSwift
 class NewNoteVM: ViewControllerVM {
 
   private var note = Note()
-  private let realm = try! Realm()
 
   override func handle<T: Event>(_ event: T) {
     super.handle(event)
     guard let event = event as? EditEvent else { return }
     let eventType = NoteEditType(rawValue: event.type)
     self.hasChanges = true
+    var needReload = false
 
-    try! realm.write {
       switch eventType {
       case .emotionalStateChange:
         guard let value = event.value as? Double else { return }
@@ -36,15 +35,24 @@ class NewNoteVM: ViewControllerVM {
         handleTagEditing(with: tag)
       case .none:
         return
+      case .needUpdate:
+        guard let (note, updateMessage) = event.value as? NoteUpdate else { return }
+        self.note = note
+        needReload = true
+        informationDelegate?.showCompleteAlert(title: "Updated", message: updateMessage ?? "", image: nil)
       }
-    }
+
+    updateContent(needReload)
+  }
+
+  private func updateContent(_ needReaload: Bool = false) {
     tableDataProvider?.updateSections(with: note)
+    if needReaload { contentUpdateDelegate?.reloadContent() }
   }
 
   func saveCurrentNote() {
     NotesRepository().save(note)
     StatDaysDataManager().updateStat(with: note)
-    SvetiAnalytics.log(.createNote)
   }
 
   func clearInput() {
@@ -54,8 +62,11 @@ class NewNoteVM: ViewControllerVM {
   }
 
   func setNote(with id: Int) {
-    guard let note = NotesRepository().getNote(with: id) else { return }
-    self.note = note
+    guard let note = NotesRepository().getNote(with: id),
+    let mood = note.mood else { return }
+
+    self.note = Note(value: note)
+    self.note.mood = Mood(value: mood)
   }
 
   func handleTagEditing(with tag: Tag) {

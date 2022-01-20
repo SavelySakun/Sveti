@@ -1,4 +1,6 @@
 import UIKit
+import SPAlert
+import SPIndicator
 
 class BaseViewController: UIViewController {
 
@@ -52,4 +54,48 @@ class BaseViewController: UIViewController {
 
   /// Use for log any screen open events. Called in ViewDidAppear().
   func logOpenScreenEvent() {}
+}
+
+extension BaseViewController: InformationDelegate {
+  func showUpdatedAlert() {
+    DispatchQueue.main.async {
+      SPIndicator.present(title: "Updated".localized, message: nil, preset: .done, from: .top, completion: nil)
+    }
+  }
+
+  func showCompleteAlert(title: String, message: String, image: UIImage?) {
+    DispatchQueue.main.async {
+      let preset: SPAlertIconPreset
+      if let existingImage = image {
+        preset = .custom(existingImage.withRenderingMode(.alwaysTemplate))
+      } else {
+        preset = .done
+      }
+      let alertView = SPAlertView(title: title, message: message, preset: preset)
+      alertView.duration = 2.0
+      alertView.present()
+    }
+  }
+
+  func showAlert(title: String?, message: String, actions: [UIAlertAction]?, completion: (() -> Void)?) {
+    DispatchQueue.main.async {
+      let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+      if let actions = actions {
+        actions.forEach { alert.addAction($0) }
+      } else {
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+      }
+      self.navigationController?.present(alert, animated: true) {
+        completion?()
+      }
+    }
+  }
+
+  func updateLoadingIndicator(show: Bool) {
+    DispatchQueue.main.async { [self] in
+      show ? activitiIndicator.startAnimating() : activitiIndicator.stopAnimating()
+    }
+  }
+
+
 }

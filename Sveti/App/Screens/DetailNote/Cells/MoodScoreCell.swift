@@ -3,8 +3,8 @@ import UIKit
 class MoodScoreCell: Cell {
 
   let containerView = UIView()
-  let emotionalStateScoreView = ScoreView(position: .first)
-  let physicalStateScoreView = ScoreView(position: .second)
+  let emotionalStateScoreView = ScoreView(position: .second)
+  let physicalStateScoreView = ScoreView(position: .first)
   let averageLabel = UILabel()
   var statesStackView: UIStackView!
 
@@ -37,8 +37,8 @@ class MoodScoreCell: Cell {
 
   private func setStateScoresStackView() {
     statesStackView = UIStackView(arrangedSubviews: [
-      emotionalStateScoreView,
-      physicalStateScoreView
+      physicalStateScoreView,
+      emotionalStateScoreView
     ])
 
     emotionalStateScoreView.stateLabel.text = "emotional state".localized
