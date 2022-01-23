@@ -19,6 +19,7 @@ class StatsVC: VCwithTable {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    guard StatDayContentManager.shared.needUpdateViews else { return }
     updateContent()
   }
 
