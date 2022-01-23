@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class DeleteNonExistingTagsCell: SimpleCell {
+class TouchableSimpleCell: SimpleCell {
 
   override func setLayout() {
     super.setLayout()
@@ -10,13 +10,12 @@ class DeleteNonExistingTagsCell: SimpleCell {
 
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
-    addActionToAccessory()
+    addGesture()
   }
 
-  private func addActionToAccessory() {
+  private func addGesture() {
     let gesture = UITapGestureRecognizer(target: self, action: #selector(onAccessoryTap))
-    accessoryView?.addGestureRecognizer(gesture)
-    accessoryView?.isUserInteractionEnabled = true
+    addGestureRecognizer(gesture)
   }
 
   @objc private func onAccessoryTap() {

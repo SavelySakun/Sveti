@@ -12,6 +12,7 @@ class EditTagGroupVC: VCwithTable {
   private let tagsRepository = TagsRepository()
   var editingTagId = String() // Use for update tags in actionSheet called from TagGroupCell
   private var hideAction = UIAlertAction(title: "", style: .default)
+  var showDeleteButton: Bool = true
 
   init(groupId: String) {
     self.groupId = groupId
@@ -66,6 +67,7 @@ class EditTagGroupVC: VCwithTable {
       self.present(self.deleteGroupAlertController, animated: true, completion: nil)
     }
     tableView.tableFooterView = footerView
+    tableView.tableFooterView?.isHidden = !showDeleteButton
   }
 
   private func setNewTagButton() {

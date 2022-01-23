@@ -1,7 +1,5 @@
 import Foundation
 
-typealias NoteUpdate = (Note, String?)
-
 class EditNoteTableDataProvider: TableDataProvider {
 
   override func configureSections(with data: Any? = nil) -> [TableSection] {
@@ -25,11 +23,16 @@ class EditNoteTableDataProvider: TableDataProvider {
       ])
     ]
 
+    if !checkIsAnyTagGroupExist() {
+      tableSections[1].cellsData[0] = CellData(type: NonExistingTagsCell.self, viewModel: CellVM(cellValue: NonTagGroupsItem()))
+    }
+
     if let note = data as? Note {
       let nonExistingTags = findAlreadyNotExistingTags(in: note)
       guard !nonExistingTags.isEmpty,
       let deleteNonExistingTagsCellValue = getDeleteNonExistingTagsCellData(from: nonExistingTags, note: note) else { return tableSections }
-      tableSections[1].cellsData.append(deleteNonExistingTagsCellValue)
+
+      tableSections.append(TableSection(title: "Optional", cellsData: [deleteNonExistingTagsCellValue]))
     }
 
     return tableSections
@@ -60,10 +63,14 @@ class EditNoteTableDataProvider: TableDataProvider {
         editingNote.tags.remove(at: tagIndex)
       }
 
-      let event = EditEvent(type: .needUpdate, value: (editingNote, "Non-existing tags removed"))
+      let event = EditEvent(type: .needUpdate, value: editingNote)
       publisher?.send(event)
     }
 
-    return CellData(type: DeleteNonExistingTagsCell.self, viewModel: CellVM(cellValue: item))
+    return CellData(type: TouchableSimpleCell.self, viewModel: CellVM(cellValue: item))
+  }
+
+  private func checkIsAnyTagGroupExist() -> Bool {
+    !TagsRepository().groups.isEmpty
   }
 }

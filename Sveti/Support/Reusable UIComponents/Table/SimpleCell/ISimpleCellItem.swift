@@ -14,4 +14,5 @@ protocol ISimpleCellItem: AnyObject {
   var onTapAction: ((PassthroughSubject<Event, Never>?) -> Void)? { get set }
   var isActive: Bool { get set }
   var backgroundColor: UIColor { get set }
+  var showAccessory: Bool { get set }
 }

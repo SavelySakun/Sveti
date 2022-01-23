@@ -9,6 +9,7 @@ class CellWithSlider: Cell {
 	lazy var sliderStackView = getSliderStackView()
 
 	override func setLayout() {
+    setSeparatorLine()
     contentView.backgroundColor = .systemGray6
 		let stackView = getStackView()
 		contentView.addSubview(stackView)

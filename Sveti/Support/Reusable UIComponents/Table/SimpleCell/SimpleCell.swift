@@ -58,6 +58,7 @@ class SimpleCell: Cell, ICellWithOnTapAction {
     backgroundColor = cellItem.backgroundColor
 
     setIcon()
+    guard cellItem.showAccessory else { return }
     setAccessory()
   }
 

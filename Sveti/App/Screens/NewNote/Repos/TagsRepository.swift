@@ -92,7 +92,8 @@ class TagsRepository {
   }
 
   func getActiveTags(in section: Int) -> [Tag] {
-    groups[section].tags.filter { $0.isHidden == false }
+    guard !groups.isEmpty else { return [Tag]() }
+    return groups[section].tags.filter { $0.isHidden == false }
   }
 
   func renameTag(withId id: String, newName: String) {
