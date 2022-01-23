@@ -52,6 +52,7 @@ class NewNoteVM: ViewControllerVM {
 
   func saveCurrentNote() {
     NotesRepository().save(note)
+    StatDayContentManager.shared.needUpdateViews = true
     StatDaysDataManager().updateStat(with: note)
   }
 
@@ -63,10 +64,12 @@ class NewNoteVM: ViewControllerVM {
 
   func setNote(with id: Int) {
     guard let note = NotesRepository().getNote(with: id),
-    let mood = note.mood else { return }
+    let mood = note.mood,
+    let splitDate = note.splitDate else { return }
 
     self.note = Note(value: note)
     self.note.mood = Mood(value: mood)
+    self.note.splitDate = SplitDate(value: splitDate)
   }
 
   func handleTagEditing(with tag: Tag) {

@@ -25,6 +25,7 @@ class DiaryVM {
   func deleteNote(noteId: Int) {
     guard let note = noteRepository.getNote(with: noteId) else { return }
     StatDaysDataManager().removeStat(with: note)
+    StatDayContentManager.shared.needUpdateViews = true
     noteRepository.deleteNote(noteId: noteId)
   }
 

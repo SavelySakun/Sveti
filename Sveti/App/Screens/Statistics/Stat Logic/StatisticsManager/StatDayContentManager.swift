@@ -7,7 +7,12 @@ class StatDayContentManager: IStatContentManager {
 
   var contentGenerationResult: StatGenerationResult = .success
   var currentlyDrawedStat: [DrawableStat]? = [DrawableStat]()
-  var dataSet: BarChartDataSet?
+  var needUpdateViews = false
+  var dataSet: BarChartDataSet? {
+    didSet {
+      self.needUpdateViews = (dataSet?.entries != oldValue?.entries)
+    }
+  }
 
   func getStatContent() -> BarChartDataSet? {
     updateStatContent()
