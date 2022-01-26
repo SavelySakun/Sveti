@@ -170,13 +170,6 @@ class OnboardingVC: BaseViewController, IOnboardingController {
     }
   }
 
-  private func makeHapticFeedback() {
-    var feedbackGenerator: UISelectionFeedbackGenerator? = UISelectionFeedbackGenerator()
-    feedbackGenerator?.prepare()
-    feedbackGenerator?.selectionChanged()
-    feedbackGenerator = nil
-  }
-
   func trackEarlyExit() {
     SvetiAnalytics.log(.earlyOnboardingExit, params: [MainEvents.numberOfSlideWhenEarlyExit.rawValue: viewModel.currentSlideIndex])
   }

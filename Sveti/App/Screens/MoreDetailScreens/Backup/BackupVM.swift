@@ -77,6 +77,10 @@ class BackupVM: ViewControllerVM {
   private func handleBackupInfo(_ backupInfo: BackupInfo) {
     trackBackupAnalytics(with: backupInfo.state)
 
+    if backupInfo.state == .successDataRestore {
+      StatDayContentManager.shared.needUpdateViews = true
+    }
+
     subscribers.removeAll() // <- remove old subcribers to avoid event handle action dublication while reusing cells because overrided addSubscriber() does't check already subscribed cells
 
     backupState = backupInfo.state

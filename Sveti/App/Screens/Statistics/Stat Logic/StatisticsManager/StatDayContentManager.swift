@@ -3,6 +3,7 @@ import Charts
 
 class StatDayContentManager: IStatContentManager {
   typealias T = BarChartDataSet?
+  private let settings = StatSettingsRepository().settings
   static let shared = StatDayContentManager()
 
   var contentGenerationResult: StatGenerationResult = .success
@@ -15,16 +16,14 @@ class StatDayContentManager: IStatContentManager {
   }
 
   func getStatContent() -> BarChartDataSet? {
-    updateStatContent()
     return self.dataSet
   }
 
-  func updateStatContent() {
-    let settings = StatSettingsRepository().settings
-
+  func updateStatContent(onCompletion: (() -> Void)? = nil) {
     // Important: we pass content manager into data generator
     let dataGenerator = StatDaysDataSetGenerator(statSettings: settings, contentManager: self)
     dataGenerator.fillContentManagerWithData()
+    onCompletion?()
   }
 
   func isHasContentToDraw() -> Bool {

@@ -64,7 +64,7 @@ class CellWithSlider: Cell {
   }
 
   func getTitle() -> String {
-    let value = MathHelper().getMoodScore(from: Double(slider.value), digits: 1)
+    let value = SvetiMath().getString(from: Double(slider.value), digits: 1)
     return "\(viewModel?.title ?? ""): \(value)"
   }
 }

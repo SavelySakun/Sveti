@@ -16,7 +16,7 @@ class ScoreTimeView: UIView {
 
   func configure(with note: Note) {
     timeLabel.text = getTime(from: note)
-    scoreLabel.text = MathHelper().getAverageMood(from: note)
+    scoreLabel.text = SvetiMath().getAverageMood(from: note)
   }
 
   private func getTime(from note: Note) -> String {

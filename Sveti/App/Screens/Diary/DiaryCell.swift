@@ -11,7 +11,7 @@ class DiaryCell: Cell {
   func configure(with note: Note) {
     commentLabel.text = note.comment
     scoreTimeView.configure(with: note)
-    containerView.backgroundColor = ColorHelper().getColor(value: MathHelper().getAverageMood(from: note), alpha: 0.65)
+    containerView.backgroundColor = ColorHelper().getColor(value: SvetiMath().getAverageMood(from: note), alpha: 0.65)
     contentView.backgroundColor = .systemGray6
     setTagListView(with: note)
   }

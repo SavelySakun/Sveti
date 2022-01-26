@@ -59,7 +59,7 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
   private func registerViews() {
     register(TagCollectionCell.self, forCellWithReuseIdentifier: TagCollectionCell.reuseId)
-    register(NoTagsInGroupCell.self, forCellWithReuseIdentifier: NoTagsInGroupCell.reuseId)
+    register(TextCollectionCell.self, forCellWithReuseIdentifier: TextCollectionCell.reuseId)
 
     register(TagSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TagSectionHeaderView.identifier)
     register(TagSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: TagSectionFooterView.identifier)
@@ -122,8 +122,8 @@ extension TagCollectionView: UICollectionViewDataSource {
   }
 
   private func getNoTagsInGroupCell(at indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = dequeueReusableCell(withReuseIdentifier: NoTagsInGroupCell.reuseId, for: indexPath) as? NoTagsInGroupCell else { return UICollectionViewCell() }
-    cell.noTagsLabel.text = isSearchMode ? "Nothing found" : "No active tags"
+    guard let cell = dequeueReusableCell(withReuseIdentifier: TextCollectionCell.reuseId, for: indexPath) as? TextCollectionCell else { return UICollectionViewCell() }
+    cell.textLabel.text = isSearchMode ? "Nothing found" : "No active tags"
     return cell
   }
 
