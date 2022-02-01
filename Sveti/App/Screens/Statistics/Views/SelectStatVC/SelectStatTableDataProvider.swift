@@ -7,9 +7,9 @@ class SelectStatTableDataProvider: TableDataProvider {
     let cellType = SelectsStatCell.self
     let tableSections = [
       TableSection(title: "Select type".localized, cellsData: [
-        CellData(type: cellType, viewModel: CellVM(cellValue: StatTypes.averageEmotional)),
-        CellData(type: cellType, viewModel: CellVM(cellValue: StatTypes.averagePhysical)),
-        CellData(type: cellType, viewModel: CellVM(cellValue: StatTypes.averageEmotionalAndPhysical))
+        CellData(type: cellType, viewModel: CellVM(cellValue: StatType.emotional)),
+        CellData(type: cellType, viewModel: CellVM(cellValue: StatType.physical)),
+        CellData(type: cellType, viewModel: CellVM(cellValue: StatType.all))
       ])
     ]
     return tableSections

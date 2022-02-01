@@ -60,7 +60,7 @@ class DiaryVM {
   private func getAverageForSection(with notes: [Note]?) -> String? {
     guard let notes = notes else { return nil }
     guard notes.count > 1 else { return nil }
-    let mathHelper = MathHelper()
+    let mathHelper = SvetiMath()
     var totalScore: Double = 0
     var totalNotes: Double = 0
 
@@ -71,7 +71,7 @@ class DiaryVM {
     }
 
     let averageScore = totalScore / totalNotes
-    return mathHelper.getMoodScore(from: averageScore, digits: 1)
+    return mathHelper.getString(from: averageScore, digits: 1)
   }
 
   func getDiaryTableSectionHeader(for section: Int) -> DiaryTableSectionHeader {

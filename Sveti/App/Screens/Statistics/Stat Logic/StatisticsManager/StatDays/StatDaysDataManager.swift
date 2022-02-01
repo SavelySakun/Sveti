@@ -37,7 +37,6 @@ class StatDaysDataManager {
           let date = note.splitDate else { return StatDay() }
 
     statDay.splitDate = date
-    statDay.totalNotes = 1
     statDay.emotionalStates.append(mood.emotionalState)
     statDay.phyzicalStates.append(mood.physicalState)
     return statDay

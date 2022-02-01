@@ -44,12 +44,12 @@ class StatDayChartFormatter: IAxisValueFormatter {
       var moodValue: Int
 
       switch statType {
-      case .averageEmotional:
-        moodValue = drawableStat.averageEmotional.toInt()
-      case .averagePhysical:
-        moodValue = drawableStat.averagePhysical.toInt()
-      case .averageEmotionalAndPhysical:
-        moodValue = drawableStat.averageState.toInt()
+      case .emotional:
+        moodValue = drawableStat.averageMood.emotional.toInt()
+      case .physical:
+        moodValue = drawableStat.averageMood.physical.toInt()
+      case .all:
+        moodValue = drawableStat.averageMood.all.toInt()
       }
 
       let color = colorHelper.getColor(value: moodValue, alpha: 0.95)

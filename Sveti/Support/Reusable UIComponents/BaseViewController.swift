@@ -54,6 +54,13 @@ class BaseViewController: UIViewController {
 
   /// Use for log any screen open events. Called in ViewDidAppear().
   func logOpenScreenEvent() {}
+
+  func makeHapticFeedback() {
+    var feedbackGenerator: UISelectionFeedbackGenerator? = UISelectionFeedbackGenerator()
+    feedbackGenerator?.prepare()
+    feedbackGenerator?.selectionChanged()
+    feedbackGenerator = nil
+  }
 }
 
 extension BaseViewController: InformationDelegate {

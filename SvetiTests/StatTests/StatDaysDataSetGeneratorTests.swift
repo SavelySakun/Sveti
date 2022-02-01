@@ -9,6 +9,10 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
   let statDaysDataManager = StatDaysDataManager()
   let statSettingsRepository = StatSettingsRepository()
 
+  override func setUpWithError() throws {
+    statSettingsRepository.updateMinimumDate(SplitDate(ddMMyyyy: "01.01.2019").startOfDay)
+  }
+
   override func tearDownWithError() throws {
     notesRepository.removeAll()
     statDaysDataManager.removeAll()
@@ -52,7 +56,7 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
       return
     }
 
-    XCTAssertTrue(lastCurrentlyDrawedStat.averageState == 5.0)
+    XCTAssertTrue(lastCurrentlyDrawedStat.averageMood.get(.all) == 5.0)
   }
 
   func test_add_3_notes_in_3_different_days_correct_drawedStat_count() {
@@ -74,16 +78,16 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
   func test_add_3_notes_in_3_different_days_week_grouping_correct_mood_value() {
     statSettingsRepository.updateGrouping(.week)
 
-    addNoteAndUpdateStats(noteDate: "04.01.2020")
-    addNoteAndUpdateStats(noteDate: "05.01.2020", emotionalState: 5.0)
-    addNoteAndUpdateStats(noteDate: "06.01.2020", physicalState: 7.0)
+    addNoteAndUpdateStats(noteDate: "06.01.2020")
+    addNoteAndUpdateStats(noteDate: "07.01.2020", emotionalState: 5.0)
+    addNoteAndUpdateStats(noteDate: "08.01.2020", physicalState: 7.0)
 
     guard let lastCurrentlyDrawedStat = contentManager.currentlyDrawedStat?.last else {
       XCTFail("Empty currentlyDrawedStat. Not valid")
       return
     }
 
-    XCTAssertTrue(lastCurrentlyDrawedStat.averageState == 6.0)
+    XCTAssertTrue(lastCurrentlyDrawedStat.averageMood.get(.all) == 6.0)
   }
 
   // Month
@@ -99,7 +103,7 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
       return
     }
 
-    XCTAssertTrue(lastCurrentlyDrawedStat.averageState == 6.0)
+    XCTAssertTrue(lastCurrentlyDrawedStat.averageMood.get(.all) == 6.0)
   }
 
   // Year
@@ -115,7 +119,7 @@ class StatDaysDataSetGeneratorTests: XCTestCase {
       return
     }
 
-    XCTAssertTrue(lastCurrentlyDrawedStat.averageState == 6.0)
+    XCTAssertTrue(lastCurrentlyDrawedStat.averageMood.get(.all) == 6.0)
   }
 
   private func addNoteAndUpdateStats(noteDate: String, emotionalState: Double = 6.0, physicalState: Double = 6.0) {
