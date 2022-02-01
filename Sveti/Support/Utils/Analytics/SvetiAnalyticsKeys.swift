@@ -10,6 +10,7 @@ enum MainEvents: String {
   case selectTypeOfAverageStat = "select_type_of_average_stat"
   case changeStatGroupingType = "change_stat_grouping_type"
   case changeStatDateRange = "change_stat_date_range"
+  case selectStatChartBar = "select_stat_chart_bar"
 
   // Diary
   case openNote = "open_note"

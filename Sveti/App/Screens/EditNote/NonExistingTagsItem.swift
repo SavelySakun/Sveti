@@ -5,8 +5,8 @@ class NonExistingTagsItem: SimpleCellItem {
     super.init()
     backgroundColor = .systemGray6
     accessoryTintColor = .red
-    title = "Remove non-existent tags from note"
-    subtitle = "Tags that no longer exist: "
+    title = "Remove non-existent tags from note".localized
+    subtitle = "Tags that no longer exist: ".localized
     accessoryImage = UIImage(named: "delete")?.withRenderingMode(.alwaysTemplate)
   }
 }

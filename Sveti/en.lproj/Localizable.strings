@@ -132,9 +132,10 @@
 "Why Sveti?" = "Why Sveti?";
 "The main difference from other diaries is that you can track both your physical and emotional state." = "The main difference from other diaries is that you can track both your physical and emotional state.";
 "Why track your mood?" = "Why track your mood?";
-"A trend noticed at an early stage allows you to change the factors influencing it." = "A trend noticed at an early stage allows you to change the factors influencing it.";
+"Tracking your condition helps understand what exactly makes it worse or better." = "Tracking your condition helps understand what exactly makes it worse or better.";
 "All information stored in Sveti is absolutely private" = "All information stored in Sveti is absolutely private";
 "No one has access to your notes and statistics. Cloud saves are stored in Apple's private database linked to your iCloud account." = "No one has access to your notes and statistics. Cloud saves are stored in Apple's private database linked to your iCloud account.";
+"Welcome to Sveti" = "Welcome to Sveti";
 
 // Backup
 "Can't find correct path to local data" = "Can't find correct path to local data";
@@ -173,3 +174,22 @@
 "Last backup: %@, %@" = "Last backup: %@, %@";
 "Actions" = "Actions";
 "Backup & restore" = "Backup & restore";
+
+// Tags
+"Remove non-existent tags from note" = "Remove non-existent tags from note";
+"Tags that no longer exist: " = "Tags that no longer exist: ";
+"No tag groups exist" = "No tag groups exist";
+"Please add your first tag group 🥺" = "Please add your first tag group 🥺";
+"No groups found" = "No groups found";
+
+// Stats
+"Detail analysis" = "Detail analysis";
+"No data found 😵‍💫" = "No data found 😵‍💫";
+"N/A" = "N/A";
+"Date:" = "Date:";
+"Change:" = "Change:";
+"Max:" = "Max:";
+"Min:" = "Min:";
+"Avg:" = "Avg:";
+"Notes:" = "Notes:";
+"Stability:" = "Stability:";

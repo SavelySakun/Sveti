@@ -126,5 +126,6 @@ extension BarChartCell: ChartViewDelegate {
   private func notify(with index: Int? = nil) {
     let notificationName = NotificationNames.onStatBarSelect
     NotificationCenter.default.post(name: notificationName, object: nil, userInfo: ["barIndex": index as Any])
+    SvetiAnalytics.log(.selectStatChartBar)
   }
 }
