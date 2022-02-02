@@ -2,7 +2,7 @@ import UIKit
 
 class EditTagGroupsVC: VCwithTable {
 
-  private let emptyView = ImageTextView(imageName: "noContent", text: "No groups found")
+  private let emptyView = ImageTextView(imageName: "noContent", text: "No groups found".localized)
   private let newGroupAlert = UIAlertController(title: "Add new group".localized, message: "Specify the name of the group".localized, preferredStyle: .alert)
   private var addNewAction: UIAlertAction?
   private var alertTextField: UITextField? {

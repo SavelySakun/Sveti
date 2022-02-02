@@ -45,7 +45,7 @@ class SvetiMath {
           let average = Sigma.average(data) else { return nil }
 
     let proportionOfDeviationFromAverage = standardDeviationSample / average
-    if proportionOfDeviationFromAverage < 0 {
+    if proportionOfDeviationFromAverage < 0 || proportionOfDeviationFromAverage > 1 {
       return 0.0 // <– if negative stability return 0.0
     } else {
       let percentageOfStability = (1 - proportionOfDeviationFromAverage) * 100

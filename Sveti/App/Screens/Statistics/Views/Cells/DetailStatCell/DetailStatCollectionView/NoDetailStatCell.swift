@@ -3,7 +3,7 @@ import UIKit
 class NoDetailStatCell: TextCollectionCell {
 
   override func setTextStyle() {
-    textLabel.text = "No data found 😵‍💫"
+    textLabel.text = "No data found 😵‍💫".localized
     textLabel.textColor = .systemGray2
     textLabel.font = UIFont.systemFont(ofSize: 14)
   }

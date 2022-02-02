@@ -5,11 +5,11 @@ class DetailStatDataMaker {
   private let math = SvetiMath()
 
   private func getDefaultDetailStatItems() -> [DetailStatItem] {
-    [DetailStatItem(type: .max, iconName: "detailStatMax", title: "Max:", value: "-"),
-      DetailStatItem(type: .min, iconName: "detailStatMin", title: "Min:", value: "-"),
-      DetailStatItem(type: .average, iconName: "detailStatAverage", title: "Avg:", value: "-"),
-      DetailStatItem(type: .totalNotes, iconName: "detailStatTotalNotes", title: "Notes:", value: "-"),
-      DetailStatItem(type: .stability, iconName: "detailStatStability", title: "Stability:", value: "-")]
+    [DetailStatItem(type: .max, iconName: "detailStatMax", title: "Max:".localized, value: "-"),
+      DetailStatItem(type: .min, iconName: "detailStatMin", title: "Min:".localized, value: "-"),
+      DetailStatItem(type: .average, iconName: "detailStatAverage", title: "Avg:".localized, value: "-"),
+      DetailStatItem(type: .totalNotes, iconName: "detailStatTotalNotes", title: "Notes:".localized, value: "-"),
+      DetailStatItem(type: .stability, iconName: "detailStatStability", title: "Stability:".localized, value: "-")]
   }
 
   func getPeriodItems() -> [DetailStatItem] {
@@ -78,12 +78,12 @@ class DetailStatDataMaker {
     let groupungType = settings.groupingType
 
     var items = getDefaultDetailStatItems()
-    let dateItem = DetailStatItem(type: .date, iconName: "detailStatCalendar", title: "Date:", value: "-")
+    let dateItem = DetailStatItem(type: .date, iconName: "detailStatCalendar", title: "Date:".localized, value: "-")
     items.insert(dateItem, at: 0)
 
     let previousStat = drawedStats[safe: index - 1]
     if previousStat != nil {
-      let changeItem = DetailStatItem(type: .change, iconName: "detailStatChange", title: "Change:", value: "-")
+      let changeItem = DetailStatItem(type: .change, iconName: "detailStatChange", title: "Change:".localized, value: "-")
       items.insert(changeItem, at: 3)
     }
 
@@ -142,6 +142,6 @@ class DetailStatDataMaker {
     } else if let data = data as? String {
       return data
     }
-    return "N/A"
+    return "N/A".localized
   }
 }
