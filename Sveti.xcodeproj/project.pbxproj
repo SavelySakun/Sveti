@@ -144,7 +144,6 @@
 		FCB0643B26B5C0C100A0494A /* EditNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643A26B5C0C100A0494A /* EditNoteVC.swift */; };
 		FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0643D26B5C75A00A0494A /* EditNoteTableDataProvider.swift */; };
 		FCB0644726B68E9500A0494A /* VCwithTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0644626B68E9500A0494A /* VCwithTable.swift */; };
-		FCB3D3B9277719FA00A23664 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */; };
 		FCB9EC6C274A33A500E3E864 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */; };
 		FCB9EC6E274A42CF00E3E864 /* EditTagGroupsMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6D274A42CF00E3E864 /* EditTagGroupsMoreItem.swift */; };
 		FCB9EC70274A504900E3E864 /* AboutMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB9EC6F274A504900E3E864 /* AboutMoreItem.swift */; };
@@ -161,7 +160,6 @@
 		FCBAB5FD27A6BD7800696893 /* WebViewLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAB5FC27A6BD7800696893 /* WebViewLinks.swift */; };
 		FCBAB60027A6BE8700696893 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAB5FF27A6BE8700696893 /* WebViewVC.swift */; };
 		FCBAB60227A6EA5B00696893 /* NoDetailStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAB60127A6EA5B00696893 /* NoDetailStatCell.swift */; };
-		FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FCC922A5276655BD009F7508 /* FirebaseCrashlytics */; };
 		FCC922AB27665EC4009F7508 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922AA27665EC4009F7508 /* AboutVC.swift */; };
 		FCC922AF276660B5009F7508 /* AboutTableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922AE276660B5009F7508 /* AboutTableDataProvider.swift */; };
 		FCC922B3276663F2009F7508 /* AppInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC922B2276663F2009F7508 /* AppInfoModel.swift */; };
@@ -484,9 +482,7 @@
 				FC04F8472770BF1800368CC1 /* TagListView in Frameworks */,
 				FC6C58AF26613D0C000188A6 /* SnapKit in Frameworks */,
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
-				FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */,
 				FCCA2EF0278B314300C46EA9 /* CloudKit.framework in Frameworks */,
-				FCB3D3B9277719FA00A23664 /* FirebaseAnalytics in Frameworks */,
 				DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1352,9 +1348,7 @@
 				FCB0642626B52DDA00A0494A /* IQKeyboardManagerSwift */,
 				FCE3689F26D26C9400A05271 /* ALPopup */,
 				FCE368A426D27E6900A05271 /* SPAlert */,
-				FCC922A5276655BD009F7508 /* FirebaseCrashlytics */,
 				FC04F8462770BF1800368CC1 /* TagListView */,
-				FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */,
 				FCCA2ED32788913D00C46EA9 /* DeviceKit */,
 				FCBAB5F627A5276D00696893 /* SigmaSwiftStatistics */,
 			);
@@ -2245,20 +2239,10 @@
 			package = FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
-		FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
 		FCBAB5F627A5276D00696893 /* SigmaSwiftStatistics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FCBAB5F527A5276D00696893 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */;
 			productName = SigmaSwiftStatistics;
-		};
-		FCC922A5276655BD009F7508 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FCC922A2276655BD009F7508 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
 		};
 		FCCA2ED32788913D00C46EA9 /* DeviceKit */ = {
 			isa = XCSwiftPackageProductDependency;

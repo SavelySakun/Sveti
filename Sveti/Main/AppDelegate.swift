@@ -1,7 +1,5 @@
 import UIKit
 import IQKeyboardManagerSwift
-import Firebase
-import FirebaseAnalytics
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,7 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     RealmHelper().configureRealm()
     UISetup()
     dataSetup()
-    firebaseSetup()
 
     return true
   }
@@ -34,11 +31,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     StatSettingsRepository().saveDefaultSettings()
   }
 
-  private func firebaseSetup() {
-    FirebaseApp.configure()
-    #if targetEnvironment(simulator)
-    Analytics.setAnalyticsCollectionEnabled(false)
-    #endif
-    Analytics.logEvent(AnalyticsEventAppOpen, parameters: nil)
-  }
 }
