@@ -6,6 +6,9 @@ class StatsTableDataProvider: TableDataProvider {
     let tableSections = [
       TableSection(title: "Statistics".localized, cellsData: [
         CellData(type: BarChartCell.self, viewModel: CellVM(title: nil, subtitle: nil, cellValue: data))
+      ]),
+      TableSection(title: "Detail analysis".localized, cellsData: [
+        CellData(type: DetailStatCell.self, viewModel: DetailStatCellVM())
       ])
     ]
     return tableSections

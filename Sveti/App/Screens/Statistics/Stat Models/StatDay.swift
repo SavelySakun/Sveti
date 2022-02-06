@@ -7,7 +7,17 @@ class StatDay: Object, Dated {
   }
 
   @objc dynamic var splitDate: SplitDate? = SplitDate(rawDate: Date())
-  @objc dynamic var totalNotes: Double = 0.0
+  @objc dynamic var totalNotes: Double {
+    Double(phyzicalStates.count)
+  }
+
   var phyzicalStates = List<Double>()
   var emotionalStates = List<Double>()
+
+  convenience init(splitDate: SplitDate = SplitDate(rawDate: Date()), phyzicalStates: [Double], emotionalStates: [Double]) {
+    self.init()
+    self.splitDate = splitDate
+    self.phyzicalStates.append(objectsIn: phyzicalStates)
+    self.emotionalStates.append(objectsIn: emotionalStates)
+  }
 }

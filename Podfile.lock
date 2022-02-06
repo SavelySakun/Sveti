@@ -2,7 +2,7 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
-  - SwiftLint (0.43.1)
+  - SwiftLint (0.46.2)
 
 DEPENDENCIES:
   - Charts
@@ -15,7 +15,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
-  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
+  SwiftLint: 6bc52a21f0fd44cab9aa2dc8e534fb9f5e3ec507
 
 PODFILE CHECKSUM: f87924c7c1cb1ceb95c2ab97a8f65d5e7a1fd394
 

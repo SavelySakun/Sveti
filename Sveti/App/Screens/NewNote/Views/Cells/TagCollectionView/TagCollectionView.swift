@@ -30,8 +30,6 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
   var selectedTags = [Tag]()
   var isSearchMode = false
 
-  let nothingFoundLabel = UILabel()
-
   override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
 
     let collectionViewLayout = LeftAlignedCollectionViewFlowLayout()
@@ -56,23 +54,13 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
     backgroundColor = .systemGray6
     allowsMultipleSelection = true
 
-    setNothingFoundLabel()
     registerViews()
-  }
-
-  private func setNothingFoundLabel() {
-    addSubview(nothingFoundLabel)
-    nothingFoundLabel.text = "Ничего не найдено"
-    nothingFoundLabel.isHidden = true
-    nothingFoundLabel.textColor = .systemGray
-    nothingFoundLabel.snp.makeConstraints { (make) in
-      make.left.equalToSuperview()
-      make.centerY.equalToSuperview().offset(15)
-    }
   }
 
   private func registerViews() {
     register(TagCollectionCell.self, forCellWithReuseIdentifier: TagCollectionCell.reuseId)
+    register(TextCollectionCell.self, forCellWithReuseIdentifier: TextCollectionCell.reuseId)
+
     register(TagSectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TagSectionHeaderView.identifier)
     register(TagSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: TagSectionFooterView.identifier)
   }
@@ -84,6 +72,15 @@ class TagCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout {
 
 extension TagCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    // If there is no active tags in section -> return 1 for "NoTagsInGroupCell"
+    if tagGroups[section].isExpanded {
+      return hasActiveTags(in: section) ? getDefaultNumberOfItems(in: section) : 1
+    } else {
+      return 0
+    }
+  }
+
+  private func getDefaultNumberOfItems(in section: Int) -> Int {
     if isSearchMode {
       return tagGroups[section].tags.count
     } else {
@@ -97,6 +94,11 @@ extension TagCollectionView: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    // If no active tags -> show "NoTagsInGroupCell"
+    return hasActiveTags(in: indexPath.section) ? getDefaultTagCell(at: indexPath) : getNoTagsInGroupCell(at: indexPath)
+  }
+
+  private func getDefaultTagCell(at indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = dequeueReusableCell(withReuseIdentifier: TagCollectionCell.reuseId, for: indexPath) as? TagCollectionCell else { return UICollectionViewCell() }
 
     let tag: Tag
@@ -116,6 +118,12 @@ extension TagCollectionView: UICollectionViewDataSource {
       }
     }
 
+    return cell
+  }
+
+  private func getNoTagsInGroupCell(at indexPath: IndexPath) -> UICollectionViewCell {
+    guard let cell = dequeueReusableCell(withReuseIdentifier: TextCollectionCell.reuseId, for: indexPath) as? TextCollectionCell else { return UICollectionViewCell() }
+    cell.textLabel.text = isSearchMode ? "Nothing found" : "No active tags"
     return cell
   }
 
@@ -153,15 +161,25 @@ extension TagCollectionView: UICollectionViewDataSource {
       return CGSize(width: frame.width, height: 0)
     }
   }
+
+  private func hasActiveTags(in section: Int) -> Bool {
+    if isSearchMode {
+      return !(tagGroups.last?.tags.isEmpty ?? true)
+    } else {
+      return tagsRepository.getActiveTagsCount(in: section) >= 1
+    }
+  }
 }
 
 extension TagCollectionView: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard hasActiveTags(in: indexPath.section) else { return }
     onTagSelect(with: indexPath)
   }
 
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    guard hasActiveTags(in: indexPath.section) else { return }
     onTagSelect(with: indexPath)
   }
 

@@ -32,6 +32,11 @@ class EditNoteVC: NewNoteVC {
   }
 
   override func onSave() {
+    if let id = self.noteId,
+       let note = NotesRepository().getNote(with: id) {
+      StatDaysDataManager().removeStat(with: note)
+    }
+    viewModel.saveCurrentNote()
     guard let dismissAction = onDismissal else { return }
     dismissAction()
     SvetiAnalytics.log(.editNote)
@@ -52,6 +57,7 @@ class EditNoteVC: NewNoteVC {
   @objc func onDelete() {
     guard let noteId = self.noteId,
           let note = NotesRepository().getNote(with: noteId) else { return }
+    StatDayContentManager.shared.needUpdateViews = true
     StatDaysDataManager().removeStat(with: note)
     NotesRepository().deleteNote(noteId: noteId)
     SPIndicator.present(title: "Note deleted".localized, preset: .done, haptic: .success, from: .top)

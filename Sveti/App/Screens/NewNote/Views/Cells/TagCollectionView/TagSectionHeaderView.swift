@@ -113,7 +113,9 @@ class TagSectionHeaderView: UICollectionReusableView {
 
   @objc func onEditTap() {
     let groupId = TagsRepository().findGroupId(withIndex: section)
+    let isLastGroup = (TagsRepository().groups.count == 1)
     let editTagGroupVC = EditTagGroupVC(groupId: groupId)
+    editTagGroupVC.showDeleteButton = !isLastGroup
     editTagGroupVC.onClosingCompletion = {
       self.delegate?.onDoneTagGroupEdit()
       CurrentVC.current = CurrentVC.past

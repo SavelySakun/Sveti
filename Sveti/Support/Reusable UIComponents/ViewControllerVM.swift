@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 protocol ViewControllerVMDelegate: AnyObject {
-  func onNeedToUpdateContent()
+  func reloadContent()
 }
 
 class ViewControllerVM {
@@ -10,7 +10,8 @@ class ViewControllerVM {
   var observingCellsWithIds = [String]()
   var subscribers = [AnyCancellable]()
   var tableDataProvider: TableDataProvider?
-  weak var delegate: ViewControllerVMDelegate?
+  weak var contentUpdateDelegate: ViewControllerVMDelegate?
+  weak var informationDelegate: InformationDelegate?
   var hasChanges = false
 
   init(tableDataProvider: TableDataProvider? = nil) {

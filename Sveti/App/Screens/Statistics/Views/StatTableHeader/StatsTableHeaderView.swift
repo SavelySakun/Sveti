@@ -27,7 +27,7 @@ class StatsTableHeaderView: UIView {
   }
 
   private func setDatePickers() {
-    minimumDatePicker.date = SplitDate(ddMMyyyy: "01.01.2015").rawDate
+    minimumDatePicker.date = SplitDate(ddMMyyyy: "01.01.2021").rawDate
     [maximumDatePicker, minimumDatePicker].forEach { picker in
       picker.datePickerMode = .date
       picker.maximumDate = Date()

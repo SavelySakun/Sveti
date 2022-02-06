@@ -9,6 +9,7 @@ class Cell: UITableViewCell {
 
   var publisher = PassthroughSubject<Event, Never>()
   weak var delegate: CellDelegate?
+  let separatorLine = UIView()
 
   var viewModel: CellVM? {
     didSet {
@@ -40,4 +41,15 @@ class Cell: UITableViewCell {
     // Do any customization here.
   }
 
+  /// Call this you need custom separator at the bottom. By default in TableView separator in the last cell in section hides (isLastCellInSection check).
+  func setSeparatorLine() {
+    separatorLine.backgroundColor = .systemGray5
+    contentView.addSubview(separatorLine)
+    separatorLine.snp.makeConstraints { (make) in
+      make.left.equalToSuperview().offset(UIUtils.bigOffset)
+      make.right.equalToSuperview()
+      make.bottom.equalToSuperview()
+      make.height.equalTo(1)
+    }
+  }
 }

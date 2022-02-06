@@ -2,8 +2,7 @@ import UIKit
 import SnapKit
 import SPIndicator
 
-class NewNoteVC: BaseViewController {
-
+class NewNoteVC: BaseViewController, ViewControllerVMDelegate {
   let viewModel = NewNoteVM(tableDataProvider: EditNoteTableDataProvider())
   let cancelAlert = UIAlertController(title: nil, message: nil, preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet)
 
@@ -21,7 +20,9 @@ class NewNoteVC: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setLayout()
-        setModalPresentation()
+    setModalPresentation()
+    viewModel.contentUpdateDelegate = self
+    viewModel.informationDelegate = self
 	}
 
 	func setLayout() {
@@ -67,6 +68,7 @@ class NewNoteVC: BaseViewController {
   }
 
 	private func addTableView() {
+    tableView.separatorStyle = .none
 		view.addSubview(tableView)
 		tableView.snp.makeConstraints { (make) in
 			make.top.left.bottom.right.equalToSuperview()
@@ -74,6 +76,7 @@ class NewNoteVC: BaseViewController {
 	}
 
   @objc func onSave() {
+    SvetiAnalytics.log(.createNote)
     self.viewModel.saveCurrentNote()
     if let currentVC = CurrentVC.current as? BaseViewController {
       currentVC.updateContent()
@@ -92,6 +95,16 @@ class NewNoteVC: BaseViewController {
     DispatchQueue.main.async {
       self.tableView.reloadData()
     }
+  }
+
+  override func updateContent() {
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
+  }
+
+  func reloadContent() {
+    updateContent()
   }
 }
 

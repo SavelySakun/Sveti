@@ -2,6 +2,7 @@ import UIKit
 
 class EditTagGroupsVC: VCwithTable {
 
+  private let emptyView = ImageTextView(imageName: "noContent", text: "No groups found".localized)
   private let newGroupAlert = UIAlertController(title: "Add new group".localized, message: "Specify the name of the group".localized, preferredStyle: .alert)
   private var addNewAction: UIAlertAction?
   private var alertTextField: UITextField? {
@@ -27,11 +28,13 @@ class EditTagGroupsVC: VCwithTable {
   override func setLayout() {
     super.setLayout()
     title = "Tag groups".localized
+    tableView.register(EditTagGroupsCell.self, forCellReuseIdentifier: EditTagGroupsCell.identifier)
     tableView.backgroundColor = .systemGray6
     tableView.allowsSelectionDuringEditing = true
     tableView.isEditing = true
     setNewGroupButton()
     setNewGroupAlert()
+    setNoGroupsTextImage()
   }
 
   override func getDataProvider() -> TableDataProvider? {
@@ -41,7 +44,8 @@ class EditTagGroupsVC: VCwithTable {
   override func updateContent() {
     DispatchQueue.main.async { [self] in
       UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
-        self.viewModel.tableDataProvider = self.getDataProvider()
+        self.viewModel.tableDataProvider?.updateSections()
+        self.updateEmptyViewVisibility()
         self.tableView.reloadData()
       }
     }
@@ -97,5 +101,23 @@ class EditTagGroupsVC: VCwithTable {
     }
     navigationController?.pushViewController(editTagGroupVC, animated: true)
     newGroupAlert.textFields?.last?.text?.removeAll()
+  }
+
+  private func setNoGroupsTextImage() {
+    view.addSubview(emptyView)
+    updateEmptyViewVisibility()
+    emptyView.snp.makeConstraints { (make) in
+      make.height.equalToSuperview().multipliedBy(0.35)
+      make.width.equalToSuperview().multipliedBy(0.7)
+      make.centerX.centerY.equalToSuperview()
+    }
+  }
+
+  private func updateEmptyViewVisibility() {
+    let lastSection = viewModel.tableDataProvider?.sections?.last
+    let isHidden = !(lastSection?.cellsData.isEmpty ?? false)
+    DispatchQueue.main.async {
+      self.emptyView.isHidden = isHidden
+    }
   }
 }

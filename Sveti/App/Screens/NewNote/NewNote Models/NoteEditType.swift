@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 
 enum NoteEditType: String {
   case emotionalStateChange
@@ -7,6 +6,7 @@ enum NoteEditType: String {
   case commentChange
   case dateChange
   case tagChange
+  case needUpdate
 }
 
 class EditEvent: Event {

@@ -4,7 +4,7 @@ import RealmSwift
 class SelectStatTableView: TableView {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let statType = StatTypes(rawValue: indexPath.row) ?? .averageEmotionalAndPhysical
+    let statType = StatType(rawValue: indexPath.row) ?? .all
     StatSettingsRepository().updateStatType(statType)
     SvetiAnalytics.log(.selectTypeOfAverageStat)
     guard let statDaysVC = CurrentVC.current as? StatsVC else { return }

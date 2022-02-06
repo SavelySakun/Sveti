@@ -15,6 +15,7 @@ class BarChartCell: Cell {
 
   override func setLayout() {
     selectionStyle = .none
+    barChartView.delegate = self
     addSubviews()
     setNoDataTextImage()
   }
@@ -55,11 +56,10 @@ class BarChartCell: Cell {
 
   private func setDataForChart() {
     let statType = StatSettingsRepository().settings.statType
-    let statTypeDescription = statType.getStatTypeDescription().localizedLowercase
+    let statTypeDescription = statType.getDescription().localizedLowercase
     currentStatLabel.text = "\("Average".localized) \(statTypeDescription)"
 
     guard let dataSet = StatDayContentManager.shared.getStatContent() else { return }
-    dataSet.highlightEnabled = false
     dataSet.colors = StatDayChartFormatter().generateColorsForBars()
     dataSet.valueFont = .systemFont(ofSize: 12)
     dataSet.valueFormatter = StatDayValueFormatter()
@@ -69,6 +69,7 @@ class BarChartCell: Cell {
     setVisibleXRange()
     barChartView.zoomOut()
     barChartView.moveViewToX(Double(dataSet.count))
+    barChartView.highlightValue(nil) // <- removes selection of bar
   }
 
   private func setVisibleXRange() {
@@ -108,5 +109,23 @@ class BarChartCell: Cell {
       noDataTextImage.textLabel.text = "There are no notes in the specified time range. But we found a cat".localized
       noDataTextImage.imageView.image = UIImage(named: "noDataFilter")
     }
+  }
+}
+
+extension BarChartCell: ChartViewDelegate {
+
+  func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+    let selectedIndex = Int(entry.x)
+    notify(with: selectedIndex)
+  }
+
+  func chartValueNothingSelected(_ chartView: ChartViewBase) {
+    notify()
+  }
+
+  private func notify(with index: Int? = nil) {
+    let notificationName = NotificationNames.onStatBarSelect
+    NotificationCenter.default.post(name: notificationName, object: nil, userInfo: ["barIndex": index as Any])
+    SvetiAnalytics.log(.selectStatChartBar)
   }
 }

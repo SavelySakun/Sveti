@@ -10,7 +10,6 @@ class StatTestHelper {
     statDay.splitDate = defaultDate
     statDay.phyzicalStates.append(objectsIn: [1.0, 2.0])
     statDay.emotionalStates.append(objectsIn: [1.0, 2.0])
-    statDay.totalNotes = 2.0
     return statDay
   }()
 

@@ -11,10 +11,13 @@ class StatDaysDataSetGenerator {
   }
 
   private let statDaysRepository = StatDaysRepository()
+  private lazy var instruments = StatDaysInstruments(with: settings)
 
   /// Generate content for days average mood bar chart.
   func fillContentManagerWithData() {
     guard let allStatDays = statDaysRepository.getAll(), !allStatDays.isEmpty else {
+      contentManager.currentlyDrawedStat = nil
+      contentManager.dataSet = nil
       contentManager.contentGenerationResult = .noDataAtAll
       return
     }
@@ -25,54 +28,22 @@ class StatDaysDataSetGenerator {
   }
 
   private func prepateDataEntry(from data: [StatDay]) -> [BarChartDataEntry] {
-    let timeRangeFilteredData = filterByTimeRange(data: data)
-    let grouped = group(data: timeRangeFilteredData)
+    let timeRangeFilteredData = instruments.filterByTimeRange(data: data)
+    let grouped = instruments.group(data: timeRangeFilteredData)
     let drawableStats = generateDrawableStat(groupedData: grouped)
-    let orderedByDateStats = orderByDate(data: drawableStats)
+    let orderedByDateStats = instruments.orderByDate(data: drawableStats)
 
     contentManager.currentlyDrawedStat = orderedByDateStats
+
     var dataEntry = [BarChartDataEntry]()
 
     for (index, drawableStat) in orderedByDateStats.enumerated() {
       let index = Double(index)
-      dataEntry.append(BarChartDataEntry(x: index, y: drawableStat.getAverage(with: settings.statType)))
+      dataEntry.append(BarChartDataEntry(x: index, y: drawableStat.averageMood.get(settings.statType)))
     }
 
     contentManager.contentGenerationResult = dataEntry.isEmpty ? .noDataInTimeRange : .success
     return dataEntry
-  }
-
-  private func orderByDate(data: [DrawableStat]) -> [DrawableStat] {
-    let sortedByTimeData = data.sorted {
-      let date0 = $0.splitDate
-      let date1 = $1.splitDate
-      return date0.rawDate.timeIntervalSince1970 < date1.rawDate.timeIntervalSince1970
-    }
-    return sortedByTimeData
-  }
-
-  private func filterByTimeRange(data: [StatDay]) -> [StatDay] {
-    let timeRangeFilteredData = data.filter { statDay in
-      guard let splitDate = statDay.splitDate else { return false }
-      let minimumDateInterval = settings.minimumDate.timeIntervalSince1970
-      let maximumDateInterval = settings.maximumDate.timeIntervalSince1970
-      let statDayInterval = splitDate.rawDate.timeIntervalSince1970
-      return statDayInterval >= minimumDateInterval && statDayInterval <= maximumDateInterval
-    }
-    return timeRangeFilteredData
-  }
-
-  private func group(data: [StatDay]) -> [Date: [StatDay]] {
-    switch settings.groupingType {
-    case .day:
-      return data.groupedBy(dateComponents: [.year, .month, .day])
-    case .week:
-      return data.groupedBy(dateComponents: [.yearForWeekOfYear, .weekOfMonth, .weekOfYear])
-    case .month:
-      return data.groupedBy(dateComponents: [.year, .month])
-    case .year:
-      return data.groupedBy(dateComponents: [.year])
-    }
   }
 
   private func generateDrawableStat(groupedData: [Date: [StatDay]]) -> [DrawableStat] {

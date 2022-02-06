@@ -57,7 +57,7 @@ class StatSettingsRepository: IRepository {
     }
   }
 
-  func updateStatType(_ statType: StatTypes) {
+  func updateStatType(_ statType: StatType) {
     try! realm.write {
       settings.statType = statType
     }

@@ -19,6 +19,12 @@ class DiaryVC: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setLayout()
+    showOnboardingIfNeeded()
+  }
+
+  private func showOnboardingIfNeeded() {
+    let onboardingVC = SvetiOnboardingVC()
+    onboardingVC.presentIfNeeded(from: self)
   }
 
   override func updateContent() {
@@ -127,7 +133,7 @@ extension DiaryVC: UITableViewDataSource, UITableViewDelegate {
       SvetiAnalytics.log(.deleteNote)
     }
 
-    let image = UIImage(named: "Delete")?.imageResized(to: .init(width: 22, height: 22))
+    let image = UIImage(named: "delete")?.imageResized(to: .init(width: 22, height: 22))
     deleteAction.image = image
     deleteAction.backgroundColor = .systemGray6
     deleteAction.title = String()
