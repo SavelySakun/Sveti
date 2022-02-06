@@ -8,14 +8,16 @@ Sveti in the [AppStore](https://apps.apple.com/ru/app/sveti/id1602251000). More 
 - The color of the diary entry changes depending on the magnitude of the average well-being.
 - Note diary, detailed note screen, note editing screen.
 - Editing tag groups, editing specific tags in a group.
+- Backup & restore saved data.
 - Statistics screen with graphs on average mood with the ability to choose which parameter to show statistics on (average emotional / physical well-being, or in general all together).
 
 ## Technology
 - UIKit, Snapkit for layout.
 - Realm for storing data.
+- CloudKit for backup.
 - Firebase for Analytics & Crashlytics.
 - In most cases, the MVVM architecture is used.
-- There are also some Combine for data binding.
+- Some Combine for data binding.
 
 ## How to run
 - Copy project.
@@ -24,4 +26,4 @@ Sveti in the [AppStore](https://apps.apple.com/ru/app/sveti/id1602251000). More 
 - Run.
 
 ## Screenshots
-![Screens](https://user-images.githubusercontent.com/63949254/147961941-6bff3ff8-2342-4d2d-bf04-fc9ffc95ed02.png)
+![Screens](https://user-images.githubusercontent.com/63949254/152689481-925c8af4-503b-45b2-ba88-22ef7adf4321.jpg)
