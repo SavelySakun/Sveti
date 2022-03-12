@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
 import SPIndicator
+import SPConfetti
 
 class NewNoteVC: BaseViewController, ViewControllerVMDelegate {
   let viewModel = NewNoteVM(tableDataProvider: EditNoteTableDataProvider())
@@ -76,14 +77,34 @@ class NewNoteVC: BaseViewController, ViewControllerVMDelegate {
 	}
 
   @objc func onSave() {
+    showSavedIndicator()
     SvetiAnalytics.log(.createNote)
     self.viewModel.saveCurrentNote()
     if let currentVC = CurrentVC.current as? BaseViewController {
       currentVC.updateContent()
     }
-    self.dismiss(animated: true) {
-      SPIndicator.present(title: "Note saved".localized, message: nil, preset: .done, from: .top, completion: nil)
+    self.dismiss(animated: true)
+  }
+
+  private func showSavedIndicator() {
+    var textForIndicator = "Note saved".localized
+    var imageName = "done"
+    if viewModel.isFirstNoteForToday() {
+      showConfetti()
+      textForIndicator = "First note for today!".localized
+      imageName = "confetti"
     }
+    guard let image = UIImage(named: imageName) else { return }
+    SPIndicator.present(title: textForIndicator, message: nil, preset: .custom(image), from: .top, completion: nil)
+  }
+
+  private func showConfetti() {
+    let availableParticles: [SPConfettiParticle] = [.heart, .star, .circle, .polygon, .arc, .triangle]
+    let randomIndex = Int.random(in: 0...(availableParticles.count - 1))
+    let selectedRandomParticle = availableParticles[randomIndex]
+    SPConfettiConfiguration.particlesConfig.colors = [#colorLiteral(red: 1, green: 0.7400508523, blue: 0.7330603004, alpha: 1), #colorLiteral(red: 1, green: 0.7764705882, blue: 1, alpha: 1), #colorLiteral(red: 0.6078431373, green: 0.9647058824, blue: 1, alpha: 1), #colorLiteral(red: 0.7921568627, green: 1, blue: 0.7490196078, alpha: 1)]
+    SPConfetti.startAnimating(.fullWidthToDown, particles: [selectedRandomParticle], duration: 1)
+    UINotificationFeedbackGenerator().notificationOccurred(.success)
   }
 
   @objc private func onCancel() {

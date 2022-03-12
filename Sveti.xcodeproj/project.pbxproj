@@ -11,6 +11,7 @@
 		C9CDFC695A5DE5C1F7CF2F56 /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */; };
 		DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */; };
 		FC0173FC27DCA36E005D0360 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0173FB27DCA36E005D0360 /* Slider.swift */; };
+		FC0173FF27DCB3B3005D0360 /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = FC0173FE27DCB3B3005D0360 /* SPConfetti */; };
 		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
 		FC04F8472770BF1800368CC1 /* TagListView in Frameworks */ = {isa = PBXBuildFile; productRef = FC04F8462770BF1800368CC1 /* TagListView */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
@@ -488,6 +489,7 @@
 				FC7E6D5E26AC31A500126B97 /* SPIndicator in Frameworks */,
 				FCC922A6276655BD009F7508 /* FirebaseCrashlytics in Frameworks */,
 				FCCA2EF0278B314300C46EA9 /* CloudKit.framework in Frameworks */,
+				FC0173FF27DCB3B3005D0360 /* SPConfetti in Frameworks */,
 				FCB3D3B9277719FA00A23664 /* FirebaseAnalytics in Frameworks */,
 				DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */,
 			);
@@ -1360,6 +1362,7 @@
 				FCB3D3B8277719FA00A23664 /* FirebaseAnalytics */,
 				FCCA2ED32788913D00C46EA9 /* DeviceKit */,
 				FCBAB5F627A5276D00696893 /* SigmaSwiftStatistics */,
+				FC0173FE27DCB3B3005D0360 /* SPConfetti */,
 			);
 			productName = MoodTracker;
 			productReference = FC6C56D8266000FB000188A6 /* Sveti.app */;
@@ -1409,6 +1412,7 @@
 				FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */,
 				FCCA2ED22788913D00C46EA9 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 				FCBAB5F527A5276D00696893 /* XCRemoteSwiftPackageReference "SigmaSwiftStatistics" */,
+				FC0173FD27DCB3B3005D0360 /* XCRemoteSwiftPackageReference "SPConfetti" */,
 			);
 			productRefGroup = FC6C56D9266000FB000188A6 /* Products */;
 			projectDirPath = "";
@@ -2141,6 +2145,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FC0173FD27DCB3B3005D0360 /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPConfetti.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 		FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ElaWorkshop/TagListView.git";
@@ -2224,6 +2236,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FC0173FE27DCB3B3005D0360 /* SPConfetti */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC0173FD27DCB3B3005D0360 /* XCRemoteSwiftPackageReference "SPConfetti" */;
+			productName = SPConfetti;
+		};
 		FC04F8462770BF1800368CC1 /* TagListView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FC04F8452770BF1800368CC1 /* XCRemoteSwiftPackageReference "TagListView" */;

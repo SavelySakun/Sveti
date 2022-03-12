@@ -80,4 +80,12 @@ class NewNoteVM: ViewControllerVM {
       note.tags.append(tag)
     }
   }
+
+  func isFirstNoteForToday() -> Bool {
+    let notes = NotesRepository().getNotes()
+    let todayNote = notes.first { note in
+      return note.splitDate?.ddMMyyyy == SplitDate(rawDate: Date()).ddMMyyyy
+    }
+    return todayNote == nil
+  }
 }
