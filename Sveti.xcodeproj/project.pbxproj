@@ -10,6 +10,7 @@
 		09B6F7DEBBC8DCED0D1C5238 /* Pods_Sveti_SvetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3913FBF81BAF6DF946FECB26 /* Pods_Sveti_SvetiUITests.framework */; };
 		C9CDFC695A5DE5C1F7CF2F56 /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */; };
 		DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */; };
+		FC0173FC27DCA36E005D0360 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0173FB27DCA36E005D0360 /* Slider.swift */; };
 		FC01D42026D6AAAF00C984E7 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */; };
 		FC04F8472770BF1800368CC1 /* TagListView in Frameworks */ = {isa = PBXBuildFile; productRef = FC04F8462770BF1800368CC1 /* TagListView */; };
 		FC0CCC6D26BE6A52004CDE8A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCC6C26BE6A52004CDE8A /* Tag.swift */; };
@@ -247,6 +248,7 @@
 		D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SvetiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E324E23D733ACF35B25A81 /* Pods-SvetiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SvetiTests.debug.xcconfig"; path = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F839ACDAEBABEFA6A28990E7 /* Pods-SvetiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SvetiTests.release.xcconfig"; path = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.release.xcconfig"; sourceTree = "<group>"; };
+		FC0173FB27DCA36E005D0360 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		FC01D41F26D6AAAF00C984E7 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		FC01D87B26E35F5F00C984E7 /* SvetiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC01D87F26E35F5F00C984E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 				FC7E6DA026AD4CD200126B97 /* ImageTextView.swift */,
 				FC1563F62748ED8E00AAD925 /* IconView.swift */,
 				FCB9EC6B274A33A500E3E864 /* ButtonWithImage.swift */,
+				FC0173FB27DCA36E005D0360 /* Slider.swift */,
 			);
 			path = ViewElements;
 			sourceTree = "<group>";
@@ -1692,6 +1695,7 @@
 				FCB9EC72274A52E500E3E864 /* BackupMoreItem.swift in Sources */,
 				FCCA2ED62788922800C46EA9 /* DeviceUtils.swift in Sources */,
 				FCEA30F826D3DD5E0062509A /* DeleteTableFooter.swift in Sources */,
+				FC0173FC27DCA36E005D0360 /* Slider.swift in Sources */,
 				FC598E3C278F64FB00F39689 /* WarningBackupItem.swift in Sources */,
 				FCB0643E26B5C75A00A0494A /* EditNoteTableDataProvider.swift in Sources */,
 				FCE368A226D2749400A05271 /* SelectGroupTableView.swift in Sources */,

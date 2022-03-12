@@ -14,7 +14,7 @@ class EmotionalStateSliderCell: CellWithSlider {
     accessibilityIdentifier = "emotional-cell"
     guard let note = viewModel.cellValue as? Note else { return }
     slider.value = Float(note.mood?.emotionalState ?? 6.0)
-    titleLabel.text = getTitle()
+    titleLabel.attributedText = getTitle()
   }
 
 }
@@ -32,7 +32,7 @@ class PhysicalStateSliderCell: CellWithSlider {
     accessibilityIdentifier = "physical-cell"
     guard let note = viewModel.cellValue as? Note else { return }
     slider.value = Float(note.mood?.physicalState ?? 6.0)
-    titleLabel.text = getTitle()
+    titleLabel.attributedText = getTitle()
   }
 
 }
