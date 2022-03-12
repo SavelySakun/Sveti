@@ -173,6 +173,15 @@
         }
       },
       {
+        "package": "SPConfetti",
+        "repositoryURL": "https://github.com/ivanvorobei/SPConfetti.git",
+        "state": {
+          "branch": null,
+          "revision": "fd172fe3cc07572e546942cb175b16e549fc3e1a",
+          "version": "1.4.0"
+        }
+      },
+      {
         "package": "SPIndicator",
         "repositoryURL": "https://github.com/ivanvorobei/SPIndicator.git",
         "state": {
