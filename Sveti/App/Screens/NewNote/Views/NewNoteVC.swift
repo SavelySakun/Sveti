@@ -87,7 +87,11 @@ class NewNoteVC: BaseViewController, ViewControllerVMDelegate {
   }
 
   @objc private func onCancel() {
-    present(cancelAlert, animated: true, completion: nil)
+    if viewModel.hasChanges {
+      present(cancelAlert, animated: true, completion: nil)
+    } else {
+      dismiss(animated: true)
+    }
   }
 
   private func clearAllInput() {
@@ -110,6 +114,6 @@ class NewNoteVC: BaseViewController, ViewControllerVMDelegate {
 
 extension NewNoteVC: UIAdaptivePresentationControllerDelegate {
   func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
-    present(cancelAlert, animated: true)
+    onCancel()
   }
 }

@@ -3,9 +3,8 @@ import SnapKit
 import Combine
 
 class CellWithSlider: Cell {
-
 	lazy var titleLabel = getInfoLabel()
-  let slider = UISlider()
+  let slider = Slider()
 	lazy var sliderStackView = getSliderStackView()
 
 	override func setLayout() {
@@ -38,6 +37,7 @@ class CellWithSlider: Cell {
 		slider.minimumValue = 0
 		slider.maximumValue = 10
     slider.addTarget(self, action: #selector(onValueChange), for: .allEvents)
+    slider.addTarget(self, action: #selector(onValueSelected), for: .touchDown)
 
 		let minimumLabel = UILabel()
 		minimumLabel.text = "0"
@@ -53,18 +53,35 @@ class CellWithSlider: Cell {
 
   override func configureSelf(with viewModel: CellVM) {
     super.configureSelf(with: viewModel)
-    slider.value = viewModel.cellValue as? Float ?? 6.0
-    titleLabel.text = getTitle()
-    slider.tintColor = #colorLiteral(red: 0.1764705882, green: 0.6117647059, blue: 0.9882352941, alpha: 1).withAlphaComponent(0.7)
-    slider.maximumTrackTintColor = .white
+    let sliderValue = viewModel.cellValue as? Float ?? 6.0
+    slider.value = sliderValue
+    titleLabel.attributedText = getTitle()
+    updateContent()
   }
 
   @objc func onValueChange() {
-    titleLabel.text = getTitle()
+    updateContent()
   }
 
-  func getTitle() -> String {
+  private func updateContent() {
+    DispatchQueue.main.async {
+      self.titleLabel.attributedText = self.getTitle()
+      self.slider.tintColor = ColorHelper().getColor(value: Int(self.slider.value), alpha: 0.8, palette: .tag)
+    }
+  }
+
+  @objc func onValueSelected() {
+    UISelectionFeedbackGenerator().selectionChanged()
+  }
+
+  func getTitle() -> NSAttributedString {
     let value = SvetiMath().getString(from: Double(slider.value), digits: 1)
-    return "\(viewModel?.title ?? ""): \(value)"
+    let titleText = "\(viewModel?.title ?? ""): "
+    let boldText = value
+    let attributedString = NSMutableAttributedString(string: titleText)
+    let attributes = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
+    let boldString = NSMutableAttributedString(string: boldText, attributes: attributes)
+    attributedString.append(boldString)
+    return attributedString
   }
 }
