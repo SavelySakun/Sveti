@@ -172,15 +172,6 @@
       }
     },
     {
-      "identity" : "spconfetti",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ivanvorobei/SPConfetti.git",
-      "state" : {
-        "revision" : "ebbb3f98c373d7a9981552ae31a7ac9b78680d76",
-        "version" : "1.4.0"
-      }
-    },
-    {
       "identity" : "spindicator",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ivanvorobei/SPIndicator.git",
