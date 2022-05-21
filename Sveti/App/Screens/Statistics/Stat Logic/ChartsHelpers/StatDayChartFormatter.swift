@@ -1,7 +1,7 @@
 import Foundation
 import Charts
 
-class StatDayChartFormatter: AxisValueFormatter {
+class StatDayChartFormatter: IAxisValueFormatter {
 
   private var xAxisLabels = [String]()
 
