@@ -34,8 +34,8 @@ class StatsVC: VCwithTable {
     DispatchQueue.main.async { [self] in
       UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve) {
         StatDayContentManager.shared.updateStatContent {
-          viewModel.tableDataProvider?.updateSections()
-          tableView.reloadData()
+            self.viewModel.tableDataProvider?.updateSections()
+            self.tableView.reloadData()
         }
       }
     }

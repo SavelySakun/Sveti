@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09B6F7DEBBC8DCED0D1C5238 /* Pods_Sveti_SvetiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3913FBF81BAF6DF946FECB26 /* Pods_Sveti_SvetiUITests.framework */; };
+		C401C30A28392F30005CE8C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C401C30928392F2F005CE8C5 /* GoogleService-Info.plist */; };
 		C9CDFC695A5DE5C1F7CF2F56 /* Pods_SvetiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */; };
 		DF505C48C8C911445BDC1E3D /* Pods_Sveti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491B619BDCFC0BAA73F7F524 /* Pods_Sveti.framework */; };
 		FC0173FC27DCA36E005D0360 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0173FB27DCA36E005D0360 /* Slider.swift */; };
@@ -37,7 +38,6 @@
 		FC25ADCD2741025B000DE791 /* StatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25ADCC2741025B000DE791 /* StatType.swift */; };
 		FC27075B275C9EF800A2440A /* TagGroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC27075A275C9EF700A2440A /* TagGroupList.swift */; };
 		FC27075D275CA2A600A2440A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC27075C275CA2A600A2440A /* List.swift */; };
-		FC27091B27664F7E00A2440A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC27091A27664F7E00A2440A /* GoogleService-Info.plist */; };
 		FC29A66D26EC97D500DC87DA /* StatDaysRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */; };
 		FC29A67026ECE11200DC87DA /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A66F26ECE11200DC87DA /* StatsVC.swift */; };
 		FC29A67226ECE8FE00DC87DA /* StatStateManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29A67126ECE8FE00DC87DA /* StatStateManagerTest.swift */; };
@@ -245,6 +245,7 @@
 		9EB3867CD72A4B2C262B7AC9 /* Pods-Sveti-SvetiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti-SvetiUITests.release.xcconfig"; path = "Target Support Files/Pods-Sveti-SvetiUITests/Pods-Sveti-SvetiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A601ECB32E9412DD7194D635 /* Pods-Sveti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti.debug.xcconfig"; path = "Target Support Files/Pods-Sveti/Pods-Sveti.debug.xcconfig"; sourceTree = "<group>"; };
 		B0C41B076C393D749E203C23 /* Pods-Sveti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sveti.release.xcconfig"; path = "Target Support Files/Pods-Sveti/Pods-Sveti.release.xcconfig"; sourceTree = "<group>"; };
+		C401C30928392F2F005CE8C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D1A3F3D5607051625D92F9F2 /* Pods_SvetiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SvetiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E324E23D733ACF35B25A81 /* Pods-SvetiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SvetiTests.debug.xcconfig"; path = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F839ACDAEBABEFA6A28990E7 /* Pods-SvetiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SvetiTests.release.xcconfig"; path = "Target Support Files/Pods-SvetiTests/Pods-SvetiTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,7 +277,6 @@
 		FC25ADCC2741025B000DE791 /* StatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatType.swift; sourceTree = "<group>"; };
 		FC27075A275C9EF700A2440A /* TagGroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGroupList.swift; sourceTree = "<group>"; };
 		FC27075C275CA2A600A2440A /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		FC27091A27664F7E00A2440A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FC29A66226EC979A00DC87DA /* SvetiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SvetiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC29A66626EC979A00DC87DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC29A66C26EC97D500DC87DA /* StatDaysRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDaysRepositoryTests.swift; sourceTree = "<group>"; };
@@ -918,7 +918,7 @@
 				FC7E6D1826AB195B00126B97 /* Screens */,
 				FC1563F02748DD4D00AAD925 /* Utility */,
 				FC6C56E4266000FD000188A6 /* Assets.xcassets */,
-				FC27091A27664F7E00A2440A /* GoogleService-Info.plist */,
+				C401C30928392F2F005CE8C5 /* GoogleService-Info.plist */,
 				FC6C56E9266000FD000188A6 /* Info.plist */,
 				FCA8D76227820FE800212E51 /* Sveti.entitlements */,
 				FCA8D75E2781A4D800212E51 /* Localizable.strings */,
@@ -1441,7 +1441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA8D75C2781A4D800212E51 /* Localizable.strings in Resources */,
-				FC27091B27664F7E00A2440A /* GoogleService-Info.plist in Resources */,
+				C401C30A28392F30005CE8C5 /* GoogleService-Info.plist in Resources */,
 				FC6C56E8266000FD000188A6 /* LaunchScreen.storyboard in Resources */,
 				FC6C56E5266000FD000188A6 /* Assets.xcassets in Resources */,
 			);
@@ -2057,14 +2057,14 @@
 				CODE_SIGN_ENTITLEMENTS = Sveti/Sveti.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = AQXX2T2SYK;
 				INFOPLIST_FILE = Sveti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sava.sveti.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2083,14 +2083,14 @@
 				CODE_SIGN_ENTITLEMENTS = Sveti/Sveti.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = AQXX2T2SYK;
 				INFOPLIST_FILE = Sveti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sava.sveti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2170,7 +2170,7 @@
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.21.0;
+				minimumVersion = 10.25.2;
 			};
 		};
 		FCB0642526B52DDA00A0494A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
