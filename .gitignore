@@ -37,3 +37,5 @@ DerivedData/
 /Sveti.ipa
 /fastlane/SvetiAPIAuthKey.p8
 /fastlane/Fastfile
+Sveti/Assets.xcassets/.DS_Store
+.DS_Store
