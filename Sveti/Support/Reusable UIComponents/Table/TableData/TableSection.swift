@@ -1,8 +1,6 @@
 import UIKit
 
 struct TableSection {
-
-  var title: String?
-  var cellsData: [CellData]
-
+    var title: String?
+    var cellsData: [CellData]
 }

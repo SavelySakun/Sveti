@@ -1,18 +1,18 @@
-import UIKit
 import MessageUI
+import UIKit
 
 class ContactDeveloperMoreItem: SimpleCellItem {
-  override init() {
-    super.init()
-    title = "Contact us".localized
-    iconBackgroundColor = UIColor.systemPink
-    iconImage = UIImage(systemName: "quote.bubble.fill")?.withRenderingMode(.alwaysTemplate)
-    iconTintColor = UIColor.white
+    override init() {
+        super.init()
+        title = "Contact us".localized
+        iconBackgroundColor = UIColor.systemPink
+        iconImage = UIImage(systemName: "quote.bubble.fill")?.withRenderingMode(.alwaysTemplate)
+        iconTintColor = UIColor.white
 
-    onTapAction = { _ in
-      guard let currentVC = CurrentVC.current else { return }
-      let contactDeveloperVC = ContactDeveloperVC()
-      currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
+        onTapAction = { _ in
+            guard let currentVC = CurrentVC.current else { return }
+            let contactDeveloperVC = ContactDeveloperVC()
+            currentVC.navigationController?.pushViewController(contactDeveloperVC, animated: true)
+        }
     }
-  }
 }

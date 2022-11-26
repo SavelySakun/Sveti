@@ -1,5 +1,5 @@
 import Foundation
 
 enum OnboardingMoveDirection {
-  case back, next
+    case back, next
 }

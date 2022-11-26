@@ -1,25 +1,24 @@
 import Foundation
 
 class StatTestHelper {
+    let defaultDate = SplitDate(ddMMyyyy: "01.01.2021")
+    let testDate = SplitDate(ddMMyyyy: "10.02.2021")
 
-  let defaultDate = SplitDate(ddMMyyyy: "01.01.2021")
-  let testDate = SplitDate(ddMMyyyy: "10.02.2021")
+    lazy var defaultStatDay: StatDay = {
+        let statDay = StatDay()
+        statDay.splitDate = defaultDate
+        statDay.phyzicalStates.append(objectsIn: [1.0, 2.0])
+        statDay.emotionalStates.append(objectsIn: [1.0, 2.0])
+        return statDay
+    }()
 
-  lazy var defaultStatDay: StatDay = {
-    let statDay = StatDay()
-    statDay.splitDate = defaultDate
-    statDay.phyzicalStates.append(objectsIn: [1.0, 2.0])
-    statDay.emotionalStates.append(objectsIn: [1.0, 2.0])
-    return statDay
-  }()
-
-  let defaultNote: Note = {
-    let note = Note()
-    let date = Date(timeIntervalSince1970: 1609459200) // return "01.01.2021"
-    note.id = 1 // default test value
-    note.splitDate = SplitDate(rawDate: date)
-    note.mood?.physicalState = 2.0
-    note.mood?.emotionalState = 2.0
-    return note
-  }()
+    let defaultNote: Note = {
+        let note = Note()
+        let date = Date(timeIntervalSince1970: 1_609_459_200) // return "01.01.2021"
+        note.id = 1 // default test value
+        note.splitDate = SplitDate(rawDate: date)
+        note.mood?.physicalState = 2.0
+        note.mood?.emotionalState = 2.0
+        return note
+    }()
 }

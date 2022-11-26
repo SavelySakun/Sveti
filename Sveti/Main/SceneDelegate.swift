@@ -1,19 +1,16 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
 
-	var window: UIWindow?
+    func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
+        guard let scene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: scene)
 
-	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        let startViewController = TabbarController()
 
-		guard let scene = (scene as? UIWindowScene) else { return }
-		let window = UIWindow(windowScene: scene)
-
-    let startViewController = TabbarController()
-
-		window.rootViewController = startViewController
-		self.window = window
-		window.makeKeyAndVisible()
-	}
-
+        window.rootViewController = startViewController
+        self.window = window
+        window.makeKeyAndVisible()
+    }
 }

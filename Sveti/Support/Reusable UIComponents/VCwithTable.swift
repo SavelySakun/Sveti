@@ -1,44 +1,43 @@
 import UIKit
 
 class VCwithTable: BaseViewController {
+    var viewModel: ViewControllerVM!
+    var tableView: TableView!
 
-  var viewModel: ViewControllerVM!
-  var tableView: TableView!
-
-  init(with tableStyle: UITableView.Style = .insetGrouped) {
-    super.init(nibName: nil, bundle: nil)
-    guard let dataProvider = getDataProvider() else { return }
-    setViewModel(with: dataProvider)
-    tableView = TableView(viewModel: viewModel, style: tableStyle)
-  }
-
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setLayout()
-  }
-
-  /// Provides content for tableView.
-  func getDataProvider() -> TableDataProvider? {
-    return TableDataProvider(with: nil)
-  }
-
-  func setViewModel(with dataProvider: TableDataProvider) {
-    viewModel = ViewControllerVM(tableDataProvider: dataProvider)
-  }
-
-  func setLayout() {
-    addTableToSuperview()
-  }
-
-  private func addTableToSuperview() {
-    view.addSubview(tableView)
-    tableView.snp.makeConstraints { (make) in
-      make.top.left.bottom.right.equalToSuperview()
+    init(with tableStyle: UITableView.Style = .insetGrouped) {
+        super.init(nibName: nil, bundle: nil)
+        guard let dataProvider = getDataProvider() else { return }
+        setViewModel(with: dataProvider)
+        tableView = TableView(viewModel: viewModel, style: tableStyle)
     }
-  }
 
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setLayout()
+    }
+
+    /// Provides content for tableView.
+    func getDataProvider() -> TableDataProvider? {
+        return TableDataProvider(with: nil)
+    }
+
+    func setViewModel(with dataProvider: TableDataProvider) {
+        viewModel = ViewControllerVM(tableDataProvider: dataProvider)
+    }
+
+    func setLayout() {
+        addTableToSuperview()
+    }
+
+    private func addTableToSuperview() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.top.left.bottom.right.equalToSuperview()
+        }
+    }
 }

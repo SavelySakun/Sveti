@@ -1,5 +1,5 @@
 import Foundation
 
 enum OnboardingState {
-  case firstSlide, hasSlides, lastSlide
+    case firstSlide, hasSlides, lastSlide
 }

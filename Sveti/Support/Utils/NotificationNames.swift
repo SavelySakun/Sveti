@@ -1,5 +1,5 @@
 import Foundation
 
 enum NotificationNames {
-  static let onStatBarSelect = Notification.Name("onStatBarSelect")
+    static let onStatBarSelect = Notification.Name("onStatBarSelect")
 }

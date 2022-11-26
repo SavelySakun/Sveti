@@ -1,7 +1,7 @@
 import Foundation
 
 enum StatGenerationResult {
-  case success
-  case noDataInTimeRange
-  case noDataAtAll
+    case success
+    case noDataInTimeRange
+    case noDataAtAll
 }

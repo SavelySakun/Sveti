@@ -1,9 +1,8 @@
-import UIKit
 import ALPopup
 import SPAlert
+import UIKit
 
 class EditTagGroupVC: VCwithTable {
-
     // - MARK: AlertControllers & Action
     private let actionsAlertController = UIAlertController()
     private let newTagAlertController = UIAlertController(title: "Add a tag".localized, message: nil, preferredStyle: .alert)
@@ -27,7 +26,8 @@ class EditTagGroupVC: VCwithTable {
         tableView = editingTableView
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -68,7 +68,7 @@ class EditTagGroupVC: VCwithTable {
     func showEditAlert(forTag id: String) {
         editingTagId = id
         let isTagHidden = tagsRepository.findTag(withId: id)?.isHidden ?? false
-        hideAction.setValue((isTagHidden ? "Make active".localized : "Hide".localized), forKey: "title")
+        hideAction.setValue(isTagHidden ? "Make active".localized : "Hide".localized, forKey: "title")
         present(actionsAlertController, animated: true, completion: nil)
     }
 
@@ -85,7 +85,7 @@ class EditTagGroupVC: VCwithTable {
 
     private func setNewTagButton() {
         let button = UIButton()
-        button.snp.makeConstraints { (make) in
+        button.snp.makeConstraints { make in
             make.height.width.equalTo(32)
         }
         let image = UIImage(named: "add")?.withRenderingMode(.alwaysTemplate)
@@ -155,24 +155,23 @@ class EditTagGroupVC: VCwithTable {
             NotesRepository().removeTagFromNotes(tagId: self.editingTagId)
         }
 
-        self.showAlert(title: "Attention".localized, message: "Display a deleted tag in existing notes?", actions: [okAction, deleteAction]) {
+        showAlert(title: "Attention".localized, message: "Display a deleted tag in existing notes?", actions: [okAction, deleteAction]) {
             self.removeTag()
         }
     }
 
     private func removeTag() {
-        self.tagsRepository.removeTag(withId: self.editingTagId)
-        self.reloadContent()
+        tagsRepository.removeTag(withId: editingTagId)
+        reloadContent()
         SvetiAnalytics.log(.deleteTag)
     }
-
 
     @objc private func onNewTagTap() {
         present(newTagAlertController, animated: true)
     }
 
     private func saveNewTag() {
-        let alertTextField = self.newTagAlertController.textFields?.last
+        let alertTextField = newTagAlertController.textFields?.last
         guard let newTagName = alertTextField?.text,
               !newTagName.isEmpty else { return }
         tagsRepository.addNewTag(withName: newTagName, groupId: groupId)

@@ -1,5 +1,5 @@
 import Foundation
 
 protocol IStatSettingsManager {
-  var settings: StatSettings { get set }
+    var settings: StatSettings { get set }
 }

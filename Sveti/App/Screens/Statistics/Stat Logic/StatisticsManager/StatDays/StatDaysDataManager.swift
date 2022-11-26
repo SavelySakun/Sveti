@@ -1,49 +1,47 @@
 import Foundation
 
 class StatDaysDataManager {
+    private let statDaysRepository = StatDaysRepository()
 
-  private let statDaysRepository = StatDaysRepository()
-
-  /// Use for getting statDay using note information.
-  func findStatDay(from note: Note) -> StatDay? {
-    guard let date = note.splitDate else { return nil }
-    return statDaysRepository.getStatDay(with: date)
-  }
-
-  func updateStat(with note: Note) {
-    if let existingStatDay = findStatDay(from: note) {
-      statDaysRepository.addDataToExistingStatDay(with: existingStatDay, note: note)
-    } else {
-      saveStat(with: note)
+    /// Use for getting statDay using note information.
+    func findStatDay(from note: Note) -> StatDay? {
+        guard let date = note.splitDate else { return nil }
+        return statDaysRepository.getStatDay(with: date)
     }
-  }
 
-  func removeStat(with note: Note) {
-    if let existingStatDay = findStatDay(from: note) {
-      statDaysRepository.removeDataFromExistingStatDay(with: existingStatDay, note: note)
+    func updateStat(with note: Note) {
+        if let existingStatDay = findStatDay(from: note) {
+            statDaysRepository.addDataToExistingStatDay(with: existingStatDay, note: note)
+        } else {
+            saveStat(with: note)
+        }
     }
-  }
 
-  /// If statDay doesn't exist for specific date
-  func saveStat(with note: Note) {
-    let statDayToSave = getNewStatDay(from: note)
-    statDaysRepository.saveNewStatDay(statDay: statDayToSave)
-  }
+    func removeStat(with note: Note) {
+        if let existingStatDay = findStatDay(from: note) {
+            statDaysRepository.removeDataFromExistingStatDay(with: existingStatDay, note: note)
+        }
+    }
 
-  func getNewStatDay(from note: Note) -> StatDay {
-    let statDay = StatDay()
+    /// If statDay doesn't exist for specific date
+    func saveStat(with note: Note) {
+        let statDayToSave = getNewStatDay(from: note)
+        statDaysRepository.saveNewStatDay(statDay: statDayToSave)
+    }
 
-    guard let mood = note.mood,
-          let date = note.splitDate else { return StatDay() }
+    func getNewStatDay(from note: Note) -> StatDay {
+        let statDay = StatDay()
 
-    statDay.splitDate = date
-    statDay.emotionalStates.append(mood.emotionalState)
-    statDay.phyzicalStates.append(mood.physicalState)
-    return statDay
-  }
+        guard let mood = note.mood,
+              let date = note.splitDate else { return StatDay() }
 
-  func removeAll() {
-    statDaysRepository.removeAll()
-  }
+        statDay.splitDate = date
+        statDay.emotionalStates.append(mood.emotionalState)
+        statDay.phyzicalStates.append(mood.physicalState)
+        return statDay
+    }
 
+    func removeAll() {
+        statDaysRepository.removeAll()
+    }
 }
