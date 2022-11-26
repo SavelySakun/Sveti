@@ -113,9 +113,9 @@ class BackupVM: ViewControllerVM {
         backupInformationDelegate?.updateLoadingIndicator(show: true)
         backgroundQueue.async { [self] in
             if backupState == .noBackupFound || backupState == .backupDeleted {
-                backupManager.createBackupInCloudKit { backupManagerResultHandler($0, $1) }
+                backupManager.createBackupInCloudKit { self.backupManagerResultHandler($0, $1) }
             } else {
-                backupManager.updateExistingBackupRecord { backupManagerResultHandler($0, $1) }
+                backupManager.updateExistingBackupRecord { self.backupManagerResultHandler($0, $1) }
             }
         }
     }

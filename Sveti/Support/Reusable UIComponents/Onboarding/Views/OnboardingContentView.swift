@@ -37,7 +37,7 @@ class OnboardingContentView: UIView {
 
     func updateContent(slide: OnboardingSlide, progression: Float) {
         DispatchQueue.main.async { [self] in
-            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve) {
+            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve) { [self] in
                 globalBackgroundView.backgroundColor = slide.globalBackgroundColor
                 titleLabel.text = slide.title
                 subtitleLabel.text = slide.subtitle

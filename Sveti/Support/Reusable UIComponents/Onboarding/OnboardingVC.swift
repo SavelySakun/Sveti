@@ -146,11 +146,11 @@ class OnboardingVC: BaseViewController, IOnboardingController {
 
         DispatchQueue.main.async { [self] in
             UIView.transition(with: backButton, duration: 0.4, options: .transitionCrossDissolve) {
-                backButton.isHidden = (state == .firstSlide)
+                self.backButton.isHidden = (state == .firstSlide)
             }
             UIView.transition(with: nextButton, duration: 0.4, options: .transitionCrossDissolve) {
-                nextButton.setImage(UIImage(systemName: buttonImageName), for: .normal)
-                nextButton.backgroundColor = buttonBackground
+                self.nextButton.setImage(UIImage(systemName: buttonImageName), for: .normal)
+                self.nextButton.backgroundColor = buttonBackground
             }
         }
     }

@@ -79,7 +79,7 @@ extension BackupVC: ViewControllerVMDelegate {
         DispatchQueue.main.async { [self] in
             activitiIndicator.stopAnimating()
             UIView.transition(with: tableView, duration: 0.2, options: .transitionCrossDissolve) {
-                tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
